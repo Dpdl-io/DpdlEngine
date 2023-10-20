@@ -1,0 +1,36 @@
+# File: DpdlConsoleBT_client.h_static
+# Date: 21.07.2007
+# Dpdl example: This script implements a bluetooth client console that connects to a bluetooth server and
+#				accepts commands that are executed, i.e. executes a piece of Dpdl code.
+#				On J2ME devices the console log and status is printed on a UI Form canvas
+#
+# Author: A.Costa
+# e-mail: info@dpdl.io
+#
+#
+include("dpdlMIDP.h")
+
+func initDebugForm()
+      TEXT_LOG = Form(0, "Dpdl(tm) Dpdl Console BT Client")
+      if TEXT_LOG == -1
+             println("error in allocating UI components")
+      else
+             println("UI Components Not inited()")
+      fi
+      return TEXT_LOG
+end
+
+func initConsoleClient()
+   int authent = dpdlFalse
+   int author = dpdlFalse
+   int encrypt = dpdlFalse
+   client = DPDLAPI_createBTClient(0, BT_LIAC_MODE, authent, author, encrypt)
+   return client
+end
+
+
+#main
+int client = -1
+int TEXT_LOG = initDebugForm()
+client = initConsoleClient()
+println("DpdlConsoleBT_client inited()")

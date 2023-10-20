@@ -1,0 +1,13 @@
+# File: myThreadProcess.h
+#
+# Example: this script is called within a DPDLAPI_createThread(..) function inside the example dpdlLibExamples.h
+#		   Note: The static declarations here are executed only once in the Thread iteration
+#
+# Author: A.Costa
+# e-mail: info@dpdl.io
+#
+#
+
+# static execution
+int myStaticCounter = 1
+println("This static code is executed only once in the Thread execution: " + myStaticCounter)

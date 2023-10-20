@@ -1,0 +1,42 @@
+# File: BTObexServer.h
+#
+# Example: This script implements a Bluetooth Obex Server that reads messages from a record store
+#		   and sends them to the discovered bluetooth devices via SMS. On J2ME devices the log is printed on a UI Form.
+#		   To write messages to the record store the script importantMsgWriter.h is used.
+#		   This script has been tested on CLDC 1.0 and CLDC 2.0
+#
+# (c)opyright 2009
+# SEE Solutions
+#
+# e-mail: info@dpdl.io
+#
+#
+include("dpdlMIDP.h")
+
+func initDebugForm()
+      int TEXT_LOG = Form(1, "Dpdl(tm) BTObexServer")
+      if TEXT_LOG == -1
+             println("error in allocating UI components")
+      else
+             println("UI Components Not inited()")
+      fi
+      return TEXT_LOG
+end
+
+
+#entry point
+println("init() ObexServer")
+int x1 = initDebugForm()
+
+int x = DPDLAPI_createObexServer(BT_GIAC_MODE)
+int MSG_QUEUE_HIGH = createRS("BTObexServer_MSGQueue", AUTHMODE_ANY, dpdlTrue, dpdlTrue)
+
+enumRecords(MSG_QUEUE_HIGH, dpdlTrue)
+if x == dpdlTrue
+   println("BTObexServer inited..")
+else
+   println("Error in starting BTObexServer")
+fi
+println(x)
+
+

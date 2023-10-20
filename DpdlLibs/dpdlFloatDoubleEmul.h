@@ -1,0 +1,55 @@
+# File: dpdlFloatDoubleEmul.h
+#
+# Example: Math operations using the double precision floating point emulation library
+#
+# Author: A.Costa
+# e-mail: info@dpdl.io
+#
+#
+
+# main
+println("Testing DoubleEmul double emulation functions..")
+println("")
+object double_emul = getClass("DoubleEmul")
+object d1_emul = loadObj("DoubleEmul", "1.5")
+long d1 = d1_emul.doubleValue()
+println("d1_emul: " + d1_emul.toString() + " d1: " + d1)
+object d2_emul = loadObj("DoubleEmul", "2.0")
+long d2 = d2_emul.doubleValue()
+println("d2_emul: " + d2_emul.toString() + " d2: " + d2)
+println("")
+println("compare:")
+bool b_res = double_emul.lt(d1, d2)
+println("d1 is less than d2: " + b_res)
+println("")
+println("sub:")
+long res = double_emul.sub(d1, d2)
+println("result: " + double_emul.toString(res, 2))
+println("")
+println("multiply:")
+res = double_emul.mul(d1, d2)
+println("result: " + double_emul.toString(res, 2))
+println("")
+println("--------------------------")
+println("Testing FloatEmul float emulation functions..")
+println("")
+object float_emul = getClass("FloatEmul")
+object f1_emul = loadObj("FloatEmul", "0.5")
+int f1 = f1_emul.floatValue()
+println("f1_emul: " + f1_emul.toString() + " f1: " + f1)
+object f2_emul = loadObj("FloatEmul", "0.2")
+int f2 = f2_emul.floatValue()
+println("f2_emul: " + f2_emul.toString() + " f2: " + f2)
+println("")
+println("compare:")
+bool b_resf = float_emul.lt(f1, f2)
+println("f1 is less than f2: " + b_resf)
+println("")
+println("sub:")
+int resf = float_emul.sub(f1, f2)
+println("result: " + float_emul.toString(resf))
+println("")
+println("multiply:")
+resf = float_emul.mul(f1, f2)
+println("result: " + float_emul.toString(resf))
+println("")

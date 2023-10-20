@@ -1,0 +1,22 @@
+# File: importantMsgWriter.h
+#
+# Example: This script can be used to input and store messages to be sent by the BTObexServer.h script.
+#		   The messages are store in the record store BTObexServer_MSGQueue
+#
+# (c)opyright 2009
+# SEE Solutions
+#
+# e-mail: info@dpdl.io
+#
+#
+include("dpdllib.h")
+include("dpdlRS.h")
+
+func openDB()
+    MSG_RS = createRS("BTObexServer_MSGQueue", AUTHMODE_ANY, dpdlTrue, dpdlTrue)
+end
+
+#entry point
+int MSG_RS = -1
+openDB()
+println("DB opened: " + MSG_RS)
