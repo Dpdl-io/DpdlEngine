@@ -2,7 +2,7 @@
                     Dpdl
                     
      Dynamic Packet Definition Language
-             www.seesolutions.it
+             www.dpdl.io
 
   This is a sample script written in Dpdl
   (Dynamic Packet Definition Language) showing
@@ -15,7 +15,7 @@
   (c)opyright 2003
   SEE Solutions
   
-  contact: info@seesolutions.it
+  contact: info@dpdl.io
   
   -----------------------------------------------------
   Example:        Phone-Book
