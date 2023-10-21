@@ -3,13 +3,13 @@
 # NOTE: Do not edit or delete this file, it's required to keep the Dpdl DEMO release active
 #
 # This scripts serves as a validator for the DEMO release of Dpdl. It simply accesses a web page of
-# SEE Solutions at the following url: http://www.dpdl.io
+# SEE Solutions at the following url: https://www.dpdl.io
 # 
 # contact: info@dpdl.io
 #
 
 # main
-string URL_to_validate = "http://www.dpdl.io/DemoDpdl_validator.html"
+string URL_to_validate = "https://www.dpdl.io/DemoDpdl_validator.html"
 
 object url = loadObj("URL", URL_to_validate)
 object url_connection = url.openConnection()

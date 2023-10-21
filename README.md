@@ -123,8 +123,7 @@ The speedup is x 25 times faster compared to a standard record store access
 ### Access to the complete JRE Java platform API and external java libraries
 
 
-The Dpdl scripting language API allows to access all classes and methods of the underlying Java Platform (JRE) and external java libraries
-via the **loadObj(..)** and **getClass(..)** methods.
+The Dpdl scripting language API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and <ins>external java libraries</ins>.
 
 **Example:** using a java HashMap (which is resolved to java.util.HashMap)
 ```python
@@ -142,7 +141,7 @@ s=map.get(4)
 println(s)
 ```
 
-In this way java libraries defined in class definition configuration file (./DpdlLibs/libs/classes.txt) can be accessed.
+In this way all java libraries defined in class definition configuration file (./DpdlLibs/libs/classes.txt) can be loaded and accessed.
 The default configuration includes Java 5 Platform API (1.5), and bluecove Bluetooth JSR-82.
 
 The default configuration can be extended or updated to resolve additional java APIs (editing of class definition configuration file)
@@ -158,11 +157,10 @@ The default configuration can be extended or updated to resolve additional java 
 ### Embedded C code
 
 Dpdl allows the embedding and execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted via a native Dpdl library that has
-a very small footprint and **includes all essential C libraries** and language constructs (subset of ISO standard C90 and **POSIX** compliant) with
+a very small footprint and **includes all essential C libraries** and language constructs (a minimal subset of ISO standard C90 and **POSIX** compliant) with
 **no external dependencies**.
 
 Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
-
 
 Example Dpdl script with embedded C code:
 ```c
@@ -206,7 +204,7 @@ This is a more complete example of the usage of embedded C code within Dpdl:
 
 [dpdlEmbeddedC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlEmbeddedC.h)
 
-The Dpdl native API library 'dpdlnativeapi' provides a Security check to guarantee that the library have not been compromised.
+The Dpdl native API library 'dpdlnativeapi' provides also a Security check to guarantee that the library have not been compromised.
 Therefore the embedded C code execution cannot be mangled internally and guarantees the correct execution of C code.
 In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
 
@@ -217,6 +215,7 @@ In the case the library is updated, the corresponding verification checksums nee
 ### Embedding of Python
 
 Python code can be embedded within Dpdl script by using the keyword '**>>python**'.
+MicroPython will also be supported as option in the coming release.
 
 Example Dpdl script with embedded 'Python' code:
 ```python
@@ -287,6 +286,8 @@ println("embedded OCaml exit code: " + exit_code);
 
 ```
 
+### Other programming languages
+
 Other programming languages may also be supported in future. Please feel free to suggest your opinion on the
 Discussion section on the DpdlEngine GitHub repository
 
@@ -309,7 +310,7 @@ DpdlEngine V1.0 has been tested on:
 
 	* MacOS arm64
 	* Linux x86_64
-	* Raspberry PI (arm)
+	* Raspberry PI 3 (arm)
 	* Windows 64-bit
 	* Android
 	* JavaME
@@ -331,9 +332,15 @@ Dpdl is currently developed by SEE Solutions and the following integrations has 
 
 The Dpdl framework and API documentation are available via the following links:
  
-[Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 [Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+
+[Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+
+[Dpdl embedded C lib Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+
+Dpdl Java API Documentation (available soon)
+
 
 
 ## Download 'DpdlEngine lite' release package (Free version)
@@ -483,9 +490,9 @@ license.
 	- The 'DpdlClient' console application that allows to execute a set of commands
 	  for interacting with the core DpdlEngine
 	  
-	- Dpdl scripting engine with API libraries
+	- Dpdl scripting engine with API libraries (Support for Embedded C, Python, OCaml)
 	
-	- Example DpdlPacket scripts (located in ./DpdlPackets/ and ./DpdlLibs/ folder)
+	- Example Dpdl scripts (located in ./DpdlPackets/ and ./DpdlLibs/ folder)
 	
 	- Example DpdlPacket (dpdl_PHONEBOOK.dpdl) with corresponding
 	  Dpdl code definition file
@@ -501,6 +508,7 @@ To execute the examples enter DpdlClient console and use the '-load' command:
 enter the Dpdl script name to execute:
 arraylistExample.h @TEST1
 ```
+The scripts can also be run via the API function DPDLAPI_execCode(..) or with the '-load' parameter at startup.
 
 A set of examples/Tests can be found in the script './DpdlLibs/dpdlLibExamples.h',
 where different Tests/Examples can be executed individually via tagged execution, by supplying the @TAG attribute along with the filename.
@@ -699,7 +707,7 @@ please write to the following e-mail address:
 
 info@dpdl.io
 
-We will propose an appropriate license plan tailored for your needs and budget.
+We will propose an appropriate license plan tailored for your needs and budget
 
 
 

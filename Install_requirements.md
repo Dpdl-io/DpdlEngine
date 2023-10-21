@@ -27,18 +27,20 @@ The Dpdl native API library is platform dependent and is available for the follo
 	* Raspberry PI (ARM)
 	* Windows 64-bit
 	
-The native libraries are located in the corresponding platform/architecture folder under './lib/native/'
+The native libraries are located in the corresponding platform/architecture folder under './lib/native/' in the corresponding platform folder.
 
-The library can be compiled for additional platforms by us on your request by writing to info@seesolutions.it
+The library can be compiled for additional platforms by us on your request by writing to info@dpdl.io
 
 You may delete the libraries for platforms that you do not use (e.g. ./lib/native/someplatform )
 
 ## Embedded 'Python' code
 
-Note: Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)** and **Linux (x86_64)**
+Note: Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
-	* **on Linux:** Python version 3.2m (gcc version 4.4.7)
-	* **on MacOS:** Python version 3.12 (Apple clang version 14.0.3)
+	* on **Linux:** Python version 3.2m (gcc version 4.4.7)
+	* on **MacOS:** Python version 3.12 (Apple clang version 14.0.3)
+	* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
+	* Windows version will follow soon :)
 	
 	
 Support for more platforms will be released soon. MicroPython will also be available as option.
@@ -50,7 +52,8 @@ The embedding of OCaml code is still experimental, but works.
 
 See the official OCaml-java documentation at http://www.ocamljava.org/documentation/
 	
-Eventually update the 'ocamlrun-scripting.jar' in the ./lib folder with the newest release downloaded from ocamljava.org
+Eventually you may update the 'ocamlrun-scripting.jar' in the ./lib folder with the newest release downloaded 
+directly from ocamljava.org
 	
 
 # How to run
@@ -73,7 +76,7 @@ On Windows
 runDpdlClient.bat
 ```
 
-NOTE: If a newer version of Java has been installed, use the following startup script (due to novel java module handling, This will
+NOTE: <ins>If a newer version of Java has been installed</ins>, use the following startup script (due to novel java module handling, This will
 be fixed in the next release):
 ```
 sh run_DpdlClient_java20.sh
