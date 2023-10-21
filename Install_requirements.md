@@ -22,10 +22,10 @@ https://www.java.com/en/download/manual.jsp
 Some Dpdl API functions (ex. embedded C code) make use of the Dpdl native API library (dpdlnativeapi).
 The Dpdl native API library is platform dependent and is available for the following platforms:
 
-	* MacOS 13.4 (ARM)
+	* MacOS 13.4 (arm)
 	* Linux x86_64 (x84 64bit)
-	* Raspberry PI (ARM)
-	* Windows 64-bit
+	* Raspberry PI (armv7)
+	* Windows 64-bit (Intel)
 	
 The native libraries are located in the corresponding platform/architecture folder under './lib/native/' in the corresponding platform folder.
 
@@ -35,16 +35,23 @@ You may delete the libraries for platforms that you do not use (e.g. ./lib/nativ
 
 ## Embedded 'Python' code
 
-Note: Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
+### Supported platforms
+
+Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
 	* on **Linux:** Python version 3.2m (gcc version 4.4.7)
 	* on **MacOS:** Python version 3.12 (Apple clang version 14.0.3)
 	* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
-	* Windows version will follow soon :)
+	* Windows version will follow soon in the coming release
 	
 	
 Support for more platforms will be released soon. MicroPython will also be available as option.
 
+**Note:** The environment variable 'PYTHONHOME' and 'PYTHONPATH' need to be setted correctly for finding the python libraries
+```
+export PYTHONHOME=/your_path/to/python/install_dir/
+export PYTHONPATH=/your_path/to/python/install_dir/
+``` 
 
 ## Embedded 'OCaml' code
 

@@ -267,16 +267,23 @@ int exit_code = dpdl_exit_code()
 println("ebedded python exit code: " + exit_code);
 ```
 
+**Note:** The environment variable 'PYTHONHOME' and 'PYTHONPATH' need to be setted correctly for finding the python libraries
+```
+export PYTHONHOME=/your_path/to/python/install_dir/
+export PYTHONPATH=/your_path/to/python/install_dir/
+``` 
 
-Note: Currently the 'DpdlEngine lite' release includes only the native python library 'libdpdlpython' for MacOS (arm64)
+### Supported platforms
 
-IMPORTANT: The Library for Linux needs to be downloaded separately from:
+Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
-https://www.dpdl.io/downloads/dpdlpython.zip
- 
-Support for more platforms will be released soon
+	* on **Linux:** Python version 3.2m (gcc version 4.4.7)
+	* on **MacOS:** Python version 3.12 (Apple clang version 14.0.3)
+	* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
+	* Windows version will follow soon in the coming release
 
 
+Support for more platforms will be released soon. MicroPython will also be available as option.
 
 ### Embedded OCaml code (experimental)
 
