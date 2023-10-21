@@ -144,6 +144,27 @@ mycode.testFunc("LoadCodeFunc", mystr1, mystr2)
 println("done")
 ```
 
+The script file loaded in the example above 'LoadCodeFunc.h' may also define a **constructor**, which is called
+iff parameters are supplied.
+
+LoadCodeFunc.h
+```python
+# constructor
+func LoadCodeFunc(string map)
+	println("object LoadCodeFunc loaded")
+	println("map: " + map.toString())
+end
+
+...
+```
+
+The constructor is called if a parameter is supplied
+```
+object mymap = loadObj("HashMap")
+object mycode = loadCode("LoadCodeFunc.h", mymap)
+```
+
+
 
 ### Dpdl embedded C code
 
