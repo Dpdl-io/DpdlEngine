@@ -95,7 +95,7 @@ endwhile
 
 ### Dpdl API functions
 
-[Dpdl scripting API Documentation](https://github.com/SEESolutions-it/DpdlEngine/blob/main/doc/Dpdl_API.md)
+[Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 
 ### DpdlObject and Java bindings
@@ -242,7 +242,7 @@ Therefore the embedded C code execution cannot be mangled internally and guarant
 In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
 
 **Dpdl embedded C library documentation:**
-[Dpdl_embedded_C_libs.md](https://github.com/SEESolutions-it/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 
 ### Embedding of Python
@@ -581,7 +581,7 @@ int status = DPDLAPI_execCode("sample.h", "null)
 
 Here you can find all methods available for the Dpdl scripting API: 
 
-[Dpdl_API](https://github.com/SEESolutions-it/DpdlEngine/blob/main/doc/Dpdl_API.md)
+[Dpdl_API](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 Dpdl allows to access all java classes of the underlying JRE environment,
 providing access to the whole Java platform API via the loadObj(..) and the getClass(..)
