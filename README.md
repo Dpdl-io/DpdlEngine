@@ -25,6 +25,7 @@ of ANSI C code, Python and OCaml</ins> language directly within Dpdl scripts.
 * using the power of multiple programming languages
 * without wasting time on installing, compiling and configuring environments
 * designed for running on constrained devices
+* compressing, querying and accessing data on constrained devices
 
 Dpdl is designed to be simple, very compact, robust, extendible and portable to almost every platform.
 
