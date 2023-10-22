@@ -827,4 +827,10 @@ sequentially i.e 'armin 1', 'armin 2', etc.
 Average execution time for 48877 random queries: 2 milliseconds
 
 
+#### Record Store data access (on JavaME Embedded Profile)
+
+Queries on a JavaME RecordStore are feasible only with via RecordFilter and RecordComparator classes) but which is not applicable 
+in terms of speed (too slow).
+
+Anyhow the average record store access time for 48877 entries is: 55 milliseconds
 
