@@ -58,6 +58,21 @@ arr2[] = "1,2,3,4,5"
 arr3[] = "1;2;3;4;5"
 ```
 
+#### Pointers
+
+Dpdl supports 'pointers' as references to variables.
+
+Example:
+```
+func myFunc(int *i)
+	i = i + 10
+end
+
+int x = 10
+myFunc(&x)
+println("x: " + x)
+```
+
 ### Function and Control flow
 
 **function** definition
