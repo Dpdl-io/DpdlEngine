@@ -22,7 +22,7 @@ of ANSI C code, Python and OCaml</ins> language directly within Dpdl scripts.
 
 * developing faster your ideas
 * on all platforms
-* using the power of multiple programming languages
+* using the power of multiple programming languages, reusing code
 * without wasting time on installing, compiling and configuring environments
 * designed for running on constrained devices
 * compressing, querying and accessing data on constrained devices
@@ -101,6 +101,7 @@ on devices that have limited memory and storage capabilities.
 	* As an embedded scripting engine for applications
 	* A library module
 	* As utility tool
+	* to handle efficiently data on memory constrained devices
 	
 	
 ### Features
@@ -109,6 +110,7 @@ on devices that have limited memory and storage capabilities.
 * **Built-in Dpdl scripting engine with support for custom function extensions** (DpdlExtension interface)
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform and to API libraries**
 * **ANSI C code, Python and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code), a subset of C90 standard, POSIX compliant
+* Support for pointers and references
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * **Packing data in a DpdlPacket is a convenient way to optimize and speedup access to data**.
@@ -243,7 +245,7 @@ Currently the 'DpdlEngine lite' release includes the native Python library '**li
 	* on **Linux:** Python version 3.2m (gcc version 4.4.7)
 	* on **MacOS:** Python version 3.12 (Apple clang version 14.0.3)
 	* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
-	* Windows version will follow soon in the coming release
+	* <ins>Windows version will follow soon</ins> in the coming release
 	
 
 I
@@ -526,7 +528,10 @@ i.e. arraylistExample.h @TEST1
 
 	[dpdlFullExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFullExample.h)
 	
+* Example using pointers and references
 
+	[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)
+	
 * Set of 14 examples/tests. The examples make use of @TAG execution to allow execution of each individual example.
 	
 	[dpdlLibExamples.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlLibExamples.h)
