@@ -193,7 +193,7 @@ pid_t fork(void);
 int getlogin_r(char *, size_t);
 int getpagesize(void);
 char *getpass(char *);
-pid_t getpgrp(void);
+pid_t getpgrp(void);    -> On Window: pid_t getpgrp(pid_t);  
 pid_t getpid(void);
 pid_t getppid(void);"
 uid_t getuid(void);
@@ -226,7 +226,7 @@ int rmdir(char *);
 void *sbrk(intptr_t);
 int setgid(gid_t);
 int setpgid(pid_t, pid_t);
-pid_t setpgrp(void);
+pid_t setpgrp(void);      ->   On Windows: pid_t setpgrp(pid_t, pid_t);
 int setregid(gid_t, gid_t);
 int setreuid(uid_t, uid_t);
 pid_t setsid(void);
