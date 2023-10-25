@@ -693,7 +693,7 @@ The validation script can be inspected here:
 	
 * The class definition file (classes.txt), used for dynamic loading and resolving of library classes via loadObj(..) and getClass(..) methods can be edited only in the registered version of Dpdl.
 	
-* The execution of Dpdl scripts is limited to 500 lines of code, embedded C code and OCaml is limited to 100 lines of code
+* The execution of Dpdl scripts is limited to 500 lines of code, embedded C code, Python and OCaml is limited to 100 lines of code per section.
 	
 * The Dpdl scripting API function 'systemExec' is available only in the registered version of Dpdl
 	
