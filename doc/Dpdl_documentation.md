@@ -175,29 +175,29 @@ endwhile
 
 **Arithmetic:** 
 	
-	* + (addition)
-	* - (subtraction)
-	* * (multiplication)
-	* / (division)
-	* % (modulo)
-	* negate a value: - (eg. -1)
+* + (addition)
+* - (subtraction)
+* * (multiplication)
+* / (division)
+* % (modulo)
+* negate a value: - (eg. -1)
 	
 Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (ec. 1 * 2). This is currently not allowed: 1*2
 	
 **Logical:**
 
-	* &&
-	* ||
-	* ! 
+* &&
+* ||
+* ! 
 	
 **Comparators:**
 
-	* > (greater than)
-	* < (less than)
-	* >= (grater than equal)
-	* <= (less than equal)
-	* == (equal)
-	* =! (not equal)
+* > (greater than)
+* < (less than)
+* >= (grater than equal)
+* <= (less than equal)
+* == (equal)
+* =! (not equal)
 	
 	
 ### Dpdl API functions
