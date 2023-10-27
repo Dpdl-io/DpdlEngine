@@ -30,4 +30,4 @@ for i = 1 to n do print_endline s done;;
 
 int exit_code = dpdl_exit_code()
 
-println("embedded OCaml exit code: " + exit_code);
+println("embedded OCaml exit code: " + exit_code)

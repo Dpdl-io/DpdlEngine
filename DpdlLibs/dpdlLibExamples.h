@@ -458,3 +458,57 @@ while(DPDLAPI_threadRunning(thread_instance) == dpdlTrue)
 	sleep(1000)
 endwhile
 println("finished")
+println("")
+println("-------------------------------")
+
+#@TEST15
+println("TEST 15 #######################################")
+println("Executing embedded C code")
+int n = 6
+double xc = 10.0d
+string a = "test"
+
+dpdl_stack_push(n, xc, a)
+
+>>c
+	#include <stdio.h>
+	#include <dpdl.h>
+	
+	int main(int argc, char **argv){
+		printf("Hello C from Dpdl!\n");
+		printf("\n");
+		printf("num params: %d\n", argc);
+		int cnt;
+	    for (cnt = 0; cnt < argc; cnt++){
+	        printf("	param %d: %s\n", cnt, argv[cnt]);
+	    }
+	    return 0;
+	}
+<<
+int exit_code = dpdl_exit_code()
+
+println("ebedded C exit code: " + exit_code)
+println("done")
+println("")
+println("-------------------------------")
+
+#@TEST16
+println("TEST 16 #######################################")
+println("testing embedding python code")
+println("")
+
+>>python
+languages = ['Dpdl', 'C', 'Python', 'OCaml']
+
+for language in languages:
+	print(language)
+<<
+println("")
+
+int exit_code_py = dpdl_exit_code()
+
+println("ebedded python exit code: " + exit_code_py)
+println("finished")
+println("")
+println("-------------------------------")
+

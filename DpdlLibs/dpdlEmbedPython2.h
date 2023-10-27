@@ -37,4 +37,4 @@ if __name__ == "__main__":
 <<
 int exit_code = dpdl_exit_code()
 
-println("ebedded python exit code: " + exit_code);
+println("ebedded python exit code: " + exit_code)

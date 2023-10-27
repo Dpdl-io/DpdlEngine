@@ -22,4 +22,4 @@ println("")
 
 int exit_code = dpdl_exit_code()
 
-println("ebedded python exit code: " + exit_code);
+println("ebedded python exit code: " + exit_code)

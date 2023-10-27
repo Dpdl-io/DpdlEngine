@@ -10,6 +10,7 @@
 **Features:**
 * Types supported (**int, byte, double, float, long, string, bool, array[], object**)
 * Native Threads
+* support for pointers and references (ec. int *px = &x)
 * API: native API, Dpdl API, MIDP API, JRE API
 * Access to the full underlying Java Platform API (JRE) or other external java libraries
 * Record Store creation and access with virtual file system support
@@ -170,7 +171,35 @@ while(<expression>)
 endwhile
 ```
 
+### Arithmetic and logical operators
 
+**Arithmetic:** 
+	
+	* + (addition)
+	* - (subtraction)
+	* * (multiplication)
+	* / (division)
+	* % (modulo)
+	* negate a value: - (eg. -1)
+	
+Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (ec. 1 * 2). This is currently not allowed: 1*2
+	
+**Logical:**
+
+	* &&
+	* ||
+	* ! 
+	
+**Comparators:**
+
+	* > (greater than)
+	* < (less than)
+	* >= (grater than equal)
+	* <= (less than equal)
+	* == (equal)
+	* =! (not equal)
+	
+	
 ### Dpdl API functions
 
 [Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)

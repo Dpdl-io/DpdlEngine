@@ -149,6 +149,8 @@ The validation script can be inspected here:
 
 * The 'Thread(..)' API function is available only in the registered version of Dpdl (use createThread(..) instead, it provides similar functionality)
 
+* Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS 
+
 
 
 

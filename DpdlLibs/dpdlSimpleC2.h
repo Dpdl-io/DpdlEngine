@@ -38,7 +38,7 @@ dpdl_stack_push(n, x, a)
 <<
 int exit_code = dpdl_exit_code()
 
-println("ebedded C exit code: " + exit_code);
+println("ebedded C exit code: " + exit_code)
 
 # again Dpdl...
 

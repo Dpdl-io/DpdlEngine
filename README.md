@@ -21,7 +21,7 @@ of ANSI C code, Python and OCaml</ins> language directly within Dpdl scripts.
 **Dpdl is useful for:**
 
 * developing faster your ideas
-* on all platforms
+* on multiple platforms
 * using the power of multiple programming languages, reusing code
 * without wasting time on installing, compiling and configuring environments
 * designed for running on constrained devices
@@ -707,7 +707,9 @@ The validation script can be inspected here:
 
 * The 'Thread(..)' API function is available only in the registered version of Dpdl (use createThread(..) instead, it provides similar functionality)
 
-**NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Raspberry Pi. 
+* Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS 
+
+**NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
 Contact us if this is the case.
 
