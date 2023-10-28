@@ -18,5 +18,6 @@
 
 ## Planned
 
-* Implement plug-in to enable the embedding of 'lua' programming language via keyword '**>>lua**'
-* Implement plug-in to enable the embedding of 'go' programming language via keyword '**>>go**'
+* Implement language plug-in to enable the embedding of 'lua' programming language via keyword '**>>lua**'
+* Implement language plug-in to enable the embedding of 'go' programming language via keyword '**>>go**'
+* Implement language plugi-in for Ch embedded C/C++ interpreter from softintegration.com
