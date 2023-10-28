@@ -20,6 +20,6 @@
 
 The following programming language plug-ins will be developed:
 
-* Implement language plug-in to enable the embedding of 'lua' programming language via keyword '**>>lua**'
-* Implement language plug-in to enable the embedding of 'go' programming language via keyword '**>>go**'
-* Implement language plug-in for 'Ch' embedded C/C++ interpreter from softintegration.com (requires separate commercial license from softintegration) -> the plugin 
+* Implement language plug-in to enable the embedding of 'lua' programming language -> keyword '**>>lua**'
+* Implement language plug-in to enable the embedding of 'go' programming language -> keyword '**>>go**'
+* Implement language plug-in for 'Ch' embedded C/C++ interpreter from softintegration.com (requires separate commercial license from softintegration) -> keyword '**ch**'
