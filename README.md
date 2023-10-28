@@ -106,10 +106,11 @@ on devices that have limited memory and storage capabilities.
 	
 ### Features
 
-* **DpdlEngine is optimized to run on a vast range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, compiled DpdlVM for target platform)
+* **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, compiled DpdlVM for target platform)
 * **Built-in Dpdl scripting engine with support for custom function extensions** (DpdlExtension interface)
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform and to API libraries**
 * **ANSI C code, Python and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code), a subset of C90 standard, POSIX compliant
+* Other programming languages can be embedded by configuration and via a dedicated interface (see DpdlCustom tag in DpdlEngine.ini) 
 * Support for pointers and references
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
