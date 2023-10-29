@@ -4,6 +4,7 @@
 ## New 
 
 * The native Dpdl library for Python 'dpdlpython' is now available  in the 'DpdlEngine lite' release (for Mac OS X arm64, Linux x86_64 and Raspberry PI 3 armv7)
+* 'lua' scripts can now be embedded in Dpdl scripts via the '**>>lua**' keyword (the plugin is available as separate download and requires update of 'DpdlEngine.ini' config file
 
 ## Fixes
 
@@ -22,4 +23,4 @@ The following programming language plug-ins will be developed:
 
 * Implement language plug-in to enable the embedding of 'lua' programming language -> keyword '**>>lua**'
 * Implement language plug-in to enable the embedding of 'go' programming language -> keyword '**>>go**'
-* Implement language plug-in for 'Ch' embedded C/C++ interpreter from softintegration.com (requires separate commercial license from softintegration) -> keyword '**ch**'
+* Implement language plug-in for 'Ch' embedded C/C++ interpreter from softintegration.com (requires separate commercial license from softintegration) -> keyword '**>>ch**'

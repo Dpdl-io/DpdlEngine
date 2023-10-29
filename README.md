@@ -14,7 +14,8 @@ developed by
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries and supports the <ins>embedding and execution
-of ANSI C code, Python and OCaml</ins> language directly within Dpdl scripts. 
+of ANSI C code, Python and OCaml</ins> language directly within Dpdl scripts. Other programming language can be implemented and embedded via
+a dedicated plugin-in interface and configuration.
 
 ## <ins>Dpdl</ins> ( Java API + Embedded C + Python + OCaml) = <ins>Powerful and Versatile</ins>
 
@@ -69,7 +70,7 @@ Sample Dpdl script (Bluetooth device discovery using Dpdl high level BT API):
  fi
 ```
 
-Dpdl can be used to encode, store, control, visualize and query data efficiently especially on small memory footprint
+Dpdl can be used to encode, store, control and query data efficiently especially on small memory footprint
 devices and to foster rapid application development. Dpdl comes with a very compact and portable
 **scripting engine** and an **extensible API interface** for the development of mobile
 applications and embedded system software.
@@ -236,7 +237,7 @@ println("")
 
 int exit_code = dpdl_exit_code()
 
-println("ebedded python exit code: " + exit_code);
+println("embedded python exit code: " + exit_code);
 ```
 
 #### Supported platforms
@@ -244,12 +245,20 @@ println("ebedded python exit code: " + exit_code);
 Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
 	* on **Linux:** Python version 3.2m (gcc version 4.4.7)
-	* on **MacOS:** Python version 3.12 (Apple clang version 14.0.3)
+	* on **MacOS:** Python version 3.12 (clang version 14.0.3)
 	* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
 	* <ins>Windows version will follow soon</ins> in the coming release
 	
 
-I
+#### Compatiblitiy matrix (current status)
+
+
+| Platform    |Embedded C |Python |OCaml |Lua |go |available soon|ch C/C++
+| Linux x86_64 | supported|supported|supported|supported|available soon|available soon|
+| Mac OS X (ar64) | supported|supported|supported|supported|available soon|available soon|
+| Raspberry PI 3 (armv7) | supported|supported|supported|supported|available soon|available soon|
+| Windows64| supported| available soon |supported|available soon|available soon|available soon|
+
 
 ### Embedding of OCaml (experimental)
 
