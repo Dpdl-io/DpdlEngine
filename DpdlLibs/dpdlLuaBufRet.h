@@ -1,7 +1,9 @@
 # File: dpdlLuaBufRet.h
 #
-# Example: This Dpdl script executes an embedded 'lua' script, dpdl_main(..) as entry point with a parameter table from variables pushed onto the dpdl stack.
-#			The dpdl_main function returns a table which is intercepted in Dpdl via dpdl_stack_buf_get(buffer_key)
+# Example: 
+# This Dpdl script executes an embedded 'lua' script, dpdl_main(..) as entry point with a parameter table
+# from variables pushed onto the dpdl stack. The dpdl_main function returns a table which is
+# intercepted in Dpdl via dpdl_stack_buf_get(buffer_key)
 #			
 #
 # Author: AC

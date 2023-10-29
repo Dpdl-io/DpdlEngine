@@ -1,6 +1,7 @@
 # File: dpdlLuaSimple.h
 #
-# Example: This Dpdl script executes an embedded 'lua' script
+# Example: 
+# This Dpdl script executes an embedded 'lua' script
 #
 # Author: AC
 # e-mail: ac@dpdl.io

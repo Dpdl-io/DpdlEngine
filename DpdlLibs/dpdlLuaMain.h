@@ -1,6 +1,8 @@
 # File: dpdlLuaMain.h
 #
-# Example: This Dpdl script executes an embedded 'lua' script, dpdl_main(..) as entry point with a parameter table from variables pushed onto the dpdl stack
+# Example:
+# This Dpdl script executes an embedded 'lua' script, dpdl_main(..) as entry point with a parameter table
+# from variables pushed onto the dpdl stack
 #
 # Author: AC
 # e-mail: ac@dpdl.io
