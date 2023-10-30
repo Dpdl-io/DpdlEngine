@@ -581,6 +581,10 @@ i.e. arraylistExample.h @TEST1
 	
 	[dpdlEmbedPython.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlEmbedPython.h)
 	
+* Embedded Lua code execution within Dpdl script
+	
+	[dpdlLuaBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlLuaBufRet.h)
+	
 * Performs a discovery of bluetooth devices and saves the device addresses discovered in a record store
   
 	[bluetoothDiscoverySave.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bluetoothDiscoverySave.h)
