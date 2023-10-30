@@ -252,13 +252,15 @@ Currently the 'DpdlEngine lite' release includes the native Python library '**li
 
 #### Compatiblitiy matrix (current status)
 
+(X) Supported
+(*) available soon
 
 | Platform |Embedded C |Python |OCaml |Lua |go |ch C/C+ |
 | ---  | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 | supported|supported|supported|supported|available soon|available soon|
-| Mac OS X (ar64) | supported|supported|supported|supported|available soon|available soon|
-| Raspberry PI 3 (armv7) | supported|supported|supported|supported|available soon|available soon|
-| Windows64| supported| available soon |supported|available soon|available soon|available soon|
+| Linux x86_64 |X|X|X|X|*|*|
+| Mac OS X (ar64) |X|X|X|X|*|*|
+| Raspberry PI 3 (armv7) | X|X|X|X|*|*|
+| Windows64|X|*|X|*|*|*|
 
 
 ### Embedding of OCaml (experimental)
