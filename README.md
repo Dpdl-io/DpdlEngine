@@ -250,19 +250,6 @@ Currently the 'DpdlEngine lite' release includes the native Python library '**li
 	* <ins>Windows version will follow soon</ins> in the coming release
 	
 
-#### Compatiblitiy matrix (current status)
-
-(X) Supported
-(*) available soon
-
-| Platform |Embedded C |Python |OCaml |Lua |go |ch C/C+ |
-| ---  | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X|X|X|*|*|
-| Mac OS X (ar64) |X|X|X|X|*|*|
-| Raspberry PI 3 (armv7) | X|X|X|X|*|*|
-| Windows64|X|*|X|*|*|*|
-
-
 ### Embedding of OCaml (experimental)
 
 Currently the functional programming language '**OCaml**' (https://ocaml.org/) is supported, via package (http://www.ocamljava.org/),
@@ -339,6 +326,19 @@ DpdlEngine V1.0 has been tested on:
 	* J2ME (MIDP 2.0)
 		
 		
+### Embedded language - Compatiblitiy matrix (current status)
+
+(X) Supported
+
+(*) available soon
+
+| Platform |Embedded C |Python |OCaml |Lua |go |ch C/C+ |
+| ---  | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X|X|X|*|*|
+| Mac OS X (ar64) |X|X|X|X|*|*|
+| Raspberry PI 3 (armv7) | X|X|X|X|*|*|
+| Windows64|X|*|X|*|*|*|
+
 	
 ## Roadmap
 
