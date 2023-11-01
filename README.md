@@ -244,10 +244,10 @@ println("embedded python exit code: " + exit_code);
 
 Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
-	* on **Linux:** Python version 3.2m (gcc version 4.4.7)
-	* on **MacOS:** Python version 3.12 (clang version 14.0.3)
-	* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
-	* <ins>Windows version will follow soon</ins> in the coming release
+* on **Linux:** Python version 3.2m (gcc version 4.4.7)
+* on **MacOS:** Python version 3.12 (clang version 14.0.3)
+* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
+* <ins>Windows version will follow soon</ins> in the coming release
 	
 
 ### Embedding of OCaml (experimental)
