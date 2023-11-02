@@ -5,7 +5,7 @@
 
 * The native Dpdl library for Python 'dpdlpython' is now available  in the 'DpdlEngine lite' release (for Mac OS X arm64, Linux x86_64 and Raspberry PI 3 armv7)
 * 'lua' scripts can now be embedded in Dpdl scripts via the '**>>lua**' keyword (the plugin is available as separate download and requires update of 'DpdlEngine.ini' config file
-* Lua Dpdl native library is now included in DpdlEngine lite release
+* Lua Dpdl native library is now included in DpdlEngine lite release, but currently combining Python and Lua does not work due --> will be fixed soon
 
 Download link:
 
@@ -16,6 +16,7 @@ https://www.dpdl.io/downloads/369/DpdlEngine_V1.0_release.zip
 
 * Fixed bug resulted from integration of pointers/references
 * 02.11.2023 Fixed bug for Python identification 
+
 
 ## Work in progress
 
