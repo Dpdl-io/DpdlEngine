@@ -14,7 +14,7 @@ developed by
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries and supports the <ins>embedding and execution
-of ANSI C code, Python and OCaml</ins> language directly within Dpdl scripts. Other programming language can be implemented and embedded via
+of ANSI C code, Python, Lua and OCaml</ins> language directly within Dpdl scripts. Other programming language can be implemented and embedded via
 a dedicated plugin-in interface and configuration.
 
 ## <ins>Dpdl</ins> ( Java API + Embedded C + Python + OCaml) = <ins>Powerful and Versatile</ins>
@@ -34,7 +34,7 @@ Dpdl is designed to be simple, very compact, robust, extendible and portable to 
 
 ![Dpdl stack](http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg)
 
-By combining the portability and vast API availability of Java and Python, the expressiveness of OCaml and
+By combining the portability and vast API availability of Java and Python, the expressiveness of Lua and OCaml and
 the power of C programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
 
@@ -98,11 +98,11 @@ on devices that have limited memory and storage capabilities.
 
 **Dpdl can be used:**
 
-	* As rapid application development environment
-	* As an embedded scripting engine for applications
-	* A library module
-	* As utility tool
-	* to handle efficiently data on memory constrained devices
+* As rapid application development environment
+* As an embedded scripting engine for applications
+* A library module
+* As utility tool
+* to handle efficiently data on memory constrained devices
 	
 	
 ### Features
