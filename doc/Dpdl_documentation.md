@@ -388,9 +388,9 @@ example (correct):
 ```python
 println("start executing a python script...")
 
-	>>python
-	print("Hello py\n")
-	<<
+>>python
+print("Hello py\n")
+<<
 	
 println("finished")
 ```
@@ -399,9 +399,9 @@ example (Wrong -> gives IndentationError: unexpected indent):
 ```python
 println("start executing a python script...")
 
-	>>python
-		print("Hello py\n")
-	<<
+>>python
+	print("Hello py\n")
+<<
 	
 println("finished")
 ```
