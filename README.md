@@ -724,7 +724,9 @@ The validation script can be inspected here:
 
 * The 'Thread(..)' API function is available only in the registered version of Dpdl (use createThread(..) instead, it provides similar functionality)
 
-* Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS 
+* Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS
+
+* Dpdl scripts included with 'include(...)' supports execution of embedded code only in the registered version of Dpdl
 
 **NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
