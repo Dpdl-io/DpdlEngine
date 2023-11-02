@@ -24,7 +24,7 @@ a dedicated plugin-in interface and configuration.
 * developing faster your ideas
 * on multiple platforms
 * using the power of multiple programming languages, reusing code
-* without wasting time on installing, compiling and configuring environments
+* without spending time on installing, compiling and configuring environments
 * designed for running on constrained devices
 * compressing, querying and accessing data on constrained devices
 
