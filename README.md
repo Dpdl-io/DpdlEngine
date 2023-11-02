@@ -319,14 +319,14 @@ DpdlEngine V1.0 has been tested on:
 
 	* MacOS arm64
 	* Linux x86_64
-	* Raspberry PI 3 (arm)
+	* Raspberry PI 3 (armv7)
 	* Windows 64-bit
 	* Android
 	* JavaME
 	* J2ME (MIDP 2.0)
 		
 		
-### Embedded language - Compatiblitiy matrix (current status)
+### Embedded language - Compatibility matrix (current status)
 
 (X) Supported
 
@@ -334,10 +334,10 @@ DpdlEngine V1.0 has been tested on:
 
 | Platform |Embedded C |Python |OCaml |Lua |go |ch C/C+ |
 | ---  | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X|X|X|*|*|
-| Mac OS X (ar64) |X|X|X|X|*|*|
-| Raspberry PI 3 (armv7) | X|X|X|X|*|*|
-| Windows64|X|*|X|*|*|*|
+| Linux x86_64 |X|X v3.2|X v4.01|X v5.4|*|*|
+| Mac OS X (arm64) |X|X v3.12|X v4.01|X v5.4|*|*|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v4.01|X v5.4|*|*|
+| Windows64|X|*|X v4.01|*|*|*|
 
 	
 ## Roadmap
