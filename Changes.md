@@ -26,5 +26,6 @@
 
 The following programming language plug-ins will be developed:
 
+* Implement language plug-in to enable the embedding of 'ruby' programming language -> keyword '**>>ruby**'
 * Implement language plug-in to enable the embedding of 'go' programming language -> keyword '**>>go**'
 * Implement language plug-in for 'Ch' embedded C/C++ interpreter from softintegration.com (requires separate commercial license from softintegration) -> keyword '**>>ch**'
