@@ -8,15 +8,11 @@
 * Lua Dpdl native library is now included in DpdlEngine lite release, but currently combining Python and Lua does not work due --> will be fixed soon
 * It's now possible to launch a Dpdl script via the '-load' parameter at DpdlEngine startup (eg: java -jar DpdlEngine_V1.0_release.jar -load arraylistExample.h)
 
-Download link:
-
-https://www.dpdl.io/downloads/369/DpdlEngine_V1.0_release.zip
-
 
 ## Fixes
 
 * Fixed bug resulted from integration of pointers/references
-* 02.11.2023 Fixed bug for Python identification 
+* 02.11.2023 Fixed bug for Python indentation 
 
 
 ## Work in progress
