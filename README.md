@@ -328,9 +328,9 @@ DpdlEngine V1.0 has been tested on:
 		
 ### Embedded language - Compatibility matrix (current status)
 
-(X) Supported
+(X + version)**Supported**
 
-(*) available soon
+(*) **available soon**
 
 | Platform |Embedded C |Python |OCaml |Lua |go |ch C/C+ |
 | ---  | --- | --- | --- | --- | --- | --- |
