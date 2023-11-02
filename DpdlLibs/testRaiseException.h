@@ -26,7 +26,7 @@ object o =  loadObj("String", "test")
 raise(o)
 
 println("testing bool expression raise")
-raise(o != null)
+raise(o =! null)
 
 dpdl_print_exception_table()
 
