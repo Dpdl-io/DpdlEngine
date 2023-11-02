@@ -374,11 +374,37 @@ int exit_code = dpdl_exit_code()
 println("ebedded python exit code: " + exit_code);
 ```
 
-**Note:** The environment variable 'PYTHONHOME' and 'PYTHONPATH' need to be setted correctly for finding the python libraries
+**Note:** The environment variable '**PYTHONHOME**' and '**PYTHONPATH**' need to be set correctly for finding the python libraries
 ```
 export PYTHONHOME=/your_path/to/python/install_dir/
 export PYTHONPATH=/your_path/to/python/install_dir/
 ``` 
+
+The indentation needs to be consistent with the Python language specification.
+
+The Dpdl runtime considers the '**>>python**' tag as starting indentation point
+
+example (correct):
+```python
+println("start executing a python script...")
+
+	>>python
+	print("Hello py\n")
+	<<
+	
+println("finished")
+```
+
+example (Wrong -> gives IndentationError: unexpected indent):
+```python
+println("start executing a python script...")
+
+	>>python
+		print("Hello py\n")
+	<<
+	
+println("finished")
+```
 
 ### Supported platforms
 
