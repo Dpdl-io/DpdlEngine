@@ -22,6 +22,51 @@ option. See **[DpdlCustom]** tag in 'DpdlEngine.ini' configuration file.
 <<
 ```
 
+The C code may, or may not include a 'main(..)' function. 
+If the main function is defined, parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function
+are passed as parameters to the main function in the C code.
+
+Example without C main(..):
+```python
+println("my Dpdl script embeds some C code")
+
+>>c
+#include <stdio.h>
+
+printf("Hello C from Dpdl\n");
+<<
+
+```
+
+Example with C main(..) function accepting parameters, and writing a result to the Dpdl stack:
+```python
+println("my Dpdl script embeds some C code")
+
+dpdl_stack_push("dpdlbuf_myresult", "param1", "param 2", 23)
+>>c
+#include <stdio.h>
+#include <dpdl.h>
+
+int main(int argc, char **argv){
+	printf("Hello C from Dpdl!\n");
+	printf("\n");
+	printf("num params: %d\n", argc);
+	int cnt;
+    for (cnt = 0; cnt < argc; cnt++){
+        printf("	param %d: %s\n", cnt, argv[cnt]);
+    }
+    dpdl_stack_buf_put("my result from C");
+    return 0;
+}
+<<
+int exit_code = dpdl_exit_code()
+println("finished executing embedded C code: " + exit_code)
+
+string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
+println("response buffer: " + buf)
+```
+
+
 #### documentation
 
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
@@ -56,6 +101,7 @@ option. See **[DpdlCustom]** tag in 'DpdlEngine.ini' configuration file.
 	your Lua code
 <<
 ```
+
 
 ### ROOT Data Analysis Framework (C/C++)
 
