@@ -4,7 +4,7 @@
 ## New 
 
 * The native Dpdl library for Python 'dpdlpython' is now available  in the 'DpdlEngine lite' release (for Mac OS X arm64, Linux x86_64 and Raspberry PI 3 armv7)
-* 'lua' scripts can now be embedded in Dpdl scripts via the '**>>lua**' keyword (the plugin is available as separate download and requires update of 'DpdlEngine.ini' config file
+* 'lua' scripts can now be embedded in Dpdl scripts via the '**>>lua**' keyword
 * Lua Dpdl native library is now included in DpdlEngine lite release, but currently combining Python and Lua does not work due --> will be fixed soon
 * It's now possible to launch a Dpdl script via the '-load' parameter at DpdlEngine startup (eg: java -jar DpdlEngine_V1.0_release.jar -load arraylistExample.h)
 * Added message parameter to function raise(object condition, string msg) 
