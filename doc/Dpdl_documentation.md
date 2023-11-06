@@ -16,7 +16,8 @@
 * Record Store creation and access with virtual file system support
 * Static script execution: static code declarations (*.h_static) are executed only once in a Thread
 * Support for custom function extensions
-* **ANSI C code** and **OCaml** functional programming language can be embedded directly within Dpdl scripts (interpreted/compiled code).
+* **ANSI C code**, Python, Lua and **OCaml** functional programming language can be embedded directly within Dpdl scripts (interpreted/compiled code).
+* Other programming languages can be easily integrated via a defined plug-in interface and configuration
 * Tools for converting Dpdl scripts to Java and C/C++ code
 
 
@@ -410,10 +411,10 @@ println("finished")
 
 Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
-	* on **Linux:** Python version 3.2m (gcc version 4.4.7)
-	* on **MacOS:** Python version 3.12 (Apple clang version 14.0.3)
-	* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
-	* Windows version will follow soon in the coming release
+**Linux:** Python version 3.2m (gcc version 4.4.7)
+**MacOS:** Python version 3.12 (Apple clang version 14.0.3)
+**Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
+Windows version will follow soon in the coming release
 
 
 Support for more platforms will be released soon. MicroPython will also be available as option.
@@ -458,39 +459,48 @@ NOTE: The 'ocamljava' library can be downloaded from http://www.ocamljava.org/do
 	
 ### Exception handling using 'raise(..)'
 
-Exceptions can be handled with the 'raise(object condition)' function. 
+Exceptions can be handled with the 'raise(..)' function. 
 
 The following conditions are checked and an exception is raised if the conditions == false:
 
-	* string -> (condition != "null") ? true : false 
-	* int -> (condition != -1) : true : false
+	* string -> (condition =! "null") ? true : false 
+	* int -> (condition =! -1) : true : false
 	* bool -> (condition == true) ? true : false
-	* object -> (condition != null) ? true : false
+	* object -> (condition =! null) ? true : false
+
+
+The raise(..) function can be called in the following ways:
+
+```python
+raise(object condition)
+raise(object condition, string msg)
+raise(object condition, string msg, bool exit)
+```
 
 Example:
 ```python
 string s1 = "nul(l)"
-raise(s1)
+raise(s1, "s1 is null")
 
 println("testing int raise")
 int i = 1
-raise(i)
+raise(i, "i == -1")
 
 println("testing bool raise")
 bool b = true
-raise(b)
+raise(b, "b == false")
 
 println("testing object raise")
-object o =  loadObj("String", "test")
-raise(o)
+object o = loadObj("String", "test")
+raise(o, "o == null")
 
 println("testing bool expression raise")
-raise(o != null)
+raise(o =! null, "o =! null")
 
 dpdl_print_exception_table()
 ```
 
-In order to enable the execution of OCaml code via the keyword '**>>ocaml**', the 'ocamlrun.jar' library jar file
+In order to enable the execution of OCaml code via the keyword '**>>ocaml**', the 'ocamlrun-scripting.jar' library jar file
 located in the lib folder (./lib) is required (download from www.ocamljava.org)
 
 If the 'compile' option has been set (the OCaml code is compiled at runtime to improve speed) --> dpdl_stack_push("compile"),
@@ -548,6 +558,11 @@ The following commands are available:
 To run to DpdlClient console application you need Java JRE >= 1.5 and run the following command:
 ```
 java -jar DpdlEngine_V1.0_release.jar
+```
+
+To execute a Dpdl script directly use the '-load' parameter at DpdlEngine startup:
+```
+java -jar DpdlEngine_V1.0_release.jar -load yourScript.h
 ```
 
 NOTE: The newer release of Java (Java20) has introduced the concepts of 'modules'. A compliant 
@@ -878,11 +893,18 @@ MAX_SPACE=32000000
 [DpdlConfig]
 EXEC_STARTUP_CODE=false
 DPDL_NATIVE_LIB=dpdlnativeapi
+[DpdlPath]
+DPDL_JAVA_LIB_PATH=./lib:./lib/ext
 [DpdlExtensions]
 mytestext=dpdl.dpdlDpdlEngine.extensions.MyTestDpdlExt
-
+[DpdlCustom]
+python=dpdlpython
+lua=dpdllua
+julia=dpdljulia
+root=dpdlroot
+test=dpdltest
 ```
-Note: This file can be edited only i the registered version of Dpdl
+Note: This file can be edited only in the registered version of Dpdl
 
 	
 ## Performance Benchmarks

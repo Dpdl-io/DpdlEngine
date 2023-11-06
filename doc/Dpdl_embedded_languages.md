@@ -12,6 +12,15 @@ Multiple programming languages can be embedded directly within Dpdl scripts by u
 The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with a plug-in configurable
 option. See **[DpdlCustom]** tag in 'DpdlEngine.ini' configuration file.
 
+Currently Dpdl supports the embedding of the following languages:
+
+* Embedded C (minimal subset of C90)
+* Python
+* OCaml
+* Lua
+* Julia
+* ROOT C/C++
+
 ### Embedded C (minimal subset of C90)
 
 #### keyword >>c
@@ -163,6 +172,19 @@ string resp_buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("Lua response buffer: ")
 println(resp_buf)
 ```
+
+### Julia
+
+
+```python
+>>julia
+your Julia code
+<<
+```
+
+
+
+
 
 
 ### ROOT Data Analysis Framework (C/C++)

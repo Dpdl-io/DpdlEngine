@@ -126,7 +126,7 @@ needs to be present in the lib folder.
 The 'DpdlEngine lite' release software package is available for Free and has the following limitations/restrictions:
 
 * At startup, the DpdlEngine requires the execution of a validation script.
-The script simply accesses a html website at www.seesolutions.it for validation (NO data is collected or stored, it's a simple get html).
+The script simply accesses a html website at www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
 	  
 The validation script can be inspected here: 
 [./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/SEESolutions-it/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
@@ -145,12 +145,15 @@ The validation script can be inspected here:
 	
 * The Dpdl java API is available only in the registered Dpdl version (but Dpdl scripting API is fully available)
 
-* DPDLAPI_*XPath* methods are implemented only in the registered version of Dpdl
-
 * The 'Thread(..)' API function is available only in the registered version of Dpdl (use createThread(..) instead, it provides similar functionality)
 
 * Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS 
 
+* Dpdl scripts included with 'include(...)' supports execution of embedded code only in the registered version of Dpdl
+
+**NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
+More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
+Contact us if this is the case.
 
 
 

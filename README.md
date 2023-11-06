@@ -14,10 +14,10 @@ developed by
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries and supports the <ins>embedding and execution
-of ANSI C code, Python, Lua and OCaml</ins> language directly within Dpdl scripts. Other programming language can be implemented and embedded via
+of ANSI C code, Python, Julia, Lua and OCaml</ins> programming languages directly within Dpdl scripts. Other programming language can be implemented and embedded via
 a dedicated plugin-in interface and configuration.
 
-## <ins>Dpdl</ins> ( Java API + Embedded C + Python + OCaml) = <ins>Powerful and Versatile</ins>
+## <ins>Dpdl</ins> ( Java API + Embedded C + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
 
 **Dpdl is useful for:**
 
@@ -34,8 +34,8 @@ Dpdl is designed to be simple, very compact, robust, extendible and portable to 
 
 ![Dpdl stack](http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg)
 
-By combining the portability and vast API availability of Java and Python, the expressiveness of Lua and OCaml and
-the power of C programming language, Dpdl is provides a powerful development platform for industrial
+By combining the portability and vast API availability of Java and Python, the computational power of Julia, the expressiveness of Lua and 
+OCaml and the power of C programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
@@ -78,7 +78,7 @@ applications and embedded system software.
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm
 interoperable with the Java platform API and external java libraries.
 
-Standard **ANSI C code** (a subset of C90), Python and the **OCaml** functional programming language
+Standard **ANSI C code** (a subset of C90), **Python, Julia, Lua and the OCaml** functional programming language
 can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and compiled code).
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
@@ -110,8 +110,8 @@ on devices that have limited memory and storage capabilities.
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, compiled DpdlVM for target platform)
 * **Built-in Dpdl scripting engine with support for custom function extensions** (DpdlExtension interface)
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform and to API libraries**
-* **ANSI C code, Python and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code), a subset of C90 standard, POSIX compliant
-* Other programming languages can be embedded by configuration and via a dedicated interface (see DpdlCustom tag in DpdlEngine.ini) 
+* **ANSI C code, Python, Julia, Lua and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code), a subset of C90 standard, POSIX compliant
+* Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini) 
 * Support for pointers and references
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
@@ -217,9 +217,9 @@ In the case the library is updated, the corresponding verification checksums nee
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 
-### Embedding of Python
+### Embedding of 'Python'
 
-Python code can be embedded within Dpdl script by using the keyword '**>>python**'.
+Python code can be embedded within Dpdl scripts by using the keyword '**>>python**'.
 MicroPython will also be supported as option in the coming release.
 
 Example Dpdl script with embedded 'Python' code:
@@ -240,7 +240,7 @@ int exit_code = dpdl_exit_code()
 println("embedded python exit code: " + exit_code);
 ```
 
-#### Supported platforms
+#### Supported platforms (library 'dpdlpython')
 
 Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
@@ -249,8 +249,94 @@ Currently the 'DpdlEngine lite' release includes the native Python library '**li
 * on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
 * <ins>Windows version will follow soon</ins> in the coming release
 	
+### Embedding of 'Julia'
 
-### Embedding of OCaml (experimental)
+Julia code can be embedded within Dpdl scripts by using the keyword '**>>julia**'.
+
+Example Dpdl script with embedded 'Julia' code:
+```python
+println("Testing Plot data with Julia programming language...")
+
+>>julia
+using Plots
+
+x = range(0, 10, length=100)
+y1 = sin.(x)
+y2 = cos.(x)
+p = plot(x, [y1 y2])
+savefig(p, "./Test/myplot.pdf") 
+
+dispose_status = @ccall dpdl_julia_dispose()::Int32
+return 1
+<<
+
+int exit_code = dpdl_exit_code()
+println("finished with exit code: " + exit_code)
+```
+
+### Embedding of 'Lua'
+
+Lua code can be embedded within Dpdl scripts by using the keyword '**>>lua**'.
+
+Example Dpdl script with embedded 'Lua' code:
+```python
+println("testing embedding Lua within Dpdl....")
+
+string buffer_key = "dpdlbuf_result"
+
+dpdl_stack_push(buffer_key, "name", "Alexis", "surname", "Kunst")
+
+>>lua
+function doSomeAlg()
+	local home_dir = os.getenv("HOME")
+	print("user home: ", home_dir)
+	
+	local x = os.clock()
+	    local s = 0
+	    for i=1,100 do 
+	    	s = s + i
+	    	io.write(".")
+	    end
+	    print("")
+	    print(string.format("elapsed time: %.2f\n", os.clock() - x))
+end
+
+function paramLen(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
+end
+
+function dpdl_main(params)
+	local num_params = paramLen(params)
+	io.write("dpdl_main call with number of params: ")
+	io.write(num_params)
+	print()
+	print("executing my embedded algorithm...")
+	print("")
+	doSomeAlg()
+	print()
+	print("returning param values in 'uppercase'")
+	local tab_out = {numfields=1}
+	for k,v in pairs(params) do
+		tab_out.numfields = tab_out.numfields + 1
+		tab_out[tostring(k)] = string.upper(tostring(v))
+	end
+	tab_out.numfields = tostring(tab_out.numfields)
+	return tab_out
+end
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("embedded lua exit code: " + exit_code)
+
+string resp_buf = dpdl_stack_buf_get(buffer_key)
+println("lua response buffer: ")
+println(resp_buf)
+```
+
+### Embedding of 'OCaml' (experimental)
 
 Currently the functional programming language '**OCaml**' (https://ocaml.org/) is supported, via package (http://www.ocamljava.org/),
 and can be embedded directly within Dpdl scripts with the keyword '**>>ocaml**'
@@ -297,8 +383,8 @@ println("embedded OCaml exit code: " + exit_code);
 
 ### Other programming languages
 
-Other programming languages may also be supported in future. Please feel free to suggest your opinion on the
-Discussion section on the DpdlEngine GitHub repository
+Other programming languages can be easily integrated in future. Please feel free to suggest your opinion on the
+'Discussion' section on the DpdlEngine GitHub repository
 
 ## Supported Platforms
 
@@ -332,12 +418,12 @@ DpdlEngine V1.0 has been tested on:
 
 (*) **available soon**
 
-| Platform |Embedded C |Python |OCaml |Lua |go |ch C/C+ |
-| ---  | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v4.01|X v5.4|*|*|
-| Mac OS X (arm64) |X|X v3.12|X v4.01|X v5.4|*|*|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v4.01|X v5.4|*|*|
-| Windows64|X|*|X v4.01|*|*|*|
+| Platform |Embedded C |Python |Julia |OCaml |Lua |ROOT C/C++ |go |ch C/C+ |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X v4.01|X v5.4|*|*|*|
+| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X v4.01|X v5.4|*|*|*|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X v4.01|X v5.4|*|*|*|
+| Windows64|X|*|*|X v4.01|*|*|*|*|
 
 	
 ## Roadmap
@@ -723,8 +809,6 @@ The validation script can be inspected here:
 * The compilation/encoding of DpdlPackets via Dpdl code definition files (ex. dpdl_PHONEBOOK.c) is available only in the registered version of Dpdl
 	
 * The Dpdl java API is available only in the registered Dpdl version (but Dpdl scripting API is fully available)
-
-* DPDLAPI_*XPath* methods are implemented only in the registered version of Dpdl
 
 * The 'Thread(..)' API function is available only in the registered version of Dpdl (use createThread(..) instead, it provides similar functionality)
 
