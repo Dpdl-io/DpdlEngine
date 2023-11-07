@@ -33,6 +33,14 @@ The library can be compiled for additional platforms by us on your request by wr
 
 You may delete the libraries for platforms that you do not use (e.g. ./lib/native/someplatform )
 
+### Dpdl embedded language plug-ins Add-ons:
+
+Additional Dpdl language plug-in add-ons can be downloaded or updated by downloading and extracting the following zip archive in the
+'./lib/' folder .
+
+https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
+
+
 ### Embedded languages - compatibility matrix
 
 (X + version) **currently supported**
