@@ -13,11 +13,11 @@ developed by
 
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
-Dpdl enables access to the Java platform API and external java libraries and supports the <ins>embedding and execution
-of ANSI C code, Python, Julia, Lua and OCaml</ins> programming languages directly within Dpdl scripts. Other programming language can be implemented and embedded via
-a dedicated plugin-in interface and configuration.
+Dpdl enables access to the Java platform API and external java libraries and supports the <ins>embedding and on-the-fly execution</ins> 
+of **ANSI C/C++ code, Python, Julia, Lua and OCaml** programming languages directly within Dpdl scripts. Other programming language can be implemented and embedded via
+a dedicated plugin-in interface and configuration. For example the ROOT C/C++ Data Analysis framework is also available as Dpdl language plug-in.
 
-## <ins>Dpdl</ins> ( Java API + Embedded C + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
+## <ins>Dpdl</ins> ( Java API + Embedded C/C++ + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
 
 **Dpdl is useful for:**
 
@@ -35,7 +35,7 @@ Dpdl is designed to be simple, very compact, robust, extendible and portable to 
 ![Dpdl stack](http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg)
 
 By combining the portability and vast API availability of Java and Python, the computational power of Julia, the expressiveness of Lua and 
-OCaml and the power of C programming language, Dpdl is provides a powerful development platform for industrial
+OCaml and the power of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
@@ -78,7 +78,7 @@ applications and embedded system software.
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm
 interoperable with the Java platform API and external java libraries.
 
-Standard **ANSI C code** (a subset of C90), **Python, Julia, Lua and the OCaml** functional programming language
+Standard **ANSI C code** (a subset of C90), **C++, Python, Julia, Lua and the OCaml** functional programming language
 can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and compiled code).
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
@@ -412,16 +412,16 @@ DpdlEngine V1.0 has been tested on:
 	* J2ME (MIDP 2.0)
 		
 		
-### Embedded language - Compatibility matrix (current status)
+### Embedded languages - compatibility matrix
 
-(X + version)**Supported**
+(X + version) **currently supported**
 
 (*) **available soon**
 
 | Platform |Embedded C |Python |Julia |OCaml |Lua |ROOT C/C++ |go |ch C/C+ |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X v4.01|X v5.4|*|*|*|
-| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X v4.01|X v5.4|*|*|*|
+| Linux x86_64 |X|X v3.2|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
+| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X v4.01|X v5.4|*|*|*|
 | Windows64|X|*|*|X v4.01|*|*|*|*|
 

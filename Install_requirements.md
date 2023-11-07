@@ -22,10 +22,10 @@ https://www.java.com/en/download/manual.jsp
 Some Dpdl API functions (ex. embedded C code) make use of the Dpdl native API library (dpdlnativeapi).
 The Dpdl native API library is platform dependent and is available for the following platforms:
 
-	* MacOS 13.4 (arm)
-	* Linux x86_64 (x84 64bit)
-	* Raspberry PI (armv7)
-	* Windows 64-bit (Intel)
+* MacOS 13.4 (arm)
+* Linux x86_64 (x84 64bit)
+* Raspberry PI (armv7)
+* Windows 64-bit (Intel)
 	
 The native libraries are located in the corresponding platform/architecture folder under './lib/native/' in the corresponding platform folder.
 
@@ -33,16 +33,30 @@ The library can be compiled for additional platforms by us on your request by wr
 
 You may delete the libraries for platforms that you do not use (e.g. ./lib/native/someplatform )
 
+### Embedded languages - compatibility matrix
+
+(X + version) **currently supported**
+
+(*) **available soon**
+
+| Platform |Embedded C |Python |Julia |OCaml |Lua |ROOT C/C++ |go |ch C/C+ |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
+| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X v4.01|X v5.4|*|*|*|
+| Windows64|X|*|*|X v4.01|*|*|*|*|
+
+
 ## Embedded 'Python' code
 
 ### Supported platforms
 
 Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
-	* on **Linux:** Python version 3.2m (gcc version 4.4.7)
-	* on **MacOS:** Python version 3.12 (Apple clang version 14.0.3)
-	* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
-	* Windows version will follow soon in the coming release
+* on **Linux:** Python version 3.2m (gcc version 4.4.7)
+* on **MacOS:** Python version 3.12 (Apple clang version 14.0.3)
+* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
+* Windows version will follow soon in the coming release
 	
 	
 Support for more platforms will be released soon. MicroPython will also be available as option.

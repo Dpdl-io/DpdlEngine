@@ -11,7 +11,7 @@
 println("testing thread from julia...")
 
 >>julia
-func(i) = ccall(:c_func, Float64, (Int32,), i)
+func(i) = ccall(:dpdl_sqrt_c_func, Float64, (Int32,), i)
 println(Threads.threadpoolsize())
 use(i) = println("[J $(Threads.threadid())] i = $(i) -> $(func(i))")
 Threads.@threads for i in 1:5 use(i) end

@@ -91,6 +91,15 @@ println("response buffer: " + buf)
 <<
 ```
 
+### Julia
+
+#### keyword >>julia
+
+```
+>>julia
+	your Python code
+<<
+```
 
 
 ### OCaml
@@ -175,6 +184,11 @@ println(resp_buf)
 
 ### Julia
 
+Julia is a powerful high performance computing programming language with many scientific library packages.
+
+NOTE: The native Dpdl library 'dpdljulia' is not included in the 'DpdlEngine lite' release, and needs to be downloaded and deployed separately (see Downloads section)
+
+#### keyword >>julia
 
 ```python
 >>julia
@@ -183,17 +197,16 @@ your Julia code
 ```
 
 
-
-
-
-
 ### ROOT Data Analysis Framework (C/C++)
 
-An open-source data analysis framework used by high energy physics and others
 
 https://root.cern/gallery/
 
-The ROOT toolkit provides full featured APIs for Data visualization, modeling, statistics
+The ROOT toolkit provides full featured APIs for Data visualization, modeling, statistics and many other.
+
+ROOT C/C++ code can be embedded within Dpdl with the keyword '**>>root**'
+
+NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite' release, and needs to be downloaded and deployed separately (see Downloads section)
 
 #### keyword >>root
 
