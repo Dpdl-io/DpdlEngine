@@ -821,14 +821,21 @@ More builds will follow. Eventually it might be necessary to recompile it for so
 Contact us if this is the case.
 
 
-## How to buy a full DpdlEngine license?
+## How to order a 'full' DpdlEngine license?
 
-To buy a full DpdlEngine license with no limitations/restrictions, regular updates and support,
-please write to the following e-mail address: 
+To buy a full featured DpdlEngine license with no limitations/restrictions, regular updates and support,
+please submit your request via the following form: 
 
-info@dpdl.io
+https://www.dpdl.io/order.htm
 
-We will propose an appropriate license plan tailored for your needs and budget
+
+## Downloads
+
+### Dpdl embedded language plug-in Add-ons:
+
+https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
+
+
 
 
 
