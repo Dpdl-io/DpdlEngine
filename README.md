@@ -159,6 +159,53 @@ The default configuration can be extended or updated to resolve additional java 
 [Bluetooth JSR-82 API](http://www.seesolutions.it/apidoc/Bluetooth_JSR82_API.html)
 
 
+## Dpdl embeddable programming languages
+
+Multiple programming languages can be embedded within **Dpdl** scripts via a the keyword '**>>**'
+Programming languages can be developed and integrated via a dedicated plug-in interface and configuration. 
+
+Currenlty the following programming languages are supported:
+* **ANSI C** (minimal subset of C90)
+* **Python**
+* **Julia**
+* **Lua**
+* **OCaml**
+* **ROOT C/C++**
+
+
+### Embedding of 'ROOT C/C++'
+
+ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/) .
+
+ROOT C/C++ code can be embedded within Dpdl via the keyord '**>>root**'
+
+Example Dpdl script embedding 'ROOT C/C++':
+![Dpdl ROOT example](http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png)
+```python
+# main
+println("test embedded ROOT C/C++...")
+
+>>root
+auto canvas = new TCanvas("c","Graph2D example",0,0,700,600);
+
+double x, y, z, P = 6.;
+int np = 200;
+auto dt = new TGraph2D();
+auto r = new TRandom();
+for (int N=0; N<np; N++) {
+	x = 2*P*(r->Rndm(N))-P;
+	y = 2*P*(r->Rndm(N))-P;
+	z = (sin(x)/x)*(sin(y)/y)+0.2;
+	dt->SetPoint(N,x,y,z);
+}
+dt->Draw("tri1 p0");
+canvas->Modified(); canvas->Update();
+<<
+
+int exit_code = dpdl_exit_code()
+println("embedded ROOT exit code: " + exit_code)
+```
+
 ### Embedded C code
 
 Dpdl allows the embedding and execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted via a native Dpdl library that has
@@ -251,10 +298,14 @@ Currently the 'DpdlEngine lite' release includes the native Python library '**li
 	
 ### Embedding of 'Julia'
 
-Julia code can be embedded within Dpdl scripts by using the keyword '**>>julia**'.
+Julia is a powerful and performant computational programming language  (https://julialang.org)
 
-Example Dpdl script with embedded 'Julia' code:
+Julia code can be embedded within Dpdl via the keyord '**>>julia**'
+
+Example Dpdl script embedding 'Julia' that generates a Plot and saves it as PDF:
+![Dpdl ROOT example](http://www.dpdl.io/images/platform/Dpdl_Julia_example.png)
 ```python
+#main
 println("Testing Plot data with Julia programming language...")
 
 >>julia
@@ -264,7 +315,8 @@ x = range(0, 10, length=100)
 y1 = sin.(x)
 y2 = cos.(x)
 p = plot(x, [y1 y2])
-savefig(p, "./Test/myplot.pdf") 
+
+savefig(p, "./Test/myplot.pdf")
 
 dispose_status = @ccall dpdl_julia_dispose()::Int32
 return 1

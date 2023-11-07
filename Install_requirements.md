@@ -12,7 +12,7 @@ SEE Solutions
 'DpdlEngine lite' V1.0 is available for Free, with some limitations/restrictions (see section below),
 under the license agreement included (see LICENSE.txt).
 
-The 'DpdlEngine lite' release requires a compatible Java Virtual Machine (JRE) >= version 1.5 specification to run.
+The 'DpdlEngine lite' release requires a compatible Java Virtual Machine (JRE) >= version 1.6 specification to run.
 
 There are many java virtual machines available, the official Java JRE from Oracle can be downloaded from 
 www.java.com or www.oracle.com website:
