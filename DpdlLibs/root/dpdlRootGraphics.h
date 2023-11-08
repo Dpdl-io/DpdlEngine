@@ -1,7 +1,7 @@
-# File: dpdlLuaBufRet.h
+# File: dpdlRootGraphics.h
 #
 # Example: 
-# This Dpdl script executes an embedded 'ROOT' C/C++ script
+# This Dpdl script executes an embedded 'ROOT' C/C++ script that displays random data points on a TGraph2D
 #			
 #
 # Author: AC
@@ -27,6 +27,7 @@ println("test embedded ROOT C/C++...")
    }
    dt->Draw("tri1 p0");
    canvas->Modified(); canvas->Update();
+   canvas->RaiseWindow();
 <<
 
 int exit_code = dpdl_exit_code()

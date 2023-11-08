@@ -75,6 +75,33 @@ export PYTHONHOME=/your_path/to/python/install_dir/
 export PYTHONPATH=/your_path/to/python/install_dir/
 ``` 
 
+## Embedded 'Julia' code
+
+For the embedding of 'Julia' code the following paths (symbolic links) must be set in the folder './dpdl_env_paths':
+
+JULIA_DEPOT_PATH = path to the 'Julia' package folder
+JULIA_LIBS_PATH = path to the 'Julia' lib folder
+
+eg. symbolic links in the folder './dpdl_env_paths/'
+```
+JULIA_DEPOT_PATH -> /Users/arcosta/APP/devel/julia-1.9.3/usr/share/julia_depot
+JULIA_LIBS_PATH -> /Users/arcosta/APP/devel/julia-1.9.3/usr/lib
+```
+
+NOTE: The native Dpdl library 'dpdljulia' needs to be downloaded and deployed separately (see Downloads section in README.md)
+
+## Embedded 'ROOT C/C++' code
+
+For the embedding of 'ROOT' code the following path (symbolic links) must be set in the folder './dpdl_env_paths':
+
+ROOT_LIB_PATH = path to the 'ROOT' lib folder
+
+eg. symbolic links in the folder './dpdl_env_paths/'
+```
+ROOT_LIB_PATH -> /Users/arcosta/APP/devel/ROOT_Devel/lib
+```
+NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Downloads section in README.md)
+
 ## Embedded 'OCaml' code
 
 The embedding of OCaml code is still experimental, but works.

@@ -206,6 +206,8 @@ int exit_code = dpdl_exit_code()
 println("embedded ROOT exit code: " + exit_code)
 ```
 
+NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Download section below)
+ 
 ### Embedded C code
 
 Dpdl allows the embedding and execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted via a native Dpdl library that has
@@ -325,6 +327,7 @@ return 1
 int exit_code = dpdl_exit_code()
 println("finished with exit code: " + exit_code)
 ```
+NOTE: The native Dpdl library 'dpdljulia' needs to be downloaded and deployed separately (see Download section below)
 
 ### Embedding of 'Lua'
 
@@ -675,15 +678,23 @@ where different Tests/Examples can be executed individually via tagged execution
 i.e. arraylistExample.h @TEST1
 
 
-* Example that shows how <ins>C</ins> and <ins>Python</ins> can be embedded and executed directly within Dpdl scripts
+* Example Dpdl script that shows how <ins>C</ins> code and <ins>Python</ins> can be embedded and executed within Dpdl
 
 	[dpdlFullExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFullExample.h)
 	
-* Example using pointers and references
+* Example Dpdl script that embeds C/C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
+
+	[dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
+	
+* Example Dpdl script that executes an embedded 'Julia' script to plots data using the 'Plots' package, and to save the chart as PDF
+
+	[dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)
+	
+* Example Dpdl script using pointers and references
 
 	[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)
 	
-* Example that shows to to execute embedded C code accepting parameters pushed on the dpdl_stack, and writes some result back to a buffer variable. The execution time is measured.
+* Example Dpdl script that shows to to execute embedded C code accepting parameters pushed on the dpdl_stack, and writes some result back to a buffer variable. The execution time is measured.
 
 	[bench/testC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bench/testC.h)
 	
@@ -700,6 +711,10 @@ i.e. arraylistExample.h @TEST1
 	
 	....
 
+* Example Dpdl script that embeds 'Julia' code to execute a set of threads that call a native C Dpdl API function
+
+  [dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
+  
 * Load a Dpdl script object "LoadCodeFunc.h" via 'loadCode(..)' and call one of its functions
 
 	[testLoadCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testLoadCode.h)
@@ -718,7 +733,6 @@ i.e. arraylistExample.h @TEST1
 	
 	[dpdlSimpleC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlSimpleC.h)
 		
-
 * Embedded Python code execution within Dpdl script
 	
 	[dpdlEmbedPython.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlEmbedPython.h)
@@ -880,10 +894,13 @@ please submit your request via the following form:
 
 https://www.dpdl.io/order.htm
 
+Or just write an e-mail to info@dpdl.io
 
 ## Downloads
 
 ### Dpdl embedded language plug-in Add-ons:
+
+The following Dpdl language plug-in Add-on contains the Dpdl native library for embedding 'ROOT' and 'Julia' languages.
 
 https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
