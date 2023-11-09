@@ -187,7 +187,9 @@ ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/
 ROOT C/C++ code can be embedded within Dpdl via the keyord '**>>root**'
 
 Example Dpdl script embedding 'ROOT C/C++':
-![Dpdl ROOT example](http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png)
+
+<img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="60" height="60">
+
 ```python
 # main
 println("test embedded ROOT C/C++...")
