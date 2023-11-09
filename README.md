@@ -172,6 +172,13 @@ Currenlty the following programming languages are supported:
 * **OCaml**
 * **ROOT C/C++**
 
+### Open source Dpdl embedded language plug-ins
+
+Some Dpdl embedded language plug-ins are published as open source:
+* ROOT C/C++
+* More will follow...
+
+https://github.com/Dpdl-io-org/Dpdl_language_plugins
 
 ### Embedding of 'ROOT C/C++'
 
