@@ -188,7 +188,7 @@ ROOT C/C++ code can be embedded within Dpdl via the keyord '**>>root**'
 
 Example Dpdl script embedding 'ROOT C/C++':
 
-<img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="100" height="100">
+<img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="50%" height="50%">
 
 ```python
 # main
