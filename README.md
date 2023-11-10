@@ -729,15 +729,19 @@ i.e. arraylistExample.h @TEST1
 	
 * Example Dpdl script that embeds C/C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
 
-	[dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
+	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
 	
 * Example Dpdl script that executes an embedded 'Julia' script to plots data using the 'Plots' package, and to save the chart as PDF
 
-	[dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)
+	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)
 	
 * Example Dpdl script using pointers and references
 
 	[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)
+	
+* Example Dpdl script that embeds JavaScript that intercepts some parameters that have been pushed on the dpdl stack
+
+	[js/dpdlJsExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsExample.h)
 	
 * Example Dpdl script that shows to to execute embedded C code accepting parameters pushed on the dpdl_stack, and writes some result back to a buffer variable. The execution time is measured.
 
@@ -758,7 +762,7 @@ i.e. arraylistExample.h @TEST1
 
 * Example Dpdl script that embeds 'Julia' code to execute a set of threads that call a native C Dpdl API function
 
-  [dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
+  [julia/dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
   
 * Load a Dpdl script object "LoadCodeFunc.h" via 'loadCode(..)' and call one of its functions
 
@@ -766,7 +770,7 @@ i.e. arraylistExample.h @TEST1
 	
 	[LoadCodeFunc.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/LoadCodeFunc.h)
 	
-* Compresses and de-compresses a string of data with zip
+* Example Dpdl script that compresses and de-compresses a string of data using GZIP classes of the Java platform
 
 	[dataCompress.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dataCompress.h)
 
