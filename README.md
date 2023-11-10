@@ -315,7 +315,7 @@ Julia is a powerful and performant computational programming language  (https://
 Julia code can be embedded within Dpdl via the keyord '**>>julia**'
 
 Example Dpdl script embedding 'Julia' that generates a Plot and saves it as PDF:
-![Dpdl ROOT example](http://www.dpdl.io/images/platform/Dpdl_Julia_example.png)
+<img src="http://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="50%" height="50%">
 ```python
 #main
 println("Testing Plot data with Julia programming language...")
