@@ -518,12 +518,12 @@ DpdlEngine V1.0 has been tested on:
 
 (*) **available soon**
 
-| Platform |Embedded C |Python |Julia |OCaml |Lua |ROOT C/C++ |go |ch C/C+ |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
-| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X v4.01|X v5.4|*|*|*|
-| Windows64|X|*|*|X v4.01|*|*|*|*|
+| Platform |Embedded C |Python |Julia |OCaml |OCaml |Lua |ROOT C/C++ |go |ch C/C+ |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
+| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|*|
+| Windows64|X|*|*|X|X v4.01|*|*|*|*|
 
 	
 ## Roadmap
