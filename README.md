@@ -14,7 +14,7 @@ developed by
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries and supports the <ins>embedding and on-the-fly execution</ins> 
-of **ANSI C/C++ code, Python, Julia, Lua and OCaml** programming languages directly within Dpdl scripts. Other programming language can be implemented and embedded via
+of **ANSI C/C++ code, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts. Other programming language can be implemented and embedded via
 a dedicated plugin-in interface and configuration. For example the ROOT C/C++ Data Analysis framework is also available as Dpdl language plug-in.
 
 ## <ins>Dpdl</ins> ( Java API + Embedded C/C++ + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
@@ -35,7 +35,7 @@ Dpdl is designed to be simple, very compact, robust, extendible and portable to 
 ![Dpdl stack](http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg)
 
 By combining the portability and vast API availability of Java and Python, the computational power of Julia, the expressiveness of Lua and 
-OCaml and the power of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
+OCaml, the web enablement of JavaScript and the power of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
@@ -78,7 +78,7 @@ applications and embedded system software.
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm
 interoperable with the Java platform API and external java libraries.
 
-Standard **ANSI C code** (a subset of C90), **C++, Python, Julia, Lua and the OCaml** functional programming language
+Standard **ANSI C code** (a subset of C90), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
 can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and compiled code).
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
@@ -110,7 +110,7 @@ on devices that have limited memory and storage capabilities.
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, compiled DpdlVM for target platform)
 * **Built-in Dpdl scripting engine with support for custom function extensions** (DpdlExtension interface)
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform and to API libraries**
-* **ANSI C code, Python, Julia, Lua and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code), a subset of C90 standard, POSIX compliant
+* **ANSI C code, Python, Julia, JavaScript, Lua and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code), a subset of C90 standard, POSIX compliant
 * Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini) 
 * Support for pointers and references
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
@@ -168,6 +168,7 @@ Currenlty the following programming languages are supported:
 * **ANSI C** (minimal subset of C90)
 * **Python**
 * **Julia**
+* **JavaScript**
 * **Lua**
 * **OCaml**
 * **ROOT C/C++**
@@ -337,6 +338,41 @@ int exit_code = dpdl_exit_code()
 println("finished with exit code: " + exit_code)
 ```
 NOTE: The native Dpdl library 'dpdljulia' needs to be downloaded and deployed separately (see Download section below)
+
+### Embedding of 'JavaScript'
+
+JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
+
+JavaScript code can be embedded within Dpdl via the keyword '**>>js**'
+
+Example Dpdl script embedding 'JavaScript' that intercepts parameters pushed on the dpdl stack and accesses java classes
+```python
+# main
+println("test embedding javascript ...")
+
+dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
+dpdl_stack_var_put("var2", "This variable comes from Dpdl (var2)")
+
+>>js
+    print("Hello javascript from Dpdl: ");
+    print("")
+    print("var1: " + var1);
+    print("var2: " + var2);
+    print("The number PI is equal to: " + java.lang.Math.PI);
+    print("")
+    var importFile = new JavaImporter(java.util);  
+    var a = new importFile.ArrayList();  
+    a.add(12);  
+    a.add(20);  
+    print(a);  
+    print(a.getClass());          
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("embedded js exit code: " + exit_code)
+```
+
 
 ### Embedding of 'Lua'
 

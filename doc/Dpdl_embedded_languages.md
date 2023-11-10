@@ -16,9 +16,10 @@ Currently Dpdl supports the embedding of the following languages:
 
 * Embedded C (minimal subset of C90)
 * Python
+* Julia
+* JavaScript
 * OCaml
 * Lua
-* Julia
 * ROOT C/C++
 
 ### Embedded C (minimal subset of C90)
@@ -93,14 +94,41 @@ println("response buffer: " + buf)
 
 ### Julia
 
+Julia is a powerful high performance computing programming language with many scientific library packages.
+
+https://julialang.org/
+
 #### keyword >>julia
 
-```
+```python
 >>julia
-	your Python code
+your Julia code
 <<
 ```
 
+NOTE: The native Dpdl library 'dpdljulia' is not included in the 'DpdlEngine lite' release, and needs to be downloaded and
+      deployed separately (see Downloads section)
+
+
+### Embedding of 'JavaScript'
+
+JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
+
+JavaScript code can be embedded within Dpdl via the keyword '**>>js**'
+
+#### keyword >>js
+
+```python
+
+dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
+dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
+>>js
+your javascript code 
+print(var1)....
+<<
+```
+NOTE: The Dpdl embedded javascript plug-in needs specific features that must be supported by the java JRE/JDK implementation.
+	  Not all java virtual machines support these features.
 
 ### OCaml
 
@@ -112,8 +140,8 @@ println("response buffer: " + buf)
 <<
 ```
 
-### Lua
 
+### Lua
 
 #### keyword >>lua
 
@@ -180,20 +208,6 @@ string resp_buf = dpdl_stack_buf_get("dpdlbuf_var1")
 
 println("Lua response buffer: ")
 println(resp_buf)
-```
-
-### Julia
-
-Julia is a powerful high performance computing programming language with many scientific library packages.
-
-NOTE: The native Dpdl library 'dpdljulia' is not included in the 'DpdlEngine lite' release, and needs to be downloaded and deployed separately (see Downloads section)
-
-#### keyword >>julia
-
-```python
->>julia
-your Julia code
-<<
 ```
 
 
