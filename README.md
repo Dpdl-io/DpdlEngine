@@ -518,7 +518,7 @@ DpdlEngine V1.0 has been tested on:
 
 (*) **available soon**
 
-| Platform |Embedded C |Python |Julia |OCaml |OCaml |Lua |ROOT C/C++ |go |ch C/C+ |
+| Platform |Embedded C |Python |Julia |JavaScript |OCaml |Lua |ROOT C/C++ |go |ch C/C+ |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
 | Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
