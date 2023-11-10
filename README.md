@@ -583,12 +583,12 @@ deallocated when data is not used.
 
 ![DpdlPacket](http://www.dpdl.io/images/platform/DpdlPacket_FlowChart.jpg)
 
-The DpdlEngine lite release package includes an encoded DpdlPacket (dpdl_PHONEBOOK.dpdl)
+The 'DpdlEngine lite' release package includes an encoded DpdlPacket (dpdl_PHONEBOOK.dpdl)
 and the corresponding Dpdl code definition file [dpdl_PHONEBOOK.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlPackets/dpdl_PHONEBOOK_BZ.c) used to encode
 the DpdlPacket. Refer to the [Dpdl_documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
 for how to allocate, execute and perform queries on a DpdlPacket.
 
-Example of DpdlPacket code definiiton (dpdl_PHONEBOOK.c)
+Example of DpdlPacket code definition (dpdl_PHONEBOOK.c)
 ```cpp
 call(dpdlInterpreter)
 ::module dpdl_PHONEBOOK
@@ -653,7 +653,7 @@ import virtual DATA none  {
 
 The database technology in Dpdl has been developed since year 2003 and started with a BsC thesis.
 
-[Advanced database techniques in Dpdl : dynamic packet definition language ; a portable data protocol for small embedded systems](https://ubz-primo.hosted.exlibrisgroup.com/permalink/f/pok0fm/39UBZ_ALMA_DS21103210480001241)
+[Advanced database techniques in Dpdl : dynamic packet definition language ; a portable data protocol for small embedded systems](https://unibz.primo.exlibrisgroup.com/permalink/39UBZ_INST/hl3dt9/alma9928450240001241)
 
 
 ## What is the DpdlClient console application?
