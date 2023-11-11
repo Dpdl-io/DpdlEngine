@@ -28,12 +28,11 @@ a dedicated plugin-in interface and configuration. For example the ROOT C++ Data
 ### * Designed for running on constrained devices
 ### * Compressing, querying and accessing data on constrained devices
 
-Dpdl is designed to be simple, very compact, robust, extendible and portable to almost every platform.
-
 **DpdlEngine stack overview**
 
 ![Dpdl stack](http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg)
 
+### Dpdl is designed to be simple, very compact, robust, extendible and portable to almost every platform.
 By combining the portability and vast API availability of Java and Python, the computational power of Julia, the expressiveness of Lua and 
 OCaml, the web enablement of JavaScript and the power of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
