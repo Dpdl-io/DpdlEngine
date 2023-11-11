@@ -914,7 +914,7 @@ The validation script can be inspected here:
 	
 * The class definition file (classes.txt), used for dynamic loading and resolving of library classes via loadObj(..) and getClass(..) methods can be edited only in the registered version of Dpdl.
 	
-* The execution of Dpdl scripts is limited to 500 lines of code, embedded C code, Python and OCaml is limited to 100 lines of code per section.
+* The execution of Dpdl scripts is limited to 500 lines of code, embedded language code (C, C++, Python, Julia, JavaScript, Lua and OCaml) is limited to 100 lines of code per section.
 	
 * The Dpdl scripting API function 'systemExec' is available only in the registered version of Dpdl
 	
@@ -938,9 +938,9 @@ Contact us if this is the case.
 ## How to order a 'full' DpdlEngine license?
 
 To buy a full featured DpdlEngine license with no limitations/restrictions, regular updates and support,
-please submit your request via the following form: 
+please submit your request via the following request form: 
 
-https://www.dpdl.io/order.htm
+https://www.dpdl.io/index_order.html
 
 Or just write an e-mail to info@dpdl.io
 
