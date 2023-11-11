@@ -47,7 +47,7 @@ https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
 (*) **available soon**
 
-| Platform |Embedded C |Python |Julia |OCaml |Lua |ROOT C/C++ |go |ch C/C+ |
+| Platform |Embedded C |Python |Julia |OCaml |Lua |ROOT C++ |go |ch C/C+ |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- |
 | Linux x86_64 |X|X v3.2|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
 | Mac OS X (arm64) |X|X v3.12|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
@@ -90,7 +90,7 @@ JULIA_LIBS_PATH -> /Users/arcosta/APP/devel/julia-1.9.3/usr/lib
 
 NOTE: The native Dpdl library 'dpdljulia' needs to be downloaded and deployed separately (see Downloads section in README.md)
 
-## Embedded 'ROOT C/C++' code
+## Embedded 'ROOT C++' code
 
 For the embedding of 'ROOT' code the following path (symbolic links) must be set in the folder './dpdl_env_paths':
 

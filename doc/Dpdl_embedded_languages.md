@@ -20,7 +20,7 @@ Currently Dpdl supports the embedding of the following languages:
 * JavaScript
 * OCaml
 * Lua
-* ROOT C/C++
+* ROOT C++
 
 ### Embedded C (minimal subset of C90)
 
@@ -211,14 +211,14 @@ println(resp_buf)
 ```
 
 
-### ROOT Data Analysis Framework (C/C++)
+### ROOT Data Analysis Framework (C++)
 
 
 https://root.cern/gallery/
 
 The ROOT toolkit provides full featured APIs for Data visualization, modeling, statistics and many other.
 
-ROOT C/C++ code can be embedded within Dpdl with the keyword '**>>root**'
+ROOT C++ code can be embedded within Dpdl with the keyword '**>>root**'
 
 NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite' release, and needs to be downloaded and deployed separately (see Downloads section)
 
@@ -226,7 +226,7 @@ NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite
 
 ```
 >>root
-	your ROOT C/C++ code
+	your ROOT C++ code
 <<
 ```
 
