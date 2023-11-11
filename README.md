@@ -21,12 +21,12 @@ a dedicated plugin-in interface and configuration. For example the ROOT C++ Data
 
 **Dpdl is useful for:**
 
-* Developing faster your ideas
-* On multiple platforms
-* Using the power of multiple programming languages, reusing code
-* Without spending time on installing, compiling and configuring environments
-* Designed for running on constrained devices
-* Compressing, querying and accessing data on constrained devices
+### Developing faster your ideas
+### On multiple platforms
+### Using the power of multiple programming languages, reusing code
+### Without spending time on installing, compiling and configuring environments
+### Designed for running on constrained devices
+### Compressing, querying and accessing data on constrained devices
 
 Dpdl is designed to be simple, very compact, robust, extendible and portable to almost every platform.
 
