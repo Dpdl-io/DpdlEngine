@@ -14,19 +14,19 @@ developed by
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries and supports the <ins>embedding and on-the-fly execution</ins> 
-of **ANSI C/C++ code, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts. Other programming language can be implemented and embedded via
-a dedicated plugin-in interface and configuration. For example the ROOT C/C++ Data Analysis framework is also available as Dpdl language plug-in.
+of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts. Other programming language can be implemented and embedded via
+a dedicated plugin-in interface and configuration. For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
-## <ins>Dpdl</ins> ( Java API + Embedded C/C++ + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
+## <ins>Dpdl</ins> ( Java API + Embedded C + 'C++' + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
 
 **Dpdl is useful for:**
 
-* developing faster your ideas
-* on multiple platforms
-* using the power of multiple programming languages, reusing code
-* without spending time on installing, compiling and configuring environments
-* designed for running on constrained devices
-* compressing, querying and accessing data on constrained devices
+* Developing faster your ideas
+* On multiple platforms
+* Using the power of multiple programming languages, reusing code
+* Without spending time on installing, compiling and configuring environments
+* Designed for running on constrained devices
+* Compressing, querying and accessing data on constrained devices
 
 Dpdl is designed to be simple, very compact, robust, extendible and portable to almost every platform.
 
@@ -171,29 +171,29 @@ Currenlty the following programming languages are supported:
 * **JavaScript**
 * **Lua**
 * **OCaml**
-* **ROOT C/C++**
+* **ROOT C++**
 
 ### Open source Dpdl embedded language plug-ins
 
 Some Dpdl embedded language plug-ins are published as open source:
-* ROOT C/C++
+* ROOT C++
 * More will follow...
 
 https://github.com/Dpdl-io-org/Dpdl_language_plugins
 
-### Embedding of 'ROOT C/C++'
+### Embedding of 'ROOT C++'
 
 ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/) .
 
-ROOT C/C++ code can be embedded within Dpdl via the keyord '**>>root**'
+ROOT C++ code can be embedded within Dpdl via the keyord '**>>root**'
 
-Example Dpdl script embedding 'ROOT C/C++':
+Example Dpdl script embedding 'ROOT C++':
 
 <img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="50%" height="50%">
 
 ```python
 # main
-println("test embedded ROOT C/C++...")
+println("test embedded ROOT C++...")
 
 >>root
 auto canvas = new TCanvas("c","Graph2D example",0,0,700,600);
@@ -518,7 +518,7 @@ DpdlEngine V1.0 has been tested on:
 
 (*) **available soon**
 
-| Platform |Embedded C |Python |Julia |JavaScript |OCaml |Lua |ROOT C/C++ |go |ch C/C+ |
+| Platform |Embedded C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |ch C/C+ |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
 | Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
@@ -727,7 +727,7 @@ i.e. arraylistExample.h @TEST1
 
 	[dpdlFullExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFullExample.h)
 	
-* Example Dpdl script that embeds C/C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
+* Example Dpdl script that embeds C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
 	
