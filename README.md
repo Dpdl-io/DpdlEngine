@@ -554,6 +554,8 @@ The Dpdl framework and API documentation are available via the following links:
 
 [Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
+[Dpdl embedded languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
+
  Dpdl Java API Documentation (available soon)
 
 
