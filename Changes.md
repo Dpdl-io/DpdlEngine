@@ -12,7 +12,7 @@
 * 'ROOT' C++ code can now be embedded in Dpdl scripts via the '**>>root**' keyword --> Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Download sectio in README.md)
 * JavaScript can now be embedded in Dpdl scripts via the '**>>js**' keyword
 
-* Embedded ANSI C code can now be compiled dynamically on-the-fly at runtime for faster execution (see option '**dpdl:compile**')
+* 12.11.2023 Embedded ANSI C code can now be compiled dynamically on-the-fly at runtime for faster execution (see option '**dpdl:compile**') --> available within the next days
 
 ## Fixes
 
