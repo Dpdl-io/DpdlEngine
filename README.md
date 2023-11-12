@@ -19,8 +19,6 @@ a dedicated plugin-in interface and configuration. For example the ROOT C++ Data
 
 ## <ins>Dpdl</ins> ( Java API + Embedded C + 'C++' + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
 
-**Dpdl is useful for:**
-
 ### * Developing faster your ideas
 ### * On multiple platforms
 ### * Using the power of multiple programming languages, reusing code
