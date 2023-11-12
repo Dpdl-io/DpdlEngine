@@ -10,8 +10,9 @@
 * Added message parameter to function raise(object condition, string msg)
 * 'Julia' script can now be embedded in Dpdl scripts via the '**>>julia**' keyword --> Dpdl library 'dpdljulia' needs to be downloaded and deployed separately (see Download section in README.md)
 * 'ROOT' C++ code can now be embedded in Dpdl scripts via the '**>>root**' keyword --> Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Download sectio in README.md)
-
 * JavaScript can now be embedded in Dpdl scripts via the '**>>js**' keyword
+
+* Embedded ANSI C code can now be compiled dynamically on-the-fly at runtime for faster execution (see option '**dpdl:compile**')
 
 ## Fixes
 
@@ -33,4 +34,3 @@ The following programming language plug-ins will be developed:
 * Implement language plug-in for ROOT Data Analysis Framework
 * Implement language plug-in to enable the embedding of 'ruby' programming language -> keyword '**>>ruby**'
 * Implement language plug-in to enable the embedding of 'go' programming language -> keyword '**>>go**'
-* Implement language plug-in for 'Ch' embedded C/C++ interpreter from softintegration.com (requires separate commercial license from softintegration) -> keyword '**>>ch**'

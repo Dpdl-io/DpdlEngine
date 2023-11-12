@@ -13,11 +13,12 @@ developed by
 
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
-Dpdl enables access to the Java platform API and external java libraries and supports the <ins>embedding and on-the-fly execution</ins> 
-of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts. Other programming language can be implemented and embedded via
-a dedicated plugin-in interface and configuration. For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
+Dpdl enables access to the Java platform API and external java libraries via a dedicated scripting language and supports the <ins>embedding and on-the-fly execution</ins> 
+of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts. Embedded ANSI C code can
+also be compiled at runtime if the option 'compile' is enabled in order to achieve faster execution speeds. Other programming language can be implemented
+and embedded via a dedicated plugin-in interface and configuration. For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
-## <ins>Dpdl</ins> ( Java API + Embedded C + 'C++' + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
+## Dpdl ( Java api + Embedded C + 'C++' + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
 
 ### * Developing faster your ideas
 ### * On multiple platforms
@@ -75,8 +76,8 @@ applications and embedded system software.
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm
 interoperable with the Java platform API and external java libraries.
 
-Standard **ANSI C code** (a subset of C90), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
-can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and compiled code).
+Standard **ANSI C code** (a subset of C90 and C99), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
+can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and also compiled code).
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
 
@@ -106,8 +107,9 @@ on devices that have limited memory and storage capabilities.
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, compiled DpdlVM for target platform)
 * **Built-in Dpdl scripting engine with support for custom function extensions** (DpdlExtension interface)
-* **Dpdl scripting API provides access to the complete underlying Java JRE platform and to API libraries**
+* **Dpdl scripting API provides access to the complete underlying Java JRE platform and to external API libraries**
 * **ANSI C code, C++, Python, Julia, JavaScript, Lua and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code), a subset of C90 standard, POSIX compliant
+* On-the-fly compilation of embedded ANSI C code at runtime (via option 'dpdl:compile') -> very fast compile time
 * Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini) 
 * Support for pointers and references
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
@@ -161,8 +163,10 @@ The default configuration can be extended or updated to resolve additional java 
 Multiple programming languages can be embedded within **Dpdl** scripts via a the keyword '**>>**'
 Programming languages can be developed and integrated via a dedicated plug-in interface and configuration. 
 
-Currenlty the following programming languages are supported:
-* **ANSI C** (minimal subset of C90)
+### Currenlty the following programming languages are supported:
+
+* **C** interpreted code (minimal subset of C90)
+* **ANSI C** (ISO C99) interpreted and compiled at runtime (see 'dpdl:compile')
 * **Python**
 * **Julia**
 * **JavaScript**
@@ -172,7 +176,7 @@ Currenlty the following programming languages are supported:
 
 ### Open source Dpdl embedded language plug-ins
 
-Some Dpdl embedded language plug-ins are published as open source:
+Some Dpdl embedded language plug-ins are published as open source projects:
 * ROOT C++
 * More will follow...
 
@@ -217,11 +221,18 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
  
 ### Embedded C code
 
-Dpdl allows the embedding and execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted via a native Dpdl library that has
-a very small footprint and **includes all essential C libraries** and language constructs (a minimal subset of ISO standard C90 and **POSIX** compliant) with
+Dpdl allows the embedding and execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted OR compiled at runtime (if option '**dpdl:compile**' is enabled),
+via a native Dpdl library that has a very small footprint and **includes all essential C libraries** and language constructs (ISO standard C90/C99, **POSIX** compliant) with
 **no external dependencies**.
 
 Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
+
+### The following modes (options) are available for executing embedded C code:
+
+* Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead (**default**)
+* Compiled (at runtime) or interpreted C code (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
+
+The faster and more complete execution mode can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 
 Example Dpdl script with embedded C code:
 ```c
@@ -254,7 +265,7 @@ int exit_code = dpdl_exit_code()
 
 println("embedded C exit code: " + exit_code);
 
-# again Dpdl...
+# again Dpdl code...
 
 object str = loadObj("String", "Dpdl embedded C")
 bool b = str.contains("C")
@@ -296,7 +307,7 @@ int exit_code = dpdl_exit_code()
 println("embedded python exit code: " + exit_code);
 ```
 
-#### Supported platforms (library 'dpdlpython')
+#### Supported python platforms (library 'dpdlpython')
 
 Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
@@ -369,7 +380,6 @@ int exit_code = dpdl_exit_code()
 
 println("embedded js exit code: " + exit_code)
 ```
-
 
 ### Embedding of 'Lua'
 
@@ -480,7 +490,7 @@ println("embedded OCaml exit code: " + exit_code);
 
 ### Other programming languages
 
-Other programming languages can be easily integrated in future. Please feel free to suggest your opinion on the
+Other programming languages can be easily integrated in Dpdl via a plug-in interface and configuration. Please feel free to suggest your opinion on the
 'Discussion' section on the DpdlEngine GitHub repository
 
 ## Supported Platforms
@@ -496,7 +506,7 @@ an ANSI C compiler is available for the target platform.
 * Java ME Embedded Profile (JSR 361)
 * Java versions >= 1.4 and later
 * Java > 1.1 (but without 'loadObj' and 'getClass' methods)
-* Platforms with ANSI C compiler where the included open source virtual machine (DpdlVM) can be compiled
+* Platforms with ANSI C compiler where the included open source virtual machine can be compiled
 
 DpdlEngine V1.0 has been tested on:
 
@@ -542,16 +552,15 @@ The Dpdl framework and API documentation are available via the following links:
 
 [Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-[Dpdl embedded C lib Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
-Dpdl Java API Documentation (available soon)
-
+ Dpdl Java API Documentation (available soon)
 
 
 ## Download 'DpdlEngine lite' release package (Free version)
 
-The 'DpdlEngine lite' release (v1.0) can be downloaded and used for Free (with some limitations),
-from the dpdl.io donload page:
+The 'DpdlEngine lite' release (v1.0) can be downloaded and try for Free (with some limitations),
+from the dpdl.io download page:
 
 [DpdlEngine lite DOWNLOAD form](https://www.dpdl.io/index_download.html)
 
@@ -684,7 +693,7 @@ Usage:
 ## What does the free 'DpdlEngine lite' version provide?
 
 
-The 'DpdlEngine lite' release is available for Free with some limitations (see section below),
+The 'DpdlEngine lite' release is available for Free to try with some limitations (see section below),
 and can be used to exploit the features of Dpdl and to develop small applications
 or utility tools. Some auxiliary Dpdl libraries are released under the open-source GNU
 license.
@@ -695,7 +704,7 @@ license.
 	- The 'DpdlClient' console application that allows to execute a set of commands
 	  for interacting with the core DpdlEngine
 	  
-	- Dpdl scripting engine with API libraries (Support for Embedded C, Python, OCaml)
+	- Dpdl scripting engine with API libraries (Support for Embedded C, C++, Python, Julia, JavaScript, Lua and OCaml)
 	
 	- Example Dpdl scripts (located in ./DpdlPackets/ and ./DpdlLibs/ folder)
 	
@@ -900,10 +909,10 @@ i.e. arraylistExample.h @TEST1
 ## 'DpdlEngine lite' release limitations/restrictions
 
 	
-The 'DpdlEngine lite' release software package is available for Free and has the following limitations/restrictions:
+The 'DpdlEngine lite' release software package is available for Free to try and has the following limitations/restrictions:
 
 * At startup, the DpdlEngine requires the execution of a validation script.
-The script simply accesses a html website at www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
+The script simply accesses a html website at https://www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
 	  
 The validation script can be inspected here: 
 [./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
@@ -948,6 +957,7 @@ Or just write an e-mail to info@dpdl.io
 
 The following Dpdl language plug-in Add-on contains the Dpdl native library for embedding 'ROOT' and 'Julia' languages.
 
+Available soon...
 https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
 
