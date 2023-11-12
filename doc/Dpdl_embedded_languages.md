@@ -97,7 +97,7 @@ Using this approach is useful for achieving optimal speed of the executing C cod
 The default location for 'include header files is './DpdlLibs/libs/include' and library files (static and dynamic) in './DpdlLibs/libs'
 Custom include and library settings can be provided with the options 'dpdl:-I$INC_DIR' and 'dpdl:-L$LIB_DIR' pushed on the dpdl stack.
 
-```
+```python
 # main
 println("this Dpdl example shows how C code can be dynamically compiled on Dpdl")
 
