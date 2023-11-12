@@ -9,7 +9,7 @@ developed by
 **SEE Solutions**
 
 
-## What is Dpdl?
+# Dpdl (Dynamic Packet Definition Language)
 
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
