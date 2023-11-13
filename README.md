@@ -9,18 +9,18 @@ developed by
 **SEE Solutions**
 
 
-# Dpdl (Dynamic Packet Definition Language)
+# What is Dpdl?
 
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries via a dedicated scripting language and supports the <ins>embedding and on-the-fly execution</ins> 
 of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts. Embedded ANSI C code can
-also be compiled at runtime if the option 'compile' is enabled in order to achieve faster execution speeds. Other programming language can be implemented
+also be compiled in memory at runtime if the option 'compile' is enabled in order to achieve faster execution speeds. Other programming language can be implemented
 and embedded via a dedicated plugin-in interface and configuration. For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
 ## Dpdl ( Java api + Embedded C + 'C++' + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
 
-### * Developing faster your ideas
+### * Develop faster your ideas
 ### * On multiple platforms
 ### * Using the power of multiple programming languages, reusing code
 ### * Without spending time on installing, compiling and configuring environments
@@ -91,12 +91,12 @@ A list of 14 examples/tests can be found in the following Dpdl script, as explai
 Dpdl can be used to implement applications in various domains, in particular for small
 memory footprint devices and for rapid application development, teaching and research.
 
-The DpdlPacket data container is a highly optimized way to store, query and access data
+The 'DpdlPacket' data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities. 
 
 **Dpdl can be used:**
 
-* As rapid application development environment
+* As rapid application development platform
 * As an embedded scripting engine for applications
 * A library module
 * As utility tool
@@ -114,7 +114,7 @@ on devices that have limited memory and storage capabilities.
 * Support for pointers and references
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
-* **Packing data in a DpdlPacket is a convenient way to optimize and speedup access to data**.
+* **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
 The speedup is x 25 times faster compared to a standard record store access
 * **Virtual filesystem** for record stores
 * **Double precision floating point emulation** layer
@@ -190,7 +190,7 @@ ROOT C++ code can be embedded within Dpdl via the keyord '**>>root**'
 
 Example Dpdl script embedding 'ROOT C++':
 
-<img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="50%" height="50%">
+<img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="60%" height="60%">
 
 ```python
 # main
@@ -221,7 +221,7 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
  
 ### Embedded C code
 
-Dpdl allows the embedding and execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted OR compiled at runtime (if option '**dpdl:compile**' is enabled),
+Dpdl allows the embedding and execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted OR compiled in memory at runtime (if option '**dpdl:compile**' is enabled),
 via a native Dpdl library that has a very small footprint and **includes all essential C libraries** and language constructs (ISO standard C90/C99, **POSIX** compliant) with
 **no external dependencies**.
 
@@ -230,9 +230,11 @@ Custom libraries and functions can be integrated and linked via a straight forwa
 ### The following modes (options) are available for executing embedded C code:
 
 * Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead (**default**)
-* Compiled (at runtime) or interpreted C code (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
+* Compiled (in memory at runtime) or interpreted C code (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
+This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
 
 The faster and more complete execution mode can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+The 'dpdl:compile' option works for the following platforms: i386, x86_64, ARM
 
 Example Dpdl script with embedded C code:
 ```c
@@ -309,7 +311,7 @@ println("embedded python exit code: " + exit_code);
 
 #### Supported python platforms (library 'dpdlpython')
 
-Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
+Currently the 'DpdlEngine lite' release includes the native Dpdl Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
 * on **Linux:** Python version 3.2m (gcc version 4.4.7)
 * on **MacOS:** Python version 3.12 (clang version 14.0.3)
@@ -322,8 +324,8 @@ Julia is a powerful and performant computational programming language  (https://
 
 Julia code can be embedded within Dpdl via the keyord '**>>julia**'
 
-Example Dpdl script embedding 'Julia' that generates a Plot and saves it as PDF:
-<img src="http://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="50%" height="50%">
+Example Dpdl script embedding 'Julia' that generates a Plot and saves the result as PDF file:
+<img src="http://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="60%" height="60%">
 ```python
 #main
 println("Testing Plot data with Julia programming language...")
@@ -490,13 +492,13 @@ println("embedded OCaml exit code: " + exit_code);
 
 ### Other programming languages
 
-Other programming languages can be easily integrated in Dpdl via a plug-in interface and configuration. Please feel free to suggest your opinion on the
+Other programming languages can be easily integrated in Dpdl via a dedicated plug-in interface and configuration. Please feel free to suggest your opinion on the
 'Discussion' section on the DpdlEngine GitHub repository
 
 ## Supported Platforms
 
 Dpdl runs on a wide range of platforms and provides also a small footprint java virtual machine,
-released as open-source that can  be compiled for almost every platform as soon as
+released as open-source, that can  be compiled for almost every platform as soon as
 an ANSI C compiler is available for the target platform.
 
 ### Dpdl is compatible with:
@@ -521,11 +523,11 @@ DpdlEngine V1.0 has been tested on:
 		
 ### Embedded languages - compatibility matrix
 
-(X + version) **currently supported**
+(X + version) **Supported**
 
 (*) **available soon**
 
-| Platform |Embedded C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |ch C/C+ |
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |ch C/C+ |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
 | Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
@@ -559,7 +561,7 @@ The Dpdl framework and API documentation are available via the following links:
  Dpdl Java API Documentation (available soon)
 
 
-## Download 'DpdlEngine lite' release package (Free version)
+## Download 'DpdlEngine lite' release package (Trial version)
 
 The 'DpdlEngine lite' release (v1.0) can be downloaded and try for Free (with some limitations),
 from the dpdl.io download page:
@@ -708,7 +710,7 @@ license.
 	  
 	- Dpdl scripting engine with API libraries (Support for Embedded C, C++, Python, Julia, JavaScript, Lua and OCaml)
 	
-	- Example Dpdl scripts (located in ./DpdlPackets/ and ./DpdlLibs/ folder)
+	- Example Dpdl scripts (located in './DpdlPackets/' and './DpdlLibs/' folder)
 	
 	- Example DpdlPacket (dpdl_PHONEBOOK.dpdl) with corresponding
 	  Dpdl code definition file
@@ -739,6 +741,10 @@ i.e. arraylistExample.h @TEST1
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
 	
+* Example Dpdl script that compresses and de-compresses a string of data using the Java platform API
+
+	[dataCompress.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dataCompress.h)
+	
 * Example Dpdl script that executes an embedded 'Julia' script to plots data using the 'Plots' package, and to save the chart as PDF
 
 	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)
@@ -747,9 +753,17 @@ i.e. arraylistExample.h @TEST1
 
 	[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)
 	
+* Example Dpdl script embedding ANSI C code (ISO C99) that is dynamically compiled in memory at runtime (fast) and executed
+
+	[C/dpdlCcompileExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompileExample.h)
+
 * Example Dpdl script that embeds JavaScript that intercepts some parameters that have been pushed on the dpdl stack
 
 	[js/dpdlJsExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsExample.h)
+	
+* Example Dpdl script (embedded C code compiled at runtime) that launches threads (pThreads) to sum numbers
+
+	[C/dpdlCThreadExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCThreadExample.h)
 	
 * Example Dpdl script that shows to to execute embedded C code accepting parameters pushed on the dpdl_stack, and writes some result back to a buffer variable. The execution time is measured.
 
@@ -778,10 +792,6 @@ i.e. arraylistExample.h @TEST1
 	
 	[LoadCodeFunc.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/LoadCodeFunc.h)
 	
-* Example Dpdl script that compresses and de-compresses a string of data using GZIP classes of the Java platform
-
-	[dataCompress.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dataCompress.h)
-
 * Parse JSON and access data types
 
 	[testDpdlJSON.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testDpdlJSON.h)
