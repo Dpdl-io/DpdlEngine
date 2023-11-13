@@ -15,7 +15,7 @@ developed by
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries via a dedicated scripting language and supports the <ins>embedding and on-the-fly execution</ins> 
 of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts. Embedded ANSI C code can
-also be compiled in memory at runtime if the option 'compile' is enabled in order to achieve faster execution speeds. Other programming language can be implemented
+also be <ins>dynamically compiled in memory at runtime</ins> if the option 'compile' is enabled in order to achieve <ins>faster execution</ins> performance. Other programming language can be implemented
 and embedded via a dedicated plugin-in interface and configuration. For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
 ## Dpdl ( Java api + Embedded C + 'C++' + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
@@ -25,7 +25,7 @@ and embedded via a dedicated plugin-in interface and configuration. For example 
 ### * Using the power of multiple programming languages, reusing code
 ### * Without spending time on installing, compiling and configuring environments
 ### * Designed for running on constrained devices
-### * Compressing, querying and accessing data on constrained devices
+### * Compressing, querying and handling data on constrained devices
 
 **DpdlEngine stack overview**
 
@@ -166,7 +166,7 @@ Programming languages can be developed and integrated via a dedicated plug-in in
 ### Currenlty the following programming languages are supported:
 
 * **C** interpreted code (minimal subset of C90)
-* **ANSI C** (ISO C99) interpreted and compiled at runtime (see 'dpdl:compile')
+* **ANSI C**  (full ISO C99) either interpreted, or compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **Python**
 * **Julia**
 * **JavaScript**
@@ -221,7 +221,7 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
  
 ### Embedded C code
 
-Dpdl allows the embedding and execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted OR compiled in memory at runtime (if option '**dpdl:compile**' is enabled),
+Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted OR compiled in memory at runtime (if option '**dpdl:compile**' is enabled),
 via a native Dpdl library that has a very small footprint and **includes all essential C libraries** and language constructs (ISO standard C90/C99, **POSIX** compliant) with
 **no external dependencies**.
 
@@ -554,9 +554,9 @@ The Dpdl framework and API documentation are available via the following links:
 
 [Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
 [Dpdl embedded languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
+
+[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
  Dpdl Java API Documentation (available soon)
 
