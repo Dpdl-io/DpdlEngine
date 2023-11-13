@@ -76,7 +76,7 @@ applications and embedded system software.
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm
 interoperable with the Java platform API and external java libraries.
 
-Standard **ANSI C code** (a subset of C90 and C99), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
+Standard **ANSI C code** (a subset of C90 and full C99 standard), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
 can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and also compiled code).
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
