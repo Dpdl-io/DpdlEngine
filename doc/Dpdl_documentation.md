@@ -16,7 +16,7 @@
 * Record Store creation and access with virtual file system support
 * Static script execution: static code declarations (*.h_static) are executed only once in a Thread
 * Support for custom function extensions
-* **ANSI C code**, Python, Lua and **OCaml** functional programming language can be embedded directly within Dpdl scripts (interpreted/compiled code).
+* **ANSI C code**, C++, Python, Julia, JavaScript, Lua and **OCaml** functional programming language can be embedded directly within Dpdl scripts (interpreted/compiled code).
 * Other programming languages can be easily integrated via a defined plug-in interface and configuration
 * Tools for converting Dpdl scripts to Java and C/C++ code
 
@@ -276,11 +276,17 @@ object mycode = loadCode("LoadCodeFunc.h", mymap)
 
 ### Dpdl embedded C code
 
-Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90) directly within Dpdl scripts.
-The C code is interpreted at runtime and includes only a minimal subset of the C library, POSIX compliant (also on Windows OS)
+Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90, and ISO C99 standard) directly within Dpdl scripts.
 
-The C interpreter included  by default (in 'DpdlEngine' and DpdlEngine lite') is very compact (only ca. 400 Kb on Raspberry Pi)
-and has no extra dependencies. Custom libraries can be implemented and added if needed via api functions.
+Embedded C code can be executed in 2 different modes:
+
+1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead (**default mode**)
+2) Compiled (in memory at runtime) or interpreted C code (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
+
+The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+
+The C code is executed with mode (1) includes only a minimal subset of the C library and is POSIX compliant (also on Windows OS). It's very compact (only ca. 400 Kb on Raspberry Pi) and has no extra dependencies.
+Custom libraries and functions can be implemented and added if needed via dpdl api functions.
 
 To embed C code within Dpdl scripts use the keyword '**>>c**' to start the embedded code, and the keyword '**<<**' to end the embedded code (Note: The keyword has to be on a single line)
 
@@ -435,7 +441,8 @@ println("testing Dpdl embedded OCaml..")
 
 
 # parameter to instruct the Dpdl runtime to compile the embedded code (faster execution). Without this option the code is interpreted
-dpdl_stack_push("compile")
+
+dpdl_stack_push("dpdl:compile")
 
 # we add a variable to the dpdl stack so that we can access it in the embedded OCaml
 dpdl_stack_var_put("var1", "Hello OCaml from Dpdl")
@@ -543,7 +550,7 @@ The following commands are available:
  -la List DpdlPackets allocated
  -a  Allocate DpdlPacket
  -da Deallocate DpdlPacket
- -qp Query DpdlPacket
+ -qp Query DpdlPacket (needs to be allocated first)
  -c Create DpdlPacket
  -libs  List Dpdl libraries
  -slib  Show library
@@ -917,7 +924,8 @@ for different target platforms and hence speeds up the development process.
 
 This simple benchmark gives the following results:
 
-* **Dpdl script embedded C code**, execution time: 8.0 seconds
+* **Dpdl script embedded C code**, mode (1), execution time: 8.0 seconds
+* **Dpdl script runtime compiled C code**, mode (2), execution time: 5.0 seconds
 * **Compiled C code** (gcc compiler), execution time: 5.0 seconds
 * **Compiled Java code**, execution time: 5.7 seconds
 
