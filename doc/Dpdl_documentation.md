@@ -16,8 +16,9 @@
 * Record Store creation and access with virtual file system support
 * Static script execution: static code declarations (*.h_static) are executed only once in a Thread
 * Support for custom function extensions
-* **ANSI C code**, C++, Python, Julia, JavaScript, Lua and **OCaml** functional programming language can be embedded directly within Dpdl scripts (interpreted/compiled code).
+* Embeddable languages: **ANSI C code, C++, Python, Julia, JavaScript, Lua and OCaml**. These programming can be embedded directly within Dpdl scripts (interpreted/compiled code).
 * Other programming languages can be easily integrated via a defined plug-in interface and configuration
+* ANSI C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Tools for converting Dpdl scripts to Java and C/C++ code
 
 
@@ -267,7 +268,7 @@ end
 ```
 
 The constructor is called if a parameter is supplied
-```
+```python
 object mymap = loadObj("HashMap")
 object mycode = loadCode("LoadCodeFunc.h", mymap)
 ```
