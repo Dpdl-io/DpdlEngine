@@ -9,7 +9,7 @@ SEE Solutions
 
 # System requirements
 
-'DpdlEngine lite' V1.0 is available for Free, with some limitations/restrictions (see section below),
+'DpdlEngine lite' V1.0 is available for free to try, with some limitations/restrictions (see section below),
 under the license agreement included (see LICENSE.txt).
 
 The 'DpdlEngine lite' release requires a compatible Java Virtual Machine (JRE) >= version 1.6 specification to run.
@@ -19,7 +19,7 @@ www.java.com or www.oracle.com website:
 
 https://www.java.com/en/download/manual.jsp
 
-Some Dpdl API functions (ex. embedded C code) make use of the Dpdl native API library (dpdlnativeapi).
+Some Dpdl API functions (ex. embedded C code) make use of the Dpdl native API library 'dpdlnativeapi'.
 The Dpdl native API library is platform dependent and is available for the following platforms:
 
 * MacOS 13.4 (arm)
@@ -33,7 +33,7 @@ The library can be compiled for additional platforms by us on your request by wr
 
 You may delete the libraries for platforms that you do not use (e.g. ./lib/native/someplatform )
 
-### Dpdl embedded language plug-ins Add-ons:
+### Dpdl embedded language plug-in Add-ons:
 
 Additional Dpdl language plug-in add-ons can be downloaded or updated by downloading and extracting the following zip archive in the
 './lib/' folder .
@@ -43,21 +43,21 @@ https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
 ### Embedded languages - compatibility matrix
 
-(X + version) **currently supported**
+(X + version) **Supported**
 
 (*) **available soon**
 
-| Platform |Embedded C |Python |Julia |OCaml |Lua |ROOT C++ |go |ch C/C+ |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
-| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X v4.01|X v5.4|X v6.28|*|*|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X v4.01|X v5.4|*|*|*|
-| Windows64|X|*|*|X v4.01|*|*|*|*|
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |ch C/C+ |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
+| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|*|
+| Windows64|X|*|*|X|X v4.01|*|*|*|*|
 
 
 ## Embedded 'Python' code
 
-### Supported platforms
+### Supported platforms (python)
 
 Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
@@ -100,7 +100,9 @@ eg. symbolic links in the folder './dpdl_env_paths/'
 ```
 ROOT_LIB_PATH -> /Users/arcosta/APP/devel/ROOT_Devel/lib
 ```
+
 NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Downloads section in README.md)
+
 
 ## Embedded 'OCaml' code
 
@@ -117,7 +119,7 @@ directly from ocamljava.org
 To start the DpdlClient console application simply run the following command:
 
 ```
-java -jar DpdlEngine_V1.0_release.jar
+java -jar DpdlEngine_V1.0_release.jar [-load $dpdl_script.h]
 ```
 
 Or execute the following scripts:
@@ -199,6 +201,8 @@ The validation script can be inspected here:
 * Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS 
 
 * Dpdl scripts included with 'include(...)' supports execution of embedded code only in the registered version of Dpdl
+
+* Native Dpdl API function 'dpdl_stack_buf_put(..)' (dpdl.h) is not available when option 'dpdl:compile' or 'dpdl:C99' is used
 
 **NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.

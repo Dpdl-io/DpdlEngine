@@ -951,6 +951,8 @@ The validation script can be inspected here:
 
 * Dpdl scripts included with 'include(...)' supports execution of embedded code only in the registered version of Dpdl
 
+* Native Dpdl API function 'dpdl_stack_buf_put(..)' (dpdl.h) is not available when option 'dpdl:compile' or 'dpdl:C99' is used
+
 **NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
 Contact us if this is the case.
