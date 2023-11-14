@@ -14,9 +14,11 @@ developed by
 
 Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries via a dedicated scripting language and supports the <ins>embedding and on-the-fly execution</ins> 
-of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts. Embedded ANSI C code can
-also be <ins>dynamically compiled in memory at runtime</ins> if the option 'compile' is enabled in order to achieve <ins>faster execution</ins> performance. Other programming language can be implemented
-and embedded via a dedicated plugin-in interface and configuration. For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
+of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts.
+
+Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime</ins> if the option 'compile' is enabled in order to achieve <ins>faster execution</ins> performance.
+Other programming language can be implemented and embedded via a dedicated plugin-in interface and configuration.
+For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
 ## Dpdl ( Java api + Embedded C + 'C++' + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
 
@@ -31,7 +33,7 @@ and embedded via a dedicated plugin-in interface and configuration. For example 
 
 ![Dpdl stack](http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg)
 
-### Dpdl is designed to be simple, very compact, robust, extendible and portable to almost every platform.
+### Dpdl is designed to be <ins>Simple</ins>, very <ins>Compact</ins>, <ins>Robust</ins>, <ins>extendible</ins> and <ins>portable</ins> to almost every platform.
 By combining the portability and vast API availability of Java and Python, the computational power of Julia, the expressiveness of Lua and 
 OCaml, the web enablement of JavaScript and the power of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
@@ -39,7 +41,7 @@ applications, education and research.
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
 are integrated by default and third party libraries and functions can be added as extensions.
 
-Sample Dpdl script (Bluetooth device discovery using Dpdl high level BT API):
+### Sample Dpdl script (Bluetooth device discovery using Dpdl high level BT API):
 ```python
  int status = DPDLAPI_searchClientsOnServer()
  int status_discovery = dpdlFalse
@@ -160,13 +162,13 @@ The default configuration can be extended or updated to resolve additional java 
 
 ## Dpdl embeddable programming languages
 
-Multiple programming languages can be embedded within **Dpdl** scripts via a the keyword '**>>**'
+Multiple programming languages can be embedded within the same **Dpdl** script via a the keyword '**>>**'
 Programming languages can be developed and integrated via a dedicated plug-in interface and configuration. 
 
 ### Currenlty the following programming languages are supported:
 
 * **C** interpreted code (minimal subset of C90)
-* **ANSI C**  (full ISO C99) either interpreted, or compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
+* **ANSI C**  (full ISO C99 standard) either interpreted, or compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **Python**
 * **Julia**
 * **JavaScript**

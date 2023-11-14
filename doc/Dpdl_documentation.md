@@ -583,7 +583,7 @@ java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens jav
 ```
 
 
-## Dpdl definition language
+## 'DpdlPacket' definition language
 
 Dpdl allows to create compressed packets of data via a DpdlPacket code definition. The data in a DpdlPacket can be organized
 in chunks of highly compressed data, along with database indexes. Data chunks can be allocated, queried and deallocated when not
