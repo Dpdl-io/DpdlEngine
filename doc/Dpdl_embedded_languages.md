@@ -59,6 +59,9 @@ printf("Hello C from Dpdl\n");
 <<
 ```
 
+Note: When compiling and executing embedded C with mode (2), the appropriate 'include' and 'lib' paths need to be pushed on the dpdl stack so that
+the Dpdl runtime is able to find your libraries.
+
 #### Example with C main(..) -> function accepting parameters, and writing a result to the Dpdl stack:
 
 ```python

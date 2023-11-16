@@ -20,7 +20,7 @@ Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime<
 Other programming language can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
-## Dpdl ( Java api + Embedded C + 'C++' + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
+## Dpdl = ( Java api + Embedded C + 'C++' + Python + Julia + OCaml) = <ins>Powerful and Versatile</ins>
 
 ### * Develop faster your ideas
 ### * On multiple platforms
