@@ -12,11 +12,12 @@
 * 'ROOT' C++ code can now be embedded in Dpdl scripts via the '**>>root**' keyword --> Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Download sectio in README.md)
 * JavaScript can now be embedded in Dpdl scripts via the '**>>js**' keyword
 * (12.11.2023) Embedded ANSI C code can now be compiled dynamically on-the-fly in memory at runtime for faster execution (see option '**dpdl:compile**') --> available within the next days
-
 * NEW (15.11.2023) The embedded C code compile option 'dpdl:compile' is now available in the 'DpdlEngine lite' release download
   currently platforms supported: MAC OSX (arm64) Linux (x86_64), Raspberry (armv7)
   Support for Windows64 will be released soon
 * NEW (23.11.2023) The native function Thread(..) is now enabled in the 'DpdlEngine lite' release but allows an allocation of only max 3 threads (for unlimited thread allocation the registered version is required)
+
+* NEW (28.11.2023) The data type 'struct' is now included
 
 ## Fixes
 
