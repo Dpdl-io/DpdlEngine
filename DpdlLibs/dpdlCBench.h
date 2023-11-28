@@ -32,4 +32,4 @@ dpdl_stack_push("dpdl:compile", "dpdl:-I./DpdlLibs/C", "dpdl:-I/Library/Develope
 <<
 int exit_code = dpdl_exit_code()
 
-println("ebedded C exit code: " + exit_code);
+println("embedded C exit code: " + exit_code);
