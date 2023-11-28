@@ -72,7 +72,7 @@ arr4[] = "[1,2,3,4,5]"
 Dpdl supports the type 'struct'
 
 Example:
-```pyhton
+```c
 struct myStruct {
 	int x = 10
 	float f = 0.1
