@@ -22,7 +22,7 @@
 * Tools for converting Dpdl scripts to Java and C/C++ code (in development)
 
 
-### Variable Type definition
+### Variables
 
 Dpdl support the following type definitions:
 ```python
@@ -37,6 +37,10 @@ array[] = "1 1.0 0x01 test"
 object myobj = loadObj(..)
 struct myStruct a
 ```
+
+### Array
+
+Arrays are defined with '[]'
 
 Arrays support multiple types and can be accessed also as a [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
 
@@ -63,7 +67,29 @@ arr3[] = "1;2;3;4;5"
 arr4[] = "[1,2,3,4,5]"
 ```
 
-#### Pointers
+### Struct
+
+Dpdl supports the type 'struct'
+
+Example:
+```pyhton
+struct myStruct {
+	int x = 10
+	float f = 0.1
+	double d = 0.3d
+	long l = 1000L
+	byte b = 0x01
+	string s = "Test"
+}
+
+struct myStruct a
+
+println("a.x: " + a.x)
+a.x = 23
+println("a.x: " + a.x)
+```
+
+### Pointers
 
 Dpdl supports a form of 'pointers' (eg. int *ptr = &x ), as in C/C++, Objective-C, go and others.
 
@@ -141,6 +167,48 @@ println("*str_p: " + *str_p)
 println("done")
 ```
 
+### Dpdl Threads
+
+Threads can be created inside Dpdl scripts with the 'Thread(..)' api function.
+
+Multiple threads are allowed inside a single Dpdl script.
+
+The function 'Thread(..)' accepts as parameters a function callback and the time interval for the thread iteration (in milliseconds).
+Optionally the number of iterations for a Thread can also be provided
+
+Example Thread(..) invocation:
+```python
+int thread_id = Tread("myFunc", 1000, [3])
+```
+
+Example starting 2 threads
+```python
+func myThreadFunc1()
+	println("Hello from thread 1")
+end
+
+func myThreadFunc2()
+	println("Hello from thread 2")
+end
+
+# start a thread with an interval of 2000 milliseconds
+println("starting a Dpdl threads...")
+int tId1 = Thread("myThreadFunc1", 2000)
+if(tId1 != -1)
+	println("Thread started with id: " + tId1)
+else
+	println("Error in starting thread")
+fi
+
+# start a thread with an interval of 7000 ms and for 3 iterations
+int tId2 = Thread("myThreadFunc2", 7000, 3)
+if(tId2 != -1)
+	println("Thread started with id: " + tId2)
+else
+	println("Error in starting thread")
+fi
+```
+
 ### Function and Control flow
 
 **function** definition
@@ -210,48 +278,6 @@ The Dpdl API functions usable inside Dpdl scripts are listed here:
 
 [Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-### Dpdl Threads
-
-Threads can be created inside Dpdl scripts with the 'Thread(..)' api function.
-
-Multiple threads are allowed inside a single Dpdl script.
-
-The function 'Thread(..)' accepts as parameters a function callback and the time interval for the thread iteration (in milliseconds).
-Optionally the number of iterations for a Thread can also be provided
-
-Example Thread(..) invocation:
-```python
-int thread_id = Tread("myFunc", 1000, [3])
-```
-
-Example starting 2 threads
-```python
-func myThreadFunc1()
-	println("Hello from thread 1")
-end
-
-func myThreadFunc2()
-	println("Hello from thread 2")
-end
-
-# start a thread with an interval of 2000 milliseconds
-println("starting a Dpdl threads...")
-int tId1 = Thread("myThreadFunc1", 2000)
-if(tId1 != -1)
-	println("Thread started with id: " + tId1)
-else
-	println("Error in starting thread")
-fi
-
-# start a thread with an interval of 7000 ms and for 3 iterations
-int tId2 = Thread("myThreadFunc2", 7000, 3)
-if(tId2 != -1)
-	println("Thread started with id: " + tId2)
-else
-	println("Error in starting thread")
-fi
-```
- 
 
 ### DpdlObject's and Java bindings
 
