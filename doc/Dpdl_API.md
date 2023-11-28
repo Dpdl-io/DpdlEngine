@@ -51,12 +51,14 @@ close(int handle)
 write(int handle, string str)
 writeStream(int handle, string obj, ..)
 read(int handle) return string str
-listFiles()
+listFiles(string dir) return string array_list
 api()
 getApi() return string api
 exit(int status)
 gc()
-Thread(string func) return int status
+Thread(string func_name) return int status
+Thread(string func_name, int interval_ms) return int status
+Thread(string func_name, int interval_ms, int nr_iterations) return int status
 getClass(string name) return object
 loadObj(string name, object params, ...) return object
 loadCode(string dpdl_script_ref, object args, ...) return object
@@ -68,6 +70,8 @@ dpdl_stack_var_get(string key) return string value
 dpdl_exit_code() return int exit_code
 dpdl_print_exception_table()
 raise(object condition) return int status
+raise(object condition, string msg) return int status
+raise(object condition, string msg, bool exit) return int status
 
 [DPDLAPI]
 DPDLAPI_getVersion()  return string
@@ -86,6 +90,7 @@ DPDLAPI_clearCache(string class_name) return int
 DPDLAPI_processXPathVar(string var_name, string query, string mode, string outputFile) return int
 DPDLAPI_createThread(int instance, string script, int priority, int milliseconds) return int status
 DPDLAPI_createThread(int instance, string script, int priority, int milliseconds, int nr_iterations) return int status
+DPDLAPI_callThread(int instance, String func_name, object param, ...
 DPDLAPI_threadRunning(int instance) return int status
 DPDLAPI_execScript(string script) return int status
 DPDLAPI_execCode(string file) return int status
