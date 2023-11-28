@@ -34,7 +34,7 @@ byte b = 0x01
 string s = "mystr"
 bool t = true | false
 array[] = "1 1.0 0x01 test"
-object myobj = getClass(..)
+object myobj = loadObj(..)
 struct myStruct a
 ```
 
