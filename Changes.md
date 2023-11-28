@@ -1,5 +1,5 @@
 
-# DpdlEngine V1.0 improvements
+# DpdlEngine V1.0 improvements/changes/fixes
 
 ## New 
 
@@ -16,18 +16,20 @@
 * NEW (15.11.2023) The embedded C code compile option 'dpdl:compile' is now available in the 'DpdlEngine lite' release download
   currently platforms supported: MAC OSX (arm64) Linux (x86_64), Raspberry (armv7)
   Support for Windows64 will be released soon
+* NEW (23.11.2023) The native function Thread(..) is now enabled in the 'DpdlEngine lite' release but allows an allocation of only max 3 threads (for unlimited thread allocation the registered version is required)
 
 ## Fixes
 
 * Fixed bug resulted from integration of pointers/references
-* 02.11.2023 Fixed bug for Python indentation 
+* 02.11.2023 Fixed bug for Python indentation
 
 
 ## Work in progress
 
-* 'dpdlpython' library for Windows64
+* compile 'dpdlpython' library for Windows64
 * Test python 'Tensorflow lite' and define needed interfaces
 * Adaptions to run 'DpdlEngine lite' on the full featured miniJVM developed by digitalgust (https://github.com/digitalgust/miniJVM)
+* 
 
 
 ## Planned

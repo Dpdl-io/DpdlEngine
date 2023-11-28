@@ -8,10 +8,10 @@
 ## Dpdl scripting language
 
 **Features:**
-* Types supported (**int, byte, double, float, long, string, bool, array[], object**)
+* Types supported (**int, byte, double, float, long, string, bool, array[], object**, struct)
 * Native Threads
-* support for pointers and references (ec. int *px = &x)
-* API: native API, Dpdl API, MIDP API, JRE API
+* support for pointers and references (eg. int *px = &x)
+* APIs: native API, Dpdl API, MIDP API, JRE API
 * Access to the full underlying Java Platform API (JRE) or other external java libraries
 * Record Store creation and access with virtual file system support
 * Static script execution: static code declarations (*.h_static) are executed only once in a Thread
@@ -19,7 +19,7 @@
 * Embeddable languages: **ANSI C code, C++, Python, Julia, JavaScript, Lua and OCaml**. These programming can be embedded directly within Dpdl scripts (interpreted/compiled code).
 * Other programming languages can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
-* Tools for converting Dpdl scripts to Java and C/C++ code
+* Tools for converting Dpdl scripts to Java and C/C++ code (in development)
 
 
 ### Variable Type definition
@@ -35,6 +35,7 @@ string s = "mystr"
 bool t = true | false
 array[] = "1 1.0 0x01 test"
 object myobj = getClass(..)
+struct myStruct a
 ```
 
 Arrays support multiple types and can be accessed also as a [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
@@ -59,6 +60,7 @@ The array elements can be separated with blank space ' ', with comma ',' or with
 arr1[] = "1 2 3 4 5"
 arr2[] = "1,2,3,4,5"
 arr3[] = "1;2;3;4;5"
+arr4[] = "[1,2,3,4,5]"
 ```
 
 #### Pointers
@@ -199,15 +201,59 @@ Note: for multiplication (*) it's necessary to have blank spaces between the num
 * >= (grater than equal)
 * <= (less than equal)
 * == (equal)
-* =! (not equal)
+* != (not equal)
 	
 	
 ### Dpdl API functions
 
+The Dpdl API functions usable inside Dpdl scripts are listed here:
+
 [Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
+### Dpdl Threads
 
-### DpdlObject and Java bindings
+Threads can be created inside Dpdl scripts with the 'Thread(..)' api function.
+
+Multiple threads are allowed inside a single Dpdl script.
+
+The function 'Thread(..)' accepts as parameters a function callback and the time interval for the thread iteration (in milliseconds).
+Optionally the number of iterations for a Thread can also be provided
+
+Example Thread(..) invocation:
+```python
+int thread_id = Tread("myFunc", 1000, [3])
+```
+
+Example starting 2 threads
+```python
+func myThreadFunc1()
+	println("Hello from thread 1")
+end
+
+func myThreadFunc2()
+	println("Hello from thread 2")
+end
+
+# start a thread with an interval of 2000 milliseconds
+println("starting a Dpdl threads...")
+int tId1 = Thread("myThreadFunc1", 2000)
+if(tId1 != -1)
+	println("Thread started with id: " + tId1)
+else
+	println("Error in starting thread")
+fi
+
+# start a thread with an interval of 7000 ms and for 3 iterations
+int tId2 = Thread("myThreadFunc2", 7000, 3)
+if(tId2 != -1)
+	println("Thread started with id: " + tId2)
+else
+	println("Error in starting thread")
+fi
+```
+ 
+
+### DpdlObject's and Java bindings
 
 Dpdl can access the underlying classes of a given JRE implementation or any other external java library.
 
@@ -305,7 +351,7 @@ println("executing embedded C code..")
 <<
 int exit_code = dpdl_exit_code()
 
-println("ebedded C exit code: " + exit_code);
+println("embedded C exit code: " + exit_code);
 ```
 
 Parameters and data can be passed to the interpreter via the '**dpdl_stack_push(..)**' API function.
@@ -343,7 +389,7 @@ dpdl_stack_push("dpdlbuf_var1",n, x, a)
 <<
 int exit_code = dpdl_exit_code()
 
-println("ebedded C exit code: " + exit_code);
+println("embedded C exit code: " + exit_code);
 string buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("response buffer: " + buf)
 ```
@@ -379,7 +425,7 @@ println("")
 
 int exit_code = dpdl_exit_code()
 
-println("ebedded python exit code: " + exit_code);
+println("embedded python exit code: " + exit_code);
 ```
 
 **Note:** The environment variable '**PYTHONHOME**' and '**PYTHONPATH**' need to be set correctly for finding the python libraries

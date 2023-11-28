@@ -35,8 +35,8 @@ func myAlg(object hm_p, string param, int n)
 	    }
 	    int n;
 	    char param[256];
-	    sscanf(argv[1], "%s", &param);
-	    sscanf(argv[3], "%d", &n);
+	    sscanf(argv[0], "%s", &param);
+	    sscanf(argv[2], "%d", &n);
 	    char res[256];
 	    int i;
 	    for(i = 0; i < n; i++){

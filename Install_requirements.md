@@ -20,7 +20,7 @@ www.java.com or www.oracle.com website:
 https://www.java.com/en/download/manual.jsp
 
 Some Dpdl API functions (ex. embedded C code) make use of the Dpdl native API library 'dpdlnativeapi'.
-The Dpdl native API library is platform dependent and is available for the following platforms:
+The Dpdl native API library is platform dependent and is currently available for the following platforms:
 
 * MacOS 13.4 (arm)
 * Linux x86_64 (x84 64bit)
@@ -54,6 +54,14 @@ https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|*|
 | Windows64|X|*|*|X|X v4.01|*|*|*|*|
 
+## Embedded C code
+
+The C code embedded within Dpdl can be executed in 2 modes:
+
+1) Interpreted (minimal subset of C90)
+2) Compiled in memory at runtime and executed (full ANSI C99 compilant)
+
+Mode 2) can be activated by pushing the optino 'dpdl:compile' on the dpdl stack before embedding the code
 
 ## Embedded 'Python' code
 
@@ -159,7 +167,8 @@ Currently the available bluetooth implementation (JSR-82 ) interfaces with the f
 
 ## Linux BlueZ
 
-Ensure the BlueZ library 'libbluetooth.so' is available on the path, eventually create a symbolic link (from libbluetooth.so.*)
+Ensure the BlueZ library 'libbluetooth.so' is available on the path.
+Eventually you might neet to create a symbolic link to a specific version of the library (eg. libbluetooth.so -> libbluetooth.so.$version)
 
 
 # Embedded OCaml code
@@ -167,7 +176,7 @@ Ensure the BlueZ library 'libbluetooth.so' is available on the path, eventually 
 The embedded OCaml code (via >>ocaml keyword) is executed by the Dpdl runtime through the ocamljava library (http://www.ocamljava.org/) and
 requires the following jar library located in the lib folder (./lib): 'ocamlrun-scripting.jar' 
 
-If the 'compile' option has been set (OCaml code is compiled at runtime to improve speed), also the 'ocamljava.jar'
+If the 'dpdl:compile' option has been set (OCaml code is compiled at runtime to improve speed), also the 'ocamljava.jar'
 needs to be present in the lib folder.
 
 
@@ -196,13 +205,15 @@ The validation script can be inspected here:
 	
 * The Dpdl java API is available only in the registered Dpdl version (but Dpdl scripting API is fully available)
 
-* The 'Thread(..)' API function is available only in the registered version of Dpdl (use createThread(..) instead, it provides similar functionality)
+* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 3 Threads)
 
 * Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS 
 
 * Dpdl scripts included with 'include(...)' supports execution of embedded code only in the registered version of Dpdl
 
-* Native Dpdl API function 'dpdl_stack_buf_put(..)' (dpdl.h) is not available when option 'dpdl:compile' or 'dpdl:C99' is used
+* Native Dpdl C API function 'dpdl_stack_buf_put(..)' (dpdl.h) is not available when option 'dpdl:compile' or 'dpdl:C99' is activated
+
+* The option 'dpdl:compile' used to <ins>compile</ins> embedded ANSI C code in memory at runtime can be used only 500 times in the unregistered version of Dpdl
 
 **NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.

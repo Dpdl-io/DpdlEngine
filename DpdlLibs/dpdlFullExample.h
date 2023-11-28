@@ -108,10 +108,10 @@ int main(int argc, char **argv){
    	double d1;
    	float f1;
    	int x;
-   	sscanf(argv[1], "%s", &my_params);
-   	sscanf(argv[2], "%lf", &d1);
-   	sscanf(argv[3], "%f", &f1);
-   	sscanf(argv[4], "%d", &x);
+   	sscanf(argv[0], "%s", &my_params);
+   	sscanf(argv[1], "%lf", &d1);
+   	sscanf(argv[2], "%f", &f1);
+   	sscanf(argv[3], "%d", &x);
    	
    	int mynum[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
    	int alg_res = myAlgorithm(&my_params, d1, f1, x, &mynum);

@@ -12,30 +12,31 @@ developed by
 # What is Dpdl?
 
 
-Dpdl is a <ins>**constrained device**</ins> and <ins>**rapid prototyping** programming language framework</ins> with built-in database technology.
+Dpdl is a <ins>**rapid prototyping** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries via a dedicated scripting language and supports the <ins>embedding and on-the-fly execution</ins> 
 of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts.
 
-Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime</ins> if the option 'compile' is enabled in order to achieve <ins>faster execution</ins> performance.
+Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime</ins> if the option 'dpdl:compile' is enabled in order to achieve <ins>faster execution</ins> performance.
 Other programming language can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
-## Dpdl = ( Java apis + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + OCaml) = <ins>Powerful and Versatile</ins>
+## Dpdl = ( Java api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + OCaml) = <ins>Powerful and Versatile</ins>
 
 ### * Develop faster your ideas
 ### * On multiple platforms
-### * Using the power of multiple programming languages, reusing code
+### * Using the power of multiple programming languages
+### * Reusing code
 ### * Without spending time on installing, compiling and configuring environments
 ### * Designed for running on constrained devices
-### * Compressing, querying and handling data on constrained devices
+### * Compressing, querying and handling data efficiently on constrained devices
 
 **DpdlEngine stack overview**
 
 ![Dpdl stack](http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg)
 
-### Dpdl is designed to be <ins>Simple</ins>, very <ins>Compact</ins>, <ins>Robust</ins>, <ins>extendible</ins> and <ins>portable</ins> to almost every platform.
+### Dpdl is designed to be <ins>Simple</ins>, very <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform.
 By combining the portability and vast API availability of Java and Python, the computational power of Julia, the expressiveness of Lua and 
-OCaml, the web enablement of JavaScript and the power of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
+OCaml, the web-enablement of JavaScript and the power of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
@@ -76,7 +77,7 @@ devices and to foster rapid application development. Dpdl comes with a very comp
 applications and embedded system software.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm
-interoperable with the Java platform API and external java libraries.
+interoperable with the java platform API and external java libraries.
 
 Standard **ANSI C code** (a subset of C90 and full C99 standard), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
 can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and also compiled code).
@@ -96,13 +97,13 @@ memory footprint devices and for rapid application development, teaching and res
 The 'DpdlPacket' data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities. 
 
-**Dpdl can be used:**
+**Dpdl can be used as:**
 
-* As rapid application development platform
-* As an embedded scripting engine for applications
-* A library module
-* As utility tool
-* to handle efficiently data on memory constrained devices
+* Rapid application development platform
+* Embedded scripting engine for applications
+* Library module
+* Utility tool
+* Data handling on memory constrained devices
 	
 	
 ### Features
@@ -945,13 +946,15 @@ The validation script can be inspected here:
 	
 * The Dpdl java API is available only in the registered Dpdl version (but Dpdl scripting API is fully available)
 
-* The 'Thread(..)' API function is available only in the registered version of Dpdl (use createThread(..) instead, it provides similar functionality)
+* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 3 Threads)
 
 * Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS
 
 * Dpdl scripts included with 'include(...)' supports execution of embedded code only in the registered version of Dpdl
 
-* Native Dpdl API function 'dpdl_stack_buf_put(..)' (dpdl.h) is not available when option 'dpdl:compile' or 'dpdl:C99' is used
+* Native Dpdl API function 'dpdl_stack_buf_put(..)' (dpdl.h) is not available when option 'dpdl:compile' or 'dpdl:C99' is activated
+
+* The option 'dpdl:compile' used to <ins>compile</ins> embedded ANSI C code in memory at runtime can be used only 500 times in the unregistered version of Dpdl
 
 **NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
