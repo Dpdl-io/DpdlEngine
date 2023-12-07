@@ -752,6 +752,10 @@ i.e. arraylistExample.h @TEST1
 
 	[concurrent/testConcurrency1.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/concurrent/testConcurrency1.h)
 	
+* Example Dpdl script that shows how exceptions can be raised and handled
+
+	[testRaiseException.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testRaiseException.h)
+
 * Example Dpdl script that compresses and de-compresses a string of data using the Java platform API
 
 	[dataCompress.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dataCompress.h)

@@ -39,7 +39,25 @@ struct myStruct a
 var v = "some variable type var"
 ```
 
-The 'var' type can have arbitrary types and is dispatched at runtime.
+#### 'var' type
+
+The 'var' variable can have an arbitrary type and is dispatched at runtime.
+
+the type of a 'var' variable can be determined with the **'typeof(..)'** function
+
+ex:
+```python
+var s = "this is a string"
+var i = 10
+println("var 's' is a: " + typeof(s))
+println("var 'i' is a: " + typeof(i))
+```
+
+For clarity, a variable other than 'var' type can be determined if necessary by casting to a DpdlObject:
+```python
+int i = 10
+println("var 'i' is a: " + typeof(cast(i)))
+```
 
 ### Array
 
