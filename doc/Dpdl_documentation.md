@@ -92,7 +92,7 @@ Arrays can be initialized with 'struct'
 
 ```python
 struct myStruct a
-arr[] = a
+arr[] = array(a)
 ```
 
 

@@ -62,6 +62,9 @@ println("size: " + s)
 
 object myarrlist = myarr_mix.getObj()
 println("arrlist: " + myarrlist.toString())
+
+my_new_arr[] = array(a)
+println("my_new_arr: " + my_new_arr)
 println("------------------------")
 println("Supported types:")
 
