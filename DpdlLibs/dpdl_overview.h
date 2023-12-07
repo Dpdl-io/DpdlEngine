@@ -75,6 +75,7 @@ bool b = true
 struct myStruct aa
 object myo = loadObj("String", "my java object")
 var v = "my var"
+var v2 = 10
 
 println("mys(string)=" + mys)
 println("i(int)=" + i)
@@ -86,6 +87,12 @@ println("b(bool)=" + b)
 println("aa(struct)=" + aa)
 println("myo(object)=" + myo)
 println("v(var)=" + v)
+
+
+println("the variable 'v' is of type: " + typeof(v))
+println("the variable 'v2' is of type: " + typeof(v2))
+println("the variable 'i' is of type: " + typeof(cast(i)))
+
 println("------------------------")
 
 # use of java.lang.String java class

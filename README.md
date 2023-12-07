@@ -752,6 +752,10 @@ i.e. arraylistExample.h @TEST1
 
 	[concurrent/testConcurrency1.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/concurrent/testConcurrency1.h)
 	
+* Example Dpdl script that shows how to use the type 'struct'
+
+	[testDpdlStruct.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testDpdlStruct.h)
+	
 * Example Dpdl script that shows how exceptions can be raised and handled
 
 	[testRaiseException.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testRaiseException.h)
