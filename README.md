@@ -17,7 +17,7 @@ Dpdl is a <ins>**rapid prototyping** programming language</ins> and <ins>**const
 Dpdl enables access to the Java platform API and external java libraries via a dedicated scripting language and supports the <ins>embedding and on-the-fly execution</ins> 
 of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts.
 
-Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime</ins> if the option 'dpdl:compile' is enabled in order to achieve <ins>faster execution</ins> performance.
+Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime</ins> (see 'dpdl:compile'), in order to achieve <ins>faster execution</ins> performance.
 Other programming language can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
@@ -286,7 +286,7 @@ The Dpdl native API library 'dpdlnativeapi' provides also a Security check to gu
 Therefore the embedded C code execution cannot be mangled internally and guarantees the correct execution of C code.
 In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
 
-**Dpdl embedded C library documentation:**
+**Dpdl embedded C library documentation, for Mode (1):**
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 
@@ -386,6 +386,8 @@ int exit_code = dpdl_exit_code()
 
 println("embedded js exit code: " + exit_code)
 ```
+
+Note: Currently the js engine used is the one embedded in JRE. The coming release will include the faster V8 JavaScript engine
 
 ### Embedding of 'Lua'
 
