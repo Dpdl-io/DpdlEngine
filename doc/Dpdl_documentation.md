@@ -8,17 +8,17 @@
 ## Dpdl scripting language
 
 **Features:**
-* Types supported (**int, byte, double, float, long, string, bool, array[], object**, struct)
-* Native Threads
+* Types supported (**int, byte, float, double, long, string, bool, array[], object, struct, var**)
+* Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
 * APIs: native API, Dpdl API, MIDP API, JRE API
 * Access to the full underlying Java Platform API (JRE) or other external java libraries
-* Record Store creation and access with virtual file system support
-* Static script execution: static code declarations (*.h_static) are executed only once in a Thread
+* Record Store creation and access via virtual file system
 * Support for custom function extensions
 * Embeddable languages: **ANSI C code, C++, Python, Julia, JavaScript, Lua and OCaml**. These programming can be embedded directly within Dpdl scripts (interpreted/compiled code).
 * Other programming languages can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
+* Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl scripts to Java and C/C++ code (in development)
 
 
@@ -36,7 +36,10 @@ bool t = true | false
 array[] = "1 1.0 0x01 test"
 object myobj = loadObj(..)
 struct myStruct a
+var v = "some variable type var"
 ```
+
+The 'var' type can have arbitrary types and is dispatched at runtime.
 
 ### Array
 
@@ -60,16 +63,24 @@ println("array contains Dpdl: " + b)
 
 The array elements can be separated with blank space ' ', with comma ',' or with simicolon ';'. All are valid.
 
-```
+```python
 arr1[] = "1 2 3 4 5"
 arr2[] = "1,2,3,4,5"
 arr3[] = "1;2;3;4;5"
 arr4[] = "[1,2,3,4,5]"
 ```
 
+Arrays can be initialized with 'struct'
+
+```python
+struct myStruct a
+arr[] = a
+```
+
+
 ### Struct
 
-Dpdl supports the type 'struct'
+Dpdl supports the type 'struct' with the following type definitions
 
 Example:
 ```c
@@ -80,6 +91,13 @@ struct myStruct {
 	long l = 1000L
 	byte b = 0x01
 	string s = "Test"
+	object so = loadObj("String", "my java obj in struct")
+	println("myStruct: " + s)
+	
+	func myStructCall()
+		println("myStructCall: " + s + " so: " + so)
+		return 1
+	end
 }
 
 struct myStruct a
@@ -87,15 +105,22 @@ struct myStruct a
 println("a.x: " + a.x)
 a.x = 23
 println("a.x: " + a.x)
+int x = a.myStructCall()
+println("ret val: " + x)
 ```
+Structs may contain functions that can be called.
+
+Variable shadowing is enabled
+
 
 ### Pointers
 
 Dpdl supports a form of 'pointers' (eg. int *ptr = &x ), as in C/C++, Objective-C, go and others.
 
-The types supported by pointers are:
+The types for which pointers are supported:
 
 * int
+* byte
 * string
 * float
 * double
@@ -253,6 +278,10 @@ while(<expression>)
 endwhile
 ```
 
+Note that as 'DpdlExtensions' that implement custom functions and variable declarations can be dynamically added at runtime,
+the call to a non existing function does not necessarily throw an error due to the fact that in a subsequent call the function
+may be available. This feature is useful for dynamically generated code implementations.
+
 ### Arithmetic and logical operators
 
 **Arithmetic:** 
@@ -261,10 +290,11 @@ endwhile
 * subtraction: -
 * multiplication: *
 * division: /
+* power: ^
 * modulo: %
 * negate a value: - (eg. -1)
 	
-Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (ec. 1 * 2). This is currently not allowed: 1*2
+Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (ec. 1 * 2). This is currently not allowed '1*2' but will be in future
 	
 **Logical:**
 
@@ -363,8 +393,8 @@ Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90,
 
 Embedded C code can be executed in 2 different modes:
 
-1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead (**default mode**)
-2) Compiled (in memory at runtime) or interpreted C code (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
+1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library headers already included (**default mode**)
+2) Compiled (in memory at runtime) or interpreted C code (<ins>ANSI C99</ins>) --> fast compile time and FAST execution, path to standard C header and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:C99**' and '**dpdl:compile**'
 
 The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 
@@ -393,7 +423,7 @@ println("embedded C exit code: " + exit_code);
 Parameters and data can be passed to the interpreter via the '**dpdl_stack_push(..)**' API function.
 Data can be written to and read from to the dpdl stack using the '**dpdl_stack_buf_put(..)**' and '**dpdl_stack_buf_get()**' API functions.
 
-Pushing a variable 'dpdlbuf_*" on the dpdl stack, allows to later retrieve by the data buffer that has been written
+Pushing a variable 'dpdlbuf_*" on the dpdl stack, allows to later retrieve in Dpdl the data buffer that has been written
 in the C code via the '**dpdl_stack_buf_put**' function (for example the result of a calculation)
 
 Example:
@@ -430,7 +460,7 @@ string buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("response buffer: " + buf)
 ```
 
-The default memory stack size for the C interpreter is kept small and is configured to be 128 Kb.
+The default memory stack size for the C interpreter is kept small and is currently configured to be 128 Kb.
 
 The stack size can be customized by applying configurable settings.
 
@@ -444,7 +474,7 @@ In the case the library is updated, the corresponding verification checksums nee
 
 ### Embedding of Python
 
-Python code can be embedded within Dpdl script by using the keyword '**>>python**'.
+Python code can be embedded within Dpdl scripts by using the keyword '**>>python**'.
 
 Example Dpdl script with embedded 'Python' code:
 ```python
@@ -470,9 +500,9 @@ export PYTHONHOME=/your_path/to/python/install_dir/
 export PYTHONPATH=/your_path/to/python/install_dir/
 ``` 
 
-The indentation needs to be consistent with the Python language specification.
+The indentation needs to be consistent with the Python language specification
 
-The Dpdl runtime considers the '**>>python**' tag as starting indentation point
+The Dpdl runtime considers the '**>>python**' tag (\t) as starting indentation point
 
 example (correct):
 ```python
@@ -508,21 +538,22 @@ Windows version will follow soon in the coming release
 
 Support for more platforms will be released soon. MicroPython will also be available as option.
 
+
 ### Embedded OCaml code (experimental)
 
-Dpdl supports the embedding of OCaml code directly within Dpdl scripts through the **'>>ocaml'** keyword.
+Dpdl supports also the embedding of 'OCaml' code directly within Dpdl scripts through the **'>>ocaml'** keyword.
 
 The embedded OCaml code is executed by the Dpdl runtime through the 'ocamljava' library (http://www.ocamljava.org/) and
 requires the following jar library located in the lib folder './lib': 'ocamlrun-scripting.jar' 
 
-If the 'compile' option has been set (OCaml code is compiled at runtime to improve speed), also the 'ocamljava.jar'
-needs to be present in the lib folder.
+If the 'dpdl:compile' option has been set, the OCaml code is compiled at runtime to improve speed.
+The 'ocamljava.jar' in this case needs to be present in the 'lib' folder. 
 
 Example Dpdl script with embedded 'OCaml' code:
 ```python
 println("testing Dpdl embedded OCaml..")
 
-
+#
 # parameter to instruct the Dpdl runtime to compile the embedded code (faster execution). Without this option the code is interpreted
 
 dpdl_stack_push("dpdl:compile")
@@ -593,20 +624,54 @@ dpdl_print_exception_table()
 In order to enable the execution of OCaml code via the keyword '**>>ocaml**', the 'ocamlrun-scripting.jar' library jar file
 located in the lib folder (./lib) is required (download from www.ocamljava.org)
 
-If the 'compile' option has been set (the OCaml code is compiled at runtime to improve speed) --> dpdl_stack_push("compile"),
+If the 'dpdl:compile' option has been set (the OCaml code is compiled at runtime to improve speed) --> dpdl_stack_push("compile"),
 also the 'ocamljava.jar' file needs to be present in the './lib' folder.
 
-Other programming languages may also be supported in future. Please feel free to suggest your opinion on the
-Discussion section on the DpdlEngine GitHub repository
 
+### Dpdl Runtime parameters
+
+Some Dpdl runtime behavior can be parameterized by pushing dedicated parameters on the dpdl stack by using the function
+**'dpdl_stack_push(..)'**
+
+Example:
+```
+dpdl_stack_push("dpdl:compile","dpdl:-I./DpdlLibs/C")
+```
+
+#### Compile options
+
+Embedded ANSI C code and OCaml code can be compiled on-the-fly in memory at runtime in order to speedup execution.
+
+**Compiles embedded code before execution:**
+```
+dpdl:compile
+```
+
+**Activates ANSI C99 code**
+```
+dpdl:C99
+```
+
+**Adds the following source file for the execution of ANSI C code:**
+```
+dpdl:-F$SRC_FILE_PATH
+```
+
+**Adds the following include path for the execution of ANSI C code:**
+```
+dpdl:-I$INCLUDE_PATH
+```
+
+**Adds the following library path for the execution of ANSI C code:**
+```
+dpdl:-L$LIBRARY_PATH 
+```
 
 ### Extensions
 
-The Dpdl language can be extended by implementing specific interfaces for custom
-function and variable declarations.
+The Dpdl language can be extended by implementing specific interfaces for custom function and variable declarations.
 
-The implemented extensions can be registered via settings in the "Extensions" section
-defined in the 'DpdlEngine.ini' configuration file.
+The implemented extensions can be registered via settings in the "Extensions" section defined in the 'DpdlEngine.ini' configuration file.
 
 Example of a custom print function, myprintln(..):
 ```java
@@ -664,6 +729,123 @@ If you need to run the DpdlClient on the latest version of Java, use the followi
 java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED -cp ./lib/mjcoap.jar -jar DpdlEngine_V1.0_release.jar
 ```
 
+## Run Dpdl scripts
+
+To run the Dpdl scripting examples start the DpdlClient by executing the following script:
+
+on Linux/MacOS
+```
+./run_DpdlClient.sh
+```
+
+on Windows
+```
+./run_DpdlClient.bat
+```
+
+
+You can execute Dpdl scripts in the following ways:
+
+* Load and execute the Dpdl script file with the -load command
+* Input the script directly in the DpdlClient command console with the -exec command ( with closing </script> tag)
+* Via '-load' parameter to the DpdlClient startup script/command
+* Trough the Dpdl API.
+
+
+1) using 'load' command:
+```
+-load
+enter the Dpdl script file to execute:
+arraylistExample.h
+```
+
+2) using 'exec' command:
+```python
+-exec
+<script>
+string str = "this is a test"
+println(str)
+</script>
+```
+
+3) using the -load command as startup parameter:
+
+example:
+```
+run_DpdlClientScript.sh 
+```
+
+4) using the Dpdl API
+```
+int status = DPDLAPI_execCode("sample.h", "null)
+```
+
+Here you can find all methods available for the Dpdl scripting API: 
+
+[Dpdl_API](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+
+Dpdl allows to access all java classes of the underlying JRE environment,
+providing access to the whole Java platform API via the loadObj(..) and the getClass(..)
+Dpdl scripting API methods.
+
+In this way Dpdl can access the classes and api of external java libraries.
+
+Example (using String java class with method 'contains(..)':
+```python
+object str = loadObj("String", "This is my Java object string")
+bool contains = str.contains("Java")
+if(contains)
+	println("The string contains the word 'Java'")
+else
+	println("The string does NOT contain the word 'Java'")
+fi
+```
+
+The class references resolved by the methods 'loadObj' and 'getClass' are defined via the class reference file:
+./DpdlLibs/libs/classes.txt
+
+NOTE: This file can be edited or complemented only in the registered, Licensed version of Dpdl.
+
+
+**Example:** (Compress and de-compress a string of data)
+```python
+
+#main
+
+object str = loadObj("String", "my data for Dpdl")
+println("string to compress: " + str)
+
+object byte_out = loadObj("ByteArrayOutputStream")
+object zip_out = loadObj("GZIPOutputStream", byte_out)
+
+println("compressing...")
+zip_out.write(str.getBytes())
+zip_out.close()
+println("data compressed successfully")
+
+object compressed_str = byte_out.toString()
+println("compressed string: " + compressed_str)
+
+println("decompressing...")
+object byte_in = compressed_str.getBytes()
+
+object byte_arr_in = loadObj("ByteArrayInputStream", byte_in)
+object zip_in = loadObj("GZIPInputStream", byte_arr_in)
+
+object in_reader = loadObj("InputStreamReader", zip_in)
+object buf_reader = loadObj("BufferedReader", in_reader)
+
+string decompressed_str = ""
+string line = ""
+while(line != null)
+	line = buf_reader.readLine()
+	if(line != null)
+		decompressed_str = decompressed_str + line
+	fi
+endwhile
+println("decompressed: " + decompressed_str)
+
+```
 
 ## 'DpdlPacket' definition language
 
@@ -767,123 +949,6 @@ class
 xml
 dpdlpacket
 ```
-
-## Run Dpdl scripts
-
-To run the Dpdl scripting examples start the DpdlClient by executing the following script:
-
-on Linux/MacOS
-```
-./run_DpdlClient.sh
-```
-
-on Windows
-```
-./run_DpdlClient.bat
-```
-
-
-You can execute Dpdl scripts in the following ways:
-
-	* Load and execute the Dpdl script file with the -load command
-	* Input the script directly in the DpdlClient command console with the -exec command ( with closing </script> tag)
-	* Via '-load' parameter to the DpdlClient startup script/command
-	* Trough the Dpdl API.
-
-
-1) using 'load' command:
-```
--load
-enter the Dpdl script file to execute:
-arraylistExample.h
-```
-
-2) using 'exec' command:
-```python
--exec
-<script>
-string str = "this is a test"
-println(str)
-</script>
-```
-
-3) using the -load command as startup parameter:
-```
-run_DpdlClientScript.sh 
-```
-
-4) using the Dpdl API
-```
-int status = DPDLAPI_execCode("sample.h", "null)
-``
-
-Here you can find all methods available for the Dpdl scripting API: 
-
-[Dpdl_API](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
-
-Dpdl allows to access all java classes of the underlying JRE environment,
-providing access to the whole Java platform API via the loadObj(..) and the getClass(..)
-Dpdl scripting API methods.
-
-In this way Dpdl can access the classes and api of external java libraries.
-
-Example (using String java class with method 'contains(..)':
-```python
-object str = loadObj("String", "This is my Java object string")
-bool contains = str.contains("Java")
-if(contains)
-	println("The string contains the word 'Java'")
-else
-	println("The string does NOT contain the word 'Java'")
-fi
-```
-
-The class references resolved by the methods 'loadObj' and 'getClass' are defined via the class reference file:
-./DpdlLibs/libs/classes.txt
-
-NOTE: This file can be edited or complemented only in the registered, Licensed version of Dpdl.
-
-
-**Example:** (Compress and de-compress a string of data)
-```python
-
-#main
-
-object str = loadObj("String", "my data for Dpdl")
-println("string to compress: " + str)
-
-object byte_out = loadObj("ByteArrayOutputStream")
-object zip_out = loadObj("GZIPOutputStream", byte_out)
-
-println("compressing...")
-zip_out.write(str.getBytes())
-zip_out.close()
-println("data compressed successfully")
-
-object compressed_str = byte_out.toString()
-println("compressed string: " + compressed_str)
-
-println("decompressing...")
-object byte_in = compressed_str.getBytes()
-
-object byte_arr_in = loadObj("ByteArrayInputStream", byte_in)
-object zip_in = loadObj("GZIPInputStream", byte_arr_in)
-
-object in_reader = loadObj("InputStreamReader", zip_in)
-object buf_reader = loadObj("BufferedReader", in_reader)
-
-string decompressed_str = ""
-string line = ""
-while(line != null)
-	line = buf_reader.readLine()
-	if(line != null)
-		decompressed_str = decompressed_str + line
-	fi
-endwhile
-println("decompressed: " + decompressed_str)
-
-```
-
 
 ## DpdlPacket example (installation, allocation and query)
 
@@ -1001,8 +1066,7 @@ Note: This file can be edited only in the registered version of Dpdl
 
 ### Embedded C
 
-As the embedded C code is interpreted at runtime, it's obviously a bit slower than compiled C code, but 
-interpreted code offers the advantage of easy and fast portability, reduces the complexity of compilation
+The embedded C code executed with mode (1) is interpreted at runtime, it's obviously a bit slower than compiled C code with mode (2). But interpreted code offers the advantage of easy and fast portability, reduces the complexity of compilation
 for different target platforms and hence speeds up the development process.
 
 This simple benchmark gives the following results:

@@ -22,6 +22,11 @@ func myThreadFunc3()
 	<<
 end
 
+# this function is called whenever a thread terminates
+func thread_finalize(int id)
+	println("finalized Thread id: " + id)
+end
+
 func myThreadFunc4()
 	int n = 6
 	double x = 10.0d
@@ -47,14 +52,14 @@ end
 println("starting a Dpdl threads...")
 println("")
 println("starting thread 1...")
-int tId1 = Thread("myThreadFunc1", 2000)
+int tId1 = Thread("myThreadFunc1", 2000, 3)
 if(tId1 != -1)
 	println("Thread started with id: " + tId1)
 else
 	println("Error in starting thread")
 fi
 println("starting thread 2...")
-int tId2 = Thread("myThreadFunc2", 7000, 8)
+int tId2 = Thread("myThreadFunc2", 7000, 3)
 if(tId2 != -1)
 	println("Thread started with id: " + tId2)
 else
