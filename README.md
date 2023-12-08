@@ -85,6 +85,8 @@ Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime<
 
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
+Example Dpdl code is listed below in the section 'Dpdl Examples' 
+
 
 ## Why Dpdl?
 
@@ -728,7 +730,7 @@ license.
 	
 
 
-## Dpdl scripting Examples
+## Dpdl Examples
 
 
 To execute the examples enter DpdlClient console and use the '-load' command:
