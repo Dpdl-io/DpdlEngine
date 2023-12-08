@@ -26,8 +26,9 @@ For example the ROOT C++ Data Analysis framework is also available as Dpdl langu
 ### * On multiple platforms
 ### * Using the power of multiple programming languages
 ### * Reusing code
-### * Without spending time on installing, compiling and configuring environments
+### * Without the need to install, compile and configure environments
 ### * Designed to run on constrained devices
+### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Compressing, querying and handling data efficiently on constrained devices
 
 **DpdlEngine stack overview**
@@ -173,7 +174,7 @@ Programming languages can be developed and integrated via a dedicated plug-in in
 ### Currenlty the following programming languages are supported:
 
 * **C** interpreted code (minimal subset of C90)
-* **ANSI C**  (full ISO C99 standard) either interpreted, or compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
+* **ANSI C**  (full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **Python**
 * **Julia**
 * **JavaScript**
