@@ -718,15 +718,13 @@ license.
 
 'DpdlEgine lite' includes:
 
-	- The 'DpdlClient' console application that allows to execute a set of commands
-	  for interacting with the core DpdlEngine
+* The 'DpdlClient' console application that allows to execute a set of commands for interacting with the core DpdlEngine
 	  
-	- Dpdl scripting engine with API libraries (Support for Embedded C, C++, Python, Julia, JavaScript, Lua and OCaml)
+* Dpdl scripting engine with API libraries (Support for Embedded C, C++, Python, Julia, JavaScript, Lua and OCaml)
 	
-	- Example Dpdl scripts (located in './DpdlPackets/' and './DpdlLibs/' folder)
+* Example Dpdl scripts (located in './DpdlPackets/' and './DpdlLibs/' folder)
 	
-	- Example DpdlPacket (dpdl_PHONEBOOK.dpdl) with corresponding
-	  Dpdl code definition file
+* Example DpdlPacket (dpdl_PHONEBOOK.dpdl) with corresponding Dpdl code definition file
 	
 
 
