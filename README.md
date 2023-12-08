@@ -241,15 +241,16 @@ Custom libraries and functions can be integrated and linked via a straight forwa
 2) Compiled (in memory at runtime) (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
 This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
 
-#### Mode 1 (minimal and interpreted)
+#### Mode 1 (minimal and interpreted code)
 
 **minimal C library documentation, for Mode (1):**
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
-#### Mode 2 (full and compiled)
+#### Mode 2 (full and compiled code)
 
 The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' or '**dpdl:C99**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 The 'dpdl:compile' option currently works for the following platforms: **i386, x86_64, arm, armv7l**
+The compiler used is Fabrice Bellard's TCC.
 For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
 
 Example Dpdl script with embedded C code:
