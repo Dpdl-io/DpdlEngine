@@ -125,6 +125,7 @@ a.x = 23
 println("a.x: " + a.x)
 int x = a.myStructCall()
 println("ret val: " + x)
+
 my_arr[] = array(a)
 println("my_arr: " + my_arr)
 ```
