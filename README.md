@@ -17,7 +17,6 @@ Dpdl is a <ins>**rapid prototyping** programming language</ins> and <ins>**const
 Dpdl enables access to the Java platform API and external java libraries via a dedicated scripting language and supports the <ins>embedding and on-the-fly execution</ins> 
 of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts.
 
-Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime</ins> (see 'dpdl:compile'), in order to achieve <ins>faster execution</ins> performance.
 Other programming language can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
@@ -82,6 +81,8 @@ interoperable with the java platform API and external java libraries.
 
 Multiple programming languages, currently **ANSI C code** (a subset of C90 and full C99 standard), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
 can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and also compiled code).
+Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime</ins> (see 'dpdl:compile'), in order to achieve <ins>faster execution</ins> performance.
+
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
 
