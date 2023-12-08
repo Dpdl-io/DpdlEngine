@@ -226,7 +226,7 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
  
 ### Embedded C code
 
-Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts. The C code is interpreted OR compiled in memory at runtime (if option '**dpdl:compile**' is enabled),
+Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts. The C code can be interpreted only OR compiled in memory and executed at runtime (if option '**dpdl:compile**' is enabled),
 via a native Dpdl library that has a very small footprint and **includes all essential C libraries** and language constructs (ISO standard C90/C99, **POSIX** compliant) with
 **no external dependencies**.
 
@@ -234,12 +234,20 @@ Custom libraries and functions can be integrated and linked via a straight forwa
 
 ### The following Modes are available for executing embedded C code:
 
-1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead (**default**)
-2) Compiled (in memory at runtime) or interpreted C code (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
+1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, all basic C libraries and headers included (**default**)
+2) Compiled (in memory at runtime) (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
 This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
 
-The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
-The 'dpdl:compile' option currently works for the following platforms: i386, x86_64, arm, armV7l
+#### Mode 1 (minimal and interpreted)
+
+**Dpdl embedded C library documentation, for Mode (1):**
+[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+
+#### Mode 2 (full and compiled)
+
+The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' or '**dpdl:C99**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+The 'dpdl:compile' option currently works for the following platforms: **i386, x86_64, arm, armv7l**
+For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
 
 Example Dpdl script with embedded C code:
 ```c
@@ -283,12 +291,9 @@ This is a more complete example of the usage of embedded C code within Dpdl:
 
 [dpdlEmbeddedC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlEmbeddedC.h)
 
-The Dpdl native API library 'dpdlnativeapi' provides also a Security check to guarantee that the library have not been compromised.
+The Dpdl native API library 'dpdlnativeapi' provides also a <ins>Security check</ins> to guarantee that the library have not been compromised.
 Therefore the embedded C code execution cannot be mangled internally and guarantees the correct execution of C code.
 In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
-
-**Dpdl embedded C library documentation, for Mode (1):**
-[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 
 ### Embedding of 'Python'
