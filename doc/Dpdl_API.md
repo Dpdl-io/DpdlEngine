@@ -18,6 +18,8 @@ DpdlEngine V1.0
 include(string inc_path) return int
 currentTimeMillis() return long
 cast(object o) return object
+typeof(object o) return string type_str
+array(object o) return [] array
 systemExec(string cmd, int wait_for, int verbose_output) return int status
 hash(string s) return int res
 println(string s)
