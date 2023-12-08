@@ -53,10 +53,10 @@ println("var 's' is a: " + typeof(s))
 println("var 'i' is a: " + typeof(i))
 ```
 
-For clarity, a variable other than 'var' type can be determined if necessary by casting to a DpdlObject:
+For clarity, a variable other than 'var' type can also be determined if necessary:
 ```python
 int i = 10
-println("var 'i' is a: " + typeof(cast(i)))
+println("variable 'i' is of type: " + typeof(i))
 ```
 
 ### Array

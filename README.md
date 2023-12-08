@@ -240,7 +240,7 @@ This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extens
 
 #### Mode 1 (minimal and interpreted)
 
-**Dpdl embedded C library documentation, for Mode (1):**
+**minimal C library documentation, for Mode (1):**
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 #### Mode 2 (full and compiled)
