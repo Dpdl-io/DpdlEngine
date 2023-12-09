@@ -7,6 +7,11 @@ provided by
 SEE Solutions
 
 
+The DpdlEngine documentation can be found in the 'doc' folder or on the GitHub repository
+
+https://github.com/Dpdl-io/DpdlEngine
+
+
 # System requirements
 
 'DpdlEngine lite' V1.0 is available for free to try, with some limitations/restrictions (see section below),
