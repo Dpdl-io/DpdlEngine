@@ -24,7 +24,6 @@ Dpdl supports and implements a Bluetooth API via a JSR-82 implementation that ca
 
 
 
-
 ## CoAP
 
 Dpdl supports and implements a lightweight CoAP protocol that can be accessed natively (mjCoAP) or via a higher level Dpdl API. 
