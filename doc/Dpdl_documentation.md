@@ -63,7 +63,7 @@ println("variable 'i' is of type: " + typeof(i))
 
 ### Array
 
-Arrays are defined with '[]'
+Arrays are defined with '[ ]'
 
 Arrays support multiple types and can be accessed also as a [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
 
