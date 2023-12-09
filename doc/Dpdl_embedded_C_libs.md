@@ -1,6 +1,8 @@
 
 # Dpdl Embedded C
 
+![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
+
 				www.dpdl.io
 
 Dpdl supports the embedding of ANSI C code (C90 and C99), POSIX compliant (also on Windows64), directly within Dpdl scripts.

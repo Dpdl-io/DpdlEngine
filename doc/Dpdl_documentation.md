@@ -1,5 +1,7 @@
 # Dpdl Documentation
 
+![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
+
 				www.dpdl.io
 
 	
@@ -138,9 +140,13 @@ Structs can be used to initialize arrays
 
 ### Pointers
 
-Dpdl supports a form of 'pointers' (eg. int *ptr = &x ), as in C/C++, Objective-C, go and others.
+Dpdl supports a form of 'pointers' (eg. int *ptr = &x ).
 
-The types for which pointers are supported:
+This allows to have a variable that references another variable.
+
+This feature will be further developed.
+
+The types for which pointers are currently supported:
 
 * int
 * byte
