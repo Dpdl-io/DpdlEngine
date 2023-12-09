@@ -166,7 +166,7 @@ The default configuration can be extended or updated to resolve additional java 
 [Bluetooth JSR-82 API](http://www.seesolutions.it/apidoc/Bluetooth_JSR82_API.html)
 
 
-## Dpdl embeddable programming languages
+## Dpdl embedded programming languages
 
 Multiple programming languages can be embedded within the same **Dpdl** script via a the keyword '**>>**'
 Programming languages can be developed and integrated via a dedicated plug-in interface and configuration. 
@@ -229,9 +229,10 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
  
 ### Embedded C code
 
-Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts. The C code can be interpreted only OR compiled in memory and executed at runtime (if option '**dpdl:compile**' is enabled),
-via a native Dpdl library that has a very small footprint and **includes all essential C libraries** and language constructs (ISO standard C90/C99, **POSIX** compliant) with
-**no external dependencies**.
+Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts. The C code can be embedded with 2 different modes, 
+either interpreted only, OR compiled in memory and executed at runtime (if option '**dpdl:compile**' is enabled).
+The code is executed via a native Dpdl library that has a very small footprint and in one of the execution modes already **includes all essential C libraries**
+and language constructs (ISO standard C90/C99, **POSIX** compliant), **no additional dependencies** required.
 
 Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
 

@@ -230,6 +230,8 @@ Multiple threads are allowed inside a single Dpdl script.
 The function 'Thread(..)' accepts as parameters a function callback and the time interval for the thread iteration (in milliseconds).
 Optionally the number of iterations for a Thread can also be provided
 
+Further parameters passed to the 'Thread(..)' function are than passed also to the callback function.
+
 Example Thread(..) with default iteration interval of 1000 ms:
 ```python
 int thread_id = Tread("myFunc")
@@ -247,12 +249,12 @@ int thread_id = Tread("myFunc", 3000, 23)
 
 Example starting 2 threads
 ```python
-func myThreadFunc1()
-	println("Hello from thread 1")
+func myThreadFunc1(int t_id)
+	println("Hello from thread: " + t_id)
 end
 
-func myThreadFunc2()
-	println("Hello from thread 2")
+func myThreadFunc2(int t_id)
+	println("Hello from thread: " + t_id)
 end
 
 # start a thread with an interval of 2000 milliseconds
@@ -264,6 +266,8 @@ else
 	println("Error in starting thread")
 fi
 
+# we make a pause to guarantee not lock conditions
+sleep(3000)
 # start a thread with an interval of 7000 ms and for 3 iterations
 int tId2 = Thread("myThreadFunc2", 7000, 3)
 if(tId2 != -1)
