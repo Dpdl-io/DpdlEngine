@@ -277,7 +277,7 @@ println("Dpdl contains C: " + b)
 ### The following Modes are available for executing embedded C code:
 
 1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, all basic C libraries and headers included (**default**)
-2) Compiled (in memory at runtime) (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
+2) Compiled (in memory at runtime) (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
 This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
 
 #### Mode 1 (minimal and interpreted code)
