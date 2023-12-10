@@ -94,7 +94,7 @@ println("v(var)=" + v)
 
 println("the variable 'v' is of type: " + typeof(v))
 println("the variable 'v2' is of type: " + typeof(v2))
-println("the variable 'i' is of type: " + typeof(cast(i)))
+println("the variable 'i' is of type: " + typeof(i))
 
 println("------------------------")
 
