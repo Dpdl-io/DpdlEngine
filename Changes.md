@@ -1,4 +1,6 @@
 
+![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
+
 # DpdlEngine V1.0 improvements/changes/fixes
 
 ## New 
@@ -16,13 +18,15 @@
   currently platforms supported: MAC OSX (arm64) Linux (x86_64), Raspberry (armv7)
   Support for Windows64 will be released soon
 * NEW (23.11.2023) The native function Thread(..) is now enabled in the 'DpdlEngine lite' release but allows an allocation of only max 3 threads (for unlimited thread allocation the registered version is required)
+* NEW (28.11.2023) The data type 'struct' is supported
 
-* NEW (28.11.2023) The data type 'struct' is now included
+* NEW (09.12.2023) variable 'var' type is supported + function 'typeof(..)' can be used to query the type of a given variable
 
 ## Fixes
 
 * Fixed bug resulted from integration of pointers/references
 * 02.11.2023 Fixed bug for Python indentation
+* 09.12.2023 Fixed bug for 'long' definition inside functions
 
 
 ## Work in progress
