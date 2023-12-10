@@ -8,17 +8,20 @@
 #
 include("dpdllib.h")
 
-func myThreadHello()
-	println("Hello from Dpdl Thread")
+func myThread_1(int t_id, string param)
+	println("Hello from Dpdl Thread: " + t_id)
+	println("param: " + param)
+	println("time: " + getTime())
+	println("---------------------------------------------------")
 end
 
-func myThreadMessage()
-	println("Message from Dpdl Thread")
+func myThread_2(int t_id)
+	println("Message from Dpdl Thread: " + t_id)
 end
 
 # this function is called whenever a thread terminates
-func thread_finalize(int id)
-	println("Thread finalized: " + id)
+func dpdl_thread_finalize(int t_id)
+	println("Thread finalized: " + t_id)
 end
 
 struct myStruct {
@@ -27,7 +30,7 @@ struct myStruct {
 	double d = 0.3d
 	long l = 1000L
 	byte b = 0x01
-	string s = "Test struct"
+	string s = "Test my code"
 
 	println("myStruct")
 
@@ -40,9 +43,9 @@ struct myStruct {
 # main
 println("a sample dummy Dpdl script...")
 
+struct myStruct a
 string mystr = "my string"
 object myobj = "my dpdl object"
-struct myStruct a
 
 println("calling struct fuction...")
 int s_ret = a.myStructCall()
@@ -181,7 +184,7 @@ int thread_instance = 0
 string mythread_process = "myThreadProcess.h"
 int ms_interval = 2000
 int nr_iterations = 3
-println("Executing a Thread process: " + mythread_process + " for " + nr_iterations + " iterations")
+println("Executing Thread process: " + mythread_process + "  nr. iterations: " + nr_iterations)
 int status_t = DPDLAPI_createThread(thread_instance, mythread_process, dpdlMinPriority, ms_interval, nr_iterations)
 while(DPDLAPI_threadRunning(thread_instance) == dpdlTrue)
 	println(".")
@@ -192,13 +195,14 @@ println("")
 println("------------------------")
 
 println("starting Dpdl threads....")
-int tIdx1 = Thread("myThreadHello", 2000, 5)
+int tIdx1 = Thread("myThread_1", 3000, 5, "passing some param")
 if(tIdx1 != -1)
 	println("Thread started with id: " + tIdx1)
 else
 	println("Thread error")
 fi
-int tIdx2 = Thread("myThreadMessage", 3000, 3)
+sleep(2000)
+int tIdx2 = Thread("myThread_2", 3000, 3)
 if(tIdx2 != -1)
 	println("Thread started with id: " + tIdx2)
 else
