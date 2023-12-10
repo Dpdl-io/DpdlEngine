@@ -21,7 +21,7 @@ func myThreadFunc3(int t_id)
 end
 
 # this function is called whenever a thread terminates
-func thread_finalize(int id)
+func dpdl_thread_finalize(int id)
 	println("finalized Thread id: " + id)
 end
 

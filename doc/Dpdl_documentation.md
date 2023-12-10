@@ -10,6 +10,7 @@
 ## Dpdl scripting language
 
 **Features:**
+
 * Types supported (**int, byte, float, double, long, string, bool, array[], object, struct, var**)
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
@@ -123,8 +124,6 @@ Dpdl supports the type 'struct' with the following type definitions
 * Variable shadowing is enabled
 
 * Structs can be used to initialize arrays
-
-* Structs need to be accepted as 'var' in a function definition
 
 
 Example:
