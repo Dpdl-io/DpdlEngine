@@ -43,10 +43,10 @@ println("a sample dummy Dpdl script...")
 string mystr = "my string"
 object myobj = "my dpdl object"
 struct myStruct a
+
 println("calling struct fuction...")
 int s_ret = a.myStructCall()
 println("s_ret: " + s_ret)
-
 
 myarr[] = "1, 2, 3, 4 , 5, 6"
 myarr_mix[] = "1, test, 0x01, 0.1"
@@ -100,6 +100,7 @@ println("------------------------")
 
 # use of java.lang.String java class
 object mystr2 = loadObj("String", "my Dpdl java String obj")
+
 println("mystr2: " + mystr2)
 bool isIn = mystr2.contains("Dpdl")
 println("mystr2 contains 'Dpdl': " + isIn)
@@ -108,6 +109,7 @@ println("------------------------")
 # use of a java.util.Clanendar
 object calendar = getClass("Calendar")
 object cal_inst = calendar.getInstance()
+
 int day_ = cal_inst.get(calendar.DAY_OF_MONTH)
 int month_ = cal_inst.get(calendar.MONTH)
 int year_ = cal_inst.get(calendar.YEAR)
@@ -117,15 +119,18 @@ println("------------------------")
 
 # use a java.util.HashMap
 object myhm = loadObj("HashMap")
+
 myhm.put("my", 1)
 myhm.put("Dpdl", 2)
 myhm.put("java", 3)
 myhm.put("hashmap", 4)
+
 println("hashmap: " + myhm.toString())
 println("------------------------")
 
 # load a Dpdl script object
 object mycode = loadCode("myModule.h", 1000)
+
 mycode.printHello("myModule")
 println("------------------------")
 
