@@ -45,7 +45,21 @@ var v = "some variable type var"
 
 The 'var' variable can have an arbitrary type and is dispatched at runtime.
 
-the type of a 'var' variable can be determined with the **'typeof(..)'** function
+
+```python
+func myFuncVar(var a, var b)
+	println("a:" + a + " type: " + typeof(a))
+	println("")
+	println("b:" + a + " type: " + typeof(b))
+	println("")
+end
+
+int x = 10
+float y = 0.3
+myFuncVar(x, y)
+```
+
+The type of a given 'var' variable can be determined with the **'typeof(..)'** function
 
 ex:
 ```python
@@ -60,6 +74,8 @@ For clarity, a variable other than 'var' type can also be determined if necessar
 int i = 10
 println("variable 'i' is of type: " + typeof(i))
 ```
+
+
 
 ### Array
 
@@ -102,6 +118,15 @@ arr[] = array(a)
 
 Dpdl supports the type 'struct' with the following type definitions
 
+* Structs may contain functions that can be called.
+
+* Variable shadowing is enabled
+
+* Structs can be used to initialize arrays
+
+* Structs need to be accepted as 'var' in a function definition
+
+
 Example:
 ```c
 struct myStruct {
@@ -131,11 +156,6 @@ println("ret val: " + x)
 my_arr[] = array(a)
 println("my_arr: " + my_arr)
 ```
-Structs may contain functions that can be called.
-
-Variable shadowing is enabled
-
-Structs can be used to initialize arrays
 
 
 ### Pointers
@@ -154,6 +174,7 @@ The types for which pointers are currently supported:
 * float
 * double
 * object
+* var
 
 
 
