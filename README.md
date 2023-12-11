@@ -27,7 +27,7 @@ For example the ROOT C++ Data Analysis framework is also available as Dpdl langu
 ### * Using the power of multiple programming languages
 ### * Reuse code
 ### * Without the need to install, compile and configure environments
-### * Designed to run on constrained devices
+### * Run on constrained devices
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Compressing, querying and handling data efficiently on constrained devices
 
@@ -82,7 +82,7 @@ interoperable with the java platform API and external java libraries.
 
 Multiple programming languages, currently **ANSI C code** (a subset of C90 and full C99 standard), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
 can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and also compiled code).
-Embedded ANSI C code can also be <ins>dynamically compiled in memory at runtime</ins> (see 'dpdl:compile'), in order to achieve <ins>faster execution</ins> performance.
+Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory at runtime</ins> (see 'dpdl:compile'), in order to achieve <ins>faster execution</ins> performance.
 
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
@@ -99,13 +99,13 @@ Common IoT protocols such as Bluetooth(tm) and CoAP are supported by default.
 The 'DpdlPacket' data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
 
-The nature of Dpdl is for enabling rapid prototyping, code reuse and enable dynamic code generation and AI generated code by the 
-fact that multiple programming languages can be used within the same code.
+The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability.
+Dpdl has also buillt-in constructs to enable dynamic AI generated code in future.
 
 **Dpdl can be used as:**
 
 * Rapid application development platform
-* Embedded scripting engine for applications
+* Embedded scripting engine
 * Library module
 * Utility tool
 * Data handling on memory constrained devices
