@@ -30,6 +30,7 @@ The Dpdl API functions usable inside Dpdl scripts are listed here:
 
 [Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
+
 ### Variables
 
 Dpdl support the following type definitions:
