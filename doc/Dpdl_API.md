@@ -58,7 +58,7 @@ read(int handle) return string str
 listFiles(string dir) return string array_list
 api()
 getApi() return string api
-exit(int status)
+exit(int exit_code)
 gc()
 Thread(string func_name) return int status
 Thread(string func_name, int interval_ms) return int status
@@ -76,6 +76,12 @@ dpdl_print_exception_table()
 raise(object condition) return int status
 raise(object condition, string msg) return int status
 raise(object condition, string msg, bool exit) return int status
+
+callback functions->
+actionPerformed(string event)
+onRequestFailure(string message)
+onResponse(string response)
+dpdl_thread_finalize(int t_id, object param...)
 
 [DPDLAPI]
 DPDLAPI_getVersion()  return string
