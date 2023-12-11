@@ -14,8 +14,8 @@ developed by
 # What is Dpdl?
 
 Dpdl is a <ins>**rapid prototyping** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl enables access to the Java platform API and external java libraries via a dedicated scripting language and supports the <ins>embedding and on-the-fly execution</ins> 
-of **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** programming languages directly within Dpdl scripts.
+Dpdl enables access to the Java platform API and external java libraries via a dedicated API and supports the <ins>embedding and on-the-fly execution</ins> 
+of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** directly within Dpdl scripts.
 
 Other programming language can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
@@ -25,7 +25,7 @@ For example the ROOT C++ Data Analysis framework is also available as Dpdl langu
 ### * Develop your ideas faster
 ### * On multiple platforms
 ### * Using the power of multiple programming languages
-### * Reusing code
+### * Reuse code
 ### * Without the need to install, compile and configure environments
 ### * Designed to run on constrained devices
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
@@ -35,7 +35,7 @@ For example the ROOT C++ Data Analysis framework is also available as Dpdl langu
 
 ![Dpdl stack](http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg)
 
-### Dpdl is designed to be <ins>Simple</ins>, very <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform.
+### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform.
 By combining the portability and vast API availability of Java and Python, the computational power of Julia, the expressiveness of Lua and 
 OCaml, the web-enablement of JavaScript and the power of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
