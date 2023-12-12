@@ -17,7 +17,15 @@ Currenlty the following protocols are available:
 
 ## Bluetooth
 
-Dpdl supports and implements a Bluetooth API via a JSR-82 implementation that can be accessed natively (bluecove) or via a higher level Dpdl API.
+Dpdl supports and implements a Bluetooth API via a JSR-82 implementation that can be accessed natively (bluecove) or via the higher level Dpdl API.
+
+The bluetooth api requires a compatible bluetooth stack available on the guest OS.
+
+Currently it works on the following platforms:
+
+* Windows
+* Linux (x86_64)
+* Raspberry (armV7l)
 
 
 [Bluetooth Example](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bluetoothDiscoverySave.h)

@@ -154,7 +154,7 @@ int exit_code = dpdl_exit_code()
 println("embedded C compiled and run with exit code: " + exit_code)
 ```
 
-#### Documentation C libraries (mode 2)
+#### Documentation C libraries (mode 1)
 
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
