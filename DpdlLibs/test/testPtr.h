@@ -32,13 +32,14 @@ end
 
 println("testing pointers...")
 
-string s = "my test message"
+string s = "my test message 1"
 int i = 23
 
 myFunc(&s, &i)
 
 string *s_p = &s
 int *i_p = &i
+s = "my test message 2"
 
 myFuncPtr(&s, i_p)
 
