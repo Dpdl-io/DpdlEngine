@@ -9,10 +9,11 @@ provided by
 SEE Solutions
 
 
-The DpdlEngine documentation can be found in the 'doc' folder or on the GitHub repository
+The DpdlEngine documentation can be found in the 'doc' folder, or better (up to date) on the GitHub repository
 
 https://github.com/Dpdl-io/DpdlEngine
 
+As DpdlEngine is in very fast development it's advised to update the software frequently. New features and fixes may be available.
 
 # System requirements
 

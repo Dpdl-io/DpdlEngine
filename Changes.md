@@ -5,8 +5,9 @@
 
 ## New 
 
-* NEW (09.12.2023) variable 'var' type is supported + function 'typeof(..)' can be used to query the type of a given variable
+* NEW (13.12.2023) Added cache for faster loading of java classes
 
+* NEW (09.12.2023) variable 'var' type is supported + function 'typeof(..)' can be used to query the type of a given variable
 * NEW (28.11.2023) The data type 'struct' is supported
 * NEW (23.11.2023) The native function Thread(..) is now enabled in the 'DpdlEngine lite' release but allows an allocation of only max 3 threads (for unlimited thread allocation the registered version is required)
 * NEW (15.11.2023) The embedded C code compile option 'dpdl:compile' is now available in the 'DpdlEngine lite' release download
@@ -28,6 +29,7 @@
  
 ## Fixes
 
+* 13.12.2023 Fixed issue in nested 'struct' type
 * 09.12.2023 Fixed bug for 'long' definition inside functions
 * 02.11.2023 Fixed bug for Python indentation
 * Fixed bug resulted from integration of pointers/references
@@ -38,11 +40,17 @@
 ## Work in progress
 
 * Adaptions to run 'DpdlEngine lite' on the full featured miniJVM developed by digitalgust (https://github.com/digitalgust/miniJVM)
-* Test python 'Tensorflow lite' and define needed interfaces
 * compile 'dpdlpython' library for Windows64
 
 
 ## Planned
+
+### Features
+
+* Dpdl compiler for generating native machine code 
+
+
+### Dpdl language plugins
 
 The following programming language plug-ins will be developed:
 

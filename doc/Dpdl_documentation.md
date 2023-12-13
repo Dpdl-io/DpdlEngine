@@ -41,12 +41,19 @@ double d = 1.0d
 long l = 1000L
 byte b = 0x01 
 string s = "mystr"
-bool t = true | false
+bool t = true
 array[] = "1 1.0 0x01 test"
 object myobj = loadObj(..)
 struct myStruct a
 var v = "some variable type var"
 ```
+
+Redefinition of variables within the same scope is allowed by the default configuration, in this case a 'Warning' is issued.
+
+This configuration can be disabled by toggling the following parameters in 'DpdlEngine.ini' -> 
+**DPDL_ALLOW_VAR_REDEFINITION** and **DPDL_VAR_REDEFINITION_WARNING*
+
+In 'while' loops it's advised, if possible, to allocate variables in the outer scope. This increases also performance and avoids allocations.
 
 #### 'var' type
 
@@ -125,12 +132,15 @@ arr[] = array(a)
 
 Dpdl supports the type 'struct' with the following type definitions
 
-* Structs may contain functions that can be called.
+* Structs can contain structs
+
+* Structs can contain functions that can be called.
 
 * Variable shadowing is enabled
 
 * Structs can be used to initialize arrays
 
+* Structs can contain arrays[], but currently accessing via $struct.arr[] is not yet possible -> this will be allowed very soon
 
 Example:
 ```c
@@ -358,16 +368,23 @@ Note: for multiplication (*) it's necessary to have blank spaces between the num
 **Logical:**
 
 && (and)
+
 || (or)
+
 ! (not)
 	
 **Comparators:**
 
 > (greater than)
+
 < (less than)
+
 >= (grater than equal)
+
 <= (less than equal)
+
 == (equal)
+
 != (not equal)
 	
 	

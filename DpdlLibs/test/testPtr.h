@@ -22,7 +22,9 @@ end
 func myFuncPtr(string str, int *i_p)
 	println("myFuncPtr()")
 	println("")
+	string *str2_p = str
 	println("str: " + str)
+ 	println("*str_p: " + *str2_p)
 	println("x: " + *i_p)
 end
 
