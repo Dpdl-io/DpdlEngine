@@ -50,8 +50,7 @@ var v = "some variable type var"
 
 Redefinition of variables within the same scope is allowed by the default configuration, in this case a 'Warning' is issued.
 
-This configuration can be disabled by toggling the following parameters in 'DpdlEngine.ini' -> 
-**DPDL_ALLOW_VAR_REDEFINITION** and **DPDL_VAR_REDEFINITION_WARNING*
+This configuration can be disabled by changing the parameters '**DPDL_ALLOW_VAR_REDEFINITION**' and '**DPDL_VAR_REDEFINITION_WARNING**' in configuration file 'DpdlEngine.ini' 
 
 In 'while' loops it's advised, if possible, to allocate variables in the outer scope. This increases also performance and avoids allocations.
 
@@ -111,7 +110,7 @@ bool b = myarrayobj.contains("Dpdl")
 println("array contains Dpdl: " + b) 
 ```
 
-The array elements can be separated with blank space ' ', with comma ',' or with simicolon ';'. All are valid.
+The array elements can be separated with blank space ' ', with comma ',' or with semicolon ';'. All are valid.
 
 ```python
 arr1[] = "1 2 3 4 5"
@@ -367,25 +366,18 @@ Note: for multiplication (*) it's necessary to have blank spaces between the num
 	
 **Logical:**
 
-&& (and)
-
-|| (or)
-
-! (not)
+* '&&' (and)
+* ||' (or)
+* '!' (not)
 	
 **Comparators:**
 
-> (greater than)
-
-< (less than)
-
->= (grater than equal)
-
-<= (less than equal)
-
-== (equal)
-
-!= (not equal)
+* '>' (greater than)
+* '<' (less than)
+* '>=' (grater than equal)
+* '<=' (less than equal)
+* '==' (equal)
+* '!=' (not equal)
 	
 	
 ### DpdlObject's and Java bindings

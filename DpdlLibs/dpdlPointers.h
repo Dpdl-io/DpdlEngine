@@ -9,8 +9,21 @@
 
 # function with pointers
 func myFuncPtr(object *testp, string *sp, int *xp)
+	println("myFuncPtr()")
+	println("")
 	*sp = *testp + " " + *sp + " " + "TIE"
 	*xp = 369
+end
+
+func myFuncPtrDeref(string mys, int myi)
+	println("myFuncPtrDeref()")
+	println("")
+	println("mys: " + mys)
+	println("myi: " + myi)
+	string *mysp = mys
+	int *myip = myi
+	println("*mysp: " + *mysp)
+	println("*myi: " + *myip)
 end
 
 func printVarAndPtr()
@@ -66,5 +79,10 @@ object *str_p = &str
 println("*fp: " + *fp)
 println("*dp:" + *dp)
 println("*str_p: " + *str_p)
+println("")
+
+string mystr = "This is a Mega Test"
+int myint = 999
+myFuncPtrDeref(&mystr, &myint)
 
 println("done")
