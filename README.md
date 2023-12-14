@@ -953,10 +953,11 @@ i.e. arraylistExample.h @TEST1
 
 
 
-## 'DpdlEngine lite' release limitations/restrictions
+## 'DpdlEngine lite' Demo release limitations/restrictions
 
 	
-The 'DpdlEngine lite' release software package is available for Free to try and has the following limitations/restrictions:
+The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions
+compared to the full registered version:
 
 * At startup, the DpdlEngine requires the execution of a validation script.
 The script simply accesses a html website at https://www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
@@ -978,7 +979,7 @@ The validation script can be inspected here:
 	
 * The Dpdl java API is available only in the registered Dpdl version (but Dpdl scripting API is fully available)
 
-* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 3 Threads)
+* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 2 Threads allowed)
 
 * Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS
 
