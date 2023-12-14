@@ -1,6 +1,6 @@
 # File: test/testArray.h
 #
-# Example: Test Dpdl script for arrays
+# Example: Test Dpdl script with arrays
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -12,6 +12,11 @@ struct A {
 	int x = 10
 	var v = 1.0
 }
+
+func testProc()
+	arr[] = "a, b, c, d"
+	println("testProc->arr: " + arr)
+end
 
 # main
 struct A a
@@ -43,5 +48,6 @@ println("arr_new: " + arr_new)
 
 arr_new2[] = array(subarr)
 println("arr_new2: " + arr_new2)
+testProc()
 
 

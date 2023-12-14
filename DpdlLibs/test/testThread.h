@@ -1,6 +1,6 @@
 # File: test/testThread.h
 #
-# Example: Test Dpdl script for threads
+# Example: Test Dpdl script with threads
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io

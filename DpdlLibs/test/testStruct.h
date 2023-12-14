@@ -1,6 +1,6 @@
 # File: test/testStruct.h
 #
-# Example: Test Dpdl script that uses structs
+# Example: Test Dpdl script with structs
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -48,6 +48,8 @@ struct B {
 
 	func printHashMap()
 		println("hashmap: ")
+		raise(hashmap, "hashmap is null")
+
 		object keys = hashmap.entrySet()
 		object iter = keys.iterator()
 		object entry
@@ -63,6 +65,7 @@ struct B {
 	func printVector()
 		println("vector: ")
 		raise(vec, "vec is null")
+
 		object enum__ = vec.elements()
 		while(enum__.hasMoreElements())
 			println("" + enum__.nextElement())

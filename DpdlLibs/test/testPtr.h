@@ -1,6 +1,6 @@
 # File: test/testPtr.h
 #
-# Example: Test Dpdl script for pointers
+# Example: Test Dpdl script with pointers
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io

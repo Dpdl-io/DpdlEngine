@@ -1,6 +1,6 @@
 # File: test/testFunc.h
 #
-# Example: Test Dpdl script for functions
+# Example: Test Dpdl script with functions
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -35,7 +35,7 @@ func myFuncPtr(string *ps, var *v, int *i, float *f, double *d, long l, byte *b,
 	println("*pb: " + *pb)
 	println("bo: " + bo)
 	println("*po: " + *po)
-	println("*psa: " + *pa + " type: " + typeof(*pa))
+	println("*pa: " + *pa + " type: " + typeof(*pa))
 	println("---------------------------")
 end
 
