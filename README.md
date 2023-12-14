@@ -17,7 +17,7 @@ Dpdl is a <ins>**rapid prototyping** programming language</ins> and <ins>**const
 Dpdl enables access to the Java platform API and external java libraries via a dedicated API and supports the <ins>embedding and on-the-fly execution</ins> 
 of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** directly within Dpdl scripts.
 
-Other programming language can be implemented and embedded via a dedicated plugin-in interface and configuration.
+Other programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + OCaml) = <ins>Powerful and Versatile</ins>
@@ -27,7 +27,7 @@ For example the ROOT C++ Data Analysis framework is also available as Dpdl langu
 ### * Using the power of multiple programming languages
 ### * Reuse code
 ### * Without the need to install, compile and configure environments
-### * Run on constrained devices
+### * Runs on constrained devices
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Compressing, querying and handling data efficiently on constrained devices
 
@@ -86,6 +86,11 @@ Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory a
 
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
+The size of the DpdlEngine is:
+* DpdlEngine **255 Kb**
+* Native lib with Embedded C and full ANSI C compiler **530 Kb**
+* **785 Kb** in total
+ 
 Example Dpdl code is listed below in the section 'Dpdl Examples' 
 
 
@@ -94,13 +99,11 @@ Example Dpdl code is listed below in the section 'Dpdl Examples'
 Dpdl can be used to implement applications in various domains, in particular for small
 memory footprint devices and for rapid application development, teaching and research.
 
-Common IoT protocols such as Bluetooth(tm) and CoAP are supported by default.
-
 The 'DpdlPacket' data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
 
 The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability.
-Dpdl has also buillt-in constructs to enable dynamic AI generated code in future.
+Dpdl has also buillt-in constructs to enable dynamic AI generated code.
 
 **Dpdl can be used as:**
 
@@ -113,13 +116,12 @@ Dpdl has also buillt-in constructs to enable dynamic AI generated code in future
 	
 ### Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, compiled DpdlVM for target platform)
-* **Built-in Dpdl scripting engine with support for custom function extensions** (DpdlExtension interface)
+* **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and any platform where DpdlVM can be compiled for the target platform)
+* **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform and to external API libraries**
 * **ANSI C code, C++, Python, Julia, JavaScript, Lua and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code), a subset of C90 standard, POSIX compliant
-* On-the-fly compilation of embedded ANSI C code at runtime (via option 'dpdl:compile') -> very fast compile time
+* On-the-fly compilation of embedded ANSI C code in memory at runtime (via option 'dpdl:compile') -> very fast compile time
 * Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini) 
-* Support for pointers and references
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
@@ -129,7 +131,8 @@ The speedup is x 25 times faster compared to a standard record store access
 * **XML** with XPath parser
 * **JSON**
 * **Fast Prototyping**
-* Tools for converting Dpdl scripts to Java , C/C++ and V code
+* Tools for automatically converting Dpdl scripts to Java , C/C++ and V code
+* small footprint, Only **785 Kb** for core DpdlEngine + Embedded C runtime and ANSI C compiler
 
 
 ### Access to the complete JRE Java platform API and external java libraries
@@ -158,13 +161,14 @@ The default configuration includes Java 5 Platform API (1.5), and bluecove Bluet
 
 The default configuration can be extended or updated to resolve additional java APIs (editing of class definition configuration file)
 
-#### Dpdl API access documentation (default configuration)
+#### Dpdl Java API access documentation (default configuration)
 
 
 [Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
 [Bluetooth JSR-82 API](http://www.seesolutions.it/apidoc/Bluetooth_JSR82_API.html)
 
+Additional API's can be added to the class definition file as needed.
 
 ## Dpdl embedded programming languages
 
@@ -173,7 +177,7 @@ Programming languages can be developed and integrated via a dedicated plug-in in
 
 ### Currenlty the following programming languages are supported:
 
-* **C** interpreted code (minimal subset of C90)
+* **C** interpreted code (minimal subset of C90 with standard C libs)
 * **ANSI C**  (full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **Python**
 * **Julia**
@@ -231,7 +235,7 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
 
 Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts. The C code can be embedded with 2 different modes, 
 either interpreted only, OR compiled in memory and executed at runtime (if option '**dpdl:compile**' is enabled).
-The code is executed via a native Dpdl library that has a very small footprint and in one of the execution modes already **includes all essential C libraries**
+The code is executed via a native Dpdl library that has a very small footprint (530 Kb) and **includes all essential C libraries**
 and language constructs (ISO standard C90/C99, **POSIX** compliant), **no additional dependencies** required.
 
 Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
@@ -274,10 +278,10 @@ bool b = str.contains("C")
 println("Dpdl contains C: " + b)
 ```
 
-### The following Modes are available for executing embedded C code:
+### Modes for embedded C code:
 
-1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, all basic C libraries and headers included (**default**)
-2) Compiled (in memory at runtime) (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
+1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, all basic C libraries and headers included, POSIX compliant (**default**)
+2) Compiled C code (in memory at runtime) (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
 This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
 
 #### Mode 1 (minimal and interpreted code)
@@ -288,8 +292,8 @@ This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extens
 #### Mode 2 (full and compiled code)
 
 The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' or '**dpdl:C99**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
-The 'dpdl:compile' option currently works for the following platforms: **i386, x86_64, arm, armv7l**
-The compiler used is Fabrice Bellard's TCC.
+The 'dpdl:compile' option currently works for the following platforms: **i386, x86_64, arm64, armv7l**
+The C compiler used is the Fabrice Bellard's TCC.
 For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
 
 This is a more complete example of the usage of embedded C code within Dpdl:
@@ -525,7 +529,7 @@ an ANSI C compiler is available for the target platform.
 * Java ME Embedded Profile (JSR 361)
 * Java versions >= 1.4 and later
 * Java > 1.1 (but without 'loadObj' and 'getClass' methods)
-* Platforms with ANSI C compiler where the included open source virtual machine can be compiled
+* All Platforms where the included open source virtual machine (written in C) can be compiled
 
 DpdlEngine V1.0 has been tested on:
 
@@ -556,6 +560,7 @@ DpdlEngine V1.0 has been tested on:
 
 Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
 
+* Compiler to compile Dpdl to native machine code
 * OpenAI integration
 * Blockchain integration (smart contracts)
 * Nostr client API
@@ -765,7 +770,7 @@ i.e. arraylistExample.h @TEST1
 	
 * Example Dpdl script that shows how to use the type 'struct'
 
-	[testDpdlStruct.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testDpdlStruct.h)
+	[test/testStruct.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct.h)
 	
 * Example Dpdl script that shows how exceptions can be raised and handled
 
@@ -991,11 +996,12 @@ Contact us if this is the case.
 ## How to order a 'full' DpdlEngine license?
 
 To buy a full featured DpdlEngine license with no limitations/restrictions, regular updates and support,
-please submit your request via the following request form: 
+please submit your request via the following download request form, you will be contacted promptly: 
 
 https://www.dpdl.io/index_order.html
 
 Or just write an e-mail to info@dpdl.io
+
 
 ## Downloads
 

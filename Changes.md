@@ -5,12 +5,13 @@
 
 ## New 
 
-* NEW (13.12.2023) Added cache for faster loading of java classes
+* NEW (14.12.2023) 'for' statement is available i a first draft, it will be worked out further
 
+* NEW (13.12.2023) Added cache for faster loading of java classes
 * NEW (09.12.2023) variable 'var' type is supported + function 'typeof(..)' can be used to query the type of a given variable
 * NEW (28.11.2023) The data type 'struct' is supported
-* NEW (23.11.2023) The native function Thread(..) is now enabled in the 'DpdlEngine lite' release but allows an allocation of only max 3 threads (for unlimited thread allocation the registered version is required)
-* NEW (15.11.2023) The embedded C code compile option 'dpdl:compile' is now available in the 'DpdlEngine lite' release download
+* (23.11.2023) The native function Thread(..) is now enabled in the 'DpdlEngine lite' release but allows an allocation of only max 3 threads (for unlimited thread allocation the registered version is required)
+* (15.11.2023) The embedded C code compile option 'dpdl:compile' is now available in the 'DpdlEngine lite' release download
   currently platforms supported: MAC OSX (arm64) Linux (x86_64), Raspberry (armv7)
   Support for Windows64 will be released soon
 * (12.11.2023) Embedded ANSI C code can now be compiled dynamically on-the-fly in memory at runtime for faster execution (see option '**dpdl:compile**') --> available within the next days

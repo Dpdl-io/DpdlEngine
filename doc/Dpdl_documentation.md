@@ -52,7 +52,7 @@ Redefinition of variables within the same scope is allowed by the default config
 
 This configuration can be disabled by changing the parameters '**DPDL_ALLOW_VAR_REDEFINITION**' and '**DPDL_VAR_REDEFINITION_WARNING**' in configuration file 'DpdlEngine.ini' 
 
-In 'while' loops it's advised, if possible, to allocate variables in the outer scope. This increases also performance and avoids allocations.
+In 'while' and 'for' loops it's advised, if possible, to allocate variables in the outer scope. This increases also performance and avoids allocations.
 
 #### 'var' type
 
@@ -346,6 +346,13 @@ while(<expression>)
 endwhile
 ```
 
+**for** statement
+```python
+for(<expression>)
+
+endfor
+```
+
 Note that as 'DpdlExtensions' that implement custom functions and variable declarations can be dynamically added at runtime,
 the call to a non existing function does not necessarily throw an error due to the fact that in a subsequent call the function
 may be available. This feature is useful for dynamically generated code implementations.
@@ -389,10 +396,17 @@ The classes are loaded within a DpdlObject that is handled by the Dpdl runtime.
 Static classes can be accessed via '**getClass(..)**' method and instance classes via '**loadObj(..)**' method.
 
 The class references are resolved via the 'classes.txt' file located in the folder ./DpdlLibs/libs/.
-You may add your own class references here with the syntax: '$full_class_name $class_alias'
 
-NOTE: Only the full registered version of Dpdl allows editing of this file. The default 'DpdlEngine lite' configuration contains
-the class references of Java Platform JRE 1.5 and Bluetooth JSR-82 API.
+The default configuration resolves the following API's:
+
+[Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
+
+[Bluetooth JSR-82 API](http://www.seesolutions.it/apidoc/Bluetooth_JSR82_API.html)
+
+Additional API's and classes can be added to the class definition file as needed with the syntax: '$full_class_name $class_alias'
+
+NOTE: Only the full registered version of Dpdl allows editing of the class definition file. The default 'DpdlEngine lite' configuration contains
+only the class references of Java Platform JRE 1.5 and Bluetooth JSR-82 API.
 
 Example:
 ```python
