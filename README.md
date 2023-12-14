@@ -90,9 +90,10 @@ Small Memory footprint:
 * DpdlEngine (full) **255 Kb**
 * DpdlNative library with Embedded C and full ANSI C compiler **530 Kb**
 
-* Total size = **785 Kb** only
+* Total size core DpdlEngine = **785 Kb** Only
  
- 
+The size of the DpdlEngine can be stripped down to 60 Kb if needed.
+
 Check out the Example Dpdl code listed below in the section '**Dpdl Examples**' 
 
 
@@ -833,6 +834,10 @@ i.e. arraylistExample.h @TEST1
 
 	[testDpdlJSON.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testDpdlJSON.h)
 	
+* Example Dpdl script that updates the fields of a struct type via a dedicated thread
+
+	[test/testStructThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStructThread.h)
+	
 * Embedded C code execution within Dpdl script
 	
 	[dpdlSimpleC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlSimpleC.h)
@@ -963,6 +968,7 @@ compared to the full registered version:
 
 * At startup, the DpdlEngine requires the execution of a validation script.
 The script simply accesses a html website at https://www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
+-> startup is therefore also a bit slower in demo version
 	  
 The validation script can be inspected here: 
 [./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
