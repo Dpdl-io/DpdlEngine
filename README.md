@@ -88,8 +88,8 @@ This makes Dpdl suitable for a wide range of use-cases and in particular also fo
 
 The size of the DpdlEngine is:
 * DpdlEngine **255 Kb**
-* Native lib with Embedded C and full ANSI C compiler **530 Kb**
-* **785 Kb** in total
+* DpdlNative lib with Embedded C and full ANSI C compiler **530 Kb**
+* **785 Kb** Total size
  
 Example Dpdl code is listed below in the section 'Dpdl Examples' 
 
@@ -236,7 +236,7 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
 Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts. The C code can be embedded with 2 different modes, 
 either interpreted only, OR compiled in memory and executed at runtime (if option '**dpdl:compile**' is enabled).
 The code is executed via a native Dpdl library that has a very small footprint (530 Kb) and **includes all essential C libraries**
-and language constructs (ISO standard C90/C99, **POSIX** compliant), **no additional dependencies** required.
+and language constructs (both, a minimal subset of C90 and full ISO C99, **POSIX** compliant), **no additional dependencies** required.
 
 Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
 
