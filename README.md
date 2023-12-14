@@ -119,7 +119,7 @@ Dpdl has also buillt-in constructs to enable dynamic AI generated code.
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and any platform where DpdlVM can be compiled for the target platform)
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform and to external API libraries**
-* **ANSI C code, C++, Python, Julia, JavaScript, Lua and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code), a subset of C90 standard, POSIX compliant
+* **ANSI C code, C++, Python, Julia, JavaScript, Lua and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
 * On-the-fly compilation of embedded ANSI C code in memory at runtime (via option 'dpdl:compile') -> very fast compile time
 * Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini) 
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
