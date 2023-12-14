@@ -86,12 +86,14 @@ Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory a
 
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
-The size of the DpdlEngine is:
-* DpdlEngine **255 Kb**
-* DpdlNative lib with Embedded C and full ANSI C compiler **530 Kb**
-* **785 Kb** Total size
+Small Memory footprint:
+* DpdlEngine (full) **255 Kb**
+* DpdlNative library with Embedded C and full ANSI C compiler **530 Kb**
+
+* Total size = **785 Kb** only
  
-Example Dpdl code is listed below in the section 'Dpdl Examples' 
+ 
+Check out the Example Dpdl code listed below in the section '**Dpdl Examples**' 
 
 
 ## Why Dpdl?
@@ -582,9 +584,9 @@ The Dpdl framework and API documentation are available via the following links:
  Dpdl Java API Documentation (available only on the registered verison of DpdlEngine)
 
 
-## Download 'DpdlEngine lite' release package (Trial version)
+## Download 'DpdlEngine lite' release package (Demo trial version)
 
-The 'DpdlEngine lite' release (v1.0) can be downloaded and try for Free (with some limitations),
+The 'DpdlEngine lite' Demo release (v1.0) can be downloaded and try for Free (with some limitations),
 from the dpdl.io download page:
 
 [DpdlEngine lite DOWNLOAD form](https://www.dpdl.io/index_download.html)
@@ -592,7 +594,7 @@ from the dpdl.io download page:
 Documentation and Updates are updated regularly on the official DpdlEngine GitHub repository:
 [DpdlEngine GitHub](https://github.com/Dpdl-io/DpdlEngine)
 
-Check the 'DpdlEngine lite' release limitations/restrictions, compared to the full DpdlEngine version, in the last section of this document.
+Check the 'DpdlEngine lite' Demo release limitations/restrictions, compared to the full DpdlEngine version, in the last section of this document.
 
 Suggestion and contributions to enhance Dpdl are very welcome and can be submitted on the discussion section on GitHub:
 [Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)

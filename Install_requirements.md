@@ -196,6 +196,7 @@ compared to the full registered version:
 
 * At startup, the DpdlEngine requires the execution of a validation script.
 The script simply accesses a html website at www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
+-> startup is therefore also a bit slower
 	  
 The validation script can be inspected here: 
 [./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/SEESolutions-it/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
