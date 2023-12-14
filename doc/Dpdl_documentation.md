@@ -34,7 +34,7 @@ The Dpdl API functions usable inside Dpdl scripts are listed here:
 ### Variables
 
 Dpdl support the following type definitions:
-```python
+```c
 int i = 1
 float f = 0.1
 double d = 1.0d
@@ -90,7 +90,7 @@ println("variable 'i' is of type: " + typeof(i))
 
 By determining the type of a 'struct' variable type, the type returned contains also a type identifier.
 eg.
-```
+```c
 struct A a
 println("variable 'a' is of type: " + typeof(a))
 ```
@@ -128,7 +128,7 @@ arr4[] = "[1,2,3,4,5]"
 
 Arrays can be initialized with 'struct'
 
-```python
+```c
 struct myStruct a
 arr[] = array(a)
 ```
@@ -200,7 +200,7 @@ The types for which pointers are currently supported:
 
 
 Example:
-```python
+```c
 func myFuncPtr(object *testp, string *sp, int *xp)
 	*sp = *testp + " " + *sp + " " + "TIE"
 	*xp = 369
