@@ -86,9 +86,9 @@ Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory a
 
 This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
 
-Small Memory footprint:
+### Small Memory footprint:
 * DpdlEngine (full) **255 Kb**
-* DpdlNative library with Embedded C and full ANSI C compiler **530 Kb**
+* DpdlNative library with Embedded C interpreter (subset of C90) and full ANSI C compiler (C99) **530 Kb**
 
 * Total size core DpdlEngine = **785 Kb** Only
  
