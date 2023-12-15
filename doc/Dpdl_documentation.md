@@ -196,6 +196,7 @@ The types for which pointers are currently supported:
 * double
 * object
 * var
+* struct
 
 
 
