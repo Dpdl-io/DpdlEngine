@@ -9,7 +9,14 @@
 
 ## Dpdl scripting language
 
-### Features:
+### Working Drafts:
+
+Here you can find the features that are currently in development phase and will be released soon in the coming releases of DpdlEngine:
+
+[Dpdl_drafts.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_drafts.md)
+
+
+### Current Features:
 
 * Types supported (**int, byte, float, double, long, string, bool, array[], object, struct, var**)
 * Multiple native Threads within same script
@@ -23,12 +30,6 @@
 * ANSI C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl scripts to Java and C/C++ code (in development)
-
-### Working Drafts:
-
-Here you can find the features that are currently in development phase and will be released soon in the coming releases:
-
-[Dpdl_drafts.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_drafts.md)
 
 
 ### Dpdl API functions
