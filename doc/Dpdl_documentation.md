@@ -9,7 +9,7 @@
 
 ## Dpdl scripting language
 
-**Features:**
+### Features:
 
 * Types supported (**int, byte, float, double, long, string, bool, array[], object, struct, var**)
 * Multiple native Threads within same script
@@ -23,6 +23,13 @@
 * ANSI C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl scripts to Java and C/C++ code (in development)
+
+### Working Drafts:
+
+Here you can find the features that are currently in development phase and will be released soon in the coming releases:
+
+[Dpdl_drafts.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_drafts.md)
+
 
 ### Dpdl API functions
 
@@ -468,7 +475,48 @@ object mymap = loadObj("HashMap")
 object mycode = loadCode("LoadCodeFunc.h", mymap)
 ```
 
+### Exception handling using 'raise(..)'
 
+Exceptions can be handled with the 'raise(..)' function. 
+
+The following conditions are checked and an exception is raised if the conditions == false:
+
+	* string -> (condition =! "null") ? true : false 
+	* int -> (condition =! -1) : true : false
+	* bool -> (condition == true) ? true : false
+	* object -> (condition =! null) ? true : false
+
+
+The raise(..) function can be called in the following ways:
+
+```python
+raise(object condition)
+raise(object condition, string msg)
+raise(object condition, string msg, bool exit)
+```
+
+Example:
+```python
+string s1 = "nul(l)"
+raise(s1, "s1 is null")
+
+println("testing int raise")
+int i = 1
+raise(i, "i == -1")
+
+println("testing bool raise")
+bool b = true
+raise(b, "b == false")
+
+println("testing object raise")
+object o = loadObj("String", "test")
+raise(o, "o == null")
+
+println("testing bool expression raise")
+raise(o =! null, "o =! null")
+
+dpdl_print_exception_table()
+```
 
 ### Dpdl embedded C code
 
@@ -661,48 +709,6 @@ println("embedded OCaml exit code: " + exit_code);
 
 NOTE: The 'ocamljava' library can be downloaded from http://www.ocamljava.org/downloads/
 	
-### Exception handling using 'raise(..)'
-
-Exceptions can be handled with the 'raise(..)' function. 
-
-The following conditions are checked and an exception is raised if the conditions == false:
-
-	* string -> (condition =! "null") ? true : false 
-	* int -> (condition =! -1) : true : false
-	* bool -> (condition == true) ? true : false
-	* object -> (condition =! null) ? true : false
-
-
-The raise(..) function can be called in the following ways:
-
-```python
-raise(object condition)
-raise(object condition, string msg)
-raise(object condition, string msg, bool exit)
-```
-
-Example:
-```python
-string s1 = "nul(l)"
-raise(s1, "s1 is null")
-
-println("testing int raise")
-int i = 1
-raise(i, "i == -1")
-
-println("testing bool raise")
-bool b = true
-raise(b, "b == false")
-
-println("testing object raise")
-object o = loadObj("String", "test")
-raise(o, "o == null")
-
-println("testing bool expression raise")
-raise(o =! null, "o =! null")
-
-dpdl_print_exception_table()
-```
 
 In order to enable the execution of OCaml code via the keyword '**>>ocaml**', the 'ocamlrun-scripting.jar' library jar file
 located in the lib folder (./lib) is required (download from www.ocamljava.org)
