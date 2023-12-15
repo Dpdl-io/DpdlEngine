@@ -13,7 +13,7 @@ coming releases
 
 ## Function return type
 
-The possibility to enforce a given return type in function definitions via return type specifiers.
+The possibility to enforce a given return type in function definitions via return type specifiers 'func myfunc() $type'.
 
 The return type specifiers are optional.
 
