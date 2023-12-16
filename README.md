@@ -294,7 +294,7 @@ Minimal, all basic C libraries and headers already included, no dependencies, PO
 **minimal C library documentation, for Mode (1):**
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
-#### Mode 2 (full and compiled code)
+### Mode 2 (full and compiled code)
 
 --> Fast compile time and fast execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
 This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
