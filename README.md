@@ -18,7 +18,7 @@ Dpdl enables access to the Java platform API and external java libraries via a d
 of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** directly within Dpdl scripts.
 
 Other programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
-For example the ROOT C++ Data Analysis framework is also available as Dpdl language plug-in.
+For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + OCaml) = <ins>Powerful and Versatile</ins>
 
@@ -26,7 +26,7 @@ For example the ROOT C++ Data Analysis framework is also available as Dpdl langu
 ### * On multiple platforms
 ### * Using the power of multiple programming languages
 ### * Reuse code
-### * Without the need to install, compile and configure environments
+### * No need to install, compile and configure environments
 ### * Runs on constrained devices
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Compressing, querying and handling data efficiently on constrained devices
@@ -36,8 +36,8 @@ For example the ROOT C++ Data Analysis framework is also available as Dpdl langu
 ![Dpdl stack](http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg)
 
 ### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform.
-By combining the portability and vast API availability of Java and Python, the computational power of Julia, the expressiveness of Lua and 
-OCaml, the web-enablement of JavaScript and the power of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
+By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and 
+OCaml, the <ins>web-enablement</ins> of JavaScript and the <ins>power</ins> of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
@@ -81,10 +81,10 @@ The Dpdl language constructs and syntax is kept simple and follows an object ori
 interoperable with the java platform API and external java libraries.
 
 Multiple programming languages, currently **ANSI C code** (a subset of C90 and full C99 standard), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
-can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted and also compiled code).
+can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted/compiled code).
 Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory at runtime</ins> (see 'dpdl:compile'), in order to achieve <ins>faster execution</ins> performance.
 
-This makes Dpdl suitable for a wide range of use-cases and in particular also for hardware programming.
+This makes Dpdl suitable for a wide range of use-cases and in particular also for Hardware programming.
 
 ### Small Memory footprint:
 * DpdlEngine (full) **255 Kb**
@@ -197,7 +197,7 @@ Some Dpdl embedded language plug-ins are published as open source projects:
 
 https://github.com/Dpdl-io-org/Dpdl_language_plugins
 
-### Embedding of 'ROOT C++'
+### Embedding of 'ROOT C++' code
 
 ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/) .
 
@@ -237,7 +237,7 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
 ### Embedded C code
 
 Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts. The C code can be embedded with 2 different modes, 
-either interpreted only, OR compiled in memory and executed at runtime (if option '**dpdl:compile**' is enabled).
+either <ins>interpreted only</ins>, OR <ins>compiled in memory and executed at runtime</ins> (if option '**dpdl:compile**' is enabled).
 The code is executed via a native Dpdl library that has a very small footprint (530 Kb) and **includes all essential C libraries**
 and language constructs (both, a minimal subset of C90 and full ISO C99, **POSIX** compliant), **no additional dependencies** required.
 
@@ -283,20 +283,26 @@ println("Dpdl contains C: " + b)
 
 ### Modes for embedded C code:
 
-1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, all basic C libraries and headers included, POSIX compliant (**default**)
-2) Compiled C code (in memory at runtime) (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
-This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
+1) Interpreted C code (<ins>minimal subset of C90</ins>)
+2) Compiled C code (in memory at runtime) (full <ins>ANSI C99</ins>)
 
-#### Mode 1 (minimal and interpreted code)
+### Mode 1 (minimal and interpreted code)
+
+--> easy integration of custom extensions. No compile time overhead,
+Minimal, all basic C libraries and headers already included, no dependencies, POSIX compliant (**default Mode**)
 
 **minimal C library documentation, for Mode (1):**
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 #### Mode 2 (full and compiled code)
 
+--> Fast compile time and fast execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
+This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
+
 The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' or '**dpdl:C99**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 The 'dpdl:compile' option currently works for the following platforms: **i386, x86_64, arm64, armv7l**
 The C compiler used is the Fabrice Bellard's TCC.
+
 For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
 
 This is a more complete example of the usage of embedded C code within Dpdl:
@@ -308,7 +314,7 @@ Therefore the embedded C code execution cannot be mangled internally and guarant
 In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
 
 
-### Embedding of 'Python'
+### Embedding of 'Python' code
 
 Python code can be embedded within Dpdl scripts by using the keyword '**>>python**'.
 MicroPython will also be supported as option in the coming release.
@@ -340,7 +346,7 @@ Currently the 'DpdlEngine lite' release includes the native Dpdl Python library 
 * on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
 * <ins>Windows version will follow soon</ins> in the coming release
 	
-### Embedding of 'Julia'
+### Embedding of 'Julia' code
 
 Julia is a powerful and performant computational programming language  (https://julialang.org)
 
@@ -371,7 +377,7 @@ println("finished with exit code: " + exit_code)
 ```
 NOTE: The native Dpdl library 'dpdljulia' needs to be downloaded and deployed separately (see Download section below)
 
-### Embedding of 'JavaScript'
+### Embedding of 'JavaScript' code
 
 JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
 
@@ -407,7 +413,7 @@ println("embedded js exit code: " + exit_code)
 
 Note: Currently the js engine used is the one embedded in JRE. The coming release will include the faster V8 JavaScript engine
 
-### Embedding of 'Lua'
+### Embedding of 'Lua' code
 
 Lua code can be embedded within Dpdl scripts by using the keyword '**>>lua**'.
 
