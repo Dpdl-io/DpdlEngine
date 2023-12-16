@@ -19,6 +19,7 @@ The return type specifiers are optional.
 
 The variable type 'var' is always accepted for all return types as the values are dispatched at runtime.
 
+### Status: implemented and in testing phase
 
 Example:
 ```c
@@ -33,7 +34,41 @@ println("y: " + y)
 println("yv: " + yv)
 ```
 
+## 'enum' type
 
+The possibility to define the 'enum' type
+
+### Status: implemented and in testing phase
+
+Example:
+```c
+enum mykeys {
+	TEST=11, DPDL, CODE=23
+}
+
+enum status {
+	PENDING, DONE, ERROR, RUNNING
+}
+
+
+# main
+enum mykeys a
+
+println("mykeys a: " + a)
+println("TEST: " + a.TEST)
+println("DPDL: " + a.DPDL)
+println("CODE: " + a.CODE)
+
+println("")
+
+enum status s
+println("status s: " + s)
+println("PENDING: " + s.PENDING)
+println("DONE: " + s.DONE)
+println("ERROR: " + s.ERROR)
+println("RUNNING: " + s.RUNNING)
+
+```
 
 
 
