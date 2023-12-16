@@ -50,8 +50,6 @@ enum status {
 	PENDING, DONE, ERROR, RUNNING
 }
 
-
-# main
 enum mykeys a
 
 println("mykeys a: " + a)
