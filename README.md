@@ -94,7 +94,13 @@ This makes Dpdl suitable for a wide range of use-cases and in particular also fo
  
 The size of the DpdlEngine can be stripped down to 60 Kb if needed.
 
-Check out the Example Dpdl code listed below in the section '**Dpdl Examples**' 
+#### Dpdl quick overview 
+
+This is a 'dummy' Dpdl example that shows different features of the language:
+
+[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
+
+You can find more Dpdl examples in the section below: '**Dpdl Examples**' 
 
 
 ## Why Dpdl?

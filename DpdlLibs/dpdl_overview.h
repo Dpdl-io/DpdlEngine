@@ -1,6 +1,6 @@
 # File: dpdl_overview.h
 #
-# Example: Sample Dpdl script
+# Example: Sample dummy Dpdl script that shows most language features
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -19,10 +19,32 @@ func myThread_2(int t_id)
 	println("Message from Dpdl Thread: " + t_id)
 end
 
-# this function is called whenever a thread terminates
 func dpdl_thread_finalize(int t_id)
 	println("Thread finalized: " + t_id)
 end
+
+func mySimpleFunc(object myobj)
+	println("mySimpleFunc")
+	println("myobj: " + myobj)
+	myobj = myobj + " append my str mega"
+	return myobj
+end
+
+func myFuncRetType() int
+	println("myFuncRetType")
+	return 79
+end
+
+enum status {
+	INIT,
+	DONE,
+	OK,
+	ERROR = -1
+}
+
+struct A {
+	string s = "an A"
+}
 
 struct myStruct {
 	int x = 10
@@ -30,7 +52,13 @@ struct myStruct {
 	double d = 0.3d
 	long l = 1000L
 	byte b = 0x01
+	bool bo = true
 	string s = "Test my code"
+	var v = "a generic var type, dispatched at runtime"
+	object o = loadObj("String", "my java obj str")
+
+	struct A mya
+	enum status stat
 
 	println("myStruct")
 
@@ -38,18 +66,48 @@ struct myStruct {
 		println("myStructCall: " + s)
 		return 23
 	end
+
+	func getA()
+		mya.s = "This is my returned struct A"
+		return mya
+	end
 }
 
 # main
+bool startThreads = false
 println("a sample dummy Dpdl script...")
 
-struct myStruct a
-string mystr = "my string"
-object myobj = "my dpdl object"
+string mystr = "my message: "
+object mystrobj = "my dpdl object"
+string msg = mySimpleFunc("my message: ")
+object msg2 = mySimpleFunc(mystrobj)
+println("msg: " + msg)
+println("msg2: " + msg2)
+println("msg2 ends with 'mega': " + msg2.endsWith("mega"))
 
-println("calling struct fuction...")
+int ii = myFuncRetType()
+println("ii: " + ii)
+var iiv = myFuncRetType()
+println("iiv: " + iiv)
+
+struct myStruct a
+enum status st
+println("myStruct a: " + a)
+println("a.x: " + a.x)
+
+println("calling struct function...")
 int s_ret = a.myStructCall()
 println("s_ret: " + s_ret)
+
+println("getting inner struct of a...")
+struct A ax
+ax = a.getA()
+println("ax: " + ax)
+
+println("enum status st: " + st)
+println("st.DONE: " + st.DONE)
+println("st.ERROR: " + st.ERROR)
+
 
 myarr[] = "1, 2, 3, 4 , 5, 6"
 myarr_mix[] = "1, test, 0x01, 0.1"
@@ -101,7 +159,7 @@ println("the variable 'i' is of type: " + typeof(i))
 
 println("------------------------")
 
-# use of java.lang.String java class
+# use of a java.lang.String
 object mystr2 = loadObj("String", "my Dpdl java String obj")
 
 println("mystr2: " + mystr2)
@@ -133,12 +191,13 @@ println("------------------------")
 
 # load a Dpdl script object
 object mycode = loadCode("myModule.h", 1000)
-
 mycode.printHello("myModule")
+
 println("------------------------")
 
 # embed C code
 println("my embedded C code...")
+
 dpdl_stack_push("dpdlbuf_var1", i, d, mystr)
 >>c
 	#include <stdio.h>
@@ -158,6 +217,7 @@ dpdl_stack_push("dpdlbuf_var1", i, d, mystr)
 <<
 int exit_code = dpdl_exit_code()
 println("embedded C exit code: " + exit_code)
+
 string res = dpdl_stack_buf_get("dpdlbuf_var1")
 println("result: " + res)
 println("------------------------")
@@ -194,19 +254,23 @@ println("finished")
 println("")
 println("------------------------")
 
-println("starting Dpdl threads....")
-int tIdx1 = Thread("myThread_1", 3000, 5, "passing some param")
-if(tIdx1 != -1)
-	println("Thread started with id: " + tIdx1)
+if(startThreads)
+	println("starting Dpdl threads....")
+	int tIdx1 = Thread("myThread_1", 3000, 5, "passing some param")
+	if(tIdx1 != -1)
+		println("Thread started with id: " + tIdx1)
+	else
+		println("Thread error")
+	fi
+	sleep(2000)
+	int tIdx2 = Thread("myThread_2", 3000, 3)
+	if(tIdx2 != -1)
+		println("Thread started with id: " + tIdx2)
+	else
+		println("Thread error")
+	fi
 else
-	println("Thread error")
-fi
-sleep(2000)
-int tIdx2 = Thread("myThread_2", 3000, 3)
-if(tIdx2 != -1)
-	println("Thread started with id: " + tIdx2)
-else
-	println("Thread error")
+	println("startThreads is: " + startThreads)
 fi
 println("done")
 
