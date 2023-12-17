@@ -2,7 +2,7 @@
 #
 # NOTE: Do not edit or delete this file, it's required to keep the Dpdl DEMO release active
 #
-# This scripts serves as a validator for the DEMO release of Dpdl. It simply accesses a web page of
+# This scripts serves as a validator for the DpdlEngine lite release of Dpdl. It simply accesses a web page of
 # SEE Solutions at the following url: https://www.dpdl.io
 # 
 # contact: info@dpdl.io
@@ -12,17 +12,17 @@
 string URL_to_validate = "https://www.dpdl.io/DemoDpdl_validator.html"
 
 object url = loadObj("URL", URL_to_validate)
+raise(url, "Error: url not valid", true)
+
 object url_connection = url.openConnection()
+raise(url_connection, "Error: unable to establish a connection to dpdl.io", true)
+
 object url_in = url_connection.getInputStream()
-if(url_in == null)
-	println("exiting...")
-	exit(-1)
-fi
+raise(url_in, "Error: failed to get input stream. The 'DpdlEngine lite' release requires internet connectivity for validation", true)
+
 object url_in_read = loadObj("InputStreamReader", url_in)
-if(url_in_read == null)
-	println("exiting...")
-	exit(-1)
-fi
+raise(url_in_read, "Error: unable to open input stream", true)
+
 object buf_read = loadObj("BufferedReader", url_in_read)
 object buf_str = loadObj("String", "")
 
@@ -42,3 +42,4 @@ if(check_ok == false)
 	exit(-1)
 fi
 
+return 1
