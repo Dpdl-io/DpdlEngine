@@ -94,7 +94,7 @@ This makes Dpdl suitable for a wide range of use-cases and in particular also fo
  
 The size of the DpdlEngine can be stripped down to 60 Kb if needed.
 
-#### Dpdl quick overview 
+### Dpdl quick overview 
 
 This is a 'dummy' Dpdl example that shows different features of the language:
 
