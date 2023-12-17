@@ -86,7 +86,12 @@ println("msg2: " + msg2)
 println("msg2 ends with 'mega': " + msg2.endsWith("mega"))
 
 int ii = myFuncRetType()
+int *iip = &ii
 println("ii: " + ii)
+println("*iip: " + *iip)
+ii = ii + 23
+println("*iip: " + *iip)
+
 var iiv = myFuncRetType()
 println("iiv: " + iiv)
 
