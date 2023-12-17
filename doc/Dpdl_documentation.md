@@ -330,21 +330,21 @@ fi
 
 ### Function and Control flow
 
-**function** definition
+**`function`** definition
 ```python
 func myFunction(string param, object param....)
 
 end
 ```
 
-**if** statement
+**`if`** statement
 ```python
 if(<expression>)
 
 fi
 ```
 
-**if else** statement
+**`if elseif`** statement
 ```python
 if(<expression>)
 
@@ -355,14 +355,14 @@ else
 fi
 ```
 
-**while** statement
+**`while`** statement
 ```python
 while(<expression>)
 
 endwhile
 ```
 
-**for** statement
+**`for`** statement
 ```python
 for(<expression>)
 
