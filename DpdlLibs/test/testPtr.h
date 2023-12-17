@@ -7,6 +7,12 @@
 #
 #
 
+struct myStruct {
+	int x = 23
+	int y = 999
+	string s = ""
+}
+
 func myFunc(string str, int x)
 	println("myFunc()")
 	println("")
@@ -42,4 +48,22 @@ int *i_p = &i
 s = "my test message 2"
 
 myFuncPtr(&s, i_p)
+
+println("testing struct pointers...")
+struct myStruct a
+println(a)
+
+a.s = "MEGA"
+println(a)
+
+struct myStruct *ap
+*ap = &a
+println(*ap)
+a.s = "MEGATIE"
+println(*ap)
+var *avp = &a
+println("*avp: " + *avp)
+a.s = "MEGATIE var pointer to struct"
+println("*avp: " + *avp)
+
 

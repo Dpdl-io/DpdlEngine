@@ -199,7 +199,7 @@ The script simply accesses a html website at www.dpdl.io for validation (NO data
 -> startup is therefore also a bit slower in demo version
 	  
 The validation script can be inspected here: 
-[./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/SEESolutions-it/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
+[./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
 
 * The DpdlEngine parameters and configuration file 'DpdlEngine.ini' can be customized only in the registered version
 	
