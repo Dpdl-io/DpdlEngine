@@ -105,14 +105,18 @@ println("variable 'a' is of type: " + typeof(a))
 The above statements will return '**struct:A**'
 
 
-### Array
+### Arrays
 
 Arrays are defined with '[ ]'
 
 Arrays support multiple types and can be accessed also as a [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
 
+Array can be initialized also via **`strings`** and **`structs`**
+
 Example:
 ```python
+myarrmix[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
+
 myarray[] = "1 1.0 0x01 test Dpdl Dynamic Packet Definition Language"
 
 # this returns an arraylist
@@ -134,13 +138,37 @@ arr3[] = "1;2;3;4;5"
 arr4[] = "[1,2,3,4,5]"
 ```
 
-Arrays can be initialized with 'struct'
-
+Initializing an array with a struct:
 ```c
 struct myStruct a
 arr[] = array(a)
 ```
 
+#### Looping through arrays
+
+1) looping through an array with  **`for`**  or  **`while`**  loop:
+```python
+myarr[] = [1, 2, 3, 4, 5]
+int c = 0
+for(c < myarr.size())
+	println("myarr[" + c + "]=" + myarr[c])
+	c=c+1
+endfor
+```
+
+2) looping throught an an array with java iterator
+```python
+myarr[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
+println("myarr: " + myarr)
+
+object myarrobj = myarr.getObj()
+
+object iter = myarrobj.iterator()
+
+while(iter.hasNext())
+	println("myarr element: " + iter.next())
+endwhile
+```
 
 ### Struct
 

@@ -38,9 +38,9 @@ endwhile
 println("----------------------------")
 
 object subarrobj = subarr.getObj()
-object it2 = subarrobj.iterator()
-while(it2.hasNext())
-	println("elem: " + it2.next())
+object its = subarrobj.iterator()
+while(its.hasNext())
+	println("elem: " + its.next())
 endwhile
 
 arr_new[] = array("test")
@@ -49,5 +49,18 @@ println("arr_new: " + arr_new)
 arr_new2[] = array(subarr)
 println("arr_new2: " + arr_new2)
 testProc()
+
+println("----------------------------")
+
+testarr2[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
+println("testarr2: " + testarr2)
+
+object arrobj2 = testarr2.getObj()
+
+object it2 = arrobj2.iterator()
+
+while(it2.hasNext())
+	println("elem2: " + it2.next())
+endwhile
 
 

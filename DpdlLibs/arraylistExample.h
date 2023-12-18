@@ -24,8 +24,14 @@ while(x < arr_list.size())
    x = arr_ref.get(x)
    println("val: " + x)
 endwhile
-# 
+
 arr2[] = "1 1.0 0x01 test"
 println("arr: " + arr2)
 object b = arr2[2]
 println("b: " + b.toString())
+
+arr3[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
+println("arr3: " + arr3)
+float f3 = arr3[1] + arr3[2]
+println("f3: " + f3)
+

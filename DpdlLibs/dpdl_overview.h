@@ -113,21 +113,42 @@ println("enum status st: " + st)
 println("st.DONE: " + st.DONE)
 println("st.ERROR: " + st.ERROR)
 
+println("array allocation and access...")
 
-myarr[] = "1, 2, 3, 4 , 5, 6"
-myarr_mix[] = "1, test, 0x01, 0.1"
+myarr[] = [1, 2, 3, 4 , 5, 6]
+myarr_mix[] = [1, 0.1, 23.0d, 1000L, "mega"]
 
-println("array: " + myarr_mix)
+myarr2[] = "1, 2, 3, 4 , 5, 6"
+myarr_mix2[] = "1, 0.1, 23.0d, 0x01, 1000L, mega"
+
+println("myarr: " + myarr)
+println("myarr_mix: " + myarr_mix)
 int s = myarr_mix.size()
 println("size: " + s)
 
 myarr_mix[0] = a
-println("array: " + myarr_mix)
+println("myarr_mix: " + myarr_mix)
 s = myarr_mix.size()
 println("size: " + s)
 
 object myarrlist = myarr_mix.getObj()
-println("arrlist: " + myarrlist.toString())
+println("myarrlist: " + myarrlist.toString())
+println("")
+println("Iterating over...")
+int c = 0
+int size = myarr_mix.size()
+for(c < size)
+	println("myarr_mix[" + c + "]=" + myarr_mix[c] + " is of type: " + typeof(myarr_mix[c]))
+	c = c+1
+endfor
+println("")
+println("Iterating over using arraylist obj...")
+object iter = myarrlist.iterator()
+var elem
+while(iter.hasNext())
+#elem = iter.next()
+	println("myarrlist item: " + iter.next() + "")
+endwhile
 
 my_new_arr[] = array(a)
 println("my_new_arr: " + my_new_arr)
