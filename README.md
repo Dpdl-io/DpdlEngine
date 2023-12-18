@@ -181,7 +181,7 @@ Additional API's can be added to the class definition file as needed.
 
 ## Dpdl embedded programming languages
 
-Multiple programming languages can be embedded within the same **Dpdl** script via a the keyword '**>>**'
+Multiple programming languages can be embedded within the same **Dpdl** script via a the keyword **`>>`**
 Programming languages can be developed and integrated via a dedicated plug-in interface and configuration. 
 
 ### Currenlty the following programming languages are supported:

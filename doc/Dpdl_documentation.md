@@ -64,7 +64,7 @@ In 'while' and 'for' loops it's advised, if possible, to allocate variables in t
 
 #### 'var' type
 
-The 'var' variable can have an arbitrary type and is dispatched at runtime.
+The **`var`** variable can have an arbitrary type and is dispatched at runtime.
 
 
 ```python
@@ -80,7 +80,7 @@ float y = 0.3
 myFuncVar(x, y)
 ```
 
-The type of a given variable can be determined with the **'typeof(..)'** function
+The type of a given variable can be determined with the **`typeof(..)`** function
 
 ex:
 ```python
@@ -107,11 +107,11 @@ The above statements will return '**struct:A**'
 
 ### Arrays
 
-Arrays are defined with '[ ]'
+Arrays are defined with **`[ ]`**
 
 Arrays support multiple types and can be accessed also as a [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
 
-Array can be initialized also via **`strings`** and **`structs`**
+Array can be initialized directly, via **`strings`** and also with **`structs`**
 
 Example:
 ```python
@@ -132,13 +132,16 @@ println("array contains Dpdl: " + b)
 The array elements can be separated with blank space ' ', with comma ',' or with semicolon ';'. All are valid.
 
 ```python
+myarr1[] = [1 2 3 4 5]
+myarr2[] = [1, 2, 3, 4, 5]
+myarr3[] = [1; 2; 3; 4; 5]
 arr1[] = "1 2 3 4 5"
 arr2[] = "1,2,3,4,5"
 arr3[] = "1;2;3;4;5"
 arr4[] = "[1,2,3,4,5]"
 ```
 
-Initializing an array with a struct:
+Initializing an array with a **`struct`**:
 ```c
 struct myStruct a
 arr[] = array(a)
@@ -156,7 +159,7 @@ for(c < myarr.size())
 endfor
 ```
 
-2) looping throught an an array with java iterator
+2) looping throught an an array with java **`iterator`**
 ```python
 myarr[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
 println("myarr: " + myarr)
@@ -172,9 +175,9 @@ endwhile
 
 ### Struct
 
-Dpdl supports the type 'struct' with the following type definitions
+Dpdl supports the type **`struct`** with the following type definitions
 
-* Structs can contain structs
+* Structs can contain other struct
 
 * Structs can contain functions that can be called.
 
@@ -217,7 +220,7 @@ println("my_arr: " + my_arr)
 
 ### Pointers
 
-Dpdl supports a form of 'pointers' (eg. int *ptr = &x ).
+Dpdl supports a form of **`pointers`** (eg. int *ptr = &x ).
 
 This allows to have a variable that references another variable.
 
@@ -302,7 +305,7 @@ println("done")
 
 ### Dpdl Threads
 
-Threads can be created inside Dpdl scripts with the 'Thread(..)' api function.
+Threads can be created inside Dpdl scripts with the **`Thread(..)`** api function.
 
 Multiple threads are allowed inside a single Dpdl script.
 
@@ -398,37 +401,37 @@ endfor
 ```
 
 Note that as 'DpdlExtensions' that implement custom functions and variable declarations can be dynamically added at runtime,
-the call to a non existing function does not necessarily throw an error due to the fact that in a subsequent call the function
-may be available. This feature is useful for dynamically generated code implementations.
+the call to a non existing function currently does not necessarily throw an error due to the fact that in a subsequent call the function
+may be available. This feature is useful for dynamically generated code implementations and will be evaluated accordingly.
 
 ### Arithmetic and logical operators
 
 **Arithmetic:** 
 	
-* addition: +
-* subtraction: -
-* multiplication: *
-* division: /
-* power: ^
-* modulo: %
-* negate a value: - (eg. -x)
+* addition: **`+`**
+* subtraction: **`-`**
+* multiplication: **`*`**
+* division: **`/`**
+* power: **`^`**
+* modulo: **`%`**
+* negate a value: **`-`** (eg. -x)
 	
 Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (ec. 1 * 2). This is currently not allowed '1*2' but will be in future
 	
 **Logical:**
 
-* '&&' (and)
-* ||' (or)
-* '!' (not)
+* **`&&`** (and)
+* **`||`** (or)
+* **`!`** (not)
 	
 **Comparators:**
 
-* '>' (greater than)
-* '<' (less than)
-* '>=' (grater than equal)
-* '<=' (less than equal)
-* '==' (equal)
-* '!=' (not equal)
+* **`>`** (greater than)
+* **`<`** (less than)
+* **`>=`** (grater than equal)
+* **`<=`** (less than equal)
+* **`==`** (equal)
+* **`!=`** (not equal)
 	
 	
 ### DpdlObject's and Java bindings
@@ -437,7 +440,7 @@ Dpdl can access the underlying classes of a given JRE implementation or any othe
 
 The classes are loaded within a DpdlObject that is handled by the Dpdl runtime.
 
-Static classes can be accessed via '**getClass(..)**' method and instance classes via '**loadObj(..)**' method.
+Static classes can be accessed via **`getClass(..)`** method and instance classes via **`loadObj(..)`** method.
 
 The class references are resolved via the 'classes.txt' file located in the folder ./DpdlLibs/libs/.
 
@@ -469,7 +472,7 @@ println(substr)
 
 ### Load Dpdl script as DpdlObject
 
-Dpdl scripts can be loaded as an ordinary DpdlObject
+Dpdl scripts can be loaded as an ordinary DpdlObjects with the function **`loadCode(..)`**
 
 ```python
 println("test loadCode(..) with dpdl script LoadCodeFunc.h")
@@ -506,7 +509,7 @@ object mycode = loadCode("LoadCodeFunc.h", mymap)
 
 ### Exception handling using 'raise(..)'
 
-Exceptions can be handled with the 'raise(..)' function. 
+Exceptions can be handled with the **`raise(..)`** function. 
 
 The following conditions are checked and an exception is raised if the conditions == false:
 
