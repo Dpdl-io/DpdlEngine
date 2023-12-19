@@ -18,7 +18,7 @@ Here you can find the features that are currently in development phase and will 
 
 ### Current Features:
 
-* Types supported (**int, byte, float, double, long, string, bool, array[], object, struct, var**)
+* Types supported (**int, byte, float, double, long, string, bool, array[], var, object, struct, enum**)
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
 * APIs: native API, Dpdl API, MIDP API, JRE API
@@ -51,9 +51,10 @@ byte b = 0x01
 string s = "mystr"
 bool t = true
 array[] = "1 1.0 0x01 test"
+var v = "some variable type var"
 object myobj = loadObj(..)
 struct myStruct a
-var v = "some variable type var"
+enum myenum e
 ```
 
 Redefinition of variables within the same scope is allowed by the default configuration, in this case a 'Warning' is issued.
@@ -102,8 +103,42 @@ eg.
 struct A a
 println("variable 'a' is of type: " + typeof(a))
 ```
-The above statements will return '**struct:A**'
+The above statements will return **`struct:A`**
 
+
+#### Converting types
+
+Some variable types can be converted with the **`convert(..)`** function.
+The function accepts as parameter the 'type' (as returned by typeof(..)) and the variable to be converted.
+
+Currently the following conversions are supported, more will follow:
+
+*int float double object** -> **`string`**
+
+**int** -> **`float`**
+
+**float** -> **`string`**
+
+**float double** -> **`int`**
+
+
+Example:
+```python
+int xc = 10
+float f = 0.3
+double d = 23.0d
+
+println("converting to string...")
+
+string xcs = convert("string", xc)
+println("xcs: " + xcs)
+
+string fs = convert("string", f)
+println("fs: " + fs)
+
+string ds = convert("string", d)
+println("ds: " + ds)
+```
 
 ### Arrays
 
@@ -111,7 +146,7 @@ Arrays are defined with **`[ ]`**
 
 Arrays support multiple types and can be accessed also as a [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
 
-Array can be initialized directly, via **`strings`** and also with **`structs`**
+Array can be initialized directly, via **`strings`** and also with **`struct`**s
 
 Example:
 ```python
@@ -149,7 +184,7 @@ arr[] = array(a)
 
 #### Looping through arrays
 
-1) looping through an array with  **`for`**  or  **`while`**  loop:
+1) looping through an array with  **`for`**  or  **`while`**  statements:
 ```python
 myarr[] = [1, 2, 3, 4, 5]
 int c = 0
@@ -159,7 +194,7 @@ for(c < myarr.size())
 endfor
 ```
 
-2) looping throught an an array with java **`iterator`**
+2) looping through an an array with a java **`iterator`**
 ```python
 myarr[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
 println("myarr: " + myarr)
@@ -175,11 +210,13 @@ endwhile
 
 ### Struct
 
-Dpdl supports the type **`struct`** with the following type definitions
+Dpdl supports the type **`struct`** with the following definitions
 
 * Structs can contain other struct
 
 * Structs can contain functions that can be called.
+
+* Structs can call functions defined in the outer scope
 
 * Variable shadowing is enabled
 
@@ -197,6 +234,7 @@ struct myStruct {
 	byte b = 0x01
 	string s = "Test"
 	object so = loadObj("String", "my java obj in struct")
+	
 	println("myStruct: " + s)
 	
 	func myStructCall()
@@ -217,14 +255,28 @@ my_arr[] = array(a)
 println("my_arr: " + my_arr)
 ```
 
+### Enum
+
+Dpdl supports the type **`enum`**
+
+The keywords by default have increasing values. Desired values can be assigned explicitly
+
+Example:
+```
+enum myStatus {
+	PENDING,DONE, ERROR, RUNNING=23
+}
+
+enum myStatus status
+println("init status: " + status.RUNNING)
+println("done status: " + status.DONE)
+```
 
 ### Pointers
 
 Dpdl supports a form of **`pointers`** (eg. int *ptr = &x ).
 
 This allows to have a variable that references another variable.
-
-This feature will be further developed.
 
 The types for which pointers are currently supported:
 
@@ -233,74 +285,62 @@ The types for which pointers are currently supported:
 * string
 * float
 * double
-* object
 * var
+* object
 * struct
-
 
 
 Example:
 ```c
-func myFuncPtr(object *testp, string *sp, int *xp)
-	*sp = *testp + " " + *sp + " " + "TIE"
-	*xp = 369
+int i = 10
+string s = "Mega"
+
+println("i: " + i)
+println("s: " + s)
+
+int *i_p = &i
+int *s_p = &s
+
+println("i_p: " + *i_p)
+println("s_p: " + *s_p)
+
+i = 20
+s = s + " added"
+
+println("i_p: " + *i_p)
+println("s_p: " + *s_p)
+
+```
+
+Check out the following example for a deeper insight:
+
+[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)
+
+This feature will be further developed.
+	
+### Function return type
+
+By default functions can return any possible variable type.
+
+To improve code readability and enforce a further check on the function return type, it's possible to specify a
+specific return type in function definitions via return type specifiers **`func myfunc() $type`**.
+
+The return type specifiers are optional.
+
+The variable type **`var`** is always accepted for all return types as the values are dispatched at runtime.
+
+
+Example:
+```c
+func testFuncRetInt() int
+	println("testFuncRetInt")
+	return 23
 end
 
-func printVarAndPtr()
-	println("test_obj: " + test_obj)
-	println("s: " + s)
-	println("x: " + x)
-	println("testp: " + *testp)
-	println("sp: " + *sp)
-	println("xp: " + *xp)
-	println("")
-end
-
-# main
-println("testing pointers...")
-println("")
-
-# variables
-object test_obj = loadObj("String", "MEGA")
-string s = "mega"
-int x = 10
-int z = 3
-
-# pointers
-object *testp = &test_obj
-int *xp = &x
-string *sp = &s
-
-printVarAndPtr()
-
-println("changing vars....")
-s = "metatie"
-x = 100
-
-printVarAndPtr()
-
-
-println("call myFuncPtr(..)")
-println("")
-myFuncPtr(testp, sp, xp)
-println("Value changed: " + *sp)
-println("Value changed: " + *xp)
-
-float f = 1.0
-double d = 2.0d
-object str = loadObj("String", "TestPtr")
-
-println("assign pointers...")
-println("")
-float *fp = &f
-double *dp = &d
-object *str_p = &str
-
-println("*fp: " + *fp)
-println("*dp:" + *dp)
-println("*str_p: " + *str_p)
-
-println("done")
+int y = testFuncRetInt()
+var yv = testFuncRetInt()
+println("y: " + y)
+println("yv: " + yv)
 ```
 
 ### Dpdl Threads
@@ -408,13 +448,13 @@ may be available. This feature is useful for dynamically generated code implemen
 
 **Arithmetic:** 
 	
-* addition: **`+`**
-* subtraction: **`-`**
-* multiplication: **`*`**
-* division: **`/`**
-* power: **`^`**
-* modulo: **`%`**
-* negate a value: **`-`** (eg. -x)
+* **`+`** (addition)
+* **`-`** (subtraction)
+* **`*`** (multiplication)
+* **`/`** (division)
+* **`^`** (power)
+* **`%`** (modulo)
+* **`-`** (negate a value eg. -x)
 	
 Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (ec. 1 * 2). This is currently not allowed '1*2' but will be in future
 	
@@ -552,7 +592,7 @@ dpdl_print_exception_table()
 
 ### Dpdl embedded C code
 
-Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90, and ISO C99 standard) directly within Dpdl scripts.
+Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90, and full ISO C99 standard) directly within Dpdl scripts.
 
 Embedded C code can be executed in 2 different modes:
 
@@ -689,7 +729,7 @@ println("start executing a python script...")
 println("finished")
 ```
 
-### Supported platforms
+#### Supported platforms (Python language plugin)
 
 Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
@@ -752,7 +792,7 @@ also the 'ocamljava.jar' file needs to be present in the './lib' folder.
 ### Dpdl Runtime parameters
 
 Some Dpdl runtime behavior can be parameterized by pushing dedicated parameters on the dpdl stack by using the function
-**'dpdl_stack_push(..)'**
+**`dpdl_stack_push(..)`**
 
 Example:
 ```
@@ -1247,7 +1287,7 @@ public class testCBench {
 
 The benchmark has been performed on a data set of 48877 entries (name, phone nr, e-mail), with the 'name' numbered
 sequentially i.e 'armin 1', 'armin 2', etc.
-
+po
 48877 queries with a random number has key constraint have been performed:
 	* With data packed in a DpdlPacket
 	* Data stored in a simple RecordStore

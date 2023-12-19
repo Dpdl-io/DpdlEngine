@@ -43,7 +43,7 @@ applications, education and research.
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
 are integrated by default and third party libraries and functions can be added as extensions.
 
-### Sample Dpdl script (Bluetooth device discovery using Dpdl high level BT API):
+### Sample Dpdl script (Bluetooth device discovery using high level Dpdl BT API):
 ```python
  int status = DPDLAPI_searchClientsOnServer()
  int status_discovery = dpdlFalse
@@ -87,10 +87,10 @@ Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory a
 This makes Dpdl suitable for a wide range of use-cases and in particular also for Hardware programming.
 
 ### Small Memory footprint:
-* DpdlEngine (full) **255 Kb**
-* DpdlNative library with Embedded C interpreter (subset of C90) and full ANSI C compiler (C99) **530 Kb**
+* DpdlEngine (full) **`255 Kb`**
+* DpdlNative library with Embedded C interpreter (subset of C90) and full ANSI C compiler (C99) **`530 Kb`**
 
-* Total size core DpdlEngine = **785 Kb** Only
+* Total size core DpdlEngine = **`785 Kb`** Only
  
 The size of the DpdlEngine can be stripped down to 60 Kb if needed.
 
@@ -819,19 +819,6 @@ i.e. arraylistExample.h @TEST1
 
 	[bench/testC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bench/testC.h)
 	
-* Set of 14 examples/tests. The examples make use of @TAG execution to allow execution of each individual example.
-	
-	[dpdlLibExamples.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlLibExamples.h)
-	
-	```
-	-load
-	dpdlLibExamples.h @TEST1
-	```
-	
-	dpdlLibExamples.h @TEST2 etc..
-	
-	....
-
 * Example Dpdl script that embeds 'Julia' code to execute a set of threads that call a native C Dpdl API function
 
   [julia/dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
@@ -971,6 +958,18 @@ i.e. arraylistExample.h @TEST1
 		3) start the 2nd client in a thread instance: CoAP/startClientThread.h
 
 
+* Set of 14 examples/tests. The examples make use of @TAG execution to allow execution of each individual example.
+	
+	[dpdlLibExamples.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlLibExamples.h)
+	
+	```
+	-load
+	dpdlLibExamples.h @TEST1
+	```
+	
+	dpdlLibExamples.h @TEST2 etc..
+	
+	....
 
 ## 'DpdlEngine lite' Demo release limitations/restrictions
 

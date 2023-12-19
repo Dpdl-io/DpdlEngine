@@ -11,7 +11,36 @@ The following document contains Dpdl features that are currently in development 
 coming releases
 
 
-## Function return type
+
+
+## class Type
+
+The possibility to defined a **`class`** having member variables and functions
+
+proposed draft:
+```c++
+class A {
+	int x = 0
+	string s = "A"
+	
+	func A(int id)
+		x = id
+	end
+	
+	func myFunc()
+		println("an A func: " + x)
+	end
+}
+
+class a = A(2)
+a.myFunc()
+```
+
+
+
+## Completed integrations (already available in release)
+
+### Function return type
 
 The possibility to enforce a given return type in function definitions via return type specifiers 'func myfunc() $type'.
 
@@ -19,7 +48,7 @@ The return type specifiers are optional.
 
 The variable type 'var' is always accepted for all return types as the values are dispatched at runtime.
 
-### Status: implemented and in testing phase
+#### Status: implemented and available in release
 
 Example:
 ```c
@@ -34,11 +63,11 @@ println("y: " + y)
 println("yv: " + yv)
 ```
 
-## 'enum' type
+### 'enum' type
 
 The possibility to define the 'enum' type
 
-### Status: implemented and in testing phase
+#### Status: implemented and available in release
 
 Example:
 ```c
