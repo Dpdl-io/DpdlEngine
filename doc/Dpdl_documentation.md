@@ -9,6 +9,7 @@
 
 ## Dpdl scripting language
 
+The Dpdl script location by default is configured to be './DpdlLibs/'. This can be changed in the 'DpdlEngine.ini' (can be changed only in registered version)
 
 ### Features:
 
@@ -44,7 +45,7 @@ long l = 1000L
 byte b = 0x01 
 string s = "mystr"
 bool t = true
-array[] = "1 1.0 0x01 test"
+myarr[] = [1, 0.3, 23.d, 1000L, 0x09, "mydata"]
 var v = "some variable type var"
 object myobj = loadObj(..)
 struct myStruct a
@@ -113,7 +114,7 @@ Currently the following conversions are supported, more will follow:
 
 **float** -> **`string`**
 
-**float double** -> **`int`**
+**float, double** -> **`int`**
 
 
 Example:
@@ -140,7 +141,7 @@ Arrays are defined with **`[ ]`**
 
 Arrays support multiple types and can be accessed also as a [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
 
-Array can be initialized directly, via **`strings`** and also with **`struct`**
+Array can be initialized directly, via **`string`** and also with **`struct`**
 
 Example:
 ```python
@@ -175,6 +176,8 @@ Initializing an array with a **`struct`**:
 struct myStruct a
 arr[] = array(a)
 ```
+
+Multidimensional arrays will be supported in the coming release
 
 #### Looping through arrays
 
@@ -216,7 +219,8 @@ Dpdl supports the type **`struct`** with the following definitions
 
 * Structs can be used to initialize arrays
 
-* Structs can contain arrays[], but currently accessing via $struct.arr[] is not yet possible -> this will be allowed very soon
+* Structs can contain arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed very soon,
+a workaround is to assign the array to an object and access the object instead.
 
 Example:
 ```c
@@ -256,7 +260,7 @@ Dpdl supports the type **`enum`**
 The keywords by default have increasing values. Desired values can be assigned explicitly
 
 Example:
-```
+```c
 enum myStatus {
 	PENDING,DONE, ERROR, RUNNING=23
 }
@@ -300,7 +304,6 @@ int *s_p = &s
 println("i_p: " + *i_p)
 println("s_p: " + *s_p)
 
-i = 20
 s = s + " added"
 
 println("i_p: " + *i_p)
@@ -331,6 +334,11 @@ Example:
 func testFuncRetInt() int
 	println("testFuncRetInt")
 	return 23
+end
+
+func testFuncRetFloat() float
+	println("testFuncRetFloat")
+	return 0.22
 end
 
 int y = testFuncRetInt()
@@ -593,7 +601,7 @@ Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90,
 Embedded C code can be executed in 2 different modes:
 
 1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library headers already included (**default mode**)
-2) Compiled (in memory at runtime) or interpreted C code (<ins>ANSI C99</ins>) --> fast compile time and FAST execution, path to standard C header and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:C99**' and '**dpdl:compile**'
+2) Compiled (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution, path to standard C header and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:C99**' and '**dpdl:compile**'
 
 The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 
