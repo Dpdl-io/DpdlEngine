@@ -13,7 +13,7 @@ developed by
 
 # What is Dpdl?
 
-Dpdl is a <ins>**rapid prototyping** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
+Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries via a dedicated API and supports the <ins>embedding and on-the-fly execution</ins> 
 of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** directly within Dpdl scripts.
 

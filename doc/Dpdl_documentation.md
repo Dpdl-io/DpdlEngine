@@ -9,14 +9,8 @@
 
 ## Dpdl scripting language
 
-### Working Drafts:
 
-Here you can find the features that are currently in development phase and will be released soon in the coming releases of DpdlEngine:
-
-[Dpdl_drafts.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_drafts.md)
-
-
-### Current Features:
+### Features:
 
 * Types supported (**int, byte, float, double, long, string, bool, array[], var, object, struct, enum**)
 * Multiple native Threads within same script
@@ -65,7 +59,7 @@ In 'while' and 'for' loops it's advised, if possible, to allocate variables in t
 
 #### 'var' type
 
-The **`var`** variable can have an arbitrary type and is dispatched at runtime.
+The **`var`** variable can have an arbitrary type and is dispatched at runtime by type inference.
 
 
 ```python
@@ -146,7 +140,7 @@ Arrays are defined with **`[ ]`**
 
 Arrays support multiple types and can be accessed also as a [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
 
-Array can be initialized directly, via **`strings`** and also with **`struct`**s
+Array can be initialized directly, via **`strings`** and also with **`struct`**
 
 Example:
 ```python
@@ -1306,4 +1300,11 @@ Queries on a JavaME RecordStore are feasible only with via RecordFilter and Reco
 in terms of speed (too slow).
 
 Anyhow the average record store access time for 48877 entries is: 55 milliseconds
+
+
+### Working development drafts:
+
+Here you can find the features that are currently in development phase and will be released soon in the coming releases of DpdlEngine:
+
+[Dpdl_drafts.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_drafts.md)
 
