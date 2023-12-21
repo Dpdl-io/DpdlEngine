@@ -9,21 +9,21 @@
 		
 ## Supported embedded programming languages
 
-Multiple programming languages can be embedded directly within Dpdl scripts by using the keyword '**>>...**', for example: **>>python**
+Multiple programming languages can be embedded directly within Dpdl scripts by using the keyword **`>>`**, for example: **>>python**
 
 The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with a plug-in configurable
 option. See **[DpdlCustom]** tag in 'DpdlEngine.ini' configuration file.
 
 Currently Dpdl supports the embedding of the following languages:
 
-* Embedded C (minimal subset of C90)
-* ANSI C (C99)
-* Python
-* Julia
-* JavaScript
-* OCaml
-* Lua
-* ROOT C++
+* **`Embedded C`** (minimal subset of C90)
+* **`ANSI C`** (full C99)
+* **`Python`**
+* **`Julia`**
+* **`JavaScript`**
+* **`OCaml`**
+* **`Lua`**
+* **`C++ ROOT`**
 
 ### Embedded C
 
@@ -40,7 +40,7 @@ Currently Dpdl supports the embedding of the following languages:
 C code can be executed in 2 different modes:
 
 1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead (**default mode**)
-2) Compiled (in memory at runtime) or interpreted C code (<ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
+2) Compiled (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
 
 The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 
