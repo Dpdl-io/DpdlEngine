@@ -44,6 +44,7 @@ enum status {
 
 struct A {
 	string s = "an A"
+	int key = 232323
 }
 
 struct myStruct {
@@ -108,6 +109,9 @@ println("getting inner struct of a...")
 struct A ax
 ax = a.getA()
 println("ax: " + ax)
+object myAobj = a.getA()
+println("myAobj.s: " + myAobj.s)
+println("myAobj.key: " + myAobj.key)
 
 println("enum status st: " + st)
 println("st.DONE: " + st.DONE)
@@ -146,7 +150,6 @@ println("Iterating over using arraylist obj...")
 object iter = myarrlist.iterator()
 var elem
 while(iter.hasNext())
-#elem = iter.next()
 	println("myarrlist item: " + iter.next() + "")
 endwhile
 
