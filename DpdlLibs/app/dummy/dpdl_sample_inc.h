@@ -118,7 +118,6 @@ func fillDataMap()
 	int c = 0
 	for(c < 10)
 		val = "myvalue:" + c
-		println("adding val: " + val)
 		hm.put(c, val)
 		c = c+1
 	endfor
@@ -159,11 +158,13 @@ println("myapp.currentStatus=" + myapp.currentStatus)
 
 println("starting thread...")
 
-# uncomment the lines below to start a thread ...
-#int tIdx = Thread("myThreadFunc", 2000, 3)
+int iIdx = -1
+bool startThread = false
+if(startThread == true)
+	tIdx = Thread("myThreadFunc", 2000, 3)
 
-#raise(tIdx, "Error in starting thread")
+	raise(tIdx, "Error in starting thread")
 
-#println("thread starting with id: " + tIdx)
-
+	println("thread starting with id: " + tIdx)
+fi
 
