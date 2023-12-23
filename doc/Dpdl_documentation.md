@@ -14,7 +14,7 @@ The Dpdl script location by default is configured to be './DpdlLibs/'. This can 
 
 ### Features:
 
-* Types supported (**int, byte, float, double, long, string, bool, array[], var, object, struct, enum**)
+* Types supported **`int`** **`byte`** **`float`** **`double`** **`long`** **`string`** **`bool`** **`array[] **`var`** **`object`** **`struct`** **`enum**`
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
 * APIs: native API, Dpdl API, MIDP API, JRE API
