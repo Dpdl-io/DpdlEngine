@@ -11,6 +11,7 @@
 
 The Dpdl script location by default is configured to be './DpdlLibs/'. This can be changed in the 'DpdlEngine.ini' (can be changed only in registered version)
 
+
 ### Features:
 
 * Types supported (**int, byte, float, double, long, string, bool, array[], var, object, struct, enum**)
@@ -593,6 +594,40 @@ raise(o =! null, "o =! null")
 
 dpdl_print_exception_table()
 ```
+
+### Import and Include code
+
+#### Import 
+
+Dpdl libraries can be imported via the **`import`** statement.
+
+The default location for imported library code is './DpdlLibs/libs/'.
+
+You can import available libraries or place your own libs in this directory and import the code with the following statement:
+
+```python
+import("dpdllib.h")
+
+println("Dpdl vertion: " + DpdlLibVersion)
+```
+
+#### Include
+
+A Dpdl script may include other Dpdl scripts with the **`include`** statement.
+
+The functions and variables of the included code are than available also in the main module. 
+
+Currently the 'include' statement need to be placed before any defined 'import' statements -> this will change in the next release
+
+Example:
+```python
+include("testImportInc.h")
+import("dpdllib.h")
+
+println("DpdlLib version: " + DpdlLibVersion)
+println("myx: " + myx)
+```
+
 
 ### Dpdl embedded C code
 
