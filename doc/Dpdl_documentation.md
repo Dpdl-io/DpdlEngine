@@ -27,6 +27,9 @@ The Dpdl script location by default is configured to be './DpdlLibs/'. This can 
 * Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl scripts to Java and C/C++ code (in development)
 
+Here you can find a very small 'dummy' sample app
+
+[Small sample app](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
 
 ### Dpdl API functions
 
