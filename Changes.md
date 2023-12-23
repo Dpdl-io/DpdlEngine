@@ -5,9 +5,7 @@
 
 ## New 
 
-* NEW (19.12.2023) 	Function return type definitions added. 
-					Type 'enum' is supported.
-					Function 'convert(..)' added
+* NEW (19.12.2023) 	Function return type definitions added. Type 'enum' is supported. Function 'convert(..)' added
 
 
 * NEW (14.12.2023) 'for' statement is available i a first draft, it will be worked out further

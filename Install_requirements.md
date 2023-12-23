@@ -13,12 +13,14 @@ The DpdlEngine documentation can be found in the 'doc' folder, or better (up to 
 
 https://github.com/Dpdl-io/DpdlEngine
 
-As DpdlEngine is in very fast development it's advised to update the software frequently. New features and fixes may be available.
+As DpdlEngine is in a fast development cycle, it's advised to update the software frequently. New features and fixes may be available.
 
 # System requirements
 
 'DpdlEngine lite' V1.0 is available for free to try, with some limitations/restrictions (see section below),
 under the license agreement included (see LICENSE.txt).
+
+The full registered version can be obtained by requesting it at info@dpdl.io
 
 The 'DpdlEngine lite' release requires a compatible Java Virtual Machine (JRE) >= version 1.6 specification to run.
 
@@ -70,6 +72,11 @@ The C code embedded within Dpdl can be executed in 2 modes:
 2) Compiled in memory at runtime and executed (full ANSI C99 compilant)
 
 Mode 2) can be activated by pushing the optino 'dpdl:compile' on the dpdl stack before embedding the code
+
+The Dpdl native API library 'dpdlnativeapi' provides also a <ins>Security check</ins> to guarantee that the library have not been compromised.
+Therefore the embedded C code execution cannot be mangled internally and guarantees the correct execution of C code.
+In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
+
 
 ## Embedded 'Python' code
 

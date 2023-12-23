@@ -11,7 +11,7 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdlMIDP.h")
+import("dpdlMIDP.h")
 
 func initDebugForm()
       int TEXT_LOG = Form(1, "Dpdl(tm) BTObexServer")

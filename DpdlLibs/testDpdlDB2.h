@@ -13,9 +13,9 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdllib.h")
-include("dpdlRS.h")
-#include("dpdlMIDP.h")
+import("dpdllib.h")
+import("dpdlRS.h")
+#import("dpdlMIDP.h")
 
 func init()
    println("init() testDpdlDB2.h")

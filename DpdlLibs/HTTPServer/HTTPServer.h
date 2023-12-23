@@ -9,7 +9,7 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdllib.h")
+import("dpdllib.h")
 
 
 #main

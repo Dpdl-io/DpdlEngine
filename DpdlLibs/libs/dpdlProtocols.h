@@ -8,7 +8,8 @@
 #Filename: dpdlProtocols.h
 #This library provides basic a basic interaction layer for accessing MIDP Communication functions
 #
-include("dpdlBT.h")
+import("dpdlBT.h")
+
 func initProtocols()
     println("-----------------------------------")
 end

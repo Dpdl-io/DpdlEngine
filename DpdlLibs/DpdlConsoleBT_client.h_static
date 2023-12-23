@@ -8,7 +8,7 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdlMIDP.h")
+import("dpdlMIDP.h")
 
 func initDebugForm()
       TEXT_LOG = Form(0, "Dpdl(tm) Dpdl Console BT Client")

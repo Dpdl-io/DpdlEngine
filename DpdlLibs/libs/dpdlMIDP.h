@@ -12,11 +12,11 @@
 # Filename: dpdlMIDP.h
 # This library provides functions for accessing MIDP/J2ME functions
 #
-include("dpdlMIDPUI.h")
-include("dpdlMIDPGraphics.h")
-include("dpdlMIDPRS.h")
-include("dpdlProtocols.h")
-include("dpdllib.h")
+import("dpdlMIDPUI.h")
+import("dpdlMIDPGraphics.h")
+import("dpdlMIDPRS.h")
+import("dpdlProtocols.h")
+import("dpdllib.h")
 
 func initMIDP()
     println("dpdlMIDP.h loaded")

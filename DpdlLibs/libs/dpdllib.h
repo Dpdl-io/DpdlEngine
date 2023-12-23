@@ -12,7 +12,7 @@
 # Filename: dpdllib.h
 # This library provides some basic functions to allocate and search a Dpdl-Packet
 #
-include("dpdltypes.h")
+import("dpdltypes.h")
 
 func chunkAlloc(string pkgname, string chunk)
          int status = DPDLAPI_mallocDpdlService(pkgname)

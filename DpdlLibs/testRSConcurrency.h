@@ -7,7 +7,8 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdlMIDP.h")
+import("dpdlMIDP.h")
+
 func printlnScreen(string m)
      println(m+"\n")
 end

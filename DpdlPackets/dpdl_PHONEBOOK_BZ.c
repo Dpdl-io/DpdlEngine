@@ -2,7 +2,7 @@
                     Dpdl
                     
      Dynamic Packet Definition Language
-             www.dpdl.io
+             www.seesolutions.it
 
   This is a sample script written in Dpdl
   (Dynamic Packet Definition Language) showing
@@ -15,14 +15,14 @@
   (c)opyright 2003
   SEE Solutions
   
-  contact: info@dpdl.io
+  contact: info@seesolutions.it
   
   -----------------------------------------------------
   Example:        Phone-Book
   #######################################################
 **/
 call(dpdlInterpreter)
-::module dpdl_PHONEBOOK_BZ
+::module dpdl_PHONEBOOK
 ::module_SPEC 23452
 ::model 836
 ::dpdlVersion 1.0
@@ -47,7 +47,7 @@ OPTIONS {
 import extern SystemData
 
 catch DPDL_Script OnInit() {
-    include("dpdllib.h") nl
+    import("dpdllib.h") nl
     println("OnInit()") nl
 }
 
@@ -59,8 +59,8 @@ import virtual DATA none  {
               #defineGUI Default <PhoneBook>  <Enter name and surname:>
               
               catch DPDL_Script OnDecode() {
-                 include("dpdllib.h") nl
-                 include("dpdlRS.h") nl
+                 import("dpdllib.h") nl
+                 import("dpdlRS.h") nl
                  println("OnDecode()") nl
                  string time = getTime() nl
                  println("storing access time..." + time) nl

@@ -9,8 +9,8 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdllib.h")
-include("dpdlRS.h")
+import("dpdllib.h")
+import("dpdlRS.h")
 
 func openDB()
     MSG_RS = createRS("BTObexServer_MSGQueue", AUTHMODE_ANY, dpdlTrue, dpdlTrue)

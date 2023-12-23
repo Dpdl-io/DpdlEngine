@@ -7,9 +7,9 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdllib.h")
-include("dpdlRS.h")
-include("dpdlBT.h")
+import("dpdllib.h")
+import("dpdlRS.h")
+import("dpdlBT.h")
 
 # Examples using Dpdl scripting, you can execute the individual tests by providing the appropriate @TAG (ex. @TEST1 etc.)
 

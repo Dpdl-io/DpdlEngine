@@ -144,7 +144,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * small footprint, Only **785 Kb** for core DpdlEngine + Embedded C runtime and ANSI C compiler
 
 
-### Access to the complete JRE Java platform API and external java libraries
+## Access to the complete JRE Java platform API and external java libraries
 
 
 The Dpdl scripting language API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and <ins>external java libraries</ins>.

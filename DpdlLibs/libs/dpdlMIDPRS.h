@@ -14,4 +14,4 @@
 #
 # NOTE:In order to reuse Dpdl scripts in the same way on platforms different than J2ME or MIDP, include dpdlRS.h instead,
 # so you don't need to change anything.
-include("dpdlRS.h")
+import("dpdlRS.h")

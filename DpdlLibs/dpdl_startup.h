@@ -12,7 +12,8 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdllib.h")
+import("dpdllib.h")
+
 func printlnScreen(string m)
      println(m+"\n")
 end

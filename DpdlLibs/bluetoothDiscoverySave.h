@@ -6,9 +6,9 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdllib.h")
-include("dpdlBT.h")
-include("dpdlRS.h")
+import("dpdllib.h")
+import("dpdlBT.h")
+import("dpdlRS.h")
 
 func runDiscovery()
      int status = DPDLAPI_searchClientsOnServer()

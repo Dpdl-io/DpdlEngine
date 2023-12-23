@@ -6,7 +6,7 @@
 # e-mail: ac@dpdl.io
 #
 #
-include("dpdllib.h")
+import("dpdllib.h")
 
 func myThread_1(int t_id, string param)
 	println("Hello from Dpdl Thread: " + t_id)

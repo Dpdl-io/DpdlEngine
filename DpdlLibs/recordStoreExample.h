@@ -7,9 +7,9 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdllib.h")
-include("dpdlBT.h")
-include("dpdlRS.h")
+import("dpdllib.h")
+import("dpdlBT.h")
+import("dpdlRS.h")
 
 func saveData(string data)
      if(PTR_RS != -1)

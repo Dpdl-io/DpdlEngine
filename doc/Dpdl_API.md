@@ -18,9 +18,11 @@ DpdlEngine V1.0
 ```python
 [Native]
 include(string inc_path) return int
+import(string lib_path) return int
 currentTimeMillis() return long
 cast(object o) return object
 typeof(object o) return string type_str
+convert(string type, object obj) return object converted_obj
 array(object o) return [] array
 systemExec(string cmd, int wait_for, int verbose_output) return int status
 hash(string s) return int res

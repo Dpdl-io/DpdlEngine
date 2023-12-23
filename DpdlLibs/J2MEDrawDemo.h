@@ -6,7 +6,8 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdlMIDP.h")
+import("dpdlMIDP.h")
+
 func initDrawTest()
   println("test init()")
 end

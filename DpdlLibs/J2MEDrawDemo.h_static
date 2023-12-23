@@ -6,7 +6,8 @@
 # e-mail: info@dpdl.io
 #
 #
-include("dpdlMIDP.h")
+import("dpdlMIDP.h")
+
 func initDraw()
   println("initDraw()")
   CANVAS = Canvas(0)
