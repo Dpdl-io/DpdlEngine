@@ -67,3 +67,22 @@ while(appRunning)
 	println("waiting App thread to complete...")
 	sleep(3000)
 endwhile
+
+println("getting data map...")
+
+object dm = getDataMap()
+
+raise(dm, "data map is null")
+
+println("iterating over hashmap elements...")
+
+object es = dm.entrySet()
+object iter = es.iterator()
+object ep
+while(iter.hasNext())
+	ep = iter.next()
+	println("key=" + ep.getKey() + " value=" + ep.getValue())
+endwhile
+
+println("finished")
+

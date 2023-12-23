@@ -111,6 +111,20 @@ func getAppName()
 	return myapp.name
 end
 
+func fillDataMap()
+	object hm = loadObj("HashMap")
+
+	string val
+	int c = 0
+	for(c < 10)
+		val = "myvalue:" + c
+		println("adding val: " + val)
+		hm.put(c, val)
+		c = c+1
+	endfor
+	return hm
+end
+
 func getDataNew()
 	struct Data d
 	d.id = 23
@@ -121,6 +135,10 @@ end
 
 func getData()
 	return mydata
+end
+
+func getDataMap()
+	return datamap
 end
 
 func getApp()
@@ -135,14 +153,17 @@ struct Data mydata
 bool appRunning = false
 println("app_inc loaded")
 printVersion()
+println("adding data map...")
+object datamap = fillDataMap()
 println("myapp.currentStatus=" + myapp.currentStatus)
 
 println("starting thread...")
 
-int tIdx = Thread("myThreadFunc", 2000, 3)
+# uncomment the lines below to start a thread ...
+#int tIdx = Thread("myThreadFunc", 2000, 3)
 
-raise(tIdx, "Error in starting thread")
+#raise(tIdx, "Error in starting thread")
 
-println("thread starting with id: " + tIdx)
+#println("thread starting with id: " + tIdx)
 
 
