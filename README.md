@@ -165,7 +165,7 @@ s=map.get(4)
 println(s)
 ```
 
-Iterate over the obove HashMap using the objects and methods provided by the java API:
+Iterate over the obove HashMap using the same objects and methods as provided by the java API:
 ```python
 object es = map.entrySet()
 object iter = es.iterator()
@@ -177,7 +177,8 @@ endwhile
 ```
 
 In this way all java libraries defined in class definition configuration file (./DpdlLibs/libs/classes.txt) can be loaded and accessed.
-The default configuration includes Java 5 Platform API (1.5), and bluecove Bluetooth JSR-82.
+
+The default configuration currently includes Java 5 Platform API (1.5), and bluecove Bluetooth JSR-82.
 
 The default configuration can be extended or updated to resolve additional java APIs (editing of class definition configuration file)
 
