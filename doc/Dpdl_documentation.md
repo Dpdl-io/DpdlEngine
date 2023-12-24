@@ -272,6 +272,7 @@ enum myStatus {
 enum myStatus status
 println("init status: " + status.RUNNING)
 println("done status: " + status.DONE)
+println("enum values can also be accessed directly: " + DONE)
 ```
 
 Note: Currently the comma separated tags and values need to be defined on different lines than the starting 'enum var {' definition (this will be fixed in the next release)
