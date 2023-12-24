@@ -42,7 +42,8 @@ func myThreadFunc(int t_id)
 	myapp.currentStatus = myapp.currentStatus+1
 
 	mydata.id = myapp.currentStatus
-	mydata.data = "some data: " + randInt(16, 100)
+	int randi = randInt(16, 100)
+	mydata.data = "some data: " + abs(randi)
 	mydata.len = strlen(mydata.data)
 
 end
@@ -102,7 +103,7 @@ func myNativeFunc(string datastr, int val)
 	return buf_ret
 end
 
-func myAppInit()
+func myAppInit() int
 	println("myAppInit")
 	return 23
 end
