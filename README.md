@@ -87,7 +87,7 @@ Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory a
 This makes Dpdl suitable for a wide range of use-cases and in particular also for Hardware programming.
 
 ### Small Memory footprint:
-* DpdlEngine (full) **`255 Kb`**
+* DpdlEngine (full) **`258 Kb`**
 * DpdlNative library with Embedded C interpreter (subset of C90) and full ANSI C compiler (C99) **`530 Kb`**
 
 * Total size core DpdlEngine = **`785 Kb`** Only
@@ -105,8 +105,8 @@ You can find more Dpdl examples in the section below: '**Dpdl Examples**'
 
 ## Why Dpdl?
 
-Dpdl can be used to implement applications in various domains, in particular for small
-memory footprint devices and for rapid application development, teaching and research.
+Dpdl can be used for rapid application development to implement applications in various domains, in particular also for small
+memory footprint devices and is ideal for teaching and research.
 
 The 'DpdlPacket' data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
