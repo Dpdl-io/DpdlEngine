@@ -128,15 +128,19 @@ ROOT_LIB_PATH -> /Users/arcosta/APP/devel/ROOT_Devel/lib
 NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Downloads section in README.md)
 
 
-## Embedded 'OCaml' code
+## Embedded 'OCaml' code (experimental)
 
-The embedding of OCaml code is still experimental, but works.
+The embedded OCaml code (via >>ocaml keyword) is executed by the Dpdl runtime through the ocamljava library (http://www.ocamljava.org/) and
+requires the following jar library located in the lib folder (./lib): 'ocamlrun-scripting.jar' 
 
-See the official OCaml-java documentation at http://www.ocamljava.org/documentation/
-	
 Eventually you may update the 'ocamlrun-scripting.jar' in the ./lib folder with the newest release downloaded 
 directly from ocamljava.org
-	
+
+If the 'dpdl:compile' option has been set (OCaml code is compiled at runtime to improve speed), also the 'ocamljava.jar'
+needs to be present in the lib folder.
+
+See the official OCaml-java documentation at http://www.ocamljava.org/documentation/
+		
 
 # How to run
 
@@ -185,15 +189,6 @@ Currently the available bluetooth implementation (JSR-82 ) interfaces with the f
 
 Ensure the BlueZ library 'libbluetooth.so' is available on the path.
 Eventually you might neet to create a symbolic link to a specific version of the library (eg. libbluetooth.so -> libbluetooth.so.$version)
-
-
-# Embedded OCaml code
-
-The embedded OCaml code (via >>ocaml keyword) is executed by the Dpdl runtime through the ocamljava library (http://www.ocamljava.org/) and
-requires the following jar library located in the lib folder (./lib): 'ocamlrun-scripting.jar' 
-
-If the 'dpdl:compile' option has been set (OCaml code is compiled at runtime to improve speed), also the 'ocamljava.jar'
-needs to be present in the lib folder.
 
 
 # 'DpdlEngine lite' Demo release limitations/restrictions (compared to registered version)
