@@ -9,6 +9,7 @@
 
 developed by
 **SEE Solutions**
+&copy; 2003
 
 
 # What is Dpdl?
