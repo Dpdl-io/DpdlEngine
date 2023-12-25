@@ -5,6 +5,10 @@
 
 				www.dpdl.io
 
+developed by
+**SEE Solutions**
+&copy; 2003
+
 Dpdl supports the embedding of ANSI C code (C90 and C99), POSIX compliant (also on Windows64), directly within Dpdl scripts.
 
 The keyword used for embedding is '**>>c**' as opening tag and '**<<**' as closing tag.

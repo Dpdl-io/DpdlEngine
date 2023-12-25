@@ -4,6 +4,10 @@
 
 				www.dpdl.io
 				
+
+developed by
+**SEE Solutions**
+&copy; 2003
 				
 This is the Dpdl scripting API documentation. 
 

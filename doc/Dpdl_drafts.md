@@ -5,7 +5,9 @@
 				www.dpdl.io
 
 	
-
+developed by
+**SEE Solutions**
+&copy; 2003
 
 The following document contains Dpdl features that are currently in development phase and will be released soon in
 coming releases

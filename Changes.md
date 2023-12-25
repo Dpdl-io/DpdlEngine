@@ -1,6 +1,10 @@
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
+developed by
+**SEE Solutions**
+&copy; 2003
+
 # DpdlEngine V1.0 improvements/changes/fixes
 
 ## New 

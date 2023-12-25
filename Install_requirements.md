@@ -5,8 +5,9 @@ Dpdl - Dynamic Packet Definition Language
 			    www.dpdl.io
 
 
-provided by
-SEE Solutions
+developed by
+**SEE Solutions**
+&copy; 2003
 
 
 The DpdlEngine documentation can be found in the 'doc' folder, or better (up to date) on the GitHub repository

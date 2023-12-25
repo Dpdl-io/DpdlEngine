@@ -4,6 +4,9 @@
 
 				www.dpdl.io
 				
+developed by
+**SEE Solutions**
+&copy; 2003
 
 IoT is one of the application domains where Dpdl can be used
 
