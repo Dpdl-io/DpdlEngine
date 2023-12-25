@@ -675,7 +675,7 @@ OPTIONS {
 import extern SystemData
 
 catch DPDL_Script OnInit() {
-    include("dpdllib.h") nl
+    import("dpdllib.h") nl
     println("OnInit()") nl
 }
 
@@ -687,8 +687,8 @@ import virtual DATA none  {
               #defineGUI Default <PhoneBook>  <Enter name and surname:>
               
               catch DPDL_Script OnDecode() {
-                 include("dpdllib.h") nl
-                 include("dpdlRS.h") nl
+                 import("dpdllib.h") nl
+                 import("dpdlRS.h") nl
                  println("OnDecode()") nl
                  string time = getTime() nl
                  println("storing access time..." + time) nl
