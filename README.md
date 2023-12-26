@@ -106,14 +106,14 @@ You can find more Dpdl examples in the section below: '**Dpdl Examples**'
 
 ## Why Dpdl?
 
-Dpdl can be used for rapid application development to implement applications in various domains, in particular also for small
-memory footprint devices and is ideal for teaching and research.
+Dpdl is suitable for rapid application development in various domains, in particular also for small development of
+applications on small memory footprint devices, and can be used as embedded scripting engine for various applications.
+
+The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability.
+Dpdl has also built-in constructs to enable dynamic AI generated code.
 
 The 'DpdlPacket' data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
-
-The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability.
-Dpdl has also buillt-in constructs to enable dynamic AI generated code.
 
 **Dpdl can be used as:**
 
