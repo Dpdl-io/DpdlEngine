@@ -97,7 +97,7 @@ The size of the DpdlEngine can be stripped down to 60 Kb if needed.
 
 ### Dpdl quick overview 
 
-This is a 'dummy' Dpdl example that shows different features of the language:
+This is a 'dummy' Dpdl example that shows some language features:
 
 [dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
 
