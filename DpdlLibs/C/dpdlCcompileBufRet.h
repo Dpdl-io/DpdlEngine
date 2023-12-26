@@ -18,8 +18,8 @@ dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C", "dpdl
 	int main(int argc, char **argv){
 		printf("Dpdl C Buf return\n");
 		printf("\n");
-		time_t start; // use time_t when compile option is set
-		time_t end; // use time_t when compile option is set
+		time_t start; // use int when compile option is not set
+		time_t end; // use int when compile option is not set
 	    time(&start);
 	    int c;
 		for(c = 0; c < 5000000; c++){
