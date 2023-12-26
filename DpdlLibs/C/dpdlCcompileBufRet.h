@@ -13,7 +13,7 @@ dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C", "dpdl
 	#include <stdio.h>
 	#include <time.h>
 
-	extern int dpdl_stack_buf_put(char *buf);
+	extern void dpdl_stack_buf_put(char *buf);
 
 	int main(int argc, char **argv){
 		printf("Dpdl C Buf return\n");
