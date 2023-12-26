@@ -119,6 +119,7 @@ Dpdl has also buillt-in constructs to enable dynamic AI generated code.
 
 * Rapid application development platform
 * Embedded scripting engine
+* Development of Domain Specific Languages (DSL)
 * Library module
 * Utility tool
 * Data handling on memory constrained devices
