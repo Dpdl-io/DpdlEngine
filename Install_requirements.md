@@ -30,7 +30,7 @@ www.java.com or www.oracle.com website:
 
 https://www.java.com/en/download/manual.jsp
 
-Some Dpdl API functions (ex. embedded C code) make use of the Dpdl native API library 'dpdlnativeapi'.
+Some Dpdl API functions (ex. embedded C code and other embedded languages) make use of the Dpdl native API library 'dpdlnativeapi'.
 The Dpdl native API library is platform dependent and is currently available for the following platforms:
 
 * MacOS 13.4 (arm)
@@ -167,6 +167,7 @@ be fixed in the next release):
 ```
 sh run_DpdlClient_java20.sh
 ```
+On newer versions of the Java Virtual Machine from Oracle, if you want to access specific modules of JRE you may need to enable them with the '--add-opens' option in the DpdlEngine startup script.
 
 
 # Bluetooth stack compatibility

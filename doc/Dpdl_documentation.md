@@ -503,8 +503,6 @@ The default configuration resolves the following API's:
 
 Additional API's and classes can be added to the class definition file as needed with the syntax: '$full_class_name $class_alias'
 
-NOTE: Only the full registered version of Dpdl allows editing of the class definition file. The default 'DpdlEngine lite' configuration contains
-only the class references of Java Platform JRE 1.5 and Bluetooth JSR-82 API.
 
 Example:
 ```python
@@ -520,6 +518,18 @@ int idx = str.indexOf(" ")
 string substr = str.substring(idx)
 println(substr)
 ```
+
+Currently referencing object variables supports 1 level of indirection only ('date.toString().toUpparCase()' will not work currently)
+
+This is the correct approach:
+```python
+object date = loadObj("Date")
+object datestr = date.toString()
+println(datestr.toUpperCase())
+```
+
+NOTE: Only the full registered version of Dpdl allows editing of the class definition file. The default 'DpdlEngine lite' configuration contains
+only the class references of Java Platform JRE 1.5 and Bluetooth JSR-82 API.
 
 ### Load Dpdl script as DpdlObject
 

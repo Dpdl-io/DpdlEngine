@@ -9,9 +9,8 @@ developed by
 
 ## New 
 
+* NEW (27.12.2023) 'import' statement for libraries
 * NEW (19.12.2023) 	Function return type definitions added. Type 'enum' is supported. Function 'convert(..)' added
-
-
 * NEW (14.12.2023) 'for' statement is available i a first draft, it will be worked out further
 * NEW (13.12.2023) Added cache for faster loading of java classes
 * NEW (09.12.2023) variable 'var' type is supported + function 'typeof(..)' can be used to query the type of a given variable
