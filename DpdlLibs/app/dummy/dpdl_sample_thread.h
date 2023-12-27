@@ -29,7 +29,7 @@ end
 
 func start()
 	if(startThread == true)
-		tIdx = Thread("myThreadFunc", 2000)
+		tIdx = Thread("myThreadFunc", 2000, 5)
 
 		raise(tIdx, "Error in starting thread")
 
