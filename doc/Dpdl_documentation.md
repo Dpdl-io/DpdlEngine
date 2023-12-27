@@ -35,9 +35,12 @@ Here you can find a very small 'dummy' sample app
 
 ### Dpdl API functions
 
-The Dpdl API functions usable inside Dpdl scripts are listed here:
+The native Dpdl API functions usable inside Dpdl scripts are listed here:
 
 [Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+
+As Dpdl is capable of loading also java classes, the whole Java API is available inside Dpdl scripts.
+Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`**
 
 
 ### Variables
