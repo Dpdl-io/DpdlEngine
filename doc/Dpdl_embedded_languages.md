@@ -112,11 +112,13 @@ Custom include and library settings can be provided with the options 'dpdl:-I$IN
 println("this Dpdl example shows how C code can be dynamically compiled (in memory at runtime) and executed on Dpdl")
 
 # we instuct the Dpdl runtime to compile the C code
-dpdl_stack_push("dpdl:compile", "dpdl:-I./DpdlLibs/C", "var1")
+dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C", "var1")
 
 >>c
 #include <stdio.h>
 
+extern void dpdl_stack_buf_put(char *buf);
+	
 static inline void * my_memcpy(void * to, const void * from, size_t n)
 {
 // NOTE: inline assembly is avaiable only on i386 and X86_64 platforms, but compiles also on ARM
@@ -148,12 +150,15 @@ int dpdl_main(int argc, char **argv){
 	char str_dest[256];
 	//my_memcpy(str_dest, str_src, strlen(str_src));
 	//printf("copied str: %s\n", str_dest);
+	dpdl_stack_buf_put(str_src);
 	return 0;
 }
 <<
 int exit_code = dpdl_exit_code()
-
 println("embedded C compiled and run with exit code: " + exit_code)
+
+string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
+println("result: " + buf)
 ```
 
 #### Documentation C libraries (mode 1)
