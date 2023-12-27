@@ -16,9 +16,9 @@ developed by
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform API and external java libraries via a dedicated API and supports the <ins>embedding and on-the-fly execution</ins> 
-of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml** directly within Dpdl scripts.
+of other programming languages (**ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml**) directly within Dpdl scripts.
 
-Other programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
+Dpdl is self contained with no external dependencies needed (all language plugins are included) and is highly customizable via a dedicated extension interface. Further programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + OCaml) = <ins>Powerful and Versatile</ins>
@@ -119,10 +119,10 @@ on devices that have limited memory and storage capabilities.
 
 * Rapid application development platform
 * Embedded scripting engine
-* Development of Domain Specific Languages (DSL)
 * Library module
 * Utility tool
 * Data handling on memory constrained devices
+* Development of Domain Specific Languages (DSL)
 	
 Dpdl has also built-in constructs that enable dynamic AI generated code.
 
@@ -590,10 +590,10 @@ DpdlEngine V1.0 has been tested on:
 
 Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
 
-* Compiler to compile Dpdl to native machine code
 * OpenAI integration
 * Blockchain integration (smart contracts)
 * Nostr client API
+* Compiler to compile Dpdl scripts to native machine code
 
 
 ## Documentation
