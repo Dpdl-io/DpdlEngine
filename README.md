@@ -322,7 +322,7 @@ This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extens
 
 The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' or '**dpdl:C99**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 The 'dpdl:compile' option currently works for the following platforms: **i386, x86_64, arm64, armv7l**. 
-The C compiler used is the **Fabrice Bellard's TCC**.
+The C compiler used is the <ins>**Fabrice Bellard's TCC**</ins>.
 
 For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
 
@@ -812,7 +812,7 @@ i.e. arraylistExample.h @TEST1
 	
 * Example Dpdl script with embedded ANSI C code that is compiled in memory and executed at runtime, the result is than intercepted
 
-	[dataCompress.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompileBufRet.h.h)
+	[C/dpdlCcompileBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompileBufRet.h)
 	
 * Example Dpdl script that executes an embedded 'Julia' script to plots data using the 'Plots' package, and to save the chart as PDF
 
@@ -904,7 +904,7 @@ i.e. arraylistExample.h @TEST1
 * Creates a graphical user interface with some UI components (Button, Panel, Checkbox, List, draw Panel) using Java Swing classes. The list is updated, the button command is intercepted with the
   'actionPerformed' function, the checkbox status is printed, and a text and rectangle is drawn at random location on the draw panel.
 	
-	[dpdlGUIExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlGUIExample.h)
+	[ui/dpdlGUIExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample.h)
 	
 * Drawing functions on a UI Canvas on J2ME devices
 	
