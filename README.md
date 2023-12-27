@@ -18,7 +18,7 @@ Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**const
 Dpdl enables access to the Java platform API and external java libraries via a dedicated API and supports the <ins>embedding and on-the-fly execution</ins> 
 of other programming languages (**ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml**) directly within Dpdl scripts.
 
-Dpdl is self contained with no external dependencies needed (all language plugins are included) and is highly customizable via a dedicated extension interface. Further programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
+Dpdl is self contained and is highly customizable via a dedicated extension interface. Further programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + OCaml) = <ins>Powerful and Versatile</ins>
