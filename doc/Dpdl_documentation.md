@@ -856,6 +856,30 @@ located in the lib folder (./lib) is required (download from www.ocamljava.org)
 If the 'dpdl:compile' option has been set (the OCaml code is compiled at runtime to improve speed) --> dpdl_stack_push("compile"),
 also the 'ocamljava.jar' file needs to be present in the './lib' folder.
 
+### Dpdl Stack buffers
+
+To exchange data between native Dpdl code and the supported embedded languages, Dpdl provides a mechanism to exchange buffers of data.
+
+By pushing a string variable with the following definition: 'dpdlbuf_$varname' on the Dpdl stack via the function **`dpdl_stack_push(..)`**,
+the data written or returned by the embedded code (eg. C code) can be retrieved in the native Dpdl code via the function **`dpdl_stack_buf_get(..)`**
+
+Example:
+```c
+string buf_key = "dpdlbuf_var1"
+dpdl_stack_push(buf_key)
+>>c
+	#include <stdio.h>
+	#include <dpdl.h>
+	
+	printf("writing to buf...\n");
+	char *buf = "This data comes from embedded C";
+	dpdl_stack_buf_put(buf);
+	
+<<
+string buf = dpdl_stack_buf_get(buf_key)
+println("response buffer: " + buf)
+```
+
 
 ### Dpdl Runtime parameters
 
@@ -1078,7 +1102,7 @@ println("decompressed: " + decompressed_str)
 
 ## 'DpdlPacket' definition language
 
-Dpdl allows to create compressed packets of data via a DpdlPacket code definition. The data in a DpdlPacket can be organized
+Dpdl allows to create compressed packets of data via a **`DpdlPacket`** code definition. The data in a DpdlPacket can be organized
 in chunks of highly compressed data, along with database indexes. Data chunks can be allocated, queried and deallocated when not
 needed anymore. This allows a very efficient method of accessing and searching big amounts of data in memory constrained 
 devices.
