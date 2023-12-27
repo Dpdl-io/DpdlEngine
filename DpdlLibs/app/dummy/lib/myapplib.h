@@ -7,11 +7,16 @@
 #
 #
 
-string version__ = "2.0"
+struct Data {
+	int id
+	int len
+	string data
+}
 
 func printVersion()
 	println("myapplib version: " + version__)
 end
 
 # main
+string version__ = "2.0"
 println("myapplib init()")

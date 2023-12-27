@@ -523,7 +523,15 @@ println(substr)
 
 ### Load Dpdl script as DpdlObject
 
-Dpdl scripts can be loaded as an ordinary DpdlObjects with the function **`loadCode(..)`**
+Dpdl scripts can be loaded as an ordinary DpdlObjects with the function **`loadCode(..)`**.
+
+The object can be accessed like an other object except that the function calls currently must include also the name of the script loaded -> this will be changed in next releases so that the calls are the same as for other objects.
+
+Loading a Dpdl script as an object has some advantages with respect to just include a given Dpdl script with via the 'include' statement:
+
+- The code runs in a dedicated interpreter instance -> more convenient especially for multi-threading applications.
+- Variables have a dedicated scope
+- Performance improvements when using multiple extensions
 
 ```python
 println("test loadCode(..) with dpdl script LoadCodeFunc.h")
@@ -534,6 +542,8 @@ string mystr1 = "Test"
 object mystr2 = loadObj("String", "MEGA")
 
 mycode.testFunc("LoadCodeFunc", mystr1, mystr2)
+mycode.ID = "set my id"
+int x = mycode.getX()
 
 println("done")
 ```

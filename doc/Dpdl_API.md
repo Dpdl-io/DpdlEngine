@@ -36,6 +36,7 @@ mod(int val, int mod) return int res
 randInt(int bits, int modulo) return int res
 nextInt(int modulo) return int res
 abs(int val) return int res
+sqrt(double val) return double res
 substring(string str, int off_start, int off_end) return string res
 replace(string str, string find, string replace) return string res
 strlen(string str) return int len

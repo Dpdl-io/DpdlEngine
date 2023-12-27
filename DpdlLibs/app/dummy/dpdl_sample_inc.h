@@ -29,30 +29,6 @@ struct App {
 	end
 }
 
-struct Data {
-	int id
-	int len
-	string data
-}
-
-func myThreadFunc(int t_id)
-    appRunning = true
-	println("myThreadFunc with id: " + t_id)
-	println("myapp.currentStatus=" + myapp.currentStatus)
-	myapp.currentStatus = myapp.currentStatus+1
-
-	mydata.id = myapp.currentStatus
-	int randi = randInt(16, 100)
-	mydata.data = "some data: " + abs(randi)
-	mydata.len = strlen(mydata.data)
-
-end
-
-func dpdl_thread_finalize(int t_id)
-	println("thread terminated with id: " + t_id)
-	appRunning = false
-end
-
 func myNativeFunc(string datastr, int val)
 	println("myNativeFunc...")
 
@@ -118,7 +94,7 @@ func fillDataMap()
 	string val
 	int c = 0
 	for(c < 10)
-		val = "myvalue:" + c
+		val = "this is myvalue:" + c
 		hm.put(c, val)
 		c = c+1
 	endfor
@@ -134,7 +110,7 @@ func getDataNew()
 end
 
 func getData()
-	return mydata
+	return threadCode.mydata
 end
 
 func getDataMap()
@@ -145,12 +121,15 @@ func getApp()
 	return myapp
 end
 
+func isRunning()
+	bool brun = threadCode.isRunning("dpdl_sample_thread")
+	return brun
+end
+
 
 enum Status appstatus
 struct App myapp
-struct Data mydata
 
-bool appRunning = false
 println("app_inc loaded")
 printVersion()
 println("adding data map...")
@@ -158,14 +137,12 @@ object datamap = fillDataMap()
 println("myapp.currentStatus=" + myapp.currentStatus)
 
 println("starting thread...")
+object threadCode= loadCode("app/dummy/dpdl_sample_thread.h", "myparam")
+threadCode.ID = "New process " + getTime()
+println("Now ID : " + threadCode.ID)
+threadCode.start("dpdl_sample_thread")
 
-int iIdx = -1
-bool startThread = false
-if(startThread == true)
-	tIdx = Thread("myThreadFunc", 2000, 3)
+sleep(2000)
+println("")
 
-	raise(tIdx, "Error in starting thread")
-
-	println("thread starting with id: " + tIdx)
-fi
 

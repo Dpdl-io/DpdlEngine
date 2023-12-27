@@ -54,9 +54,11 @@ println("current status: " + curr)
 println("result: " + res)
 
 println("done")
+sleep(2000)
 
 object myd
-while(appRunning)
+int cnt = 0
+while(isRunning())
 	myd = getData()
 	if(myd != null)
 		println("Data myd: " + myd)
@@ -64,8 +66,15 @@ while(appRunning)
 		println("myd.data: " + myd.data)
 		println("myd.len: " + myd.len)
 	fi
-	println("waiting App thread to complete...")
+	if((cnt % 30) == 0)
+		println("running garbage collector...")
+		gc()
+	else
+		println("waiting from main App thread to complete...")
+	fi
+	cnt = cnt+1
 	sleep(3000)
+	println("--------------------------------------------------------------")
 endwhile
 
 println("getting data map...")
