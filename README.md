@@ -977,6 +977,10 @@ i.e. arraylistExample.h @TEST1
 		3) start the 2nd client in a thread instance: CoAP/startClientThread.h
 
 
+* Small 'dummy' sample application
+
+ 	[app/dummy/dpdl_sample.h](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
+ 	
 * Set of 14 examples/tests. The examples make use of @TAG execution to allow execution of each individual example.
 	
 	[dpdlLibExamples.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlLibExamples.h)
