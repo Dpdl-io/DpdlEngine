@@ -109,8 +109,8 @@ You can find more Dpdl examples in the section below: '**Dpdl Examples**'
 Dpdl is suitable for rapid application development in various domains, in particular also for small development of
 applications on small memory footprint devices, and can be used as embedded scripting engine for various applications.
 
-The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability.
-Dpdl has also built-in constructs to enable dynamic AI generated code.
+The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability while being simple,
+extensible and compact.
 
 The 'DpdlPacket' data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
@@ -124,7 +124,8 @@ on devices that have limited memory and storage capabilities.
 * Utility tool
 * Data handling on memory constrained devices
 	
-	
+Dpdl has also built-in constructs that enable dynamic AI generated code.
+
 ### Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and any platform where DpdlVM can be compiled for the target platform)
