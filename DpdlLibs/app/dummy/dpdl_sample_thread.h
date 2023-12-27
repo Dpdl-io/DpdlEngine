@@ -41,10 +41,6 @@ func isRunning()
 	return appRunning
 end
 
-func getData()
-	return "mydata" #mydata
-end
-
 func setID()
 	ID = "mega"
 end
