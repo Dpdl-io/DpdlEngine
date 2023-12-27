@@ -880,7 +880,8 @@ string buf = dpdl_stack_buf_get(buf_key)
 println("response buffer: " + buf)
 ```
 The method to write data to the buffer within the embedded language is language dependent, either it's written with the
-function **`dpdl_stack_buf_put(..)`** or in some cases returned by the embedded function itself, as in 'Lua' for example.
+function **`dpdl_stack_buf_put(..)`** or in some cases returned by the embedded function itself, as in 'Lua' for example,
+where the a data 'table' is returned and written to the Dpdl stack buffer.
 
 Example with embedded 'Lua':
 ```python
