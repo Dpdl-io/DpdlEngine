@@ -637,7 +637,7 @@ You can import available libraries or place your own libs in this directory and 
 ```python
 import("dpdllib.h")
 
-println("Dpdl vertion: " + DpdlLibVersion)
+println("Dpdl version: " + DpdlLibVersion)
 ```
 
 #### Include
@@ -662,15 +662,24 @@ println("myx: " + myx)
 
 Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90, and full ISO C99 standard) directly within Dpdl scripts.
 
-Embedded C code can be executed in 2 different modes:
+Embedded C code can be executed in 2 different Modes:
 
 1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library headers already included (**default mode**)
 2) Compiled (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution, path to standard C header and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:C99**' and '**dpdl:compile**'
 
-The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+#### Mode 1 (interpreted)
 
-The C code is executed with mode (1) includes only a minimal subset of the C library and is POSIX compliant (also on Windows OS). It's very compact (only ca. 400 Kb on Raspberry Pi) and has no extra dependencies.
+The C code is executed with Mode(1) includes only a minimal subset of the C library and is POSIX compliant (also on Windows OS). It's very compact (only ca. 400 Kb on Raspberry Pi) and has no extra dependencies.
 Custom libraries and functions can be implemented and added if needed via dpdl api functions.
+
+The default memory stack size for the C interpreter is kept small and is currently configured to be 128 Kb.
+
+The stack size can be customized by applying configurable settings.
+
+#### Mode 2 (compiled in memory)
+
+The faster and more complete execution Mode(2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+Basic include headers are available in the folder './lib/native/$platform/include' additional include or library files can be provided with the option 'dpdl:-I' and 'dpdl:-L'
 
 To embed C code within Dpdl scripts use the keyword '**>>c**' to start the embedded code, and the keyword '**<<**' to end the embedded code (Note: The keyword has to be on a single line)
 
@@ -697,7 +706,7 @@ Data can be written to and read from to the dpdl stack using the '**dpdl_stack_b
 Pushing a variable 'dpdlbuf_*" on the dpdl stack, allows to later retrieve in Dpdl the data buffer that has been written
 in the C code via the '**dpdl_stack_buf_put**' function (for example the result of a calculation)
 
-Example:
+Example (Mode 1):
 ```python
 println("testing embedded C code in Dpdl")
 
@@ -731,9 +740,8 @@ string buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("response buffer: " + buf)
 ```
 
-The default memory stack size for the C interpreter is kept small and is currently configured to be 128 Kb.
+Note: For Mode(2) instead of importing 'dpdl.h', it's required to declare 'extern void dpdl_stack_buf_put(char *buf);' 
 
-The stack size can be customized by applying configurable settings.
 
 The Dpdl native API library 'dpdlnativeapi' provides a Security check to guarantee that the library have not been compromised.
 Therefore the embedded C code execution cannot be mangled internally and guarantees the correct execution of C code.
