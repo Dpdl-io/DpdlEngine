@@ -678,8 +678,8 @@ The stack size can be customized by applying configurable settings.
 
 #### Mode 2 (compiled in memory)
 
-The faster and more complete execution Mode(2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
-Basic include headers are available in the folder './lib/native/$platform/include' additional include or library files can be provided with the option 'dpdl:-I' and 'dpdl:-L'
+The faster and more complete execution Mode(2) can be activated by pushing the option **`dpdl:C99`** or **`dpdl:compile`** on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+Basic include headers are available in the folder './lib/native/$platform/include' additional include or library files can be provided with the option **`dpdl:-I`** and **`dpdl:-L`**
 
 To embed C code within Dpdl scripts use the keyword '**>>c**' to start the embedded code, and the keyword '**<<**' to end the embedded code (Note: The keyword has to be on a single line)
 
@@ -740,7 +740,7 @@ string buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("response buffer: " + buf)
 ```
 
-Note: For Mode(2) instead of importing 'dpdl.h', it's required to declare 'extern void dpdl_stack_buf_put(char *buf);' 
+Note: For Mode(2), in order to use the function dpdl_stack_buf_put(..), instead of importing 'dpdl.h', it's required to declare 'extern void dpdl_stack_buf_put(char *buf);' 
 
 
 The Dpdl native API library 'dpdlnativeapi' provides a Security check to guarantee that the library have not been compromised.
