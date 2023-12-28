@@ -26,7 +26,7 @@ This offers some advantages compared to the standard 'include(..)' function.
 In this case the script is executed within a dedicated interpreter instance and is therefore better for example in a multi-threaded scenario or in the case more DpdlExtensions are loaded and executed.
 
 Example (main)
-```python
+```c
 struct myA {
 	string id = "this is an A"
 	int y = 23
@@ -53,7 +53,7 @@ myload.myFuncStruct("MyLC", ana)
 ```
 
 MyLC.h
-```
+```c
 func MyLC()
 	println("MyLC()")
 end
