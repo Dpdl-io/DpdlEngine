@@ -71,6 +71,8 @@ In 'while' and 'for' loops it's advised, if possible, to allocate variables in t
 
 The **`var`** variable can have an arbitrary type and is dispatched at runtime by type inference.
 
+Therefore the 'var' type can accept any type in a function.
+
 
 ```python
 func myFuncVar(var a, var b)
@@ -109,6 +111,22 @@ println("variable 'a' is of type: " + typeof(a))
 ```
 The above statements will return **`struct:A`**
 
+Example of abstraction using 'var':
+```c
+func calculateDistance(var p1, var p2) double
+    float dx = p2.x - p1.x
+    float dy = p2.y - p1.y
+    return sqrt(dx * dx + dy * dy)
+end
+```
+Is equivalent of:
+```c
+func calculateDistance(struct p1, struct p2) double
+    float dx = p2.x - p1.x
+    float dy = p2.y - p1.y
+    return sqrt(dx * dx + dy * dy)
+end
+```
 
 #### Converting types
 
