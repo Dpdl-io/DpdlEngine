@@ -111,7 +111,9 @@ println("variable 'a' is of type: " + typeof(a))
 ```
 The above statements will return **`struct:A`**
 
-Example of abstraction using 'var':
+#### Abstraction using 'var':
+
+Example:
 ```c
 func calculateDistance(var p1, var p2) double
     float dx = p2.x - p1.x
@@ -119,7 +121,7 @@ func calculateDistance(var p1, var p2) double
     return sqrt(dx * dx + dy * dy)
 end
 ```
-Is equivalent of:
+Is equivalent to:
 ```c
 func calculateDistance(struct p1, struct p2) double
     float dx = p2.x - p1.x
