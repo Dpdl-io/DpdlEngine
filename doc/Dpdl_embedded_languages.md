@@ -26,7 +26,7 @@ Currently Dpdl supports the embedding of the following languages:
 * **`OCaml`**
 * **`Lua`**
 * **`C++ ROOT`**
-
+ 
 ### Embedded C
 
 #### keyword >>c
@@ -323,4 +323,14 @@ NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite
 <<
 ```
 
+### Embedded language references
 
+- c -> TCC
+- python -> https://www.python.org/
+- julia -> https://julialang.org/
+- javascript -> ECMAScript (Oracle nashorn)
+- ocaml -> http://www.ocamljava.org/
+- lua -> https://www.lua.org/
+- root -> https://root.cern/
+ 
+ 
