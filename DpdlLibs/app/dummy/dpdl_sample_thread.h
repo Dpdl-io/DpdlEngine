@@ -18,7 +18,7 @@ func myThreadFunc(int t_id)
     appRunning = true
 	mydata.id = 23
 	int randi = randInt(16, 100)
-	mydata.data = "some data:" + abs(randi)  + " from thread id: " + t_id
+	mydata.data = "some_data_" + abs(randi)  + " from thread id: " + t_id
 	mydata.len = strlen(mydata.data)
 end
 
@@ -29,7 +29,7 @@ end
 
 func start()
 	if(startThread == true)
-		tIdx = Thread("myThreadFunc", 2000, 5)
+		tIdx = Thread("myThreadFunc", 500, 35)
 
 		raise(tIdx, "Error in starting thread")
 

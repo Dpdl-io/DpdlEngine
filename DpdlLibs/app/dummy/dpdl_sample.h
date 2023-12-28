@@ -47,7 +47,7 @@ enum Status status
 int curr = status.RUNNING
 println("current status: " + curr)
 
-string res = myNativeFunc(d.data, 5)
+string res = myNativeFunc(d.data, 500000)
 curr = status.DONE
 
 println("current status: " + curr)
@@ -73,7 +73,7 @@ while(isRunning())
 		println("waiting from main App thread to complete...")
 	fi
 	cnt = cnt+1
-	sleep(3000)
+	sleep(1000)
 	println("--------------------------------------------------------------")
 endwhile
 
