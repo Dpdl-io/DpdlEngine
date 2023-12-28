@@ -1016,9 +1016,7 @@ The implemented extensions can be registered via settings in the "Extensions" se
 
 Example of a custom print function, myprintln(..):
 ```java
-import dpdl.dpdlDpdlEngine.scripting.BasicDpdlExtension;
-
-public class MyTestDpdlExtension extends BasicDpdlExtension{
+public class MyTestDpdlExtension extends DpdlExtension{
 
     public Object dpdlCall(String name,ArrayList param) throws DpdlException {
 			// implement you methods here
