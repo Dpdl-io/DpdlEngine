@@ -75,4 +75,5 @@ object mystr = loadObj("String", "MyLoadObj str")
 
 return 1
 ```
+Note: The dpdl script loaded must always return a status (int) in order to load successfully (1) or with error (-1)
 

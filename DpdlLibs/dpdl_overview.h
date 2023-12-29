@@ -274,7 +274,7 @@ string mythread_process = "myThreadProcess.h"
 int ms_interval = 2000
 int nr_iterations = 3
 println("Executing Thread process: " + mythread_process + "  nr. iterations: " + nr_iterations)
-int status_t = DPDLAPI_createThread(thread_instance, mythread_process, dpdlMinPriority, ms_interval, nr_iterations)
+int status_t = DPDLAPI_createThread(thread_instance, mythread_process, 1, ms_interval, nr_iterations)
 while(DPDLAPI_threadRunning(thread_instance) == dpdlTrue)
 	println(".")
 	sleep(1000)
@@ -303,4 +303,21 @@ else
 fi
 println("done")
 
+struct myA {
+	string id = "this is an A"
+	int y = 23
+}
 
+struct myA mya
+
+object myload = loadCode("test/MyLC.h")
+myload.myFunc("MyLC")
+
+println("s: " + myload.s)
+println("x: " + myload.x)
+println("mystr: " + myload.mystr)
+
+mya = myload.myFuncStructMod("MyLC", mya)
+println("myanew: " + mya)
+println("mya.id: " + mya.id)
+println("mya.y: " + mya.y)
