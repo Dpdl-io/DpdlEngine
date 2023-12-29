@@ -323,11 +323,9 @@ The C compiler used is the <ins>**Fabrice Bellard's TCC**</ins>.
 
 For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
 
-This is a more complete example of the usage of embedded C code within Dpdl:
+#### Integrity validation
 
-[dpdlEmbeddedC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlEmbeddedC.h)
-
-The Dpdl native API library 'dpdlnativeapi' provides also a <ins>Security check</ins> to guarantee that the library have not been compromised.
+The Dpdl native API library 'dpdlnativeapi' provides also a <ins>Security Integrity Check</ins> to guarantee that the library have not been compromised.
 Therefore the embedded C code execution cannot be mangled internally and guarantees the correct execution of C code.
 In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
 
