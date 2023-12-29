@@ -1000,7 +1000,7 @@ i.e. arraylistExample.h @TEST1
 The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions
 compared to the full registered version:
 
-* At startup, the DpdlEngine requires the execution of a validation script.
+* At startup, the DpdlEngine requires internet connectivity for the execution of a validation script.
 The script simply accesses a html website at https://www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
 -> startup is therefore also a bit slower in demo version
 	  
@@ -1009,7 +1009,8 @@ The validation script can be inspected here:
 
 * The DpdlEngine parameters and configuration file 'DpdlEngine.ini' can be customized only in the registered version
 	
-* The class definition file (classes.txt), used for dynamic loading and resolving of library classes via loadObj(..) and getClass(..) methods can be edited only in the registered version of Dpdl.
+* The class definition file (classes.txt), used for dynamic loading and resolving of library classes via loadObj(..) and getClass(..) methods can be edited only in the registered version of Dpdl
+and java classes cannot be referenced with the full package path (eg. org.my.mycustomclass), only with the base name (eg. Math) as defined in the class definition file.
 	
 * The execution of Dpdl scripts is limited to 500 lines of code, embedded language code (C, C++, Python, Julia, JavaScript, Lua and OCaml) is limited to 100 lines of code per section.
 	
