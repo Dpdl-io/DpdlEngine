@@ -576,7 +576,8 @@ object mystr2 = loadObj("String", "MEGA")
 
 mycode.testFunc("LoadCodeFunc", mystr1, mystr2)
 mycode.ID = "set my id"
-int x = mycode.getX()
+int x = mycode.getX("LoadCodeFunc")
+string cid = mycode.ID
 
 println("done")
 ```
@@ -607,10 +608,10 @@ Exceptions can be handled with the **`raise(..)`** function.
 
 The following conditions are checked and an exception is raised if the conditions == false:
 
-	* string -> (condition =! "null") ? true : false 
-	* int -> (condition =! -1) : true : false
-	* bool -> (condition == true) ? true : false
-	* object -> (condition =! null) ? true : false
+	* string -> **`(condition =! "null")`** ? true : false 
+	* int -> **`(condition =! -1)`**  : true : false
+	* bool -> **`(condition == true)`**  ? true : false
+	* object -> **`(condition =! null)`**  ? true : false
 
 
 The raise(..) function can be called in the following ways:
@@ -689,12 +690,16 @@ Embedded C code can be executed in 2 different Modes:
 
 #### Mode 1 (interpreted)
 
-The C code is executed with Mode(1) includes only a minimal subset of the C library and is POSIX compliant (also on Windows OS). It's very compact (only ca. 400 Kb on Raspberry Pi) and has no extra dependencies.
+The C code is executed with Mode(1) includes only a minimal subset of the C library and is POSIX compliant (also on Windows OS).
+It's very compact (only ca. 400 Kb on Raspberry Pi) and has no extra dependencies.
 Custom libraries and functions can be implemented and added if needed via dpdl api functions.
 
 The default memory stack size for the C interpreter is kept small and is currently configured to be 128 Kb.
 
 The stack size can be customized by applying configurable settings.
+
+**Minimal embedded C library documentation:**
+[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 #### Mode 2 (compiled in memory)
 
@@ -762,13 +767,10 @@ println("response buffer: " + buf)
 
 Note: For Mode(2), in order to use the function dpdl_stack_buf_put(..), instead of importing 'dpdl.h', it's required to declare 'extern void dpdl_stack_buf_put(char *buf);' 
 
-
 The Dpdl native API library 'dpdlnativeapi' provides a Security check to guarantee that the library have not been compromised.
 Therefore the embedded C code execution cannot be mangled internally and guarantees the correct execution of C code.
 In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
 
-**Dpdl embedded C library documentation:**
-[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 
 ### Embedding of Python
