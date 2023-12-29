@@ -213,10 +213,7 @@ Programming languages can be developed and integrated via a dedicated plug-in in
 ### Open source Dpdl embedded language plug-ins
 
 Some Dpdl embedded language plug-ins are published as open source projects:
-* ROOT C++
-* More will follow...
-
-https://github.com/Dpdl-io-org/Dpdl_language_plugins
+* ROOT C++ (available soon)
 
 ### Embedding of 'ROOT C++' code
 
