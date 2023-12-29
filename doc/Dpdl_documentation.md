@@ -683,6 +683,9 @@ println("myx: " + myx)
 
 Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90, and full ISO C99 standard) directly within Dpdl scripts.
 
+To embed C code within Dpdl scripts use the keyword '**>>c**' to start the embedded code, and the keyword '**<<**' to end the embedded code (Note: The keyword has to be on a single line)
+
+
 Embedded C code can be executed in 2 different Modes:
 
 1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library headers already included (**default mode**)
@@ -703,10 +706,8 @@ The stack size can be customized by applying configurable settings.
 
 #### Mode 2 (compiled in memory)
 
-The faster and more complete execution Mode(2) can be activated by pushing the option **`dpdl:C99`** or **`dpdl:compile`** on the dpdl stack (-> see 'dpdl_stack_push(..)'):
-Basic include headers are available in the folder './lib/native/$platform/include' additional include or library files can be provided with the option **`dpdl:-I`** and **`dpdl:-L`**
-
-To embed C code within Dpdl scripts use the keyword '**>>c**' to start the embedded code, and the keyword '**<<**' to end the embedded code (Note: The keyword has to be on a single line)
+The faster and more complete execution Mode(2) can be activated by pushing the option **`dpdl:C99`** or **`dpdl:compile`** on the dpdl stack (-> see 'dpdl_stack_push(..)').
+A basic set of include headers are available in the folder **`./lib/native/$platform/include`**, additional include or library files can be provided with the options **`dpdl:-I`** and **`dpdl:-L`**
 
 Example:
 ```python
