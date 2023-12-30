@@ -331,6 +331,6 @@ NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite
 - javascript -> ECMAScript (Oracle nashorn)
 - ocaml -> http://www.ocamljava.org/
 - lua -> https://www.lua.org/
-- root -> https://root.cern/
+- root (c++) -> https://root.cern/
  
  
