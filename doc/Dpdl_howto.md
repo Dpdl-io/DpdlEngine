@@ -28,7 +28,7 @@ In this case the script is executed within a dedicated interpreter instance and 
 Note that function calls to dpdl script loaded objects must include the base name of the script loaded. This approach has been chosen for
 better readability and also due to performance improvements.
 
-Example (main)
+Example dpdl script that loads a dpdl script as object
 ```c
 struct myA {
 	string id = "this is an A"
