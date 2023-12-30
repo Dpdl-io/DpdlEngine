@@ -30,9 +30,6 @@ developed by
 * The native Dpdl library for Python 'dpdlpython' is now available  in the 'DpdlEngine lite' release (for Mac OS X arm64, Linux x86_64 and Raspberry PI 3 armv7)
 
 
-
-  
- 
 ## Fixes
 
 * 13.12.2023 Fixed issue in nested 'struct' type
@@ -41,6 +38,10 @@ developed by
 * Fixed bug resulted from integration of pointers/references
 
 
+## Known Issues
+
+* The Dpdl language plugin for 'OCaml' is working on Java JRE versions 1.7 and 1.8. On newer versions of java an
+update of '.lib/ocamlrun-scripting.jar' and './lib/ocamljava.jar' might be required (available from http://www.ocamljava.org)
 
 
 ## Work in progress
@@ -54,6 +55,7 @@ developed by
 ### Features
 
 * Dpdl compiler for generating native machine code 
+
 
 
 ### Dpdl language plugins
