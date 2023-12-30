@@ -25,6 +25,9 @@ In some circumstances it may be convenient to load a given Dpdl script as an obj
 This offers some advantages compared to the standard 'include(..)' function.
 In this case the script is executed within a dedicated interpreter instance and is therefore better for example in a multi-threaded scenario or in the case more DpdlExtensions are loaded and executed.
 
+Note that function calls to dpdl script loaded objects must include the base name of the script loaded. This approach has been chosen for
+better readability and also due to performance improvements.
+
 Example (main)
 ```c
 struct myA {
