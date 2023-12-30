@@ -325,7 +325,7 @@ NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite
 
 ### Embedded language references
 
-- c -> TCC (https://bellard.org/tcc/tcc-doc.html)
+- c -> https://bellard.org/tcc/tcc-doc.html
 - python -> https://www.python.org/
 - julia -> https://julialang.org/
 - javascript -> ECMAScript (Oracle nashorn)
