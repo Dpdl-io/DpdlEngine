@@ -1488,6 +1488,12 @@ in terms of speed (too slow).
 
 Anyhow the average record store access time for 48877 entries is: 55 milliseconds
 
+## HowTo's
+
+Here you can find some HowTo's that may be useful
+
+[Dpdl_howto.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
+
 
 ### Working development drafts:
 
