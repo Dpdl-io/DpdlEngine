@@ -191,9 +191,11 @@ println("array contains Dpdl: " + b)
 The array elements can be separated with blank space ' ', with comma ',' or with semicolon ';'. All are valid.
 
 ```python
+myemptyarr[] = []
 myarr1[] = [1 2 3 4 5]
 myarr2[] = [1, 2, 3, 4, 5]
 myarr3[] = [1; 2; 3; 4; 5]
+arr0[] = ""
 arr1[] = "1 2 3 4 5"
 arr2[] = "1,2,3,4,5"
 arr3[] = "1;2;3;4;5"
