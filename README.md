@@ -254,14 +254,14 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
  
 ### Embedded C code
 
-Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts. The C code can be embedded with 2 different modes, 
-either <ins>interpreted only</ins>, OR <ins>compiled in memory and executed at runtime</ins> (if option '**dpdl:compile**' is enabled).
-The code is executed via a native Dpdl library that has a very small footprint (530 Kb) and **includes all essential C libraries**
-and language constructs (both, a minimal subset of C90 and full ISO C99, **POSIX** compliant), **no additional dependencies** required.
+Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts.
+The C code can be embedded with 2 different Modes:
+ 
+1) <ins>interpreted</ins>
+2) <ins>compiled in memory and executed at runtime</ins> (if option '**dpdl:compile**' is enabled)
 
-Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
 
-Example Dpdl script with embedded C code:
+Example Dpdl script with embedded C code (Mode 1):
 ```c
 # main
 # starting with Dpdl, pushing parameters on the stack and embedding C code
@@ -306,11 +306,26 @@ println("Dpdl contains C: " + b)
 
 ### Mode 1 (minimal and interpreted code)
 
+The code is executed via a native Dpdl library that has a very small footprint (530 Kb) and **includes all essential C libraries**
+and language constructs (both, a minimal subset of C90 and full ISO C99, **POSIX** compliant), **no additional dependencies** required.
+
+Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
+
 --> easy integration of custom extensions. No compile time overhead,
 Minimal, all basic C libraries and headers already included, no dependencies, POSIX compliant (**default Mode**)
 
-**minimal C library documentation, for Mode (1):**
-[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+**Minimal embedded C library documentation, for Mode (1):**
+[Dpdl_embedded_C_libs.md](https://gith[cnt]);
+    }
+    return 0;
+}
+<<
+int exit_code = dpdl_exit_code()
+
+println("embedded C exit code: " + exit_code);
+
+# again Dpdl code...
+ub.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 ### Mode 2 (full and compiled code)
 
