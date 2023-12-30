@@ -315,17 +315,7 @@ Custom libraries and functions can be integrated and linked via a straight forwa
 Minimal, all basic C libraries and headers already included, no dependencies, POSIX compliant (**default Mode**)
 
 **Minimal embedded C library documentation, for Mode (1):**
-[Dpdl_embedded_C_libs.md](https://gith[cnt]);
-    }
-    return 0;
-}
-<<
-int exit_code = dpdl_exit_code()
-
-println("embedded C exit code: " + exit_code);
-
-# again Dpdl code...
-ub.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 ### Mode 2 (full and compiled code)
 
