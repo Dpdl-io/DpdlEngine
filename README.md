@@ -786,6 +786,10 @@ where different Tests/Examples can be executed individually via tagged execution
 i.e. arraylistExample.h @TEST1
 
 
+* Example Dpdl script that shows major functionalities provided by Dpdl
+
+	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
+
 * Example Dpdl script that shows how <ins>C</ins> code and <ins>Python</ins> can be embedded and executed within Dpdl
 
 	[dpdlFullExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFullExample.h)
@@ -793,10 +797,6 @@ i.e. arraylistExample.h @TEST1
 * Example Dpdl script that embeds C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
-
-* Example Dpdl script that shows major functionalities provided by Dpdl
-
-	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
 	
 * Example Dpdl script that launches multiple threads
 
