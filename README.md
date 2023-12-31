@@ -210,10 +210,6 @@ Programming languages can be developed and integrated via a dedicated plug-in in
 * **OCaml**
 * **ROOT C++**
 
-### Open source Dpdl embedded language plug-ins
-
-Some Dpdl embedded language plug-ins are published as open source projects:
-* ROOT C++ (will be released as open source soon)
 
 ### Embedding of 'ROOT C++' code
 
@@ -257,8 +253,8 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
 Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts.
 The C code can be embedded with 2 different Modes:
  
-1) <ins>interpreted</ins>
-2) <ins>compiled in memory and executed at runtime</ins> (if option '**dpdl:compile**' is enabled)
+1) <ins>Interpreted</ins>
+2) <ins>Compiled in memory at runtime</ins> (if option '**dpdl:compile**' is enabled)
 
 
 Example Dpdl script with embedded C code (Mode 1):
@@ -307,7 +303,7 @@ println("Dpdl contains C: " + b)
 ### Mode 1 (minimal and interpreted code)
 
 The code is executed via a native Dpdl library that has a very small footprint (530 Kb) and **includes all essential C libraries**
-and language constructs (both, a minimal subset of C90 and full ISO C99, **POSIX** compliant), **no additional dependencies** required.
+and language constructs (minimal subset of C90, **POSIX** compliant), **no additional dependencies** required.
 
 Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
 
@@ -323,7 +319,7 @@ Minimal, all basic C libraries and headers already included, no dependencies, PO
 This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
 
 The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' or '**dpdl:C99**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
-The 'dpdl:compile' option currently works for the following platforms: **i386, x86_64, arm64, armv7l**. 
+The 'dpdl:compile' option currently works for the following platforms: **Linux (x86_64), MacOS (arm64), Raspberry (armv7l)**. 
 The C compiler used is the <ins>**Fabrice Bellard's TCC**</ins>.
 
 For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
@@ -432,7 +428,8 @@ int exit_code = dpdl_exit_code()
 println("embedded js exit code: " + exit_code)
 ```
 
-Note: Currently the js engine used is the one embedded in JRE. The coming release will include the faster V8 JavaScript engine
+Note: Currently the js engine used is 'Nashorn)', the one shipped with JRE.
+The coming release will include the QuickJS JavaScript engine.
 
 ### Embedding of 'Lua' code
 
@@ -552,7 +549,7 @@ Dpdl runs on a wide range of platforms and provides also a small footprint java 
 released as open-source, that can  be compiled for almost every platform as soon as
 an ANSI C compiler is available for the target platform.
 
-### Dpdl is compatible with:
+### Dpdl itelf is compatible with:
 
 * J2ME MIDP (Mobile Information Device Profile) -> MIDP 1.0 and MIDP 2.0 (CLDC 1.0, CLDC 2.0)
 * Java ME CLDC & GCF (JSR 360)
@@ -571,7 +568,8 @@ DpdlEngine V1.0 has been tested on:
 	* JavaME
 	* J2ME (MIDP 2.0)
 		
-		
+Note: The DpdlEngine needs to be re-packaged for running on Android, JavaME and J2ME
+
 ### Embedded programming languages - compatibility matrix
 
 (X + version) **Supported**
@@ -626,6 +624,12 @@ Check the 'DpdlEngine lite' Demo release limitations/restrictions, compared to t
 
 Suggestion and contributions to enhance Dpdl are very welcome and can be submitted on the discussion section on GitHub:
 [Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)
+
+
+### Open source Dpdl embedded language plug-ins
+
+Some Dpdl embedded language plug-ins are published as open source projects:
+* ROOT C++ (will be released as open source soon)
 
 
 ## What is a DpdlPacket?
