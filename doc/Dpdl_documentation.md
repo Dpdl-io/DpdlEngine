@@ -256,7 +256,7 @@ Dpdl supports the type **`struct`** with the following definitions
 * Structs can contain arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed very soon,
 a workaround is to assign the array to an object and access the object instead.
 
-* Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct function' is valid only within the function itself.  
+* Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct function' changes the variable only during the function.  
 
 Example:
 ```c
