@@ -61,12 +61,6 @@ struct myStruct a
 enum myenum e
 ```
 
-Redefinition of variables within the same scope is allowed by the default configuration, in this case a 'Warning' is issued.
-
-This configuration can be disabled by changing the parameters '**DPDL_ALLOW_VAR_REDEFINITION**' and '**DPDL_VAR_REDEFINITION_WARNING**' in configuration file 'DpdlEngine.ini' 
-
-In 'while' and 'for' loops it's advised, if possible, to allocate variables in the outer scope. This increases also performance and avoids allocations.
-
 #### 'var' type
 
 The **`var`** variable can have an arbitrary type and is dispatched at runtime by type inference.
@@ -86,6 +80,8 @@ int x = 10
 float y = 0.3
 myFuncVar(x, y)
 ```
+
+#### Determining the Type of a variable
 
 The type of a given variable can be determined with the **`typeof(..)`** function
 
@@ -129,6 +125,15 @@ func calculateDistance(struct p1, struct p2) double
     return sqrt(dx * dx + dy * dy)
 end
 ```
+
+#### Variable re-definition
+
+Redefinition of variables within the same scope is allowed by the default configuration, in this case a 'Warning' is issued.
+
+This configuration can be disabled by changing the parameters '**DPDL_ALLOW_VAR_REDEFINITION**' and '**DPDL_VAR_REDEFINITION_WARNING**' in configuration file 'DpdlEngine.ini' 
+
+In 'while' and 'for' loops it's advised, if possible, to allocate variables in the outer scope. This increases also performance and avoids allocations.
+
 
 #### Converting types
 
@@ -242,7 +247,7 @@ Dpdl supports the type **`struct`** with the following definitions
 
 * Structs can contain other struct
 
-* Structs can contain functions that can be called.
+* Structs can contain functions that can be called. Within functions access all struct variables can be accessed in READ, but not write.
 
 * Structs can call functions defined in the outer scope
 
