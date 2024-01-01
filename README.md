@@ -111,7 +111,7 @@ software. The 'DpdlEngine lite' version of the software can be downloaded as a f
 The professional version of DpdlEngine will be released on custom licensing models depending on type of use and application domain.
 Feel free to write to info@dpdl.io for more info.
 
-All Dpdl sample scripts and Dpdl sample applications are released under the MIT License agreement.
+All Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License agreement.
 
 
 ## Why Dpdl?
