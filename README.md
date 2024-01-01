@@ -104,16 +104,6 @@ This is a 'dummy' Dpdl example that shows some language features:
 You can find more Dpdl examples in the section below: '**Dpdl Examples**' 
 
 
-### Licensing
-
-Dpdl is a proprietary software developed by SEE Solutions. A valid license key file 'LicenseKeyDpdl' is required to run the
-software. The 'DpdlEngine lite' version of the software can be downloaded as a free trial shareware (see Download section).
-The professional version of DpdlEngine will be released on custom licensing models depending on type of use and application domain.
-Feel free to write to info@dpdl.io for more info.
-
-All Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License agreement.
-
-
 ## Why Dpdl?
 
 Dpdl is suitable for rapid application development in various domains, in particular also for small development of
@@ -759,7 +749,17 @@ Usage:
 ```
 
 
-## What does the free 'DpdlEngine lite' version provide?
+## Licensing
+
+Dpdl is a proprietary software developed by SEE Solutions. A valid license key file 'LicenseKeyDpdl' is required to run the
+software. The 'DpdlEngine lite' version of the software can be downloaded as a free trial shareware (see Download section).
+The professional version of DpdlEngine will be released on custom licensing models depending on type of use and application domain.
+Feel free to write to info@dpdl.io for more info.
+
+All Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License agreement.
+
+
+## What does the free trial 'DpdlEngine lite' version provide?
 
 
 The 'DpdlEngine lite' release is available for Free to try with some limitations (see section below),
