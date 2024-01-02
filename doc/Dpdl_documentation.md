@@ -114,8 +114,9 @@ It might be useful to abstract a given type.
 
 Consider the following example:
 ```c
-struct myA a, b
-double dist = calculateDistance(a, b)
+struct myA a
+struct myA aa
+double dist = calculateDistance(a, aa)
 ```
 
 The function 'calculateDistance(..)' can accept the parameters as follows:
@@ -182,9 +183,11 @@ println("ds: " + ds)
 
 Arrays are defined with **`[ ]`**
 
-Arrays support multiple types and can be accessed also as a [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
+Arrays are dynamic and can grow or shrink in size
 
-Array can be initialized directly, via **`string`** and also with **`struct`**
+Arrays support multiple types and can be accessed also as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
+
+Array can be initialized directly, via a **`string`** and also with **`struct`**
 
 Example:
 ```python
