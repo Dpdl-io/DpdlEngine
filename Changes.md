@@ -9,7 +9,7 @@ developed by
 
 ## New 
 
-* NEW (02.23.2023) JavaScript can now be executed also via the 'QuickJS' javascript engine by using the keyword '>>qjs' -> will be available in coming release!!
+* NEW (02.23.2023) JavaScript can now be executed also via the 'QuickJS' javascript engine (ES2020 spec) by using the keyword '>>qjs' -> will be available in coming release!!
 
 * (27.12.2023) 'import' statement for libraries
 * (19.12.2023) 	Function return type definitions added. Type 'enum' is supported. Function 'convert(..)' added
