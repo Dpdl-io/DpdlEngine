@@ -115,7 +115,7 @@ It might be useful to abstract a given type.
 Consider the following example:
 ```c
 struct myA a, b
-float dist = calculateDistance(a, b)
+double dist = calculateDistance(a, b)
 ```
 
 The function 'calculateDistance(..)' can accept the parameters as follows:
@@ -126,7 +126,7 @@ func calculateDistance(var p1, var p2) double
     return sqrt(dx * dx + dy * dy)
 end
 ```
-Is equivalent to:
+and is equivalent to:
 ```c
 func calculateDistance(struct p1, struct p2) double
     float dx = p2.x - p1.x
