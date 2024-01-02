@@ -9,12 +9,14 @@ developed by
 
 ## New 
 
-* NEW (27.12.2023) 'import' statement for libraries
-* NEW (19.12.2023) 	Function return type definitions added. Type 'enum' is supported. Function 'convert(..)' added
-* NEW (14.12.2023) 'for' statement is available i a first draft, it will be worked out further
-* NEW (13.12.2023) Added cache for faster loading of java classes
-* NEW (09.12.2023) variable 'var' type is supported + function 'typeof(..)' can be used to query the type of a given variable
-* NEW (28.11.2023) The data type 'struct' is supported
+* NEW (02.23.2023) JavaScript can now be executed also via the 'QuickJS' javascript engine by using the keyword '>>qjs' -> will be available in coming release!!
+
+* (27.12.2023) 'import' statement for libraries
+* (19.12.2023) 	Function return type definitions added. Type 'enum' is supported. Function 'convert(..)' added
+* (14.12.2023) 'for' statement is available i a first draft, it will be worked out further
+* (13.12.2023) Added cache for faster loading of java classes
+* (09.12.2023) variable 'var' type is supported + function 'typeof(..)' can be used to query the type of a given variable
+* (28.11.2023) The data type 'struct' is supported
 * (23.11.2023) The native function Thread(..) is now enabled in the 'DpdlEngine lite' release but allows an allocation of only max 3 threads (for unlimited thread allocation the registered version is required)
 * (15.11.2023) The embedded C code compile option 'dpdl:compile' is now available in the 'DpdlEngine lite' release download
   currently platforms supported: MAC OSX (arm64) Linux (x86_64), Raspberry (armv7)
