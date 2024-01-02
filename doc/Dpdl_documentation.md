@@ -11,9 +11,6 @@ developed by
 
 ## Dpdl scripting language
 
-The Dpdl script location by default is configured to be './DpdlLibs/'. This can be changed in the 'DpdlEngine.ini' (can be changed only in registered version)
-
-
 ### Features:
 
 * Types supported **`int`** **`byte`** **`float`** **`double`** **`long`** **`string`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
@@ -33,6 +30,9 @@ Here you can find a very small 'dummy' sample app
 
 [Small sample app](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
 
+The Dpdl script location by default is configured to be './DpdlLibs/'. This can be changed in the 'DpdlEngine.ini' (can be changed only in registered version)
+
+
 ### Dpdl API functions
 
 The native Dpdl API functions usable inside Dpdl scripts are listed here:
@@ -40,7 +40,7 @@ The native Dpdl API functions usable inside Dpdl scripts are listed here:
 [Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 As Dpdl is capable of loading also java classes, the whole Java API is available inside Dpdl scripts.
-Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`**
+Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getClass(..)`**
 
 
 ### Variables
@@ -107,9 +107,18 @@ println("variable 'a' is of type: " + typeof(a))
 ```
 The above statements will return **`struct:A`**
 
-#### Abstraction using 'var':
 
-Example:
+#### Abstraction using 'var' type:
+
+It might be useful to abstract a given type.
+
+Consider the following example:
+```c
+struct myA a, b
+float dist = calculateDistance(a, b)
+```
+
+The function 'calculateDistance(..)' can accept the parameters as follows:
 ```c
 func calculateDistance(var p1, var p2) double
     float dx = p2.x - p1.x
@@ -193,7 +202,7 @@ bool b = myarrayobj.contains("Dpdl")
 println("array contains Dpdl: " + b) 
 ```
 
-The array elements can be separated with blank space ' ', with comma ',' or with semicolon ';'. All are valid.
+The array elements can be separated with blank space ' ', with comma ' , ' or with semicolon ' ; '. All are valid.
 
 ```python
 myemptyarr[] = []
