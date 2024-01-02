@@ -452,6 +452,8 @@ else
 fi
 ```
 
+#### Thread GC
+
 The Dpdl Rutime can be configured to automatically run the garbage collector 'gc()' after a given number of iterations.
 See **`GC_THREAD_EXEC`** parameter in 'DpdlEngine.ini'. The value '-1' invalidates this feature.
 
