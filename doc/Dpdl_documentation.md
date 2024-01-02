@@ -185,7 +185,7 @@ Arrays are defined with **`[ ]`**
 
 Arrays are dynamic and can grow or shrink in size
 
-Arrays support multiple types and can be accessed also as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see getObj() )
+Arrays support multiple types and can be accessed also as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`getObj()`** )
 
 Array can be initialized directly, via a **`string`** and also with **`struct`**
 

@@ -90,6 +90,10 @@ onRequestFailure(string message)
 onResponse(string response)
 dpdl_thread_finalize(int t_id, object param...)
 
+array[] ->
+size() return int size
+getObj() return object arraylist
+
 [DPDLAPI]
 DPDLAPI_getVersion()  return string
 DPDLAPI_getEngineVersion() return string
