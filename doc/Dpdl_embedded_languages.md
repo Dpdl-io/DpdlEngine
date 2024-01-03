@@ -29,7 +29,7 @@ Currently Dpdl supports the embedding of the following languages:
  
 ### Embedded C
 
-#### keyword >>c
+#### keyword **`>>c`**
 
 ```
 >>c
