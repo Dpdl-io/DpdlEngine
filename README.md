@@ -437,6 +437,8 @@ println("Dpdl qjs exited with exit code: " + exit_code)
 
 Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
 
+Note: 'qjs' is available in the soon coming release of 'DpdlEngine lite'
+	
 	
 ### Embedding of 'Julia' code
 
