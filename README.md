@@ -366,6 +366,10 @@ Currently the 'DpdlEngine lite' release includes the native Dpdl Python library 
 
 ### Embedding of 'JavaScript' code
 
+JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
+
+JavaScript code can be embedded within Dpdl via the keyword **`>>js`** or  **`>>qjs`**
+
 Dpdl allows the embedding of javascript with 2 different Modes:
 1) Using the 'Nashorn' javascript engine embedded in the Java platform
 2) Using the 'QuickJS' javascript engine from Fabrice Bellard
@@ -471,42 +475,6 @@ println("finished with exit code: " + exit_code)
 ```
 NOTE: The native Dpdl library 'dpdljulia' needs to be downloaded and deployed separately (see Download section below)
 
-### Embedding of 'JavaScript' code
-
-JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
-
-JavaScript code can be embedded within Dpdl via the keyword '**>>js**'
-
-Example Dpdl script embedding 'JavaScript' that intercepts parameters pushed on the dpdl stack and accesses java classes
-```python
-# main
-println("test embedding javascript ...")
-
-dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
-dpdl_stack_var_put("var2", "This variable comes from Dpdl (var2)")
-
->>js
-    print("Hello javascript from Dpdl: ");
-    print("")
-    print("var1: " + var1);
-    print("var2: " + var2);
-    print("The number PI is equal to: " + java.lang.Math.PI);
-    print("")
-    var importFile = new JavaImporter(java.util);  
-    var a = new importFile.ArrayList();  
-    a.add(12);  
-    a.add(20);  
-    print(a);  
-    print(a.getClass());          
-<<
-
-int exit_code = dpdl_exit_code()
-
-println("embedded js exit code: " + exit_code)
-```
-
-Note: Currently the js engine used is 'Nashorn)', the one shipped with JRE.
-The coming release will include the QuickJS JavaScript engine.
 
 ### Embedding of 'Lua' code
 
