@@ -371,7 +371,7 @@ NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite
 - c -> https://bellard.org/tcc/tcc-doc.html
 - python -> https://www.python.org/
 - julia -> https://julialang.org/
-- javascript -> ECMAScript (Oracle nashorn)
+- javascript -> ECMAScript (Oracle nashorn) for '>>js' && QuickJS (https://bellard.org/quickjs/quickjs.html) for '>>qjs' 
 - ocaml -> http://www.ocamljava.org/
 - lua -> https://www.lua.org/
 - root (c++) -> https://root.cern/

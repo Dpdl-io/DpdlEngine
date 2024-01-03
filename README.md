@@ -112,7 +112,7 @@ applications on small memory footprint devices, and can be used as embedded scri
 The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability while being simple,
 extensible and compact.
 
-The 'DpdlPacket' data container is a highly optimized way to store, query and access data
+The **`DpdlPacket`** data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
 
 **Dpdl can be used as:**
@@ -201,14 +201,14 @@ Programming languages can be developed and integrated via a dedicated plug-in in
 
 ### Currenlty the following programming languages are supported:
 
-* **C** interpreted code (minimal subset of C90 with standard C libs)
-* **ANSI C**  (full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
-* **Python**
-* **Julia**
-* **JavaScript**
-* **Lua**
-* **OCaml**
-* **ROOT C++**
+* **`C interpreted`** code (minimal subset of C90 with standard C libs)
+* **`ANSI C`**  (full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
+* **`Python`**
+* **`Julia`**
+* **`JavaScript`**
+* **`Lua`**
+* **`OCaml`**
+* **`ROOT C++`**
 
 
 ### Embedding of 'ROOT C++' code
