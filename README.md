@@ -859,7 +859,7 @@ i.e. arraylistExample.h @TEST1
 	
 * Example Dpdl script that embeds javascript code (with  Mode2 using qjs) that loads an object implemented in a native C library (see point.c)
 
-	[js/dpdlQJsExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsExample.h) 
+	[js/dpdlQJsPoint.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsPoint.h) 
 
 * Example Dpdl script that launches multiple threads
 
