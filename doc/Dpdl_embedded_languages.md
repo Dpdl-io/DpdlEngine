@@ -168,7 +168,7 @@ println("result: " + buf)
 
 ### Python
 
-#### keyword >>python
+#### keyword **`>>python`**
 
 ```
 >>python
@@ -189,7 +189,7 @@ Julia is a powerful high performance computing programming language with many sc
 
 https://julialang.org/
 
-#### keyword >>julia
+#### keyword **`>>julia`**
 
 ```python
 >>julia
@@ -205,9 +205,15 @@ NOTE: The native Dpdl library 'dpdljulia' is not included in the 'DpdlEngine lit
 
 JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
 
-JavaScript code can be embedded within Dpdl via the keyword '**>>js**'
+JavaScript code can be embedded within Dpdl via the keyword **`>>js`** or **`>>qjs`**
 
-#### keyword >>js
+JavaScript can be executed with 2 Modes:
+1) Using the 'Nashorn' javascript engine available on most JRE distributions '**>>js**'
+2) Using the 'QuickJS' javascript engine from Fabrice Bellard '**>>qjs**'
+
+#### Mode 1
+
+##### keyword **`>>js`**
 
 ```python
 
@@ -221,6 +227,43 @@ print(var1)....
 
 NOTE: The Dpdl embedded javascript plug-in needs specific features that must be supported by the java JRE/JDK implementation.
 	  Not all java virtual machines support these features. In future releases the V8 JavaScript engine will be supported.
+
+
+#### Mode 2
+
+##### keyword **`>>qjs`**
+
+```python
+println("testing embedded qjs...")
+
+dpdl_stack_push("my Hello Message!!!")
+>>qjs
+
+import { fib } from "./DpdlLibs/js/fib_module.js";
+
+var a_message = "null";
+
+console.log(scriptArgs)
+console.log('Dpdl sends a message with QuickJS');
+
+if(scriptArgs.length > 0){
+	a_message = scriptArgs[0];
+}
+std.printf("Message = %s %d", a_message, 23);
+console.log('');
+console.log("fib(10)=", fib(10));
+<<
+
+int exit_code = dpdl_exit_code()
+println("Dpdl qjs exited with exit code: " + exit_code)
+```
+QuickJS provides a powerful and complete API to interact with the javascript engine at low level.
+Custom native functions and objects can be implemented as shared libraries and loaded in javascript.
+You can find examples in the folder './DpdlLibs/js/'
+
+Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
+
+The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
 
 
 ### OCaml
