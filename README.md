@@ -439,6 +439,10 @@ int exit_code = dpdl_exit_code()
 println("Dpdl qjs exited with exit code: " + exit_code)
 ```
 
+QuickJS provides a powerful and complete API to interact with the javascript engine at low level.
+Custom native functions and objects can be implemented as shared libraries and loaded in javascript.
+You can find more examples in the folder './DpdlLibs/js'
+
 Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
 
 Note: 'qjs' is available in the soon coming release of 'DpdlEngine lite'
