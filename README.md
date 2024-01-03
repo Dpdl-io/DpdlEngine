@@ -362,6 +362,81 @@ Currently the 'DpdlEngine lite' release includes the native Dpdl Python library 
 * on **MacOS:** Python version 3.12 (clang version 14.0.3)
 * on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
 * <ins>Windows version will follow soon</ins> in the coming release
+
+
+### Embeddong of 'JavaScript' code
+
+Dpdl allows the embedding of javascript with 2 different Modes:
+1) Using the 'Nashorn' javascript engine embedded in the Java platform
+2) Using the 'QuickJS' javascript engine from Fabrice Bellard
+
+#### 1) Using the 'Nashorn' engine
+
+The 'Nashorn' javascript engine is available on most JRE distributions (but not all).
+
+The javascript can be embedded in Dpdl scripts with this mode using the keyword **`>>js`**
+
+Example:
+```python
+println("test embedding javascript ...")
+
+dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
+dpdl_stack_var_put("var2", "This variable comes from Dpdl (var2)")
+
+>>js
+    print("Hello javascript from Dpdl: ");
+    print("")
+    print("var1: " + var1);
+    print("var2: " + var2);
+    print("The number PI is equal to: " + java.lang.Math.PI);
+    print("")
+    var importFile = new JavaImporter(java.util);  
+    var a = new importFile.ArrayList();  
+    a.add(12);  
+    a.add(20);  
+    print(a);  
+    print(a.getClass());          
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("embedded js exit code: " + exit_code)
+```
+
+#### 2) Using the 'QuickJS' engine
+
+The 'QuickJS' javascript engine is included in the DpdlEngine release.
+
+The javascript can be embedded in Dpdl scripts with this mode using the keyword **`>>qjs`**
+
+Example:
+```python
+println("testing embedded qjs...")
+
+dpdl_stack_push("my Hello Message!!!")
+>>qjs
+
+import { fib } from "./DpdlLibs/js/fib_module.js";
+
+var a_message = "null";
+
+console.log(scriptArgs)
+console.log('Dpdl sends a message with QuickJS');
+
+if(scriptArgs.length > 0){
+	a_message = scriptArgs[0];
+}
+std.printf("Message = %s %d", a_message, 23);
+console.log('');
+console.log("fib(10)=", fib(10));
+<<
+
+int exit_code = dpdl_exit_code()
+println("Dpdl qjs exited with exit code: " + exit_code)
+```
+
+Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
+
 	
 ### Embedding of 'Julia' code
 
