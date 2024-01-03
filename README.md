@@ -364,7 +364,7 @@ Currently the 'DpdlEngine lite' release includes the native Dpdl Python library 
 * <ins>Windows version will follow soon</ins> in the coming release
 
 
-### Embeddong of 'JavaScript' code
+### Embedding of 'JavaScript' code
 
 Dpdl allows the embedding of javascript with 2 different Modes:
 1) Using the 'Nashorn' javascript engine embedded in the Java platform
