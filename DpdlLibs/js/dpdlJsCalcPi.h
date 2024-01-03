@@ -16,12 +16,6 @@ dpdl_stack_push("dpdlbuf_var1", 1000)
 >>qjs
 "use strict";
 
-/*
- *
- * PI computation in Javascript using the BigInt type
- */
-
-/* return floor(log2(a)) for a > 0 and 0 for a = 0 */
 function floor_log2(a)
 {
     var k_max, a1, k, i;
@@ -41,13 +35,11 @@ function floor_log2(a)
     return k;
 }
 
-/* return ceil(log2(a)) for a > 0 */
 function ceil_log2(a)
 {
     return floor_log2(a - 1n) + 1n;
 }
 
-/* return floor(sqrt(a)) (not efficient but simple) */
 function int_sqrt(a)
 {
     var l, u, s;
@@ -55,7 +47,6 @@ function int_sqrt(a)
         return a;
     l = ceil_log2(a);
     u = 1n << ((l + 1n) / 2n);
-    /* u >= floor(sqrt(a)) */
     for(;;) {
         s = u;
         u = ((a / s) + s) / 2n;
