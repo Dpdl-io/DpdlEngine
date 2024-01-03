@@ -215,7 +215,7 @@ Programming languages can be developed and integrated via a dedicated plug-in in
 
 ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/) .
 
-ROOT C++ code can be embedded within Dpdl via the keyord '**>>root**'
+ROOT C++ code can be embedded within Dpdl via the keyord **`>>root`**
 
 Example Dpdl script embedding 'ROOT C++':
 
@@ -250,7 +250,7 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
  
 ### Embedded C code
 
-Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts.
+Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts with the keyword **`c`**
 The C code can be embedded with 2 different Modes:
  
 1) <ins>Interpreted</ins>
@@ -333,7 +333,7 @@ In the case the library is updated, the corresponding verification checksums nee
 
 ### Embedding of 'Python' code
 
-Python code can be embedded within Dpdl scripts by using the keyword '**>>python**'.
+Python code can be embedded within Dpdl scripts by using the keyword **`>>python`**.
 MicroPython will also be supported as option in the coming release.
 
 Example Dpdl script with embedded 'Python' code:
@@ -445,6 +445,8 @@ You can find examples in the folder './DpdlLibs/js/'
 
 Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
 
+The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
+
 Note: 'qjs' is available in the soon coming release of 'DpdlEngine lite'
 	
 	
@@ -452,7 +454,7 @@ Note: 'qjs' is available in the soon coming release of 'DpdlEngine lite'
 
 Julia is a powerful and performant computational programming language  (https://julialang.org)
 
-Julia code can be embedded within Dpdl via the keyord '**>>julia**'
+Julia code can be embedded within Dpdl via the keyord **`>>julia`**
 
 Example Dpdl script embedding 'Julia' that generates a Plot and saves the result as PDF file:
 <img src="http://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="60%" height="60%">
@@ -482,7 +484,7 @@ NOTE: The native Dpdl library 'dpdljulia' needs to be downloaded and deployed se
 
 ### Embedding of 'Lua' code
 
-Lua code can be embedded within Dpdl scripts by using the keyword '**>>lua**'.
+Lua code can be embedded within Dpdl scripts by using the keyword **`>>lua`**.
 
 Example Dpdl script with embedded 'Lua' code:
 ```python
@@ -545,7 +547,7 @@ println(resp_buf)
 ### Embedding of 'OCaml' (experimental)
 
 Currently the functional programming language '**OCaml**' (https://ocaml.org/) is supported, via package (http://www.ocamljava.org/),
-and can be embedded directly within Dpdl scripts with the keyword '**>>ocaml**'
+and can be embedded directly within Dpdl scripts with the keyword **`>>ocaml`**
 The library allows also to compile on the fly OCaml code in order to speedup execution.
 
 Example Dpdl script with embedded 'OCaml' code:
