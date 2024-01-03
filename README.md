@@ -441,7 +441,7 @@ println("Dpdl qjs exited with exit code: " + exit_code)
 
 QuickJS provides a powerful and complete API to interact with the javascript engine at low level.
 Custom native functions and objects can be implemented as shared libraries and loaded in javascript.
-You can find more examples in the folder './DpdlLibs/js'
+You can find examples in the folder './DpdlLibs/js/'
 
 Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
 
@@ -857,6 +857,10 @@ i.e. arraylistExample.h @TEST1
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
 	
+* Example Dpdl script that embeds javascript code (with  Mode2 using qjs) that loads an object implemented in a native C library (see point.c)
+
+	[js/dpdlQJsExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsExample.h) 
+
 * Example Dpdl script that launches multiple threads
 
 	[concurrent/testConcurrency1.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/concurrent/testConcurrency1.h)
