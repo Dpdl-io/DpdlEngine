@@ -265,8 +265,8 @@ Refer to the official 'QuickJS' documentation for more info about the functions 
 
 The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
 
-The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write data to the 'dpdlbuf_*' variable pushed on the dpdl stack
-see example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
+The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write data to the 'dpdlbuf_*' variable pushed on the dpdl stack.
+See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
 
 ### OCaml
 
