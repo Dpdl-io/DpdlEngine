@@ -4,6 +4,8 @@
 # This Dpdl script executes an embedded 'qjs' javascript that calculates n (suppied as argument) digits of PI number
 # The javascript code is from Fabrice Bellard's QuickJS repository (https://github.com/bellard/quickjs/blob/master/examples/pi_bigint.js)
 #
+# Note: This script exeeds the  'embedded code limit' on the trial version of 'DpdlEngine lite', in this case you may need to short it to fit 100 lines of code
+#
 # Author: AC
 # e-mail: ac@dpdl.io
 #
