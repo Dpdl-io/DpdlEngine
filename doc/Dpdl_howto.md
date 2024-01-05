@@ -125,7 +125,11 @@ as standard parameters in most cases.
 The embedded code can also write data to the Dpdl stack which can than be intercepted again in Dpdl code via a given keyword that
 is pushed as a string variable onto the Dpdl stack prior to the embedding of the code.
 
-The following example shows how this can be done with emedded C code for example:
+Within the embedded C code the function **`dpdl_stack_buf_put(..)`** can be used to write data (a char* buffer) to the memory buffer mapped
+to the keyword specified. The maximum size of the memory buffer is currently fixed to 4096 bytes (but can be changed in the registered version of DpdlEngine)
+
+The size of 
+The following example shows how this can be done with embedded C code:
 ```python
 dpdl_stack_push("dpdlbuf_myvar1")
 >>c
