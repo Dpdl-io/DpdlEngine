@@ -19,7 +19,7 @@ java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens jav
 Note: On newer versions of java (from Oracle), in order to access specific java 'modules' within Dpdl, you may need to enable them with the option '--add-opens'
 
 
-## Execute a Dpdl script in iterative way
+### Execute a Dpdl script in iterative way
 
 In order to execute a given Dpdl script in an iterative way the script can be executed within a dedicated thread instance using
 the Dpdl API function **`DPDLAPI_createThread(..)`**.
@@ -48,7 +48,9 @@ runs the script in a dedicated interpreter execution environment, improving perf
 The above script can than be run also in the Dpdl console with the '-load' command.
 
 
-## Loading a Dpdl script as an object
+## Dpdl code
+
+### Loading a Dpdl script as an object
 
 In some circumstances it may be convenient to load a given Dpdl script as an object. 
 This offers some advantages compared to the standard 'include(..)' function.
@@ -108,4 +110,35 @@ object mystr = loadObj("String", "MyLoadObj str")
 return 1
 ```
 Note: The dpdl script loaded must always return a status (int) in order to load successfully (1) or with error (-1)
+
+
+### Data exchange with embedded code via the Dpdl stack
+
+The embedding of other programming languages within Dpdl is straight forward and requires only the appropriate keyword e.g. **`>>c`**
+to initialize the embedding of code. Exchanging data with embedded code is a bit more tricky.
+
+Data can be exchanged with the embedded code via the Dpdl stack.
+
+The function **`dpdl_stack_push(..)`** can be used to push variables onto the Dpdl Stack which are than forwarded to the embedded code
+as standard parameters in most cases.
+
+The embedded code can also write data to the Dpdl stack which can than be intercepted again in Dpdl code via a given keyword that
+is pushed as a string variable onto the Dpdl stack prior to the embedding of the code.
+
+The following example shows how this can be done with emedded C code for example:
+```python
+dpdl_stack_push("dpdlbuf_myvar1")
+>>c
+	#include <stdio.h>
+	#include <dpdl.h>
+	
+	printf("writing to buf...\n");
+	char *buf = "MEGA";
+	dpdl_stack_buf_put(buf);
+	
+<<
+string buf = dpdl_stack_buf_get(""dpdlbuf_myvar1"")
+println("response buffer: " + buf)
+```
+
 
