@@ -268,6 +268,37 @@ The libraries **`std`** and **`os`** are already imported and accessible with 's
 The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write data to the 'dpdlbuf_*' variable pushed on the dpdl stack.
 See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
 
+#### Passing data to the embedded javascript
+
+Variables can be passed to the embedded javascript by pushing them onto the Dpdl stack with the api function **`dpdl_stack_push(..)`**
+
+Example that passes an integer variable and an array to the embedded js code:
+```python
+int val = 23
+arr[] = [1, 2, 3, 4]
+
+dpdl_stack_push(val, arr)
+>>qjs
+	var sa;
+	var arr;
+	var v;
+	if(scriptArgs.length > 1){
+		v = scriptArgs[0];
+		sa = scriptArgs[1];
+		arr = sa.split(",");
+		std.printf("val=%d\n", v);
+		console.log(arr);
+	}else{
+		sa = "";
+	}
+	for(let i = 0; i < arr.length; i++) {
+		std.printf("arr[%d]=%d\n", i, arr[i]);
+	}
+<<
+int exit_code = dpdl_exit_code()
+println("Dpdl js exited with exit code: " + exit_code)
+```
+
 ### OCaml
 
 #### keyword >>ocaml
