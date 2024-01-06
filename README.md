@@ -666,7 +666,7 @@ The Dpdl framework and API documentation are available via the following links:
 The 'DpdlEngine lite' Demo release (v1.0) can be downloaded and try for Free (with some limitations),
 from the dpdl.io download page:
 
-[DpdlEngine lite DOWNLOAD form](https://www.dpdl.io/index_download.html)
+[DpdlEngine lite DOWNLOAD form](https://www.dpdl.io/download_request.htm)
 
 Documentation and Updates are updated regularly on the official DpdlEngine GitHub repository:
 [DpdlEngine GitHub](https://github.com/Dpdl-io/DpdlEngine)
