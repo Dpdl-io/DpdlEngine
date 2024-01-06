@@ -32,7 +32,7 @@ int max_block_size = 0
 int verbose = 0
 
 int response_counter = 0
-string original_msg = null
+string original_msg = "null"
 
 println("allocating DpdlCoAPClient..")
 object dpdl_coap = loadObj("DpdlCoAPClient", coap_uri, port, max_block_size, verbose)
