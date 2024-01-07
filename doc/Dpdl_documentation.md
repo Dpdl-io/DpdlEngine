@@ -542,6 +542,13 @@ Static classes can be accessed via **`getClass(..)`** method and instance classe
 
 The class references are resolved via the 'classes.txt' file located in the folder ./DpdlLibs/libs/.
 
+The name of the class must be specified without the package path, i.e 'String' and NOT 'java.lang.String'.
+
+For some java classes that have duplicate entries as base name, the corresponding path prefix has to be specified when loading
+an object.
+The classes where this applies are listed here: [doc/Dpdl_resolve.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_resolve.md)
+
+
 The default configuration resolves the following API's:
 
 [Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)

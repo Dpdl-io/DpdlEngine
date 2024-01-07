@@ -34,6 +34,7 @@ developed by
 
 ## Fixes
 
+* 07.01.2024 Fixed some duplicate entries in the class definition file
 * 13.12.2023 Fixed issue in nested 'struct' type
 * 09.12.2023 Fixed bug for 'long' definition inside functions
 * 02.11.2023 Fixed bug for Python indentation
