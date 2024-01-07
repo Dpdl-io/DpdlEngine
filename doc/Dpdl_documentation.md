@@ -546,7 +546,7 @@ The default configuration resolves the following API's:
 
 [Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
-[Bluetooth JSR-82 API](http://www.seesolutions.it/apidoc/Bluetooth_JSR82_API.html)
+[Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
 
 Additional API's and classes can be added to the class definition file as needed with the syntax: '$full_class_name $class_alias'
 
