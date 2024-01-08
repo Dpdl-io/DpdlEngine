@@ -295,7 +295,110 @@ bool b = str.contains("C")
 println("Dpdl contains C: " + b)
 ```
 
-### Modes for embedded C code:
+### Embedding of other programming languages
+
+Other programming languages can be easily integrated in Dpdl via a dedicated plug-in interface and configuration. Please feel free to suggest your opinion on the
+'Discussion' section on the DpdlEngine GitHub repository
+
+## Supported Platforms
+
+Dpdl runs on a wide range of platforms and provides also a small footprint java virtual machine,
+released as open-source, that can  be compiled for almost every platform as soon as
+an ANSI C compiler is available for the target platform.
+
+### Dpdl itelf is compatible with:
+
+* J2ME MIDP (Mobile Information Device Profile) -> MIDP 1.0 and MIDP 2.0 (CLDC 1.0, CLDC 2.0)
+* Java ME CLDC & GCF (JSR 360)
+* Java ME Embedded Profile (JSR 361)
+* Java versions >= 1.4 and later
+* Java > 1.1 (but without 'loadObj' and 'getClass' methods)
+* All Platforms where the included open source virtual machine (written in C) can be compiled
+
+DpdlEngine V1.0 has been tested on:
+
+	* MacOS arm64
+	* Linux x86_64
+	* Raspberry PI 3 (armv7l)
+	* Windows 64-bit
+	* Android
+	* JavaME
+	* J2ME (MIDP 2.0)
+		
+Note: The DpdlEngine needs to be re-packaged for running on Android, JavaME and J2ME
+
+### Embedded programming languages - compatibility matrix
+
+(X + version) **Supported**
+
+(*) **available soon**
+
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
+| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|
+| Windows64|X|*|*|X|X v4.01|*|*|*|
+
+	
+## Documentation
+
+The Dpdl framework and API documentation are available via the following links:
+ 
+
+[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+
+[Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+
+[Dpdl embedded languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
+
+[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+
+ Dpdl Java API Documentation (available only on the registered verison of DpdlEngine)
+
+
+## Licensing
+
+Dpdl is a proprietary software developed by SEE Solutions. A valid license key file 'LicenseKeyDpdl' is required to run the
+software. The 'DpdlEngine lite' version of the software can be downloaded as a fFree trial shareware (see Download section below).
+The professional version of DpdlEngine is released on custom licensing models depending on type of use and application domain.
+Feel free to get a quotationor more info by writing to info@dpdl.io
+
+All Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License agreement.
+
+
+## DOWNLOAD 'DpdlEngine lite' release package (Demo trial version)
+
+The 'DpdlEngine lite' Demo release (v1.0) can be downloaded as Free trial shareware (with some limitations), 
+from the dpdl.io download form page:
+
+[DpdlEngine lite DOWNLOAD form](https://www.dpdl.io/download_request.htm)
+
+Documentation and Updates are updated regularly on the official DpdlEngine GitHub repository:
+[DpdlEngine GitHub](https://github.com/Dpdl-io/DpdlEngine)
+
+Check the 'DpdlEngine lite' Demo release limitations/restrictions, compared to the full DpdlEngine version, in the last section of this document.
+
+Suggestion and contributions to enhance Dpdl are very welcome and can be submitted on the discussion section on GitHub:
+[Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)
+
+
+### Open source Dpdl embedded language plug-ins
+
+Some Dpdl embedded language plug-ins are published as open source projects:
+* ROOT C++ (will be released as open source soon)
+
+## Roadmap
+
+Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
+
+* OpenAI integration
+* Blockchain integration (smart contracts)
+* Nostr client API
+* Compiler to compile Dpdl scripts to native machine code
+
+
+## Execution Modes for embedded C code:
 
 1) Interpreted C code (<ins>minimal subset of C90</ins>)
 2) Compiled C code (in memory at runtime) (full <ins>ANSI C99</ins>)
@@ -589,99 +692,6 @@ println("embedded OCaml exit code: " + exit_code);
 
 ```
 
-### Other programming languages
-
-Other programming languages can be easily integrated in Dpdl via a dedicated plug-in interface and configuration. Please feel free to suggest your opinion on the
-'Discussion' section on the DpdlEngine GitHub repository
-
-## Supported Platforms
-
-Dpdl runs on a wide range of platforms and provides also a small footprint java virtual machine,
-released as open-source, that can  be compiled for almost every platform as soon as
-an ANSI C compiler is available for the target platform.
-
-### Dpdl itelf is compatible with:
-
-* J2ME MIDP (Mobile Information Device Profile) -> MIDP 1.0 and MIDP 2.0 (CLDC 1.0, CLDC 2.0)
-* Java ME CLDC & GCF (JSR 360)
-* Java ME Embedded Profile (JSR 361)
-* Java versions >= 1.4 and later
-* Java > 1.1 (but without 'loadObj' and 'getClass' methods)
-* All Platforms where the included open source virtual machine (written in C) can be compiled
-
-DpdlEngine V1.0 has been tested on:
-
-	* MacOS arm64
-	* Linux x86_64
-	* Raspberry PI 3 (armv7l)
-	* Windows 64-bit
-	* Android
-	* JavaME
-	* J2ME (MIDP 2.0)
-		
-Note: The DpdlEngine needs to be re-packaged for running on Android, JavaME and J2ME
-
-### Embedded programming languages - compatibility matrix
-
-(X + version) **Supported**
-
-(*) **available soon**
-
-| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
-| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|
-| Windows64|X|*|*|X|X v4.01|*|*|*|
-
-	
-## Roadmap
-
-Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
-
-* OpenAI integration
-* Blockchain integration (smart contracts)
-* Nostr client API
-* Compiler to compile Dpdl scripts to native machine code
-
-
-## Documentation
-
-The Dpdl framework and API documentation are available via the following links:
- 
-
-[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
-
-[Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
-
-[Dpdl embedded languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
-
-[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
- Dpdl Java API Documentation (available only on the registered verison of DpdlEngine)
-
-
-## Download 'DpdlEngine lite' release package (Demo trial version)
-
-The 'DpdlEngine lite' Demo release (v1.0) can be downloaded and try for Free (with some limitations),
-from the dpdl.io download page:
-
-[DpdlEngine lite DOWNLOAD form](https://www.dpdl.io/download_request.htm)
-
-Documentation and Updates are updated regularly on the official DpdlEngine GitHub repository:
-[DpdlEngine GitHub](https://github.com/Dpdl-io/DpdlEngine)
-
-Check the 'DpdlEngine lite' Demo release limitations/restrictions, compared to the full DpdlEngine version, in the last section of this document.
-
-Suggestion and contributions to enhance Dpdl are very welcome and can be submitted on the discussion section on GitHub:
-[Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)
-
-
-### Open source Dpdl embedded language plug-ins
-
-Some Dpdl embedded language plug-ins are published as open source projects:
-* ROOT C++ (will be released as open source soon)
-
 
 ## What is a DpdlPacket?
 
@@ -798,17 +808,6 @@ Usage:
  -h  Help
  -q  quit
 ```
-
-
-## Licensing
-
-Dpdl is a proprietary software developed by SEE Solutions. A valid license key file 'LicenseKeyDpdl' is required to run the
-software. The 'DpdlEngine lite' version of the software can be downloaded as a free trial shareware (see Download section).
-The professional version of DpdlEngine will be released on custom licensing models depending on type of use and application domain.
-Feel free to write to info@dpdl.io for more info.
-
-All Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License agreement.
-
 
 ## What does the free trial 'DpdlEngine lite' version provide?
 
