@@ -357,16 +357,6 @@ The Dpdl framework and API documentation are available via the following links:
  Dpdl Java API Documentation (available only on the registered verison of DpdlEngine)
 
 
-## Licensing
-
-Dpdl is a proprietary software developed by SEE Solutions. A valid license key file 'LicenseKeyDpdl' is required to run the
-software. The 'DpdlEngine lite' version of the software can be downloaded as a fFree trial shareware (see Download section below).
-The professional version of DpdlEngine is released on custom licensing models depending on type of use and application domain.
-Feel free to get a quotationor more info by writing to info@dpdl.io
-
-All Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License agreement.
-
-
 ## DOWNLOAD 'DpdlEngine lite' release package (Demo trial version)
 
 The 'DpdlEngine lite' Demo release (v1.0) can be downloaded as Free trial shareware (with some limitations), 
@@ -397,7 +387,14 @@ Dpdl is currently developed by SEE Solutions and the following integrations has 
 * Nostr client API
 * Compiler to compile Dpdl scripts to native machine code
 
+## Licensing
 
+Dpdl is a proprietary software developed by SEE Solutions. A valid license key file 'LicenseKeyDpdl' is required to run the
+software. The 'DpdlEngine lite' version of the software can be downloaded as a Free trial shareware (see Download section).
+The professional version of DpdlEngine is released on custom licensing models depending on type of use and application domain.
+Feel free to get more info by writing to info@dpdl.io
+
+All Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License agreement.
 ## Execution Modes for embedded C code:
 
 1) Interpreted C code (<ins>minimal subset of C90</ins>)
