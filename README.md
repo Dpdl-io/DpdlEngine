@@ -547,9 +547,7 @@ Refer to the official 'QuickJS' documentation for more info about the functions 
 
 The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
 
-Note: 'qjs' is available in the soon coming release of 'DpdlEngine lite'
-	
-	
+		
 ### Embedding of 'Julia' code
 
 Julia is a powerful and performant computational programming language  (https://julialang.org)
