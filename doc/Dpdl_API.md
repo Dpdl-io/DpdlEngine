@@ -11,13 +11,47 @@ developed by
 				
 This is the Dpdl scripting API documentation. 
 
-The DpdlEngine Java API documentation is published separately.
+The API's are available as:
+- Native import Libraries
+- Native functions
+
+Note: The Java API documentation is available only for registered version
 
 
 ## Dpdl scripting API Documentation
 
 DpdlEngine V1.0
 
+### Native import Libraries
+
+Auxiliary API libraries can be imported and used via the **`import(..)`** statement.
+
+The import libraries are implemented either in Dpdl (with '*.h' extension and located in './DpdlLibs/libs/' folder,
+or in a Native java library that can be implemented and configured to be accessed via Dpdl in a easy and  straight forward way.
+
+The Native libraries currently available are:
+```python
+import('http')
+import('json')
+```
+
+**`http`**
+```python
+get(string url) return string response
+```
+**`json`**
+```python
+parse(string json) return object json
+encode(struct data) return string json
+decode(string json, struct data) return struct data
+```
+
+Adding custom libraries is straight forward and can be done by simply adding the implementation to the classpath and 
+configure the library in the configuration file 'DpdlEngine.ini'
+
+### Native functions
+
+Native API function are implemented directly in the DpdlEngine core
 
 ```python
 [Native]
