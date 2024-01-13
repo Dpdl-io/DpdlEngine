@@ -25,7 +25,6 @@ object jsonobj = json.parse(resp, 0)
 ids[] = array(jsonobj)
 
 string story_url
-object story
 object storyobj = loadObj("StoryTest")
 
 int c = 0
