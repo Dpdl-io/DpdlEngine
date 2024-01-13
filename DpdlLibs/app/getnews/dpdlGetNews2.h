@@ -1,6 +1,7 @@
-# File: app/getnews/dpdlGetNews.h
+# File: app/getnews/dpdlGetNews2.h
 #
-# Example: Download top 10 story news via json http get requests. Data is decoded and stored in a native java object via getter and setter
+# Example: Download top 10 story news via json http get requests. Data is decoded and stored in a native java object via getter and setter.
+#		   The java class 'StoryTest' has already been compiled and added in the class definition file. The sources are in the same folder.
 #
 # Author: A.Costa
 # e-mail: info@dpdl.io

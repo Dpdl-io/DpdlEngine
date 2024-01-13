@@ -9,6 +9,8 @@ developed by
 
 ## New 
 
+* NEW (13.01.2024) Added basic 'http' and 'json' import libraries.
+
 * NEW (02.23.2023) JavaScript can now be executed also via the 'QuickJS' javascript engine (ES2020 spec) by using the keyword '>>qjs'
 
 * (27.12.2023) 'import' statement for libraries
