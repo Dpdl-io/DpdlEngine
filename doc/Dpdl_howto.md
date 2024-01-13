@@ -146,3 +146,68 @@ println("response buffer: " + buf)
 ```
 
 
+## Dpdl data
+
+### Mapping data in 'json' format
+
+Data in **`json`** format can be mapped to data structures and objects with the 'json' import lib.
+
+**`json.parse(..)`**
+
+This function returns a map (tag/value) of the specified 'json' data. The values can than be accessed via **`get(..)`** function.
+
+Example:
+```python
+import('json')
+
+string json_data = "{\"menu\": { \"id\": \"file\", \"value\": \"File\", \"popup\": { \"menuitem\": [ {\"value\": \"New\", \"onclick\": \"CreateNewDoc()\"},{\"value\": \"Open\", \"onclick\": \"OpenDoc()\"}, {\"valu\": \"Close\", \"onclick\": \"CloseDoc()\"} ] }}"
+
+object json_obj = json.parse(json_data, 0)
+
+println("json_obj: " + json_obj)
+
+object menu_obj = json_obj.get("menu")
+
+object id = menu_obj.get("id")
+println("id: " + id)
+
+object value = menu_obj.get("value")
+println("value: " + value)
+
+object popup_obj = menu_obj.get("popup")
+println("popup_obj: " + popup_obj)
+```
+
+**`json.decode(..)`**
+
+This function can be used to map json data to a given Dpdl **`struct`** or **`object`**
+
+The tags and values of the json data are mapped to the corresponding variable names and types in Dpdl.
+
+Example:
+```python
+import('json')
+
+struct Entry {
+	int id
+	string title
+	string url
+}
+
+struct Entry myentry
+
+string json_data = "{\"id\":317,\"title\":\"my title\",\"url\":\"https://myurl.test\"}"
+
+myentry = json.decode(json_data, myentry)
+
+println("id: " + myentry.id)
+println("title: " + myentry.title)
+println("url: " + myentry.url)
+```
+
+In the same way as illustrated in the example above, also java classes can be mapped in the same way.
+In this case the java class just needs to implement the 'getter' and 'setter' methods for each tag. (e.g setId(int id)).
+See example 'app/getnews/dpdlGetNews2.h'
+
+
+

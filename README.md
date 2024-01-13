@@ -848,6 +848,9 @@ A set of examples/Tests can be found in the script './DpdlLibs/dpdlLibExamples.h
 where different Tests/Examples can be executed individually via tagged execution, by supplying the @TAG attribute along with the filename.
 i.e. arraylistExample.h @TEST1
 
+* Example Dpdl script that downloads json news data and decodes it to a struct
+
+	[app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
 
 * Example Dpdl script that shows major functionalities provided by Dpdl
 
