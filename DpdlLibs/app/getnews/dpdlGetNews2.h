@@ -1,6 +1,6 @@
 # File: app/getnews/dpdlGetNews.h
 #
-# Example: Download top 10 story news via json http get requests. Data is decoded and stored in a struct
+# Example: Download top 10 story news via json http get requests. Data is decoded and stored in a native java object via getter and setter
 #
 # Author: A.Costa
 # e-mail: info@dpdl.io
@@ -10,11 +10,6 @@
 import('http')
 import('json')
 
-struct Story {
-	int id
-	string title
-	string url
-}
 
 # main
 string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
@@ -30,7 +25,7 @@ object jsonobj = json.parse(resp, 0)
 ids[] = array(jsonobj)
 
 string story_url
-struct Story storyobj
+object storyobj = loadObj("StoryTest")
 
 int c = 0
 for(c < 10)

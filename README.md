@@ -95,7 +95,15 @@ This makes Dpdl suitable for a wide range of use-cases and in particular also fo
  
 The size of the DpdlEngine can be stripped down to 60 Kb with a basic configuration if needed.
 
-### Dpdl quick overview 
+### Dpdl small sample app
+
+This is a small sample app writte with Dpdl that gets the top 10 news stories via http get in json format:
+
+[app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
+
+Note: The example 'app/getnews/dpdlGetNews2.h' is identical, but data is decoded in a java object instead of a struct
+
+### Dpdl overview
 
 This is a 'dummy' Dpdl example that shows some language features:
 
