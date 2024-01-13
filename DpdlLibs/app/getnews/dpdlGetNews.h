@@ -26,10 +26,11 @@ ids[] = array(jsonobj)
 
 string story_url
 object story
-object storyobj = loadObj("Story")
+object storyobj = loadObj("StoryTest")
 
 int c = 0
 for(c < 10)
+	println("---------------------------------------------------------------------")
 
 	story_url = item_base_url + ids[c] + ".json"
 	resp = http.get(story_url)
@@ -41,8 +42,6 @@ for(c < 10)
 	println("id: " + storyobj.id)
 	println("title: " + storyobj.title)
 	println("url: " + storyobj.url)
-
-	println("----------------------------------------")
 
 	c = c+1
 endfor
