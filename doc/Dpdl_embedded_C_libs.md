@@ -10,7 +10,7 @@ developed by
 &copy; 2003
 
 
-## This is the minimal C library documentation for the embedded C code execution Mode (2) -> Interpreted
+## This is the minimal C library documentation for the embedded C code execution Mode (1) -> Interpreted
 
 
 Example:
