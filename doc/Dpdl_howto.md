@@ -154,7 +154,9 @@ Data in **`json`** format can be mapped to data structures and objects with the 
 
 **`json.parse(..)`**
 
-This function returns a map (tag/value) of the specified 'json' data. The values can than be accessed via **`get(..)`** function.
+This function returns an object that is a map (tag/value) of the specified 'json' data.
+The object returned implements the same methods as available in a java [HashMap](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/HashMap.html)
+The values of the map for example can than be accessed via **`get(..)`** function.
 
 Example:
 ```python
@@ -167,6 +169,10 @@ object json_obj = json.parse(json_data, 0)
 println("json_obj: " + json_obj)
 
 object menu_obj = json_obj.get("menu")
+
+bool b = menu_obj.containsKey("id")
+
+println("menu_obj contains key 'id': " + b)
 
 object id = menu_obj.get("id")
 println("id: " + id)
