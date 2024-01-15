@@ -234,4 +234,63 @@ In this case the java class just needs to implement the 'getter' and 'setter' me
 See example 'app/getnews/dpdlGetNews2.h'
 
 
+### Storing and accessing data in a Record Store
+
+Dpdl allows to store and access data in Record Stores.
+
+Example:
+```python
+import("dpdllib.h")
+import("dpdlRS.h")
+
+# main
+println("testing record store..")
+
+println("creating a record store...")
+
+int rs_id = createRS("myrecords", AUTHMODE_ANY, dpdlTrue, dpdlTrue)
+
+raise(rs_id, "Error: unable to create record store")
+
+println("record store created with id: " + rs_id)
+
+int rec_id
+string data
+int cnt
+while(cnt < 10)
+	data = "my test data " + cnt
+
+	rec_id = addRecord(rs_id, data)
+
+	println("record added with id: " + rec_id)
+
+	cnt = cnt+1
+endwhile
+
+println("reading data from record store...")
+
+enumRecords(rs_id, dpdlTrue)
+
+
+while(rec_id != -1)
+	rec_id = getNextRecordID(rs_id)
+	if(rec_id != -1)
+		println("getting record with id: " + rec_id)
+		data = getRecord(rs_id, rec_id)
+		println("rec_id: " + rec_id + " data: " + data)
+	fi
+endwhile
+
+println("closing record store...")
+
+closeRS(rs_id)
+
+println("done")
+```
+
+Note: On JavaME and J2ME platforms, the platform specific Record Store is used (javax.microedition.rms.RecordStore), without the need to
+adapt the code.
+
+
+
 
