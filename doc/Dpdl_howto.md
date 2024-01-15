@@ -256,11 +256,13 @@ println("record store created with id: " + rs_id)
 
 int rec_id
 string data
-int cnt
+int cnt = 0
 while(cnt < 10)
 	data = "my test data " + cnt
 
 	rec_id = addRecord(rs_id, data)
+
+	raise(rec_id, "Error in adding record")
 
 	println("record added with id: " + rec_id)
 
@@ -288,7 +290,7 @@ closeRS(rs_id)
 println("done")
 ```
 
-Note: On JavaME and J2ME platforms, the platform specific Record Store is used (javax.microedition.rms.RecordStore), without the need to
+Note: On JavaME and J2ME platforms, the platform specific Record Store is used transparently (javax.microedition.rms.RecordStore), without the need to
 adapt the code.
 
 
