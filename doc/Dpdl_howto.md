@@ -237,6 +237,7 @@ See example 'app/getnews/dpdlGetNews2.h'
 ### Storing and accessing data in a Record Store
 
 Dpdl allows to store and access data in Record Stores.
+The Record Store functions can be used directly (via DPDLAPI_* calls), or with the functions defined in the import library 'dpdlRS.h' 
 
 Example:
 ```python
