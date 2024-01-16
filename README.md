@@ -109,7 +109,9 @@ This is a 'dummy' Dpdl example that shows some language features:
 
 [dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
 
-You can find more Dpdl examples in the section below: '**Dpdl Examples**' 
+
+You can find more Dpdl examples on the following page: 
+[Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 
 
 ## Why Dpdl?
@@ -193,8 +195,8 @@ The default configuration currently includes Java 5 Platform API (1.5), and blue
 
 The default configuration can be extended or updated to resolve additional java APIs (editing of class definition configuration file)
 
-#### Dpdl Java API access documentation (default configuration)
 
+#### Dpdl Java API access documentation (default configuration)
 
 [Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
@@ -365,6 +367,13 @@ The Dpdl framework and API documentation are available via the following links:
  Dpdl Java API Documentation (available only on the registered verison of DpdlEngine)
 
 
+## Download
+
+See 'Download' page for more details:
+
+[Download](https://github.com/Dpdl-io/DpdlEngine/blob/main/Download.md)
+
+
 ## Roadmap
 
 Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
@@ -373,7 +382,6 @@ Dpdl is currently developed by SEE Solutions and the following integrations has 
 * Blockchain integration (smart contracts)
 * Nostr client API
 * Compiler to compile Dpdl scripts to native machine code
-
 
 
 ## Execution Modes for embedded C code:
