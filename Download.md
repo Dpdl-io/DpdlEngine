@@ -13,7 +13,7 @@ developed by
 ## Licensing
 
 Dpdl is a proprietary software developed by SEE Solutions. A valid license key file 'LicenseKeyDpdl' is required to run the
-software. The 'DpdlEngine lite' version of the software can be downloaded as a Free trial shareware (see Download section below).
+software. The 'DpdlEngine lite' version of the software can be downloaded as a <ins>Free Trial Shareware</ins> (see Download section below).
 The professional version of DpdlEngine is released on custom licensing models depending on type of use and application domain.
 Feel free to get more info by writing to info@dpdl.io
 
