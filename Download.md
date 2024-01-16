@@ -1,0 +1,125 @@
+# Download
+
+![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
+
+				www.dpdl.io
+
+developed by
+**SEE Solutions**
+&copy; 2003	
+
+
+
+## Licensing
+
+Dpdl is a proprietary software developed by SEE Solutions. A valid license key file 'LicenseKeyDpdl' is required to run the
+software. The 'DpdlEngine lite' version of the software can be downloaded as a Free trial shareware (see Download section below).
+The professional version of DpdlEngine is released on custom licensing models depending on type of use and application domain.
+Feel free to get more info by writing to info@dpdl.io
+
+## DOWNLOAD 'DpdlEngine lite' release package (Demo trial version)
+
+The 'DpdlEngine lite' Demo release (v1.0) can be downloaded as Free trial shareware (with some limitations), 
+via the dpdl.io download form page:
+
+[DpdlEngine lite DOWNLOAD form](https://www.dpdl.io/download_request.htm)
+
+Documentation and Updates are updated regularly on the official DpdlEngine GitHub repository:
+[DpdlEngine GitHub](https://github.com/Dpdl-io/DpdlEngine)
+
+Check the 'DpdlEngine lite' Demo release limitations/restrictions, compared to the full DpdlEngine version, in the last section of this document.
+
+Suggestion and contributions to enhance Dpdl are very welcome and can be submitted on the discussion section on GitHub:
+[Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)
+
+
+### Open source Dpdl embedded language plug-ins
+
+Some Dpdl embedded language plug-ins are published as open source projects:
+* ROOT C++ (will be released as open source soon)
+
+
+## What does the free trial 'DpdlEngine lite' version provide?
+
+
+The 'DpdlEngine lite' release is available for Free to try with some limitations (see section below),
+and can be used to exploit the features of Dpdl and to develop small applications
+or utility tools. Some auxiliary Dpdl libraries are released under the open-source GNU
+license.
+
+
+'DpdlEgine lite' includes:
+
+* The 'DpdlClient' console application that allows to execute a set of commands for interacting with the core DpdlEngine
+	  
+* Dpdl scripting engine with API libraries (Support for Embedded C, C++, Python, Julia, JavaScript, Lua and OCaml)
+	
+* Example Dpdl scripts (located in './DpdlPackets/' and './DpdlLibs/' folder)
+	
+* Example DpdlPacket (dpdl_PHONEBOOK.dpdl) with corresponding Dpdl code definition file
+	
+
+
+## 'DpdlEngine lite' Demo release limitations/restrictions
+
+	
+The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions
+compared to the full registered version:
+
+* At startup, the DpdlEngine requires internet connectivity for the execution of a validation script.
+The script simply accesses a html website at https://www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
+-> startup is therefore also a bit slower in demo version
+	  
+The validation script can be inspected here: 
+[./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
+
+* The DpdlEngine parameters and configuration file 'DpdlEngine.ini' can be customized only in the registered version
+	
+* The class definition file (classes.txt), used for dynamic loading and resolving of library classes via loadObj(..) and getClass(..) methods can be edited only in the registered version of Dpdl
+and java classes cannot be referenced with the full package path (eg. org.my.mycustomclass), only with the base name (eg. Math) as defined in the class definition file.
+	
+* The execution of Dpdl scripts is limited to 500 lines of code, embedded language code (C, C++, Python, Julia, JavaScript, Lua and OCaml) is limited to 100 lines of code per section.
+	
+* The Dpdl scripting API function 'systemExec' is available only in the registered version of Dpdl
+	
+* The interface API to develop custom API extensions (DpdlExtension) is available only in the registered version of Dpdl
+	
+* The compilation/encoding of DpdlPackets via Dpdl code definition files (ex. dpdl_PHONEBOOK.c) is available only in the registered version of Dpdl
+	
+* The Dpdl java API is available only in the registered Dpdl version (but Dpdl scripting API is fully available)
+
+* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 2 Threads allowed)
+
+* Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS
+
+* Dpdl scripts included with 'include(...)' supports execution of embedded code only in the registered version of Dpdl
+
+* Native Dpdl API function 'dpdl_stack_buf_put(..)' (dpdl.h) is not available when option 'dpdl:compile' or 'dpdl:C99' is activated
+
+* The option 'dpdl:compile' used to <ins>compile</ins> embedded ANSI C code in memory at runtime can be used only 500 times in the unregistered version of Dpdl
+
+**NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
+More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
+Contact us if this is the case.
+
+
+## How to order a 'full' DpdlEngine license?
+
+To buy a full featured DpdlEngine license with no limitations/restrictions, regular updates and support,
+please submit your request via the following download request form, you will be contacted promptly: 
+
+https://www.dpdl.io/index_order.html
+
+Or just write an e-mail to info@dpdl.io
+
+
+## Other Downloads
+
+### Dpdl embedded language plug-in Add-ons:
+
+The following Dpdl language plug-in Add-on contains the Dpdl native library for embedding 'ROOT' and 'Julia' languages.
+
+Available soon...
+https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
+
+
