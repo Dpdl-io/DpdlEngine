@@ -73,8 +73,8 @@ are integrated by default and third party libraries and functions can be added a
  fi
 ```
 
-Dpdl can be used to encode, store, control and query data efficiently especially on small memory footprint
-devices and to foster rapid application development. Dpdl comes with a very compact and portable
+Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint
+devices and is foreseen to foster rapid application development. Dpdl comes with a very compact and portable
 **scripting engine** and an **extensible API interface** for the development of mobile
 applications and embedded system software.
 
