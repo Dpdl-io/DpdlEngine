@@ -50,6 +50,25 @@ The above script can than be run also in the Dpdl console with the '-load' comma
 
 ## Dpdl code
 
+### Using the 'include(..)' function
+
+To modularize code it's convenient to create a set of files/modules that can be used in the main code.
+
+The **`include(..)`** function serves this purpose.
+
+example:
+```python
+include("myincludedir/module1.h")
+
+println("calling a function defined in module1...")
+int ret = myFuncMod1()
+...
+```
+The path of the files to be included need always to be relative to the folder ot the scrit set root directory, e.g. if my script are located in
+the folder 'test' (i.e. ./DpdlLibs/test) containing different folders with subfolders (i.e inc1, inc2 and inc1/sub, inc2/sub), the include 
+path is alwals relative to the root dir (e.g include("inc1/mymodule.h") include(inc1/sub/mymobule...)
+
+
 ### Loading a Dpdl script as an object
 
 In some circumstances it may be convenient to load a given Dpdl script as an object. 
