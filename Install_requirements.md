@@ -220,7 +220,7 @@ and java classes cannot be referenced with the full package path (eg. org.my.myc
 	
 * The Dpdl java API is available only in the registered Dpdl version (but Dpdl scripting API is fully available)
 
-* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 2 Threads allowed)
+* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 3 Threads allowed, further allocations will than rotate an override previews ones)
 
 * Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS 
 
