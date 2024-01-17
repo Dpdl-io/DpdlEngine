@@ -193,7 +193,7 @@ Ensure the BlueZ library 'libbluetooth.so' is available on the path.
 Eventually you might neet to create a symbolic link to a specific version of the library (eg. libbluetooth.so -> libbluetooth.so.$version)
 
 
-# 'DpdlEngine lite' Demo release limitations/restrictions (compared to Full Registered version)
+## 'DpdlEngine lite' Demo release limitations/restrictions (compared to Full Registered version)
 
 	
 The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions
