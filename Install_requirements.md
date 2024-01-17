@@ -10,18 +10,19 @@ developed by
 &copy; 2003
 
 
-The DpdlEngine documentation can be found in the 'doc' folder, or better (up to date) on the GitHub repository
+'DpdlEngine lite' V1.0 is available as Free Trial Shareware, with some limitations/restrictions (see section below),
+under the license agreement included (see LICENSE.txt).
+
+The full registered version of DpdlEngine can be requested via the Download request form:
+[Order Full Version](https://www.dpdl.io/index_order.html)
+
+The DpdlEngine documentation is located in the 'doc' folder, or more up to date on the GitHub repository:
 
 https://github.com/Dpdl-io/DpdlEngine
 
 As DpdlEngine is in a fast development cycle, it's advised to update the software frequently. New features and fixes may be available.
 
 # System requirements
-
-'DpdlEngine lite' V1.0 is available for free to try, with some limitations/restrictions (see section below),
-under the license agreement included (see LICENSE.txt).
-
-The full registered version can be obtained by requesting it at info@dpdl.io
 
 The 'DpdlEngine lite' release requires a compatible Java Virtual Machine (JRE) >= version 1.6 specification to run.
 
@@ -31,7 +32,7 @@ www.java.com or www.oracle.com website:
 https://www.java.com/en/download/manual.jsp
 
 Some Dpdl API functions (ex. embedded C code and other embedded languages) make use of the Dpdl native API library 'dpdlnativeapi'.
-The Dpdl native API library is platform dependent and is currently available for the following platforms:
+The Dpdl native API library is platform dependent and is currently available for the following platforms (see also compatibility matrix below):
 
 * MacOS 13.4 (arm)
 * Linux x86_64 (x84 64bit)
@@ -42,14 +43,7 @@ The native libraries are located in the corresponding platform/architecture fold
 
 The library can be compiled for additional platforms by us on your request by writing to info@dpdl.io
 
-You may delete the libraries for platforms that you do not use (e.g. ./lib/native/someplatform )
-
-### Dpdl embedded language plug-in Add-ons:
-
-Additional Dpdl language plug-in add-ons can be downloaded or updated by downloading and extracting the following zip archive in the
-'./lib/' folder .
-
-https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
+You may delete unused libraries for platforms that you are not interested in (e.g. ./lib/native/someplatform )
 
 
 ### Embedded languages - compatibility matrix
@@ -58,12 +52,12 @@ https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
 (*) **available soon**
 
-| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |ch C/C+ |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
-| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|*|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|*|
-| Windows64|X|*|*|X|X v4.01|*|*|*|*|
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
+| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|
+| Windows64|X|*|*|X|X v4.01|*|*|*|
 
 ## Embedded C code
 
@@ -142,7 +136,14 @@ needs to be present in the lib folder.
 See the official OCaml-java documentation at http://www.ocamljava.org/documentation/
 
 
-# How to run
+## Dpdl embedded language plug-in Add-ons:
+
+Additional Dpdl language plug-in add-ons can be downloaded or updated by downloading and extracting the following zip archive in the
+'./lib/' folder .
+
+https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
+
+# How to run DpdlEngine
 
 To start the DpdlClient console application simply run the following command:
 
@@ -192,7 +193,7 @@ Ensure the BlueZ library 'libbluetooth.so' is available on the path.
 Eventually you might neet to create a symbolic link to a specific version of the library (eg. libbluetooth.so -> libbluetooth.so.$version)
 
 
-# 'DpdlEngine lite' Demo release limitations/restrictions (compared to registered version)
+# 'DpdlEngine lite' Demo release limitations/restrictions (compared to Full Registered version)
 
 	
 The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions
