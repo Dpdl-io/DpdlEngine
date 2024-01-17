@@ -224,8 +224,6 @@ and java classes cannot be referenced with the full package path (eg. org.my.myc
 
 * Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS 
 
-* Dpdl scripts included with 'include(...)' supports execution of embedded code only in the registered version of Dpdl
-
 * Native Dpdl C API function 'dpdl_stack_buf_put(..)' (dpdl.h) is not available when option 'dpdl:compile' or 'dpdl:C99' is activated
 
 * The option 'dpdl:compile' used to <ins>compile</ins> embedded ANSI C code in memory at runtime can be used only 500 times in the unregistered version of Dpdl
