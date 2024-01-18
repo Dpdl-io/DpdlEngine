@@ -9,8 +9,8 @@ developed by
 **SEE Solutions**
 &copy; 2003
 
-The following document contains Dpdl features that are considered and evaluated.
-These features may be available in coming releases.
+The following document contains planned new Dpdl features that are considered and evaluated.
+These features may eventually be available in coming releases.
 Suggestions and comments are very appreciated.
 
 
