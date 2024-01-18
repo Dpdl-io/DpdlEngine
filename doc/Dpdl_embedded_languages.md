@@ -309,6 +309,7 @@ println("Dpdl js exited with exit code: " + exit_code)
 <<
 ```
 
+NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.ocamljava.org) which requires Java 1.7 or later to successfully compile and run generated java bytecode.
 
 ### Lua
 

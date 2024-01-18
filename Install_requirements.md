@@ -22,6 +22,10 @@ https://github.com/Dpdl-io/DpdlEngine
 
 As DpdlEngine is in a fast development cycle, it's advised to update the software frequently. New features and fixes may be available.
 
+IMPORTANT: Verify the integrity of the 'DpdlEngine lite' release zip file you downlaoded (DpdlEngine_V1.0_release.zip),
+			it must match the sha(256) checksum as reported here:  https://www.dpdl.io/DemoDpdl_validator.html
+			
+
 # System requirements
 
 The 'DpdlEngine lite' release requires a compatible Java Virtual Machine (JRE) >= version 1.6 specification to run.
@@ -125,7 +129,8 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
 ## Embedded 'OCaml' code (experimental)
 
 The embedded OCaml code (via >>ocaml keyword) is executed by the Dpdl runtime through the ocamljava library (http://www.ocamljava.org/) and
-requires the following jar library located in the lib folder (./lib): 'ocamlrun-scripting.jar' 
+requires the following jar library located in the lib folder (./lib): 'ocamlrun-scripting.jar'.
+Java version 1.7 or later is needed for this plugin. 
 
 Eventually you may update the 'ocamlrun-scripting.jar' in the ./lib folder with the newest release downloaded 
 directly from ocamljava.org
@@ -201,7 +206,7 @@ compared to the full registered version:
 
 * At startup, the DpdlEngine requires the execution of a validation script.
 The script simply accesses a html website at www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
--> startup is therefore also a bit slower in demo version
+-> startup is therefore also slower in demo version
 	  
 The validation script can be inspected here: 
 [./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
