@@ -11,9 +11,9 @@ developed by
 
 ## How to run the examples
 
-The Dpdl example scripts are located in the './DpdlLibs/' folder and can be executed via:
+The Dpdl example scripts are located in the './DpdlLibs/' folder and can be executed in different ways:
 
-1) with the **`DpdlClient`** console application
+1) using the **`DpdlClient`** console application with commands
 2) or directly via the '-load' parameter at startup
 3) or using the API function call DPDLAPI_execCode(..).
 
@@ -24,7 +24,7 @@ The script path per default configuration need to be relative to the './DpdlLibs
 ```
 -load
 enter the Dpdl script name to execute:
-arraylistExample.h @TEST1
+arraylistExample.h [@TEST1]
 ```
 
 ### 2) At startup with the '-load' command

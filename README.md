@@ -41,6 +41,8 @@ By combining the <ins>portability and vast API availability</ins> of Java and Py
 OCaml, the <ins>web-enablement</ins> of JavaScript and the <ins>power</ins> of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
 applications, education and research.
 
+The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform API and any external java libraries.
+
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
 are integrated by default and third party libraries and functions can be added as extensions.
 
@@ -78,9 +80,6 @@ devices and is foreseen to foster rapid application development. Dpdl comes with
 **scripting engine** and an **extensible API interface** for the development of mobile
 applications and embedded system software.
 
-The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm
-interoperable with the java platform API and external java libraries.
-
 Multiple programming languages, currently **ANSI C code** (a subset of C90 and full C99 standard), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
 can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted/compiled code).
 Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory at runtime</ins> (see 'dpdl:compile'), in order to achieve <ins>faster execution</ins> performance.
@@ -93,7 +92,7 @@ This makes Dpdl suitable for a wide range of use-cases and in particular also fo
 
 * Total size DpdlEngine = **`785 Kb`** Only
  
-The size of the DpdlEngine can be stripped down to 60 Kb with a basic configuration if needed.
+The size of the DpdlEngine can be stripped down to **`60 Kb`** with a basic configuration if needed.
 
 ### Dpdl small sample app
 
@@ -120,7 +119,8 @@ Dpdl is suitable for rapid application development in various domains, in partic
 applications on small memory footprint devices, and can be used as embedded scripting engine for various applications.
 
 The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability while being simple,
-extensible and compact.
+extensible and compact. Further, AI generated code may benefit from the possibility to use multiple programming languages. Dpdl has also built-in constructs that enable dynamic AI generated code.
+We have already very promising results for AI generated code using Dpdl.
 
 The **`DpdlPacket`** data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
@@ -134,16 +134,15 @@ on devices that have limited memory and storage capabilities.
 * Data handling on memory constrained devices
 * Development of Domain Specific Languages (DSL)
 	
-Dpdl has also built-in constructs that enable dynamic AI generated code.
 
 ### Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and any platform where DpdlVM can be compiled for the target platform)
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
-* **Dpdl scripting API provides access to the complete underlying Java JRE platform and to external API libraries**
+* **Dpdl scripting API provides access to the complete underlying Java JRE platform API and to external Java libraries**
 * **ANSI C code, C++, Python, Julia, JavaScript, Lua and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
-* On-the-fly compilation of embedded ANSI C code in memory at runtime (via option 'dpdl:compile') -> very fast compile time
-* Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini) 
+* Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini)
+* On-the-fly compilation of embedded ANSI C code in memory at runtime (via option 'dpdl:compile') -> very fast compile time 
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
@@ -191,9 +190,9 @@ endwhile
 
 In this way all java libraries defined in class definition configuration file (./DpdlLibs/libs/classes.txt) can be loaded and accessed.
 
-The default configuration currently includes Java 5 Platform API (1.5), and bluecove Bluetooth JSR-82.
+The default configuration currently includes <ins>Java 5 Platform API (1.5)</ins>, and <ins>bluecove Bluetooth JSR-82</ins>.
 
-The default configuration can be extended or updated to resolve additional java APIs (editing of class definition configuration file)
+The default configuration <ins>can be easily extended or updated</ins> to resolve additional java APIs by editing the class definition configuration file.
 
 
 #### Dpdl Java API access documentation (default configuration)
@@ -206,12 +205,12 @@ Additional API's can be added to the class definition file as needed.
 
 ## Dpdl embedded programming languages
 
-Multiple programming languages can be embedded within the same **Dpdl** script via a the keyword **`>>`**
-Programming languages can be developed and integrated via a dedicated plug-in interface and configuration. 
+Multiple programming languages can be embedded within the same **Dpdl** script via a the keyword **`>>`**.
+Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration. 
 
 ### Currenlty the following programming languages are supported:
 
-* **`C interpreted`** code (minimal subset of C90 with standard C libs)
+* **`C interpreted`** code (minimal subset of C90 with standard C libs included)
 * **`ANSI C`**  (full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **`Python`**
 * **`Julia`**

@@ -81,33 +81,6 @@ float y = 0.3
 myFuncVar(x, y)
 ```
 
-#### Determining the Type of a variable
-
-The type of a given variable can be determined with the **`typeof(..)`** function
-
-ex:
-```python
-var s = "this is a string"
-var i = 10
-println("var 's' is a: " + typeof(s))
-println("var 'i' is a: " + typeof(i))
-```
-
-For clarity, a variable other than 'var' type can also be determined:
-```python
-int i = 10
-println("variable 'i' is of type: " + typeof(i))
-```
-
-By determining the type of a 'struct' variable type, the type returned contains also a type identifier.
-eg.
-```c
-struct A a
-println("variable 'a' is of type: " + typeof(a))
-```
-The above statements will return **`struct:A`**
-
-
 #### Abstraction using 'var' type:
 
 It might be useful to abstract a given type.
@@ -135,6 +108,33 @@ func calculateDistance(struct p1, struct p2) double
     return sqrt(dx * dx + dy * dy)
 end
 ```
+
+#### Determining the Type of a variable
+
+The type of a given variable can be determined with the **`typeof(..)`** function
+
+ex:
+```python
+var s = "this is a string"
+var i = 10
+println("var 's' is a: " + typeof(s))
+println("var 'i' is a: " + typeof(i))
+```
+
+For clarity, a variable other than 'var' type can also be determined:
+```python
+int i = 10
+println("variable 'i' is of type: " + typeof(i))
+```
+
+By determining the type of a 'struct' variable type, the type returned contains also a type identifier.
+eg.
+```c
+struct A a
+println("variable 'a' is of type: " + typeof(a))
+```
+The above statements will return **`struct:A`**
+
 
 #### Variable re-definition
 
