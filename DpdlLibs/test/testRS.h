@@ -1,7 +1,7 @@
 # File: test/testRS.h
 #
 # Example: Test Dpdl script that uses build-in Record Stores.
-#		   This script in uses the 'dpdlRS.h' lib to abstract the Dpdl api, you may use the DPDLAPI_* functions directly
+#		   This script in uses the 'dpdlRS.h' lib to abstract the Dpdl api, you may use the DPDLLIB_* functions directly
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
