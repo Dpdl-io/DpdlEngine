@@ -78,8 +78,8 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 	
 	FXML file: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/fxml/myGUIreg.fxml
 	
-	![Dpdl](https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX.png)
-	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX.png" width="60%" height="60%">
+		
 * Example Dpdl script that shows how to use the type 'struct'
 
 	[test/testStruct.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct.h)
