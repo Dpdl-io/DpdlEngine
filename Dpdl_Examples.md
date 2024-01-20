@@ -52,7 +52,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
 
-* Example Dpdl script that shows major functionalities provided by Dpdl
+* Example Dpdl script that shows some functionalities provided by Dpdl
 
 	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
 
@@ -71,6 +71,14 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 * Example Dpdl script that launches multiple threads
 
 	[concurrent/testConcurrency1.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/concurrent/testConcurrency1.h)
+	
+* Example Dpdl script that uses the JavaFX java library to render a UI (Graphical User Interface) elements via a FXML definition.
+	
+	[ui/dpdlGUIJavaFX.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX.h)
+	
+	FXML file: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/fxml/myGUIreg.fxml
+	
+	![Dpdl](https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX.png)
 	
 * Example Dpdl script that shows how to use the type 'struct'
 
