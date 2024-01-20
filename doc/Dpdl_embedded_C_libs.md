@@ -10,7 +10,7 @@ developed by
 &copy; 2003
 
 
-## This is the minimal C library documentation for the embedded C code execution Mode (1) -> Interpreted
+## This is the minimal C library documentation for the embedded C code execution (Mode 1 -> interpreted)
 
 
 Example:
@@ -27,9 +27,11 @@ println("end embedding C")
 
 ```
 
-The default configuration includes only a minimal set of library functions to keep the runtime small.
+The default configuration includes only a minimal set of library functions to keep the runtime as small as possible.
 
 However more functions and libraries may be included in different distributions of the Dpdl native API library (dpdlnativeapi), see Download page.
+
+NOTE: When executing C code with Mode (2), the standard C libraries of your compiler toolchain can be used.
 
 ## Currently supported C Libraries and Functions
 
