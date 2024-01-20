@@ -10,6 +10,7 @@ developed by
 ## New 
 
 * NEW (20.01.2024) Added JavaFX classes to Dpdl class definition file and created Dpdl example app that uses JavaFX to render UI elements via FXML
+					NOTE: The updated class definition file will be available within a couple of days in the new release of 'DpdlEngine lite'
 
 * (13.01.2024) Added basic 'http' and 'json' import libraries.
 * (02.23.2023) JavaScript can now be executed also via the 'QuickJS' javascript engine (ES2020 spec) by using the keyword '>>qjs'
