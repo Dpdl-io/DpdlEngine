@@ -75,9 +75,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 * Example Dpdl script that uses the JavaFX java library to render a UI (Graphical User Interface) elements via a FXML definition.
 	
 	[ui/dpdlGUIJavaFX.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX.h)
-	
-	FXML file: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/fxml/myGUIreg.fxml
-	
+		
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX.png" width="35%" height="35%">
 		
 * Example Dpdl script that shows how to use the type 'struct'
