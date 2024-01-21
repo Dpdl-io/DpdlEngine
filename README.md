@@ -26,7 +26,7 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 
 ### * Develop your ideas faster
 ### * On multiple platforms
-### * Using the power of multiple programming languages
+### * Using the power of multiple programming languages and many API's
 ### * Reuse code
 ### * No need to install, compile and configure environments
 ### * Runs on constrained devices
