@@ -1,6 +1,7 @@
 # File: ui/dpdlGUIJavaFX.h
 #
 # Example: Dpdl script that uses JavaFX library to render GUI elements and graphics via an fxml definition
+#			FXML file: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/fxml/myGUIreg.fxml
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io

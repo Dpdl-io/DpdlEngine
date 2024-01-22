@@ -1,0 +1,72 @@
+<!-- 
+This file is part of the Dpdl example 'ui/dpdlGUIExample_css.h' and is the javafx FXML definition for the UI created
+
+ -->
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane fx:controller="dpdl.dpdlLibs.javafx.DpdlFXMLController"
+          xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <BorderPane styleClass="header-section">
+            <left>
+                <Label id="header-text" text="Sample Dpdl App using JavaFX and CSS"></Label>
+            </left>
+            <right>
+                <Button id="account" text="Account" onAction="#handleButtonAction">
+                    <graphic>
+                        <ImageView fitHeight="24" fitWidth="24" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@account_icon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </right>
+        </BorderPane>
+    </top>
+    <left>
+        <VBox styleClass="sidebar-section">
+            <children>
+                <Label text="Menu 1"></Label>
+                <Label text="Menu 2"></Label>
+                <Label text="Menu 3"></Label>
+                <Label text="Menu 4"></Label>
+                <Label text="Menu 5"></Label>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <VBox styleClass="content-section">
+            <children>
+                <Label id="content-header" text="Description"></Label>
+                <Label id="content">
+                    <text>
+                    Dpdl is a rapid development programming language and constrained device framework with built-in database technology.
+                    Dpdl and enables access to the Java platform JRE API and any external java library via a dedicated API.
+                    Dpdl supports also the embedding and on-the-fly execution of other programming languages (ANSI C, C++, Python, Julia,
+                    JavaScript, Lua and OCaml) directly within Dpdl scripts. Therefore Dpdl allows access to thousands of existing
+                    high-quality libraries.
+                    </text>
+                </Label>
+				<ImageView id="boxImage">    
+				   <image>
+				      <Image url="@dpdl-io.png" />
+				   </image>
+				</ImageView>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox id="footer-section">
+            <children>
+                <Label text="Dpdl.io"></Label>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
