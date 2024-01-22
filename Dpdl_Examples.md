@@ -56,7 +56,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[ui/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdl3DJavaFX_molecule.h)
 	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="25%" height="25%">
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="35%" height="35%">
 
 * Example Dpdl script that shows some functionalities provided by Dpdl
 
