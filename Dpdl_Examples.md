@@ -45,8 +45,7 @@ println("status: " + s)
 The Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License.
 
 
-## Dpdl scripts
-
+## Dpdl samples
 
 * Example Dpdl script that downloads json news data and decodes it to a struct
 
