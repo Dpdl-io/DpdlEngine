@@ -55,6 +55,8 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 * Example Dpdl app that uses the JavaFX library to render and animate chemical molecules in 3D
 
 	[ui/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdl3DJavaFX_molecule.h)
+	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example_with_JavaFX.png" width="25%" height="25%">
 
 * Example Dpdl script that shows some functionalities provided by Dpdl
 
