@@ -17,9 +17,13 @@ end
 
 func handleButtonAction(object event)
 	println("button pressed")
+
 	object type = event.getEventType()
 	object cmd_name = type.getName()
-	println("cmd: " + cmd_name)
+	object cmd_source = event.getSource()
+	object cmd_id = cmd_source.getId()
+
+	println("cmd: " + cmd_name + " id: " + cmd_id)
 end
 
 # main
