@@ -22,8 +22,8 @@ func handleKeyEvent(object key)
 	object key_code = key.getCode()
 	int code = key_code.getCode()
 	if(code == 90)
-		cam2Trans.setX(0.0)
-		cam2Trans.setY(0.0)
+		cam2Trans.setX(0.0d)
+		cam2Trans.setY(0.0d)
 		camera.setTranslateZ(CAMERA_INITIAL_DISTANCE)
 		camRotY.setAngle(CAMERA_INITIAL_Y_ANGLE)
 		camRotX.setAngle(CAMERA_INITIAL_X_ANGLE)
@@ -119,7 +119,7 @@ func buildAxes()
 
 	axisGroup.addAllTMP3(xAxis, yAxis, zAxis)
 
-	bool bv = false
+	bool bv = true
 	axisGroup.setVisible(bv)
 
 	world.addAllTMP1(axisGroup)
