@@ -91,6 +91,10 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[testRaiseException.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testRaiseException.h)
 
+* Example Dpdl script that parses an XML document with the xml pull parser
+
+	[test/dpdlXML.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/dpdlXML.h)
+	
 * Example Dpdl script that compresses and de-compresses a string of data using the Java platform API
 
 	[dataCompress.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dataCompress.h)
