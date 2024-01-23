@@ -77,7 +77,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[concurrent/testConcurrency1.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/concurrent/testConcurrency1.h)
 	
-* Example Dpdl script that uses the JavaFX java library to render a UI (Graphical User Interface) elements via a FXML definition.
+* Example Dpdl script that uses the JavaFX java library to render UI (Graphical User Interface) elements via a FXML definition.
 	
 	[ui/dpdlGUIJavaFX.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX.h)
 		
