@@ -120,8 +120,9 @@ Dpdl is suitable for rapid application development in various domains, in partic
 applications on small memory footprint devices, and can be used as embedded scripting engine for various applications.
 
 The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability while being simple,
-extensible and compact. Further, AI generated code may benefit from the possibility to use multiple programming languages. Dpdl has also built-in constructs that enable dynamic AI generated code.
-We have already very promising results for AI generated code using Dpdl.
+extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
+that a vaster set of APIs are available for a given platform.
+Dpdl has also built-in constructs that enable dynamic code generation.
 
 The **`DpdlPacket`** data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
