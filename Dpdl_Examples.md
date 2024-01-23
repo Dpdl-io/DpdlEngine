@@ -103,11 +103,11 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[C/dpdlCcompileBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompileBufRet.h)
 	
-* Example Dpdl that used the JavaFX java library to create a UI (Graphical User Interface) via a FXML definition and used CSS to create the layout.
+* Example Dpdl that used the JavaFX java library to create a sample UI (Graphical User Interface) application via a FXML definition and used CSS to create the layout.
 
 	[ui/dpdlGUIExample_css.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample_css.h)
 	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="45%" height="45%">
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="55%" height="55%">
 	
 * Example Dpdl script that executes an embedded 'Julia' script to plots data using the 'Plots' package, and to save the chart as PDF
 
