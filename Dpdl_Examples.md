@@ -55,7 +55,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[ui/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdl3DJavaFX_molecule.h)
 	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="40%" height="40%">
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="65%" height="65%">
 
 * Example Dpdl script that shows some functionalities provided by Dpdl
 
@@ -107,7 +107,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[ui/dpdlGUIExample_css.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample_css.h)
 	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="55%" height="55%">
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="75%" height="75%">
 	
 * Example Dpdl script that executes an embedded 'Julia' script to plots data using the 'Plots' package, and to save the chart as PDF
 
