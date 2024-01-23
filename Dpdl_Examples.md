@@ -103,9 +103,9 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[C/dpdlCcompileBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompileBufRet.h)
 	
-* Example Dpdl that used the JavaFX java library to create a sample UI (Graphical User Interface) application via a FXML definition and used CSS to create the layout.
+* Example Dpdl app that uses the JavaFX java library to create a sample UI (Graphical User Interface) application via a FXML definition and used CSS to create the layout.
 
-	[ui/dpdlGUIExample_css.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample_css.h)
+	[ui/dpdlGUIJavaFX_css.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX_css.h)
 	
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="75%" height="75%">
 	
@@ -142,6 +142,10 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 	[testLoadCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testLoadCode.h)
 	
 	[LoadCodeFunc.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/LoadCodeFunc.h)
+	
+* Example Dpdl app that uses the JavaFX java library to visualize a website within a WebView component
+
+	[ui/dpdlGUIJavaFX_web.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX_web.h)
 	
 * Parse JSON and access data types
 
