@@ -107,7 +107,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[ui/dpdlGUIExample_css.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample_css.h)
 	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="35%" height="35%">
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="45%" height="45%">
 	
 * Example Dpdl script that executes an embedded 'Julia' script to plots data using the 'Plots' package, and to save the chart as PDF
 
