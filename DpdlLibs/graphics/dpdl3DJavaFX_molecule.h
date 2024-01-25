@@ -1,4 +1,4 @@
-# File: ui/dpdl3DJavaFX_molecule.h
+# File: graphics/dpdl3DJavaFX_molecule.h
 #
 # Example: Small Dpdl app that uses JavaFX library to render and animate chemical molecules in 3D.
 #			This code makes use of a custom java class implementation 'DpdlTestForm.java' located in the folder './java'
