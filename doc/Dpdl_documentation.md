@@ -364,6 +364,11 @@ Check out the following example for a deeper insight:
 
 [dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)
 
+NOTE: Due to the nature of how pointers are implemented, to gain maximum performance (via a static allocation), currently it's required to
+		use the same variable names when pointers are passed to functions, (eg, when passing a pointer int *px to a function, the function must
+		use '*px' as parameter name in the function signature -> func testFunc(int *px,...)
+
+
 This feature will be further developed.
 	
 ### Function return type
