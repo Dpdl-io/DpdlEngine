@@ -28,7 +28,9 @@ IMPORTANT: Verify the integrity of the 'DpdlEngine lite' release zip file you do
 
 # System requirements
 
-The 'DpdlEngine lite' release requires a compatible Java Virtual Machine (JRE) >= version 1.6 specification to run.
+Although Dpdl is compatible also with previews java versions, this release of 'DpdlEngine lite' requires a 
+compatible Java Virtual Machine (JRE) version  >= 'Java 17'  to run.
+If your requirements are to run DpdlEngine on an older version of java JRE, just drop an e-mail to: info@dpdl.io 
 
 There are many java virtual machines available, the official Java JRE from Oracle can be downloaded from 
 www.java.com or www.oracle.com website:

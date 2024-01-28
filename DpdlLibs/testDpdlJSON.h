@@ -1,9 +1,9 @@
 # File: testDpdlJSON.h
 #
-# Example: Parse JSON and access data types
+# Example: Parse JSON and access different data types
 #
-# Author: A. Costa
-# e-mail: info@dpdl.io
+# Author: A.Costa
+# e-mail: ac@dpdl.io
 #
 #
 import("dpdllib.h")

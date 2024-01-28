@@ -12,6 +12,8 @@ developed by
 This is the Dpdl scripting API documentation. 
 
 The API's are available as:
+- Java APIs -> The 'DpdlEgine lite' Demo release includes Java Runtime API's (1.5) and bluecove JRS-82 as defined in the 
+	class definition file './DpdlLibs/libs/classes.txt' -> Additional API can be added freely in the registered version.
 - Native import Libraries
 - Native functions
 

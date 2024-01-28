@@ -34,6 +34,33 @@ func myFuncPtr(string str, int *i_p)
 	println("x: " + *i_p)
 end
 
+func printStr(object *pstr)
+	println("printStr *pstr: " + *pstr)
+end
+
+func printMap(object m)
+	object keyset = m.keySet()
+	object iter = keyset.iterator()
+	object key, val
+	while(iter.hasNext())
+		key = iter.next()
+		val = m.get(key)
+		println("key: " + key + " val: " + val)
+	endwhile
+end
+
+func printMapPtr(object *pmap)
+	println("printMapPtr()")
+	object keyset = *pmap.keySet()
+	object iter = keyset.iterator()
+	object key, val
+	while(iter.hasNext())
+		key = iter.next()
+		val = *pmap.get(key)
+		println("key: " + key + " val: " + val)
+	endwhile
+end
+
 # main
 
 println("testing pointers...")
@@ -65,5 +92,48 @@ var *avp = &a
 println("*avp: " + *avp)
 a.s = "MEGATIE var pointer to struct"
 println("*avp: " + *avp)
+
+println("testing object pointers...")
+
+object str = loadObj("String", "Test")
+object *pstr = &str
+println("str: " + str)
+println("pstr: " + *pstr)
+
+str = loadObj("String", "Test2")
+
+println("pstr: " + *pstr)
+printStr(*pstr)
+
+
+string sub = "t2"
+string *psub = &sub
+bool b = str.endsWith(*psub)
+println("b: " + b)
+
+b = *pstr.endsWith("t2")
+println("b: " + b)
+
+bool b2 = *pstr.endsWith(*psub)
+println("b2: " + b2)
+
+sub = "t_mod"
+b2 = *pstr.endsWith(*psub)
+println("test b2: " + b2)
+
+println("######################################")
+
+object map = loadObj("HashMap")
+map.put(1, "test1")
+map.put(2, "test2")
+map.put(3, "test3")
+
+println("print HashMap...")
+printMap(map)
+
+map.put(4, "test4")
+
+object *pmap = &map
+printMapPtr(*pmap)
 
 
