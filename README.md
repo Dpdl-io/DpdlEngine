@@ -95,13 +95,24 @@ This makes Dpdl suitable for a wide range of use-cases and in particular also fo
  
 The size of the DpdlEngine can be stripped down to **`60 Kb`** with a basic configuration if needed.
 
-### Dpdl small sample app
+### Dpdl small sample apps
 
-This is a small sample app writte with Dpdl that gets the top 10 news stories via http get in json format:
+#### Get and decode News in JSON format 
+
+This is a small sample app written with Dpdl that gets the top 10 news stories via http get in json format:
 
 [app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
 
 Note: The example 'app/getnews/dpdlGetNews2.h' is identical, but data is decoded in a java object instead of a struct
+
+#### 3D graphics with JavaFX
+
+This is a 3D model visualization of chemical molecules using the JavaFX library. The model can be rotated freely with mouse events.
+
+[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
+	
+<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="75%" height="75%">
+
 
 ### Dpdl overview
 
