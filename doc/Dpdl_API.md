@@ -8,22 +8,29 @@
 developed by
 **SEE Solutions**
 &copy; 2003
-				
-This is the Dpdl scripting API documentation. 
-
-The API's are available as:
-- Java APIs -> The 'DpdlEgine lite' Demo release includes Java Runtime API's (1.5) and bluecove JRS-82 as defined in the 
-	class definition file './DpdlLibs/libs/classes.txt' -> Additional API can be added freely in the registered version.
-- Native import Libraries
-- Native functions
-
-Note: The Java API documentation is available only for registered version
-
+		
 
 ## Dpdl scripting API Documentation
 
 DpdlEngine V1.0
+		
+This is the Dpdl scripting API documentation. 
 
+The API's are available as:
+- Java APIs
+- Native import Libraries
+- Native functions
+
+### Java APIs
+
+Dpdl allows to load and access java classes and methods via dedicated API functions **`loadObj(..)`** and **`getClass(..)`**.
+
+This allows Dpdl to access a broad set of APIs and libraries. The references for resolving the classes are defined in the class definition file './DpdlLibs/libs/classes.txt'.
+
+The 'DpdlEgine lite' Demo release includes the Java Runtime API (1.5) and the bluecove JRS-82 API as defined in the  class definition file.
+
+Additional APIs and classes can be added freely in the registered version of DpdlEngine.
+	
 ### Native import Libraries
 
 Auxiliary API libraries can be imported and used via the **`import(..)`** statement.
