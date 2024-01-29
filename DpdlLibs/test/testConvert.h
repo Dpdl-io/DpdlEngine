@@ -33,7 +33,6 @@ string sint = "1000"
 string sfloat = "0.23"
 string sdouble = "99999999.9"
 
-
 int si = convert("int", sint)
 float sf = convert("float", sfloat)
 double sd = convert("double", sdouble)
