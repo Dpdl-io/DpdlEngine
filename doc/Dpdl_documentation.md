@@ -547,7 +547,8 @@ may be available. This feature is useful for dynamically generated code implemen
 * **`%`** (modulo)
 * **`-`** (negate a value eg. -x)
 	
-Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (ec. 1 * 2). This is currently not allowed '1*2' but will be in future
+Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (ec. 1 * 2). 
+		This is currently not allowed '1*****2' but will be in future
 	
 **Logical:**
 
