@@ -207,6 +207,30 @@ string ds = convert("string", d)
 println("ds: " + ds)
 ```
 
+### String expressions
+
+Strings can contain expressions that are evaluated at runtime, when the string is defined. The expression can be embedded in a string within the keyword **`${ }`**
+This may reduce code at some performance expense.
+
+Example:
+```python
+int a = 10
+int b = 20
+string mystr = "my result is ${a + b}"
+println("mystr: " + mystr)
+```
+
+The expressions can also contain function calls like in the following examples:
+
+eg.
+```python
+string mystr = "this is a my result ${ myFunc(mystr) }"
+println("mystr: " + mystr)
+```
+
+Note: Currently only one expression definition '${ ... }' is allowed inside a string 
+
+
 ### Arrays
 
 Arrays are defined with **`[ ]`**
