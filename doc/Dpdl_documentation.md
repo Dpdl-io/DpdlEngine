@@ -136,6 +136,16 @@ println("variable 'a' is of type: " + typeof(a))
 The above statements will return **`struct:A`**
 
 
+Whenever a java object is loaded, the type of the variable returned by **`typeof(..)`** is the name of the class.
+
+eg.
+```python
+object map = loadObj("HashMap")
+println("variable 'map' is of type: " + typeof(map))
+```
+The above statement will return **`HashMap`***
+
+
 #### Variable re-definition
 
 Redefinition of variables within the same scope is allowed by the default configuration, in this case a 'Warning' is issued.
