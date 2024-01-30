@@ -157,8 +157,26 @@ In 'while' and 'for' loops it's advised, if possible, to allocate variables in t
 
 #### Converting types
 
-Some variable types can be converted with the **`convert(..)`** function.
-The function accepts as parameter the 'type' (as returned by typeof(..)) and the variable to be converted.
+
+Some variable types can be converted either by casting or by using the **`convert(..)`** function.
+
+Casting numeric values can be performed using the functions **`to_int(..)`** , **`to_float(..)`** or **`to_double(..)`**
+
+eg.
+```python
+float f = 999.3
+double d = 2000000.5d
+
+int fint = to_int(f)
+int dint = to_int(d)
+
+println("fi: " + fint)
+println("di: " + dint)
+```
+
+Other conversions, for example from string to a numeric type can be performed with the **`convert(..)`** function.
+
+The function accepts as parameter the 'type' (as returned also by typeof(..)) and the variable to be converted.
 
 Currently the following conversions are supported, more will follow:
 
