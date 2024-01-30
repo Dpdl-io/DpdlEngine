@@ -213,7 +213,7 @@ Strings can contain expressions that are evaluated at runtime, when the string i
 This may reduce code at some performance expense.
 
 Example:
-```c
+```python
 int a = 10
 int b = 20
 string mystr = "my result is ${a + b}"
@@ -223,7 +223,7 @@ println("mystr: " + mystr)
 The expressions can also contain function calls like in the following examples:
 
 eg.
-```c
+```python
 string mystr = "this is a my result ${ myFunc(mystr) }"
 println("mystr: " + mystr)
 ```
