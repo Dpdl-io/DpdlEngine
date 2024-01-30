@@ -224,7 +224,8 @@ The expressions can also contain function calls like in the following examples:
 
 eg.
 ```python
-string mystr = "this is a my result ${ myFunc(mystr) }"
+string input = "some input"
+string mystr = "this is a my result ${ myFunc(input) }"
 println("mystr: " + mystr)
 ```
 
