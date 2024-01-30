@@ -9,8 +9,9 @@ developed by
 
 ## New 
 
-* NEW (20.01.2024) Added JavaFX classes to Dpdl class definition file and created Dpdl example app that uses JavaFX to render UI elements via FXML
+* NEW (30.01.2024) String can now contain expressions within the keyword '${..}' that are evaluated when variables are initialized eg. string mystr = "result: ${a + b}" 
 
+* (20.01.2024) Added JavaFX classes to Dpdl class definition file and created Dpdl example app that uses JavaFX to render UI elements via FXML
 * (13.01.2024) Added basic 'http' and 'json' import libraries.
 * (02.23.2023) JavaScript can now be executed also via the 'QuickJS' javascript engine (ES2020 spec) by using the keyword '>>qjs'
 * (27.12.2023) 'import' statement for libraries
