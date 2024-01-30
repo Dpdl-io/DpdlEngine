@@ -89,9 +89,9 @@ This makes Dpdl suitable for a wide range of use-cases and in particular also fo
 
 ### Small Memory footprint:
 * DpdlEngine core (full configuration) **`258 Kb`**
-* DpdlNative library with Embedded C interpreter (subset of C90) and full ANSI C compiler (C99) **`530 Kb`**
+* DpdlNative library with Embedded C interpreter (subset of C90) and full ANSI C compiler (C99) **`278 Kb`**
 
-* Total size DpdlEngine = **`785 Kb`** Only
+* Total size of DpdlEngine (Dpdl + C) = **`536 Kb`** Only
  
 The size of the DpdlEngine can be stripped down to **`60 Kb`** with a basic configuration if needed.
 
