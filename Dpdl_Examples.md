@@ -200,6 +200,10 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 	
 	[dpdlFloatDoubleEmul.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFloatDoubleEmul.h)
 	
+* Dpdl script that shows how to read and write data to a virtual record store filesystem
+
+	[fs/dpdlVirtualFS.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/fs/dpdlVirtualFS.h)
+	
 * Creates a graphical user interface with some UI components (Button, Panel, Checkbox, List, draw Panel) using Java Swing classes. The list is updated, the button command is intercepted with the
   'actionPerformed' function, the checkbox status is printed, and a text and rectangle is drawn at random location on the draw panel.
 	
