@@ -26,7 +26,7 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 
 ### * Develop your ideas faster
 ### * On multiple platforms
-### * Using the power of multiple programming languages and many API's
+### * Using the power of multiple programming languages and API's
 ### * Reuse code
 ### * No need to install, compile and configure environments
 ### * Runs on constrained devices
@@ -88,12 +88,12 @@ Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory a
 This makes Dpdl suitable for a wide range of use-cases and in particular also for Hardware programming.
 
 ### Small Memory footprint:
-* DpdlEngine core (full configuration) **`258 Kb`**
-* DpdlNative library with Embedded C interpreter (subset of C90) and full ANSI C compiler (C99) **`278 Kb`**
+* DpdlEngine core (full configuration) **`372 Kb`**
+* DpdlNative library with (Embedded C interpreter/compiler) **`278 Kb`**
 
-* Total size of DpdlEngine (Dpdl + C) = **`536 Kb`** Only
+* Total size of DpdlEngine (Dpdl + C) = **`650 Kb`** Only
  
-The size of the DpdlEngine can be stripped down to **`60 Kb`** with a basic configuration if needed.
+The size of the DpdlEngine core can be stripped down to **`60 Kb`** with a basic configuration if needed.
 
 ### Dpdl small sample apps
 
@@ -160,13 +160,13 @@ on devices that have limited memory and storage capabilities.
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
 The speedup is x 25 times faster compared to a standard record store access
-* **Virtual filesystem** for record stores
+* **Virtual record store filesystem**
 * **Double precision floating point emulation** layer
 * **XML** with XPath parser
 * **JSON**
 * **Fast Prototyping**
 * Tools for automatically converting Dpdl scripts to Java , C/C++ and V code
-* small footprint, Only **785 Kb** for core DpdlEngine + Embedded C runtime and ANSI C compiler
+* small footprint, Only **650 Kb** for core DpdlEngine + Embedded C interpreter and compiler
 
 
 ## Access to the complete JRE Java platform API and external java libraries
