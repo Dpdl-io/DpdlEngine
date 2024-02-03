@@ -1,4 +1,4 @@
-# File: testDpdlJSON.h
+# File: json/testDpdlJSON.h
 #
 # Example: Parse JSON and access different data types
 #
@@ -6,21 +6,17 @@
 # e-mail: ac@dpdl.io
 #
 #
-import("dpdllib.h")
+import('io')
 
 # main
 string json_file = "./Test/test.json"
+
 println("reading json from file: " + json_file)
-string content = ""
-string str_in = ""
-int fh = open(json_file, "r")
-while(str_in != dpdlNull)
-	str_in = read(fh)
-	if(str_in != dpdlNull)
-	    content = content + str_in
-	fi
-endwhile
-close(fh)
+
+string content = io.readStr(json_file)
+
+raise(content, "Error in reading json file")
+
 println("content: " + content)
 println("")
 println("allocating DpdlJson...")

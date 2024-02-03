@@ -7,23 +7,19 @@
 #
 #
 
+import('io')
+
+
 # main
 println("testing xml pull parser...")
 
 string fname_r = "./Test/test_address.xml"
 
-println("reading xml file ...")
-string xml_content = ""
-string str_in = ""
-int fh = open(fname_r, "r")
-while(str_in != "null")
-	str_in = read(fh)
-	if(str_in != "null")
-		xml_content = xml_content + str_in
-	fi
-endwhile
-close(fh)
-println("done")
+println("reading xml file: " + fname_r)
+
+string xml_content = io.readStr(fname_r)
+
+raise(xml_content, "Error in reading xml file")
 
 println("creating xml pull parser instance...")
 
