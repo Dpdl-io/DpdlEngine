@@ -147,9 +147,13 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[ui/dpdlGUIJavaFX_web.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX_web.h)
 	
-* Parse JSON and access data types
+* Parse JSON file and access data types
 
-	[testDpdlJSON.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testDpdlJSON.h)
+	[json/testDpdlJSON.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/json/testDpdlJSON.h)
+	
+* Parse JSON file and decode data into a struct
+
+	[json/dpdlDecodeJSON.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/json/dpdlDecodeJSON.h)
 	
 * Example Dpdl script that updates the fields of a struct type via a dedicated thread
 
