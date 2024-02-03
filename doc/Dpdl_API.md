@@ -40,8 +40,14 @@ or in a Native java library that can be implemented and configured to be accesse
 
 The Native libraries currently available are:
 ```python
+import('io')
 import('http')
 import('json')
+```
+**`io`**
+```python
+readStr(string file) return string data
+writeStr(string file, string data) return bool status
 ```
 
 **`http`**
