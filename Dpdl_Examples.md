@@ -93,7 +93,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 * Example Dpdl script that parses an XML document with the xml pull parser
 
-	[test/testXML.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testXML.h)
+	[xml/dpdlXMLParser.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/xml/dpdlXMLParser.h)
 	
 * Example Dpdl script that compresses and de-compresses a string of data using the Java platform API
 
