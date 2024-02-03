@@ -1,4 +1,4 @@
-# File: test/testXML.h
+# File: xml/dpdlXMLParser.h
 #
 # Example: Sample Dpdl script that parses an XML file with an xml pull parser
 #
