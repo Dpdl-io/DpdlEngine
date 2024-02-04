@@ -1,7 +1,9 @@
 
 # Dynamic Packet Definition Language
 
-![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
+<p align="center">
+	<img src="https://www.dpdl.io/images/dpdl-io.png" width="100%" height="100%">
+</p>
 
 				  www.dpdl.io
 
