@@ -114,13 +114,6 @@ This is a 3D model visualization of chemical molecules using the JavaFX library.
 <img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="75%" height="75%">
 
 
-### Dpdl overview
-
-This is a 'dummy' Dpdl example that shows some language features:
-
-[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
-
-
 You can find more Dpdl examples on the following page: 
 [Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 
@@ -169,7 +162,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * small footprint, Only **650 Kb** for core DpdlEngine + Embedded C interpreter and compiler
 
 
-## Access to the complete JRE Java platform API and external java libraries
+## Access to the complete JRE Java platform API and any external java libraries
 
 
 The Dpdl scripting language API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and <ins>external java libraries</ins>.

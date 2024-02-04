@@ -16,7 +16,7 @@ Multiple programming languages can be embedded directly within Dpdl scripts by u
 The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with a plug-in configurable
 option. See **[DpdlCustom]** tag in 'DpdlEngine.ini' configuration file.
 
-Currently Dpdl supports the embedding of the following languages:
+Currently Dpdl supports the embedding of the following languages available as independent plug-ins:
 
 * **`Embedded C`** (minimal subset of C90)
 * **`ANSI C`** (full C99)
@@ -27,6 +27,7 @@ Currently Dpdl supports the embedding of the following languages:
 * **`Lua`**
 * **`C++ ROOT`**
  
+
 ### Embedded C
 
 #### keyword **`>>c`**

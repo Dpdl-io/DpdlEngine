@@ -57,7 +57,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 	
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="65%" height="65%">
 
-* Example Dpdl script that shows some functionalities provided by Dpdl
+* Example 'dummy' Dpdl script that shows some functionalities provided by Dpdl
 
 	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
 
