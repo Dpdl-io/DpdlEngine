@@ -25,6 +25,7 @@ Currently Dpdl supports the embedding of the following languages available as in
 * **`JavaScript`**
 * **`OCaml`**
 * **`Lua`**
+* **`Ruby`**
 * **`C++ ROOT`**
  
 

@@ -18,13 +18,13 @@ developed by
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 Dpdl and enables access to the Java platform JRE API and any external java library via a dedicated API.
-Dpdl supports also the <ins>embedding and on-the-fly execution</ins>  of other programming languages (**ANSI C, C++, Python, Julia, JavaScript, Lua and OCaml**) directly within Dpdl scripts.
+Dpdl supports also the <ins>embedding and on-the-fly execution</ins>  of other programming languages (**ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby and OCaml**) directly within Dpdl scripts.
 Therefore Dpdl allows access to thousands of existing high-quality libraries.
 
 Dpdl is self contained and is highly customizable via a dedicated extension interface. Further programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
-## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + OCaml) = <ins>Powerful and Versatile</ins>
+## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + OCaml) = <ins>Powerful and Versatile</ins>
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="75%" height="75%">
@@ -87,7 +87,7 @@ devices and is foreseen to foster rapid application development. Dpdl comes with
 **scripting engine** and an **extensible API interface** for the development of mobile
 applications and embedded system software.
 
-Multiple programming languages, currently **ANSI C code** (a subset of C90 and full C99 standard), **C++, Python, Julia, JavaScript, Lua and the OCaml** functional programming language
+Multiple programming languages, currently **ANSI C code** (a subset of C90 and full C99 standard), **C++, Python, Julia, JavaScript, Lua, Ruby and the OCaml** functional programming language
 can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted/compiled code).
 Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory at runtime</ins> (see 'dpdl:compile'), in order to achieve <ins>faster execution</ins> performance.
 
@@ -152,7 +152,7 @@ on devices that have limited memory and storage capabilities.
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and any platform where DpdlVM can be compiled for the target platform)
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform API and to external Java libraries**
-* **ANSI C code, C++, Python, Julia, JavaScript, Lua and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
+* **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
 * Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini)
 * On-the-fly compilation of embedded ANSI C code in memory at runtime (via option 'dpdl:compile') -> very fast compile time 
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
@@ -228,6 +228,7 @@ Further programming languages can be developed and integrated via a dedicated pl
 * **`Julia`**
 * **`JavaScript`**
 * **`Lua`**
+* **`Ruby`**
 * **`OCaml`**
 * **`ROOT C++`**
 
