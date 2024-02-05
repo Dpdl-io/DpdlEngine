@@ -339,7 +339,7 @@ an ANSI C compiler is available for the target platform.
 
 DpdlEngine V1.0 has been tested on:
 
-	* MacOS arm64
+	* MacOS aarch64
 	* Linux x86_64
 	* Raspberry PI 3 (armv7l)
 	* Windows 64-bit
@@ -355,10 +355,10 @@ Note: The DpdlEngine needs to be re-packaged for running on Android, JavaME and 
 
 (*) **available soon**
 
-| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |Ruby |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- |
 | Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
-| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|X 3.2.2|
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|
 | Windows64|X|*|*|X|X v4.01|*|*|*|
 
@@ -378,7 +378,7 @@ The Dpdl framework and API documentation are available via the following links:
 
 [Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 
- Dpdl Java API Documentation (available only on the registered verison of DpdlEngine)
+ Dpdl Java API Documentation (available only for the registered version of DpdlEngine)
 
 
 ## Download
@@ -392,10 +392,7 @@ See 'Download' page for more details:
 
 Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
 
-* OpenAI integration
-* Blockchain integration (smart contracts)
-* Nostr client API
-* Compiler to compile Dpdl scripts to native machine code
+* Front-End compiler based on LLVM for compiling Dpdl scripts to IR
 
 
 ## Execution Modes for embedded C code:

@@ -40,7 +40,7 @@ https://www.java.com/en/download/manual.jsp
 Some Dpdl API functions (ex. embedded C code and other embedded languages) make use of the Dpdl native API library 'dpdlnativeapi'.
 The Dpdl native API library is platform dependent and is currently available for the following platforms (see also compatibility matrix below):
 
-* MacOS 13.4 (arm)
+* MacOS 13.4 (aarch64)
 * Linux x86_64 (x84 64bit)
 * Raspberry PI (armv7)
 * Windows 64-bit (Intel)
@@ -58,10 +58,10 @@ You may delete unused libraries for platforms that you are not interested in (e.
 
 (*) **available soon**
 
-| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |go |
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |Ruby |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- |
 | Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
-| Mac OS X (arm64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|X 3.2.2|
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|
 | Windows64|X|*|*|X|X v4.01|*|*|*|
 
@@ -150,6 +150,7 @@ Additional Dpdl language plug-in add-ons can be downloaded or updated by downloa
 
 https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
+
 # How to run DpdlEngine
 
 To start the DpdlClient console application simply run the following command:
@@ -173,7 +174,7 @@ runDpdlClient.bat
 NOTE: <ins>If a newer version of Java has been installed</ins>, use the following startup script (due to novel java module handling, This will
 be fixed in the next release):
 ```
-sh run_DpdlClient_java20.sh
+sh run_DpdlClient_java17.sh
 ```
 On newer versions of the Java Virtual Machine from Oracle, if you want to access specific modules of JRE you may need to enable them with the '--add-opens' option in the DpdlEngine startup script.
 
