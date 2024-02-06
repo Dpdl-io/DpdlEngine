@@ -88,7 +88,7 @@ devices and is foreseen to foster rapid application development. Dpdl comes with
 applications and embedded system software. Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory at runtime</ins>
 in order to achieve <ins>faster execution</ins> performance.
 
-This makes Dpdl suitable for a wide range of use-cases and in particular also for Hardware programming.
+This makes Dpdl suitable for a wide range of use-cases and in particular also for <ins>Hardware programming</ins>.
 
 ### Small Memory footprint:
 * DpdlEngine core (full configuration) **`372 Kb`**
