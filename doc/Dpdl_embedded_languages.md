@@ -301,18 +301,6 @@ int exit_code = dpdl_exit_code()
 println("Dpdl js exited with exit code: " + exit_code)
 ```
 
-### OCaml
-
-#### keyword >>ocaml
-
-```
->>ocaml
-	your OCaml code
-<<
-```
-
-NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.ocamljava.org) which requires Java 1.7 or later to successfully compile and run generated java bytecode.
-
 ### Lua
 
 #### keyword >>lua
@@ -382,6 +370,46 @@ println("Lua response buffer: ")
 println(resp_buf)
 ```
 
+### Ruby
+
+#### keyword >>ruby
+
+```ruby
+println("Dpdl is embedding some ruby code...")
+
+>>ruby
+	$global_variable = 23
+
+	$dpdl_ret = 0
+
+	puts "Hello World from ruby inside Dpdl"
+
+	class Class1
+	   def print_global
+	   	   puts "Global variable in Class1 is #$global_variable"
+
+		   for a in 1..5000 do
+			   puts "This is a TEST #{a}"
+		   end
+	   end
+	end
+	class Class2
+	   def print_global
+		  puts "Global variable in Class2 is #$global_variable"
+	   end
+	end
+
+	class1obj = Class1.new
+	class1obj.print_global
+	class2obj = Class2.new
+	class2obj.print_global
+
+	$dpdl_ret = 1
+<<
+int exit_code = dpdl_exit_code()
+println("embedded ruby code exit code: " + exit_code)
+
+```
 
 ### ROOT Data Analysis Framework (C++)
 
@@ -402,14 +430,28 @@ NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite
 <<
 ```
 
+### OCaml (Experimental)
+
+#### keyword >>ocaml
+
+```
+>>ocaml
+	your OCaml code
+<<
+```
+
+NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.ocamljava.org) which requires Java 1.7 or later to successfully compile and run generated java bytecode.
+
+
 ### Embedded language references
 
 - c -> https://bellard.org/tcc/tcc-doc.html
 - python -> https://www.python.org/
 - julia -> https://julialang.org/
 - javascript -> ECMAScript (Oracle nashorn) for '>>js' && QuickJS (https://bellard.org/quickjs/quickjs.html) for '>>qjs' 
-- ocaml -> http://www.ocamljava.org/
 - lua -> https://www.lua.org/
+- ruby -> https://www.ruby-lang.org
 - root (c++) -> https://root.cern/
+- ocaml -> http://www.ocamljava.org/
  
  
