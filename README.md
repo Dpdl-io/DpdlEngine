@@ -17,7 +17,7 @@ developed by
 # What is Dpdl?
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl and enables access to the Java platform JRE API and any external java library via a dedicated API.
+Dpdl and enables access to the Java platform JRE API and to any external java library via a dedicated API.
 Dpdl supports also the <ins>embedding and on-the-fly execution</ins>  of other programming languages (**ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby and OCaml**) directly within Dpdl scripts.
 Therefore Dpdl allows access to thousands of existing high-quality libraries.
 
@@ -85,11 +85,8 @@ are integrated by default and third party libraries and functions can be added a
 Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint
 devices and is foreseen to foster rapid application development. Dpdl comes with a very compact and portable
 **scripting engine** and an **extensible API interface** for the development of mobile
-applications and embedded system software.
-
-Multiple programming languages, currently **ANSI C code** (a subset of C90 and full C99 standard), **C++, Python, Julia, JavaScript, Lua, Ruby and the OCaml** functional programming language
-can be **embedded and executed on-the-fly directly within Dpdl scripts** (interpreted/compiled code).
-Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory at runtime</ins> (see 'dpdl:compile'), in order to achieve <ins>faster execution</ins> performance.
+applications and embedded system software. Embedded ANSI C code and OCaml can also be <ins>dynamically compiled in memory at runtime</ins>
+in order to achieve <ins>faster execution</ins> performance.
 
 This makes Dpdl suitable for a wide range of use-cases and in particular also for Hardware programming.
 
@@ -111,7 +108,7 @@ This is a small sample app written with Dpdl that gets the top 10 news stories v
 
 Note: The example 'app/getnews/dpdlGetNews2.h' is identical, but data is decoded in a java object instead of a struct
 
-#### 3D graphics with JavaFX
+#### Dpdl Example using external Java libraries
 
 This is a 3D model visualization of chemical molecules using the JavaFX library. The model can be rotated freely with mouse events.
 

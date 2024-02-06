@@ -103,7 +103,7 @@ Contact us if this is the case.
 
 ## How to order a 'full' DpdlEngine license?
 
-To buy a full featured DpdlEngine license with no limitations/restrictions, regular updates and support,
+To buy a full featured 'DpdlEngine lite' license with no limitations/restrictions, regular updates and support,
 please submit your request via the following download request form, you will be contacted promptly: 
 
 https://www.dpdl.io/index_order.html
