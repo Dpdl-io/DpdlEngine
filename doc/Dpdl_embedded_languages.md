@@ -172,10 +172,19 @@ println("result: " + buf)
 
 #### keyword **`>>python`**
 
-```
+```python
+println("testing embedding python code")
+println("")
+
 >>python
-	your Python code
+languages = ['Dpdl', 'C', 'Python', 'OCaml']
+
+for language in languages:
+	print(language)
 <<
+int exit_code = dpdl_exit_code()
+
+println("embedded python exit code: " + exit_code)
 ```
 
 NOTE: In order to be able to access python packages (installed via pip), the following environment variables must be set:
@@ -184,6 +193,8 @@ NOTE: In order to be able to access python packages (installed via pip), the fol
 export PYTHONHOME=$YOUR_LOCAL_PYTHON_INSTALL_DIR
 export PYTHONPATH=$YOUR_LOCAL_PYTHON_INSTALL_LIB_DIR
 ```
+
+When embedding python it's important to have the correct indentation as defined by the python specification. Dpdl will consider the 'tab' ( \t ) for indentation.
 
 ### Julia
 
@@ -194,9 +205,30 @@ https://julialang.org/
 #### keyword **`>>julia`**
 
 ```python
+println("testing embedding of 'julia' code...")
+
+dpdl_stack_push("dpdlbuf_var1")
+
 >>julia
-your Julia code
+println("applying muladd(A, B, z) ->")
+println("")
+
+A=[1.0 2.0; 3.0 4.0]
+B=[1.0 1.0; 1.0 1.0]
+z=[0, 100]
+
+result = muladd(A, B, z)
+
+result_str = string(result)
+
+myresult_return = "matrix muladd(A, B, z): " * result_str
+
+write_buf = @ccall dpdl_stack_buf_put(myresult_return::Ptr{UInt8})::Int32
+return 1
 <<
+
+int exit_code = dpdl_exit_code()
+println("embedded julia code exit code: " + exit_code)
 ```
 
 NOTE: The native Dpdl library 'dpdljulia' is not included in the 'DpdlEngine lite' release, and needs to be downloaded and
@@ -421,13 +453,27 @@ The ROOT toolkit provides full featured APIs for Data visualization, modeling, s
 ROOT C++ code can be embedded within Dpdl with the keyword '**>>root**'
 
 NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite' release, and needs to be downloaded and deployed separately (see 'Downloads' section in README.md)
+		You can even request the plugin source code for building the plug-in yourself if you have specific requirements for your platform. Write to info@dpdl.io
+
 
 #### keyword >>root
 
-```
+```python
+println("test embedded ROOT C/C++...")
+
 >>root
-	your ROOT C++ code
+   TImage *img = TImage::Open("./Test/Dpdl.png");
+   if (!img) {
+      printf("Error: Could not open image\n");
+      return;
+   }
+ 
+   img->WriteImage("./Test/Dpdl.jpg");
 <<
+
+int exit_code = dpdl_exit_code()
+
+println("embedded ROOT exit code: " + exit_code)
 ```
 
 ### OCaml (Experimental)
