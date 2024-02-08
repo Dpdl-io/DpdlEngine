@@ -48,7 +48,7 @@ C code can be executed in 2 different modes:
 2) Compiled C code (in memory at runtime) (<ins>ANSI C99</ins>)
 
 
-##### Mode 1 (minimal and interpreted code)
+#### Mode 1 (minimal and interpreted code)
 
 The code is executed via a native Dpdl library that has a very small footprint (278 Kb) and **includes all essential C libraries**
 and language constructs (minimal subset of C90, **POSIX** compliant), **no additional dependencies** required.
@@ -61,7 +61,7 @@ Minimal, all basic C libraries and headers already included, no dependencies, PO
 **Minimal embedded C library documentation, for Mode (1):**
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
-##### Mode 2 (full and compiled code)
+#### Mode 2 (full and compiled code)
 
 --> Fast compile time and fast execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
 This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
