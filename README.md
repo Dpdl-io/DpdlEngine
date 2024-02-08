@@ -212,7 +212,7 @@ The default configuration <ins>can be easily extended or updated</ins> to resolv
 
 Additional API's can be added to the class definition file as needed.
 
-## Dpdl embedded programming languages
+## Dpdl embeddable programming languages
 
 Multiple programming languages can be embedded within the same **Dpdl** script via a the keyword **`>>`**.
 Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration. 
@@ -314,7 +314,7 @@ bool b = str.contains("C")
 println("Dpdl contains C: " + b)
 ```
 
-### Embedding of other programming languages
+### Embedding other programming languages
 
 Other programming languages can be easily integrated in Dpdl via a dedicated plug-in interface and configuration. Please feel free to suggest your opinion on the
 'Discussion' section on the DpdlEngine GitHub repository
