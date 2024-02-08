@@ -268,7 +268,7 @@ println("embedded ROOT exit code: " + exit_code)
 
 NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Download section below)
  
-#### Dpdl with embedded C code
+### Dpdl with embedded C code
 
 Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts with the keyword **`>>c`**
 The C code can be embedded with 2 different Modes:
