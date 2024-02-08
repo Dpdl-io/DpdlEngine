@@ -41,10 +41,40 @@ Currently Dpdl supports the embedding of the following languages available as in
 
 #### Modes of execution
 
+
+
+## Execution Modes for embedded C code:
+
 C code can be executed in 2 different modes:
 
-1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead (**default mode**)
-2) Compiled (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'
+1) Interpreted C code (<ins>minimal subset of C90</ins>)
+2) Compiled C code (in memory at runtime) (<ins>ANSI C99</ins>)
+
+
+### Mode 1 (minimal and interpreted code)
+
+The code is executed via a native Dpdl library that has a very small footprint (278 Kb) and **includes all essential C libraries**
+and language constructs (minimal subset of C90, **POSIX** compliant), **no additional dependencies** required.
+
+Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
+
+--> easy integration of custom extensions. No compile time overhead,
+Minimal, all basic C libraries and headers already included, no dependencies, POSIX compliant (**default Mode**)
+
+**Minimal embedded C library documentation, for Mode (1):**
+[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+
+### Mode 2 (full and compiled code)
+
+--> Fast compile time and fast execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
+This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
+
+The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' or '**dpdl:C99**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+The 'dpdl:compile' option currently works for the following platforms: **Linux (x86_64), MacOS (arm64), Raspberry (armv7l)**. 
+The C compiler used is the <ins>**Fabrice Bellard's TCC**</ins>.
+
+For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
+
 
 The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 
@@ -195,6 +225,15 @@ export PYTHONPATH=$YOUR_LOCAL_PYTHON_INSTALL_LIB_DIR
 ```
 
 When embedding python it's important to have the correct indentation as defined by the python specification. Dpdl will consider the 'tab' ( \t ) for indentation.
+
+#### Supported python platforms (library 'dpdlpython')
+
+Currently the 'DpdlEngine lite' release includes the native Dpdl Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
+
+* on **Linux:** Python version 3.2m (gcc version 4.4.7)
+* on **MacOS:** Python version 3.12 (clang version 14.0.3)
+* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
+* <ins>Windows version will follow soon</ins> in the coming release
 
 ### Julia
 
@@ -347,6 +386,7 @@ The embedded 'Lua' code may or may not include a 'main(..)' function.
 If the 'main(..)' function is defined, parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function
 are passed as parameters to the main function in the Lua code via a table type.
 
+
 #### Example without main(..):
 
 ```python
@@ -480,10 +520,53 @@ println("embedded ROOT exit code: " + exit_code)
 
 #### keyword >>ocaml
 
+Currently the functional programming language '**OCaml**' (https://ocaml.org/) is supported, via package (http://www.ocamljava.org/),
+and can be embedded directly within Dpdl scripts with the keyword **`>>ocaml`**
+The library allows also to compile on the fly OCaml code in order to speedup execution.
+
 ```
 >>ocaml
 	your OCaml code
 <<
+```
+
+Example Dpdl script with embedded 'OCaml' code:
+```python
+println("testing Dpdl embedded OCaml..")
+
+
+# parameter to instruct the Dpdl runtime to compile the embedded code (faster execution). Without this option the code is interpreted
+dpdl_stack_push("compile")
+
+# we add a variable to the dpdl stack so that we can access it in the embedded OCaml
+dpdl_stack_var_put("mydpdlvar", "Dpdl interacts with OCaml")
+
+>>ocaml
+external get_binding : string -> 'a = "script_get_binding";;
+
+let dpdl_var = get_binding "mydpdlvar"
+print_endline "mydpdlvar:"
+print_endline dpdl_var 
+
+let string_of_float f =
+  let s = format_float "%.12g" f in
+  let l = string_length s in
+  let rec loop i =
+    if i >= l then s ^ "."
+    else if s.[i] = '.' || s.[i] = 'e' then s
+    else loop (i + 1)
+  in
+    loop 0
+    
+    print_endline "Output:"
+    print_string f 
+    print_string "\n";
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("embedded OCaml exit code: " + exit_code);
+
 ```
 
 NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.ocamljava.org) which requires Java 1.7 or later to successfully compile and run generated java bytecode.

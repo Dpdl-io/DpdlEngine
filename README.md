@@ -230,7 +230,7 @@ Further programming languages can be developed and integrated via a dedicated pl
 * **`ROOT C++`**
 
 
-### Embedding of 'ROOT C++' code
+#### Dpdl example with embedded 'ROOT C++' code
 
 ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/) .
 
@@ -267,7 +267,7 @@ println("embedded ROOT exit code: " + exit_code)
 
 NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Download section below)
  
-### Embedded C code
+#### Dpdl with embedded C code
 
 Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts with the keyword **`>>c`**
 The C code can be embedded with 2 different Modes:
@@ -325,7 +325,7 @@ Dpdl runs on a wide range of platforms and provides also a small footprint java 
 released as open-source, that can  be compiled for almost every platform as soon as
 an ANSI C compiler is available for the target platform.
 
-### Dpdl itelf is compatible with:
+### Dpdl itself is compatible with:
 
 * J2ME MIDP (Mobile Information Device Profile) -> MIDP 1.0 and MIDP 2.0 (CLDC 1.0, CLDC 2.0)
 * Java ME CLDC & GCF (JSR 360)
@@ -392,42 +392,6 @@ Dpdl is currently developed by SEE Solutions and the following integrations has 
 * Front-End compiler based on LLVM for compiling Dpdl scripts to IR
 
 
-## Execution Modes for embedded C code:
-
-1) Interpreted C code (<ins>minimal subset of C90</ins>)
-2) Compiled C code (in memory at runtime) (full <ins>ANSI C99</ins>)
-
-### Mode 1 (minimal and interpreted code)
-
-The code is executed via a native Dpdl library that has a very small footprint (530 Kb) and **includes all essential C libraries**
-and language constructs (minimal subset of C90, **POSIX** compliant), **no additional dependencies** required.
-
-Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
-
---> easy integration of custom extensions. No compile time overhead,
-Minimal, all basic C libraries and headers already included, no dependencies, POSIX compliant (**default Mode**)
-
-**Minimal embedded C library documentation, for Mode (1):**
-[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
-### Mode 2 (full and compiled code)
-
---> Fast compile time and fast execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
-This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
-
-The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' or '**dpdl:C99**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
-The 'dpdl:compile' option currently works for the following platforms: **Linux (x86_64), MacOS (arm64), Raspberry (armv7l)**. 
-The C compiler used is the <ins>**Fabrice Bellard's TCC**</ins>.
-
-For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
-
-#### Integrity validation
-
-The Dpdl native API library 'dpdlnativeapi' provides also a <ins>Security Integrity Check</ins> to guarantee that the library have not been compromised.
-Therefore the embedded C code execution cannot be mangled internally and guarantees the correct execution of C code.
-In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
-
-
 ### Embedding of 'Python' code
 
 Python code can be embedded within Dpdl scripts by using the keyword **`>>python`**.
@@ -451,100 +415,6 @@ int exit_code = dpdl_exit_code()
 println("embedded python exit code: " + exit_code);
 ```
 
-#### Supported python platforms (library 'dpdlpython')
-
-Currently the 'DpdlEngine lite' release includes the native Dpdl Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
-
-* on **Linux:** Python version 3.2m (gcc version 4.4.7)
-* on **MacOS:** Python version 3.12 (clang version 14.0.3)
-* on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
-* <ins>Windows version will follow soon</ins> in the coming release
-
-
-### Embedding of 'JavaScript' code
-
-JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
-
-JavaScript code can be embedded within Dpdl via the keyword **`>>js`** or  **`>>qjs`**
-
-Dpdl allows the embedding of javascript with 2 different Modes:
-1) Using the 'Nashorn' javascript engine embedded in the Java platform
-2) Using the 'QuickJS' javascript engine from Fabrice Bellard
-
-#### 1) Using the 'Nashorn' engine
-
-The 'Nashorn' javascript engine is available on most JRE distributions (but not all).
-
-The javascript can be embedded in Dpdl scripts with this mode using the keyword **`>>js`**
-
-Example:
-```python
-println("test embedding javascript ...")
-
-dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
-dpdl_stack_var_put("var2", "This variable comes from Dpdl (var2)")
-
->>js
-    print("Hello javascript from Dpdl: ");
-    print("")
-    print("var1: " + var1);
-    print("var2: " + var2);
-    print("The number PI is equal to: " + java.lang.Math.PI);
-    print("")
-    var importFile = new JavaImporter(java.util);  
-    var a = new importFile.ArrayList();  
-    a.add(12);  
-    a.add(20);  
-    print(a);  
-    print(a.getClass());          
-<<
-
-int exit_code = dpdl_exit_code()
-
-println("embedded js exit code: " + exit_code)
-```
-
-#### 2) Using the 'QuickJS' engine
-
-The 'QuickJS' javascript engine is included in the DpdlEngine release.
-
-The javascript can be embedded in Dpdl scripts with this mode using the keyword **`>>qjs`**
-
-Example:
-```python
-println("testing embedded qjs...")
-
-dpdl_stack_push("my Hello Message!!!")
->>qjs
-
-import { fib } from "./DpdlLibs/js/fib_module.js";
-
-var a_message = "null";
-
-console.log(scriptArgs)
-console.log('Dpdl sends a message with QuickJS');
-
-if(scriptArgs.length > 0){
-	a_message = scriptArgs[0];
-}
-std.printf("Message = %s %d", a_message, 23);
-console.log('');
-console.log("fib(10)=", fib(10));
-<<
-
-int exit_code = dpdl_exit_code()
-println("Dpdl qjs exited with exit code: " + exit_code)
-```
-
-QuickJS provides a powerful and complete API to interact with the javascript engine at low level.
-Custom native functions and objects can be implemented as shared libraries and loaded in javascript.
-You can find examples in the folder './DpdlLibs/js/'
-
-Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
-
-The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
-
-		
 ### Embedding of 'Julia' code
 
 Julia is a powerful and performant computational programming language  (https://julialang.org)
@@ -576,6 +446,48 @@ println("finished with exit code: " + exit_code)
 ```
 NOTE: The native Dpdl library 'dpdljulia' needs to be downloaded and deployed separately (see Download section below)
 
+
+### Embedding of 'JavaScript' code
+
+JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
+
+JavaScript code can be embedded within Dpdl via the keyword **`>>js`** or  **`>>qjs`**
+
+Dpdl allows the embedding of javascript with 2 different Modes:
+1) Using the 'Nashorn' javascript engine embedded in the Java platform '>>js'
+2) Using the 'QuickJS' javascript engine from Fabrice Bellard '>>qjs'
+
+
+Example:
+```python
+println("testing embedded qjs...")
+
+dpdl_stack_push("my Hello Message!!!")
+>>qjs
+
+import { fib } from "./DpdlLibs/js/fib_module.js";
+
+var a_message = "null";
+
+console.log(scriptArgs)
+console.log('Dpdl sends a message with QuickJS');
+
+if(scriptArgs.length > 0){
+	a_message = scriptArgs[0];
+}
+std.printf("Message = %s %d", a_message, 23);
+console.log('');
+console.log("fib(10)=", fib(10));
+<<
+
+int exit_code = dpdl_exit_code()
+println("Dpdl qjs exited with exit code: " + exit_code)
+```
+
+QuickJS provides a powerful and complete API to interact with the javascript engine at low level.
+Custom native functions and objects can be implemented as shared libraries and loaded in javascript.
+You can find examples in the folder './DpdlLibs/js/'
+		
 
 ### Embedding of 'Lua' code
 
@@ -639,56 +551,11 @@ println("lua response buffer: ")
 println(resp_buf)
 ```
 
-### Embedding of 'OCaml' (experimental)
-
-Currently the functional programming language '**OCaml**' (https://ocaml.org/) is supported, via package (http://www.ocamljava.org/),
-and can be embedded directly within Dpdl scripts with the keyword **`>>ocaml`**
-The library allows also to compile on the fly OCaml code in order to speedup execution.
-
-Example Dpdl script with embedded 'OCaml' code:
-```python
-println("testing Dpdl embedded OCaml..")
-
-
-# parameter to instruct the Dpdl runtime to compile the embedded code (faster execution). Without this option the code is interpreted
-dpdl_stack_push("compile")
-
-# we add a variable to the dpdl stack so that we can access it in the embedded OCaml
-dpdl_stack_var_put("mydpdlvar", "Dpdl interacts with OCaml")
-
->>ocaml
-external get_binding : string -> 'a = "script_get_binding";;
-
-let dpdl_var = get_binding "mydpdlvar"
-print_endline "mydpdlvar:"
-print_endline dpdl_var 
-
-let string_of_float f =
-  let s = format_float "%.12g" f in
-  let l = string_length s in
-  let rec loop i =
-    if i >= l then s ^ "."
-    else if s.[i] = '.' || s.[i] = 'e' then s
-    else loop (i + 1)
-  in
-    loop 0
-    
-    print_endline "Output:"
-    print_string f 
-    print_string "\n";
-<<
-
-int exit_code = dpdl_exit_code()
-
-println("embedded OCaml exit code: " + exit_code);
-
-```
 
 ## Dpdl Examples
 
 Other Dpdl examples can be found on this page:
 [Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
-
 
 
 ## What is a DpdlPacket?
