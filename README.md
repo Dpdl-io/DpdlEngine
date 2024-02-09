@@ -152,7 +152,7 @@ on devices that have limited memory and storage capabilities.
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform API and to external Java libraries**
 * **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
 * Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini)
-* On-the-fly compilation of embedded ANSI C code in memory at runtime (via option 'dpdl:compile') -> very fast compile time 
+* On-the-fly compilation of embedded ANSI C code in memory at runtime (via option 'dpdl:compile') for different platforms (i386, ARM and TMS320C67xx) -> very fast compile time 
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
