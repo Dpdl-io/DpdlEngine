@@ -555,7 +555,8 @@ println(resp_buf)
 
 ## Dpdl Examples
 
-Other Dpdl examples can be found on this page:
+Further Dpdl examples can be found on this page:
+
 [Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 
 
@@ -569,7 +570,9 @@ In particular Dpdl is very efficient on J2ME and JavaME platforms and
 has a high degree of backward compatibility.
 
 A DpdlPacket contains 1 - n chunks of compressed data that can be allocated, queried and
-deallocated when data is not used.
+deallocated when data is not used anymore.
+
+All kind of data can be packed into a DpdlPacket.
 
 ### DpdlPacket
 
@@ -642,8 +645,13 @@ import virtual DATA none  {
 }
 ```
 
+This is an example Dpdl sript that show how a 'DpdlPacket' can be allocated and queried:
 
-The database technology in Dpdl has been developed since year 2003 and started with a BsC thesis.
+[testDpdlDB2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testDpdlDB2.h)
+
+The database technology in Dpdl has been developed since year 2003 when the first applications where developed for mobile devices.
+
+It started with a BsC thesis by A.Costa:
 
 [Advanced database techniques in Dpdl : dynamic packet definition language ; a portable data protocol for small embedded systems](https://unibz.primo.exlibrisgroup.com/permalink/39UBZ_INST/hl3dt9/alma9928450240001241)
 
