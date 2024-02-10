@@ -147,7 +147,7 @@ on devices that have limited memory and storage capabilities.
 
 ### Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and any all platforms where the virtual machine 'miniJVM' can be compiled for the target platform)
+* **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform API and to external Java libraries**
 * **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
