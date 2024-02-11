@@ -53,7 +53,6 @@ update of '.lib/ocamlrun-scripting.jar' and './lib/ocamljava.jar' might be requi
 
 ## Work in progress
 
-* Adaptions to run 'DpdlEngine lite' on the full featured miniJVM developed by digitalgust (https://github.com/digitalgust/miniJVM)
 * compile 'dpdlpython' library for Windows64
 
 
