@@ -163,6 +163,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **JSON**
 * **Fast Prototyping**
 * Tools for automatically converting Dpdl scripts to Java , C/C++ and V code
+* Open Source language plugins
 * small footprint, Only **650 Kb** for core DpdlEngine + Embedded C interpreter and compiler
 
 
