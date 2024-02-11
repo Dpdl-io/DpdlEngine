@@ -69,6 +69,6 @@ update of '.lib/ocamlrun-scripting.jar' and './lib/ocamljava.jar' might be requi
 
 The following programming language plug-ins will be developed:
 
-* Implement language plug-in to enable the embedding of 'ruby' programming language -> keyword '**>>ruby**'
+* Implement language plug-in to enable the embedding of 'octave' programming language -> keyword '**>>octave**'
 * Implement language plug-in to enable the embedding of 'go' programming language -> keyword '**>>go**'
 
