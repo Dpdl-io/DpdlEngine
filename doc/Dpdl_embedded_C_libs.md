@@ -155,7 +155,7 @@ float cos(float);"
 float cosh(float);
 float exp(float);
 float modf(float, float *);
-float pow(float,float);
+float pow(float, float);
 float round(float);
 float sin(float);
 float sinh(float);
@@ -244,32 +244,32 @@ int setuid(uid_t);
 ### <string.h>
 
 ```c
-int memcmp(void *,void *,int);
-void *memset(void *,int,int);
-void *memcpy(void *,void *,int);
-void *memmove(void *,void *,int);
-void *memchr(char *,int,int);
-char *strcat(char *,char *);
-char *strncat(char *,char *,int);
-char *strchr(char *,int);
-char *strrchr(char *,int);
-int strcmp(char *,char *);
-int strncmp(char *,char *,int);
-int strcoll(char *,char *);
-char *strcpy(char *,char *);
-char *strncpy(char *,char *,int);
+int memcmp(void *, void *, int);
+void *memset(void *, int, int);
+void *memcpy(void *, void *, int);
+void *memmove(void *, void *, int);
+void *memchr(char *, int, int);
+char *strcat(char *, char *);
+char *strncat(char *, char *, int);
+char *strchr(char *, int);
+char *strrchr(char *, int);
+int strcmp(char *, char *);
+int strncmp(char *, char *, int);
+int strcoll(char *, char *);
+char *strcpy(char *, char *);
+char *strncpy(char *, char *, int);
 char *strerror(int);
-char *index(char *,int);
-char *rindex(char *,int);
+char *index(char *, int);
+char *rindex(char *, int);
 int strlen(char *);
-int strspn(char *,char *);
-int strcspn(char *,char *);
-char *strpbrk(char *,char *);
-char *strstr(char *,char *);
-char *strtok(char *,char *);
-int strxfrm(char *,char *,int);
+int strspn(char *, char *);
+int strcspn(char *, char *);
+char *strpbrk(char *, char *);
+char *strstr(char *, char *);
+char *strtok(char *, char *);
+int strxfrm(char *, char *, int);
 char *strdup(char *);
-char *strtok_r(char *,char *,char **);
+char *strtok_r(char *, char *, char **);
 ```
 
 ### <time.h>
@@ -285,7 +285,7 @@ int strftime(char *, int, char *, struct tm *);
 char *strptime(char *, char *, struct tm *);
 struct tm *gmtime_r(int *, struct tm *);
 int timegm(struct tm *);
-struct tm *gmtime(int *);" },
+struct tm *gmtime(int *);
 struct tm *localtime(int *);
 ```
 
