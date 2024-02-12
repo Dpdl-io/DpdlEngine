@@ -696,7 +696,7 @@ object mycode = loadCode("LoadCodeFunc.h", mymap)
 
 Exceptions can be handled with the **`raise(..)`** function. 
 
-The following conditions are checked and an exception is raised if the conditions == false:
+The following conditions are checked and an exception is raised if the expression on the type condition == false:
 
 * string -> **`(condition =! "null")`** ? true : false 
 * int -> **`(condition =! -1)`**  : true : false
