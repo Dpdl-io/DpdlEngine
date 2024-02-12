@@ -698,10 +698,10 @@ Exceptions can be handled with the **`raise(..)`** function.
 
 The following conditions are checked and an exception is raised if the conditions == false:
 
-	* string -> **`(condition =! "null")`** ? true : false 
-	* int -> **`(condition =! -1)`**  : true : false
-	* bool -> **`(condition == true)`**  ? true : false
-	* object -> **`(condition =! null)`**  ? true : false
+* string -> **`(condition =! "null")`** ? true : false 
+* int -> **`(condition =! -1)`**  : true : false
+* bool -> **`(condition == true)`**  ? true : false
+* object -> **`(condition =! null)`**  ? true : false
 
 
 The raise(..) function can be called in the following ways:
