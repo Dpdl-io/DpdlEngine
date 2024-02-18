@@ -533,6 +533,10 @@ The following imports are predefined and contained classes can be accessed direc
 - java.time.*
 - java.sql.*
 
+The Dpdl language plugin uses the 'Janino' library to compile code blocks:
+
+Refer to the Janino doc for supported java language features: http://janino-compiler.github.io/janino/
+
 
 ### ROOT Data Analysis Framework (C++)
 
