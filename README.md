@@ -29,8 +29,7 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
-## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + OCaml 
- Java) = <ins>Powerful and Versatile</ins>
+## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + OCaml + Java) = <ins>Powerful and Versatile</ins>
 
 ### * Develop your ideas faster
 ### * On multiple platforms
