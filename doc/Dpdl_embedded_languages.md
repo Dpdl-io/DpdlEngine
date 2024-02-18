@@ -26,10 +26,11 @@ Currently Dpdl supports the embedding of the following languages available as in
 * **`OCaml`**
 * **`Lua`**
 * **`Ruby`**
+* **`Java`**
 * **`C++ ROOT`**
  
 
-### Embedded C
+### Embedding C
 
 #### keyword **`>>c`**
 
@@ -195,7 +196,7 @@ println("result: " + buf)
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 
-### Python
+### Embedding Python
 
 #### keyword **`>>python`**
 
@@ -232,7 +233,7 @@ Currently the 'DpdlEngine lite' release includes the native Dpdl Python library 
 * on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
 * <ins>Windows version will follow soon</ins> in the coming release
 
-### Julia
+### Embedding Julia
 
 Julia is a powerful high performance computing programming language with many scientific library packages.
 
@@ -271,7 +272,7 @@ NOTE: The native Dpdl library 'dpdljulia' is not included in the 'DpdlEngine lit
       deployed separately (see 'Downloads' section in README.md)
 
 
-### Embedding of 'JavaScript'
+### Embedding 'JavaScript'
 
 JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
 
@@ -369,7 +370,7 @@ int exit_code = dpdl_exit_code()
 println("Dpdl js exited with exit code: " + exit_code)
 ```
 
-### Lua
+### Embedding Lua
 
 #### keyword >>lua
 
@@ -439,7 +440,7 @@ println("Lua response buffer: ")
 println(resp_buf)
 ```
 
-### Ruby
+### Embedding Ruby
 
 #### keyword >>ruby
 
@@ -479,6 +480,59 @@ int exit_code = dpdl_exit_code()
 println("embedded ruby code exit code: " + exit_code)
 
 ```
+
+### Embedding Java
+
+#### keyword >>java
+
+Java code blocks can be embedded with the keyword **`>>java`**.
+
+```python
+println("testing embedding of java code...")
+
+string str = "my test param"
+int x = 100
+float f = 0.3
+double d = 99.9d
+
+dpdl_stack_push(str, x, f, d)
+
+>>java
+System.out.println("Parameters: ");
+System.out.println("	arg0: " + arg0);
+System.out.println("	arg1: " + arg1);
+System.out.println("	arg2: " + arg2);
+System.out.println("	arg3: " + arg3);
+
+static void myMethod1(){
+	System.out.println("myMethod1: " + 1);
+}
+
+myMethod1();
+myMethod2();
+
+static void myMethod2(){
+	System.out.println("method2: " + 2);
+}
+
+for(int x = 0; x < arg1; x++){
+	System.out.println("x: " + x);
+}
+<<
+
+int exit_code = dpdl_exit_code()
+println("embedded java exit code: " + exit_code)
+```
+
+Parameters that are pushed onto the Dpdl stack are accessible in java via the variable names 'args0, args1, ....argsN'
+
+The following imports are predefined and contained classes can be accessed directly:
+
+- java.io.*
+- java.util.*
+- java.time.*
+- java.sql.*
+
 
 ### ROOT Data Analysis Framework (C++)
 

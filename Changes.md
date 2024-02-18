@@ -9,8 +9,9 @@ developed by
 
 ## New 
 
-* NEW (04.02.2024) Dpdl embedded language plugin for 'Ruby' has been implemented and will be included in the coming releases of 'DpdlEngine lite'
+* NEW (18.02.2024) Dpdl embedded language plugin for 'Java' code blocks is available
 
+* (04.02.2024) Dpdl embedded language plugin for 'Ruby' has been implemented and will be included in the coming releases of 'DpdlEngine lite'
 * (30.01.2024) String can now contain expressions within the keyword '${..}' that are evaluated when variables are initialized eg. string mystr = "result: ${a + b}" 
 * (20.01.2024) Added JavaFX classes to Dpdl class definition file and created Dpdl example app that uses JavaFX to render UI elements via FXML
 * (13.01.2024) Added basic 'http' and 'json' import libraries.

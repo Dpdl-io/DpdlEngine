@@ -29,7 +29,8 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
-## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + OCaml) = <ins>Powerful and Versatile</ins>
+## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + OCaml 
+ Java) = <ins>Powerful and Versatile</ins>
 
 ### * Develop your ideas faster
 ### * On multiple platforms
@@ -150,7 +151,7 @@ on devices that have limited memory and storage capabilities.
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform API and to external Java libraries**
-* **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby and OCaml language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
+* **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, OCaml and Java language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
 * Other programming languages can be embedded by configuration and via a dedicated interface (see [DpdlCustom] tag in DpdlEngine.ini)
 * On-the-fly compilation of embedded ANSI C code in memory at runtime (via option 'dpdl:compile') for different platforms (i386, ARM and TMS320C67xx) -> very fast compile time 
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
@@ -229,6 +230,7 @@ Further programming languages can be developed and integrated via a dedicated pl
 * **`Lua`**
 * **`Ruby`**
 * **`OCaml`**
+* **`Java`**
 * **`ROOT C++`**
 
 
@@ -354,12 +356,12 @@ Note: The DpdlEngine needs to be re-packaged for running on Android, JavaME and 
 
 (*) **available soon**
 
-| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |Ruby |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|X 3.2.2|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|
-| Windows64|X|*|*|X|X v4.01|*|*|*|
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |Ruby |Java |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|X|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|X 3.2.2|X|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|X|
+| Windows64|X|*|*|X|X v4.01|*|*|*|X|
 
 	
 ## Documentation
