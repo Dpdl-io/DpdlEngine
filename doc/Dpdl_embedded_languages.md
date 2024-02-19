@@ -372,7 +372,7 @@ println("Dpdl js exited with exit code: " + exit_code)
 
 ### Embedding Lua
 
-#### keyword >>lua
+#### keyword **`>>lua`**
 
 ```
 >>lua
@@ -442,7 +442,7 @@ println(resp_buf)
 
 ### Embedding Ruby
 
-#### keyword >>ruby
+#### keyword **`>>ruby`**
 
 ```ruby
 println("Dpdl is embedding some ruby code...")
@@ -483,9 +483,9 @@ println("embedded ruby code exit code: " + exit_code)
 
 ### Embedding Java
 
-#### keyword >>java
+#### keyword **`>>java`**
 
-Java code blocks can be embedded with the keyword **`>>java`**.
+Java code blocks i.e a body of a method, can be embedded with the keyword **`>>java`**.
 
 ```python
 println("testing embedding of java code...")
@@ -518,15 +518,18 @@ static void myMethod2(){
 for(int x = 0; x < arg1; x++){
 	System.out.println("x: " + x);
 }
+return 1;
 <<
 
 int exit_code = dpdl_exit_code()
 println("embedded java exit code: " + exit_code)
 ```
 
+The embedded java code must return a value, either of type 'int' or 'String'
+
 Parameters that are pushed onto the Dpdl stack are accessible in java via the variable names 'args0, args1, ....argsN'
 
-The following imports are predefined and contained classes can be accessed directly:
+The following imports are predefined so that contained classes can be accessed directly:
 
 - java.io.*
 - java.util.*
@@ -535,7 +538,7 @@ The following imports are predefined and contained classes can be accessed direc
 
 The Dpdl language plugin uses the 'Janino' library to compile code blocks:
 
-Refer to the Janino doc for supported java language features: http://janino-compiler.github.io/janino/
+Refer to the 'Janino' documentation for the java language features supported: http://janino-compiler.github.io/janino/
 
 
 ### ROOT Data Analysis Framework (C++)
@@ -551,7 +554,7 @@ NOTE: The native Dpdl library 'dpdlroot' is not included in the 'DpdlEngine lite
 		You can even request the plugin source code for building the plug-in yourself if you have specific requirements for your platform. Write to info@dpdl.io
 
 
-#### keyword >>root
+#### keyword **`>>root`**
 
 ```python
 println("test embedded ROOT C/C++...")
@@ -573,7 +576,7 @@ println("embedded ROOT exit code: " + exit_code)
 
 ### OCaml (Experimental)
 
-#### keyword >>ocaml
+#### keyword **`**
 
 Currently the functional programming language '**OCaml**' (https://ocaml.org/) is supported, via package (http://www.ocamljava.org/),
 and can be embedded directly within Dpdl scripts with the keyword **`>>ocaml`**
@@ -636,6 +639,7 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 - lua -> https://www.lua.org/
 - ruby -> https://www.ruby-lang.org
 - root (c++) -> https://root.cern/
+- java -> http://janino-compiler.github.io/janino/
 - ocaml -> http://www.ocamljava.org/
  
  
