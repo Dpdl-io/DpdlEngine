@@ -525,7 +525,7 @@ int exit_code = dpdl_exit_code()
 println("embedded java exit code: " + exit_code)
 ```
 
-The embedded java code must return a value, either of type 'int' or 'String'
+The embedded java code must return a value, either of type 'int' or a 'String'
 
 Parameters that are pushed onto the Dpdl stack are accessible in java via the variable names 'args0, args1, ....argsN'
 
@@ -535,6 +535,33 @@ The following imports are predefined so that contained classes can be accessed d
 - java.util.*
 - java.time.*
 - java.sql.*
+
+Example with a return buffer:
+```python
+println("testing buf return from embedded java...")
+
+dpdl_stack_push("dpdlbuf_myres", 10)
+
+>>java
+static void myM(int val){
+	System.out.println("myM: " + val);
+}
+
+myM(arg0);
+
+String res = "";
+for(int i = 0; i < arg0; i++){
+	res = res + i;
+}
+
+return res;
+<<
+exit_code = dpdl_exit_code()
+println("embedded java exit code: " + exit_code)
+
+string resp_buf = dpdl_stack_buf_get("dpdlbuf_myres")
+println("response buffer: " + resp_buf)
+```
 
 The Dpdl language plugin uses the 'Janino' library to compile code blocks:
 
