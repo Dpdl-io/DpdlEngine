@@ -1,4 +1,4 @@
-# File: dpdlLuaSimple.h
+# File: lua/dpdlLuaSimple.h
 #
 # Example: 
 # This Dpdl script executes an embedded 'lua' script

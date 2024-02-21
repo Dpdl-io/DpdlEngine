@@ -1,4 +1,4 @@
-# File: dpdlEmbedPython.h
+# File: python/dpdlEmbedPython.h
 #
 # Example: This example shows how to embed and execute python code within Dpdl
 #

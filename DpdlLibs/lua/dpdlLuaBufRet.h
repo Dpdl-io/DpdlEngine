@@ -1,4 +1,4 @@
-# File: dpdlLuaBufRet.h
+# File: lua/dpdlLuaBufRet.h
 #
 # Example: 
 # This Dpdl script executes an embedded 'lua' script, dpdl_main(..) as entry point with a parameter table

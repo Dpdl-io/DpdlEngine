@@ -1,4 +1,4 @@
-# File: dpdlEmbedPython2.h
+# File: python/dpdlEmbedPython2.h
 #
 # Example: This example shows how to embed and execute python code with a main() function within Dpdl
 #
