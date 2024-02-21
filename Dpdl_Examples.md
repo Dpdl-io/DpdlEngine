@@ -165,11 +165,11 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 		
 * Embedded Python code execution within Dpdl script
 	
-	[dpdlEmbedPython.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlEmbedPython.h)
+	[python/dpdlEmbedPython.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/python/dpdlEmbedPython.h)
 	
 * Embedded Lua code execution within Dpdl script
 	
-	[dpdlLuaBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlLuaBufRet.h)
+	[lua/dpdlLuaBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/lua/dpdlLuaBufRet.h)
 	
 * Performs a discovery of bluetooth devices and saves the device addresses discovered in a record store
   
