@@ -165,7 +165,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **XML** with XPath parser
 * **JSON**
 * **Fast Prototyping**
-* **Small footprint**, Only **372 Kb** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
+* **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
 * Tools for automatically converting Dpdl scripts to Java , C/C++ and V code
 * Open Source language plugins
 
