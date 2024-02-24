@@ -26,6 +26,8 @@ Instructs the Dpdl runtime to compile in memory the embedded C code before execu
 
 Adds the specified include path reachable by the compiler
 
+Note: The directlry "./lib/native/$Platform/include" is already added per default to the include path where basic includes are present
+
 **`dpdl:-L$Path`**
 
 Adds the specified library path reachable by the compiler and linker
