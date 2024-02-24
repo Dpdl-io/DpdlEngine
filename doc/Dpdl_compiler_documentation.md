@@ -51,7 +51,7 @@ Example:
 ```c
 println("this Dpdl demo shows how C code can be dynamically compiled (in memory at runtime) within Dpdl")
 
-dpdl_stack_push("dpdl:compile", "dpdl:-bench", "dpdl:-I./DpdlLibs/C", "dpdl:-I/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include", "dpdl:-L/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib")
+dpdl_stack_push("dpdl:compile", "dpdl:-I./DpdlLibs/C", "dpdl:-I/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include", "dpdl:-L/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib")
 
 >>c
 #include<stdio.h>
