@@ -11,9 +11,9 @@
 func printMap(object m)
 	string res = ""
 	string elem = ""
-	object enum = m.elements()
-	while(enum.hasMoreElements())
-		elem = enum.nextElement()
+	object en = m.elements()
+	while(en.hasMoreElements())
+		elem = en.nextElement()
 		res = res + elem + " "
 	endwhile
 	return res
