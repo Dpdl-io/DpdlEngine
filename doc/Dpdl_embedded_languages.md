@@ -191,9 +191,13 @@ string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
 println("result: " + buf)
 ```
 
-#### Documentation C libraries (mode 1)
+#### Documentation C libraries (interpreted Mode 1)
 
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+
+#### Documentation C compiler (compiled Mode 2)
+
+[Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
 
 ### Embedding Python
