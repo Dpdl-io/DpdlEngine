@@ -171,6 +171,10 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 	
 	[lua/dpdlLuaBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/lua/dpdlLuaBufRet.h)
 	
+* Emedded Ruby code execution within Dpdl script
+
+	[ruby/dpdlRubyExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ruby/dpdlRubyExample.h)
+
 * Performs a discovery of bluetooth devices and saves the device addresses discovered in a record store
   
 	[bluetoothDiscoverySave.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bluetoothDiscoverySave.h)
