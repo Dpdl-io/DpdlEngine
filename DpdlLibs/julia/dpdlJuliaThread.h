@@ -1,4 +1,4 @@
-# File: dpdlJuliaThread.h
+# File: julia/dpdlJuliaThread.h
 #
 # Example: This Dpdl script executes an embedded Julia script that creates threads and calls a native Dpdl API function
 #

@@ -1,4 +1,4 @@
-# File: dpdlJuliaMaldelbrot.h
+# File: julia/dpdlJuliaMaldelbrot.h
 #
 # Example: This Dpdl script implements a console version of the Mandelbrot set fractal with embedded Julia code
 #

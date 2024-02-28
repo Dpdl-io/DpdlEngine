@@ -1,4 +1,4 @@
-# File: dpdlJuliaPlot.h
+# File: julia/dpdlJuliaPlot.h
 #
 # Example: This Dpdl script executes an embedded Julia script that plots data using the 'Plots' package
 #
