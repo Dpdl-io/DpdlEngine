@@ -28,6 +28,7 @@ savefig(p, "./Test/myplot.pdf")
 println("done")
 
 dispose_status = @ccall dpdl_julia_dispose()::Int32
+
 return 1
 <<
 
