@@ -14,11 +14,18 @@ println("Testing Plot data with Julia programming language...")
 >>julia
 using Plots
 
+println("generating plot...")
+
 x = range(0, 10, length=100)
 y1 = sin.(x)
 y2 = cos.(x)
 p = plot(x, [y1 y2])
-savefig(p, "./Test/myplot.pdf") 
+
+println("saving plot to pdf file...")
+
+savefig(p, "./Test/myplot.pdf")
+
+println("done")
 
 dispose_status = @ccall dpdl_julia_dispose()::Int32
 return 1
