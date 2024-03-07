@@ -36,6 +36,7 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 ### * Using the power of multiple programming languages and API's
 ### * Reuse code
 ### * No need to install, compile and configure environments
+### * Self-contained, no additional dependencies needed (except language language specific libraries)
 ### * Runs on constrained devices
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Compressing, querying and handling data efficiently on constrained devices
