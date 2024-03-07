@@ -39,7 +39,8 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 ### * Runs on constrained devices
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Compressing, querying and handling data efficiently on constrained devices
-### * Self-contained, no additional dependencies needed (except language language specific libraries)
+### * Self-contained, no additional dependencies required (except addon libraries)
+
 
 **DpdlEngine stack overview**
 
