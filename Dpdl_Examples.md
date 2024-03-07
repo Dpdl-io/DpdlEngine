@@ -113,6 +113,10 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)
 	
+* Example Dpdl script that executes an embedded 'Julia' script to download data via HTTP via url's contained in json data
+
+	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaHttp.h)
+	
 * Example Dpdl script using pointers and references
 
 	[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)

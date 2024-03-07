@@ -28,7 +28,7 @@ function download_content_from_url(json_file::String)
 	println("")
 
 	file_n = data["file_name"]
-    url = data["url_download"]
+	url = data["url_download"]
 
 	println("file: $file_n")
 	println("url: $url")
