@@ -43,8 +43,19 @@ Suggestion, feature wish list and contributions to enhance Dpdl are very welcome
 [Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)
 
 
-### What does the free trial 'DpdlEngine lite' release provide?
+### How much does a registered 'DpdlEngine lite' cost?
 
+
+| License type | number activation keys | Price (tax excl.) |
+| ------------ | ---------------------- | ----------------- |
+| individual   | 1 | 39 $ |
+| ------------ | ---------------------- | ----------------- |
+| small team   | 5 | 175 $ |
+| ------------ | ---------------------- | ----------------- |
+| medium team  | 10 | 312 $ |
+
+
+### What does the free trial 'DpdlEngine lite' release provide?
 
 The 'DpdlEngine lite' release is available for Free to try with some limitations/restrictions (see section below),
 and can be used to exploit the features of Dpdl and to develop and distribute small applications
