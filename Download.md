@@ -12,55 +12,60 @@ developed by
 
 ## Licensing
 
-Dpdl is a proprietary software developed by SEE Solutions. A valid license key file 'LicenseKeyDpdl' is required to run the
-software. The 'DpdlEngine lite' version of the software can be downloaded as a <ins>Free Trial Shareware</ins> (see Download section below).
-The professional version of DpdlEngine is released on custom licensing models depending on type of use and application domain.
-Feel free to get more info by writing to info@dpdl.io
+Dpdl is a proprietary software developed by SEE Solutions and requires a valid license key file 'LicenseKeyDpdl'
 
-## DOWNLOAD 'DpdlEngine lite' release package (Demo trial version)
+Dpdl is available as a standalone software package is two distinct release distributions:
 
-The 'DpdlEngine lite' Demo release (v1.0) can be downloaded as Free trial shareware (with some limitations), 
+- **DpdlEngine lite**
+- **DpdlEngine pro**
+
+
+The <ins>'DpdlEngine lite'</ins> software can be downloaded as a <ins>Free Trial Shareware</ins> with some limitations/restrictions. The software can be activated 
+by acquiring a personal license with corresponding activation key at a fixed, one time pricing model. 
+
+The <ins>'DpdlEngine pro'</ins> software is released on custom licensing models depending on the type of use and application domain.
+Feel free to get a non binding quotation by writing to info@dpdl.io
+
+
+## DOWNLOAD 'DpdlEngine lite' release package (Shareware trial version)
+
+The 'DpdlEngine lite' release (v1.0) can be downloaded as Free trial shareware (with some limitations/restrictions), 
 via the dpdl.io download form page:
 
 [DpdlEngine lite DOWNLOAD form](https://www.dpdl.io/download_request.htm)
 
-Documentation and Updates are updated regularly on the official DpdlEngine GitHub repository:
+Documentation and Updates are regularly available on the official DpdlEngine GitHub repository:
 [DpdlEngine GitHub](https://github.com/Dpdl-io/DpdlEngine)
 
-Check the 'DpdlEngine lite' Demo release limitations/restrictions, compared to the full DpdlEngine version, in the last section of this document.
+Check the 'DpdlEngine lite' Demo release limitations/restrictions, compared to the registered 'DpdlEngine lite' release, in the last section of this document.
 
-Suggestion and contributions to enhance Dpdl are very welcome and can be submitted on the discussion section on GitHub:
+Suggestion, feature wish list and contributions to enhance Dpdl are very welcome and can be submitted on the discussion section on GitHub:
 [Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)
 
 
-### Open source Dpdl embedded language plug-ins
-
-Some Dpdl embedded language plug-ins are published as open source projects:
-* ROOT C++ (will be released as open source soon)
+### What does the free trial 'DpdlEngine lite' release provide?
 
 
-## What does the free trial 'DpdlEngine lite' version provide?
-
-
-The 'DpdlEngine lite' release is available for Free to try with some limitations (see section below),
-and can be used to exploit the features of Dpdl and to develop small applications
-or utility tools. Some auxiliary Dpdl libraries are released under the open-source GNU
-license.
+The 'DpdlEngine lite' release is available for Free to try with some limitations/restrictions (see section below),
+and can be used to exploit the features of Dpdl and to develop and distribute small applications
+or utility tools.
 
 
 'DpdlEgine lite' includes:
 
 * The 'DpdlClient' console application that allows to execute a set of commands for interacting with the core DpdlEngine
 	  
-* Dpdl scripting engine with API libraries (Support for Embedded C, C++, Python, Julia, JavaScript, Lua and OCaml)
+* Dpdl scripting engine with API libraries.
+
+* Support for embeddable languages: Embedded C (interpreted and compiled), Python, JavaScript, Lua and OCaml)
 	
-* Example Dpdl scripts (located in './DpdlPackets/' and './DpdlLibs/' folder)
+* Example Dpdl scripts (located in the folder and './DpdlLibs/' and './DpdlPackets/' )
 	
 * Example DpdlPacket (dpdl_PHONEBOOK.dpdl) with corresponding Dpdl code definition file
 	
 
 
-## 'DpdlEngine lite' Demo release limitations/restrictions
+### 'DpdlEngine lite' Demo release limitations/restrictions
 
 	
 The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions
@@ -106,9 +111,17 @@ Contact us if this is the case.
 To buy a full featured 'DpdlEngine lite' license with no limitations/restrictions, regular updates and support,
 please submit your request via the following download request form, you will be contacted promptly: 
 
-https://www.dpdl.io/index_order.html
+[Request Form](https://www.dpdl.io/index_order.html)
 
-Or just write an e-mail to info@dpdl.io
+Or simply write an e-mail to info@dpdl.io
+
+
+## 'DpdlEngine pro' release
+
+The 'DpdlEngine pro' release is supplied tailored to specific requirements and offers also customizations applicable to the DpdlEngine core engine.
+
+In particular platform also specific targets can be defined (e.g run on Java 1.4, etc..) to meet the customer requirements at full extend.
+
 
 
 ## Other Downloads

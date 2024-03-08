@@ -201,48 +201,6 @@ Ensure the BlueZ library 'libbluetooth.so' is available on the path.
 Eventually you might neet to create a symbolic link to a specific version of the library (eg. libbluetooth.so -> libbluetooth.so.$version)
 
 
-## 'DpdlEngine lite' Demo release limitations/restrictions (compared to Full Registered version)
-
-	
-The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions
-compared to the full registered version:
-
-* At startup, the DpdlEngine requires the execution of a validation script.
-The script simply accesses a html website at www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
--> startup is therefore also slower in demo version
-	  
-The validation script can be inspected here: 
-[./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
-
-* The DpdlEngine parameters and configuration file 'DpdlEngine.ini' can be customized only in the registered version
-	
-* The class definition file (classes.txt), used for dynamic loading and resolving of library classes via loadObj(..) and getClass(..) methods can be edited only in the registered version of Dpdl.
-and java classes cannot be referenced with the full package path (eg. org.my.mycustomclass), only with the base name (eg. Math) as defined in the class definition file.
-	
-* The execution of Dpdl scripts is limited to 500 lines of code, embedded language code (C, C++, Python, Julia, JavaScript, Lua and OCaml) is limited to 100 lines of code per section.
-	
-* The Dpdl scripting API function 'systemExec' is available only in the registered version of Dpdl
-	
-* The interface API to develop custom API extensions (DpdlExtension) is available only in the registered version of Dpdl
-	
-* The compilation/encoding of DpdlPackets via Dpdl code definition files (ex. dpdl_PHONEBOOK.c) is available only in the registered version of Dpdl
-	
-* The Dpdl java API is available only in the registered Dpdl version (but Dpdl scripting API is fully available)
-
-* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 3 Threads allowed, further allocations will than rotate an override previews ones)
-
-* Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS 
-
-* On Windows OS the native Dpdl C API function 'dpdl_stack_buf_put(..)' is not available when option 'dpdl:compile' or 'dpdl:C99' is activated
-
-* The option 'dpdl:compile' used to <ins>compile</ins> embedded ANSI C code in memory at runtime can be used only 500 times in the unregistered version of Dpdl
-
-**NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
-More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
-Contact us if this is the case.
-
-
-
 
 
 
