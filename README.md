@@ -213,6 +213,42 @@ The default configuration currently includes <ins>Java 5 Platform API (1.5)</ins
 
 The default configuration <ins>can be easily extended or updated</ins> to resolve additional java APIs by editing the class definition configuration file.
 
+It's worth mentioning here that Java code can also be embedded directly within Dpdl as described below.
+
+Here just a quick example:
+```python
+println("Dpdl can also embed native java code...")
+
+object mystr = loadObj("String", "this is a Dpdl object mapped to java api, a str parameter")
+int x = 23
+
+dpdl_stack_push(mystr, "./Test/TestRead.txt", x)
+
+>>java
+
+System.out.println("Parameters: ");
+System.out.println("	arg0: " + arg0);
+System.out.println("	arg1: " + arg1);
+System.out.println("	arg2: " + arg2);
+
+static void myMethod1(){
+	System.out.println("myMethod1: " + 1);
+}
+
+myMethod1();
+
+for(int x = 0; x < arg2; x++){
+	System.out.println("x: " + x);
+}
+
+File myfile = new File(arg1);
+
+return 1;
+<<
+int exit_code = dpdl_exit_code()
+println("embedded java exit code: " + exit_code)
+
+```
 
 #### Dpdl Java API access documentation (default configuration)
 
