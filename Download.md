@@ -32,7 +32,7 @@ Feel free to get a non binding quotation by writing to info@dpdl.io
 The 'DpdlEngine lite' release (v1.0) can be downloaded as Free trial shareware (with some limitations/restrictions), 
 via the dpdl.io download form page:
 
-[DpdlEngine lite DOWNLOAD form](https://www.dpdl.io/download_request.htm)
+[DOWNLOAD form](https://www.dpdl.io/download_request.htm)
 
 Documentation and Updates are regularly available on the official DpdlEngine GitHub repository:
 [DpdlEngine GitHub](https://github.com/Dpdl-io/DpdlEngine)
@@ -45,14 +45,26 @@ Suggestion, feature wish list and contributions to enhance Dpdl are very welcome
 
 ### How much does a registered 'DpdlEngine lite' cost?
 
+The 'DpdlEngine lite' release license is granted on the basis of a fixed, one-time pricing model.
 
 | License type | number activation keys | Price (tax excl.) |
 | ------------ | ---------------------- | ----------------- |
 | individual   | 1 | 39 $ |
 | ------------ | ---------------------- | ----------------- |
-| small team   | 5 | 175 $ |
+| Small team   | 5 | 175 $ |
 | ------------ | ---------------------- | ----------------- |
-| medium team  | 10 | 312 $ |
+| Medium team  | 10 | 312 $ |
+
+
+#### Additional Subscriptions
+
+| Type | Description | Price (tax excl.) |
+| ------------ | ---------------------- | ----------------- |
+| Support   | 1 year support for 5 hours | 300 $ |
+| ------------ | ---------------------- | ----------------- |
+| Customizations  | Small customizations/features  | 120 $ / hourly |
+| ------------ | ---------------------- | ----------------- |
+| Extra plugins  | extra Plugin | 70 $ |
 
 
 ### What does the free trial 'DpdlEngine lite' release provide?
@@ -87,9 +99,11 @@ Or simply write an e-mail to info@dpdl.io
 
 ## 'DpdlEngine pro' release
 
-The 'DpdlEngine pro' release is supplied tailored to specific requirements and offers also customizations applicable to the DpdlEngine core engine.
+The 'DpdlEngine pro' release is supplied tailored to specific customer requirements and offers also customizations applicable to the DpdlEngine core engine.
 
 In particular platform also specific targets can be defined (e.g run on Java 1.4, etc..) to meet the customer requirements at full extend.
+
+The available embedded language plug-ins can also be requested with full source code disclosure for applying customizations and extensions.
 
 
 
@@ -109,14 +123,14 @@ https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions
 compared to the full registered version:
 
-* At startup, the DpdlEngine requires internet connectivity for the execution of a validation script.
+* At startup, the 'DpdlEngine lite' Demo requires internet connectivity for the execution of a validation script.
 The script simply accesses a html website at https://www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
 -> startup is therefore also a bit slower in demo version
 	  
 The validation script can be inspected here: 
 [./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)
 
-* The DpdlEngine parameters and configuration file 'DpdlEngine.ini' can be customized only in the registered version
+* The DpdlEngine parameters and configuration file 'DpdlEngine.ini' can be customized only in the full registered version
 	
 * The class definition file (classes.txt), used for dynamic loading and resolving of library classes via loadObj(..) and getClass(..) methods can be edited only in the registered version of Dpdl
 and java classes cannot be referenced with the full package path (eg. org.my.mycustomclass), only with the base name (eg. Math) as defined in the class definition file.
@@ -125,13 +139,13 @@ and java classes cannot be referenced with the full package path (eg. org.my.myc
 	
 * The Dpdl scripting API function 'systemExec' is available only in the registered version of Dpdl
 	
-* The interface API to develop custom API extensions (DpdlExtension) is available only in the registered version of Dpdl
+* The interface API to develop custom API extensions (DpdlExtension) is available only in the full registered version of Dpdl.
 	
 * The compilation/encoding of DpdlPackets via Dpdl code definition files (ex. dpdl_PHONEBOOK.c) is available only in the registered version of Dpdl
 	
 * The Dpdl java API is available only in the registered Dpdl version (but Dpdl scripting API is fully available)
 
-* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 3 Threads allowed, further allocations will than rotate an override previews ones)
+* The 'Thread(..)' and createThread(..) API functions allow only a limited number of threads to be allocated (max 3 Threads allowed, further allocations will than rotate an override previews thread allocations)
 
 * Native 'dpdlpython' api for embedding python within Dpdl scripts is not available on Windows OS
 
