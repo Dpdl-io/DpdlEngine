@@ -20,8 +20,12 @@ Dpdl is available as a standalone software package is two distinct release distr
 - **DpdlEngine pro**
 
 
+### DpdlEngine lite
+
 The <ins>'DpdlEngine lite'</ins> software can be downloaded as a <ins>Free Trial Shareware</ins> with some limitations/restrictions. The software can be activated 
 by acquiring a personal license with corresponding activation key at a fixed, one time pricing model. 
+
+### DpdlEngine pro
 
 The <ins>'DpdlEngine pro'</ins> software is released on custom licensing models depending on the type of use and application domain.
 Feel free to get a non binding quotation by writing to info@dpdl.io
