@@ -103,7 +103,7 @@ Available soon...
 https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
 
-### 'DpdlEngine lite' Demo release limitations/restrictions
+## 'DpdlEngine lite' Demo release limitations/restrictions
 
 	
 The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions
