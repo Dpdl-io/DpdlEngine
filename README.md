@@ -213,6 +213,14 @@ The default configuration currently includes <ins>Java 5 Platform API (1.5)</ins
 
 The default configuration <ins>can be easily extended or updated</ins> to resolve additional java APIs by editing the class definition configuration file.
 
+#### Dpdl Java API access documentation (default configuration)
+
+[Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
+
+[Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
+
+Additional API's can be added to the class definition file as needed.
+
 It's worth mentioning here that Java code can also be embedded directly within Dpdl as described below.
 
 Here just a quick example:
@@ -249,14 +257,6 @@ int exit_code = dpdl_exit_code()
 println("embedded java exit code: " + exit_code)
 
 ```
-
-#### Dpdl Java API access documentation (default configuration)
-
-[Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
-
-[Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
-
-Additional API's can be added to the class definition file as needed.
 
 ## Dpdl embeddable programming languages
 
