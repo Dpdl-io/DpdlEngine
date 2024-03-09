@@ -1,4 +1,4 @@
-# Download
+# Dpdl Download
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
