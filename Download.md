@@ -87,7 +87,7 @@ or utility tools.
 * Example DpdlPacket (dpdl_PHONEBOOK.dpdl) with corresponding Dpdl code definition file
 	
 
-## How to order a registered  'DpdlEngine lite' license?
+## How to order a registered  'DpdlEngine lite' release license?
 
 To buy a registered 'DpdlEngine lite' license with no limitations/restrictions, regular updates and support,
 please submit your request via the following download request form, you will be contacted promptly: 
@@ -99,12 +99,13 @@ Or simply write an e-mail to info@dpdl.io
 
 ## 'DpdlEngine pro' release
 
-The 'DpdlEngine pro' release is supplied tailored to specific customer requirements and offers also customizations applicable to the DpdlEngine core engine.
+The 'DpdlEngine pro' release is supplied tailored to specific customer requirements in terms of licensing model and release package.
 
-In particular platform also specific targets can be defined (e.g run on Java 1.4, etc..) to meet the customer requirements at full extend.
+In particular also platform specific targets can be defined (e.g run on Java 1.4, JavaME etc..) to meet at best the customer requirements at full extend.
 
-The available embedded language plug-ins can also be requested with full source code disclosure for applying customizations and extensions.
+The available embedded language plug-ins can also be requested along with its full source code disclosure for applying customizations and develop further extensions.
 
+We strongly believe that business strategies can be worked out together with our clients.
 
 
 ## Other Downloads
