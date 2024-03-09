@@ -75,6 +75,33 @@ or utility tools.
 * Example DpdlPacket (dpdl_PHONEBOOK.dpdl) with corresponding Dpdl code definition file
 	
 
+## How to order a registered  'DpdlEngine lite' license?
+
+To buy a registered 'DpdlEngine lite' license with no limitations/restrictions, regular updates and support,
+please submit your request via the following download request form, you will be contacted promptly: 
+
+[Request Form](https://www.dpdl.io/index_order.html)
+
+Or simply write an e-mail to info@dpdl.io
+
+
+## 'DpdlEngine pro' release
+
+The 'DpdlEngine pro' release is supplied tailored to specific requirements and offers also customizations applicable to the DpdlEngine core engine.
+
+In particular platform also specific targets can be defined (e.g run on Java 1.4, etc..) to meet the customer requirements at full extend.
+
+
+
+## Other Downloads
+
+### Dpdl embedded language plug-in Add-ons:
+
+The following Dpdl language plug-in Add-on contains the Dpdl native library for embedding 'ROOT' and 'Julia' languages.
+
+Available soon...
+https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
+
 
 ### 'DpdlEngine lite' Demo release limitations/restrictions
 
@@ -116,32 +143,5 @@ and java classes cannot be referenced with the full package path (eg. org.my.myc
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
 Contact us if this is the case.
 
-
-## How to order a 'full' DpdlEngine license?
-
-To buy a full featured 'DpdlEngine lite' license with no limitations/restrictions, regular updates and support,
-please submit your request via the following download request form, you will be contacted promptly: 
-
-[Request Form](https://www.dpdl.io/index_order.html)
-
-Or simply write an e-mail to info@dpdl.io
-
-
-## 'DpdlEngine pro' release
-
-The 'DpdlEngine pro' release is supplied tailored to specific requirements and offers also customizations applicable to the DpdlEngine core engine.
-
-In particular platform also specific targets can be defined (e.g run on Java 1.4, etc..) to meet the customer requirements at full extend.
-
-
-
-## Other Downloads
-
-### Dpdl embedded language plug-in Add-ons:
-
-The following Dpdl language plug-in Add-on contains the Dpdl native library for embedding 'ROOT' and 'Julia' languages.
-
-Available soon...
-https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
 
