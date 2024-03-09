@@ -62,9 +62,9 @@ The 'DpdlEngine lite' release license is granted on the basis of a fixed, one-ti
 | ------------ | ---------------------- | ----------------- |
 | Support   | 1 year support for 5 hours | 300 $ |
 | ------------ | ---------------------- | ----------------- |
-| Customizations  | Small customizations/features  | 120 $ / hourly |
+| Customizations  | customizations/feature request  | 120 $ / hourly |
 | ------------ | ---------------------- | ----------------- |
-| Extra plugins  | extra Plugin | 70 $ |
+| Extra plugin  | extra embedded language plugin | 70 $ |
 
 
 ### What does the free trial 'DpdlEngine lite' release provide?
@@ -78,9 +78,9 @@ or utility tools.
 
 * The 'DpdlClient' console application that allows to execute a set of commands for interacting with the core DpdlEngine
 	  
-* Dpdl scripting engine with API libraries.
+* Dpdl scripting engine with Dpdl API libraries.
 
-* Support for embeddable languages: Embedded C (interpreted and compiled), Python, JavaScript, Lua, Java and OCaml)
+* Support for the following embeddable languages: Embedded C (interpreted and compiled), Python, JavaScript, Lua, Java and OCaml)
 	
 * Example Dpdl scripts (located in the folder and './DpdlLibs/' and './DpdlPackets/' )
 	
