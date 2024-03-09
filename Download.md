@@ -121,7 +121,7 @@ The validation script can be inspected here:
 * The class definition file (classes.txt), used for dynamic loading and resolving of library classes via loadObj(..) and getClass(..) methods can be edited only in the registered version of Dpdl
 and java classes cannot be referenced with the full package path (eg. org.my.mycustomclass), only with the base name (eg. Math) as defined in the class definition file.
 	
-* The execution of Dpdl scripts is limited to 500 lines of code, embedded language code (C, C++, Python, Julia, JavaScript, Lua and OCaml) is limited to 100 lines of code per section.
+* The execution of Dpdl scripts is limited to 500 lines of code, embedded language code (C, Python, JavaScript, Lua and OCaml) is limited to 100 lines of code per section.
 	
 * The Dpdl scripting API function 'systemExec' is available only in the registered version of Dpdl
 	
