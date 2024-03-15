@@ -17,9 +17,9 @@ developed by
 # What is Dpdl?
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl and enables access to the Java platform JRE API and to any external java library via a dedicated API.
-Dpdl supports also the <ins>embedding and on-the-fly execution</ins>  of other programming languages (**ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby and OCaml**) directly within Dpdl scripts.
-Therefore Dpdl allows access to thousands of existing high-quality libraries.
+Dpdl enables access to the Java platform JRE API and to external java libraries and
+supports the <ins>embedding and on-the-fly execution</ins>  of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby and OCaml**
+directly within Dpdl code. This makes Dpdl a powerful platform due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 
 Dpdl is self contained and is highly customizable via a dedicated extension interface. Further programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
@@ -31,6 +31,8 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + OCaml + Java) = <ins>Powerful and Versatile</ins>
 
+**Dpdl is designed to:**
+
 ### * Develop your ideas faster
 ### * On multiple platforms
 ### * Using the power of multiple programming languages and API's
@@ -40,6 +42,7 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Compressing, querying and handling data efficiently on constrained devices
 ### * Self-contained, no additional dependencies required (except add-on libraries)
+### * Facilitate rapid prototyping for hardware programming
 
 
 **DpdlEngine stack overview**
@@ -135,7 +138,7 @@ You can find more Dpdl examples on the following page:
 Dpdl is suitable for rapid application development in various domains, in particular also for small development of
 applications on small memory footprint devices, and can be used as embedded scripting engine for various applications.
 
-The main nature of Dpdl is for enabling rapid development, code reuse and allow a high degree of portability while being simple,
+The main nature of Dpdl is for enabling rapid prototyping, rapid development, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
 that a vaster set of APIs are available for a given platform.
 Dpdl has also built-in constructs that enable dynamic code generation.
@@ -172,7 +175,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Fast Prototyping**
 * **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
 * Tools for automatically converting Dpdl scripts to Java , C/C++ and V code
-* Open Source language plugins
+* Open Source language plug-ins
 
 
 ## Access to the complete JRE Java platform API and any external java libraries
@@ -260,10 +263,12 @@ println("embedded java exit code: " + exit_code)
 
 ## Dpdl embeddable programming languages
 
-Multiple programming languages can be embedded within the same **Dpdl** script via a the keyword **`>>`**.
-Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration. 
+Multiple programming languages can be embedded within the same **Dpdl** code via the keyword **`>>`**.
+Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration. This enables basically every sort of 
+programming language or natural language interpreter to be embedded directly in Dpdl code.
+This features is very useful for rapid development and rapid prototyping and is also a key feature for generative software.
 
-### Currenlty the following programming languages are supported:
+### Currently the following programming languages are supported:
 
 * **`C interpreted`** code (minimal subset of C90 with standard C libs included)
 * **`ANSI C`**  (full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')

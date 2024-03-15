@@ -1352,7 +1352,7 @@ import virtual DATA none  {
 
 ```
 
-The DpdlPacket as defined above, can be allocated and queried via Dpdl scripting API or via the equivalent Java API
+The DpdlPacket as defined above, can be allocated and queried via Dpdl API or via the equivalent Java API
 
 ```python
 int status = DPDLAPI_swapDpdlChunk("dpdl_PHONEBOOK_BZ", "BolzanoPhone")
