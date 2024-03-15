@@ -20,7 +20,7 @@ developed by
 * Access to the full underlying Java Platform API (JRE) or other external java libraries
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
-* Embeddable languages: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby and OCaml**. These programming can be embedded directly within Dpdl scripts (interpreted/compiled code).
+* Embeddable languages: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java and OCaml**. These programming can be embedded directly within Dpdl scripts (interpreted/compiled code).
 * Other programming languages can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Static script execution: static code declarations (*.h_static)
