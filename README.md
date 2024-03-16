@@ -126,7 +126,7 @@ This is a 3D model visualization of chemical molecules using the JavaFX library.
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="85%" height="85%">
 </p>
 
-[visualize Video of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
+[visualize VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
 
 
 You can find more Dpdl examples on the following page: 
