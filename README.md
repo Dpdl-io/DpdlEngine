@@ -18,7 +18,7 @@ developed by
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 Dpdl enables access to the Java platform JRE API and to external java libraries and
-supports the <ins>embedding and on-the-fly execution</ins>  of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby and OCaml**
+supports the <ins>embedding and on-the-fly execution</ins>  of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**
 directly within Dpdl code. This makes Dpdl a powerful platform due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 
 Dpdl is self contained and is highly customizable via a dedicated extension interface. Further programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
@@ -29,7 +29,7 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
-## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + OCaml + Java) = <ins>Powerful and Versatile</ins>
+## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + OCaml + Java + Clojure) = <ins>Powerful and Versatile</ins>
 
 **Dpdl is designed to:**
 
@@ -160,7 +160,7 @@ on devices that have limited memory and storage capabilities.
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Dpdl scripting API provides access to the complete underlying Java JRE platform API and to external Java libraries**
-* **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, OCaml and Java language can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
+* **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, OCaml, Java and Clojure programming languages can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
 * **Other programming languages can be embedded via a dedicated interface** (see [DpdlCustom] tag in DpdlEngine.ini)
 * **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different platforms (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
@@ -280,6 +280,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`OCaml`**
 * **`Java`**
 * **`ROOT C++`**
+* **`Clojure`**
 
 
 #### Dpdl example with embedded 'ROOT C++' code
