@@ -771,9 +771,13 @@ println("myx: " + myx)
 
 ### Dpdl embedded C code
 
-Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90, and full ISO C99 standard) directly within Dpdl scripts.
+Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90, and full ISO C99 standard) directly within Dpdl code.
 
-To embed C code within Dpdl scripts use the keyword '**>>c**' to start the embedded code, and the keyword '**<<**' to end the embedded code (Note: The keyword has to be on a single line)
+The C interpreter and compiler is available as Dpdl language plug-in with a very compact footprint of only **`375 Kb`** on Raspberry Pi,
+with no extra dependencies required.
+
+To embed C code within Dpdl code use the keyword '**>>c**' to start the embedded code, and the keyword '**<<**' to end the embedded code.
+Note: The keyword has to be on a single line
 
 
 Embedded C code can be executed in 2 different Modes:
@@ -784,7 +788,6 @@ Embedded C code can be executed in 2 different Modes:
 #### Mode 1 (interpreted)
 
 The C code is executed with Mode(1) includes only a minimal subset of the C library and is POSIX compliant (also on Windows OS).
-It's very compact (only ca. 400 Kb on Raspberry Pi) and has no extra dependencies.
 Custom libraries and functions can be implemented and added if needed via dpdl api functions.
 
 The default memory stack size for the C interpreter is kept small and is currently configured to be 128 Kb.
