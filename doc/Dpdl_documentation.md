@@ -9,7 +9,7 @@ developed by
 &copy; 2003	
 
 
-## Dpdl scripting language
+## Dpdl language specification
 
 ### Features:
 
