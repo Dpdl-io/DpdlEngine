@@ -28,6 +28,7 @@ Currently Dpdl supports the embedding of the following languages available as in
 * **`Ruby`**
 * **`Java`**
 * **`C++ ROOT`**
+* **`Clojure`**
  
 
 ### Embedding C
@@ -672,5 +673,6 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 - root (c++) -> https://root.cern/
 - java -> http://janino-compiler.github.io/janino/
 - ocaml -> http://www.ocamljava.org/
+- clj -> https://clojure.org/
  
  

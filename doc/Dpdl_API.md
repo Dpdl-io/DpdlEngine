@@ -10,7 +10,7 @@ developed by
 &copy; 2003
 		
 
-## Dpdl scripting API Documentation
+## Dpdl API Documentation
 
 DpdlEngine V1.0
 		
