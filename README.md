@@ -218,11 +218,14 @@ The default configuration <ins>can be easily extended or updated</ins> to resolv
 
 #### Dpdl Java API access documentation (default configuration)
 
+The set of classes accessible with Dpdl is defined to be the following set.
+Note: The methods of the classes accessible refer to the current JRE instance on which Dpdl is running.
+
 [Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
 [Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
 
-Additional API's can be added to the class definition file as needed.
+Additional classes and API's can be added to the class definition file as needed.
 
 It's worth mentioning here that Java code can also be embedded directly within Dpdl as described below.
 
