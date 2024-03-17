@@ -218,8 +218,8 @@ The default configuration <ins>can be easily extended or updated</ins> to resolv
 
 #### Dpdl Java API access documentation (default configuration)
 
-The set of classes accessible with Dpdl is defined to be the following set.
-Note: The methods of the classes accessible refer to the current JRE instance on which Dpdl is running.
+The set of classes accessible with Dpdl is defined to be the following set, instead, methods of the classes accessible are referred to the current JRE instance
+on which Dpdl is running.
 
 [Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 

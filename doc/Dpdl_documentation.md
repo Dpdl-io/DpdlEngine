@@ -610,6 +610,9 @@ The classes where this applies are listed here: [doc/Dpdl_class_resolve.md](http
 
 The default configuration resolves the following API's:
 
+The set of classes accessible with Dpdl is defined to be the following set, instead, methods of the classes accessible are referred to the current JRE instance
+on which Dpdl is running.
+
 [Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
 [Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
