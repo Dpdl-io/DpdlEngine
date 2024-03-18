@@ -131,6 +131,10 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[js/dpdlJsExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsExample.h)
 	
+* Example Dpdl script that embeds Clojure code
+
+	[clj/dpdlCljExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/clj/dpdlCljExample.h)
+
 * Example Dpdl script (embedded C code compiled at runtime) that launches threads (pThreads) to sum numbers
 
 	[C/dpdlCThreadExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCThreadExample.h)
