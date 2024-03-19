@@ -14,8 +14,18 @@ dpdl_stack_var_put("arg1", "test1")
 dpdl_stack_var_put("arg2", "test2")
 
 >>clj
-(ns dpdl) (defn dpdl_main[param]
-			(str "Hello clojure from Dpdl!:) param: " param " "))
+(ns dpdl)
+	(defn make-adder [x]
+	  (let [y x]
+		(fn [z] (+ y z))))
+
+	(def add2 (make-adder 2))
+
+	;; a comment entry point
+	(defn dpdl_main[param & more]
+			(def np "nr. of extra param: " (count more))
+			(str "Hello Clojure from Dpdl!:) param: " param " more: " np " res:" (add2 2)))
+
 <<
 
 int exit_code = dpdl_exit_code()
