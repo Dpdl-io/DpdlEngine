@@ -23,9 +23,9 @@ dpdl_stack_var_put("arg2", "test2")
 
 	;; a comment entry point
 	(defn dpdl_main[param & more]
-			(def np "nr. of extra param: " (count more))
-			(str "Hello Clojure from Dpdl!:) param: " param " more: " np " res:" (add2 2)))
-
+			(println (str "Hello Clojure from Dpdl!:) param: " param " more: " (count more) " res:" (add2 2)))
+			(int 1)
+	)
 <<
 
 int exit_code = dpdl_exit_code()
