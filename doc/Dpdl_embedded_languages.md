@@ -573,7 +573,7 @@ The Dpdl language plugin uses the 'Janino' library to compile code blocks:
 Refer to the 'Janino' documentation for the java language features supported: http://janino-compiler.github.io/janino/
 
 
-### ROOT Data Analysis Framework (C++)
+### Embedding ROOT C++ Data Analysis Framework
 
 
 https://root.cern/gallery/
@@ -606,9 +606,44 @@ int exit_code = dpdl_exit_code()
 println("embedded ROOT exit code: " + exit_code)
 ```
 
+### Embedding Clojure
+
+#### keyword **`>>clj`**
+
+The functional programming language 'Clojure' can be embedded within Dpdl via the keyword **`>>clj`**
+
+The embedded 'Clojure' code is compiled before execution. The function 'dpdl_main' is the entry point
+
+Example Dpdl code with embedded 'Clojure':
+```python
+println("testing embedded Clojure...")
+
+dpdl_stack_var_put("arg1", "test1")
+dpdl_stack_var_put("arg2", "test2")
+
+>>clj
+(ns dpdl)
+	(defn make-adder [x]
+	  (let [y x]
+		(fn [z] (+ y z))))
+
+	(def add2 (make-adder 2))
+
+	;; a comment entry point
+	(defn dpdl_main[param & more]
+			(def np "nr. of extra param: " (count more))
+			(str "Hello Clojure from Dpdl!:) param: " param " more: " np " res:" (add2 2)))
+
+<<
+
+int exit_code = dpdl_exit_code()
+println("embedded Clojure exit code: " + exit_code)
+```
+
+
 ### OCaml (Experimental)
 
-#### keyword **`**
+#### keyword **`>>ocaml`**
 
 Currently the functional programming language '**OCaml**' (https://ocaml.org/) is supported, via package (http://www.ocamljava.org/),
 and can be embedded directly within Dpdl scripts with the keyword **`>>ocaml`**
