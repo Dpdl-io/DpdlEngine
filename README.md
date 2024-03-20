@@ -408,12 +408,12 @@ Note: The DpdlEngine needs to be re-packaged for running on Android, JavaME and 
 
 (*) **available soon**
 
-| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |Ruby |Java |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|X|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|X 3.2.2|X|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|X|
-| Windows64|X|*|*|X|X v4.01|*|*|*|X|
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |OCaml |Lua |ROOT C++ |Ruby |Java |Clojure |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|X v6.28|*|X|X v1.12.0|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v4.01|X v5.4|X v6.28|X 3.2.2|X|X v1.12.0|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v4.01|X v5.4|*|*|X|X v1.12.0|
+| Windows64|X|*|*|X|X v4.01|*|*|*|X|X v1.12.0|
 
 	
 ## Documentation
