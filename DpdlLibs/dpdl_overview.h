@@ -76,7 +76,7 @@ struct myStruct {
 
 # main
 bool startThreads = false
-println("a sample dummy Dpdl script...")
+println("a sample program written with Dpdl (Dynamic Packet Definition Language). (c) 2003 Armin Costa...")
 
 string mystr = "my message: "
 object mystrobj = "my dpdl object"
@@ -170,16 +170,16 @@ object myo = loadObj("String", "my java object")
 var v = "my var"
 var v2 = 10
 
-println("mys(string)=" + mys)
-println("i(int)=" + i)
-println("f(float)=" + f)
-println("d(double)=" + d)
-println("l(long)=" + l)
-println("c(byte)=" + c)
-println("b(bool)=" + b)
-println("aa(struct)=" + aa)
-println("myo(object)=" + myo)
-println("v(var)=" + v)
+println("mys=" + mys + " type=" + typeof(mys))
+println("i=" + i + " type=" + typeof(i))
+println("f=" + f + " type=" + typeof(f))
+println("d=" + d + " type=" + typeof(d))
+println("l=" + l + " type=" + typeof(l))
+println("c=" + c + " type=" + typeof(c))
+println("b=" + b + " type=" + typeof(b))
+println("aa=" + aa + " type=" + typeof(aa))
+println("myo=" + myo + " type=" + typeof(myo))
+println("v=" + v + " type=" + typeof(v))
 
 
 println("the variable 'v' is of type: " + typeof(v))
@@ -263,6 +263,65 @@ exit_code = dpdl_exit_code()
 println("embedded Python exit code: " + exit_code)
 println("------------------------")
 
+println("")
+println("Now we embed some native java code...")
+
+string str = "this is my str parameter"
+int i = 100
+float f = 0.2
+double d = 9999.9d
+
+dpdl_stack_push(str, "./Test/TestRead.txt", i, f, d)
+
+>>java
+
+System.out.println("Parameters: ");
+System.out.println("	arg0: " + arg0);
+System.out.println("	arg1: " + arg1);
+System.out.println("	arg2: " + arg2);
+System.out.println("	arg3: " + arg3);
+System.out.println("	arg4: " + arg3);
+
+static void myMethod1(){
+	System.out.println("myMethod1: " + 1);
+}
+
+myMethod1();
+myMethod2();
+
+static void myMethod2(){
+	System.out.println("method2: " + 2);
+}
+
+for(int x = 0; x < 3; x++){
+	System.out.println("x: " + x);
+}
+
+File myfile = new File(arg1);
+
+StringBuilder stringBuilder = new StringBuilder();
+
+try{
+	BufferedReader reader = new BufferedReader(new FileReader(myfile));
+
+	String line = null;
+	while ((line = reader.readLine()) != null) {
+		stringBuilder.append(line);
+	}
+}catch(Exception e){
+	System.out.println("Error in reading file");
+}
+
+System.out.println("myfile content: " + stringBuilder.toString());
+
+return 1;
+<<
+
+int exit_code = dpdl_exit_code()
+println("embedded java exit code: " + exit_code)
+
+println("------------------------")
+
 prointln("...")
 println("embed many other languages...")
 println("...")
@@ -321,3 +380,8 @@ mya = myload.myFuncStructMod("MyLC", mya)
 println("myanew: " + mya)
 println("mya.id: " + mya.id)
 println("mya.y: " + mya.y)
+
+println("-------------------------------------")
+int myx = 6
+int myy = 3
+println("this is also possible: ${ println(\"res=\" + (myload.x + mya.y))}")

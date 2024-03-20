@@ -20,11 +20,11 @@ developed by
 * Access to the full underlying Java Platform API (JRE) or other external java libraries
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
-* Embeddable languages: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java and OCaml**. These programming can be embedded directly within Dpdl scripts (interpreted/compiled code).
+* Embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
 * Other programming languages can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Static script execution: static code declarations (*.h_static)
-* Tools for converting Dpdl scripts to Java and C/C++ code (in development)
+* Tools for converting Dpdl code to Java and C/C++ code (in development)
 
 Here you can find a very small 'dummy' sample app
 
@@ -39,7 +39,7 @@ The native Dpdl API functions usable inside Dpdl scripts are listed here:
 
 [Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-As Dpdl is capable of loading also java classes, the whole Java API is available inside Dpdl scripts.
+As Dpdl is capable of loading also java classes, the whole Java API is available inside Dpdl code.
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getClass(..)`**
 
 
@@ -456,7 +456,7 @@ println("yv: " + yv)
 
 ### Dpdl Threads
 
-Threads can be created inside Dpdl scripts with the **`Thread(..)`** api function.
+Threads can be created inside Dpdl with the **`Thread(..)`** api function.
 
 Multiple threads are allowed inside a single Dpdl script.
 
@@ -647,9 +647,9 @@ println(datestr.toUpperCase())
 NOTE: Only the full registered version of Dpdl allows editing of the class definition file. The default 'DpdlEngine lite' configuration contains
 only the class references of Java Platform JRE 1.5 and Bluetooth JSR-82 API.
 
-### Load Dpdl script as DpdlObject
+### Load Dpdl code as DpdlObject
 
-Dpdl scripts can be loaded as an ordinary DpdlObjects with the function **`loadCode(..)`**.
+Dpdl code can be loaded as an ordinary DpdlObjects with the function **`loadCode(..)`**.
 
 The object can be accessed like an other object except that the function calls currently must include also the name of the script loaded -> this will be changed in next releases so that the calls are the same as for other objects.
 
@@ -872,9 +872,9 @@ In the case the library is updated, the corresponding verification checksums nee
 
 ### Embedding of Python
 
-Python code can be embedded within Dpdl scripts by using the keyword '**>>python**'.
+Python code can be embedded within Dpdl code by using the keyword '**>>python**'.
 
-Example Dpdl script with embedded 'Python' code:
+Example Dpdl code with embedded 'Python' code:
 ```python
 println("testing embedding python code")
 println("")
@@ -939,7 +939,7 @@ Support for more platforms will be released soon. MicroPython will also be avail
 
 ### Embedded OCaml code (experimental)
 
-Dpdl supports also the embedding of 'OCaml' code directly within Dpdl scripts through the **'>>ocaml'** keyword.
+Dpdl supports also the embedding of 'OCaml' code directly within Dpdl code through the **'>>ocaml'** keyword.
 
 The embedded OCaml code is executed by the Dpdl runtime through the 'ocamljava' library (http://www.ocamljava.org/) and
 requires the following jar library located in the lib folder './lib': 'ocamlrun-scripting.jar' 
@@ -947,7 +947,7 @@ requires the following jar library located in the lib folder './lib': 'ocamlrun-
 If the 'dpdl:compile' option has been set, the OCaml code is compiled at runtime to improve speed.
 The 'ocamljava.jar' in this case needs to be present in the 'lib' folder. 
 
-Example Dpdl script with embedded 'OCaml' code:
+Example Dpdl code with embedded 'OCaml' code:
 ```python
 println("testing Dpdl embedded OCaml..")
 
@@ -1153,7 +1153,7 @@ To run to DpdlClient console application you need Java JRE >= 1.5 and run the fo
 java -jar DpdlEngine_V1.0_release.jar
 ```
 
-To execute a Dpdl script directly use the '-load' parameter at DpdlEngine startup:
+To execute a Dpdl code directly use the '-load' parameter at DpdlEngine startup:
 ```
 java -jar DpdlEngine_V1.0_release.jar -load yourScript.h
 ```
@@ -1161,7 +1161,7 @@ java -jar DpdlEngine_V1.0_release.jar -load yourScript.h
 NOTE: The newer release of Java (Java20) has introduced the concepts of 'modules'. A compliant 
 version of DpdlEngine will be released soon.
 
-If you need to run the DpdlClient on the latest version of Java, use the following command and add the modules you want to access via Dpdl scripting:
+If you need to run the DpdlClient on the latest version of Java, use the following command and add the modules you want to access via Dpdl code:
 
 ```
 java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED -cp ./lib/mjcoap.jar -jar DpdlEngine_V1.0_release.jar
@@ -1169,7 +1169,7 @@ java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens jav
 
 ## Run Dpdl scripts
 
-To run the Dpdl scripting examples start the DpdlClient by executing the following script:
+To run the Dpdl code examples start the DpdlClient by executing the following script:
 
 on Linux/MacOS
 ```
@@ -1182,7 +1182,7 @@ on Windows
 ```
 
 
-You can execute Dpdl scripts in the following ways:
+You can execute Dpdl code in the following ways:
 
 * Load and execute the Dpdl script file with the -load command
 * Input the script directly in the DpdlClient command console with the -exec command ( with closing </script> tag)
@@ -1218,13 +1218,13 @@ run_DpdlClientScript.sh
 int status = DPDLAPI_execCode("sample.h", "null)
 ```
 
-Here you can find all methods available for the Dpdl scripting API: 
+Here you can find all methods available for the Dpdl API: 
 
 [Dpdl_API](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 Dpdl allows to access all java classes of the underlying JRE environment,
 providing access to the whole Java platform API via the loadObj(..) and the getClass(..)
-Dpdl scripting API methods.
+Dpdl API methods.
 
 In this way Dpdl can access the classes and api of external java libraries.
 
@@ -1292,7 +1292,7 @@ in chunks of highly compressed data, along with database indexes. Data chunks ca
 needed anymore. This allows a very efficient method of accessing and searching big amounts of data in memory constrained 
 devices.
 
-Dpdl scripting can be embedded in the DpdlPacket code definition and allows to trigger its execution on predefined callbacks.
+Dpdl code can be embedded in the DpdlPacket code definition and allows to trigger its execution on predefined callbacks.
 This makes a DpdlPacket an executable packet of data.
 
 This is an example DpdlPacket code definition (a phonebook database):

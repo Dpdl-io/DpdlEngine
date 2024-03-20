@@ -9,7 +9,7 @@ developed by
 
 ## New 
 
-* NEW (16.03.2024) Dpdl embedded language plugin form Clojure has been developed and is in testing phase. It will be available in the coming release of DpdlEngine
+* NEW (16.03.2024) Dpdl embedded language plugin form Clojure has been developed and has been included in the latest 'DpdlEngine lite' release
 
 * (18.02.2024) Dpdl embedded language plugin for 'Java' code blocks is available
 * (04.02.2024) Dpdl embedded language plugin for 'Ruby' has been implemented and will be included in the coming releases of 'DpdlEngine lite'
