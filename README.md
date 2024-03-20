@@ -61,7 +61,7 @@ The Dpdl language constructs and syntax is kept simple and follows an object ori
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
 are integrated by default and third party libraries and functions can be added as extensions.
 
-### Sample Dpdl script (Bluetooth device discovery using high level Dpdl BT API):
+### Sample Dpdl code (Bluetooth device discovery using high level Dpdl BT API):
 ```python
  int status = DPDLAPI_searchClientsOnServer()
  int status_discovery = dpdlFalse
@@ -159,8 +159,8 @@ on devices that have limited memory and storage capabilities.
 ### Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
-* **Dpdl scripting API provides access to the complete underlying Java JRE platform API and to external Java libraries**
-* **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, OCaml, Java and Clojure programming languages can be embedded and executed** directly within Dpdl scripts (interpreted/compiled code)
+* **Dpdl API provides access to the complete underlying Java JRE platform API and to external Java libraries**
+* **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, OCaml, Java and Clojure programming languages can be embedded and executed** directly within Dpdl code (interpreted/compiled code)
 * **Other programming languages can be embedded via a dedicated kernel execution interface** (see [DpdlCustom] tag in DpdlEngine.ini)
 * **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different platforms (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
@@ -174,14 +174,14 @@ The speedup is x 25 times faster compared to a standard record store access
 * **JSON**
 * **Fast Prototyping**
 * **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
-* Tools for automatically converting Dpdl scripts to Java , C/C++ and V code
+* Tools for automatically converting Dpdl code to Java , C/C++ and V code
 * Open Source language plug-ins
 
 
 ## Access to the complete JRE Java platform API and any external java libraries
 
 
-The Dpdl scripting language API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and <ins>external java libraries</ins>.
+The Dpdl language API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and <ins>external java libraries</ins>.
 
 **Example:** using a java HashMap (which is resolved to java.util.HashMap)
 ```python
@@ -292,7 +292,7 @@ ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/
 
 ROOT C++ code can be embedded within Dpdl via the keyord **`>>root`**
 
-Example Dpdl script embedding 'ROOT C++':
+Example Dpdl code embedding 'ROOT C++':
 
 <img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="60%" height="60%">
 
@@ -325,14 +325,14 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
  
 ### Dpdl with embedded C code
 
-Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl scripts with the keyword **`>>c`**
+Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl code with the keyword **`>>c`**
 The C code can be embedded with 2 different Modes:
  
 1) <ins>Interpreted</ins>
 2) <ins>Compiled in memory at runtime</ins> (if option '**dpdl:compile**' is enabled)
 
 
-Example Dpdl script with embedded C code (Mode 1):
+Example Dpdl code with embedded C code (Mode 1):
 ```c
 # main
 # starting with Dpdl, pushing parameters on the stack and embedding C code
@@ -423,7 +423,7 @@ The Dpdl framework and API documentation are available via the following links:
 
 [Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
 
-[Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 [Dpdl embedded languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
 
@@ -449,15 +449,15 @@ See 'Download' page for more details:
 
 Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
 
-* Front-End compiler based on LLVM for compiling Dpdl scripts to IR
+* Front-End compiler based on LLVM for compiling Dpdl code to IR
 
 
 ### Embedding of 'Python' code
 
-Python code can be embedded within Dpdl scripts by using the keyword **`>>python`**.
+Python code can be embedded within Dpdl code by using the keyword **`>>python`**.
 MicroPython will also be supported as option in the coming release.
 
-Example Dpdl script with embedded 'Python' code:
+Example Dpdl code with embedded 'Python' code:
 ```python
 println("testing embedding python code")
 println("")
@@ -481,7 +481,7 @@ Julia is a powerful and performant computational programming language  (https://
 
 Julia code can be embedded within Dpdl via the keyord **`>>julia`**
 
-Example Dpdl script embedding 'Julia' that generates a Plot and saves the result as PDF file:
+Example Dpdl code embedding 'Julia' that generates a Plot and saves the result as PDF file:
 <img src="http://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="60%" height="60%">
 ```python
 #main
@@ -551,9 +551,9 @@ You can find examples in the folder './DpdlLibs/js/'
 
 ### Embedding of 'Lua' code
 
-Lua code can be embedded within Dpdl scripts by using the keyword **`>>lua`**.
+Lua code can be embedded within Dpdl code by using the keyword **`>>lua`**.
 
-Example Dpdl script with embedded 'Lua' code:
+Example Dpdl code with embedded 'Lua' code:
 ```python
 println("testing embedding Lua within Dpdl....")
 
@@ -624,7 +624,7 @@ Further Dpdl examples can be found on this page:
 A DpdlPacket is a compact, highly compressed executable packet of data with built-in
 database technology that can be created based on a defined Dpdl code definition. 
 A DpdlPacket can than be allocated and queried efficiently via API
-interfaces available for Java and for the built-in Dpdl scripting language.
+interfaces available for Java and for the built-in Dpdl language.
 In particular Dpdl is very efficient on J2ME and JavaME platforms and
 has a high degree of backward compatibility.
 
@@ -718,8 +718,8 @@ It started with a BsC thesis by A.Costa:
 ## What is the DpdlClient console application?
 
 The DpdlClient console application included in the 'DpdlEngine lite' release is a small console application
-that exposes some functionalities of Dpdl via a simple command line console. Dpdl scripting code can be
-executed and DpdlPackets handled. The same functionalities can be accessed via the java or Dpdl scripting API.
+that exposes some functionalities of Dpdl via a simple command line console. Dpdl code can be
+executed and DpdlPackets handled. The same functionalities can be accessed via the java or Dpdl API.
 
 These are the console commands available:
 ```
