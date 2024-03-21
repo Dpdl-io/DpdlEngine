@@ -43,6 +43,7 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 ### * Compressing, querying and handling data efficiently on constrained devices
 ### * Self-contained, no additional dependencies required (except add-on libraries)
 ### * Facilitate rapid prototyping for hardware programming
+### * Plug-in oriented
 
 
 **DpdlEngine stack overview**
