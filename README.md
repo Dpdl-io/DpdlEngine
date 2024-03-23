@@ -20,7 +20,7 @@ Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**const
 Dpdl enables access to the Java platform JRE API and to external java libraries and supports the <ins>embedding and on-the-fly execution</ins>
 of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** directly within Dpdl code.
 This makes Dpdl a powerful development platform due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
-Dpdl is not replace, but is foreseen to integrate different technologies seamlessly with little overhead.
+Dpdl is not intended to replace, but enables to integrate different technologies seamlessly enabling fast prototyping to facilitate research and development.
 
 Dpdl is self contained and is highly customizable via a dedicated extension interface. Further programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
@@ -143,7 +143,7 @@ applications on small memory footprint devices, and can be used as embedded scri
 The main nature of Dpdl is for enabling rapid prototyping, rapid development, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
 that a vaster set of APIs are available for a given platform.
-Dpdl has also built-in constructs that enable dynamic code generation.
+Dpdl has also built-in constructs that enable dynamic code generation and provides also a dedicated plug-in for generative AI code
 
 The **`DpdlPacket`** data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
