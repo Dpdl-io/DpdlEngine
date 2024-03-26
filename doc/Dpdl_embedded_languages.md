@@ -30,6 +30,11 @@ Currently Dpdl supports the embedding of the following languages available as in
 * **`C++ ROOT`**
 * **`Clojure`**
 
+**available Add-on plug-ins:**
+
+* **`Sql`**
+* **`Ai`**
+
 
 ### Embedded programming languages - compatibility matrix
  
@@ -648,6 +653,60 @@ dpdl_stack_var_put("arg2", "test2")
 
 int exit_code = dpdl_exit_code()
 println("embedded Clojure exit code: " + exit_code)
+```
+
+### Embedding SQL
+
+#### keyword **`>>sql`**
+
+SQL statements can be embedded within Dpdl via the keyword **`>>sql`**
+
+The language plug-in automatically connects to the database specified and retrieves the results that can than be accessed in Dpdl
+
+Example Dpdl code with embedded 'SQL':
+```python
+println("testing 'sql' queries with Dpdl...")
+
+dpdl_stack_var_put("db_url", "jdbc:postgresql://127.0.0.1:5432/mytestdb")
+dpdl_stack_var_put("db_user", "testuser")
+dpdl_stack_var_put("db_pass", "189923")
+
+dpdl_stack_push("dpdlbuf_res")
+
+>>sql
+	SELECT id, name, surname, email from mytable
+<<
+
+object result = dpdl_stack_obj_get("dpdlbuf_res")
+
+raise(result, "Error: dpdl stack buffer is null")
+
+int rs_size = result.size()
+
+object id, name, surname, email
+
+int c = 0
+object entry
+for(c < rs_size)
+	println("-----------------------------------")
+	entry = result.get(c)
+	id = entry.get(0)
+	name = entry.get(1)
+	surname = entry.get(2)
+	email = entry.get(3)
+
+	println("id: " + id)
+	println("name: " + name)
+	println("surname: " + surname)
+	println("e-mail: " + email)
+
+	println("-----------------------------------")
+
+	c=c+1
+
+endfor
+
+println("finished")
 ```
 
 

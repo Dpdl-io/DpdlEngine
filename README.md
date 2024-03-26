@@ -290,8 +290,8 @@ This features is very useful for rapid development and rapid prototyping and is 
 
 **available Add-on plug-ins:**
 
-* **`sql`**
-* **`ai`**
+* **`Sql`**
+* **`Ai`**
 
 
 #### Dpdl example with embedded 'ROOT C++' code
