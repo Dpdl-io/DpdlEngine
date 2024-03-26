@@ -58,12 +58,12 @@ You may delete unused libraries for platforms that you are not interested in (e.
 
 (*) **available soon**
 
-| Platform |Embedded ANSI C |Python |Julia |JavaScript |Clojure |Lua |ROOT C++ |Ruby |Java |OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v4.01|
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |Clojure |Lua |ROOT C++ |Ruby |Java |SQL |OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X|X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X|X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X|X v4.01|
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X|X v4.01|
 
 ## Embedded C code
 

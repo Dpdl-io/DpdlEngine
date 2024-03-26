@@ -22,9 +22,9 @@ of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lu
 This makes Dpdl a powerful development platform due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and facilitate research and development.
 
-Dpdl is self contained and is highly customizable via a dedicated extension interface. Further programming languages can be implemented and embedded via a dedicated plugin-in interface and configuration.
+Dpdl is self contained and is highly customizable via a dedicated extension interface. Further programming languages or natural language interpreters can be implemented
+and embedded via a dedicated plugin-in interface and configuration.
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
-
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
@@ -42,7 +42,7 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 ### * Runs on constrained devices
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Compressing, querying and handling data efficiently on constrained devices
-### * Self-contained, no additional dependencies required (except add-on libraries)
+### * Self-contained, No additional dependencies required (except add-on libraries)
 ### * Facilitate rapid prototyping for hardware programming
 ### * Plug-in oriented
 
@@ -143,7 +143,8 @@ applications on small memory footprint devices, and can be used as embedded scri
 The main nature of Dpdl is for enabling rapid prototyping, rapid development, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
 that a vaster set of APIs are available for a given platform.
-Dpdl has also built-in constructs that enable dynamic code generation and provides also a dedicated plug-in for generative AI code
+Dpdl has also built-in constructs that enable dynamic code generation for generative AI code and provides a dedicated plug-in interface for developing and
+embedding custom language interpreter plug-ins of all sorts.
 
 The **`DpdlPacket`** data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
@@ -177,7 +178,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Fast Prototyping**
 * **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
 * Tools for automatically converting Dpdl code to Java , C/C++ and V code
-* Open Source language plug-ins
+* Open Source programming language plug-ins
 
 
 ## Access to the complete JRE Java platform API and any external java libraries
@@ -287,6 +288,11 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`ROOT C++`**
 * **`Clojure`**
 
+**available Add-on plug-ins:**
+
+* **`sql`**
+* **`ai`**
+
 
 #### Dpdl example with embedded 'ROOT C++' code
 
@@ -374,7 +380,7 @@ println("Dpdl contains C: " + b)
 
 ### Embedding other programming languages
 
-Other programming languages can be easily integrated in Dpdl via a dedicated plug-in interface and configuration. Please feel free to suggest your opinion on the
+Other programming languages or natural language interpreters can be easily integrated in Dpdl via a dedicated plug-in interface and configuration. Please feel free to suggest your opinion on the
 'Discussion' section on the DpdlEngine GitHub repository
 
 ## Supported Platforms
@@ -410,12 +416,12 @@ Note: The DpdlEngine needs to be re-packaged for running on Android, JavaME and 
 
 (*) **available soon**
 
-| Platform |Embedded ANSI C |Python |Julia |JavaScript |Clojure |Lua |ROOT C++ |Ruby |Java |OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v4.01|
+| Platform |Embedded ANSI C |Python |Julia |JavaScript |Clojure |Lua |ROOT C++ |Ruby |Java |SQL |OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X|X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X|X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X|X v4.01|
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X|X v4.01|
 
 	
 ## Documentation

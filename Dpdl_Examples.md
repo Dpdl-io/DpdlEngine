@@ -75,6 +75,10 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[js/dpdlQJsPoint.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsPoint.h) 
 
+* Example Dpdl script that embeds and executed an SQL query on a defined database and retrieves and prints out the result
+
+	[sql/dpdlSqlExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExample.h) 
+	
 * Example Dpdl script that launches multiple threads
 
 	[concurrent/testConcurrency1.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/concurrent/testConcurrency1.h)
