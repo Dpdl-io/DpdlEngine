@@ -24,6 +24,8 @@ object result = dpdl_stack_obj_get("dpdlbuf_res")
 
 raise(result, "Error: dpdl stack buffer is null")
 
+println("type of result: " + typeof(result))
+
 int rs_size = result.size()
 
 object id, name, surname, email
