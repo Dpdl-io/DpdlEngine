@@ -24,14 +24,14 @@ Further programming languages and natural language interpreters can be implement
 Dpdl is self contained, portable and highly customizable via a dedicated extensible interface. 
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
-These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
-Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and facilitate research and development.
-
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Clojure) = <ins>Powerful and Versatile</ins>
+
+These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
+Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and facilitate research and development.
 
 **Dpdl is designed to:**
 
