@@ -1,9 +1,11 @@
 # File: js/dpdlQJsPoint.h
 #
 # Example:
-# This Dpdl script executes an embedded 'qjs' javascript that make use of a Point class implemented in a native C library (Note: point.c needs to be compiled first)
-# the coordinates of the poins are pushed on the dpdl stack
+# This Dpdl script executes an embedded 'qjs' javascript that make use of a Point class implemented in a native C library
+# The coordinates of the poins are pushed on the dpdl stack
 # This javascript example is from the QuickJS repository https://github.com/bellard/quickjs/tree/master/examples
+#
+# Note: point.c needs to be compiled first
 #
 # Author: AC
 # e-mail: ac@dpdl.io
