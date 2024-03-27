@@ -63,6 +63,10 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
 
+* Example Dpdl script that shows how <ins>C</ins> code and <ins>Java</ins> can be embedded and executed within Dpdl
+
+	[app/simple/dpdlSimpleJavaAndC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/simple/dpdlSimpleJavaAndC.h)
+	
 * Example Dpdl script that shows how <ins>C</ins> code and <ins>Python</ins> can be embedded and executed within Dpdl
 
 	[dpdlFullExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFullExample.h)
@@ -75,9 +79,14 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[js/dpdlQJsPoint.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsPoint.h) 
 
-* Example Dpdl script that embeds and executed an SQL query on a defined database and retrieves and prints out the result
+* Example Dpdl script that embeds and executed an SQL query on a defined database and retrieves and prints out the result 
 
 	[sql/dpdlSqlExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExample.h) 
+	
+* Example Dpdl script that embeds and executed an SQL query on a defined database and retrieves and prints out the result (same as above), and
+			encodes the result set into a json string, than decodes the json string to an object that can be accessed
+
+	[sql/dpdlSqlExampleJson.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExampleJson.h) 
 	
 * Example Dpdl script that launches multiple threads
 
