@@ -38,7 +38,7 @@ Currently Dpdl supports the embedding of the following languages available as in
 
 ### Embedded programming languages - compatibility matrix
  
-| Platform |Embedded ANSI C |Python |Julia |JavaScript |Clojure |Lua |ROOT C++ |Ruby |Java |SQL |OCaml |
+| Platform |Embedded ANSI C |Python |Julia |Js |Clojure |Lua |ROOT C++ |Ruby |Java |SQL |OCaml |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Linux x86_64 |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X|X v4.01|
 | Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X|X v4.01|
