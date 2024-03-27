@@ -109,9 +109,9 @@ This makes Dpdl suitable for a wide range of use-cases and in particular also fo
  
 The size of the DpdlEngine core can be stripped down to **`60 Kb`** with a basic configuration if needed.
 
-### Dpdl small sample apps
+## Dpdl small sample apps
 
-#### Dpdl example to Get and decode News via http in JSON format 
+### Dpdl example to Get and decode News via http in JSON format 
 
 This is a small sample app written with Dpdl that gets the top 10 news stories via http get in json format:
 
@@ -120,7 +120,7 @@ This is a small sample app written with Dpdl that gets the top 10 news stories v
 Note: The example 'app/getnews/dpdlGetNews2.h' is identical, but data is decoded in a java object instead of a struct
 
 
-#### Dpdl example using external Java libraries
+### Dpdl example using external Java libraries
 
 This is a 3D model visualization of chemical molecules using the JavaFX library. The model can be rotated freely with mouse events (ported to Dpdl from javafx examples)
 
@@ -133,12 +133,12 @@ This is a 3D model visualization of chemical molecules using the JavaFX library.
 [visualize VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
 
 
-#### Simple Dpdl example that executes an embedded Java code and an embedded C code
+### Simple Dpdl example that executes an embedded Java code and an embedded C code
 
 [app/simple/dpdlSimpleJavaAndC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/simple/dpdlSimpleJavaAndC.h)
 
 
-#### Dpdl example that uses the 'sql' Dpdl language plug-in to retrieve data from a database and handle the result set
+### Dpdl example that uses the 'sql' Dpdl language plug-in to retrieve data from a database and handle the result set
 
 The Dpdl script connects to the database and performs a query, retrieves and prints out the result set, encodes the result set to a json string, and 
 than decodes the json string to an object that can be accessed as a HashMap
