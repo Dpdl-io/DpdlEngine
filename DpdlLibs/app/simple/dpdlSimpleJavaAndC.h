@@ -1,6 +1,7 @@
 # File: app/simple/dpdlSimpleJavaAndC.h
 #
-# Example: Simple Dpdl script that embeds a Java code block that is compiled and executed at runtime and executed an embedded C code
+# Example: Simple Dpdl script that embeds a 'Java' code block that is compiled and executed at runtime,
+#			and executes also an embedded 'C' code
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
