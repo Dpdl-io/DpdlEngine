@@ -146,7 +146,7 @@ than decodes the json string to an object that can be accessed as a HashMap
 [sql/dpdlSqlExampleJson.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExampleJson.h) 
 
 
-#### More Dpdl examples
+### More Dpdl Examples
 	
 You can find more Dpdl examples on the following page: 
 [Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
