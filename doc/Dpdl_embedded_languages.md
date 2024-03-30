@@ -645,9 +645,8 @@ dpdl_stack_var_put("arg2", "test2")
 	(def add2 (make-adder 2))
 
 	;; a comment entry point
-	(defn dpdl_main[param & more]
-			(def np "nr. of extra param: " (count more))
-			(str "Hello Clojure from Dpdl!:) param: " param " more: " np " res:" (add2 2)))
+	(defn dpdl_main[^objects param]
+			(str "Hello Clojure from Dpdl!:) 1st param: " (first param) " res:" (add2 2)))
 
 <<
 
