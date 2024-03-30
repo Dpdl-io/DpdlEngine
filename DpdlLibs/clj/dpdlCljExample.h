@@ -22,8 +22,8 @@ dpdl_stack_var_put("arg2", "test2")
 	(def add2 (make-adder 2))
 
 	;; a comment entry point
-	(defn dpdl_main[param & more]
-			(println (str "Hello Clojure from Dpdl!:) param: " param " more: " (count more) " res:" (add2 2)))
+	(defn dpdl_main[^objects param]
+			(println (str "Hello Clojure from Dpdl!:) 1st param: " (first param) " res:" (add2 2)))
 			(int 1)
 	)
 <<

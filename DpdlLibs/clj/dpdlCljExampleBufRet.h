@@ -21,9 +21,9 @@ dpdl_stack_push("dpdlbuf_result", "my Param 1", "my Param 2")
 	(def add2 (make-adder 2))
 
 	;; a comment entry point
-	(defn dpdl_main[param & more]
+	(defn dpdl_main[^objects param]
 			(println "this code is executed in Clojure:)")
-			(str "Hello Clojure from Dpdl!:) param: " param " more: " (count more) " res:" (add2 2))
+			(str "Hello Clojure from Dpdl!:) 1st param: " (first param) " res:" (add2 2))
 	)
 
 <<
