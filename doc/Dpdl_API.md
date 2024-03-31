@@ -59,6 +59,7 @@ get(string url) return string response
 parse(string json) return object json
 encode(struct data) return string json
 decode(string json, struct data) return struct data
+decode(string json, object data) return object data
 ```
 
 Adding custom libraries is straight forward and can be done by simply adding the implementation to the classpath and 
