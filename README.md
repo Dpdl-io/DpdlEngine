@@ -133,7 +133,7 @@ This is a 3D model visualization of chemical molecules using the JavaFX library.
 [VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
 
 
-### Simple Dpdl example that executes an embedded Java code and an embedded C code
+### Simple Dpdl example that executes an embedded 'Java' code and an embedded 'C' code directly within Dpdl
 
 [app/simple/dpdlSimpleJavaAndC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/simple/dpdlSimpleJavaAndC.h)
 
