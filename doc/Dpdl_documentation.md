@@ -26,20 +26,14 @@ developed by
 * Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
-Here you can find a very small 'dummy' sample app
-
-[Small sample app](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
-
-The Dpdl script location by default is configured to be './DpdlLibs/'. This can be changed in the 'DpdlEngine.ini' (can be changed only in registered version)
-
 
 ### Dpdl API functions
 
-The native Dpdl API functions usable inside Dpdl scripts are listed here:
+The Dpdl API functions usable inside Dpdl scripts are listed here:
 
-[Dpdl scripting API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-As Dpdl is capable of loading also java classes, the whole Java API is available inside Dpdl code.
+As with Dpdl it's possible to load java classes, the whole Java API is available inside Dpdl code.
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getClass(..)`**
 
 
