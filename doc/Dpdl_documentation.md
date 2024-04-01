@@ -1109,7 +1109,7 @@ The implemented extensions can be registered via settings in the "Extensions" se
 
 Example of a custom print function, myprintln(..):
 ```java
-public class MyTestDpdlExtension extends DpdlExtension{
+public class MyTestDpdlExtension extends DpdlExtension {
 
     public Object dpdlCall(String name,ArrayList param) throws DpdlException {
 			// implement you methods here
@@ -1278,6 +1278,11 @@ endwhile
 println("decompressed: " + decompressed_str)
 
 ```
+
+## Small 'dummy' Dpdl sample app
+
+[Small Dpdl sample app](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
+
 
 ## 'DpdlPacket' definition language
 
