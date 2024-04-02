@@ -9,7 +9,9 @@ developed by
 
 ## New 
 
-* NEW (24.03.2024) Dpdl language plugin for SQL is available and will be included in the coming 'DpdlEngine lite' release
+* NEW (01.04.2024) The JavaFX library is now available also in the 'lite' version of DpdlEngine
+* NEW (01.04.2024) The Dpdl import library 'http' has been improved with more functions (POST, PUT, etc..)
+* NEW (24.03.2024) Dpdl language plugin for SQL is available in the 'DpdlEngine lite' release
 
 * (16.03.2024) Dpdl embedded language plugin form Clojure has been developed and has been included in the latest 'DpdlEngine lite' release
 * (18.02.2024) Dpdl embedded language plugin for 'Java' code blocks is available

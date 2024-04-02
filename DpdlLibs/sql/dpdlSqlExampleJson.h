@@ -17,11 +17,12 @@ dpdl_stack_var_put("db_user", "testuser")
 dpdl_stack_var_put("db_pass", "189923")
 dpdl_stack_var_put("db_data_mode", "map")
 
+dpdl_stack_var_put("id", "23")
 
 dpdl_stack_push("dpdlbuf_res")
 
 >>sql
-	SELECT id, name, surname, email from mytable
+	SELECT id, name, surname, email from mytable where id={{id}}
 <<
 
 object result = dpdl_stack_obj_get("dpdlbuf_res")

@@ -75,10 +75,14 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
 	
-* Example Dpdl script that embeds javascript code (with  Mode2 using qjs) that loads an object implemented in a native C library (see point.c)
+* Example Dpdl script that embeds javascript code (with  Mode2 using 'qjs') that loads an object implemented in a native C library (see point.c)
 
 	[js/dpdlQJsPoint.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsPoint.h) 
 
+* Example Dpdl script that performs HTTP requests (GET, POST and PUT)
+
+	[http/dpdlHttpExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/http/dpdlHttpExample.h) 
+	
 * Example Dpdl script that embeds and executed an SQL query on a defined database and retrieves and prints out the result 
 
 	[sql/dpdlSqlExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExample.h) 

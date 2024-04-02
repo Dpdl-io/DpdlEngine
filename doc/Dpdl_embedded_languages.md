@@ -583,7 +583,7 @@ string resp_buf = dpdl_stack_buf_get("dpdlbuf_myres")
 println("response buffer: " + resp_buf)
 ```
 
-The Dpdl language plugin uses the 'Janino' library to compile code blocks:
+The Dpdl language plug-in uses the 'Janino' library to compile code blocks:
 
 Refer to the 'Janino' documentation for the java language features supported: http://janino-compiler.github.io/janino/
 
@@ -658,9 +658,14 @@ println("embedded Clojure exit code: " + exit_code)
 
 #### keyword **`>>sql`**
 
-SQL statements can be embedded within Dpdl via the keyword **`>>sql`**
+This particular Dpdl language plug-in enables to embed SQL statements within Dpdl via the keyword **`>>sql`**
 
-The language plug-in automatically connects to the database specified and retrieves the results that can than be accessed in Dpdl
+The language plug-in automatically connects to the database specified and retrieves the results that can than be accessed in Dpdl via an object from the Dpdl stack.
+
+The connection parameters **`db_url`** **`db_user`** **`db_pass`** need to be pushed onto the Dpdl stack as variables.
+
+Variables that are needed to construct the embedded query can also be pushed onto the Dpdl stack and referenced within double curly brackets eg. **`{{my_var}}`**
+
 
 Example Dpdl code with embedded 'SQL':
 ```python
@@ -670,10 +675,12 @@ dpdl_stack_var_put("db_url", "jdbc:postgresql://127.0.0.1:5432/mytestdb")
 dpdl_stack_var_put("db_user", "testuser")
 dpdl_stack_var_put("db_pass", "189923")
 
+dpdl_stack_var_put("id", "888")
+
 dpdl_stack_push("dpdlbuf_res")
 
 >>sql
-	SELECT id, name, surname, email from mytable
+	SELECT id, name, surname, email from mytable where id={{id}}
 <<
 
 object result = dpdl_stack_obj_get("dpdlbuf_res")
@@ -707,6 +714,8 @@ endfor
 
 println("finished")
 ```
+
+Note: The 'DpdlEngine lite' release includes only the 'postgresql' JDBC driver. Additional drivers to connect to different databases must eventually be installed.
 
 
 ### OCaml (Experimental)

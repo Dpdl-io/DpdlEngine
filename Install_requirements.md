@@ -13,24 +13,34 @@ developed by
 'DpdlEngine lite' V1.0 is available as Free Trial Shareware, with some limitations/restrictions (see section below),
 under the license agreement included (see LICENSE.txt).
 
-The full registered version of DpdlEngine can be requested via the Download request form:
+The full registered version of DpdlEngine can be requested via the order request form:
 [Order Full Version](https://www.dpdl.io/index_order.html)
 
-The DpdlEngine documentation is located in the 'doc' folder, or more up to date on the GitHub repository:
 
-https://github.com/Dpdl-io/DpdlEngine
+# Note
 
-As DpdlEngine is in a fast development cycle, it's advised to update the software frequently. New features and fixes may be available.
+The DpdlEngine documentation is located in the 'doc' folder, OR ideally more up to date, on the GitHub repository:
 
-IMPORTANT: Verify the integrity of the 'DpdlEngine lite' release zip file you downlaoded (DpdlEngine_V1.0_release.zip),
-			it must match the sha(256) checksum as reported here:  https://www.dpdl.io/DemoDpdl_validator.html
+[Dpdl.io GitHub](https://github.com/Dpdl-io/DpdlEngine)
+
+As DpdlEngine is in a fast development cycle and new features and fixes may be available, it's advised to <ins>update the software frequently</ins>.
+
+By filing the following form you'll get a permanent download link.
+[Direct Download link](https://www.dpdl.io/download_request.htm)
+
+
+### Important notice: 
+
+Please verify the integrity of the 'DpdlEngine lite' release zip file you downloaded or received (DpdlEngine_V1.0_release.zip),
+			it MUST in any case match the sha(256) checksum as reported on the direct download link site.
 			
 
 # System requirements
 
-Although Dpdl is compatible also with previews java versions, this release of 'DpdlEngine lite' requires a 
+Although Dpdl is compatible also with previews java versions and virutal machines, this release of 'DpdlEngine lite' requires a 
 compatible Java Virtual Machine (JRE) version  >= 'Java 17'  to run.
-If your requirements are to run DpdlEngine on an older version of java JRE, just drop an e-mail to: info@dpdl.io 
+
+If your requirements are to run 'DpdlEngine lite' on an older version of java JRE, just drop an e-mail to: info@dpdl.io 
 
 There are many java virtual machines available, the official Java JRE from Oracle can be downloaded from 
 www.java.com or www.oracle.com website:
@@ -51,6 +61,15 @@ The library can be compiled for additional platforms by us on your request by wr
 
 You may delete unused libraries for platforms that you are not interested in (e.g. ./lib/native/someplatform )
 
+To enable the <ins>use of the JavaFX library</ins>, it's necessary to set the environment variable **`JAVAFX_PATH`** with the full path to the
+JavaFX libraries on your system:
+
+eg.
+```
+export JAVAFX_PATH=/Users/arcosta/APP/devel/javafx-sdk-21.0.1/lib
+```
+
+NOTE: On Windows OS use the appropriate 'javafx' startup script to run DpdlEngine
 
 ### Embedded languages - compatibility matrix
 
@@ -64,6 +83,11 @@ You may delete unused libraries for platforms that you are not interested in (e.
 | Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X|X v4.01|
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X|X v4.01|
 | Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X|X v4.01|
+
+
+Note: The Free trial Demo version of 'DpdlEngine lite' includes a subset of the Dpdl language plug-ins. 
+		If your're interested in testing a specific plug-in please feel free to contact us, we'll be happy to accomodate your specific needs: info@dpdl.io
+
 
 ## Embedded C code
 

@@ -22,7 +22,7 @@ string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
 
 println("downloading news...")
 
-string resp = http.get(stories_url)
+string resp = http.getraw(stories_url)
 
 raise(resp, "Error in downloading data")
 
@@ -37,7 +37,7 @@ for(c < 10)
 	println("---------------------------------------------------------------------")
 
 	story_url = item_base_url + ids[c] + ".json"
-	resp = http.get(story_url)
+	resp = http.getraw(story_url)
 
 	raise(resp, "Error in downloading story")
 
