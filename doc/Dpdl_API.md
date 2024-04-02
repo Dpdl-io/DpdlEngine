@@ -27,9 +27,17 @@ Dpdl allows to load and access java classes and methods via dedicated API functi
 
 This allows Dpdl to access a broad set of APIs and libraries. The references for resolving the classes are defined in the class definition file './DpdlLibs/libs/classes.txt'.
 
-The 'DpdlEgine lite' Demo release includes the Java Runtime API (1.5) and the bluecove JRS-82 API as defined in the  class definition file.
+The 'DpdlEgine lite' Demo release includes the Java Runtime API, the JavaFX and the bluecove JRS-82 API as defined in the  class definition file.
 
-Additional APIs and classes can be added freely in the registered version of DpdlEngine.
+
+[Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
+
+[JavaFX API](https://docs.oracle.com/javafx/2/api/index.html)
+
+[Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
+
+
+NOTE: Additional APIs and classes can be added freely in the registered version of DpdlEngine.
 	
 ### Native import Libraries
 

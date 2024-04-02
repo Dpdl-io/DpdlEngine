@@ -602,14 +602,17 @@ an object.
 The classes where this applies are listed here: [doc/Dpdl_class_resolve.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_class_resolve.md)
 
 
-The default configuration resolves the following API's:
+### The default configuration resolves the following API's:
 
-The set of classes accessible with Dpdl is defined to be the following set, instead, methods of the classes accessible are referred to the current JRE instance
-on which Dpdl is running.
+The set of classes accessible with Dpdl (default) is defined to be the following set.
+The methods of the classes that are accessible are referred to the current JRE instance on which Dpdl is running.
 
 [Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
+[JavaFX API](https://docs.oracle.com/javafx/2/api/index.html)
+
 [Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
+
 
 Additional API's and classes can be added (only in Full registered version) to the class definition file as needed with the syntax: '$full_class_name $class_alias'
 
