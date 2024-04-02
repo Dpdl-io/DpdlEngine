@@ -203,7 +203,7 @@ The speedup is x 25 times faster compared to a standard record store access
 
 The Dpdl language API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and <ins>external java libraries</ins>.
 
-**Example:** using a java HashMap (which is resolved to java.util.HashMap)
+**Example:** using a java HashMap (which interfaces to java.util.HashMap)
 ```python
 object map, s
 

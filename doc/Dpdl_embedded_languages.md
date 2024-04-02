@@ -549,7 +549,7 @@ The embedded java code must return a value, either of type 'int' or a 'String'
 
 Parameters that are pushed onto the Dpdl stack are accessible in java via the variable names 'args0, args1, ....argsN'
 
-The following imports are predefined so that contained classes can be accessed directly:
+The following imports are predefined so that contained code can be accessed classes directly:
 
 - java.io.*
 - java.util.*
