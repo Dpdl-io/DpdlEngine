@@ -60,7 +60,7 @@ writeStr(string file, string data) return bool status
 
 **`http`**
 ```python
-get(string url) return string response
+getraw(string url) return string response
 ```
 **`json`**
 ```python

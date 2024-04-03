@@ -253,6 +253,75 @@ In this case the java class just needs to implement the 'getter' and 'setter' me
 See example 'app/getnews/dpdlGetNews2.h'
 
 
+### Querying a Database via the Dpdl 'sql' language plug-in
+
+A specific Dpdl language plug-in allows to execute queries on a specific database (JDBC compliant) and retrieve the results as form of vector.
+The queries can be embedded in Dpdl code via the keyword **`>>sql`**
+
+The plug-in will connect to the specified database connection string and credentials that have been pushed onto the Dpdl stack.
+
+Variables that are needed to construct the queries can be also pushed onto the Dpdl stack and referenced in the embedded query with: {{$my_variable}}
+
+The result is retrieved from the Dpdl stack in form of a Vector, it can be a pure vector (default), or a vector of maps (see 'db_data_mode' parameter). The latter
+enables to access the fields via a key/value approach.
+
+Example (in this case a vector of maps is retrieved)
+```python
+println("performing database SQL queries with Dpdl...")
+
+dpdl_stack_var_put("db_url", "jdbc:postgresql://127.0.0.1:5432/mytestdb")
+dpdl_stack_var_put("db_user", "testuser")
+dpdl_stack_var_put("db_pass", "189923")
+dpdl_stack_var_put("db_data_mode", "map")
+
+dpdl_stack_var_put("id", "23")
+
+dpdl_stack_push("dpdlbuf_res")
+
+>>sql
+	SELECT id, name, surname, email from mytable where id={{id}}
+<<
+
+object result = dpdl_stack_obj_get("dpdlbuf_res")
+
+raise(result, "Error: dpdl stack buffer is null")
+
+println("type of result: " + typeof(result))
+
+int rs_size = result.size()
+
+println("nr. or results: " + rs_size)
+
+println("iterating over result set...")
+
+object id, name, surname, email
+
+int c = 0
+object entry_map
+for(c < rs_size)
+	println("-----------------------------------")
+	entry_map = result.get(c)
+
+	id = entry_map.get("id")
+	name = entry_map.get("name")
+	surname = entry_map.get("surname")
+	email = entry_map.get("email")
+
+	println("id: " + id)
+	println("name: " + name)
+	println("surname: " + surname)
+	println("e-mail: " + email)
+
+	println("-----------------------------------")
+
+	c=c+1
+
+endfor
+
+println("finished")
+```
+
+
 ### Storing and accessing data in a Record Store
 
 Dpdl allows to store and access data in Record Stores.
