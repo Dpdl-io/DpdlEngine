@@ -59,12 +59,14 @@ writeStr(string file, string data) return bool status
 ```
 
 **`http`**
-```python
-getraw(string url) return string response
-```
+
 the library exposes the following method and objects:
  
 [Http javalite](https://www.dpdl.io/doc/apidocs/org/javalite/http/Http.html)
+
+```python
+getraw(string url) return string response
+```
 
 **`json`**
 ```python
