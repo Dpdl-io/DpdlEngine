@@ -62,6 +62,10 @@ writeStr(string file, string data) return bool status
 ```python
 getraw(string url) return string response
 ```
+the library exposes the following method and objects:
+ 
+[Http javalite](https://www.dpdl.io/doc/apidocs/org/javalite/http/Http.html)
+
 **`json`**
 ```python
 parse(string json) return object json
