@@ -34,7 +34,7 @@ By filing the following form you'll get a permanent download link.
 Please verify the integrity of the 'DpdlEngine lite' release zip file you downloaded or received (DpdlEngine_V1.0_release.zip),
 			it MUST in any case match the sha(256) checksum as reported on this site: 
 					
-																				https://www.dpdl.io/DemoDpdl_validator.html
+			https://www.dpdl.io/DemoDpdl_validator.html
 			
 
 # System requirements
