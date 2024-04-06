@@ -22,6 +22,18 @@ For the embedding of C code the following option settings are available.
 
 Instructs the Dpdl runtime to compile in memory the embedded C code before executing it (execution Mode 2)
 
+**`dpdl:-F$File`**
+
+Adds the specified file to the compile set
+
+Note: This option is enabled only in the full registered version of 'DpdlEngine lite'. It will eventually throw an exception in the Demo shareware release
+
+**`dpdl:-A$Dir`**
+
+Adds the all the files contained in the specified directory to the compile set
+
+Note: This option is enabled only in the full registered version of 'DpdlEngine lite'
+
 **`dpdl:-I$Path`**
 
 Adds the specified include path reachable by the compiler
