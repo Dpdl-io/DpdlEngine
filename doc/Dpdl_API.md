@@ -30,7 +30,7 @@ This allows Dpdl to access a broad set of APIs and libraries. The references for
 The 'DpdlEgine lite' Demo release includes the Java Runtime API, the JavaFX and the bluecove JRS-82 API as defined in the  class definition file.
 
 
-[Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
+[Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
 [JavaFX API](https://docs.oracle.com/javafx/2/api/index.html)
 
