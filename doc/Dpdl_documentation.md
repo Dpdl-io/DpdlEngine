@@ -768,6 +768,66 @@ println("DpdlLib version: " + DpdlLibVersion)
 println("myx: " + myx)
 ```
 
+### Embedding of other programming languages directly within Dpdl
+
+A particular feature of Dpdl is the possibility to embed and execute other programming languages directly within Dpdl code. This feature enables
+to use the appropriate language and libraries for particular implementation needs.
+
+The code of other programming languages can be embedded by simply using the keyword **`>>`** along with the language specifier.
+
+See [Dpdl_embedded_languages.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md) for more details.
+
+Data and variables can be exchanged with the embedded code via the dpdl stack by using the API functions:
+
+**`dpdl_stack_var_put(..)`**
+**`dpdl_stack_push(..)`**
+**`dpdl_stack_buf_put(..)`**
+**`dpdl_stack_buf_get(..)`**
+
+Variables pushed on the dpdl stack are passed as parameters to the embedded code, and can also be embedded directly in the code as placeholder, see **`{{var_name}}`**.
+In the latter case the variables are replaced with the actual values before code compilation and execution.
+
+
+Example:
+```python
+println("testing embedded C code in Dpdl")
+
+int n = 6
+double x = 10.0d
+string a = "test"
+
+dpdl_stack_var_put("my_int_var", 10)
+dpdl_stack_var_put("my_name_var", "A.Costa is my name")
+
+dpdl_stack_push("dpdl:applyvars", "dpdlbuf_var1",n, x, a)
+
+>>c
+	#include <stdio.h>
+	#include <dpdl.h>
+	
+	int main(int argc, char **argv){
+		printf("Hello C from Dpdl!\n");
+		printf("\n");
+		int my_i = {{my_int_var}};
+		char *my_n = "{{my_name_var}}";
+		printf("\n");
+		printf("num params: %d\n", argc);
+		int cnt;
+	    for (cnt = 0; cnt < argc; cnt++){
+	        printf("	param %d: %s\n", cnt, argv[cnt]);
+	    }
+	    char *buf = "My result";
+		dpdl_stack_buf_put(buf);
+	    return 0;
+	}
+<<
+int exit_code = dpdl_exit_code()
+
+println("embedded C exit code: " + exit_code);
+string buf = dpdl_stack_buf_get("dpdlbuf_var1")
+println("response buffer: " + buf)
+```
+
 
 ### Dpdl embedded C code
 
