@@ -241,7 +241,7 @@ The default configuration <ins>can be easily extended or updated</ins> to resolv
 The set of classes accessible with Dpdl (default) is defined to be the following set.
 The methods of the classes that are accessible are referred to the current JRE instance on which Dpdl is running.
 
-[Java 5 API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
+[Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
 [JavaFX API](https://docs.oracle.com/javafx/2/api/index.html)
 
