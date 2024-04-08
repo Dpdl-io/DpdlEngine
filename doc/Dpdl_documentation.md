@@ -780,8 +780,11 @@ See [Dpdl_embedded_languages.md](https://github.com/Dpdl-io/DpdlEngine/blob/main
 Data and variables can be exchanged with the embedded code via the dpdl stack by using the API functions:
 
 **`dpdl_stack_var_put(..)`**
+
 **`dpdl_stack_push(..)`**
+
 **`dpdl_stack_buf_put(..)`**
+
 **`dpdl_stack_buf_get(..)`**
 
 Variables pushed on the dpdl stack are passed as parameters to the embedded code, and can also be embedded directly in the code as placeholder, see **`{{var_name}}`**.
