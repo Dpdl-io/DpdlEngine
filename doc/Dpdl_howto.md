@@ -117,33 +117,57 @@ Note: The dpdl script loaded must always return a status (int) in order to load 
 The embedding of other programming languages within Dpdl is straight forward and requires only the appropriate keyword e.g. **`>>c`**
 to initialize the embedding of code. Exchanging data with embedded code is a bit more tricky.
 
-Data can be exchanged with the embedded code via the Dpdl stack.
+Data can be exchanged with the embedded code via the Dpdl stack or simply by returning data from the functions called.
 
-The function **`dpdl_stack_push(..)`** can be used to push variables onto the Dpdl Stack which are than forwarded to the embedded code
-as standard parameters in most cases.
+The Dpdl API functions **`dpdl_stack_push(..)`** etc... can be used to push variables onto the Dpdl Stack which are than forwarded to the embedded code
+as standard parameters in most cases, or alternatively replaced via variable placeholder (see {{varname}} )
 
-The embedded code can also write data to the Dpdl stack which can than be intercepted again in Dpdl code via a given keyword that
+The embedded code can also write data to the Dpdl stack which can than be intercepted again in Dpdl code via a given keyword 'dpdlbuf_*' that
 is pushed as a string variable onto the Dpdl stack prior to the embedding of the code.
 
 Within the embedded C code the function **`dpdl_stack_buf_put(..)`** can be used to write data (a char* buffer) to the memory buffer mapped
 to the keyword specified. The maximum size of the memory buffer is currently fixed to 4096 bytes (but can be changed in the registered version of DpdlEngine)
 
-The size of 
-The following example shows how this can be done with embedded C code:
+Example:
 ```python
-dpdl_stack_push("dpdlbuf_myvar1")
+println("testing embedded C code in Dpdl")
+
+int n = 6
+double x = 10.0d
+string a = "test"
+
+dpdl_stack_obj_put("my_int_var", 10)
+dpdl_stack_var_put("my_name_var", "A.Costa is my name")
+
+dpdl_stack_push("dpdl:applyvars", "dpdlbuf_var1",n, x, a)
+
 >>c
 	#include <stdio.h>
 	#include <dpdl.h>
 	
-	printf("writing to buf...\n");
-	char *buf = "MEGA";
-	dpdl_stack_buf_put(buf);
-	
+	int main(int argc, char **argv){
+		printf("Hello C from Dpdl!\n");
+		printf("\n");
+		int my_i = {{my_int_var}};
+		char *my_n = "{{my_name_var}}";
+		printf("\n");
+		printf("num params: %d\n", argc);
+		int cnt;
+	    for (cnt = 0; cnt < argc; cnt++){
+	        printf("	param %d: %s\n", cnt, argv[cnt]);
+	    }
+	    char *buf = "My result";
+		dpdl_stack_buf_put(buf);
+	    return 0;
+	}
 <<
-string buf = dpdl_stack_buf_get(""dpdlbuf_myvar1"")
+int exit_code = dpdl_exit_code()
+
+println("embedded C exit code: " + exit_code);
+string buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("response buffer: " + buf)
 ```
+
 
 ### Using the 'include(..)' function
 
