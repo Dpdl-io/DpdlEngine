@@ -1,14 +1,37 @@
 # Dpdl compiler documentation
 
 
-## Dpdl compiler C (TCC)
+## Dpdl compiler
 
+Dpdl provides a mechanism for embedded code substitution 
+
+### Option settings
+
+**`dpdl:applyvars`**
+
+Variables that have been pushed onto the dpdl stack via **`dpdl_stack_var_put(..)`** and **`dpdl_stack_obj_put(..)`** can be references inside embedded code with '{{var_name}}'
+
+Example:
+```python
+println("embedding some code...")
+
+dpdl_stack_var_put("my_var", "This is a message\n")
+
+>>c
+#include <stdio.h>
+
+printf("{{my_var}}");
+<<
+
+int exit_code = dpdl_exit_code()
+println("embedded code exit code: " + exit_code)
+```
+
+### C Compiler options
 
 C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see execution Mode 2)
 
 The C compiler used and executed in form of a Dpdl language plugin is Fabric Bellard's TCC.
-
-### Compiler options
 
 The Dpdl runtime can be parameterized by pushing the corresponding option settings onto the Dpdl stack via the 
 function **`dpdl_stack_push(..)`**. The options need to be prefixed with 'dpdl:'
@@ -54,7 +77,7 @@ Defines the preprocessor symbol '$sym' and optionally an associated value. If 'v
 
 Function like macros can also be defined, e.g **`dpdl:-DF(a)=a+1`**
 
-**`dpdl:$option**
+**`dpdl:$option`**
 
 Any other option supported by the compiler can be passed using the prefix 'dpdl:'
 

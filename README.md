@@ -21,7 +21,7 @@ Dpdl enables access to the Java platform JRE API and to external java libraries 
 of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** directly within Dpdl code.
 
 Further programming languages and natural language interpreters can be implemented as extensions and embedded via a dedicated plug-in interface and configuration.
-Dpdl is self contained, portable and highly customizable via a dedicated extensible interface. 
+Dpdl is self contained, portable and highly customizable via an extensible interface. 
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 <p align="center">
@@ -31,7 +31,7 @@ For example the ROOT C++ Data Analysis framework from Cern is also available as 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Clojure) = <ins>Powerful and Versatile</ins>
 
 These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
-Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and facilitate research and development.
+Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
 **Dpdl is designed to:**
 
@@ -56,7 +56,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 
 ### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform.
 By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and 
-Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and the <ins>power</ins> of C/C++ programming language, Dpdl is provides a powerful development platform for industrial
+Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and the <ins>power</ins> of C/C++ programming language, Dpdl provides a powerful development platform for industrial
 applications, education and research.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform API and any external java libraries.
@@ -181,7 +181,7 @@ on devices that have limited memory and storage capabilities.
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Dpdl API provides access to the complete underlying Java JRE platform API and to external Java libraries**
 * **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be embedded and executed** directly within Dpdl code (interpreted/compiled code)
-* **Other programming languages can be embedded via a dedicated kernel execution interface** (see [DpdlCustom] tag in DpdlEngine.ini)
+* **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different platforms (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
@@ -232,7 +232,7 @@ endwhile
 
 In this way all java libraries defined in class definition configuration file (./DpdlLibs/libs/classes.txt) can be loaded and accessed.
 
-The default configuration currently includes <ins>Java 5 Platform API (1.5)</ins>, and <ins>bluecove Bluetooth JSR-82</ins>.
+The default configuration currently includes <ins>Java Platform API</ins>, the <ins>JavaFX</ins> API and <ins>bluecove Bluetooth JSR-82</ins>.
 
 The default configuration <ins>can be easily extended or updated</ins> to resolve additional java APIs by editing the class definition configuration file.
 

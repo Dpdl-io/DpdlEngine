@@ -39,19 +39,27 @@ The 'DpdlEgine lite' Demo release includes the Java Runtime API, the JavaFX and 
 
 NOTE: Additional APIs and classes can be added freely in the registered version of DpdlEngine.
 	
-### Native import Libraries
+### Dpdl import Libraries
 
 Auxiliary API libraries can be imported and used via the **`import(..)`** statement.
 
 The import libraries are implemented either in Dpdl (with '*.h' extension and located in './DpdlLibs/libs/' folder,
 or in a Native java library that can be implemented and configured to be accessed via Dpdl in a easy and  straight forward way.
 
-The Native libraries currently available are:
+#### Dpdl libraries:
+
+Files (*.h) located in the folder './DpdlLibs/'
+
+
+
+#### The Native libraries:
+
 ```python
 import('io')
 import('http')
 import('json')
 ```
+
 **`io`**
 ```python
 readStr(string file) return string data
