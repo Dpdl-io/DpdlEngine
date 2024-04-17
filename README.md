@@ -137,10 +137,6 @@ This is a 3D model visualization of chemical molecules using the JavaFX library.
 
 [app/simple/dpdlSimpleJavaAndC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/simple/dpdlSimpleJavaAndC.h)
 
-### More advances applications written with Dpdl can be inspected in this repository:
-
-[Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
-
 
 ### Dpdl example that uses the 'sql' Dpdl language plug-in to retrieve data from a database and handle the result set
 
@@ -154,6 +150,9 @@ than decodes the json string to an object that can be accessed as a HashMap
 	
 You can find more Dpdl examples on the following page: 
 [Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
+
+Or in the following repository:
+[Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
 
 
 ## Why Dpdl?
