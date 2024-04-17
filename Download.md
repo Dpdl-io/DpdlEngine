@@ -53,11 +53,11 @@ The 'DpdlEngine lite' release license is granted on the basis of a fixed, one-ti
 
 | License type | number activation keys | Price (tax excl.) |
 | ------------ | ---------------------- | ----------------- |
-| individual   | 1 | 39 $ |
+| individual   | 1 | 90 $ |
 | ------------ | ---------------------- | ----------------- |
-| Small team   | 5 | 175 $ |
+| Small team   | 5 | 360 $ |
 | ------------ | ---------------------- | ----------------- |
-| Medium team  | 10 | 312 $ |
+| Medium team  | 10 | 720 $ |
 
 
 #### Additional Subscriptions
@@ -158,7 +158,9 @@ and java classes cannot be referenced with the full package path (eg. org.my.myc
 
 * The option 'dpdl:compile' used to <ins>compile</ins> embedded ANSI C code in memory at runtime can be used only 500 times in the unregistered version of Dpdl
 
-* The option '-A' (to add files to be compiled) used along with the option 'dpdl:compile' is enabled only in the registered version (Note: it will throw and execption in the Demo version)
+* The option 'dpdl:-F' (to add files to be compiled) used along with the option 'dpdl:compile' can be used only once in the unregistered version of Dpdl
+
+* The option 'dpdl:-A' (to add files to be compiled) used along with the option 'dpdl:compile' is enabled only in the registered version (Note: it will throw and execption in the Demo version)
 
 **NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.

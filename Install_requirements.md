@@ -228,6 +228,9 @@ Eventually you might neet to create a symbolic link to a specific version of the
 
 
 
+# Limitations/restrictions of the Demo/shareware unregistered version of 'DpdlEngine lite'
 
+
+see [Download.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Download.md) document
 
 

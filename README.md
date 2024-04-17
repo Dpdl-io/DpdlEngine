@@ -313,7 +313,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 **available Add-on plug-ins:**
 
 * **`Sql`**
-* **`Ai`**
+* **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
 #### Dpdl example with embedded 'ROOT C++' code
