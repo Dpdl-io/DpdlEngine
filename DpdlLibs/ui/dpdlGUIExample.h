@@ -1,4 +1,4 @@
-# File: dpdlLibExamples.h
+# File: ui/dpdlGUIExample.h
 #
 # Example: GUI components and action listener interface
 #
@@ -21,13 +21,38 @@ func actionPerformed(string event)
 	fi
 end
 
+func myUpdateProc()
+	if(x < list_model.getSize())
+		list_model.set(x, "" + cnt)
+		x = x + 1
+	else
+		x = 0
+		date = loadObj("Date")
+		date_str = date.toString()
+		date_time.setText(date_str)
+
+		graphics = draw_canvas.getGraphics()
+		graphics.setColor(color)
+		x_ = randInt(16, 80)
+		y_ = randInt(16, 80)
+		graphics.clearRect(0, 0, draw_canvas.getWidth(), draw_canvas.getHeight())
+		graphics.drawString("Hello Dpdl", x_, y_);
+		graphics.drawRect(x_-15, y_-15, 100, 20)
+		sleep(1000)
+	fi
+	cnt = cnt + 1
+end
+
 # main
 int width = 250
 int height = 500
 bool isCheckbox1Enabled = false
 bool isCheckbox2Enabled = false
 
+object frame_class = getClass("JFrame")
 object frame = loadObj("JFrame")
+frame.setDefaultCloseOperation(frame_class.EXIT_ON_CLOSE)
+
 object panel = loadObj("JPanel")
 object layout = loadObj("GridLayout", 0, 1)
 object panel_form = loadObj("JPanel")
@@ -39,7 +64,7 @@ object button = loadObj("JButton")
 object date_time = loadObj("JLabel", "Date:")
 object draw_canvas = loadObj("JPanel")
 
-object event_listener = loadObj("dpdl.dpdlDpdlEngine.extensions.ActionListenerInterface")
+object event_listener = loadObj("ActionListenerInterface")
 
 list.setSize(width-20, height/2)
 list_model.addElement("one")
@@ -73,25 +98,12 @@ object date
 string date_str
 object graphics
 object color = loadObj("Color", 0, 0, 255)
+
 int x_, y_
-while(true)
-	if(x < list_model.getSize())
-		list_model.set(x, "" + cnt)
-		x = x + 1
-	else
-		x = 0
-		date = loadObj("Date")
-		date_str = date.toString()
-		date_time.setText(date_str)
-		
-		graphics = draw_canvas.getGraphics()
-		graphics.setColor(color)
-		x_ = randInt(16, 80)
-		y_ = randInt(16, 80)
-		graphics.clearRect(0, 0, draw_canvas.getWidth(), draw_canvas.getHeight())
-		graphics.drawString("Hello Dpdl", x_, y_);
-		graphics.drawRect(x_-15, y_-15, 100, 20)
-		sleep(1000)
-	fi
-	cnt = cnt + 1
-endwhile
+
+int tid = Thread("myUpdateProc", 1000)
+
+raise(tid, "Error in starting myUpdateProc thread")
+
+println("myUpdateProc thread started with id: " + tid)
+
