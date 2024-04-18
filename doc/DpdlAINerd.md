@@ -153,7 +153,7 @@ DpdlAINerd is in a very first stage of development with huge improvements and fe
 
 Stand-by for the coming innovation we're bringing to Dpdl with generative code.
 
-The plan is to release the 'DpdlAINerd' language plugin as fully Open Source.
+The plan is to release the 'DpdlAINerd' language plug-in as fully Open Source software.
 
 
 ### Next integrations
