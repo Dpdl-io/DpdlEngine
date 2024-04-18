@@ -46,6 +46,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 ### * Self-contained, No additional dependencies required (except add-on libraries)
 ### * Facilitate rapid prototyping for hardware programming
 ### * Plug-in oriented
+### * Leverage AI generative code
 
 
 **DpdlEngine stack overview**
@@ -198,6 +199,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Fast Prototyping**
 * **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
 * Tools for automatically converting Dpdl code to Java , C/C++ and V code
+* Allows to embed generative AI code with the 'DpdlAINerd' (DAN) Dpdl language-plugin
 * Open Source programming language plug-ins
 
 
@@ -404,6 +406,15 @@ println("Dpdl contains C: " + b)
 
 Other programming languages or natural language interpreters can be easily integrated in Dpdl via a dedicated plug-in interface and configuration. Please feel free to suggest your opinion on the
 'Discussion' section on the DpdlEngine GitHub repository
+
+
+## Generative AI code
+
+The Dpdl language plug-in 'DpdlAINerd' (DAN) allows to generate and embed code via popular AI engine (eg. OpenAI, Google Vertex AI, etc..)
+
+see here for more info:
+[doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
 
 ## Supported Platforms
 
