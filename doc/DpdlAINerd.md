@@ -75,7 +75,7 @@ DpdlPlugins.ini sample:
 ```
 [DpdlAINerd]
 DAN_ENGINE=openai
-DAN_API_KEY=put_your_api_key_here
+DAN_API_KEY=put_your_openai_api_key_here
 ```
 
 ### Modes of execution
