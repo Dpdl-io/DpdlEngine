@@ -47,7 +47,7 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 ## Dpdl sample Apps
 
-Advanced sample apps written with Dpdl are published in this repository:
+More ddvanced sample applications written with Dpdl are published in this repository:
 
 [Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
 
@@ -333,6 +333,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
  	[app/dummy/dpdl_sample.h](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
  	
  	
+ * Example Dpdl code that that leverages generative AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate a json test dataset
+
+	[ai/dpdlAITestData.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAITestData.h)
+	
 * Set of 14 examples/tests. The examples make use of @TAG execution to allow execution of each individual example.
 	
 	[dpdlLibExamples.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlLibExamples.h)

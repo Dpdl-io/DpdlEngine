@@ -162,9 +162,16 @@ and java classes cannot be referenced with the full package path (eg. org.my.myc
 
 * The option 'dpdl:-A' (to add files to be compiled) used along with the option 'dpdl:compile' is enabled only in the registered version (Note: it will throw and execption in the Demo version)
 
+* The 'DpdlNerdAI' (DAN) Dpdl language plug-in requires a password '123456' at each generation in the unregistered version of DpdlEngine. The max. size of 'dpdlnerdai_buf' is 500
+
+* The Demo release of 'DpdlEngine lite' has as slower startup due to security checks, compared to the full registered version of 'DpdlEngine lite'
+
 **NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
+
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
-Contact us if this is the case.
+Contact us if this is the case, we're pleased to satisfy you request
+
+
 
 
 

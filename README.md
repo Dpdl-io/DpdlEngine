@@ -112,6 +112,13 @@ The size of the DpdlEngine core can be stripped down to **`60 Kb`** with a basic
 
 ## Dpdl small sample apps
 
+### Full featured applications developed with Dpdl
+
+Here you can find full featured applications written with Dpdl:
+
+[Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
+
+
 ### Dpdl example to Get and decode News via http in JSON format 
 
 This is a small sample app written with Dpdl that gets the top 10 news stories via http get in json format:
@@ -152,7 +159,8 @@ than decodes the json string to an object that can be accessed as a HashMap
 You can find more Dpdl examples on the following page: 
 [Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 
-Or in the following repository:
+Or full featured Applications written with Dpdl in the following repository:
+
 [Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
 
 
@@ -178,6 +186,7 @@ on devices that have limited memory and storage capabilities.
 * Utility tool
 * Data handling on memory constrained devices
 * Development of Domain Specific Languages (DSL)
+* Generative AI code
 	
 
 ### Features
@@ -186,7 +195,7 @@ on devices that have limited memory and storage capabilities.
 * **Dpdl API provides access to the complete underlying Java JRE platform API and to external Java libraries**
 * **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be embedded and executed** directly within Dpdl code (interpreted/compiled code)
 * **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
-* **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different platforms (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
+* Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different platforms (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
@@ -408,7 +417,7 @@ Other programming languages or natural language interpreters can be easily integ
 'Discussion' section on the DpdlEngine GitHub repository
 
 
-## Generative AI code
+## Generative AI code with 'DpdlAINerd' (DAN) Dpdl language plug-in
 
 The Dpdl language plug-in 'DpdlAINerd' (DAN) allows to generate and embed code via popular AI engine (eg. OpenAI, Google Vertex AI, etc..)
 
