@@ -66,8 +66,7 @@ The Dpdl language constructs and syntax is kept simple and follows an object ori
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
 are integrated by default and third party libraries and functions can be added as extensions.
 
-The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) enables to automatically generate embedded executable code and content or data by 
-natural language descriptions contained in Dpdl code.
+The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes use of AI generative code to enable to automatically generate and embedded executable code and content or data by natural language descriptions contained in Dpdl code.
 
 ### Sample Dpdl code (Bluetooth device discovery using high level Dpdl BT API):
 ```python
@@ -215,7 +214,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Fast Prototyping**
 * **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
 * Tools for automatically converting Dpdl code to Java , C/C++ and V code
-* Allows to automatically generate and embed generative AI programming code within Dpdl using the 'DpdlAINerd' (DAN) Dpdl language plug-in
+* Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Open Source programming language plug-ins
 
 
