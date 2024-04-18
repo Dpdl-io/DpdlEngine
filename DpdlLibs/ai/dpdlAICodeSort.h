@@ -3,6 +3,7 @@
 # Example: This Dpdl script converts a natural language description into code that can be executed.
 #			This code needs to be executend with the '-load $file @gen', a password is currently required (see doc)
 #			The DpdEngine will than generate a file within the same directory with the '_gen' suffix
+#			The code below generated the file 'ai/dpdlAICodeSort_gen.h' located in the same directory
 #
 # author: A.Costa
 # e-mail: ac@dpdl.io
