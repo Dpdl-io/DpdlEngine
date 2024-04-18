@@ -54,7 +54,11 @@ Advanced sample apps written with Dpdl are published in this repository:
 
 ## Dpdl examples
 
-* Example Dpdl script that downloads json news data and decodes it to a struct
+* Example Dpdl code that that leverages generative AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate embedded code sections which can than be executed
+
+[ai/dpdlAICodeSort.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAICodeSort.h)
+ 
+* Example Dpdl code that downloads json news data and decodes it to a struct
 
 	[app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
 
