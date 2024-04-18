@@ -21,6 +21,7 @@ Dpdl enables access to the Java platform JRE API and to external java libraries 
 of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** directly within Dpdl code.
 
 Further programming languages and natural language interpreters can be implemented as extensions and embedded via a dedicated plug-in interface and configuration.
+
 Dpdl is self contained, portable and highly customizable via an extensible interface. 
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
@@ -46,7 +47,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 ### * Self-contained, No additional dependencies required (except add-on libraries)
 ### * Facilitate rapid prototyping for hardware programming
 ### * Plug-in oriented
-### * Leverage AI generative code
+### * Leverage prototyping with built-in AI generative code plug-in
 
 
 **DpdlEngine stack overview**
@@ -172,11 +173,14 @@ applications on small memory footprint devices, and can be used as embedded scri
 The main nature of Dpdl is for enabling rapid prototyping, rapid development, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
 that a vaster set of APIs are available for a given platform.
+
 Dpdl has also built-in constructs that enable dynamic code generation for generative AI code and provides a dedicated plug-in interface for developing and
 embedding custom language interpreter plug-ins of all sorts.
 
 The **`DpdlPacket`** data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
+
+The Dpdl language plug-in 'DpdlAINerd' (DAN) can be used to speed-up the prototyping and development process by leveraging generative AI code for embedded code and data within Dpdl.
 
 **Dpdl can be used as:**
 
@@ -208,7 +212,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Fast Prototyping**
 * **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
 * Tools for automatically converting Dpdl code to Java , C/C++ and V code
-* Allows to embed generative AI code with the 'DpdlAINerd' (DAN) Dpdl language-plugin
+* Allows to automatically generate and embed generative AI programming code within Dpdl using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Open Source programming language plug-ins
 
 
