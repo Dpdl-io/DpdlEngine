@@ -12,7 +12,7 @@ developed by
 ## DpdlAINerd (DAN) - a Dpdl language plug-in for generative code
 
 
-'DpdlAINerd' is a dedicated Dpdl language plug-in for generative code.
+'DpdlAINerd' (DAN) is a dedicated Dpdl language plug-in for generative code.
 
 The plug-in provided allows to generate via a configured AI engine embedded Dpdl code sections in various programming languages which can than be executed as embedded code within Dpdl. More generally the plug-in allows to generate also content used in the code execution.
 
@@ -78,9 +78,64 @@ DAN_ENGINE=openai
 DAN_API_KEY=put_your_api_key_here
 ```
 
-### How to call
+### Modes of execution
 
-The code generation funciton can be activated by providing the '@gen' parameter to the code execution.
+The DAN language plug-in can be used in two different modes
+
+#### Generate a new Dpdl source file
+
+By executing the script with the '@gen' parameter (see below). A new Dpdl source file is generated.
+
+This mode allows to check and adapt the code before executing it. Generative AI is not yet 100% capable. But it will get better and better.
+
+#### Generate and access content directly
+
+The DAN Dpdl language plug-in can also be used to generate content used in the execution, eg. a test file
+
+Example:
+```python
+println("generating a json file with AI....")
+
+>>ai
+generate a sample json file which contains all fields for a personal identity document (ID)
+<<
+
+int exit_code = dpdl_exit_code()
+println("generative ai exit code: " + exit_code)
+
+string my_test_json = dpdl_stack_buf_get("dpdlainerd_buf")
+
+println("this is my sample json:")
+println(my_test_json)
+```
+
+Output:
+```
+this is my sample json:
+{
+   "id_number": "123456789",
+   "first_name": "John",
+   "last_name": "Doe",
+   "birth_date": "1990-01-01",
+   "sex": "male",
+   "nationality": "American",
+   "issue_date": "2021-01-01",
+   "expiry_date": "2031-01-01",
+   "issuing_authority": "State Department of Motor Vehicles",
+   "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "state": "CA",
+      "postal_code": "12345"
+   },
+   "photo_url": "https://example.com/photo.jpg"
+}
+```
+
+
+### How to execute
+
+The code generation function can be activated by providing the '@gen' parameter to the code execution.
 
 The DpdlEngine will generate a new file, in the same directory, with the '_gen' suffix.
 
@@ -89,6 +144,8 @@ Example:
 java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED -jar DpdlEngine_V1.0_release.jar -load ai/dpdlAITest.h @gen
 ```
 
+NOTE: Currently, in the 'DpdlEngine lite' shareware release the execution requires you to enter a password at each generation.
+		The password is '123456'
 
 ### Current status
 
