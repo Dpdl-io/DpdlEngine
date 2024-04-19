@@ -25,6 +25,8 @@ Further programming languages and natural language interpreters can be implement
 Dpdl is self contained, portable and highly customizable via an extensible interface. 
 For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
+A dedicated Dpdl language plug-in (DAN) allows via generative AI code to automatically generate and embed programming language code or content in Dpdl code. 
+
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
