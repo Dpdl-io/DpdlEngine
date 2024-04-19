@@ -60,39 +60,21 @@ int exit_code = dpdl_exit_code()
 println("embedded ai generated exit code: " + exit_code)
 ```
 
-### Supported AI engines
-
-Currently 'DpdlAINerd' supports the following AI engines:
-
-- OpenAI (Model: gpt-3.5-turbo)
-- Google Vertex AI (supported soon)
-- *support for more engines will follow
-
-
-The engine used can be configured via the 'DpdlPlugins.ini' configuration file, along with the appropriate access key 
-
-DpdlPlugins.ini sample:
-```
-[DpdlAINerd]
-DAN_ENGINE=openai
-DAN_API_KEY=put_your_openai_api_key_here
-```
-
-### Modes of execution
+### Modes of execution:
 
 The DAN language plug-in can be used in two different modes
 
-#### Generate a new Dpdl source file
+### Generate a new Dpdl source file
 
 By executing the script with the '@gen' parameter (see below). A new Dpdl source file is generated.
 
 This mode allows to check and adapt the code before executing it. Generative AI is not yet 100% capable. But it will get better and better.
 
-#### Generate and access content directly
+### Generate and access generated content directly
 
 The DAN Dpdl language plug-in can also be used to generate content used in the execution, eg. a test file
 
-Example:
+Example that generates a json file on-the fly for testing:
 ```python
 println("generating a json file with AI....")
 
@@ -146,6 +128,26 @@ java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens jav
 
 NOTE: Currently, in the 'DpdlEngine lite' shareware release the execution requires you to enter a password at each generation.
 		The password is '123456'
+
+
+### Supported AI engines
+
+Currently 'DpdlAINerd' supports the following AI engines:
+
+- OpenAI (Model: gpt-3.5-turbo)
+- Google Vertex AI (supported soon)
+- *support for more engines will follow
+
+
+The engine used can be configured via the 'DpdlPlugins.ini' configuration file, along with the appropriate access key 
+
+DpdlPlugins.ini sample:
+```
+[DpdlAINerd]
+DAN_ENGINE=openai
+DAN_API_KEY=put_your_openai_api_key_here
+```
+
 
 ### Current status
 
