@@ -1,4 +1,4 @@
-Dpdl - Dynamic Packet Definition Language
+# Dpdl - System requirements
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
@@ -11,7 +11,7 @@ developed by
 
 
 'DpdlEngine lite' V1.0 is available as Free Trial Shareware, with some limitations/restrictions (see section below),
-under the license agreement included (see LICENSE.txt).
+under the license agreement included in this distribution (see LICENSE.txt).
 
 The full registered version of DpdlEngine can be requested via the order request form:
 [Order Full Version](https://www.dpdl.io/index_order.html)
@@ -31,15 +31,16 @@ By filing the following form you'll get a permanent download link.
 
 ### Important notice: 
 
-Please verify the integrity of the 'DpdlEngine lite' release zip file you downloaded or received (DpdlEngine_V1.0_release.zip),
-			it MUST in any case match the sha(256) checksum as reported on this site: 
+It's important to verify the integrity of the 'DpdlEngine lite' release zip file you downloaded or received (DpdlEngine_V1.0_release.zip),
+
+it MUST in any case match the <ins>sha(256) checksum</ins> as reported on this site: 
 					
 			https://www.dpdl.io/DemoDpdl_validator.html
 			
 
 # System requirements
 
-Although Dpdl is compatible also with previews java versions and virutal machines, this release of 'DpdlEngine lite' requires a 
+Although Dpdl is compatible also with previews versions of Java and virtual machines, this release of 'DpdlEngine lite' requires a 
 compatible Java Virtual Machine (JRE) version  >= 'Java 17'  to run.
 
 If your requirements are to run 'DpdlEngine lite' on an older version of java JRE, just drop an e-mail to: info@dpdl.io 
@@ -59,7 +60,7 @@ The Dpdl native API library is platform dependent and is currently available for
 	
 The native libraries are located in the corresponding platform/architecture folder under './lib/native/' in the corresponding platform folder.
 
-The library can be compiled for additional platforms by us on your request by writing to info@dpdl.io
+The native libraries can be compiled for additional platforms by us on your request by writing to info@dpdl.io
 
 You may delete unused libraries for platforms that you are not interested in (e.g. ./lib/native/someplatform )
 
@@ -88,8 +89,9 @@ NOTE: On Windows OS use the appropriate 'javafx' startup script to run DpdlEngin
 | Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X|X v4.01|
 
 
-Note: The Free trial Demo version of 'DpdlEngine lite' includes a subset of the Dpdl language plug-ins. 
-		If your're interested in testing a specific plug-in please feel free to contact us, we'll be happy to accomodate your specific needs: info@dpdl.io
+Note: The Free trial shareware version of 'DpdlEngine lite' includes a subset of the Dpdl language plug-ins. 
+		If your're interested in testing a specific Dpdl language plug-in please feel free to contact us,
+		we'll be happy to satisfy your specific needs: info@dpdl.io
 
 
 ## Embedded C code
