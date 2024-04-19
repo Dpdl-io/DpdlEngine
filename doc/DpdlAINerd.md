@@ -20,6 +20,17 @@ This enables to write code faster in the prototyping phase and allows also to ge
 
 The 'DpdlAINerd' (DAN) Dpdl language plug-in can be executed within Dpdl via the keyword **`>>ai`**
 
+
+### Modes of execution:
+
+The DAN language plug-in can be used in two different modes
+
+### Generate a new Dpdl source file
+
+By executing the script with the '@gen' parameter (see below). A new Dpdl source file is generated.
+
+This mode allows to check and adapt the generated code before executing it. Generative AI is not yet 100% capable. But it will be in future.
+
 The following example shows how code can be generated from a natural language description, in this case a function to sort a list of numbers using the clojure programming language:
 ```python
 println("Dpdl example with generative AI code...")
@@ -60,15 +71,6 @@ int exit_code = dpdl_exit_code()
 println("embedded ai generated exit code: " + exit_code)
 ```
 
-### Modes of execution:
-
-The DAN language plug-in can be used in two different modes
-
-### Generate a new Dpdl source file
-
-By executing the script with the '@gen' parameter (see below). A new Dpdl source file is generated.
-
-This mode allows to check and adapt the code before executing it. Generative AI is not yet 100% capable. But it will get better and better.
 
 ### Generate and access generated content directly
 
