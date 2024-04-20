@@ -851,7 +851,8 @@ Note: The keyword has to be on a single line
 
 Embedded C code can be executed in 2 different Modes:
 
-1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library headers already included (**default mode**)
+1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library <ins>standard headers already included</ins> (**default mode**)
+
 2) Compiled (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution, path to standard C header and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:compile**'
 
 #### Mode 1 (interpreted)
@@ -865,34 +866,6 @@ The stack size can be customized by applying configurable settings.
 
 **Minimal embedded C library documentation:**
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
-#### Mode 2 (compiled in memory)
-
-The faster and more complete execution Mode(2) can be activated by pushing the option **`dpdl:C99`** or **`dpdl:compile`** on the dpdl stack (-> see 'dpdl_stack_push(..)').
-A basic set of include headers are available in the folder **`./lib/native/$platform/include`**, additional include or library files can be provided with the options **`dpdl:-I`** and **`dpdl:-L`**
-
-Example:
-```python
-println("executing embedded C code..")
->>c
-	#include <stdio.h>
-	
-	int main(int argc, char **argv){
-		printf("Hello C from Dpdl!\n");
-		printf("\n");
-	    return 0;
-	}
-<<
-int exit_code = dpdl_exit_code()
-
-println("embedded C exit code: " + exit_code);
-```
-
-Parameters and data can be passed to the interpreter via the '**dpdl_stack_push(..)**' API function.
-Data can be written to and read from to the dpdl stack using the '**dpdl_stack_buf_put(..)**' and '**dpdl_stack_buf_get()**' API functions.
-
-Pushing a variable 'dpdlbuf_*" on the dpdl stack, allows to later retrieve in Dpdl the data buffer that has been written
-in the C code via the '**dpdl_stack_buf_put**' function (for example the result of a calculation)
 
 Example (Mode 1):
 ```python
@@ -927,6 +900,65 @@ println("embedded C exit code: " + exit_code);
 string buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("response buffer: " + buf)
 ```
+
+#### Mode 2 (compiled in memory)
+
+The faster and more complete execution Mode(2) can be activated by pushing the option **`dpdl:compile`** on the dpdl stack (-> see 'dpdl_stack_push(..)').
+
+The built-in compiler searches the default library and include files on the OS. 
+A basic set of include headers are available in the folder **`./lib/native/$platform/include`**.
+Additional include header files or library files can be provided with the options **`dpdl:-I`** and **`dpdl:-L`**
+
+see the following documentation for more info
+[doc/Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md) 
+
+Example:
+```python
+println("Benchmarking Dpdl embedded C with compile option...")
+
+dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C")
+>>c
+	#include <stdio.h>
+	#include <time.h>
+	
+	extern void dpdl_stack_buf_put(char *buf);
+
+	int main(int argc, char **argv){
+		printf("Dpdl C Bench\n");
+		printf("\n");
+		time_t start;
+		time_t end;
+	    time(&start);
+	    int c;
+		for(c = 0; c < 5000000; c++){
+			printf("iter %d \n", c);
+		}
+
+		time(&end);
+		printf("\n");
+		double exec_time = difftime(end, start);
+
+		char res[256];
+		sprintf(res, "my result Exec time: %lf \n", exec_time);
+
+		dpdl_stack_buf_put(res);
+	    return 0;
+	}
+<<
+int exit_code = dpdl_exit_code()
+println("embedded C exit code: " + exit_code)
+
+string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
+println("result: " + buf)
+```
+
+Parameters and data can be passed to the interpreter via the '**dpdl_stack_push(..)**' API function.
+Data can be written to and read from to the dpdl stack using the '**dpdl_stack_buf_put(..)**' and '**dpdl_stack_buf_get()**' API functions.
+
+Pushing a variable 'dpdlbuf_*" on the dpdl stack, allows to later retrieve in Dpdl the data buffer that has been written
+in the C code via the '**dpdl_stack_buf_put**' function (for example the result of a calculation)
+
+
 
 Note: For Mode(2), in order to use the function dpdl_stack_buf_put(..), instead of importing 'dpdl.h', it's required to declare 'extern void dpdl_stack_buf_put(char *buf);' 
 
