@@ -9,18 +9,24 @@ Dpdl provides a mechanism for embedded code substitution
 
 **`dpdl:applyvars`**
 
-Variables that have been pushed onto the dpdl stack via **`dpdl_stack_var_put(..)`** and **`dpdl_stack_obj_put(..)`** can be references inside embedded code with '{{var_name}}'
+Variables that have been pushed onto the dpdl stack via **`dpdl_stack_var_put(..)`** and **`dpdl_stack_obj_put(..)`** can be references inside embedded code with '{{var_name}}'. The dpdl stack configuration 'dpdl:applyvars' needs to be provided.
 
 Example:
 ```python
 println("embedding some code...")
 
-dpdl_stack_var_put("my_var", "This is a message\n")
+int x = 23
 
+dpdl_stack_var_put("my_var", "This is a message")
+dpdl_stack_obj_put("my_int", x)
+
+dpdl_stack_push("dpdl:applyvars")
 >>c
 #include <stdio.h>
 
-printf("{{my_var}}");
+int x = {{my_int}};
+printf("{{my_var}}: %d\n", x);
+
 <<
 
 int exit_code = dpdl_exit_code()
