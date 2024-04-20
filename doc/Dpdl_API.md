@@ -148,6 +148,7 @@ getClass(string name) return object
 loadObj(string name, object params, ...) return object
 loadCode(string dpdl_script_ref, object args, ...) return object
 dpdl_stack_push(object params, ...)
+dpdl_stack_push(string key, object params, ...)
 dpdl_stack_buf_put(string key, string value) return int status
 dpdl_stack_buf_get(string key) return string value
 dpdl_stack_var_put(string key, string value) return int status
