@@ -9,16 +9,18 @@
 
 println("Benchmarking Dpdl embedded C with compile option...")
 
-dpdl_stack_push("dpdl:compile", "dpdl:-I./DpdlLibs/C")
+dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C")
 >>c
 	#include <stdio.h>
 	#include <time.h>
 	
+	extern void dpdl_stack_buf_put(char *buf);
+
 	int main(int argc, char **argv){
 		printf("Dpdl C Bench\n");
 		printf("\n");
-		time_t start; // use time_t when compile option is set
-		time_t end; // use time_t when compile option is set
+		time_t start;
+		time_t end;
 	    time(&start);
 	    int c;
 		for(c = 0; c < 5000000; c++){
@@ -28,10 +30,16 @@ dpdl_stack_push("dpdl:compile", "dpdl:-I./DpdlLibs/C")
 		time(&end);
 		printf("\n");
 		double exec_time = difftime(end, start);
-		printf("Exec time: %lf \n", exec_time);
+
+		char res[256];
+		sprintf(res, "my result Exec time: %lf \n", exec_time);
+
+		dpdl_stack_buf_put(res);
 	    return 0;
 	}
 <<
 int exit_code = dpdl_exit_code()
+println("embedded C exit code: " + exit_code)
 
-println("embedded C exit code: " + exit_code);
+string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
+println("result: " + buf)
