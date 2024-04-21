@@ -161,17 +161,18 @@ Minimal, all basic C libraries and headers already included, no dependencies, PO
 
 #### Mode 2 (full and compiled code)
 
---> Fast compile time and fast execution (can be activated via options '**dpdl:C99**' and '**dpdl:compile**'.
+--> Fast compile time and fast execution (can be activated via option '**dpdl:compile**').
 This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
 
-The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' or '**dpdl:C99**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
-The 'dpdl:compile' option currently works for the following platforms: **Linux (x86_64), MacOS (arm64), Raspberry (armv7l)**. 
-The C compiler used is the <ins>**Fabrice Bellard's TCC**</ins>.
+The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+
+The 'dpdl:compile' option currently works for the following platforms: **Linux (x86_64), MacOS (arm64), Raspberry (armv7l), Windows 64**. 
+The embedded C compiler used is the <ins>**Fabrice Bellard's TCC**</ins>.
 
 For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
 
 
-The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:C99**' or '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 
 * The embedded C code for mode (1) may, or may not include a 'main(..)' function. 
 If the main function is defined, parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function
