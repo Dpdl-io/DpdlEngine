@@ -50,11 +50,15 @@ Currently Dpdl supports the embedding of the following languages available as in
 
 Data and variables can be exchanged with the embedded code via the dpdl stack by using the API functions:
 
+**`dpdl_stack_push(..)`**
+
 **`dpdl_stack_var_put(..)`**
 
 **`dpdl_stack_var_get(..)`**
 
-**`dpdl_stack_push(..)`**
+**`dpdl_stack_var_glob_put(..)`**
+
+**`dpdl_stack_var_glob_get(..)`**
 
 **`dpdl_stack_buf_put(..)`**
 
@@ -64,7 +68,9 @@ Data and variables can be exchanged with the embedded code via the dpdl stack by
 
 **`dpdl_stack_obj_get(..)`**
 
-Variables that are pushed on the dpdl stack are passed as parameters to the embedded code, and can also be embedded directly in the code as placeholder, see **`{{var_name}}`**. In the latter case the variables are replaced with the actual values before code compilation and execution.
+Variables that are pushed on the dpdl stack are passed as parameters to the embedded code.
+
+Variables can also be embedded directly in the code as placeholder, see **`{{var_name}}`**. In the latter case the variables are replaced with the actual values before code compilation and execution.
 
 Example:
 ```python
@@ -106,6 +112,20 @@ string buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("response buffer: " + buf)
 ```
 
+if the stack configuration **`dpdlstack:somekey`** is pushed on the dpdl stack, the stack variables can at a different stage be reused again
+
+```python
+
+dpdl_stack_push("dpdlstack:myconfig", "dpdl:compile", "MyParam1", "MyParam2", ...)
+
+....
+
+# all variables previously set apply 
+dpdl_stack_push("dpdlstack:myconfig")
+
+...
+
+```
 
 ### Embedding C
 
