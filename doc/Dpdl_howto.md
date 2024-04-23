@@ -189,6 +189,42 @@ e.g. if the main script is located in the folder 'test' (i.e. ./DpdlLibs/test) c
 the include path need to be always relative to the root dir (e.g include("inc1/mymodule.h") include(inc1/sub/mymobule...). This applies also for includes within subfolders.
 
 
+### Generative AI code and execution with 'DpdlAINerd' (DAN)
+
+The Dpdl language plug-in 'DpdlAINerd' (DAN) allows to generate code and data or content via popular AI engines (currently OpenAI, more to come).
+
+This is a powerful tool for fast prototyping and experimenting with code.
+
+The following example shows one possible execution path:
+```python
+println("Testing generative AI code with Dpdl....")
+
+dpdl_stack_var_put("my_message", "Hello generative AI from Dpdl")
+
+>>ai
+	Write a console program in C that print out the first command line parameter and append the string '{{my_message}}'
+<<
+int exit_code = dpdl_exit_code()
+println("generated ai code exit code: " + exit_code)
+
+string my_code = dpdl_stack_buf_get("dpdlainerd_buf")
+
+dpdl_stack_var_put("my_code", my_code)
+
+println("executing generated code...")
+
+dpdl_stack_push("dpdl:applyvars", "dpdl:compile", "param0", "MESSAGE: ")
+
+>>c
+{{my_code}}
+<<
+
+exit_code = dpdl_exit_code()
+println("embedded C code exit code: " + exit_code)
+```
+
+Check the documentation for more info: [DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
 ## Dpdl data
 
 ### Mapping data in 'json' format

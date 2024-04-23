@@ -20,6 +20,8 @@ This enables to write code faster in the prototyping phase and allows also to ge
 
 The 'DpdlAINerd' (**DAN**) Dpdl language plug-in can be embedded and executed within Dpdl via the keyword **`>>ai`**
 
+see Dpdl examples in: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/ai)
+
 
 ### Modes of execution:
 
