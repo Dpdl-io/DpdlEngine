@@ -12,9 +12,9 @@ developed by
 ## DpdlAINerd (DAN) - a Dpdl language plug-in for generative code
 
 
-'DpdlAINerd' (DAN) is a dedicated Dpdl language plug-in for AI generative code.
+'**DpdlAINerd**' (**DAN**) is a dedicated Dpdl language plug-in for AI generative code.
 
-The plug-in provided allows to generate via a configurable AI engine embedded Dpdl code sections in various programming languages which can than be executed as embedded code within Dpdl. More generally, the plug-in allows to generate also content or data used during the code execution.
+The plug-in provided allows to generate via a configurable AI engine (OpenAI, CodePal, etc..) embedded Dpdl code sections in various programming languages which can than be executed as embedded code within Dpdl. More generally, the plug-in allows to generate also content or data used during the code execution.
 
 This enables to write code faster in the prototyping phase and allows also to generate data on the fly needed for development and testing.
 
@@ -29,7 +29,7 @@ The DAN language plug-in can be used in two different modes:
 
 ### Generate a new Dpdl source file containing generated code
 
-By executing the script with the '@gen' parameter (see below). A new Dpdl source file is generated, containing the generated code sections.
+By executing the Dpdl script with the '@gen' parameter (see below). A new Dpdl source file is generated, containing the generated code sections.
 
 This mode allows to check and adapt the generated code before executing it. Generative AI is not yet 100% capable. But it will for sure in future.
 
@@ -82,7 +82,7 @@ println("embedded ai generated exit code: " + exit_code)
 
 The DAN Dpdl language plug-in can also be used to generate content or data used in the code execution, eg. a test file
 
-#### Example:
+#### Example data generation:
 
 This code generates a json file on-the fly for testing purposes:
 
@@ -124,6 +124,41 @@ this is my sample json:
    "photo_url": "https://example.com/photo.jpg"
 }
 ```
+
+#### Example for alternative code generation
+
+The following example shows how code can be generated and executed right away.
+
+Example:
+```python
+println("testing generative AI code with Dpdl....")
+
+dpdl_stack_var_put("my_message", "Hello generative AI from Dpdl")
+
+>>ai
+	Write a console application in C that converts the following string to upper case: {{my_message}}
+<<
+int exit_code = dpdl_exit_code()
+println("generated ai code exit code: " + exit_code)
+
+string my_code = dpdl_stack_buf_get("dpdlainerd_buf")
+
+dpdl_stack_var_put("my_code", my_code)
+
+println("executing generated code...")
+
+dpdl_stack_push("dpdl:applyvars", "dpdl:compile")
+
+>>c
+{{my_code}}
+<<
+
+exit_code = dpdl_exit_code()
+println("embedded C code exit code: " + exit_code)
+
+```
+
+As you see Dpdl allows a very flexible way to generate and execute code via AI
 
 
 ### How to execute
