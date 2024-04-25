@@ -196,6 +196,7 @@ Currently 'DpdlAINerd' supports the following AI engines:
 
 - OpenAI (Model: gpt-3.5-turbo)
 - Google Vertex AI (supported soon)
+- CodePal (supported soon)
 - *support for more engines will follow
 
 
