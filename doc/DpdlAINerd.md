@@ -158,7 +158,7 @@ println("embedded C code exit code: " + exit_code)
 
 ```
 
-As you see Dpdl allows a very flexible way to generate and execute code via AI
+As you see Dpdl allows a very flexible way to dynamically generate and execute code via AI
 
 
 ### How to execute
