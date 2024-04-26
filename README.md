@@ -220,6 +220,26 @@ The speedup is x 25 times faster compared to a standard record store access
 * Open Source programming language plug-ins
 
 
+### Quick Links
+
+[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+  
+[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+
+[Dpdl_embedded_languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
+
+[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+
+[Dpdl compiler documentation]([Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
+
+[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
+[Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
+
+[Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
+
+
+
 ## Access to the complete JRE Java platform API and any external java libraries
 
 
