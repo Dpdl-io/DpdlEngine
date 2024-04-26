@@ -287,6 +287,9 @@ endfor
 ```
 
 2) looping through an an array with a java **`iterator`**
+
+All methods of the java class 'ArrayList' can be accessed
+
 ```python
 myarr[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
 println("myarr: " + myarr)
