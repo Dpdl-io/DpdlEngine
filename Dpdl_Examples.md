@@ -332,8 +332,13 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
  	[app/dummy/dpdl_sample.h](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
  	
+ 
+ * Example Dpdl code that leverages AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate and execute embedded code right away
+
+ 	[ai/dpdlAITestExec.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAITestExec.h)
  	
- * Example Dpdl code that that leverages generative AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate a json test dataset
+ 
+ * Example Dpdl code that leverages AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate a json test dataset
 
 	[ai/dpdlAITestData.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAITestData.h)
 	
