@@ -1,4 +1,4 @@
-# DpdlAINerd (DAN)
+# DpdlAINerd (DAN) language plug-in
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 

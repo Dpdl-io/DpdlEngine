@@ -1,5 +1,5 @@
 
-# Dpdl Embedded C
+# Dpdl embedded C libs
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 

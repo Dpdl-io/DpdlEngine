@@ -1,4 +1,4 @@
-# Dpdl - Dynamic Packet Definition Language
+# Dpdl API documentation
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
