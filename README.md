@@ -509,11 +509,15 @@ The Dpdl framework and API documentation are available via the following links:
 
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
+[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
+
 [Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 
 [Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
 
 [Track Changes](https://github.com/Dpdl-io/DpdlEngine/blob/main/Changes.md)
+
 
  Dpdl Java API Documentation (available only for the registered version of DpdlEngine)
 
