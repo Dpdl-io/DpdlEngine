@@ -33,7 +33,7 @@ Currently Dpdl supports the embedding of the following languages available as in
 **available Add-on plug-ins:**
 
 * **`Sql`**
-* **`Ai`**
+* **`Ai`** (DpdlAINerd)
 
 
 ### Embedded programming languages - compatibility matrix
