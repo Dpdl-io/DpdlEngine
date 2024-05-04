@@ -1197,6 +1197,7 @@ dpdl:C99
 ```
 dpdl:-F$SRC_FILE_PATH
 ```
+Note: The unregistered version of 'DpdlEngine lite' allows this option to be used only once within a given execution section
 
 **Adds the following include path for the execution of ANSI C code:**
 ```
