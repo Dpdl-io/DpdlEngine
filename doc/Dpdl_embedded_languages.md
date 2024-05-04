@@ -381,8 +381,8 @@ JavaScript is the ideal programming language for web applications as it's suppor
 JavaScript code can be embedded within Dpdl via the keyword **`>>js`** or **`>>qjs`**
 
 JavaScript can be executed with 2 Modes:
-1) Using the 'Nashorn' javascript engine '**>>js**' -> available only on on JRE version 11 to 15
-2) Using the 'QuickJS' javascript engine from Fabrice Bellard, ES2023 compliant '**>>qjs**' (Suggested)
+1) Using the 'Nashorn' javascript engine '**>>js**' -> available only on JRE version 11 to 15
+2) Using the 'QuickJS' javascript engine from Fabrice Bellard, ES2023 compliant '**>>qjs**' (Suggested mode)
 
 #### Mode 1
 
