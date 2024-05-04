@@ -355,6 +355,8 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
+See this doc for more details: [Dpdl_embedded_languages.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
+
 #### Dpdl example with embedded 'ROOT C++' code
 
 ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/) .
