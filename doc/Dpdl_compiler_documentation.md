@@ -55,7 +55,7 @@ Instructs the Dpdl runtime to compile in memory the embedded C code before execu
 
 Adds the specified file to the compile set
 
-Note: This option is enabled only in the full registered version of 'DpdlEngine lite'. It will eventually throw an exception in the Demo shareware release
+Note: The unregistered version of 'DpdlEngine lite' allows this option to be used only once within a given execution section
 
 **`dpdl:-A$Dir`**
 
