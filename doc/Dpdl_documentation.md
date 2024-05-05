@@ -13,7 +13,7 @@ developed by
 
 ### Features:
 
-* Types supported **`int`** **`byte`** **`float`** **`double`** **`long`** **`string`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
+* Types supported **`int`** **`byte`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
 * APIs: native API, Dpdl API, MIDP API, JRE API
@@ -47,6 +47,7 @@ double d = 1.0d
 long l = 1000L
 byte b = 0x01 
 string s = "mystr"
+char c = 'a'
 bool t = true
 myarr[] = [1, 0.3, 23.d, 1000L, 0x09, "mydata"]
 var v = "some variable type var"
