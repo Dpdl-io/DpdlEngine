@@ -1174,6 +1174,8 @@ println(resp_buf)
 Some Dpdl runtime behavior can be parameterized by pushing dedicated parameters on the dpdl stack by using the function
 **`dpdl_stack_push(..)`**
 
+Each Dpdl language plug-in can be parameterized in this way (see plug-in spec)
+
 Example:
 ```
 dpdl_stack_push("dpdl:compile","dpdl:-I./DpdlLibs/C")
@@ -1188,26 +1190,18 @@ Embedded ANSI C code and OCaml code can be compiled on-the-fly in memory at runt
 dpdl:compile
 ```
 
-**Activates ANSI C99 code**
+See this doc for more details: [Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
+
+
+#### Code substitution
+
+**Applies the variables to the embedded code:**
 ```
-dpdl:C99
+dpdl:applyvars
 ```
 
-**Adds the following source file for the execution of ANSI C code:**
-```
-dpdl:-F$SRC_FILE_PATH
-```
-Note: The unregistered version of 'DpdlEngine lite' allows this option to be used only once within a given execution section
+See this doc for more details: [Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
-**Adds the following include path for the execution of ANSI C code:**
-```
-dpdl:-I$INCLUDE_PATH
-```
-
-**Adds the following library path for the execution of ANSI C code:**
-```
-dpdl:-L$LIBRARY_PATH 
-```
 
 ### Extensions
 
