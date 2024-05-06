@@ -600,8 +600,8 @@ JavaScript is the ideal programming language for web applications as it's suppor
 JavaScript code can be embedded within Dpdl via the keyword **`>>js`** or  **`>>qjs`**
 
 Dpdl allows the embedding of javascript with 2 different Modes:
-1) Using the 'Nashorn' javascript engine embedded in the Java platform '>>js'
-2) Using the 'QuickJS' javascript engine from Fabrice Bellard '>>qjs'
+1) Using the 'QuickJS' javascript engine from Fabrice Bellard '>>qjs' (Suggested)
+2) Using the 'Nashorn' javascript engine embedded in the Java platform '>>js'
 
 
 Example:

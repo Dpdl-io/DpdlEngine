@@ -164,6 +164,8 @@ float f = 0.1
 double d = 0.2d
 long l = 1000000L
 byte c = 0x02
+char ch = 'a'
+
 bool b = true
 struct myStruct aa
 object myo = loadObj("String", "my java object")
@@ -176,6 +178,7 @@ println("f=" + f + " type=" + typeof(f))
 println("d=" + d + " type=" + typeof(d))
 println("l=" + l + " type=" + typeof(l))
 println("c=" + c + " type=" + typeof(c))
+println("ch=" + ch + " type=" + typeof(ch))
 println("b=" + b + " type=" + typeof(b))
 println("aa=" + aa + " type=" + typeof(aa))
 println("myo=" + myo + " type=" + typeof(myo))

@@ -381,30 +381,25 @@ JavaScript is the ideal programming language for web applications as it's suppor
 JavaScript code can be embedded within Dpdl via the keyword **`>>js`** or **`>>qjs`**
 
 JavaScript can be executed with 2 Modes:
-1) Using the 'Nashorn' javascript engine '**>>js**' -> available only on JRE version 11 to 15
-2) Using the 'QuickJS' javascript engine from Fabrice Bellard, ES2023 compliant '**>>qjs**' (Suggested mode)
+1) Using the 'QuickJS' javascript engine from Fabrice Bellard, ES2023 compliant '**>>qjs**' (Suggested mode)
+2) Using the 'Nashorn' javascript engine '**>>js**' -> available only on JRE version 11 to 15
+
 
 #### Mode 1
 
-##### keyword **`>>js`**
+The QuickJS engine used provides a powerful and complete API (supports ES2023 spec https://tc39.es/ecma262/2023/)
+to interact with the javascript engine at low level.
+Custom native functions and objects can be implemented as shared libraries and accessed inside javascript code.
 
-```python
+You can find examples in the folder './DpdlLibs/js/'
 
-dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
-dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
->>js
-your javascript code 
-print(var1)....
-<<
-```
+Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
 
-NOTE: The Dpdl embedded javascript plug-in needs specific features that must be supported by the java JRE/JDK implementation.
-	  Not all java virtual machines support these features. In future releases the V8 JavaScript engine will be supported.
+The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
 
+The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write data to the 'dpdlbuf_*' variable pushed on the dpdl stack.
+See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
 
-#### Mode 2
-
-supports ES2023 spec (https://tc39.es/ecma262/2023/)
 
 ##### keyword **`>>qjs`**
 
@@ -432,16 +427,24 @@ console.log("fib(10)=", fib(10));
 int exit_code = dpdl_exit_code()
 println("Dpdl qjs exited with exit code: " + exit_code)
 ```
-QuickJS provides a powerful and complete API to interact with the javascript engine at low level.
-Custom native functions and objects can be implemented as shared libraries and loaded in javascript.
-You can find examples in the folder './DpdlLibs/js/'
 
-Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
+#### Mode 1
 
-The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
+##### keyword **`>>js`**
 
-The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write data to the 'dpdlbuf_*' variable pushed on the dpdl stack.
-See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
+```python
+
+dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
+dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
+>>js
+your javascript code 
+print(var1)....
+<<
+```
+
+NOTE: The Dpdl embedded javascript plug-in needs specific features that must be supported by the java JRE/JDK implementation.
+	  Not all java virtual machines support these features. In future releases the V8 JavaScript engine will be supported.
+
 
 #### Passing data to the embedded javascript
 
