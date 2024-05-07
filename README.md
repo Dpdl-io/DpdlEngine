@@ -99,7 +99,7 @@ The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes use of AI ge
 ```
 
 Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** for the development of
-applications and embedded system software and is foreseen to foster rapid application development.
+applications and embedded system software and is foreseen to foster rapid application development and rapid prototyping.
 Embedded ANSI C code and Clojure can also be <ins>dynamically compiled in memory at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
 
 Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint
