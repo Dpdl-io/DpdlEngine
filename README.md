@@ -20,10 +20,9 @@ Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**const
 Dpdl enables access to the Java platform JRE API and to external java libraries and supports the <ins>embedding and on-the-fly execution</ins>
 of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** directly within Dpdl code.
 
-Further programming languages and natural language interpreters can be implemented as extensions and embedded via a dedicated plug-in interface and configuration.
+Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 Dpdl is self contained, portable and highly customizable via an extensible interface. 
-For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 A dedicated Dpdl language plug-in (**DAN**) allows via generative AI code to automatically generate and embed programming language code or content in Dpdl code. 
 
@@ -99,11 +98,12 @@ The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes use of AI ge
  fi
 ```
 
-Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint
-devices and is foreseen to foster rapid application development. Dpdl comes with a very compact and portable
-**scripting engine** and an **extensible API interface** for the development of mobile
-applications and embedded system software. Embedded ANSI C code and Clojure can also be <ins>dynamically compiled in memory at runtime</ins>
-in order to achieve <ins>faster execution</ins> performance.
+Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** for the development of
+applications and embedded system software and is foreseen to foster rapid application development.
+Embedded ANSI C code and Clojure can also be <ins>dynamically compiled in memory at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
+
+Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint
+devices via a custom data container, a 'DpdlPacket'.
 
 This makes Dpdl suitable for a wide range of use-cases and in particular also for <ins>Hardware programming</ins>.
 
@@ -115,9 +115,9 @@ This makes Dpdl suitable for a wide range of use-cases and in particular also fo
  
 The size of the DpdlEngine core can be stripped down to **`60 Kb`** with a basic configuration if needed.
 
-## Dpdl small sample apps
+## Dpdl sample code
 
-### Full featured applications developed with Dpdl
+### Full featured sample applications developed with Dpdl
 
 Here you can find full featured applications written with Dpdl:
 

@@ -1,15 +1,15 @@
 # Dpdl compiler documentation
 
 
-## Dpdl compiler
+## Dpdl
 
-Dpdl provides a mechanism for embedded code substitution 
+Dpdl provides a mechanism for embedded code substitution. This enables an easy and straight forward way of complementing or setting  variables inside the code template.
 
 ### Option settings
 
 **`dpdl:applyvars`**
 
-Variables that have been pushed onto the dpdl stack via **`dpdl_stack_var_put(..)`** and **`dpdl_stack_obj_put(..)`** can be references inside embedded code with '{{var_name}}'. The dpdl stack configuration 'dpdl:applyvars' needs to be provided.
+Variables that have been pushed onto the dpdl stack via **`dpdl_stack_var_put(..)`** and **`dpdl_stack_obj_put(..)`** can be references inside embedded code with '{{var_name}}'. The dpdl stack configuration 'dpdl:applyvars' needs to be provided to apply the code substitution.
 
 Example:
 ```python

@@ -9,7 +9,7 @@ developed by
 &copy; 2003	
 
 
-## DpdlAINerd (DAN) - a Dpdl language plug-in for generative code
+## DpdlAINerd (DAN) - a Dpdl language plug-in for AI generative code
 
 
 '**DpdlAINerd**' (**DAN**) is a dedicated Dpdl language plug-in for AI generative code.
@@ -27,7 +27,7 @@ see Dpdl examples in: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree
 
 The DAN language plug-in can be used in two different modes:
 
-### Generate a new Dpdl source file containing generated code
+### Generate a new Dpdl source file containing generated code (Mode 1)
 
 By executing the Dpdl script with the '@gen' parameter (see below). A new Dpdl source file is generated, containing the generated code sections.
 
@@ -78,11 +78,11 @@ println("embedded ai generated exit code: " + exit_code)
 ```
 
 
-### Generate and access generated content or data directly
+### Generate and access generated content or data directly (Mode 2)
 
 The DAN Dpdl language plug-in can also be used to generate content or data used in the code execution, eg. a test file
 
-#### Example data generation:
+#### Example for data generation:
 
 This code generates a json file on-the fly for testing purposes:
 

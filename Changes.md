@@ -9,6 +9,7 @@ developed by
 
 ## New 
 
+* NEW (05.05.2024) Added 'char' type for better integration
 * NEW (17.07.2024) Dpdl language plug-in 'DpdlAINerd' for generative code is now available in 'DpdlEngine lite' release
 					Documenation and examples will be available soon
 
