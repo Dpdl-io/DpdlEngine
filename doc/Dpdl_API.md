@@ -10,24 +10,25 @@ developed by
 &copy; 2003
 		
 
-## Dpdl API Documentation
+## Dpdl API documentation
 
 DpdlEngine V1.0
 		
 This is the Dpdl scripting API documentation. 
 
 The API's are available as:
-- Java APIs
-- Native import Libraries
+- Java API's
+- Dpdl import Libraries
+- Native Libraries
 - Native functions
 
 ### Java APIs
 
 Dpdl allows to load and access java classes and methods via dedicated API functions **`loadObj(..)`** and **`getClass(..)`**.
 
-This allows Dpdl to access a broad set of APIs and libraries. The references for resolving the classes are defined in the class definition file './DpdlLibs/libs/classes.txt'.
+This allows Dpdl to access a broad set of API's and libraries. The references for resolving the classes are defined in the class definition file './DpdlLibs/libs/classes.txt'.
 
-The 'DpdlEgine lite' Demo release includes the Java Runtime API, the JavaFX and the bluecove JRS-82 API as defined in the  class definition file.
+The 'DpdlEgine lite' Demo release includes the Java <ins>JRE API</ins>, the <ins>JavaFX API</ins> and the <ins>Bluecove JRS-82 API</ins> as defined in the  class definition file.
 
 
 [Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
@@ -46,13 +47,6 @@ Auxiliary API libraries can be imported and used via the **`import(..)`** statem
 The import libraries are implemented either in Dpdl (with '*.h' extension and located in './DpdlLibs/libs/' folder,
 or in a Native java library that can be implemented and configured to be accessed via Dpdl in a easy and  straight forward way.
 
-#### Dpdl libraries:
-
-Files (*.h) located in the folder './DpdlLibs/'
-
-
-
-#### The Native libraries:
 
 ```python
 import('io')
@@ -86,6 +80,28 @@ decode(string json, object data) return object data
 
 Adding custom libraries is straight forward and can be done by simply adding the implementation to the classpath and 
 configure the library in the configuration file 'DpdlEngine.ini'
+
+
+### The Native libraries:
+
+Dpdl allows to access natively loaded libraries (libc, msvcrt, etc..) on different operating systems (Linux, Windows, Android) throught a unified interface.
+
+To load and access a native lib the Dpdl 'native' library module needs to be imported.
+
+Example:
+```python
+import('native')
+
+object libc = native.loadLib("c")
+
+libc.printf("Hello native function call to libc, my msg: %s %d\n", "MEGA", 9)
+```
+
+For more details visit the doc:
+[Dpdl_native_Interface.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)c
+
+
+
 
 ### Native functions
 

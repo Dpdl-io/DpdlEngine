@@ -330,7 +330,7 @@ println("embedded java exit code: " + exit_code)
 
 ## Dpdl embeddable programming languages
 
-Multiple programming languages can be embedded within the same **Dpdl** code via the keyword **`>>`**.
+Multiple programming languages can be embedded and executed within the same **Dpdl** code via the keyword **`>>`**.
 Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration. This enables basically every sort of 
 programming language or natural language interpreter to be embedded directly in Dpdl code.
 This features is very useful for rapid development and rapid prototyping and is also a key feature for generative software.
