@@ -64,6 +64,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
 
+* Example Dpdl code that loads and accesses natively the 'libc' system library functions
+
+	[native/dpdlTestNative.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h)
+
 * Example Dpdl app that uses the JavaFX library to render and animate chemical molecules in 3D
 
 	[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
