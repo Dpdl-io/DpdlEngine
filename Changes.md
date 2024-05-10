@@ -9,10 +9,12 @@ developed by
 
 ## New 
 
-* NEW (05.05.2024) Added 'char' type for better integration
-* NEW (17.07.2024) Dpdl language plug-in 'DpdlAINerd' for generative code is now available in 'DpdlEngine lite' release
-					Documenation and examples will be available soon
+* NEW (11.05.2024) Dpdl now enables to load and access native libraries (libc, msvcrt, etc..) seamlessly via a unified interface
+					and call functions from Dpdl in the same way -> This feature will be releases in the coming release whithin the 						next days 
 
+* (05.05.2024) Added 'char' type for better integration
+* (17.07.2024) Dpdl language plug-in 'DpdlAINerd' for generative code is now available in 'DpdlEngine lite' release
+					Documenation and examples will be available soon
 * (01.04.2024) The JavaFX library is now available also in the 'DpdlEngine lite' release
 * (01.04.2024) The Dpdl import library 'http' has been improved with more functions (POST, PUT, etc..)
 * (24.03.2024) Dpdl language plugin for SQL is available in the 'DpdlEngine lite' release

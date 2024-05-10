@@ -98,14 +98,13 @@ libc.printf("Hello native function call to libc, my msg: %s %d\n", "MEGA", 9)
 ```
 
 For more details visit the doc:
-[Dpdl_native_Interface.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)c
 
-
+[Dpdl_native_Interface.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
 
 
 ### Native functions
 
-Native API function are implemented directly in the DpdlEngine core
+Native API function are implemented directly in the DpdlEngine coree
 
 ```python
 include(string inc_path) return int

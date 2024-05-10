@@ -17,7 +17,7 @@ developed by
 # What is Dpdl?
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl enables access to the Java platform JRE API and to external java libraries and supports the <ins>embedding and on-the-fly execution</ins>
+Dpdl enables access to the Java platform API's and to external native libraries and supports the <ins>embedding and on-the-fly execution</ins>
 of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** directly within Dpdl code.
 
 Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
@@ -200,7 +200,7 @@ The Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the
 ### Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
-* **Dpdl API provides access to the complete underlying Java JRE platform API and to external Java libraries**
+* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external Native libraries**
 * Multiple embeddable Dpdl language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be embedded and executed** directly within Dpdl code (interpreted/compiled code)
 * **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different platforms (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
@@ -231,6 +231,8 @@ The speedup is x 25 times faster compared to a standard record store access
 [Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
+
+[Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
 
 [DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
