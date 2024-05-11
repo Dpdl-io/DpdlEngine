@@ -87,7 +87,7 @@ object size = loadObj("size_t")
 size.setValue(1024L)
 int comp = libc.memcmp(char_src, char_dest, size)
 if(comp > 0)
-	println("'*char_dest' is less than char_src")
+	println("'*char_dest' is less than *char_src")
 fi
 
 object ptr_dest = loadObj("PointerByReference")
