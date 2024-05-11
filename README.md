@@ -17,8 +17,7 @@ developed by
 # What is Dpdl?
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl enables access to the Java platform API's and to external native libraries and supports the <ins>embedding and on-the-fly execution</ins>
-of other programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** directly within Dpdl code.
+Dpdl enables access to Java platform API's and to external native libraries and supports the <ins>embedding and on-the-fly execution</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** directly embedded within Dpdl code.
 
 Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
@@ -58,9 +57,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 </p>
 
 ### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform.
-By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and 
-Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and the <ins>power</ins> of C/C++ programming language, Dpdl provides a powerful development platform for industrial
-applications, education and research.
+By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript, the <ins>power</ins> of C/C++ programming language and a simple acess to native libraries, Dpdl provides a powerful development platform for industrial applications, education and research.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform API and any external java libraries.
 
@@ -200,7 +197,7 @@ The Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the
 ### Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
-* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external Native libraries**
+* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native libraries**
 * Multiple embeddable Dpdl language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be embedded and executed** directly within Dpdl code (interpreted/compiled code)
 * **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different platforms (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
