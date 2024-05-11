@@ -90,8 +90,6 @@ if(comp > 0)
 	println("'*char_dest' is less than char_src")
 fi
 
-println("compare buffers is: " + comp)
-
 object ptr_dest = loadObj("PointerByReference")
 ptr_dest.setValue(char_dest)
 object ptr_content = ptr_dest.getValue()
