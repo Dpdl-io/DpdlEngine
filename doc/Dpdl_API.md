@@ -16,7 +16,7 @@ DpdlEngine V1.0
 		
 This is the Dpdl scripting API documentation. 
 
-The API's are available as:
+The Dpdl API's are available as:
 - Java API's
 - Dpdl import Libraries
 - Native Libraries
@@ -26,10 +26,9 @@ The API's are available as:
 
 Dpdl allows to load and access java classes and methods via dedicated API functions **`loadObj(..)`** and **`getClass(..)`**.
 
-This allows Dpdl to access a broad set of API's and libraries. The references for resolving the classes are defined in the class definition file './DpdlLibs/libs/classes.txt'.
+This allows Dpdl to access a broad set of API's and libraries. The references for resolving the classes are defined in the class definition file './DpdlLibs/libs/classes.txt'
 
-The 'DpdlEgine lite' Demo release includes the Java <ins>JRE API</ins>, the <ins>JavaFX API</ins> and the <ins>Bluecove JRS-82 API</ins> as defined in the  class definition file.
-
+The 'DpdlEgine lite' Demo release includes the Java <ins>JRE API</ins>, the <ins>JavaFX API</ins> and the <ins>Bluecove JRS-82 API</ins> as defined in the  class definition file:
 
 [Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
@@ -39,7 +38,8 @@ The 'DpdlEgine lite' Demo release includes the Java <ins>JRE API</ins>, the <ins
 
 
 NOTE: Additional APIs and classes can be added freely in the registered version of DpdlEngine.
-	
+
+
 ### Dpdl import Libraries
 
 Auxiliary API libraries can be imported and used via the **`import(..)`** statement.
@@ -76,6 +76,11 @@ parse(string json) return object json
 encode(struct data) return string json
 decode(string json, struct data) return struct data
 decode(string json, object data) return object data
+```
+
+**`native`**
+```python
+loadLib(string lib) return object lib
 ```
 
 Adding custom libraries is straight forward and can be done by simply adding the implementation to the classpath and 
