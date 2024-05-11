@@ -1,6 +1,7 @@
 # File: native/dpdlTestNative.h
 #
-# Example: Dpdl sample code that loads and calls native library (libc) functions
+# Example: Dpdl sample code that loads and calls functions from a native library (libc)
+#			By loading 'c' Dpdl automatically selects the appropriate lib, on Linux/Unix/MAC 'libc' and on Windows 'msvcrt'
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io

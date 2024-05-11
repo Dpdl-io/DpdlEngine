@@ -17,8 +17,9 @@ Dpdl allows to access native library functions of any given loaded native librar
 
 This features makes Dpdl a complete and powerful programming language to develop also low level system components.
 
-On Windows systems it's possible also to access the system library 'kernel32' and provides COM support.
+By loading 'c' (see example below), Dpdl automatically selects the appropriate library, on Linux/Unix/MAC 'libc' and on Windows 'msvcrt'.
 
+On Windows systems it's possible also to access the system library 'kernel32' and it provides COM support.
 
 Example Dpdl code accessing the system library 'libc' functions:
 ```python
