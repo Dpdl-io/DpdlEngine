@@ -131,7 +131,7 @@ NOTE: The 'DpdlEngine lite' demo/shareware release allows to access only a limit
 The full registered version of 'DpdlEngine' allows to access the full set of libc functions a listed here:
 
 libc functions:
-```
+```c
 time_t time (time_t *result)
 int stime (const time_t *newtime)
 int fcntl (int filedes, int command, ...)
@@ -569,7 +569,7 @@ error_t argz_append (char **argz, size_t *argz_len, const char *buf, size_t buf_
 void argz_delete (char **argz, size_t *argz_len, char *entry)
 error_t argz_insert (char **argz, size_t *argz_len, char *before, const char *entry)
 char * argz_next (const char *argz, size_t argz_len, const char *entry)
-error_t argz_replace (char&nbsp;**argz,&nbsp;<span class="nolinebreak">size_t</span>&nbsp;*<span class="nolinebreak">argz_len</span><!-- /@w -->, const&nbsp;char&nbsp;*str,&nbsp;const&nbsp;char&nbsp;*with<!-- /@w -->, unsigned&nbsp;*<span class="nolinebreak">replace_count</span><!-- /@w -->)
+error_t argz_replace (char **argz, size_t argz_len, const char *str, const char *with, unsigned *replace_count)
 int vprintf (const char *template, va_list ap)
 int vwprintf (const wchar_t *template, va_list ap)
 int vfprintf (FILE *stream, const char *template, va_list ap)
