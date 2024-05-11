@@ -109,7 +109,7 @@ For more details visit the doc:
 
 ### Native functions
 
-Native API function are implemented directly in the DpdlEngine coree
+The following API function are implemented directly in the DpdlEngine core:
 
 ```python
 include(string inc_path) return int
