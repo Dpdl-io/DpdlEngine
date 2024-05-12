@@ -96,13 +96,13 @@ The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes use of AI ge
 ```
 
 Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** for the development of
-applications and embedded system software and is foreseen to foster rapid application development and rapid prototyping.
+applications and embedded system software and in particular is ideal to foster rapid application development and rapid prototyping.
 Embedded ANSI C code and Clojure can also be <ins>dynamically compiled in memory at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
 
 Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint
 devices via a custom data container, a 'DpdlPacket'.
 
-This makes Dpdl suitable for a wide range of use-cases and in particular also for <ins>Hardware programming</ins>.
+This makes Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 
 ### Small Memory footprint:
 * DpdlEngine core (full configuration) **`372 Kb`**
@@ -116,7 +116,7 @@ The size of the DpdlEngine core can be stripped down to **`60 Kb`** with a basic
 
 ### Full featured sample applications developed with Dpdl
 
-Here you can find full featured applications written with Dpdl:
+Here you can find full featured working applications written with Dpdl:
 
 [Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
 
@@ -132,7 +132,7 @@ Note: The example 'app/getnews/dpdlGetNews2.h' is identical, but data is decoded
 
 ### Dpdl example using external Java libraries
 
-This is a 3D model visualization of chemical molecules using the JavaFX library. The model can be rotated freely with mouse events (ported to Dpdl from javafx examples)
+This is a 3D model visualization of chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events (ported to Dpdl from javafx examples)
 
 [graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
 
@@ -175,13 +175,12 @@ The main nature of Dpdl is for enabling rapid prototyping, rapid development, co
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
 that a vaster set of APIs are available for a given platform.
 
-Dpdl has also built-in constructs that enable dynamic code generation for generative AI code and provides a dedicated plug-in interface for developing and
-embedding custom language interpreter plug-ins of all sorts.
+Dpdl has also built-in constructs that enable dynamic code generation for <ins>**generative AI code**</ins> and provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
 
 The **`DpdlPacket`** data container is a highly optimized way to store, query and access data
 on devices that have limited memory and storage capabilities.
 
-The Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the prototyping and development process by leveraging generative AI code for embedded code and data within Dpdl.
+The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the prototyping and development process by leveraging generative AI code for embedded code and data within Dpdl.
 
 **Dpdl can be used as:**
 

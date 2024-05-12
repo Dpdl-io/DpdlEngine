@@ -107,7 +107,7 @@ println("after copy memory is: " + ptr_content.getString(0L))
 
 comp = libc.memcmp(char_src, char_dest, size)
 if(comp == 0)
-	println("'*char_dest' and '*char_src' are EQUAL")
+	println("'*char_dest' and '*char_src' now are EQUAL")
 fi
 
 println("")
