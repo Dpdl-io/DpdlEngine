@@ -122,9 +122,21 @@ fi
 println("done")
 ```
 
+### Configuration
+
+#### DPDL_NATIVE_LIB_PATH
+
 The native library to be loaded needs to be available on the default system path or it's path must be configured in the configuration file 'DpdlEngine.ini' via the 'DPDL_NATIVE_LIB_PATH' variable.
 
 The default configuration for 'DPDL_NATIVE_LIB_PATH' is set to './lib/addon'
+
+#### DPDL_NATIVE_CODE_PROTECTION
+
+Dpdl provides built-in support for memory protection useful to avoid segmentation faults and unexpected crashes.
+
+By default the protection is enabled, it can be disabled by setting the variable 'DPDL_NATIVE_CODE_PROTECTION' to 'false' in the
+configuration file 'DpdlEngine.ini'
+
 
 ### Type mapping
 
