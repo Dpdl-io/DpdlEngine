@@ -10,7 +10,7 @@ developed by
 ## New 
 
 * NEW (11.05.2024) Dpdl now enables to load and access native libraries (libc, msvcrt, etc..) directly via a unified interface
-					and call functions from Dpdl in the same way -> This feature will be releases in the coming release within the 						next days. Stand by;)
+					and call functions from Dpdl in the same way -> This feature is available for releases requested via the 							'Download form' (see [Download.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Download.md)
 
 * (05.05.2024) Added 'char' type for better integration
 * (17.07.2024) Dpdl language plug-in 'DpdlAINerd' for generative code is now available in 'DpdlEngine lite' release

@@ -17,16 +17,16 @@ DpdlEngine V1.0
 This is the Dpdl scripting API documentation. 
 
 The Dpdl API's are available as:
-- Java API's
+- Native API's
 - Dpdl import Libraries
 - Native Libraries
 - Native functions
 
-### Java APIs
+### Native APIs
 
 Dpdl allows to load and access java classes and methods via dedicated API functions **`loadObj(..)`** and **`getClass(..)`**.
 
-This allows Dpdl to access a broad set of API's and libraries. The references for resolving the classes are defined in the class definition file './DpdlLibs/libs/classes.txt'
+This allows Dpdl to access a broad set of API's and libraries.
 
 The 'DpdlEgine lite' Demo release includes the Java <ins>JRE API</ins>, the <ins>JavaFX API</ins> and the <ins>Bluecove JRS-82 API</ins> as defined in the  class definition file:
 
@@ -45,13 +45,16 @@ NOTE: Additional APIs and classes can be added freely in the registered version 
 Auxiliary API libraries can be imported and used via the **`import(..)`** statement.
 
 The import libraries are implemented either in Dpdl (with '*.h' extension and located in './DpdlLibs/libs/' folder,
-or in a Native java library that can be implemented and configured to be accessed via Dpdl in a easy and  straight forward way.
+or in a Native Dpdl library that can be implemented and configured to be accessed via Dpdl in a easy and straight forward way.
 
 
 ```python
 import('io')
 import('http')
 import('json')
+import('native')
+
+import('mylib.h')
 ```
 
 **`io`**
@@ -81,6 +84,7 @@ decode(string json, object data) return object data
 **`native`**
 ```python
 loadLib(string lib) return object lib
+mapLib(string lib, object class) return object lib
 ```
 
 Adding custom libraries is straight forward and can be done by simply adding the implementation to the classpath and 

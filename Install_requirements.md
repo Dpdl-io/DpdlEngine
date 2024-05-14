@@ -89,9 +89,10 @@ NOTE: On Windows OS use the appropriate 'javafx' startup script to run DpdlEngin
 | Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X|X v4.01|
 
 
-Note: The Free trial shareware version of 'DpdlEngine lite' includes a subset of the Dpdl language plug-ins. 
-		If your're interested in testing a specific Dpdl language plug-in please feel free to contact us,
-		we'll be happy to satisfy your specific needs: info@dpdl.io
+Note: The Free trial shareware version of 'DpdlEngine lite' includes a subset of the Dpdl language plug-ins (see 'DpdlEngine.ini' section [DpdlCustom]) .
+
+If your're interested in testing a specific Dpdl language plug-in please feel free to contact us,
+we'll be happy to satisfy your specific needs: info@dpdl.io
 
 
 ## Embedded C code

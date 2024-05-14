@@ -168,6 +168,11 @@ and java classes cannot be referenced with the full package path (eg. org.my.myc
 
 * The Demo release of 'DpdlEngine lite' has as slower startup due to security checks, compared to the full registered version of 'DpdlEngine lite'
 
+* The 'loadLib' function of the 'native' Dpdl library is available only in the registered version of Dpdl
+
+
+    
+
 **NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
 
 More builds will follow. Eventually it might be necessary to recompile it for some versions of the platform.
