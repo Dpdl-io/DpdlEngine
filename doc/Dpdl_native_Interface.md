@@ -186,9 +186,11 @@ Helper functions and platform specific features are available via the following 
 [Dpdl JNA reference](https://www.dpdl.io/doc/dpdl_jna/javadoc/) 
 
 
-### 'libc' functions
+### Note
 
-NOTE: The 'DpdlEngine lite' demo/shareware release allows to access only a limite number of functions.
+The Dpdl native interface library is only available in the full registered version of 'DpdlEngine'.
 
-The full registered version of 'DpdlEngine' allows to access the full set of libc functions.
+A demo version with the 'native' library enabled can be requested for evaluation purposes by writing to: info@dpdl.io
+
+
 
