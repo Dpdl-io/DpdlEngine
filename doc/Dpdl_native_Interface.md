@@ -15,11 +15,31 @@ developed by
 
 Dpdl allows to access native library functions of any given loaded native library seamlessly, in the same way as ordinary dpdl functions.
 
-This features makes Dpdl a complete and powerful programming language to develop also low level system components.
+This features makes Dpdl a complete and powerful programming language to interact also with low level system components.
 
-By loading 'c' (see example below), Dpdl automatically selects the appropriate library, on Linux/Unix/MAC 'libc' and on Windows 'msvcrt'.
+**Dpdl library:**
+
+**`native`**
+
+```python
+loadLib(string lib_name) return object lib
+mapLib(string lib_name, object obj) return object lib
+```
+
+Example:
+
+```python
+import('native')
+
+object clib = loadLib("c")
+
+clib.printf("This message comes from native print function: %s %d", "Hello, 23)
+```
+
+By loading the library 'c', Dpdl automatically selects the appropriate library, on Linux/Unix/MAC 'libc' and on Windows 'msvcrt'.
 
 On Windows systems it's possible also to access the system library 'kernel32' and it provides COM support.
+
 
 Example Dpdl code accessing the system library 'libc' functions:
 ```python

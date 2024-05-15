@@ -34,7 +34,7 @@ A dedicated Dpdl language plug-in (**DAN**) allows via <ins>**generative AI code
 These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
-**Dpdl is designed to:**
+## Dpdl is designed to:
 
 ### * Develop your ideas faster
 ### * On multiple platforms

@@ -47,10 +47,11 @@ The Dpdl sample scripts and Dpdl sample applications published on this repositor
 
 ## Dpdl sample Apps
 
-More ddvanced sample applications written with Dpdl are published in this repository:
+More advanced sample applications written with Dpdl are published in this repository:
 
 [Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
 
+These examples are demonstrators but are full running applications.
 
 ## Dpdl examples
 
@@ -156,6 +157,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 * Example Dpdl script using pointers and references
 
 	[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)
+	
+* Example Dpdl code that writes and reads a data buffer to a file using the native library functions in 'libc'
+
+	[native/dpdlNativeExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlNativeExample.h)
 	
 * Example Dpdl script embedding ANSI C code (ISO C99) that is dynamically compiled in memory at runtime (fast) and executed
 
