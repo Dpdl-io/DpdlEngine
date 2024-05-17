@@ -1,5 +1,5 @@
 
-# Dpdl embedded lang
+# Dpdl language plug-ins
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
@@ -9,7 +9,7 @@ developed by
 **SEE Solutions**
 &copy; 2003
 		
-## Dpdl embedded programming languages
+## Dpdl embeddable programming languages
 
 Multiple programming languages can be embedded directly within Dpdl scripts by using the keyword **`>>`**, for example: **>>python**
 

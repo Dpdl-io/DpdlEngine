@@ -54,17 +54,22 @@ println("")
 
 println("testing file access...")
 
-int fh = libc.open("./Test/TestWrite.txt", 1)
+object fcntl = getClass("Fcntl")
+
+int fh = libc.open("./Test/TestWrite.txt", fcntl.O_RDWR)
 
 raise(fh, "Error in opening file")
 
 string mydata_str = "this is the content MEGA I write to my file"
 
+object ptrstr = libc.malloc(1024)
+ptrstr.setString(0L, mydata_str, "utf-8")
+
 object sz = loadObj("size_t")
-sz.setValue(24)
+sz.setValue(strlen(mydata_str))
 println("data size: " + sz)
 
-sz = libc.write(fh, mydata_str, sz)
+sz = libc.write(fh, ptrstr, sz)
 
 println("data size written: " + sz)
 println("")

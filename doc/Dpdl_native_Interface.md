@@ -36,9 +36,10 @@ object clib = loadLib("c")
 clib.printf("This message comes from native print function: %s %d", "Hello, 23)
 ```
 
-By loading the library 'c', Dpdl automatically selects the appropriate library, on Linux/Unix/MAC 'libc' and on Windows 'msvcrt'.
+By loading the library 'c', the Dpdl runtime automatically selects the appropriate library, on Linux/Unix/MAC 'libc' and on Windows 'msvcrt'.
 
-On Windows systems it's possible also to access the system library 'kernel32' and it provides COM support.
+On Windows systems it's possible also to access the system library 'kernel32' and it provides COM support for accessing a wide
+rage of windows components.
 
 
 Example Dpdl code accessing the system library 'libc' functions:
@@ -142,23 +143,8 @@ fi
 println("done")
 ```
 
-### Configuration
-
-#### DPDL_NATIVE_LIB_PATH
-
-The native library to be loaded needs to be available on the default system path or it's path must be configured in the configuration file 'DpdlEngine.ini' via the 'DPDL_NATIVE_LIB_PATH' variable.
-
-The default configuration for 'DPDL_NATIVE_LIB_PATH' is set to './lib/addon'
-
-#### DPDL_NATIVE_CODE_PROTECTION
-
-Dpdl provides built-in support for memory protection useful to avoid segmentation faults and unexpected crashes.
-
-By default the protection is enabled, it can be disabled by setting the variable 'DPDL_NATIVE_CODE_PROTECTION' to 'false' in the
-configuration file 'DpdlEngine.ini'
-
-
 ### Type mapping
+
 
 The following tables lists the type mapping between C and Dpdl:
 
@@ -179,11 +165,28 @@ The following tables lists the type mapping between C and Dpdl:
 
 Unsigned types have the same mappings as signed types
 
+
 ### API
 
 Helper functions and platform specific features are available via the following API accessible with Dpdl:
 
 [Dpdl JNA reference](https://www.dpdl.io/doc/dpdl_jna/javadoc/) 
+
+
+### Configuration
+
+#### DPDL_NATIVE_LIB_PATH
+
+The native library to be loaded needs to be available on the default system path or it's path must be configured in the configuration file 'DpdlEngine.ini' via the 'DPDL_NATIVE_LIB_PATH' variable.
+
+The default configuration for 'DPDL_NATIVE_LIB_PATH' is set to './lib/addon'
+
+#### DPDL_NATIVE_CODE_PROTECTION
+
+Dpdl provides built-in support for memory protection useful to avoid segmentation faults and unexpected crashes.
+
+By default the protection is enabled, it can be disabled by setting the variable 'DPDL_NATIVE_CODE_PROTECTION' to 'false' in the
+configuration file 'DpdlEngine.ini'
 
 
 ### Note

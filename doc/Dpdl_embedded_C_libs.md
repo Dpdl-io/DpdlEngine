@@ -10,20 +10,24 @@ developed by
 &copy; 2003
 
 
-## This is the minimal C library documentation for the embedded C code execution (Mode 1 -> interpreted)
+## Minimal C library documentation for embedded C code execution (Mode 1 -> interpreted)
+
+This is the minimal C library documentation for the Mode (1) (interpreted) embedded C code execution.
+
+When executing embedded C code with interpreted Mode (1), all libraries are already defined and available in the native Dpdl runtime.
 
 
 Example:
 ```c
-println("embedding C")
+println("embedding some C code...")
 
 >>c
 	#include <stdio.h>
 	
 	printf("Hello C\n");
 <<
-
-println("end embedding C")
+int exit_code = dpdl_exit_code()
+println("finished with exit code" + exit_code)
 
 ```
 

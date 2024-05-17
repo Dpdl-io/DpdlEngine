@@ -14,7 +14,7 @@ developed by
 
 DpdlEngine V1.0
 		
-This is the Dpdl scripting API documentation. 
+This is the Dpdl API documentation. 
 
 The Dpdl API's are available as:
 - Native API's
@@ -28,7 +28,7 @@ Dpdl allows to load and access java classes and methods via dedicated API functi
 
 This allows Dpdl to access a broad set of API's and libraries.
 
-The 'DpdlEgine lite' Demo release includes the Java <ins>JRE API</ins>, the <ins>JavaFX API</ins> and the <ins>Bluecove JRS-82 API</ins> as defined in the  class definition file:
+The 'DpdlEgine lite' demo/shareware release includes the Java <ins>JRE API</ins>, the <ins>JavaFX API</ins> and the <ins>Bluecove JRS-82 API</ins> as defined in the  class definition file:
 
 [Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 

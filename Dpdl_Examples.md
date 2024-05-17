@@ -45,15 +45,15 @@ println("status: " + s)
 The Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License.
 
 
-## Dpdl sample Apps
+## Dpdl sample Applications
 
-More advanced sample applications written with Dpdl are published in this repository:
+More advanced sample applications written with Dpdl that serve as demonstrators are published in this repository:
 
 [Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
 
 These examples are demonstrators but are full running applications.
 
-## Dpdl examples
+## Dpdl sample code examples
 
 * Example Dpdl code that that leverages generative AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate embedded code sections which can than be executed
 
@@ -76,6 +76,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="65%" height="65%">
 	
 	[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
+	
+* Embedded C code execution within Dpdl script (interpreted Mode 1)
+	
+	[C/dpdlSample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlSampleC.h)
 
 * Example 'dummy' Dpdl script that shows some functionalities provided by Dpdl
 
@@ -184,7 +188,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	
 * Example Dpdl script that embeds 'Julia' code to execute a set of threads that call a native C Dpdl API function
 
-  [julia/dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
+	[julia/dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
   
 * Load a Dpdl script object "LoadCodeFunc.h" via 'loadCode(..)' and call one of its functions
 
@@ -211,7 +215,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 * Embedded C code execution within Dpdl script
 	
 	[dpdlSimpleC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlSimpleC.h)
-		
+			
 * Embedded Python code execution within Dpdl script
 	
 	[python/dpdlEmbedPython.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/python/dpdlEmbedPython.h)
