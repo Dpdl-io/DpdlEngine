@@ -170,7 +170,11 @@ Unsigned types have the same mappings as signed types
 
 Helper functions and platform specific features are available via the following API accessible with Dpdl:
 
-[Dpdl JNA reference](https://www.dpdl.io/doc/dpdl_jna/javadoc/) 
+[Dpdl JNA base](https://www.dpdl.io/doc/dpdl_jna/javadoc/com/sun/jna/package-frame.html)
+
+[Dpdl JNA pointer](https://www.dpdl.io/doc/dpdl_jna/javadoc/com/sun/jna/ptr/package-frame.html)
+
+[Dpdl JNA win32](https://www.dpdl.io/doc/dpdl_jna/javadoc/com/sun/jna/win32/package-frame.html)   
 
 
 ### Configuration
