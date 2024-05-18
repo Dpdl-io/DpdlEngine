@@ -139,8 +139,7 @@ The validation script can be inspected here:
 
 * The DpdlEngine parameters and configuration file 'DpdlEngine.ini' can be customized only in the full registered version
 	
-* The class definition file (classes.txt), used for dynamic loading and resolving of library classes via loadObj(..) and getClass(..) methods can be edited only in the registered version of Dpdl
-and java classes cannot be referenced with the full package path (eg. org.my.mycustomclass), only with the base name (eg. Math) as defined in the class definition file.
+* Further API's can be added only in the full registered version of 'DpdlEngine'
 	
 * The execution of Dpdl scripts is limited to 500 lines of code, embedded language code (C, Python, JavaScript, Lua, Java and OCaml) is limited to 100 lines of code per section.
 	

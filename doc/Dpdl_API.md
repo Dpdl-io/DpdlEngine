@@ -65,7 +65,7 @@ writeStr(string file, string data) return bool status
 
 **`http`**
 
-the library exposes the following method and objects:
+the library exposes the following methods and objects:
  
 [Http javalite](https://www.dpdl.io/doc/apidocs/org/javalite/http/Http.html)
 

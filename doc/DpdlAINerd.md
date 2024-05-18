@@ -1,4 +1,4 @@
-# DpdlAINerd (DAN) language plug-in
+# DpdlAINerd (DAN) AI language plug-in
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
@@ -9,7 +9,7 @@ developed by
 &copy; 2003	
 
 
-## DpdlAINerd (DAN) - AI Dpdl language plug-in for generative AI code
+## DpdlAINerd (DAN) - Dpdl AI language plug-in for generative AI code
 
 
 '**DpdlAINerd**' (**DAN**) is a dedicated Dpdl language plug-in for generative AI code.

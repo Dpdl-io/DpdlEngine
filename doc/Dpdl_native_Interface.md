@@ -33,7 +33,7 @@ import('native')
 
 object clib = loadLib("c")
 
-clib.printf("This message comes from native print function: %s %d", "Hello, 23)
+clib.printf("This message comes from native printf function: %s %d", "Hello", 23)
 ```
 
 By loading the library 'c', the Dpdl runtime automatically selects the appropriate library, on Linux/Unix/MAC 'libc' and on Windows 'msvcrt'.
