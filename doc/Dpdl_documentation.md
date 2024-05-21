@@ -13,7 +13,7 @@ developed by
 
 ### Features:
 
-* Types supported **`int`** **`byte`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
+* Types supported **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
 * APIs: native API, Dpdl API, MIDP API, JRE API
@@ -42,6 +42,7 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 Dpdl support the following type definitions:
 ```c
 int i = 1
+short s = 10s
 float f = 0.1
 double d = 1.0d
 long l = 1000L
@@ -55,6 +56,8 @@ object myobj = loadObj(..)
 struct myStruct a
 enum myenum e
 ```
+
+Note: double end with 'd', long with 'L' and short end with 's'
 
 #### 'var' type
 

@@ -59,7 +59,7 @@ These examples are demonstrators but are full running applications.
 
 	[ai/dpdlAICodeSort.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAICodeSort.h)
 	
-The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSort_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAICodeSort_gen.h)f
+The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSort_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAICodeSort_gen.h)
  
 * Example Dpdl code that downloads json news data and decodes it to a struct
 
@@ -69,7 +69,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[native/dpdlTestNative.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h)
 
-* Example Dpdl app that uses the JavaFX library to render and animate chemical molecules in 3D
+* Example Dpdl app that uses the JavaFX library to render and animate a 3D model of a chemical molecule (hydrogen)
 
 	[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
 	

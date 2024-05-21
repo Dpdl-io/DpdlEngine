@@ -92,7 +92,7 @@ Example:
 ```c
 println("this Dpdl demo shows how C code can be dynamically compiled (in memory at runtime) within Dpdl")
 
-dpdl_stack_push("dpdl:compile", "dpdl:-I./DpdlLibs/C", "dpdl:-I/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include", "dpdl:-L/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib")
+dpdl_stack_push("dpdl:compile", "dpdl:-Dtestvar=999", "dpdl:-DtestF(a)=a+23", "dpdl:-I./DpdlLibs/C", "dpdl:-I/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include", "dpdl:-L/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib")
 
 >>c
 #include<stdio.h>
@@ -130,8 +130,10 @@ void* sum(void* arg){
 	printf("Result Final: %d\n",ans);
 }
 
-int dpdl_main (int param){
+int dpdl_main(int param){
 
+	printf("Dpdl embedded C Test: %d %d\n", testvar, testF(0));
+	
 	pthread_create(&tids[0],NULL,firstThread,(void*)NULL);
 	pthread_create(&tids[1],NULL,secondThread,(void*)NULL);
 	pthread_create(&tids[2],NULL,sum,(void*)NULL);
