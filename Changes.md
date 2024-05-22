@@ -9,7 +9,7 @@ developed by
 
 ## New 
 
-* NEW (20.05.2024) Added support for type 'short' -> This feature will be available in the coming release of 'DpdlEngine'
+* NEW (20.05.2024) Added support for type 'short'
 
 * (11.05.2024) Dpdl now enables to load and access native libraries (libc, msvcrt, etc..) directly via a unified interface
 					and call functions from Dpdl in the same way -> This feature is available for releases requested via the 							'Download form' (see [Download.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Download.md)
@@ -49,6 +49,7 @@ developed by
 
 ## Fixes
 
+* 22.05.2024 The power operator ^ now returns always a 'double' value
 * 07.01.2024 Fixed some duplicate entries in the class definition file
 * 13.12.2023 Fixed issue in nested 'struct' type
 * 09.12.2023 Fixed bug for 'long' definition inside functions
