@@ -165,9 +165,10 @@ api()
 getApi() return string api
 exit(int exit_code)
 gc()
-Thread(string func_name) return int status
-Thread(string func_name, int interval_ms) return int status
-Thread(string func_name, int interval_ms, int nr_iterations) return int status
+Thread(string func_name) return int thread_id
+Thread(string func_name, int interval_ms) return int thread_id
+Thread(string func_name, int interval_ms, int nr_iterations) return int thread_id
+setThreadPriority(int thread_id, int priority) return int status
 getClass(string name) return object
 loadObj(string name, object params, ...) return object
 loadCode(string dpdl_script_ref, object args, ...) return object
