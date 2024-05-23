@@ -53,11 +53,24 @@ bool t = true
 myarr[] = [1, 0.3, 23.d, 1000L, 0x09, "mydata"]
 var v = "some variable type var"
 object myobj = loadObj(..)
+object myobj = getClass(..)
 struct myStruct a
 enum myenum e
 ```
 
 Note: double end with 'd', long with 'L' and short end with 's'
+
+#### 'object' type
+
+Every type can be assigned to an **`object`** variable. But not the other way around.
+
+Example:
+
+```python
+int myi = 9999
+object myiobj = myi
+```
+
 
 #### 'var' type
 
