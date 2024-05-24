@@ -16,8 +16,8 @@ developed by
 * Types supported **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
-* APIs: native API, Dpdl API, MIDP API, JRE API
-* Access to the full underlying Java Platform API (JRE) or other external java libraries
+* APIs: native API's, Dpdl API, MIDP API, JRE API
+* Access to the full underlying Java Platform API's or other external java libraries
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
 * Embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
@@ -155,7 +155,6 @@ object map = loadObj("HashMap")
 println("variable 'map' is of type: " + typeof(map))
 ```
 The above statement will return **`HashMap`***
-
 
 #### Variable re-definition
 
@@ -528,6 +527,7 @@ fi
 
 The Dpdl Rutime can be configured to automatically run the garbage collector 'gc()' after a given number of iterations.
 See **`GC_THREAD_EXEC`** parameter in 'DpdlEngine.ini'. The value '-1' invalidates this feature.
+
 
 ### Function and Control flow
 
