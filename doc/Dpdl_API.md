@@ -118,7 +118,17 @@ The following API function are implemented directly in the DpdlEngine core:
 ```python
 include(string inc_path) return int
 import(string lib_path) return int
-currentTimeMillis() return long
+
+vec(object elem, ...) return object Vector
+map(string elem, ...) return object HashMap
+list(object elem, ...) return object LinkedList
+stack() return object Stack
+
+array[] ->
+size() return int size
+getObj() return object arraylist
+
+currentTimeMillis() return long time
 cast(object o) return dpdl_object
 typeof(object o) return string type_str
 convert(string type, object obj) return object converted_obj
@@ -189,14 +199,27 @@ raise(object condition, string msg) return int status
 raise(object condition, string msg, bool exit) return int status
 
 callback functions->
-actionPerformed(string event)
-onRequestFailure(string message)
-onResponse(string response)
+[thread]
 dpdl_thread_finalize(int t_id, object param...)
 
-array[] ->
-size() return int size
-getObj() return object arraylist
+[ActionListenerInterface]
+actionPerformed(string event)
+
+[DpdlJavaFXApp]
+dpdl_javafx_start(object stage)
+
+[KeyEventHandler]
+handleKeyEvent(object key)
+
+[MouseEventHandler]
+handleMouseEvent(object event)
+
+[DpdlFXMLController]
+handleButtonAction(object event)
+
+[DpdlCoAPResponseHandler]
+onRequestFailure(string message)
+onResponse(string response)
 
 [DPDLAPI]
 DPDLAPI_getVersion()  return string

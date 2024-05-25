@@ -17,11 +17,11 @@ developed by
 # What is Dpdl?
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl enables access to Java platform API's and to external native libraries and supports the <ins>embedding and on-the-fly execution</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** <ins>directly embedded within Dpdl code</ins>.
+Dpdl enables access to java platform API's and to external native libraries and supports the <ins>embedding and on-the-fly execution</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** <ins>directly embedded within Dpdl code</ins>.
 
 Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
-Dpdl is self contained, portable and highly customizable via an extensible interface. 
+Dpdl is <ins>self contained, portable and highly customizable</ins> via an extensible interface. 
 
 A dedicated AI Dpdl language plug-in (**DAN**) allows to <ins>automatically generate and embed</ins> programming language code or content in Dpdl code via <ins>**generative AI code**</ins>
 
@@ -47,7 +47,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 ### * Self-contained, No additional dependencies required (except add-on libraries)
 ### * Facilitate rapid prototyping for hardware programming
 ### * Plug-in oriented
-### * Leverage prototyping with built-in AI generative code plug-in
+### * Leverage prototyping with built-in <ins>AI generative code</ins> plug-in
 
 
 **DpdlEngine stack overview**

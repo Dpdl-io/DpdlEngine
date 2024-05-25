@@ -81,6 +81,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	
 	[C/dpdlSample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlSampleC.h)
 
+* Example Dpdl code that uses vec(...), map(...), list(...) and stack(...) data functions
+
+	[test/testDataFuncTypes.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testDataFuncTypes.h)
+
 * Example 'dummy' Dpdl script that shows some functionalities provided by Dpdl
 
 	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)

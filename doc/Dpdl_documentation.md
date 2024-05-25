@@ -16,6 +16,7 @@ developed by
 * Types supported **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
+* native data function types to handle data structures **`vec`**, **`map`**, **`list`** and **`stack`**.
 * APIs: native API's, Dpdl API, MIDP API, JRE API
 * Access to the full underlying Java Platform API's or other external java libraries
 * Record Store creation and access via virtual file system
@@ -37,7 +38,7 @@ As with Dpdl it's possible to load java classes, the whole Java API is available
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getClass(..)`**
 
 
-### Variables
+### Variable Types
 
 Dpdl support the following type definitions:
 ```c
@@ -58,7 +59,30 @@ struct myStruct a
 enum myenum e
 ```
 
+
 Note: double end with 'd', long with 'L' and short end with 's'
+
+
+### Data Function Types
+
+Dpdl has some built-it data function types for handling vectors, maps, linked-lists and stacks
+
+```python
+# Vector
+object my_vec = vec(1, 2, 3, 4, "my element1", 0.23, 999.9d, 100000L, ...)
+
+# HashMap (key:value)
+object my_map = map("a:1", "b:2", "c:3", ...)
+
+# LinkedList
+object my_list = list("A", "Costa", 1, 0.3, 999.9d, 10000L, ...)
+
+# Stack
+object my_stack = stack()
+```
+
+The objects returned by these functions have all methods and fields as the corresponding java classes (Vector, HashMap, LinkedList, Stack)
+
 
 #### 'object' type
 
@@ -70,6 +94,15 @@ Example:
 int myi = 9999
 object myiobj = myi
 ```
+
+IFF you want to re-assign an already declared and assigned object to a variable of <ins>different type</ins>, you must redefine the object as follows:
+```python
+int myi = 9999
+float myf = 999.9
+object myiobj = myi
+object myiobj = myf
+```
+Note: 'DPDL_ALLOW_VAR_REDEFINITION' must be enabled if you want to allow variable redefinition within same scope
 
 
 #### 'var' type
