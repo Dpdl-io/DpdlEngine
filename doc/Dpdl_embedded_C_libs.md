@@ -12,9 +12,9 @@ developed by
 
 ## Minimal C library documentation for embedded C code execution (Mode 1 -> interpreted)
 
-This is the minimal C library documentation for the Mode (1) (interpreted) embedded C code execution.
+This is the minimal C library documentation for the Mode (1) (**interpreted**) embedded C code execution.
 
-When executing embedded C code with interpreted Mode (1), all libraries are already defined and available in the native Dpdl runtime.
+When executing embedded C code with interpreted Mode (1), all libraries are already and available in the native Dpdl runtime.
 
 
 Example:

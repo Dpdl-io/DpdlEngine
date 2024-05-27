@@ -189,7 +189,9 @@ dpdl_stack_buf_get(string key) return string value
 dpdl_stack_var_put(string key, string value) return int status
 dpdl_stack_var_get(string key) return string value
 dpdl_stack_var_glob_put(string key, string value) return int status
+dpdl_stack_obj_glob_put(string key, object obj) return int status
 dpdl_stack_var_glob_get(string key) return string value
+dpdl_stack_obj_glob_get(string key) return object obj
 dpdl_stack_obj_put(string key, object obj) return int status
 dpdl_stack_obj_get(string key) return object obj
 dpdl_exit_code() return int exit_code
@@ -198,7 +200,6 @@ raise(object condition) return int status
 raise(object condition, string msg) return int status
 raise(object condition, string msg, bool exit) return int status
 
-callback functions->
 [thread]
 dpdl_thread_finalize(int t_id, object param...)
 

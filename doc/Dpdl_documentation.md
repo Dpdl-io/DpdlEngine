@@ -846,6 +846,15 @@ Data and variables can be exchanged with the embedded code via the dpdl stack by
 
 **`dpdl_stack_obj_get(..)`**
 
+**`dpdl_stack_var_glob_put(..)`**
+
+**`dpdl_stack_var_glob_get(..)`**
+
+**`dpdl_stack_obj_glob_put(..)`**
+
+**`dpdl_stack_obj_glob_get(..)`**
+
+
 Variables pushed on the dpdl stack are passed as parameters to the embedded code, and can also be embedded directly in the code as placeholder, see **`{{var_name}}`**.
 In the latter case the variables are replaced with the actual values before code compilation and execution.
 
@@ -1268,6 +1277,11 @@ public class MyTestDpdlExtension extends DpdlExtension {
     }
 }
 ```
+
+### Current limitations
+
+- Currently recursion is not directly supported with pure Dpdl
+- Currently dpdl arrays only have one dimension. But creating an array of arrays is possible.
 
 
 ## DpdlClient

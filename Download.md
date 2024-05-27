@@ -132,7 +132,7 @@ compared to the full registered version:
 
 * At startup, the 'DpdlEngine lite' Demo requires internet connectivity for the execution of a validation script.
 The script simply accesses a html website at https://www.dpdl.io for validation (NO data is collected or stored, it's a simple get html).
--> startup is therefore also a bit slower in demo version
+-> startup is therefore also <ins>a bit slower in demo version</ins> due to validation
 	  
 The validation script can be inspected here: 
 [./DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DemoDpdl_validator/validateDpdlDemo.h)

@@ -1,4 +1,4 @@
-# Dpdl compiler documentation
+# Dpdl and C compiler documentation
 
 
 ## Dpdl
@@ -33,14 +33,43 @@ int exit_code = dpdl_exit_code()
 println("embedded code exit code: " + exit_code)
 ```
 
-### C Compiler options
+## C Compiler
 
-C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see execution Mode 2)
+C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see execution Mode (2))
 
-The C compiler used and executed in form of a Dpdl language plugin is Fabric Bellard's TCC.
+The C compiler used and executed in form of a Dpdl language plugin is the <ins>super fast Fabric Bellard's TCC</ins>.
+
+
+### Library and include paths
+
+Even though the embedded C compiler Dpdl language plug-in comes with a minimal set of header files located in '**./lib/native/$platform/include**',
+by default the Dpdl language plug-in searches for 'include' and 'lib' files in the following paths:
+
+**Linux:**
+```
+/usr/include
+/usr/lib
+```
+
+**MacOS:**
+```
+/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/
+```
+
+**Windows:**
+```
+MinGW or equivalent installation 'include' and 'lib' folders
+```
+
+Additional include and library paths can be set directly via a dpdl stack option setting (see below)
+
+
+### Configuration
 
 The Dpdl runtime can be parameterized by pushing the corresponding option settings onto the Dpdl stack via the 
 function **`dpdl_stack_push(..)`**. The options need to be prefixed with 'dpdl:'
+
 
 For the embedding of C code the following option settings are available.
 

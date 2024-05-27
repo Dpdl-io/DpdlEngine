@@ -60,6 +60,10 @@ Data and variables can be exchanged with the embedded code via the dpdl stack by
 
 **`dpdl_stack_var_glob_get(..)`**
 
+**`dpdl_stack_obj_glob_put(..)`**
+
+**`dpdl_stack_obj_glob_get(..)`**
+
 **`dpdl_stack_buf_put(..)`**
 
 **`dpdl_stack_buf_get(..)`**
