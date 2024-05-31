@@ -70,7 +70,7 @@ println("myAobj: " + myAobj)
 println("myAobj.id: " + myAobj.id)
 println("myAobj.account: " + myAobj.account)
 
-println("calling method...")
+println("calling native java bytecode method...")
 
 int res = myAobj.myNativeJavaFunc(23)
 
