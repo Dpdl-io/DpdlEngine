@@ -9,7 +9,9 @@ developed by
 
 ## New 
 
-* NEW (25.05.2024) Added native data function types **`vec(...)`** **`map(...)`** **`list(...)`** **`stack()`**
+* NEW (01.06.2024) Added support for converting/compiling Dpdl objects such as 'struct' to native java bytecode objects that can be accessed and handled in the same way as ordinary objects -> this feature will be available in the coming 'DpdlEngine lite' release
+
+* (25.05.2024) Added native data function types **`vec(...)`** **`map(...)`** **`list(...)`** **`stack()`**
 
 * (20.05.2024) Added support for type 'short'
 * (11.05.2024) Dpdl now enables to load and access native libraries (libc, msvcrt, etc..) directly via a unified interface

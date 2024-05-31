@@ -25,9 +25,9 @@ see Dpdl examples in: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree
 
 ### Modes of execution:
 
-The DAN language plug-in can be used in two different modes:
+The DAN language plug-in can be used in 2 different modes:
 
-### Generate a new Dpdl source file containing generated code (Mode 1)
+### 1) Generate a new Dpdl source file containing generated code (Mode 1)
 
 By executing the Dpdl script with the '@gen' parameter (see below). A new Dpdl source file is generated, containing the generated code sections.
 
@@ -78,7 +78,7 @@ println("embedded ai generated exit code: " + exit_code)
 ```
 
 
-### Generate and access generated content or data directly (Mode 2)
+### 2) Generate and access generated content or data directly (Mode 2)
 
 The DAN Dpdl language plug-in can also be used to generate content or data used in the code execution, eg. a test file
 

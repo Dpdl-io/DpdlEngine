@@ -85,6 +85,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[test/testDataFuncTypes.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testDataFuncTypes.h)
 
+* Example Dpdl code that converts/compiles a 'struct' to a native java bytecode object
+
+	[test/testGenObjCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testGenObjCode.h)
+
 * Example 'dummy' Dpdl script that shows some functionalities provided by Dpdl
 
 	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)

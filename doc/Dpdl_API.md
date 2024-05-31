@@ -119,27 +119,33 @@ The following API function are implemented directly in the DpdlEngine core:
 include(string inc_path) return int
 import(string lib_path) return int
 
+getClass(string name) return object
+loadObj(string name, object params, ...) return object
+loadCode(string dpdl_script_ref, object args, ...) return object
+genObjCode(object dpdl_obj) return object obj
+
 vec(object elem, ...) return object Vector
 map(string elem, ...) return object HashMap
 list(object elem, ...) return object LinkedList
 stack() return object Stack
 
-array[] ->
-size() return int size
-getObj() return object arraylist
-
-currentTimeMillis() return long time
-cast(object o) return dpdl_object
+cast(object obj) return dpdl_object
 typeof(object o) return string type_str
 convert(string type, object obj) return object converted_obj
 to_int(object val) return int value
 to_float(object val) return float value
 to_double(object val) return double value
+
+array[] ->
+size() return int size
+getObj() return object arraylist
 array(object o) return [] array
-systemExec(string cmd, int wait_for, int verbose_output) return int status
-hash(string s) return int res
+
 println(string s)
 print(string s)
+currentTimeMillis() return long time
+systemExec(string cmd, int wait_for, int verbose_output) return int status
+hash(string s) return int res
 mod(int val, int mod) return int res
 randInt(int bits, int modulo) return int res
 nextInt(int modulo) return int res
@@ -175,13 +181,8 @@ api()
 getApi() return string api
 exit(int exit_code)
 gc()
-Thread(string func_name) return int thread_id
-Thread(string func_name, int interval_ms) return int thread_id
-Thread(string func_name, int interval_ms, int nr_iterations) return int thread_id
-setThreadPriority(int thread_id, int priority) return int status
-getClass(string name) return object
-loadObj(string name, object params, ...) return object
-loadCode(string dpdl_script_ref, object args, ...) return object
+
+[Dpdl stack]
 dpdl_stack_push(object params, ...)
 dpdl_stack_push(string key, object params, ...)
 dpdl_stack_buf_put(string key, string value) return int status
@@ -195,12 +196,18 @@ dpdl_stack_obj_glob_get(string key) return object obj
 dpdl_stack_obj_put(string key, object obj) return int status
 dpdl_stack_obj_get(string key) return object obj
 dpdl_exit_code() return int exit_code
+
+[Exception handling]
 dpdl_print_exception_table()
 raise(object condition) return int status
 raise(object condition, string msg) return int status
 raise(object condition, string msg, bool exit) return int status
 
 [thread]
+Thread(string func_name) return int thread_id
+Thread(string func_name, int interval_ms) return int thread_id
+Thread(string func_name, int interval_ms, int nr_iterations) return int thread_id
+setThreadPriority(int thread_id, int priority) return int status
 dpdl_thread_finalize(int t_id, object param...)
 
 [ActionListenerInterface]

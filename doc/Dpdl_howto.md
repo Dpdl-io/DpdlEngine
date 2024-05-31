@@ -50,6 +50,76 @@ The above script can than be run also in the Dpdl console with the '-load' comma
 
 ## Dpdl code
 
+### Generating a native java bytecode object from a 'struct'
+
+The dpdl type **`struct`** can be used to represent data structures within a Dpdl program, almost like in the C programming language.
+
+Dpdl 'struct' can conveniently also be compiled into a pure native java bytecode object and accessed and handled in the same way as ordinary java objects (classes).
+
+The Dpdl API function **`genObjCodegenObjCode(...)`** accepts as input defined Dpdl objects, in this case a 'struct' and compiles it to native java
+bytecode object. The returned object can than be handled as accessed as an ordinary object.
+
+When defining an embedded java code section via **`>>java`** keyword, the contained java <ins>methods are also compiled</ins> into bytecode. 
+
+
+Example:
+```python
+
+struct A {
+	string id = "myid"
+	int account = 23
+	double myd = 999.9d
+	float myf = 1.9
+	long myl = 10000000L
+	short mys = 100s
+	byte myb = 0x01
+	char mych = 'A'
+	bool mybool = true
+	object myobj = null
+
+	>>java
+	public int myNativeJavaFunc(int val){
+		System.out.println("myNativeJavaFunc()");
+		for(int i = 0; i < 10; i++){
+			System.out.println("iter: " + i + " val: " + val);
+		}
+		return (val+3);
+	}
+	<<
+
+	func testFunc()
+		println("testFunc()")
+		return 888
+	end
+}
+
+# main
+println("generating pure java bytecode from a struct...")
+
+struct A a
+
+a.testFunc()
+
+object myAobj = genObjCode(a)
+
+println("myAobj: " + myAobj)
+
+println("myAobj.id: " + myAobj.id)
+println("myAobj.account: " + myAobj.account)
+
+println("calling pure java method...")
+
+int res = myAobj.myNativeJavaFunc(23)
+
+println("res: " + res)
+
+println("finished")
+```
+
+Note: The embedded '>>java' code section needs to be defined <ins>before any other functions</ins>, and Only the first '>>java' section is compiled
+		as bytecode into the resulting object.
+		
+
 ### Loading a Dpdl script as an object
 
 In some circumstances it may be convenient to load a given Dpdl script as an object. 

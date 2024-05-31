@@ -356,18 +356,24 @@ endwhile
 
 Dpdl supports the type **`struct`** with the following definitions
 
-* Structs can contain other struct
+* Structs can contain other 'struct'
 
 * Structs can call functions defined in the outer scope
 
 * Variable shadowing is enabled
+
+* Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct function' changes the variable <ins>only during the function scope</ins>.
+
+* Structs can contain multiple embedded code sections (eg. **`>>c`**)
 
 * Structs can be used to initialize arrays
 
 * Structs can contain arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed very soon,
 a workaround is to assign the array to an object and access the object instead.
 
-* Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct function' changes the variable only during the function.  
+* Structs can conveniently be compiled into pure java bytecode and accessed as an object instead, see '**genObjCode(...)**'
+
+* Structs that are compiled into java bytecode (via 'genObjCode(...)'), can contain 1 embedded **`>>java`*** section (before any struct functions declarations and before other embedded code sections), which is than also compiled as bytecode into the generated object. 
 
 Example:
 ```c
@@ -379,6 +385,16 @@ struct myStruct {
 	byte b = 0x01
 	string s = "Test"
 	object so = loadObj("String", "my java obj in struct")
+	
+	>>java
+	public int myNativeJavaFunc(int val){
+		System.out.println("myNativeJavaFunc()");
+		for(int i = 0; i < 10; i++){
+			System.out.println("iter: " + i + " val: " + val);
+		}
+		return (val+3);
+	}
+	<<
 	
 	println("myStruct: " + s)
 	
@@ -398,6 +414,22 @@ println("ret val: " + x)
 
 my_arr[] = array(a)
 println("my_arr: " + my_arr)
+
+#generate a pure java bytecode object
+
+object myAobj = genObjCode(a)
+
+println("myAobj: " + myAobj)
+
+println("myAobj.x: " + myAobj.x)
+println("myAobj.f: " + myAobj.f)
+println("myAobj.s: " + myAobj.s)
+
+println("calling native java function....")
+
+int res = myAobj.myNativeJavaFunc(23)
+
+println("res: " + res)
 ```
 
 ### Enum
