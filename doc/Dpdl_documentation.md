@@ -23,7 +23,7 @@ developed by
 * Support for custom function extensions
 * Embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
 * Other programming languages can be easily integrated via a defined plug-in interface and configuration
-* ANSI C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
+* ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
@@ -354,7 +354,7 @@ endwhile
 
 ### Struct
 
-Dpdl supports the type **`struct`** with the following definitions
+Dpdl supports the type **`struct`** with the following definitions:
 
 * Structs can contain other 'struct'
 
@@ -364,20 +364,65 @@ Dpdl supports the type **`struct`** with the following definitions
 
 * Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct function' changes the variable <ins>only during the function scope</ins>.
 
-* Structs can contain multiple embedded code sections (eg. **`>>c`**)
+* Structs can contain multiple embedded code sections in various programming languages (eg. **`>>c`**)
 
-* Structs can be used to initialize arrays
+* Structs can be used to initialize arrays, (see 'array(...)' function)
 
 * Structs can contain arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed very soon,
 a workaround is to assign the array to an object and access the object instead.
 
-* Structs can conveniently be <ins>compiled into pure java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java api's
+* Structs can conveniently be <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
 
-* Structs that are compiled into java bytecode (via 'genObjCode(...)'), can contain 1 embedded **`>>java`** section (before any struct functions declarations and before other embedded code sections), which is than also compiled as bytecode into the generated object. 
 
 Example:
 ```c
 struct myStruct {
+	int x = 10
+	float f = 0.1
+	double d = 0.3d
+	long l = 1000L
+	byte b = 0x01
+	string s = "Test"
+	object so = loadObj("String", "my java obj in struct")
+		
+	println("myStruct: " + s)
+	
+	func myStructCall()
+		println("myStructCall: " + s + " so: " + so)
+		return 1
+	end
+}
+
+struct myStruct a
+
+println("a.x: " + a.x)
+
+a.x = 23
+
+println("a.x: " + a.x)
+
+int x = a.myStructCall()
+
+println("ret val: " + x)
+
+my_arr[] = array(a)
+
+println("my_arr: " + my_arr)
+```
+
+#### 'struct' compiled as java bytecode
+
+
+The type 'struct' can also be conveniently compiled at runtime into a java bytecode object (java class) by using the **`genObjCode(...)`** api function.
+
+This may be useful for exchanging data structures with other native java classes or to speedup performance critical functions calls.
+
+Structs that are compiled into java bytecode can contain 1 embedded **`>>java`** section containing native java methods, which are than also compiled as bytecode into the generated object.
+
+
+Example:
+```c
+struct A {
 	int x = 10
 	float f = 0.1
 	double d = 0.3d
@@ -404,22 +449,11 @@ struct myStruct {
 	end
 }
 
-struct myStruct a
-
-println("a.x: " + a.x)
-a.x = 23
-println("a.x: " + a.x)
-int x = a.myStructCall()
-println("ret val: " + x)
-
-my_arr[] = array(a)
-println("my_arr: " + my_arr)
-
-#generate a pure java bytecode object
+struct A a
 
 object myAobj = genObjCode(a)
 
-println("myAobj: " + myAobj)
+println("myAobj: " + myAobj + " is of type: " + typeof(myAobj))
 
 println("myAobj.x: " + myAobj.x)
 println("myAobj.f: " + myAobj.f)
@@ -431,6 +465,7 @@ int res = myAobj.myNativeJavaFunc(23)
 
 println("res: " + res)
 ```
+
 
 ### Enum
 
