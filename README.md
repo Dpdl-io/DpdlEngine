@@ -105,9 +105,9 @@ devices via a custom data container, a 'DpdlPacket'.
 This makes Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 
 ### Small Memory footprint:
-* DpdlEngine core (basic configuration) **`60 Kb`**
-* DpdlEngine core (full configuration) **`372 Kb`**
-* DpdlNative library with (Embedded C interpreter/compiler) **`278 Kb`**
+* **DpdlEngine core** (basic configuration) **`60 Kb`**
+* **DpdlEngine core** (full configuration) **`372 Kb`**
+* **DpdlNative librar**y (includes embedded C interpreter/compiler) **`278 Kb`**
 
 * **Total size** of DpdlEngine (Dpdl + C compiler/interpreter) = **`650 Kb`** Only
  
