@@ -21,7 +21,7 @@ Dpdl enables access to java platform API's and to external native libraries and 
 
 Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
-Dpdl is <ins>**self contained, portable and highly customizable**</ins> via an extensible interface. 
+Dpdl is <ins>**self contained**, **portable** and **highly customizable**</ins> via an extensible interface. 
 
 A dedicated **AI Dpdl language plug-in** (**DAN**) allows to <ins>automatically generate</ins> via <ins>**generative AI code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
 
