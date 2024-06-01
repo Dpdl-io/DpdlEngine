@@ -30,7 +30,7 @@ developed by
 
 ### Dpdl API functions
 
-The Dpdl API functions usable inside Dpdl scripts are listed here:
+The Dpdl API functions usable inside Dpdl are listed here:
 
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 

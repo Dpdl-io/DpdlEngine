@@ -21,9 +21,9 @@ Dpdl enables access to java platform API's and to external native libraries and 
 
 Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
-Dpdl is <ins>self contained, portable and highly customizable</ins> via an extensible interface. 
+Dpdl is <ins>**self contained, portable and highly customizable**</ins> via an extensible interface. 
 
-A dedicated AI Dpdl language plug-in (**DAN**) allows to <ins>automatically generate</ins> via <ins>**generative AI code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
+A dedicated **AI Dpdl language plug-in** (**DAN**) allows to <ins>automatically generate</ins> via <ins>**generative AI code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
@@ -198,7 +198,7 @@ The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up 
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native libraries**
-* On the fly conversion/compilation of given data 'struct's into native java bytecode
+* On the fly conversion/compilation of data 'struct's into native java bytecode
 * Multiple embeddable Dpdl language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be embedded and executed** directly within Dpdl code (interpreted/compiled code)
 * **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different platforms (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
