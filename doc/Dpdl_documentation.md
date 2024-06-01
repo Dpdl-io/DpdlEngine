@@ -187,7 +187,7 @@ eg.
 object map = loadObj("HashMap")
 println("variable 'map' is of type: " + typeof(map))
 ```
-The above statement will return **`HashMap`***
+The above statement will return **`HashMap`**
 
 #### Variable re-definition
 
@@ -371,9 +371,9 @@ Dpdl supports the type **`struct`** with the following definitions
 * Structs can contain arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed very soon,
 a workaround is to assign the array to an object and access the object instead.
 
-* Structs can conveniently be compiled into pure java bytecode and accessed as an object instead, see '**genObjCode(...)**'
+* Structs can conveniently be <ins>compiled into pure java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java api's
 
-* Structs that are compiled into java bytecode (via 'genObjCode(...)'), can contain 1 embedded **`>>java`*** section (before any struct functions declarations and before other embedded code sections), which is than also compiled as bytecode into the generated object. 
+* Structs that are compiled into java bytecode (via 'genObjCode(...)'), can contain 1 embedded **`>>java`** section (before any struct functions declarations and before other embedded code sections), which is than also compiled as bytecode into the generated object. 
 
 Example:
 ```c

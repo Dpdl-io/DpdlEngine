@@ -14,7 +14,7 @@ developed by
 &copy; 2003
 
 
-# What is Dpdl?
+## Rapid development programming language and constrained device framework
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 Dpdl enables access to java platform API's and to external native libraries and supports the <ins>embedding and on-the-fly execution</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** <ins>directly embedded within Dpdl code</ins>.
@@ -105,12 +105,13 @@ devices via a custom data container, a 'DpdlPacket'.
 This makes Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 
 ### Small Memory footprint:
+* DpdlEngine core (basic configuration) **`60 Kb`**
 * DpdlEngine core (full configuration) **`372 Kb`**
 * DpdlNative library with (Embedded C interpreter/compiler) **`278 Kb`**
 
-* Total size of DpdlEngine (Dpdl + C compiler/interpreter) = **`650 Kb`** Only
+* **Total size** of DpdlEngine (Dpdl + C compiler/interpreter) = **`650 Kb`** Only
  
-The size of the DpdlEngine core can be stripped down to **`60 Kb`** with a basic configuration if needed.
+The size of the DpdlEngine core can be stripped down even further by excluding certain functionalities.
 
 ## Dpdl sample code
 
@@ -168,8 +169,8 @@ Or full featured Applications written with Dpdl in the following repository:
 
 ## Why Dpdl?
 
-Dpdl is suitable for rapid application development in various domains, in particular also for small development of
-applications on small memory footprint devices, and can be used as embedded scripting engine for various applications.
+Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for small development of
+applications on <ins>small memory footprint devices</ins>, and can be used as embedded scripting engine for various applications.
 
 The main nature of Dpdl is for enabling rapid prototyping, rapid development, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
