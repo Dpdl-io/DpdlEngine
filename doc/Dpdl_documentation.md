@@ -875,9 +875,7 @@ println("Dpdl version: " + DpdlLibVersion)
 
 A Dpdl script may include other Dpdl scripts with the **`include`** statement.
 
-The functions and variables of the included code are than available also in the main module. 
-
-Currently the 'include' statement need to be placed before any defined 'import' statements -> this will change in the next release
+The functions and variables of the included code are than available also in the main module.
 
 Example:
 ```python
@@ -887,6 +885,11 @@ import("dpdllib.h")
 println("DpdlLib version: " + DpdlLibVersion)
 println("myx: " + myx)
 ```
+
+The path needs to be relative to the folder where the executed script is located. 
+
+NOTE: Currently the 'include' statement need to be placed <ins>before any defined 'import' statements</ins> -> this will change in the next release
+
 
 ### Embedding of other programming languages directly within Dpdl
 

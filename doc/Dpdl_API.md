@@ -44,8 +44,8 @@ NOTE: Additional APIs and classes can be added freely in the registered version 
 
 Auxiliary API libraries can be imported and used via the **`import(..)`** statement.
 
-The import libraries are implemented either in Dpdl (with '*.h' extension and located in './DpdlLibs/libs/' folder,
-or in a Native Dpdl library that can be implemented and configured to be accessed via Dpdl in a easy and straight forward way.
+The import libraries are implemented either in Dpdl (with '*.h' extension located in './DpdlLibs/libs/' folder),
+OR are implemented in a native java library that can be configured to be accessed via Dpdl in a easy and straight forward way.
 
 
 ```python
@@ -211,10 +211,10 @@ dpdl_stack_obj_get(string key) return object obj
 dpdl_exit_code() return int exit_code
 
 [Exception handling]
-dpdl_print_exception_table()
 raise(object condition) return int status
 raise(object condition, string msg) return int status
 raise(object condition, string msg, bool exit) return int status
+dpdl_print_exception_table()
 
 [thread]
 Thread(string func_name) return int thread_id

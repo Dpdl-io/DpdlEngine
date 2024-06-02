@@ -105,9 +105,9 @@ devices via a custom data container, a 'DpdlPacket'.
 This makes Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 
 ### Small Memory footprint:
-* **DpdlEngine core** (basic configuration) **`60 Kb`**
-* **DpdlEngine core** (full configuration) **`372 Kb`**
-* **DpdlNative librar**y (includes embedded C interpreter/compiler) **`278 Kb`**
+* **DpdlEngine core** (<ins>basic</ins> configuration) **`60 Kb`**
+* **DpdlEngine core** (<ins>full</ins> configuration) **`372 Kb`**
+* **DpdlNative library** (includes embedded C interpreter and compiler) **`278 Kb`**
 
 * **Total size** of DpdlEngine (Dpdl + C compiler/interpreter) = **`650 Kb`** Only
  
@@ -201,7 +201,7 @@ The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up 
 * On the fly conversion/compilation of data 'struct's into native java bytecode
 * Multiple embeddable Dpdl language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be embedded and executed** directly within Dpdl code (interpreted/compiled code)
 * **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
-* Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different platforms (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
+* Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different targets (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
@@ -240,7 +240,7 @@ The speedup is x 25 times faster compared to a standard record store access
 
 
 
-## Access to the complete JRE Java platform API and any external java libraries
+## Access to the complete JRE Java platform API and external java libraries
 
 
 The Dpdl language API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and <ins>external java libraries</ins>.
@@ -331,14 +331,17 @@ println("embedded java exit code: " + exit_code)
 ## Dpdl embeddable programming languages
 
 Multiple programming languages can be embedded and executed within the same **Dpdl** code via the keyword **`>>`**.
-Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration. This enables basically every sort of 
-programming language or natural language interpreter to be embedded directly in Dpdl code.
+
+Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration.
+
+This enables basically every sort of programming language or natural language interpreter to be embedded directly in Dpdl code.
+
 This features is very useful for rapid development and rapid prototyping and is also a key feature for generative software.
 
 ### Currently the following programming languages can be embedded within Dpdl:
 
 * **`C interpreted`** code (minimal subset of C90 with standard C libs included)
-* **`ANSI C`**  (full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
+* **`ANSI C`**  (almost full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **`Python`**
 * **`Julia`**
 * **`JavaScript`**
@@ -397,6 +400,7 @@ NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed sep
 ### Dpdl with embedded C code
 
 Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly within Dpdl code with the keyword **`>>c`**
+
 The C code can be embedded with 2 different Modes:
  
 1) <ins>Interpreted</ins>
@@ -758,15 +762,14 @@ Further Dpdl examples can be found on this page:
 
 ## What is a DpdlPacket?
 
-A DpdlPacket is a compact, highly compressed executable packet of data with built-in
-database technology that can be created based on a defined Dpdl code definition. 
-A DpdlPacket can than be allocated and queried efficiently via API
-interfaces available for Java and for the built-in Dpdl language.
-In particular Dpdl is very efficient on J2ME and JavaME platforms and
-has a high degree of backward compatibility.
+A DpdlPacket is a compact, highly compressed executable packet of data with built-in database technology that
+can be created based on a defined Dpdl code definition.
+ 
+A DpdlPacket can than be allocated and queried efficiently via API interfaces available for Java and for the built-in Dpdl language.
 
-A DpdlPacket contains 1 - n chunks of compressed data that can be allocated, queried and
-deallocated when data is not used anymore.
+In particular Dpdl is very efficient on J2ME and JavaME platforms and has a high degree of backward compatibility.
+
+A DpdlPacket contains 1 - n chunks of compressed data that can be allocated, queried and deallocated when data is not used anymore.
 
 All kind of data can be packed into a DpdlPacket.
 
@@ -774,9 +777,13 @@ All kind of data can be packed into a DpdlPacket.
 
 ![DpdlPacket](http://www.dpdl.io/images/platform/DpdlPacket_FlowChart.jpg)
 
-The 'DpdlEngine lite' release package includes an encoded DpdlPacket (dpdl_PHONEBOOK.dpdl)
-and the corresponding Dpdl code definition file [dpdl_PHONEBOOK.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlPackets/dpdl_PHONEBOOK_BZ.c) used to encode
-the DpdlPacket. Refer to the [Dpdl_documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+**Example DpdlPacket definition source file:**
+
+[dpdl_PHONEBOOK.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlPackets/dpdl_PHONEBOOK_BZ.c) 
+
+The 'DpdlEngine lite' release package includes an encoded DpdlPacket (dpdl_PHONEBOOK.dpdl) and the corresponding Dpdl code definition file used to encode the DpdlPacket.
+
+Refer to the [Dpdl_documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
 for how to allocate, execute and perform queries on a DpdlPacket.
 
 Example of DpdlPacket code definition (dpdl_PHONEBOOK.c)

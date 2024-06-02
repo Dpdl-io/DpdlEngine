@@ -13,8 +13,7 @@ developed by
 
 Multiple programming languages can be embedded directly within Dpdl scripts by using the keyword **`>>`**, for example: **>>python**
 
-The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with a plug-in configurable
-option. See **[DpdlCustom]** tag in 'DpdlEngine.ini' configuration file.
+The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
 Currently Dpdl supports the embedding of the following languages available as independent plug-ins:
 
@@ -147,36 +146,35 @@ dpdl_stack_push("dpdlstack:myconfig")
 C code can be executed in 2 different modes:
 
 1) Interpreted C code (<ins>minimal subset of C90</ins>)
-2) Compiled C code (in memory at runtime) (<ins>ANSI C99</ins>)
+2) Compiled C code (in memory at runtime) (most <ins>ANSI C99</ins>)
 
 
 #### Mode 1 (minimal and interpreted code)
 
 The code is executed via a native Dpdl library that has a very small footprint (278 Kb) and **includes all essential C libraries**
-and language constructs (minimal subset of C90, **POSIX** compliant), **no additional dependencies** required.
+and language constructs with **no additional dependencies** required.
 
 Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
 
---> easy integration of custom extensions. No compile time overhead,
-Minimal, all basic C libraries and headers already included, no dependencies, POSIX compliant (**default Mode**)
+**Features:**
+
+easy integration of custom extensions. No compile time overhead, minimal but all basic C libraries and headers already included, no dependencies, POSIX compliant (**default Mode**)
 
 **Minimal embedded C library documentation, for Mode (1):**
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 #### Mode 2 (full and compiled code)
 
---> Fast compile time and fast execution (can be activated via option '**dpdl:compile**').
-This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
+This mode can be activated via the dpdl stack option '**dpdl:compile**'.
 
-The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
+This operation mode supports ANSI C (almost full ISO C99 standard) and many GNUC extensions including inline assembly on x86. cComplex and imaginary numbers are currently not available.
 
-The 'dpdl:compile' option currently works for the following platforms: **Linux (x86_64), MacOS (arm64), Raspberry (armv7l), Windows 64**. 
-The embedded C compiler used is the <ins>**Fabrice Bellard's TCC**</ins>.
+The 'dpdl:compile' option currently is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**. 
+
+The embedded C compiler used is the super fast <ins>**Fabrice Bellard's TCC**</ins>.
 
 For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
 
-
-The faster and more complete execution mode (2) can be activated by pushing the option '**dpdl:compile**' on the dpdl stack (-> see 'dpdl_stack_push(..)'):
 
 * The embedded C code for mode (1) may, or may not include a 'main(..)' function. 
 If the main function is defined, parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function
@@ -184,7 +182,7 @@ are passed as parameters to the main function in the C code.
 
 * The embedded C code for mode (2) must contain a 'main(..)' or a '**dpdl_main(..)**' function
 
-#### Example without C main(..):
+#### Example execution Mode (1) (without main(..) function):
 ```python
 println("my Dpdl script embeds some C code")
 
@@ -196,9 +194,9 @@ printf("Hello C from Dpdl\n");
 ```
 
 Note: When compiling and executing embedded C with mode (2), the appropriate 'include' and 'lib' paths need to be pushed on the dpdl stack so that
-the Dpdl runtime is able to find your libraries.
+the Dpdl runtime is able to find your libraries. A set of default platform directories are searched for include files and libraries (eg. /usr/include etc.)
 
-#### Example with C main(..) -> function accepting parameters, and writing a result to the Dpdl stack:
+#### Example execution Mode (1) (with main(..) function) -> function accepting parameters, and writing a result to the Dpdl stack:
 
 ```python
 println("my Dpdl script embeds some C code")
