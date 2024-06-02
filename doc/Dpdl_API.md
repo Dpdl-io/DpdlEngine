@@ -73,6 +73,10 @@ the library exposes the following methods and objects:
 getraw(string url) return string response
 ```
 
+Example:
+
+https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/http/dpdlHttpExample.h
+
 **`json`**
 ```python
 parse(string json) return object json
@@ -80,6 +84,11 @@ encode(struct data) return string json
 decode(string json, struct data) return struct data
 decode(string json, object data) return object data
 ```
+
+Example:
+
+https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/json/dpdlDecodeJSON.h
+
 
 **`native`**
 ```python
@@ -89,6 +98,10 @@ mapLib(string lib, object class) return object lib
 
 Adding custom libraries is straight forward and can be done by simply adding the implementation to the classpath and 
 configure the library in the configuration file 'DpdlEngine.ini'
+
+Example:
+
+https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h
 
 
 ### The Native libraries:
