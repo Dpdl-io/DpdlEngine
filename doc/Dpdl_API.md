@@ -225,6 +225,16 @@ handleMouseEvent(object event)
 [DpdlFXMLController]
 handleButtonAction(object event)
 
+[DpdlCoAPServer]
+DpdlCoAPServer(int port, int max_block_size, int verbose, int write_mode, string resource, string resource_type, string resource_value) return object coap_server
+start() return bool status
+setResource(string resource, string resource_type, string resource_value) return bool status
+
+[DpdlCoAPClient]
+DpdlCoAPClient(string coap_uri, int port, int max_block_size, int verbose) return object coap_client
+getClient() return object dpdl_coap_client
+request(string coap_uri, string request, string request_type, string request_value, object DpdlCoAPResponseHandler)
+
 [DpdlCoAPResponseHandler]
 onRequestFailure(string message)
 onResponse(string response)
