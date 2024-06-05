@@ -34,7 +34,7 @@ The Dpdl API functions usable inside Dpdl are listed here:
 
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-As with Dpdl it's possible to load java classes, the whole Java API is available inside Dpdl code.
+As Dpdl it's capable of accessing java classes directly, the whole Java JRE API is available inside Dpdl.
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getClass(..)`**
 
 
@@ -65,7 +65,7 @@ Note: double end with 'd', long with 'L' and short end with 's'
 
 ### Data Function Types
 
-Dpdl has some built-it data function types for handling vectors, maps, linked-lists and stacks
+Dpdl has some built-it data function types for handling <ins>**vectors**</ins>, <ins>**maps**</ins>, <ins>**linked-lists**</ins> and <ins>**stacks**</ins>
 
 ```python
 # Vector
@@ -85,6 +85,10 @@ The objects returned by these functions have all methods and fields as the corre
 
 
 #### 'object' type
+
+All types in Dpdl can be handled as objects.
+
+The type 'object' is if first place used to load java objects available within Dpdl, but can serve as a super type compatible with all other types.
 
 Every type can be assigned to an **`object`** variable. But not the other way around.
 
@@ -415,9 +419,9 @@ println("my_arr: " + my_arr)
 
 The type 'struct' can also be conveniently compiled at runtime into a java bytecode object (java class) by using the **`genObjCode(...)`** api function.
 
-This may be useful for exchanging data structures with other native java classes or to speedup performance critical functions calls.
+This may be useful for exchanging data structures with other native java classes or to speedup performance critical function calls.
 
-Structs that are compiled into java bytecode can contain 1 embedded **`>>java`** section containing native java methods, which are than also compiled as bytecode into the generated object.
+Structs that are compiled into java bytecode can contain 1 embedded **`>>java`** section containing native java methods which is than also compiled as bytecode into the generated object. Other embedded code sections are executed only.
 
 
 Example:
@@ -471,7 +475,7 @@ println("res: " + res)
 
 Dpdl supports the type **`enum`**
 
-The keywords by default have increasing values. Desired values can be assigned explicitly
+The keywords by default have increasing 'int' values starting from 1. Desired values can be assigned explicitly
 
 Example:
 ```c
@@ -498,8 +502,10 @@ The types for which pointers are currently supported:
 * int
 * byte
 * string
+* char
 * float
 * double
+* short
 * var
 * object
 * struct
@@ -711,9 +717,9 @@ Dpdl can access the underlying classes of a given JRE implementation or any othe
 
 The classes are loaded within a DpdlObject that is handled by the Dpdl runtime.
 
-Static classes can be accessed via **`getClass(..)`** method and instance classes via **`loadObj(..)`** method.
+Static classes can be accessed via **`getClass(..)`** function and instance classes created via **`loadObj(..)`** function.
 
-The class references are resolved via the 'classes.txt' file located in the folder ./DpdlLibs/libs/.
+The class references are resolved via the class definition file which can be update to resolve further classes (only for full registered version)
 
 The name of the class must be specified without the package path, i.e 'String' and NOT 'java.lang.String'.
 
@@ -1374,6 +1380,7 @@ The following commands are available:
  -exec  Type && Execute a Dpdl script, between <script>...  </script>
  -load  Load && Execute a Dpdl script file (relative path to./DpdlLibs/ eg. arraylistExample.h)
  -bench  Run a query benchmark test (on DpdlPacket dpdl_PHONEBOOK)
+ -lc List the classes of a given java jar file
  -h  Help
  -q  quit
 ```

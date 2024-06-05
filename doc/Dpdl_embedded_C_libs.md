@@ -14,7 +14,7 @@ developed by
 
 This is the minimal C library documentation for the Mode (1) (**interpreted**) embedded C code execution.
 
-When executing embedded C code with interpreted Mode (1), all libraries are already and available in the native Dpdl runtime.
+When executing embedded C code with interpreted Mode (1), all libraries are already included and are available in the native Dpdl runtime.
 
 
 Example:
@@ -33,9 +33,8 @@ println("finished with exit code" + exit_code)
 
 The default configuration includes only a minimal set of library functions to keep the runtime as small as possible.
 
-However more functions and libraries may be included in different distributions of the Dpdl native API library (dpdlnativeapi), see Download page.
+However, more functions and libraries will be included in different distributions of the Dpdl native API library (dpdlnativeapi), see Download page.
 
-NOTE: When executing C code with Mode (2), the standard C libraries of your compiler toolchain can be used.
 
 ## Currently supported C Libraries and Functions
 

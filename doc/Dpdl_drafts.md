@@ -17,7 +17,8 @@ Suggestions and comments are very appreciated.
 
 ## class Type
 
-The possibility to defined a **`class`** having member variables and functions
+The possibility to defined a **`class`** having member variables and functions.
+
 
 proposed draft:
 ```c++

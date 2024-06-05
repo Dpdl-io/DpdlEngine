@@ -3,13 +3,13 @@
 
 ## Dpdl
 
-Dpdl provides a mechanism for embedded code substitution. This enables an easy and straight forward way of complementing or setting  variables inside the code template.
+Dpdl provides a mechanism for embedded code substitution. This enables an easy and straight forward way of complementing or setting  variables inside the code.
 
 ### Option settings
 
 **`dpdl:applyvars`**
 
-Variables that have been pushed onto the dpdl stack via **`dpdl_stack_var_put(..)`** and **`dpdl_stack_obj_put(..)`** can be references inside embedded code with '{{var_name}}'. The dpdl stack configuration 'dpdl:applyvars' needs to be provided to apply the code substitution.
+Variables that have been pushed onto the dpdl stack via **`dpdl_stack_var_put(..)`**, **`dpdl_stack_obj_put(..)`** etc., can be references inside embedded code with **`{{var_name}}`**. The dpdl stack configuration 'dpdl:applyvars' needs to be provided to apply the code substitution.
 
 Example:
 ```python
@@ -35,9 +35,9 @@ println("embedded code exit code: " + exit_code)
 
 ## C Compiler
 
-C code embedded within Dpdl scripts can be dynamically compiled in memory at runtime (see execution Mode (2))
+Embedded C code within Dpdl scripts can be dynamically compiled in memory at runtime (see execution Mode (2))
 
-The C compiler used and executed in form of a Dpdl language plugin is the <ins>super fast Fabric Bellard's TCC</ins>.
+The C compiler used and executed in form of a Dpdl language plugin is the <ins>super fast Fabrice Bellard's TCC</ins>.
 
 
 ### Library and include paths
@@ -45,7 +45,7 @@ The C compiler used and executed in form of a Dpdl language plugin is the <ins>s
 Even though the embedded C compiler Dpdl language plug-in comes with a minimal set of header files located in '**./lib/native/$platform/include**',
 by default the Dpdl language plug-in searches for 'include' and 'lib' files in the following paths:
 
-**Linux:**
+**Linux/Unix:**
 ```
 /usr/include
 /usr/lib
@@ -71,7 +71,7 @@ The Dpdl runtime can be parameterized by pushing the corresponding option settin
 function **`dpdl_stack_push(..)`**. The options need to be prefixed with 'dpdl:'
 
 
-For the embedding of C code the following option settings are available.
+For the embedding of C code the following option settings are available:
 
 
 #### Option settings
@@ -117,7 +117,7 @@ Function like macros can also be defined, e.g **`dpdl:-DF(a)=a+1`**
 Any other option supported by the compiler can be passed using the prefix 'dpdl:'
 
 
-Example:
+**Example:**
 ```c
 println("this Dpdl demo shows how C code can be dynamically compiled (in memory at runtime) within Dpdl")
 

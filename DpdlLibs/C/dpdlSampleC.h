@@ -9,7 +9,7 @@
 # e-mail: ac@dpdl.io
 #
 #
-include("dpdllib.h")
+import("dpdllib.h")
 
 func testEmbeddedC(int n, double x, string a)
 	println("pushing vars onto the dpdl stack: " + n + " " + x + " " + a)

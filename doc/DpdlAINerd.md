@@ -14,7 +14,9 @@ developed by
 
 '**DpdlAINerd**' (**DAN**) is a dedicated Dpdl language plug-in for generative AI code.
 
-The plug-in provided allows to generate via a configurable AI engine (OpenAI, CodePal, etc..) embedded Dpdl code sections in various programming languages which can than be executed as embedded code within Dpdl. More generally, the plug-in allows also to generate content or data used during the code execution.
+The plug-in provided allows to generate via a configurable AI engine (OpenAI, Google Vertex AI, CodePal, etc..) embedded Dpdl code sections in various programming languages which can than be executed as embedded code within Dpdl.
+
+More generally, the plug-in allows also to generate content or data used during the code execution.
 
 This enables to write code faster in the prototyping phase and allows also to generate data on the fly needed for development and testing.
 
@@ -129,7 +131,7 @@ this is my sample json:
 
 The following example shows how code can be generated and executed right away.
 
-Example:
+**Example:**
 ```python
 println("testing generative AI code with Dpdl....")
 
@@ -169,14 +171,12 @@ The code generation function can be activated by providing the '@gen' parameter 
 
 The DpdlEngine will generate a new file, in the same directory, with the '_gen' suffix.
 
-Example:
+**Example:**
 ```
 java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED -jar DpdlEngine_V1.0_release.jar -load ai/dpdlAITest.h @gen
 ```
 
-NOTE: Currently, in the 'DpdlEngine lite' shareware/demo release the execution requires you to enter a password at each generation. A full registered version is required to disable the password prompt.
-		
-		The password is '123456'
+NOTE: Currently, in the 'DpdlEngine lite' shareware/demo release the execution <ins>requires you to enter a password</ins> at each generation. A full registered version is required to disable the password prompt (password is **`123456`**)
 
 
 #### Generating content or data on-the-fly inside the code execution
