@@ -101,6 +101,12 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[dpdlFullExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFullExample.h)
 	
+* Example Dpdl script executes an embedded 'clojure' code that creates a simple UI to convert values from Celsius to Fahrenheit
+
+	[clj/dpdlCljCelsiusConverterGUI.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/clj/dpdlCljCelsiusConverterGUI.h)
+
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_example_Celsius_Fahrenheit_UI.png" width="75%" height="75%">
+	
 * Example Dpdl script that embeds C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
@@ -165,7 +171,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 * Example Dpdl script that executes an embedded 'Julia' script to download data via HTTP via url's contained in json data
 
 	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaHttp.h)
-	
+		
 * Example Dpdl script using pointers and references
 
 	[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)
