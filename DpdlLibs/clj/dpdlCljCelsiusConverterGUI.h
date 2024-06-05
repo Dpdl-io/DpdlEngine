@@ -1,7 +1,7 @@
 # File: clj/dpdlCljCelsiusConverterGUI.h
 #
 # Example: This Dpdl script creates a simple UI to convert Celsius to Fahrenheit using embedded 'clojure' code
-#			Some dummy parameters are passed and intecepted in the embedded clojure code, but unused
+#			Some dummy parameters are passed and intecepted in the embedded clojure code, but currently unused
 #
 # author: A.Costa
 # e-mail: ac@dpdl.io
