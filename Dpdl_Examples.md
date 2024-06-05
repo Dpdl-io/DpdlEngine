@@ -105,7 +105,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[clj/dpdlCljCelsiusConverterGUI.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/clj/dpdlCljCelsiusConverterGUI.h)
 
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_example_Celsius_Fahrenheit_UI.png" width="20%" height="20%">
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_example_Celsius_Fahrenheit_UI.png" width="30%" height="30%">
 	
 * Example Dpdl script that embeds C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
 
