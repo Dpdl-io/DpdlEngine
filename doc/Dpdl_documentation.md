@@ -475,7 +475,7 @@ println("res: " + res)
 
 Dpdl supports the type **`enum`**
 
-The keywords by default have increasing 'int' values starting from 1. Desired values can be assigned explicitly
+The keywords by default have increasing 'int' values starting from 0. Desired values can be assigned explicitly
 
 Example:
 ```c
