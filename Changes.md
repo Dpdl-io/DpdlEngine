@@ -52,6 +52,7 @@ developed by
 
 ## Fixes
 
+* 07.06.2024 Fixed bug related to enum type when field values were explicitly assigned and accessed without enum reference. Now works as espected in all cases
 * 22.05.2024 The power operator ^ now returns always a 'double' value
 * 07.01.2024 Fixed some duplicate entries in the class definition file
 * 13.12.2023 Fixed issue in nested 'struct' type
