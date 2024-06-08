@@ -11,7 +11,7 @@ arr[] = "1 2 3 4 5"
 arr_list[] = ""
 int x = 0
 while(x < arr.size())
-    arr_list[x] = arr.getObj()
+    arr_list[x] = arr.getArrObj()
     println("added arr_list[" + x + "]=" + arr_list[x])
     x = x + 1
 endwhile

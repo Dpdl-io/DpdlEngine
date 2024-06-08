@@ -49,7 +49,6 @@ developed by
 * 'lua' scripts can now be embedded in Dpdl scripts via the '**>>lua**' keyword
 * The native Dpdl library for Python 'dpdlpython' is now available  in the 'DpdlEngine lite' release (for Mac OS X arm64, Linux x86_64 and Raspberry PI 3 armv7)
 
-
 ## Fixes
 
 * 07.06.2024 Fixed bug related to enum type when field values were explicitly assigned and accessed without enum reference. Now works as espected in all cases

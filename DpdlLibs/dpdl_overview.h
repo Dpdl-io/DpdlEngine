@@ -135,7 +135,7 @@ println("myarr_mix: " + myarr_mix)
 s = myarr_mix.size()
 println("size: " + s)
 
-object myarrlist = myarr_mix.getObj()
+object myarrlist = myarr_mix.getArrObj()
 println("myarrlist: " + myarrlist.toString())
 println("")
 println("Iterating over...")

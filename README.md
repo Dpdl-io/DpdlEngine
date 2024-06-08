@@ -472,7 +472,7 @@ for the target platform.
 * Java ME CLDC & GCF (JSR 360)
 * Java ME Embedded Profile (JSR 361)
 * Java versions >= 1.4 and later
-* Java > 1.1 (but without 'loadObj' and 'getClass' methods)
+* Java > 1.1 (but without 'loadObj' and 'getObj' methods)
 * All Platforms where the included Open Source virtual machine (miniJVM) can be compiled
 
 DpdlEngine V1.0 has been tested on:

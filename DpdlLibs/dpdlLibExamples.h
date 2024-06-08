@@ -89,7 +89,7 @@ arr[0] = 1
 arr[1] = "mega"
 println("arr list: " + arr)
 # get ArrayList obj
-object arr_obj = arr.getObj()
+object arr_obj = arr.getArrObj()
 bool isincluded = arr_obj.contains("mega")
 println("the list cointains \"mega\": " + isincluded)
 println("removing \"mega\"...")
@@ -337,7 +337,7 @@ println("testing Collection min value on on array[]")
 println("")
 arr[] = "1 23 44 66 79 99 100"
 println("finding the min value of arr: " + arr)
-object arr_list = arr.getObj()
+object arr_list = arr.getArrObj()
 object collections = getClass("Collections")
 object min_value = collections.min(arr_list)
 println("min value: " + min_value)

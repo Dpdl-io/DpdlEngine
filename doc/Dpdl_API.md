@@ -24,7 +24,7 @@ The Dpdl API's are available as:
 
 ### Native APIs
 
-Dpdl allows to load and access java classes and methods via dedicated API functions **`loadObj(..)`** and **`getClass(..)`**.
+Dpdl allows to load and access java classes and methods via dedicated API functions **`loadObj(..)`** and **`getObj(..)`**.
 
 This allows Dpdl to access a broad set of API's and libraries.
 
@@ -132,7 +132,7 @@ The following API function are implemented directly in the DpdlEngine core:
 include(string inc_path) return int
 import(string lib_path) return int
 
-getClass(string name) return object
+getObj(string name) return object
 loadObj(string name, object params, ...) return object
 loadCode(string dpdl_script_ref, object args, ...) return object
 genObjCode(object dpdl_obj) return object obj
@@ -151,7 +151,7 @@ to_double(object val) return double value
 
 array[] ->
 size() return int size
-getObj() return object arraylist
+getArrObj() return object arraylist
 array(object o) return [] array
 
 println(string s)

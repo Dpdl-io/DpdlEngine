@@ -27,7 +27,7 @@ println("testarr: " + testarr)
 subarr[] = array(testarr[0])
 println("subarr: " + subarr)
 
-object arrobj = testarr.getObj()
+object arrobj = testarr.getArrObj()
 
 object it = arrobj.iterator()
 
@@ -37,7 +37,7 @@ endwhile
 
 println("----------------------------")
 
-object subarrobj = subarr.getObj()
+object subarrobj = subarr.getArrObj()
 object its = subarrobj.iterator()
 while(its.hasNext())
 	println("elem: " + its.next())
@@ -55,7 +55,7 @@ println("----------------------------")
 testarr2[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
 println("testarr2: " + testarr2)
 
-object arrobj2 = testarr2.getObj()
+object arrobj2 = testarr2.getArrObj()
 
 object it2 = arrobj2.iterator()
 

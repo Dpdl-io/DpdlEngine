@@ -35,7 +35,7 @@ The Dpdl API functions usable inside Dpdl are listed here:
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 As Dpdl it's capable of accessing java classes directly, the whole Java JRE API is available inside Dpdl.
-Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getClass(..)`**
+Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
 
 
 ### Variable Types
@@ -54,7 +54,7 @@ bool t = true
 myarr[] = [1, 0.3, 23.d, 1000L, 0x09, "mydata"]
 var v = "some variable type var"
 object myobj = loadObj(..)
-object myobj = getClass(..)
+object myobj = getObj(..)
 struct myStruct a
 enum myenum e
 ```
@@ -285,7 +285,7 @@ Arrays are defined with **`[ ]`**
 
 Arrays are dynamic and can grow or shrink in size
 
-Arrays support multiple types and can be accessed also as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`getObj()`** )
+Arrays support multiple types and can be accessed also as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`getArrObj()`** )
 
 Array can be initialized directly, via a **`string`** and also with **`struct`**
 
@@ -296,7 +296,7 @@ myarrmix[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
 myarray[] = "1 1.0 0x01 test Dpdl Dynamic Packet Definition Language"
 
 # this returns an arraylist
-myarray2[0]  = myarray.getObj()
+myarray2[0]  = myarray.getArrObj()
 
 object myarrayobj = myarray2[0]
 
@@ -347,7 +347,7 @@ All methods of the java class 'ArrayList' can be accessed
 myarr[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
 println("myarr: " + myarr)
 
-object myarrobj = myarr.getObj()
+object myarrobj = myarr.getArrObj()
 
 object iter = myarrobj.iterator()
 
@@ -717,7 +717,7 @@ Dpdl can access the underlying classes of a given JRE implementation or any othe
 
 The classes are loaded within a DpdlObject that is handled by the Dpdl runtime.
 
-Static classes can be accessed via **`getClass(..)`** function and instance classes created via **`loadObj(..)`** function.
+Static classes can be accessed via **`getObj(..)`** function and instance classes created via **`loadObj(..)`** function.
 
 The class references are resolved via the class definition file which can be update to resolve further classes (only for full registered version)
 
@@ -725,7 +725,10 @@ The name of the class must be specified without the package path, i.e 'String' a
 
 For some java classes that have duplicate entries as base name, the corresponding path prefix has to be specified when loading
 an object.
+
 The classes where this applies are listed here: [doc/Dpdl_class_resolve.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_class_resolve.md)
+
+Note: the <ins>deprecated function 'getClass'</ins> is still supported for some time for backwards compatibility. The function '**getObj**' should be used instead.
 
 
 ### The default configuration resolves the following API's:
@@ -746,7 +749,7 @@ Additional API's and classes can be added (only in Full registered version) to t
 Example:
 ```python
 # static class loading
-object calendar = getClass("Calendar")
+object calendar = getObj("Calendar")
 object cal_inst = calendar.getInstance()
 int day_ = cal_inst.get(calendar.DATE)
 println("day: " + day_)
@@ -1460,7 +1463,7 @@ Here you can find all methods available for the Dpdl API:
 [Dpdl_API](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 Dpdl allows to access all java classes of the underlying JRE environment,
-providing access to the whole Java platform API via the loadObj(..) and the getClass(..)
+providing access to the whole Java platform API via the loadObj(..) and the getObj(..)
 Dpdl API methods.
 
 In this way Dpdl can access the classes and api of external java libraries.
@@ -1476,7 +1479,7 @@ else
 fi
 ```
 
-The class references resolved by the methods 'loadObj' and 'getClass' are defined via the class reference file:
+The class references resolved by the methods 'loadObj' and 'getObj' are defined via the class reference file:
 ./DpdlLibs/libs/classes.txt
 
 NOTE: This file can be edited or complemented only in the registered, Licensed version of Dpdl.
