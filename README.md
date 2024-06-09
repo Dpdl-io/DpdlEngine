@@ -19,11 +19,9 @@ developed by
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 Dpdl enables access to java platform API's and to external native libraries and supports the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java and Clojure** <ins>**directly embedded** within Dpdl code</ins>.
 
-Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
+Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface. 
 
-Dpdl is <ins>**self contained**</ins>, <ins>**portable**</ins> and <ins>**highly customizable**</ins> via an extensible interface. 
-
-A dedicated **AI Dpdl language plug-in** (**DAN**) allows to <ins>automatically generate</ins> via <ins>**generative AI code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
+A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>automatically generate</ins> via <ins>**generative AI code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
@@ -31,7 +29,10 @@ A dedicated **AI Dpdl language plug-in** (**DAN**) allows to <ins>automatically 
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Clojure + AI) = <ins>Powerful and Versatile</ins>
 
+Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
+
 These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
+
 Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
 ## Dpdl is designed to:
@@ -56,7 +57,8 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 	<img src="http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg">
 </p>
 
-### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform.
+### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
+
 By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript, the <ins>power</ins> of C/C++ programming language and a simple acess to native libraries, Dpdl provides a powerful development platform for industrial applications, education and research.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform API and any external java libraries.
@@ -99,12 +101,37 @@ Dpdl comes with a very compact and portable **scripting engine** and an **extens
 applications and embedded system software and in particular is ideal to foster rapid application development and rapid prototyping.
 Embedded ANSI C code, OCaml and Clojure can also be <ins>dynamically compiled in memory at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
 
-Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint
-devices via a custom data container, a 'DpdlPacket'.
+Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as 'DpdlPacket'.
 
 This makes Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 
+
+### Features
+
+* **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
+* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
+* On the fly conversion/compilation of Dpdl data struct's into native java bytecode
+* Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
+* No additional installations required
+* **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
+* Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different targets (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
+* **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
+* **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
+**CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
+* **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
+The speedup is x 25 times faster compared to a standard record store access
+* **Virtual record store filesystem**
+* **Double precision floating point emulation** layer
+* **XML** with XPath parser
+* **JSON**
+* **Easy integration of custom libraries**
+* **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
+* Tools for automatically converting Dpdl code to Java , C/C++ and V code
+* Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
+* Open Source programming language plug-ins
+
 ### Small Memory footprint:
+
 * **DpdlEngine core** (<ins>**Basic**</ins> configuration) **`60 Kb`**
 * **DpdlEngine core** (<ins>**Full**</ins> configuration) **`372 Kb`**
 * **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
@@ -112,6 +139,28 @@ This makes Dpdl suitable for a wide range of use-cases and applications in parti
 * **Total size** of DpdlEngine (Dpdl Full + C compiler/interpreter) = **`650 Kb`**
  
 The size of the DpdlEngine core can be stripped down even further by excluding certain functionalities.
+
+
+### Quick Links
+
+[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+  
+[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+
+[Dpdl_embedded_languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
+
+[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+
+[Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
+
+[Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
+
+[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
+[Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
+
+[Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
+
 
 ## Dpdl sample code
 
@@ -193,53 +242,6 @@ The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up 
 * Development of Domain Specific Languages (DSL)
 * Generative AI code
 	
-
-### Features
-
-* **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
-* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
-* On the fly conversion/compilation of Dpdl data struct's into native java bytecode
-* Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
-* No additional installations required
-* **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
-* Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different targets (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
-* **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
-* **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
-**CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
-* **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
-The speedup is x 25 times faster compared to a standard record store access
-* **Virtual record store filesystem**
-* **Double precision floating point emulation** layer
-* **XML** with XPath parser
-* **JSON**
-* **Easy integration of custom libraries**
-* **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
-* Tools for automatically converting Dpdl code to Java , C/C++ and V code
-* Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
-* Open Source programming language plug-ins
-
-
-### Quick Links
-
-[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
-  
-[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
-
-[Dpdl_embedded_languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
-
-[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
-[Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
-
-[Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
-
-[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
-
-[Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
-
-[Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
-
-
 
 ## Access to the complete Java platform JRE API's and external java libraries
 
