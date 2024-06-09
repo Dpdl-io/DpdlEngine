@@ -106,7 +106,7 @@ Further, Dpdl can be used to encode, store, control and query data efficiently a
 This makes Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 
 
-### Features
+## Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
@@ -141,7 +141,7 @@ The speedup is x 25 times faster compared to a standard record store access
 The size of the DpdlEngine core can be stripped down even further by excluding certain functionalities.
 
 
-### Quick Links
+## Quick Links
 
 [Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
