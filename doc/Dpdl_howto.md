@@ -54,10 +54,10 @@ The above script can than be run also in the Dpdl console with the '-load' comma
 
 The dpdl type **`struct`** can be used to represent data structures within a Dpdl program, almost like in the C programming language.
 
-Dpdl 'struct' can conveniently also be compiled into a pure native java bytecode object and accessed and handled in the same way as ordinary java objects (classes).
+Dpdl 'struct' can conveniently also be compiled into a pure native java bytecode object, and accessed and handled in the same way as ordinary java objects (classes).
 
 The Dpdl API function **`genObjCodegenObjCode(...)`** accepts as input defined Dpdl objects, in this case a 'struct' and compiles it to native java
-bytecode object. The returned object can than be handled as accessed as an ordinary object.
+bytecode object. The returned object can than be handled as accessed as an ordinary object and therefore also be used in native java code.
 
 When defining an embedded java code section via **`>>java`** keyword, the contained java <ins>methods are also compiled</ins> into bytecode. 
 
@@ -79,10 +79,13 @@ struct A {
 
 	>>java
 	public int myNativeJavaFunc(int val){
-		System.out.println("myNativeJavaFunc()");
-		for(int i = 0; i < 10; i++){
-			System.out.println("iter: " + i + " val: " + val);
+		System.out.println("myNativeJavaFunc() val=" + val);
+		
+		int myi = 0;
+		for(int i = 0; i < 10000000; i++){
+			myi=i;
 		}
+		val=myi;
 		return (val+3);
 	}
 	<<
@@ -109,15 +112,20 @@ println("myAobj.account: " + myAobj.account)
 
 println("calling pure java method...")
 
+setStartTime()
 int res = myAobj.myNativeJavaFunc(23)
+int ms = getEndTime()
 
 println("res: " + res)
 
-println("finished")
+println("finished in " + ms + " milliseconds")
 ```
 
-Note: The embedded '>>java' code section needs to be defined <ins>before any other functions</ins>, and Only the first '>>java' section is compiled
-		as bytecode into the resulting object.
+This approach, allows to speedup performance critical sections (see also Dpdl_native_interface.md)
+
+The native struct function 'myNativeJavaFunc' call in the code snippet above executes in **`21 ms`** on a labtop (MacBook Pro).
+
+Note: The embedded '>>java' code section that is forseen to be compiled into the needs to be defined <ins>before any other functions</ins>, and Only the first '>>java' section is compiled as bytecode into the resulting object.
 		
 
 ### Loading a Dpdl script as an object

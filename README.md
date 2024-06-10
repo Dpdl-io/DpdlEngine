@@ -33,7 +33,6 @@ Further programming languages and natural language interpreters can be added as 
 
 These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 
-Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
 ## Dpdl is designed to:
 
@@ -67,6 +66,8 @@ Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained A
 are integrated by default and third party libraries and functions can be added as extensions.
 
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes use of AI generative code to enable to automatically generate and embedded executable code and content or data by natural language descriptions contained in Dpdl code.
+
+Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
 ### Sample Dpdl code (Bluetooth device discovery using high level Dpdl BT API):
 ```python

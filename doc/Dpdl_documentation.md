@@ -81,8 +81,22 @@ object my_list = list("A", "Costa", 1, 0.3, 999.9d, 10000L, ...)
 object my_stack = stack()
 ```
 
-The objects returned by these functions have all methods and fields as the corresponding java classes (Vector, HashMap, LinkedList, Stack)
+The objects returned by these functions have <ins>all methods and fields as the corresponding java classes</ins> (**Vector**, **HashMap**, **LinkedList**, **Stack**)
 
+Example:
+
+```python
+object myvec = vec("a", "b", "c", 1, 2, 3)
+
+bool isIn = myvec.contains("c")
+
+println("the vector contains 'c': " + isIn)
+
+object mystack = stack()
+
+mystack.push("my item")
+
+```
 
 #### 'object' type
 
