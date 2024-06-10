@@ -54,7 +54,7 @@ The above script can than be run also in the Dpdl console with the '-load' comma
 
 The dpdl type **`struct`** can be used to represent data structures within a Dpdl program, almost like in the C programming language.
 
-Dpdl 'struct' can conveniently also be <ins>compiled into a pure native java bytecode object</ins>, and accessed and handled in the same way as ordinary java objects (classes).
+Dpdl 'struct' can conveniently also be <ins>**compiled into a pure native java bytecode object**</ins>, and accessed and handled in the same way as ordinary java objects (classes).
 
 The Dpdl API function **`genObjCodegenObjCode(...)`** accepts as input defined Dpdl objects, in this case a 'struct' and compiles it to native java
 bytecode object. The returned object can than be handled as accessed as an ordinary object and therefore also be used in native java code.
