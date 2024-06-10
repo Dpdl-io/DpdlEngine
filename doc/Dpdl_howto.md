@@ -54,7 +54,7 @@ The above script can than be run also in the Dpdl console with the '-load' comma
 
 The dpdl type **`struct`** can be used to represent data structures within a Dpdl program, almost like in the C programming language.
 
-Dpdl 'struct' can conveniently also be compiled into a pure native java bytecode object, and accessed and handled in the same way as ordinary java objects (classes).
+Dpdl 'struct' can conveniently also be <ins>compiled into a pure native java bytecode object</ins>, and accessed and handled in the same way as ordinary java objects (classes).
 
 The Dpdl API function **`genObjCodegenObjCode(...)`** accepts as input defined Dpdl objects, in this case a 'struct' and compiles it to native java
 bytecode object. The returned object can than be handled as accessed as an ordinary object and therefore also be used in native java code.
@@ -125,7 +125,7 @@ This approach, allows to speedup performance critical sections (see also Dpdl_na
 
 The native struct function 'myNativeJavaFunc' call in the code snippet above executes in **`21 ms`** on a labtop (MacBook Pro).
 
-Note: The embedded '>>java' code section that is forseen to be compiled into the needs to be defined <ins>before any other functions</ins>, and Only the first '>>java' section is compiled as bytecode into the resulting object.
+Note: The embedded '>>java' code section that is forseen to be compiled into the needs to be defined <ins>before any other embedded code functions</ins>, and Only the first '>>java' section is compiled into bytecode in the resulting object.
 		
 
 ### Loading a Dpdl script as an object
