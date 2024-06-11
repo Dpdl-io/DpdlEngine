@@ -22,7 +22,7 @@ Dpdl is available as a standalone software package is two distinct release distr
 - **DpdlEngine pro**
 
 
-### 'DpdlEngine lite'
+## 'DpdlEngine lite'
 
 The <ins>'DpdlEngine lite'</ins> software can be downloaded as a <ins>Free Trial Shareware</ins> with some limitations/restrictions (see section below)
 
@@ -41,7 +41,7 @@ Suggestion, feature wish list and contributions to enhance Dpdl are very welcome
 [Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)
 
 
-### 'DpdlEngine pro'
+## 'DpdlEngine pro'
 
 The 'DpdlEngine pro' release is supplied tailored to specific customer requirements in terms of licensing model and release package.
 
