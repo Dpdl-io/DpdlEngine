@@ -126,7 +126,7 @@ The speedup is x 25 times faster compared to a standard record store access
 Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** for the development of
 applications and embedded system software and in particular is ideal to foster rapid application development and rapid prototyping.
 
-Embedded ANSI C code, OCaml and Clojure can also be <ins>dynamically compiled in memory at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
+Embedded ANSI C code, OCaml and Clojure can also be <ins>**dynamically compiled in memory** at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
 
 These features make Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 
@@ -544,7 +544,7 @@ See 'Download' page for more details:
 
 Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
 
-* Front-End compiler based on LLVM that compiles Dpdl code to IR code, allowing to generate native binary images for most platforms.
+* Back-end compiler that compiles Dpdl code to native machine code for most target architectures.
 
 
 ### Embedding of 'Python' code
