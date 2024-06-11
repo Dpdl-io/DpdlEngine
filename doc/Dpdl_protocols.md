@@ -14,8 +14,8 @@ Dpdl implements various protocols that can be accessed natively or via a higher 
 
 Currenlty the following protocols are already included and available in Dpdl:
 
-* Bluetooth (JSR-82 implementation)
-* CoAP (Constrained Application Protocol)
+* **Bluetooth** (JSR-82 implementation)
+* **CoAP** (Constrained Application Protocol) (IETF standard RFC 7252)
 
 
 ## Bluetooth
