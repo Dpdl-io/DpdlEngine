@@ -29,6 +29,8 @@ The execution of embedded programming languages is driven by the Dpdl runtime th
 * **`C++ ROOT`**
 * **`Clojure`**
 
+Note: The **Dpdl language plug-ins** are linked and fully compliant with the official programming language software releases (see 'Embedded language references' below)
+
 **available Add-on plug-ins:**
 
 * **`Sql`**
