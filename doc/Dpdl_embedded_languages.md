@@ -11,7 +11,7 @@ developed by
 		
 ## Dpdl embeddable programming languages
 
-<ins>Multiple programming languages can be embedded directly within Dpdl code</ins> by using the keyword **`>>`**, for example: **>>python**
+**Multiple programming languages can be <ins>embedded directly within Dpdl code</ins>** by using the keyword **`>>`**, for example: **>>python**
 
 The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
