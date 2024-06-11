@@ -5,9 +5,9 @@ developed by
 **SEE Solutions**
 &copy; 2003
 
-# DpdlEngine V1.0 improvements/changes/fixes
+# DpdlEngine V1.0 features/changes/fixes
 
-## New 
+## New features
 
 * NEW (01.06.2024) Added support for converting/compiling Dpdl objects such as 'struct' to native java bytecode objects that can be accessed and handled in the same way as ordinary objects -> this feature will be available in the coming 'DpdlEngine lite' release
 
@@ -75,7 +75,7 @@ update of '.lib/ocamlrun-scripting.jar' and './lib/ocamljava.jar' might be requi
 
 ### Features
 
-* Dpdl compiler for generating native machine code 
+* Dpdl backend compiler for generating native machine code for most target architectures
 
 
 

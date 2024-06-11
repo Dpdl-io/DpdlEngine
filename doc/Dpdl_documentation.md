@@ -83,8 +83,7 @@ object my_stack = stack()
 
 The objects returned by these functions have <ins>all methods and fields as the corresponding java classes</ins> (**Vector**, **HashMap**, **LinkedList**, **Stack**)
 
-Example:
-
+**Example:**
 ```python
 object myvec = vec("a", "b", "c", 1, 2, 3)
 
@@ -106,8 +105,7 @@ The type 'object' is if first place used to load java objects available within D
 
 Every type can be assigned to an **`object`** variable. But not the other way around.
 
-Example:
-
+**Example:**
 ```python
 int myi = 9999
 object myiobj = myi
@@ -223,7 +221,7 @@ Some variable types can be converted either by casting or by using the **`conver
 
 Casting numeric values can be performed using the functions **`to_int(..)`** , **`to_float(..)`** or **`to_double(..)`**
 
-eg.
+**Example:**
 ```python
 float f = 999.3
 double d = 2000000.5d
@@ -250,7 +248,7 @@ Currently the following conversions are supported, more will follow:
 **float, double** -> **`int`**
 
 
-Example:
+**Example:**
 ```python
 int xc = 10
 float f = 0.3
@@ -1022,7 +1020,7 @@ The stack size can be customized by applying configurable settings.
 **Minimal embedded C library documentation:**
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
-Example (Mode 1):
+Example **Mode (1)**:
 ```python
 println("testing embedded C code in Dpdl")
 
@@ -1061,13 +1059,14 @@ println("response buffer: " + buf)
 The faster and more complete execution Mode(2) can be activated by pushing the option **`dpdl:compile`** on the dpdl stack (-> see 'dpdl_stack_push(..)').
 
 The built-in compiler searches the default library and include files on the OS. 
-A basic set of include headers are available in the folder **`./lib/native/$platform/include`**.
+A basic set of include headers are also available in the folder **`./lib/native/$platform/include`**.
+
 Additional include header files or library files can be provided with the options **`dpdl:-I`** and **`dpdl:-L`**
 
 see the following documentation for more info
 [doc/Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md) 
 
-Example:
+Example **Mode (2)**:
 ```python
 println("Benchmarking Dpdl embedded C with compile option...")
 
@@ -1107,20 +1106,14 @@ string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
 println("result: " + buf)
 ```
 
-Parameters and data can be passed to the interpreter via the '**dpdl_stack_push(..)**' API function.
+Parameters and data can be passed to the dpdl stack via the '**dpdl_stack_push(..)**' API function.
 Data can be written to and read from to the dpdl stack using the '**dpdl_stack_buf_put(..)**' and '**dpdl_stack_buf_get()**' API functions.
 
 Pushing a variable 'dpdlbuf_*" on the dpdl stack, allows to later retrieve in Dpdl the data buffer that has been written
-in the C code via the '**dpdl_stack_buf_put**' function (for example the result of a calculation)
-
+in the C code via the '**dpdl_stack_buf_put**' function, for example the result of a calculation.
 
 
 Note: For Mode(2), in order to use the function dpdl_stack_buf_put(..), instead of importing 'dpdl.h', it's required to declare 'extern void dpdl_stack_buf_put(char *buf);' 
-
-The Dpdl native API library 'dpdlnativeapi' provides a Security check to guarantee that the library have not been compromised.
-Therefore the embedded C code execution cannot be mangled internally and guarantees the correct execution of C code.
-In the case the library is updated, the corresponding verification checksums needs to be adjusted in 'DpdlEngine.ini" config.
-
 
 
 ### Embedding of Python
@@ -1355,25 +1348,9 @@ dpdl:applyvars
 See this doc for more details: [Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
 
-### Extensions
-
-The Dpdl language can be extended by implementing specific interfaces for custom function and variable declarations.
-
-The implemented extensions can be registered via settings in the "Extensions" section defined in the 'DpdlEngine.ini' configuration file.
-
-Example of a custom print function, myprintln(..):
-```java
-public class MyTestDpdlExtension extends DpdlExtension {
-
-    public Object dpdlCall(String name,ArrayList param) throws DpdlException {
-			// implement you methods here
-    }
-}
-```
-
 ### Current limitations
 
-- Currently recursion is not directly supported with pure Dpdl
+- Currently recursion is currently not directly supported with pure Dpdl code. Work is progress.
 - Currently dpdl arrays only have one dimension. But creating an array of arrays is possible.
 
 

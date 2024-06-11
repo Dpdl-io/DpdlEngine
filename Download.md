@@ -24,30 +24,39 @@ Dpdl is available as a standalone software package is two distinct release distr
 
 ### 'DpdlEngine lite'
 
-The <ins>'DpdlEngine lite'</ins> software can be downloaded as a <ins>Free Trial Shareware</ins> with some limitations/restrictions. The software can be activated 
-by acquiring a personal license with corresponding activation key at a fixed, one time pricing model. 
+The <ins>'DpdlEngine lite'</ins> software can be downloaded as a <ins>Free Trial Shareware</ins> with some limitations/restrictions (see section below)
 
-### 'DpdlEngine pro'
+#### Download 'DpdlEngine lite'
 
-The <ins>'DpdlEngine pro'</ins> software is released on custom licensing models depending on the type of use and application domain.
-Feel free to get a non binding quotation by writing to info@dpdl.io
-
-
-## DOWNLOAD 'DpdlEngine lite' release package (Shareware trial version)
-
-The 'DpdlEngine lite' release (v1.0) can be downloaded as Free trial shareware (with some limitations/restrictions), 
-via the dpdl.io download form page:
+The 'DpdlEngine lite' release (v1.0) can be downloaded as Free trial shareware (with some limitations/restrictions), via the dpdl.io download form page:
 
 [DOWNLOAD form](https://www.dpdl.io/download_request.htm)
 
 Documentation and Updates are regularly available on the official DpdlEngine GitHub repository:
 [DpdlEngine GitHub](https://github.com/Dpdl-io/DpdlEngine)
 
-Check the 'DpdlEngine lite' Demo release limitations/restrictions, compared to the registered 'DpdlEngine lite' release, in the last section of this document.
+The software can at request be activated by acquiring a personal license with corresponding activation key at a fixed, one time pricing model. 
 
 Suggestion, feature wish list and contributions to enhance Dpdl are very welcome and can be submitted on the discussion section on GitHub:
 [Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)
 
+
+### 'DpdlEngine pro'
+
+The 'DpdlEngine pro' release is supplied tailored to specific customer requirements in terms of licensing model and release package.
+
+In particular also platform specific targets can be defined (e.g run on Java 1.4, JavaME etc..) to meet at best the customer requirements at full extend.
+
+The available embedded language plug-ins can also be requested along with its full source code disclosure for applying customizations and develop further extensions.
+
+We strongly believe that business strategies can be worked out together with our clients.
+
+The <ins>'DpdlEngine pro'</ins> software is licensed on custom licensing models depending on the type of use and application domain.
+
+Feel free to get a non binding quotation by writing to info@dpdl.io
+
+
+## Pricing
 
 ### How much does a registered 'DpdlEngine lite' cost?
 
@@ -103,17 +112,6 @@ please submit your request via the following download request form, you will be 
 Or simply write an e-mail to info@dpdl.io
 
 
-## 'DpdlEngine pro' release
-
-The 'DpdlEngine pro' release is supplied tailored to specific customer requirements in terms of licensing model and release package.
-
-In particular also platform specific targets can be defined (e.g run on Java 1.4, JavaME etc..) to meet at best the customer requirements at full extend.
-
-The available embedded language plug-ins can also be requested along with its full source code disclosure for applying customizations and develop further extensions.
-
-We strongly believe that business strategies can be worked out together with our clients.
-
-
 ## Other Downloads
 
 ### Dpdl embedded language plug-in Add-ons:
@@ -124,7 +122,7 @@ Available soon...
 https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
 
-## 'DpdlEngine lite' Demo release limitations/restrictions
+## 'DpdlEngine lite' Demo free trial shareware release limitations/restrictions
 
 	
 The 'DpdlEngine lite' Demo release software package is available for Free to try and has the following limitations/restrictions

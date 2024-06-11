@@ -12,7 +12,7 @@ IoT is one of the application domains where Dpdl can be used
 
 Dpdl implements various protocols that can be accessed natively or via a higher level Dpdl API.
 
-Currenlty the following protocols are available:
+Currenlty the following protocols are already included and available in Dpdl:
 
 * Bluetooth (JSR-82 implementation)
 * CoAP (Constrained Application Protocol)

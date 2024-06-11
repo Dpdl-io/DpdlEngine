@@ -98,15 +98,6 @@ Dpdl is not intended to replace, but to enable integration of different technolo
  fi
 ```
 
-Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** for the development of
-applications and embedded system software and in particular is ideal to foster rapid application development and rapid prototyping.
-Embedded ANSI C code, OCaml and Clojure can also be <ins>dynamically compiled in memory at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
-
-Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as 'DpdlPacket'.
-
-This makes Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
-
-
 ## Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
@@ -130,6 +121,16 @@ The speedup is x 25 times faster compared to a standard record store access
 * Tools for automatically converting Dpdl code to Java , C/C++ and V code
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Open Source programming language plug-ins
+
+
+Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** for the development of
+applications and embedded system software and in particular is ideal to foster rapid application development and rapid prototyping.
+
+Embedded ANSI C code, OCaml and Clojure can also be <ins>dynamically compiled in memory at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
+
+These features make Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
+
+Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as 'DpdlPacket'.
 
 ### Small Memory footprint:
 

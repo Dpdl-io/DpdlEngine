@@ -11,11 +11,11 @@ developed by
 		
 ## Dpdl embeddable programming languages
 
-Multiple programming languages can be embedded directly within Dpdl scripts by using the keyword **`>>`**, for example: **>>python**
+<ins>Multiple programming languages can be embedded directly within Dpdl code</ins> by using the keyword **`>>`**, for example: **>>python**
 
 The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
-Currently Dpdl supports the embedding of the following languages available as independent plug-ins:
+### Currently Dpdl supports the embedding of the following languages available as independent Dpdl language plug-ins:
 
 * **`Embedded C`** (minimal subset of C90)
 * **`ANSI C`** (full C99)
@@ -383,11 +383,11 @@ JavaScript is the ideal programming language for web applications as it's suppor
 JavaScript code can be embedded within Dpdl via the keyword **`>>js`** or **`>>qjs`**
 
 JavaScript can be executed with 2 Modes:
-1) Using the 'QuickJS' javascript engine from Fabrice Bellard, ES2023 compliant '**>>qjs**' (Suggested mode)
+1) Using the 'QuickJS' javascript engine from Fabrice Bellard, ES2023 compliant '**>>qjs**' (<ins>Suggested mode</ins>)
 2) Using the 'Nashorn' javascript engine '**>>js**' -> available only on JRE version 11 to 15
 
 
-#### Mode 1
+#### Mode (1)
 
 The QuickJS engine used provides a powerful and complete API (supports ES2023 spec https://tc39.es/ecma262/2023/)
 to interact with the javascript engine at low level.
@@ -430,7 +430,7 @@ int exit_code = dpdl_exit_code()
 println("Dpdl qjs exited with exit code: " + exit_code)
 ```
 
-#### Mode 1
+#### Mode (2)
 
 ##### keyword **`>>js`**
 

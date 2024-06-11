@@ -9,16 +9,16 @@ developed by
 **SEE Solutions**
 &copy; 2003
 
-The following document contains planned new Dpdl features that are considered and evaluated.
-These features may eventually be available in coming releases.
-Suggestions and comments are very appreciated.
+The following document contains proposals for new Dpdl features that are considered and evaluated.
 
+These features may eventually be available in coming releases.
+
+Suggestions and comments are very appreciated.
 
 
 ## class Type
 
 The possibility to defined a **`class`** having member variables and functions.
-
 
 proposed draft:
 ```c++

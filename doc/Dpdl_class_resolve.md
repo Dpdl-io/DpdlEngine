@@ -10,11 +10,12 @@ developed by
 
 
 
-Below the list of java classes where a path prefix needs to be specified when using the functions **`loadObj(..)`** and **`getClass(..)`**.
+Below the list of java classes where a path prefix needs to be specified when using the functions **`loadObj(..)`** and **`getObj(..)`**.
 
 For example to load 'java.sql.Array', the corresponding resolve entry is 'sql.Array', because 'Array' will resolve to 'java.lang.reflect.Array' per default as specified in the **`class definition`** file.
 
-These are the Exceptions:
+### Class naming exception:
+
 ```
 java.awt.List awt.List
 java.awt.geom.Arc2D.Double Arc2D.Double

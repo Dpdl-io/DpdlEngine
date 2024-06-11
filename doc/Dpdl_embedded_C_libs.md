@@ -14,7 +14,7 @@ developed by
 
 This is the minimal C library documentation for the Mode (1) (**interpreted**) embedded C code execution.
 
-When executing embedded C code with interpreted Mode (1), all libraries are already included and are available in the native Dpdl runtime.
+When executing embedded C code with interpreted Mode (1), <ins>all libraries and include files listed below are already included and available</ins> in the native Dpdl runtime.
 
 
 Example:

@@ -3,7 +3,7 @@
 
 ## Dpdl
 
-Dpdl provides a mechanism for embedded code substitution. This enables an easy and straight forward way of complementing or setting  variables inside the code.
+Dpdl provides a mechanism for embedded code substitution at runtime. This enables an easy and straight forward way of complementing or setting  variables or code sections inside the embedded code definitions.
 
 ### Option settings
 
