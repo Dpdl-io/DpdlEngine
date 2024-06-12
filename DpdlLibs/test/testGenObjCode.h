@@ -3,7 +3,7 @@
 # Example: Dpdl example that uses the API function 'genObjCode' to convert/compile a 'struct' into a native java bytecode object.
 #			The resulting object can be accessed in the same way as an ordinary object.
 #
-#			The first declaration of embedded java code (>>java) is also compiled into the resulting object
+#			The first declaration of embedded java code (>>java) is also compiled as bytecode into the resulting native object
 #
 #
 # Author: A.Costa
@@ -26,9 +26,13 @@ struct A {
 	>>java
 	public int myNativeJavaFunc(int val){
 		System.out.println("myNativeJavaFunc()");
-		for(int i = 0; i < 10; i++){
-			System.out.println("iter: " + i + " val: " + (val+i));
+
+		int myi = 0;
+		for(int i = 0; i < 10000000; i++){
+			//System.out.println("iter: " + i + " val: " + (val+i));
+			myi=i;
 		}
+		val=myi;
 		return (val+3);
 	}
 	<<
@@ -60,20 +64,27 @@ struct A {
 println("testing 'genObjCode'...")
 
 struct A a
+
+println("a: " + a + " is of type: " + typeof(a))
+
 a.testFunc()
 a.testN()
 
 object myAobj = genObjCode(a)
 
-println("myAobj: " + myAobj)
+println("myAobj: " + myAobj + " is of type: " + typeof(myAobj))
 
 println("myAobj.id: " + myAobj.id)
 println("myAobj.account: " + myAobj.account)
 
 println("calling native java bytecode method...")
 
+setStartTime()
+
 int res = myAobj.myNativeJavaFunc(23)
+
+int ms = getEndTime()
 
 println("res: " + res)
 
-println("finished")
+println("finished in " + ms + " milliseconds (ms)")
