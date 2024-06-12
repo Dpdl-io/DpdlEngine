@@ -31,9 +31,9 @@ By filing the following form you'll get a permanent download link.
 
 ### Important notice: 
 
-It's important to verify the integrity of the 'DpdlEngine lite' release zip file you downloaded or received the package (DpdlEngine_V1.0_release.zip) via third parties:
+It's important to verify the integrity of the 'DpdlEngine lite' release zip file you downloaded or received the package () via third parties:
 
-it <ins>MUST</ins> in any case match the <ins>sha(256) checksum</ins> as reported on this site: 
+The distributed package (DpdlEngine_V1.0_release.zip) <ins>**MUST**</ins> in any case match the <ins>SHA(256) checksum</ins> as reported on this site: 
 					
 			https://www.dpdl.io/DemoDpdl_validator.html
 			
