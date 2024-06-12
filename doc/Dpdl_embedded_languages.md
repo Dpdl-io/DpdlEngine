@@ -29,8 +29,6 @@ The execution of embedded programming languages is driven by the Dpdl runtime th
 * **`C++ ROOT`**
 * **`Clojure`**
 
-Note: The **Dpdl language plug-ins** are linked and fully compliant with the official programming language software releases (see 'Embedded language references' below)
-
 **available Add-on plug-ins:**
 
 * **`Sql`**
@@ -46,6 +44,7 @@ Note: The **Dpdl language plug-ins** are linked and fully compliant with the off
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X|X v4.01|
 | Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X|X v4.01|
  
+ Note: The **Dpdl language plug-ins** are linked and fully compliant with the official programming language software releases (see 'Embedded language references' below)
  
 ### Dpdl embedded code API
 
