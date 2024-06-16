@@ -449,10 +449,13 @@ struct A {
 	
 	>>java
 	public int myNativeJavaFunc(int val){
-		System.out.println("myNativeJavaFunc()");
-		for(int i = 0; i < 10; i++){
-			System.out.println("iter: " + i + " val: " + val);
+		System.out.println("myNativeJavaFunc() val=" + val);
+		
+		int myi = 0;
+		for(int i = 0; i < 10000000; i++){
+			myi=i;
 		}
+		val=myi;
 		return (val+3);
 	}
 	<<
@@ -477,10 +480,16 @@ println("myAobj.s: " + myAobj.s)
 
 println("calling native java function....")
 
+setStartTime()
 int res = myAobj.myNativeJavaFunc(23)
+int ms = getEndTime()
 
-println("res: " + res)
+println("res: " + res + " executed in " + ms + " milliseconds (ms)")
 ```
+
+This approach allows to speedup performance critical sections.
+
+The native struct function 'myNativeJavaFunc' call in this example executes in **`21 ms`** (on 'Apple M2 pro').
 
 
 ### Enum
