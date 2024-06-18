@@ -101,7 +101,7 @@ mystack.push("my item")
 
 All types in Dpdl can be handled as objects.
 
-The type 'object' is if first place used to load java objects available within Dpdl, but can serve as a super type compatible with all other types.
+The type 'object' is in first place used to load java objects available within Dpdl, but can serve as a super type compatible with all other types.
 
 Every type can be assigned to an **`object`** variable. But not the other way around.
 
@@ -489,7 +489,7 @@ println("res: " + res + " executed in " + ms + " milliseconds (ms)")
 
 This approach allows to speedup performance critical sections.
 
-The native struct function 'myNativeJavaFunc' call in this example executes in **`21 ms`** (on 'Apple M2 pro').
+The native struct function 'myNativeJavaFunc' call in this example executes in avg. **`12 ms`** (on 'Apple M2 pro').
 
 
 ### Enum

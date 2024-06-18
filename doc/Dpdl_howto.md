@@ -123,7 +123,7 @@ println("finished in " + ms + " milliseconds")
 
 This approach, allows to speedup performance critical sections (see also Dpdl_native_interface.md)
 
-TThe native struct function 'myNativeJavaFunc' call in the example above executes in **`21 ms`** (on 'Apple M2 pro').
+TThe native struct function 'myNativeJavaFunc' call in the example above executes in avg. **`12 ms`** (on 'Apple M2 pro').
 
 Note: The embedded '>>java' code section that is forseen to be compiled into the needs to be defined <ins>before any other embedded code functions</ins>, and Only the first '>>java' section is compiled into bytecode in the resulting object.
 		
