@@ -9,7 +9,9 @@ developed by
 
 ## New features
 
-* NEW (01.06.2024) Added support for converting/compiling Dpdl objects such as 'struct' to native java bytecode objects that can be accessed and handled in the same way as ordinary objects -> this feature will be available in the coming 'DpdlEngine lite' release
+* NEW (26.06.2024) Multi-line structured text, data and code resources are supported
+
+* (01.06.2024) Added support for converting/compiling Dpdl objects such as 'struct' to native java bytecode objects that can be accessed and handled in the same way as ordinary objects -> this feature will be available in the coming 'DpdlEngine lite' release
 
 * (25.05.2024) Added native data function types **`vec(...)`** **`map(...)`** **`list(...)`** **`stack()`**
 

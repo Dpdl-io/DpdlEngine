@@ -161,6 +161,8 @@ The validation script can be inspected here:
 
 * The option 'dpdl:-A' (to add files to be compiled) used along with the option 'dpdl:compile' is enabled only in the registered version (Note: it will throw and execption in the Demo version)
 
+* Multi-line embedded structured text, data and code resources are supported only in the full registered version of 'DpdlEngine lite'.
+
 * The 'DpdlNerdAI' (DAN) Dpdl language plug-in requires a password '123456' at each generation in the unregistered version of DpdlEngine. The max. size of 'dpdlnerdai_buf' is 500
 
 * The Demo release of 'DpdlEngine lite' has as slower startup due to security checks, compared to the full registered version of 'DpdlEngine lite'

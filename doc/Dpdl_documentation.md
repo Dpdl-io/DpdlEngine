@@ -21,9 +21,10 @@ developed by
 * Access to the full underlying Java Platform API's or other external java libraries
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
-* Embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
+* Multiple embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
 * Other programming languages can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
+* Multi-line embeddable structured text, data and code resources supported.
 * Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
@@ -289,6 +290,44 @@ println("mystr: " + mystr)
 ```
 
 Note: Currently only one expression definition '${ ... }' is allowed inside a string 
+
+
+### Multi-line text, data and code resources
+
+By using the **`>>res(...)`** keyword it's possible to embed multi-line structured text, data or code resources and retrieve and access them as an object.
+
+The resources are stacked on the dpdl stack and can be accessed by id or by it's name at any point in time.
+
+This approach provides a flexible and readable way to handle different kind of resources like structured text, data and code.
+
+
+**Example:**
+```
+println("testing access to embedded multi-line resources...")
+
+>>res(my_html)
+<html>
+<body>
+<p>Hello World from Dpdl</p>
+</body>
+</html>
+<<
+
+object resid = dpdl_res_pop_id()
+
+println("resource id: " + resid)
+
+object myhtml = dpdl_res_obj_get(resid)
+
+println("myhtml: ")
+
+println(myhtml)
+
+# same, but via res name
+object myhtml2 = dpdl_res_obj_get("my_html")
+
+println(myhtml2)
+```
 
 
 ### Arrays

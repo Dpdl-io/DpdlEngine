@@ -303,6 +303,43 @@ println("embedded C code exit code: " + exit_code)
 
 Check the documentation for more info: [DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
+
+### Embedding multi-line structured text, data and code resources
+
+
+The **`>>res`** keyword allows to embed multi-line structured text, data and code resources.
+
+The resources can be stacked and retrieved where in the code they are needed.
+
+**Example:**
+```python
+println("testing access to embedded multi-line resources...")
+
+>>res(my_html)
+<html>
+<body>
+<p>Hello World from Dpdl</p>
+</body>
+</html>
+<<
+
+object resid = dpdl_res_pop_id()
+
+println("resource id: " + resid)
+
+object myhtml = dpdl_res_obj_get(resid)
+
+println("myhtml: ")
+
+println(myhtml)
+
+# same, but via res name
+object myhtml2 = dpdl_res_obj_get("my_html")
+
+println(myhtml2)
+```
+
+
 ## Dpdl data
 
 ### Mapping data in 'json' format
