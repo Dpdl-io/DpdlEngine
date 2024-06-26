@@ -302,7 +302,7 @@ This approach provides a flexible and readable way to handle different kind of r
 
 
 **Example:**
-```
+```python
 println("testing access to embedded multi-line resources...")
 
 >>res(my_html)
