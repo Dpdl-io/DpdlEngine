@@ -9,7 +9,7 @@ developed by
 &copy; 2003	
 
 
-## Script Execution
+## Code Execution
 
 ### Execute a Dpdl script directly, without entering the Dpdl console
 
@@ -307,7 +307,7 @@ Check the documentation for more info: [DpdlAINerd.md](https://github.com/Dpdl-i
 ### Embedding multi-line structured text, data and code resources
 
 
-The **`>>res`** keyword allows to embed multi-line structured text, data and code resources.
+The **`>>res(...)`** keyword allows to embed multi-line structured text, data and code resources.
 
 The resources can be stacked and retrieved where in the code they are needed.
 

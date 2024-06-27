@@ -296,7 +296,7 @@ Note: Currently only one expression definition '${ ... }' is allowed inside a st
 
 By using the **`>>res(...)`** keyword it's possible to embed multi-line structured text, data or code resources and retrieve and access them as an object.
 
-The resources are stacked on the dpdl stack and can be accessed by id or by it's name at any point in time.
+The resources are stacked on the dpdl stack and can be accessed by id or by it's name at any execution point.
 
 This approach provides a flexible and readable way to handle different kind of resources like structured text, data and code.
 
