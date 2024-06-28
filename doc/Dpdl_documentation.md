@@ -304,6 +304,11 @@ double dv = 9.0d
 println("result is ${sqrt(dv)}")
 ```
 
+The code snippet above prints the following output:
+```
+result is 3.0
+```
+
 Note: Currently only one expression definition '${ ... }' is allowed inside a string 
 
 
