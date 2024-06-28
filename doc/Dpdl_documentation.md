@@ -274,9 +274,9 @@ string ds = convert("string", d)
 println("ds: " + ds)
 ```
 
-### String expressions
+### In-line string expressions
 
-Strings can contain expressions that are evaluated at runtime, when the string is defined. The expression can be embedded in a string within the keyword **`${ }`**
+Strings can contain in-line expressions that are evaluated at runtime, when the string is defined. The expression can be embedded in a string within the keyword **`${ }`**
 This may reduce code at some performance expense.
 
 **Example:**
@@ -309,7 +309,7 @@ The code snippet above prints the following output:
 result is 3.0
 ```
 
-Note: Currently only one expression definition '${ ... }' is allowed inside a string 
+Note: Currently only one in-line expression definition '${ ... }' is allowed inside a given string. Coming releases will support multiple expression in-linings within a given string. 
 
 
 ### Multi-line text, data and code resources
