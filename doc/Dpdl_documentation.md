@@ -16,6 +16,7 @@ developed by
 * Types supported **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
+* Inline string expressions
 * native data function types to handle data structures **`vec`**, **`map`**, **`list`** and **`stack`**.
 * APIs: native API's, Dpdl API, MIDP API, JRE API
 * Access to the full underlying Java Platform API's or other external java libraries
@@ -182,6 +183,12 @@ println("var 's' is a: " + typeof(s))
 println("var 'i' is a: " + typeof(i))
 ```
 
+The above statement will print out:
+```
+var 's' is a: string
+var 'i' is a: int
+```
+
 For clarity, a variable other than 'var' type can also be determined:
 ```python
 int i = 10
@@ -272,7 +279,7 @@ println("ds: " + ds)
 Strings can contain expressions that are evaluated at runtime, when the string is defined. The expression can be embedded in a string within the keyword **`${ }`**
 This may reduce code at some performance expense.
 
-Example:
+**Example:**
 ```python
 int a = 10
 int b = 20
@@ -282,11 +289,19 @@ println("mystr: " + mystr)
 
 The expressions can also contain function calls like in the following examples:
 
-eg.
+**Example:**
 ```python
 string input = "some input"
 string mystr = "this is a my result ${ myFunc(input) }"
 println("mystr: " + mystr)
+```
+
+Example using 'sqrt(...)':
+
+```python
+double dv = 9.0d
+
+println("result is ${sqrt(dv)}")
 ```
 
 Note: Currently only one expression definition '${ ... }' is allowed inside a string 
