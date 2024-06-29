@@ -301,10 +301,10 @@ Example using 'sqrt(...)':
 ```python
 double dv = 9.0d
 
-println("result is ${sqrt(dv)}")
+println("result is ${ sqrt(dv) }")
 ```
 
-The code snippet above prints the following output:
+The code snippet above gives the following output:
 ```
 result is 3.0
 ```
