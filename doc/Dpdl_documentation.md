@@ -887,7 +887,7 @@ iff parameters are supplied.
 LoadCodeFunc.h
 ```python
 # constructor
-func LoadCodeFunc(string map)
+func LoadCodeFunc(object map)
 	println("object LoadCodeFunc loaded")
 	println("map: " + map.toString())
 end
