@@ -9,42 +9,6 @@ developed by
 &copy; 2003	
 
 
-## How to run the examples
-
-The Dpdl example scripts are located in the './DpdlLibs/' folder and can be executed in different ways:
-
-1) or directly via the '-load' parameter at startup
-2) using the **`DpdlClient`** console application with commands
-3) or using the API function call DPDLAPI_execCode(..).
-
-The script path per default configuration need to be relative to the './DpdlLibs/' folder
-
-
-### 1) At startup with the '-load' command
-
-```
-java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED -jar DpdlEngine_V1.0_release.jar -load test/testArray.h
-```
-Note: On newer versions of java (from Oracle), in order to access specific java 'modules' within Dpdl, you may need to enable them with the option '--add-opens'
-
-### 2) **`DpdlClient`** console application
-
-```
--load
-enter the Dpdl script name to execute:
-arraylistExample.h [@TEST1]
-```
-
-### 3) Using the Dpdl API
-
-```python
-println("executing dpdl script...")
-int s = DPDLAPI_execCode("mydpdlscript.h")
-println("status: " + s)
-```
-
-The Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License.
-
 
 ## Dpdl sample Applications
 
@@ -53,6 +17,7 @@ More advanced sample applications written with Dpdl that serve as demonstrators 
 [Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
 
 These examples are demonstrators but are full running applications.
+
 
 ## Dpdl sample code examples
 
@@ -381,8 +346,49 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	```
 	-load
 	dpdlLibExamples.h @TEST1
-	```
 	
+	-load
 	dpdlLibExamples.h @TEST2 etc..
 	
 	....
+	```
+
+## How to run the examples
+
+The Dpdl example scripts are located in the './DpdlLibs/' folder and can be executed in different ways:
+
+1) or directly via the '-load' parameter at startup
+2) using the **`DpdlClient`** console application with commands
+3) or using the API function call DPDLAPI_execCode(..).
+
+The script path per default configuration need to be relative to the './DpdlLibs/' folder
+
+
+### 1) At startup with the '-load' command
+
+```
+java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED -jar DpdlEngine_V1.0_release.jar -load test/testArray.h
+```
+Note: On newer versions of java (from Oracle), in order to access specific java 'modules' within Dpdl, you may need to enable them with the option '--add-opens'
+
+### 2) **`DpdlClient`** console application
+
+```
+-load
+enter the Dpdl script name to execute:
+arraylistExample.h [@TEST1]
+```
+
+### 3) Using the Dpdl API
+
+```python
+println("executing dpdl script...")
+int s = DPDLAPI_execCode("mydpdlscript.h")
+println("status: " + s)
+```
+
+The Dpdl sample scripts and Dpdl sample applications published on this repository are released under the MIT License.
+
+	
+
+	
