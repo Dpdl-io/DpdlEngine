@@ -80,6 +80,10 @@ For the embedding of C code the following option settings are available:
 
 Instructs the Dpdl runtime to compile in memory the embedded C code before executing it (execution Mode 2)
 
+**`dpdl:-vv`**
+
+prints include file list. To show also include tries use the flag '-vvv' instead
+
 **`dpdl:-F$File`**
 
 Adds the specified file to the compile set
