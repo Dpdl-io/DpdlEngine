@@ -17,7 +17,6 @@ developed by
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
 * Inline string expressions allowed
-* Multi-line structured text, data and code resources
 * native data function types to handle data structures **`vec`**, **`map`**, **`list`** and **`stack`**.
 * APIs: Dpdl API, JRE API, MIDP API
 * Access to the full underlying Java Platform API's or other external java libraries
@@ -27,7 +26,7 @@ developed by
 * Multiple embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
 * Other programming languages can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
-* Multi-line embeddable structured text, data and code resources supported.
+* Multi-line structured text, data and code resources supported.
 * Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 

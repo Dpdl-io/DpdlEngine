@@ -20,7 +20,7 @@ The Dpdl API's are available as:
 - Native API's
 - Dpdl import Libraries
 - Native Libraries
-- Native functions
+- Dpdl native functions
 
 ### Native APIs
 
@@ -124,7 +124,7 @@ For more details visit the doc:
 [Dpdl_native_Interface.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
 
 
-### Native functions
+### Dpdl native functions
 
 The following API function are implemented directly in the DpdlEngine core:
 
