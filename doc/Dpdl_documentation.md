@@ -13,13 +13,15 @@ developed by
 
 ### Features:
 
-* Types supported **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
+* Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
-* Inline string expressions
+* Inline string expressions allowed
+* Multi-line structured text, data and code resources
 * native data function types to handle data structures **`vec`**, **`map`**, **`list`** and **`stack`**.
-* APIs: native API's, Dpdl API, MIDP API, JRE API
+* APIs: Dpdl API, JRE API, MIDP API
 * Access to the full underlying Java Platform API's or other external java libraries
+* Access to native libraries with simple approach
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
 * Multiple embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
@@ -103,7 +105,7 @@ mystack.push("my item")
 
 All types in Dpdl can be handled as objects.
 
-The type 'object' is in first place used to load java objects available within Dpdl, but can serve as a super type compatible with all other types.
+The type 'object' is in first place used to load java objects available within Dpdl (see 'loadObj(...)' function), but can serve as a super type compatible with all other types.
 
 Every type can be assigned to an **`object`** variable. But not the other way around.
 
@@ -213,6 +215,7 @@ println("variable 'map' is of type: " + typeof(map))
 ```
 The above statement will return **`HashMap`**
 
+
 #### Variable re-definition
 
 Redefinition of variables within the same scope is allowed by the default configuration, in this case a 'Warning' is issued.
@@ -312,7 +315,7 @@ result is 3.0
 Note: Currently only one in-line expression definition '${ ... }' is allowed inside a given string. Coming releases will support multiple expression in-linings within a given string. 
 
 
-### Multi-line text, data and code resources
+### Multi-line structured text, data and code resources
 
 By using the **`>>res(...)`** keyword it's possible to embed multi-line structured text, data or code resources and retrieve and access them as an object.
 
