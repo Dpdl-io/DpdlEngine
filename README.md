@@ -60,10 +60,10 @@ These features make Dpdl a powerful development platform for rapid prototyping, 
 
 By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript, the <ins>power</ins> of C/C++ programming language and a simple access to java api's and native libraries, Dpdl provides a powerful development platform for industrial applications, education and research.
 
-The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform API and any external java libraries.
+The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API, external java libraries and enables access also to native libraries.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
-are integrated by default and third party libraries and functions can be added as extensions.
+are integrated by default and third party libraries and protocols can be added as extensions.
 
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes use of AI generative code to enable to automatically generate and embedded executable code and content or data by natural language descriptions contained in Dpdl code.
 
@@ -102,12 +102,12 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
-* On the fly conversion/compilation of Dpdl data struct's into native java bytecode
 * Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
 * No additional installations required
 * **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different targets (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
+* On the fly conversion/compilation of Dpdl data struct's into native java bytecode
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.

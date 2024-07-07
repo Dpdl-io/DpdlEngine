@@ -9,39 +9,39 @@ developed by
 
 ## New features
 
-* NEW (26.06.2024) Multi-line structured text, data and code resources are supported
+* NEW Multi-line structured text, data and code resources are supported
 
-* (01.06.2024) Added support for converting/compiling Dpdl objects such as 'struct' to native java bytecode objects that can be accessed and handled in the same way as ordinary objects -> this feature will be available in the coming 'DpdlEngine lite' release
+* Added support for converting/compiling Dpdl objects such as 'struct' to native java bytecode objects that can be accessed and handled in the same way as ordinary objects -> this feature will be available in the coming 'DpdlEngine lite' release
 
-* (25.05.2024) Added native data function types **`vec(...)`** **`map(...)`** **`list(...)`** **`stack()`**
+* Added native data function types **`vec(...)`** **`map(...)`** **`list(...)`** **`stack()`**
 
-* (20.05.2024) Added support for type 'short'
-* (11.05.2024) Dpdl now enables to load and access native libraries (libc, msvcrt, etc..) directly via a unified interface
+* Added support for type 'short'
+* Dpdl now enables to load and access native libraries (libc, msvcrt, etc..) directly via a unified interface
 					and call functions from Dpdl in the same way -> This feature is available for releases requested via the 							'Download form' (see [Download.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Download.md)
-* (05.05.2024) Added 'char' type for better integration
-* (17.07.2024) Dpdl language plug-in 'DpdlAINerd' for generative code is now available in 'DpdlEngine lite' release
+* Added 'char' type for better integration
+* Dpdl language plug-in 'DpdlAINerd' for generative code is now available in 'DpdlEngine lite' release
 					Documenation and examples will be available soon
-* (01.04.2024) The JavaFX library is now available also in the 'DpdlEngine lite' release
-* (01.04.2024) The Dpdl import library 'http' has been improved with more functions (POST, PUT, etc..)
-* (24.03.2024) Dpdl language plugin for SQL is available in the 'DpdlEngine lite' release
-* (16.03.2024) Dpdl embedded language plugin form Clojure has been developed and has been included in the latest 'DpdlEngine lite' release
-* (18.02.2024) Dpdl embedded language plugin for 'Java' code blocks is available
-* (04.02.2024) Dpdl embedded language plugin for 'Ruby' has been implemented and will be included in the coming releases of 'DpdlEngine lite'
-* (30.01.2024) String can now contain expressions within the keyword '${..}' that are evaluated when variables are initialized eg. string mystr = "result: ${a + b}" 
-* (20.01.2024) Added JavaFX classes to Dpdl class definition file and created Dpdl example app that uses JavaFX to render UI elements via FXML
-* (13.01.2024) Added basic 'http' and 'json' import libraries.
-* (02.23.2023) JavaScript can now be executed also via the 'QuickJS' javascript engine (ES2020 spec) by using the keyword '>>qjs'
-* (27.12.2023) 'import' statement for libraries
-* (19.12.2023) 	Function return type definitions added. Type 'enum' is supported. Function 'convert(..)' added
-* (14.12.2023) 'for' statement is available i a first draft, it will be worked out further
-* (13.12.2023) Added cache for faster loading of java classes
-* (09.12.2023) variable 'var' type is supported + function 'typeof(..)' can be used to query the type of a given variable
-* (28.11.2023) The data type 'struct' is supported
-* (23.11.2023) The native function Thread(..) is now enabled in the 'DpdlEngine lite' release but allows an allocation of only max 3 threads (for unlimited thread allocation the registered version is required)
-* (15.11.2023) The embedded C code compile option 'dpdl:compile' is now available in the 'DpdlEngine lite' release download
+* The JavaFX library is now available also in the 'DpdlEngine lite' release
+* The Dpdl import library 'http' has been improved with more functions (POST, PUT, etc..)
+* Dpdl language plugin for SQL is available in the 'DpdlEngine lite' release
+* Dpdl embedded language plugin form Clojure has been developed and has been included in the latest 'DpdlEngine lite' release
+* Dpdl embedded language plugin for 'Java' code blocks is available
+* Dpdl embedded language plugin for 'Ruby' has been implemented and will be included in the coming releases of 'DpdlEngine lite'
+* String can now contain expressions within the keyword '${..}' that are evaluated when variables are initialized eg. string mystr = "result: ${a + b}" 
+* Added JavaFX classes to Dpdl class definition file and created Dpdl example app that uses JavaFX to render UI elements via FXML
+* Added basic 'http' and 'json' import libraries.
+* JavaScript can now be executed also via the 'QuickJS' javascript engine (ES2020 spec) by using the keyword '>>qjs'
+* 'import' statement for libraries
+* Function return type definitions added. Type 'enum' is supported. Function 'convert(..)' added
+* 'for' statement is available i a first draft, it will be worked out further
+* Added cache for faster loading of java classes
+* variable 'var' type is supported + function 'typeof(..)' can be used to query the type of a given variable
+* The data type 'struct' is supported
+* The native function Thread(..) is now enabled in the 'DpdlEngine lite' release but allows an allocation of only max 3 threads (for unlimited thread allocation the registered version is required)
+* The embedded C code compile option 'dpdl:compile' is now available in the 'DpdlEngine lite' release download
   currently platforms supported: MAC OSX (arm64) Linux (x86_64), Raspberry (armv7)
   Support for Windows64 will be released soon
-* (12.11.2023) Embedded ANSI C code can now be compiled dynamically on-the-fly in memory at runtime for faster execution (see option '**dpdl:compile**') --> available within the next days
+* Embedded ANSI C code can now be compiled dynamically on-the-fly in memory at runtime for faster execution (see option '**dpdl:compile**') --> available within the next days
 * JavaScript can now be embedded in Dpdl scripts via the '**>>js**' keyword
 * 'ROOT' C++ code can now be embedded in Dpdl scripts via the '**>>root**' keyword --> Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Download sectio in README.md)  
 * 'Julia' script can now be embedded in Dpdl scripts via the '**>>julia**' keyword --> Dpdl library 'dpdljulia' needs to be downloaded and deployed separately (see Download section in README.md)

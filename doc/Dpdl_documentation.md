@@ -21,7 +21,7 @@ developed by
 * native data function types to handle data structures **`vec`**, **`map`**, **`list`** and **`stack`**.
 * APIs: Dpdl API, JRE API, MIDP API
 * Access to the full underlying Java Platform API's or other external java libraries
-* Access to native libraries with simple approach
+* Access to native shared libraries with simple approach
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
 * Multiple embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
@@ -38,7 +38,7 @@ The Dpdl API functions usable inside Dpdl are listed here:
 
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-As Dpdl it's capable of accessing java classes directly, the whole Java JRE API is available inside Dpdl.
+As Dpdl can access java classes directly, the whole Java JRE API is available inside Dpdl.
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
 
 
@@ -299,7 +299,7 @@ string mystr = "this is a my result ${ myFunc(input) }"
 println("mystr: " + mystr)
 ```
 
-Example using 'sqrt(...)':
+Example using 'sqrt(...)' function:
 
 ```python
 double dv = 9.0d
