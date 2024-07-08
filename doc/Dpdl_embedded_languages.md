@@ -15,6 +15,8 @@ developed by
 
 The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
+This plug-in oriented approach allows to integrate also custom natural language interpreters
+
 ### Currently Dpdl supports the embedding of the following languages available as independent Dpdl language plug-ins:
 
 * **`Embedded C`** (minimal subset of C90)

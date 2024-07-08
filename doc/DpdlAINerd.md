@@ -14,9 +14,9 @@ developed by
 
 '**DpdlAINerd**' (**DAN**) is a dedicated Dpdl language plug-in for <ins>**generative AI code**</ins>.
 
-The plug-in provided allows to <ins>automatically generate and execute embedded Dpdl code sections in various programming languages within Dpdl</ins> via a configurable **AI engine** (OpenAI, Google Vertex AI, CodePal, etc..).
+The plug-in provided allows to <ins>automatically generate and execute embedded code sections in various programming languages within Dpdl</ins> via a configurable **AI engine** (OpenAI, Google Vertex AI, CodePal, etc..).
 
-More generally, the plug-in allows also to <ins>generate also content or data</ins> used during the code execution.
+More generally, the plug-in allows also to <ins>generate content or data</ins> used during the code execution.
 
 This enables to write code faster in the prototyping phase and allows also to generate data on the fly needed for example for development or testing.
 
@@ -29,15 +29,15 @@ see Dpdl examples in: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree
 
 The DAN language plug-in can be used in 2 different modes:
 
-### 1) Generate a new Dpdl source file containing generated code (Mode 1)
+### 1) Generate a new Dpdl source file containing the generated code (Mode 1)
 
-By executing the Dpdl script with the '@gen' parameter (see below). A new Dpdl source file is generated, containing the generated code sections.
+By executing the Dpdl script with the '@gen' parameter (see below), a new Dpdl source file containing the generated code sections is created.
 
-This mode allows to check and adapt the generated code before executing it. Generative AI is not yet 100% capable. But it will for sure in future.
+This mode allows to check and adapt the generated code before executing it.
 
 #### Example:
 
-The following example shows how code can be generated from a natural language description, in this case a function to sort a list of numbers using the clojure programming language:
+The following example shows how code can be generated from a natural language description, in this case a function to sort a list of numbers using the 'Clojure' programming language:
 
 ```python
 println("Dpdl example with generative AI code...")
@@ -55,7 +55,9 @@ int exit_code = dpdl_exit_code()
 println("embedded ai generated exit code: " + exit_code)
 ```
 
-When executed, the Dpdl code above generates the following Dpdl source file, which in this case was ready to execute right away giving No errors:
+#### Example result:
+
+When executed, the Dpdl code above generates the following Dpdl source file.
 
 ```python
 println("Dpdl example with generative AI code...")
@@ -79,6 +81,7 @@ int exit_code = dpdl_exit_code()
 println("embedded ai generated exit code: " + exit_code)
 ```
 
+In this case the generagted code was ready to execute right away, with no adaptions required, giving No errors:
 
 ### 2) Generate and access generated content or data directly (Mode 2)
 
@@ -129,7 +132,7 @@ this is my sample json:
 
 #### Example for alternative code generation
 
-The following example shows how code can be generated and executed right away.
+The following example shows how code can be generated and than executed in a later point in the program.
 
 **Example:**
 ```python
