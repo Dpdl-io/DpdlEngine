@@ -62,10 +62,85 @@ struct myStruct a
 enum myenum e
 ```
 
-
 Note: double end with 'd', long with 'L' and short end with 's'
 
 
+### Function and Control flow
+
+**`function`** definition
+```python
+func myFunction(string param, object param....)
+
+end
+```
+
+**`if`** statement
+```python
+if(<expression>)
+
+fi
+```
+
+**`if elseif`** statement
+```python
+if(<expression>)
+
+elseif
+
+else
+
+fi
+```
+
+**`while`** statement
+```python
+while(<expression>)
+
+endwhile
+```
+
+**`for`** statement
+```python
+for(<expression>)
+
+endfor
+```
+
+Note that as 'DpdlExtensions' that implement custom functions and variable declarations can be dynamically added at runtime,
+the call to a non existing function currently does not necessarily throw an error due to the fact that in a subsequent call the function
+may be available. This feature is useful for dynamically generated code implementations and will be evaluated accordingly.
+
+### Arithmetic and logical operators
+
+**Arithmetic:** 
+	
+* **`+`** (addition)
+* **`-`** (subtraction)
+* **`*`** (multiplication)
+* **`/`** (division)
+* **`^`** (power)
+* **`%`** (modulo)
+* **`-`** (negate a value eg. -x)
+	
+Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (eg. 1 * 2). 
+		This is currently not allowed '1\*2' but will be in future
+	
+**Logical:**
+
+* **`&&`** (and)
+* **`||`** (or)
+* **`!`** (not)
+	
+**Comparators:**
+
+* **`>`** (greater than)
+* **`<`** (less than)
+* **`>=`** (grater than equal)
+* **`<=`** (less than equal)
+* **`==`** (equal)
+* **`!=`** (not equal)
+	
+	
 ### Data Function Types
 
 Dpdl has some built-it data function types for handling <ins>**vectors**</ins>, <ins>**maps**</ins>, <ins>**linked-lists**</ins> and <ins>**stacks**</ins>
@@ -98,182 +173,6 @@ object mystack = stack()
 
 mystack.push("my item")
 
-```
-
-#### 'object' type
-
-All types in Dpdl can be handled as objects.
-
-The type 'object' is in first place used to load java objects available within Dpdl (see 'loadObj(...)' function), but can serve as a super type compatible with all other types.
-
-Every type can be assigned to an **`object`** variable. But not the other way around.
-
-**Example:**
-```python
-int myi = 9999
-object myiobj = myi
-```
-
-IFF you want to re-assign an already declared and assigned object to a variable of <ins>different type</ins>, you must redefine the object as follows:
-```python
-int myi = 9999
-float myf = 999.9
-object myiobj = myi
-object myiobj = myf
-```
-Note: 'DPDL_ALLOW_VAR_REDEFINITION' must be enabled if you want to allow variable redefinition within same scope
-
-
-#### 'var' type
-
-The **`var`** variable can have an arbitrary type and is dispatched at runtime by type inference.
-
-Therefore the 'var' type can accept any type in a function.
-
-
-```python
-func myFuncVar(var a, var b)
-	println("a:" + a + " type: " + typeof(a))
-	println("")
-	println("b:" + a + " type: " + typeof(b))
-	println("")
-end
-
-int x = 10
-float y = 0.3
-myFuncVar(x, y)
-```
-
-#### Abstraction using 'var' type:
-
-It might be useful to abstract a given type.
-
-Consider the following example:
-```c
-struct myA a
-struct myA aa
-double dist = calculateDistance(a, aa)
-```
-
-The function 'calculateDistance(..)' can accept the parameters as follows:
-```c
-func calculateDistance(var p1, var p2) double
-    float dx = p2.x - p1.x
-    float dy = p2.y - p1.y
-    return sqrt(dx * dx + dy * dy)
-end
-```
-and is equivalent to:
-```c
-func calculateDistance(struct p1, struct p2) double
-    float dx = p2.x - p1.x
-    float dy = p2.y - p1.y
-    return sqrt(dx * dx + dy * dy)
-end
-```
-
-#### Determining the Type of a variable
-
-The type of a given variable can be determined with the **`typeof(..)`** function
-
-ex:
-```python
-var s = "this is a string"
-var i = 10
-println("var 's' is a: " + typeof(s))
-println("var 'i' is a: " + typeof(i))
-```
-
-The above statement will print out:
-```
-var 's' is a: string
-var 'i' is a: int
-```
-
-For clarity, a variable other than 'var' type can also be determined:
-```python
-int i = 10
-println("variable 'i' is of type: " + typeof(i))
-```
-
-By determining the type of a 'struct' variable type, the type returned contains also a type identifier.
-eg.
-```c
-struct A a
-println("variable 'a' is of type: " + typeof(a))
-```
-The above statements will return **`struct:A`**
-
-
-Whenever a java object is loaded, the type of the variable returned by **`typeof(..)`** is the name of the class.
-
-eg.
-```python
-object map = loadObj("HashMap")
-println("variable 'map' is of type: " + typeof(map))
-```
-The above statement will return **`HashMap`**
-
-
-#### Variable re-definition
-
-Redefinition of variables within the same scope is allowed by the default configuration, in this case a 'Warning' is issued.
-
-This configuration can be disabled by changing the parameters '**DPDL_ALLOW_VAR_REDEFINITION**' and '**DPDL_VAR_REDEFINITION_WARNING**' in configuration file 'DpdlEngine.ini' 
-
-In 'while' and 'for' loops it's advised, if possible, to allocate variables in the outer scope. This increases also performance and avoids allocations.
-
-
-#### Converting types
-
-
-Some variable types can be converted either by casting or by using the **`convert(..)`** function.
-
-Casting numeric values can be performed using the functions **`to_int(..)`** , **`to_float(..)`** or **`to_double(..)`**
-
-**Example:**
-```python
-float f = 999.3
-double d = 2000000.5d
-
-int fint = to_int(f)
-int dint = to_int(d)
-
-println("fi: " + fint)
-println("di: " + dint)
-```
-
-Other conversions, for example from string to a numeric type can be performed with the **`convert(..)`** function.
-
-The function accepts as parameter the 'type' (as returned also by typeof(..)) and the variable to be converted.
-
-Currently the following conversions are supported, more will follow:
-
-*int float double object** -> **`string`**
-
-**int** -> **`float`**
-
-**float** -> **`string`**
-
-**float, double** -> **`int`**
-
-
-**Example:**
-```python
-int xc = 10
-float f = 0.3
-double d = 23.0d
-
-println("converting to string...")
-
-string xcs = convert("string", xc)
-println("xcs: " + xcs)
-
-string fs = convert("string", f)
-println("fs: " + fs)
-
-string ds = convert("string", d)
-println("ds: " + ds)
 ```
 
 ### In-line string expressions
@@ -716,82 +615,6 @@ fi
 The Dpdl Rutime can be configured to automatically run the garbage collector 'gc()' after a given number of iterations.
 See **`GC_THREAD_EXEC`** parameter in 'DpdlEngine.ini'. The value '-1' invalidates this feature.
 
-
-### Function and Control flow
-
-**`function`** definition
-```python
-func myFunction(string param, object param....)
-
-end
-```
-
-**`if`** statement
-```python
-if(<expression>)
-
-fi
-```
-
-**`if elseif`** statement
-```python
-if(<expression>)
-
-elseif
-
-else
-
-fi
-```
-
-**`while`** statement
-```python
-while(<expression>)
-
-endwhile
-```
-
-**`for`** statement
-```python
-for(<expression>)
-
-endfor
-```
-
-Note that as 'DpdlExtensions' that implement custom functions and variable declarations can be dynamically added at runtime,
-the call to a non existing function currently does not necessarily throw an error due to the fact that in a subsequent call the function
-may be available. This feature is useful for dynamically generated code implementations and will be evaluated accordingly.
-
-### Arithmetic and logical operators
-
-**Arithmetic:** 
-	
-* **`+`** (addition)
-* **`-`** (subtraction)
-* **`*`** (multiplication)
-* **`/`** (division)
-* **`^`** (power)
-* **`%`** (modulo)
-* **`-`** (negate a value eg. -x)
-	
-Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (eg. 1 * 2). 
-		This is currently not allowed '1\*2' but will be in future
-	
-**Logical:**
-
-* **`&&`** (and)
-* **`||`** (or)
-* **`!`** (not)
-	
-**Comparators:**
-
-* **`>`** (greater than)
-* **`<`** (less than)
-* **`>=`** (grater than equal)
-* **`<=`** (less than equal)
-* **`==`** (equal)
-* **`!=`** (not equal)
-	
 	
 ### DpdlObject's and Java bindings
 
@@ -902,6 +725,185 @@ The constructor is called if a parameter is supplied
 object mymap = loadObj("HashMap")
 object mycode = loadCode("LoadCodeFunc.h", mymap)
 ```
+
+### Types
+
+#### 'object' type
+
+All types in Dpdl can be handled as objects.
+
+The type 'object' is in first place used to load java objects available within Dpdl (see 'loadObj(...)' function), but can serve as a super type compatible with all other types.
+
+Every type can be assigned to an **`object`** variable. But not the other way around.
+
+**Example:**
+```python
+int myi = 9999
+object myiobj = myi
+```
+
+IFF you want to re-assign an already declared and assigned object to a variable of <ins>different type</ins>, you must redefine the object as follows:
+```python
+int myi = 9999
+float myf = 999.9
+object myiobj = myi
+object myiobj = myf
+```
+Note: 'DPDL_ALLOW_VAR_REDEFINITION' must be enabled if you want to allow variable redefinition within same scope
+
+
+#### 'var' type
+
+The **`var`** variable can have an arbitrary type and is dispatched at runtime by type inference.
+
+Therefore the 'var' type can accept any type in a function.
+
+
+```python
+func myFuncVar(var a, var b)
+	println("a:" + a + " type: " + typeof(a))
+	println("")
+	println("b:" + a + " type: " + typeof(b))
+	println("")
+end
+
+int x = 10
+float y = 0.3
+myFuncVar(x, y)
+```
+
+#### Abstraction using 'var' type:
+
+It might be useful to abstract a given type.
+
+Consider the following example:
+```c
+struct myA a
+struct myA aa
+double dist = calculateDistance(a, aa)
+```
+
+The function 'calculateDistance(..)' can accept the parameters as follows:
+```c
+func calculateDistance(var p1, var p2) double
+    float dx = p2.x - p1.x
+    float dy = p2.y - p1.y
+    return sqrt(dx * dx + dy * dy)
+end
+```
+and is equivalent to:
+```c
+func calculateDistance(struct p1, struct p2) double
+    float dx = p2.x - p1.x
+    float dy = p2.y - p1.y
+    return sqrt(dx * dx + dy * dy)
+end
+```
+
+#### Determining the Type of a variable
+
+The type of a given variable can be determined with the **`typeof(..)`** function
+
+ex:
+```python
+var s = "this is a string"
+var i = 10
+println("var 's' is a: " + typeof(s))
+println("var 'i' is a: " + typeof(i))
+```
+
+The above statement will print out:
+```
+var 's' is a: string
+var 'i' is a: int
+```
+
+For clarity, a variable other than 'var' type can also be determined:
+```python
+int i = 10
+println("variable 'i' is of type: " + typeof(i))
+```
+
+By determining the type of a 'struct' variable type, the type returned contains also a type identifier.
+eg.
+```c
+struct A a
+println("variable 'a' is of type: " + typeof(a))
+```
+The above statements will return **`struct:A`**
+
+
+Whenever a java object is loaded, the type of the variable returned by **`typeof(..)`** is the name of the class.
+
+eg.
+```python
+object map = loadObj("HashMap")
+println("variable 'map' is of type: " + typeof(map))
+```
+The above statement will return **`HashMap`**
+
+
+#### Variable re-definition
+
+Redefinition of variables within the same scope is allowed by the default configuration, in this case a 'Warning' is issued.
+
+This configuration can be disabled by changing the parameters '**DPDL_ALLOW_VAR_REDEFINITION**' and '**DPDL_VAR_REDEFINITION_WARNING**' in configuration file 'DpdlEngine.ini' 
+
+In 'while' and 'for' loops it's advised, if possible, to allocate variables in the outer scope. This increases also performance and avoids allocations.
+
+
+#### Converting types
+
+
+Some variable types can be converted either by casting or by using the **`convert(..)`** function.
+
+Casting numeric values can be performed using the functions **`to_int(..)`** , **`to_float(..)`** or **`to_double(..)`**
+
+**Example:**
+```python
+float f = 999.3
+double d = 2000000.5d
+
+int fint = to_int(f)
+int dint = to_int(d)
+
+println("fi: " + fint)
+println("di: " + dint)
+```
+
+Other conversions, for example from string to a numeric type can be performed with the **`convert(..)`** function.
+
+The function accepts as parameter the 'type' (as returned also by typeof(..)) and the variable to be converted.
+
+Currently the following conversions are supported, more will follow:
+
+*int float double object** -> **`string`**
+
+**int** -> **`float`**
+
+**float** -> **`string`**
+
+**float, double** -> **`int`**
+
+
+**Example:**
+```python
+int xc = 10
+float f = 0.3
+double d = 23.0d
+
+println("converting to string...")
+
+string xcs = convert("string", xc)
+println("xcs: " + xcs)
+
+string fs = convert("string", f)
+println("fs: " + fs)
+
+string ds = convert("string", d)
+println("ds: " + ds)
+```
+
 
 ### Exception handling using 'raise(..)'
 
