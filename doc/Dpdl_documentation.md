@@ -106,10 +106,6 @@ for(<expression>)
 endfor
 ```
 
-Note that as 'DpdlExtensions' that implement custom functions and variable declarations can be dynamically added at runtime,
-the call to a non existing function currently does not necessarily throw an error due to the fact that in a subsequent call the function
-may be available. This feature is useful for dynamically generated code implementations and will be evaluated accordingly.
-
 ### Arithmetic and logical operators
 
 **Arithmetic:** 
@@ -1424,6 +1420,26 @@ See this doc for more details: [Dpdl_compiler_documentation.md](https://github.c
 
 - Currently recursion is currently not directly supported with pure Dpdl code. Work is progress.
 - Currently dpdl arrays only have one dimension. But creating an array of arrays is possible.
+
+
+## Considerations
+
+### Dynamic function allocations
+
+Due to the fact that Dpdl allows to dynamically implement custom function and variable extensions at runtime,
+a call to a non existing function currently does not necessarily throw an unrecoverable error due to the fact that in a subsequent call, 
+the the function may than be available.
+
+This feature is useful for dynamically generated code implementations and will be evaluated accordingly.
+
+A call to a non existent function will therefore not generate an unrecoverable exception, but will only return -1 if the function is not available.
+
+Example:
+```python
+int s = my_non_existing_func()
+
+println("s: " + s)
+```
 
 
 ## DpdlClient
