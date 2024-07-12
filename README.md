@@ -104,7 +104,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
 * Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
 * No additional installations required
-* **Other programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
+* **Further programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different targets (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * On the fly conversion/compilation of Dpdl data struct's into native java bytecode
