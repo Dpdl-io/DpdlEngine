@@ -13,7 +13,9 @@ developed by
 
 **Multiple programming languages or custom syntax interpreters can be <ins>embedded directly within Dpdl code</ins>** by using the keyword **`>>`**, for example: **>>python**
 
-The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings. The Dpdl language plug-ins rely on the official reference implementation of each supported language. 
+The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
+
+The Dpdl language plug-ins are implemented on top of the official reference implementation of each supported language. 
 
 This plug-in oriented approach allows to integrate also custom syntax or natural language interpreters or all sorts.
 
