@@ -24,7 +24,7 @@ developed by
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
 * Multiple embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
-* Other programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration
+* Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Multi-line structured text, data and code resources supported.
 * Static script execution: static code declarations (*.h_static)
