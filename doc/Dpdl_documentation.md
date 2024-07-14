@@ -37,7 +37,7 @@ The Dpdl API functions usable inside Dpdl are listed here:
 
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-As Dpdl can access java classes directly, the whole Java JRE API is available inside Dpdl.
+As Dpdl can access java classes directly, the whole Java JRE API and any other configured java library is available inside Dpdl.
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
 
 
