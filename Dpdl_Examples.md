@@ -212,6 +212,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[ruby/dpdlRubyExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ruby/dpdlRubyExample.h)
 
+* Embedding and executing structured code resources
+
+[test/testCodeExec.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testCodeExec.h)
+
 * Performs a discovery of bluetooth devices and saves the device addresses discovered in a record store
   
 	[bluetoothDiscoverySave.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bluetoothDiscoverySave.h)
