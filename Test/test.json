@@ -1,0 +1,13 @@
+{
+  "mystr": "Hello Dpdl JSON",
+  "bool_t": true,
+  "bool_f": false,
+  "number": 1e-9,
+  "big_int": 1087456230895762048372846284729542168495,
+  "big_dec": 0.1087456230895762048372846284729542168495,
+  "num_long": 249873878974376,
+  "arr": ["array", {"value": 3}, [], 23, 0.1, true, false, null],
+  "obj": {
+    "name": "value"
+  }
+}

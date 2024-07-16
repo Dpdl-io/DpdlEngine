@@ -56,7 +56,7 @@ The dpdl type **`struct`** can be used to represent data structures within a Dpd
 
 Dpdl 'struct' can conveniently also be <ins>**compiled into a pure native java bytecode object**</ins>, and accessed and handled in the same way as ordinary java objects (classes).
 
-The Dpdl API function **`genObjCodegenObjCode(...)`** accepts as input defined Dpdl objects, in this case a 'struct' and compiles it to native java
+The Dpdl API function **`genObjCode(...)`** accepts as input defined Dpdl objects, in this case a 'struct' and compiles it to native java
 bytecode object. The returned object can than be handled as accessed as an ordinary object and therefore also be used in native java code.
 
 When defining an embedded java code section via **`>>java`** keyword, the contained java <ins>methods are also compiled</ins> into bytecode. 
@@ -123,7 +123,7 @@ println("finished in " + ms + " milliseconds")
 
 This approach, allows to speedup performance critical sections (see also Dpdl_native_interface.md)
 
-TThe native struct function 'myNativeJavaFunc' call in the example above executes in avg. **`12 ms`** (on 'Apple M2 pro').
+The native struct function 'myNativeJavaFunc' call in the example above executes in avg. **`12 ms`** (on 'Apple M2 pro').
 
 Note: The embedded '>>java' code section that is forseen to be compiled into the needs to be defined <ins>before any other embedded code functions</ins>, and Only the first '>>java' section is compiled into bytecode in the resulting object.
 		
@@ -197,7 +197,7 @@ to initialize the embedding of code. Exchanging data with embedded code is a bit
 
 Data can be exchanged with the embedded code via the Dpdl stack or simply by returning data from the functions called.
 
-The Dpdl API functions **`dpdl_stack_push(..)`** etc... can be used to push variables onto the Dpdl Stack which are than forwarded to the embedded code
+The Dpdl API functions **`dpdl_stack_push(..)`** etc... can be used to push variables or data onto the Dpdl Stack which are than forwarded to the embedded code
 as standard parameters in most cases, or alternatively replaced via variable placeholder (see {{varname}} )
 
 The embedded code can also write data to the Dpdl stack which can than be intercepted again in Dpdl code via a given keyword 'dpdlbuf_*' that

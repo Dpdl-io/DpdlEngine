@@ -15,7 +15,9 @@ developed by
 
 The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
-The Dpdl language plug-ins are implemented on top of the official reference implementation of each supported programming language (see 'Embedded language references' section). No additional installation is required, except add-on libraries.
+The Dpdl language plug-ins are mostly implemented on top of the official reference implementation of each supported programming language (see 'Embedded language references' section).
+
+No additional installation is required, except add-on libraries.
 
 This plug-in oriented approach allows to integrate also custom syntax or natural language interpreters or all sorts.
 
