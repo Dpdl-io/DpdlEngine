@@ -123,10 +123,26 @@ Example:
 ```python
 dpdl_stack_push("dpdlruntime:wasmedge")
 >>ruby
-here your ruby code
+require "wasmer"
+require "dpdl"
+
+wasm_bytes = Dpdl::dpdl_wasm_obj_get("fibonacci")
+
+store = Wasmer::Store.new
+
+module_ = Wasmer::Module.new store, wasm_bytes
+
+instance = Wasmer::Instance.new module_, nil
+
+# The Wasm module exports a function called `fib`.
+sum = instance.exports.fib
+results = fib.(10)
+
 <<
 int exit_code = dpdl_exit_code()
 ```
+
+The 'Wasmer' ruby runtime bindings are available here: https://github.com/wasmerio/wasmer-ruby
 
 
 ### References 
