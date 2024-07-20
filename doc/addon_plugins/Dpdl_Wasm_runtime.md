@@ -122,8 +122,8 @@ Example:
 
 ```python
 dpdl_stack_push("dpdlruntime:wasmedge")
->>js
-here your javascript
+>>ruby
+here your ruby code
 <<
 int exit_code = dpdl_exit_code()
 ```
