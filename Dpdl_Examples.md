@@ -81,6 +81,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[js/dpdlQJsPoint.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsPoint.h) 
 
+* Example Dpdl script that compiles a WebAssembly WAT code to WASM binary format and calls the exported functions from both, Dpdl and javascript
+
+	[wasm/dpdlWasmTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wasm/dpdlWasmTest.h) 
+
 * Example Dpdl script that performs HTTP requests (GET, POST and PUT)
 
 	[http/dpdlHttpExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/http/dpdlHttpExample.h) 
