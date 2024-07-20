@@ -1,6 +1,6 @@
 # File: wasm/dpdlWasmTest.h
 #
-# Example: Dpdl script that compiles a WebAssembly WAT script to binary wasm format and makes calls to the exported functions
+# Example: Dpdl script that compiles a WebAssembly WAT script to binary WASM format and makes calls to the exported functions
 #			from both, Dpdl and javascript
 #
 # Author: A.Costa
