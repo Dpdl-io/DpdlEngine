@@ -9,7 +9,9 @@ developed by
 
 ## New features
 
-* NEW Multi-line structured text, data and code resources are supported
+* NEW Dpdl Wasm runtime plug-in for compiling and accessing 'Wasm' module functions from 'dpdl' and from embedded code
+
+* Multi-line structured text, data and code resources are supported
 
 * Added support for converting/compiling Dpdl objects such as 'struct' to native java bytecode objects that can be accessed and handled in the same way as ordinary objects -> this feature will be available in the coming 'DpdlEngine lite' release
 

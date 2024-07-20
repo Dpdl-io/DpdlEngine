@@ -37,6 +37,7 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 
 **available Add-on plug-ins:**
 
+* **`Wasm`** (Compiler and Runtime)
 * **`Sql`**
 * **`Ai`** (DpdlAINerd)
 
