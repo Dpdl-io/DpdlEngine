@@ -1,4 +1,4 @@
-# File: testDpdlDB2.h
+# File: dpdlpacket/testDpdlDB2.h
 #
 # Example: Dpdl Script implementation that shows how to access and query data stored in a Dpdl-Packet (dpdl_PHONEBOOK.dpdl)
 #		   that has been encoded with dpdl_PHONEBOOK.c source

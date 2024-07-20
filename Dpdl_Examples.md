@@ -268,7 +268,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	
 * Save and access data from a record store
 
-	[recordStoreExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/recordStoreExample.h)
+	[rs/recordStoreExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/rs/recordStoreExample.h)
 		
 
 * Test read and write access to record stores
@@ -279,7 +279,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 * Simple console application to allocate and perform queries on the supplied DpdlPacket dpdl_PHONEBOOK. The script allows to perform single queries, or n sequential or random queries, and measures the execution
 	time. Comment or uncomment the following line of code in the script -> i #abs(search_rand_int) 
 	
-	[testDpdlDB2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testDpdlDB2.h)
+	[dpdlpacket/testDpdlDB2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlpacket/testDpdlDB2.h)
 	
 * BTObexServer (client/server)
 

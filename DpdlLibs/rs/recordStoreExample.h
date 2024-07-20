@@ -1,4 +1,4 @@
-# File: recordStoreExample.h
+# File: rs/recordStoreExample.h
 #
 # Example: create, populate and iterate a record store
 # Note: a shortcuts of the functions are available in dpdlRS.h

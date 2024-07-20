@@ -858,7 +858,7 @@ import virtual DATA none  {
 
 This is an example Dpdl sript that show how a 'DpdlPacket' can be allocated and queried:
 
-[testDpdlDB2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testDpdlDB2.h)
+[dpdlpacket/testDpdlDB2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlpacket/testDpdlDB2.h)
 
 The database technology in Dpdl has been developed since year 2003 when the first applications where developed for mobile devices.
 
