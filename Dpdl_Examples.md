@@ -85,6 +85,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[wasm/dpdlWasmTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wasm/dpdlWasmTest.h) 
 
+* Dpdl script that compiles two WebAssembly modules (in WAT code), with 1st module that exports functions to the 2nd module, to WASM binary format. The function 'add_and_sub' exported by the 2nd module is than called from Dpdl
+
+	[wasm/dpdlWasmModules.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wasm/dpdlWasmModules.h) 
+	
 * Example Dpdl script that performs HTTP requests (GET, POST and PUT)
 
 	[http/dpdlHttpExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/http/dpdlHttpExample.h) 

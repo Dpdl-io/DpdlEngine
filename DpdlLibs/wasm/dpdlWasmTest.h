@@ -8,7 +8,7 @@
 #
 #
 
-include('dpdlwasm.h')
+include('wasm/dpdlwasm.h')
 
 # main
 println("testing embedded WAT compiler and WASM runtime...")
