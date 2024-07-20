@@ -52,7 +52,7 @@ object module_calc = dpdl_wasm_obj_get("mycalc")
 
 i32 res_calc1 = module_calc.add_and_sub(100, 200)
 
-println("result is: " + res_calc)
+println("result is: " + res_calc1)
 
 
 # alternatively you can also load an already compiled wasm file from file
@@ -61,7 +61,7 @@ object module_calc = dpdl_wasm_obj_load("mycalc.wasm")
 
 i32 res_calc2 = module_calc.add_and_sub(100, 200)
 
-println("result is: " + res_calc)
+println("result is: " + res_calc2)
 
 raise((res_calc1 == res_calc2), "the two results are not equal")
 
