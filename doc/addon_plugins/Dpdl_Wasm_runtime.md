@@ -144,7 +144,8 @@ int exit_code = dpdl_exit_code()
 
 The 'Wasmer' ruby runtime bindings are available here: https://github.com/wasmerio/wasmer-ruby
 
-### Examples
+
+## Some Examples
 
 #### Modules
 
