@@ -85,7 +85,9 @@ println("done")
 
 println("testing file access...")
 
-int fh = libc.open("./Test/TestWrite.txt", 1)
+object fcntl = getClass("Fcntl")
+
+int fh = libc.open("./Test/TestWrite.txt", fcntl.O_RDWR)
 
 raise(fh, "Error in opening file")
 
