@@ -17,7 +17,7 @@ Dpdl provides also a dedicated dpdl language runtime plug-in that enables to <in
 
 Wasm is growing in popularity for being a cross platform binary instruction format for multiple application domains that range from Web-apps, Desktop and Cloud apps, serverless applications, Edge containers and others.
 
-Many compiler toolchains nowadays can target also WASM (eg. for C, Rust, JavaScript, etc..). Wasm can than be executed via a dedicated runtime in browsers, embedded nodes or Desktops.
+Many compiler toolchains nowadays can target also WASM (eg. for C/C++, Rust, JavaScript, etc..). Wasm can than be executed via a dedicated runtime in browsers, embedded nodes or Desktops.
 
 Also Dpdl supports loading and accessing exported Wasm module functions and constructs.
 
