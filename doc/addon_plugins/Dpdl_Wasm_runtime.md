@@ -91,6 +91,9 @@ println("wasm fib exit code: " + exit_code)
 println("finished")
 ```
 
+In this folder you'll find further examples:
+
+[DpdlLibs/wasm](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/wasm)
 
 ### Runtimes available:
 
