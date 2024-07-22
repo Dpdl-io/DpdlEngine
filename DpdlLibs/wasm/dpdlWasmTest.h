@@ -55,7 +55,8 @@ println("fibonacci of 10 is: " + res_fib)
 println("2) we can also access the wasm module function with javascript:")
 
 >>js
-const wasmInst = new WebAssembly.Instance(wasmModule, {});
+const wasmMod = new Dpdl.dpdl_wasm_obj_get("fibonacci")
+const wasmInst = new WebAssembly.Instance(wasmMod, {});
 const { fib } = wasmInst.exports;
 for (let i = 0; i < 10; i++) {
   console.log(fib(i));
