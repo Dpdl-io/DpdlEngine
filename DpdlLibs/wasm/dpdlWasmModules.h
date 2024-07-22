@@ -63,7 +63,7 @@ i32 res_calc2 = module_calc.add_and_sub(100, 200)
 
 println("result is: " + res_calc2)
 
-bool equal = (res_calc1 == res_calc2)
+bool equal = (res_calc1 != res_calc2)
 
 raise(!equal, "the two results are not equal")
 

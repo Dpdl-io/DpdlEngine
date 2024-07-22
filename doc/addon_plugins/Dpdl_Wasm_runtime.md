@@ -78,7 +78,8 @@ println("2) we can also access the wasm module function with javascript:")
 
 dpdl_stack_push("dpdlruntime:wasmer")
 >>js
-const wasmInst = new WebAssembly.Instance(wasmModule, {});
+const wasmMod = new Dpdl.dpdl_wasm_obj_get("fibonacci")
+const wasmInst = new WebAssembly.Instance(wasmMod, {});
 const { fib } = wasmInst.exports;
 for (let i = 0; i < 10; i++) {
   console.log(fib(i));
@@ -214,7 +215,9 @@ i32 res_calc2 = module_calc.add_and_sub(100, 200)
 
 println("result is: " + res_calc2)
 
-raise((res_calc1 == res_calc2), "the two results are not equal")
+bool equal = (res_calc1 != res_calc2)
+
+raise(!equal, "the two results are not equal")
 
 println("finished")
 
