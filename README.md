@@ -523,8 +523,9 @@ The Dpdl framework and API documentation is available via the following links:
 
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
-[DpdlAINerd (DAN)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+[Dpdl Wasm Runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
+[DpdlAINerd (DAN)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 [Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 

@@ -13,7 +13,7 @@ developed by
 
 **Multiple programming languages or custom syntax interpreters can be <ins>embedded directly within Dpdl code</ins>** by using the keyword **`>>`**, for example: **>>python**
 
-The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
+The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings. This allows developers to easily implement custom functionalities in form of plug-ins.
 
 The Dpdl language plug-ins are mostly implemented on top of the official reference implementation of each supported programming language (see 'Embedded language references' section).
 
@@ -37,7 +37,7 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 
 **available Add-on plug-ins:**
 
-* **`Wasm`** (Compiler and Runtime)
+* **`Wasm`** (WAT Compiler and Wasm Runtime)
 * **`Sql`**
 * **`Ai`** (DpdlAINerd)
 
