@@ -179,7 +179,7 @@ This operation mode supports ANSI C (almost full ISO C99 standard) and many GNUC
 
 The 'dpdl:compile' option currently is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**. 
 
-The embedded C compiler used is the super fast <ins>**Fabrice Bellard's TCC**</ins>.
+The embedded C compiler is built on the super fast <ins>**Fabrice Bellard's TCC**</ins>.
 
 For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
 
