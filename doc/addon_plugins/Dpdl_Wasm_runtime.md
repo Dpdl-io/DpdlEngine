@@ -19,13 +19,7 @@ Wasm is growing in popularity for being a cross platform binary instruction form
 
 Many compiler toolchains nowadays can target also WASM (eg. for C/C++, Rust, JavaScript, etc..). Wasm can than be executed via a dedicated runtime in browsers, embedded nodes or Desktops. 
 
-Also Dpdl supports loading and accessing exported Wasm module functions and constructs. This allows to re-use many libraries and functions compiled to wasm directly in Dpdl.
-
-To cover at best many use cases and technologies, DpdlEngine provides 2 distinct runtimes for executing wasm, each of them providing functionalities to sweet particular use cases. The dpdl language plug-ins have been developed on top of popular open source wasm runtimes available (see References below).
-
-The wasm runtime included supports also **WASIX**, a superset of **WASI (Web Assembly System Interface)**, and **Emscripten** as pluggable extensions.
-
-The Wasm dpdl language plug-in provided enables <ins>also to **compile WebAssembly**</ins> text format code (WAT) to WebAssembly binary format (WASM) directly, which can than be executed in the selected wasm runtime available.
+Also <ins>**Dpdl** supports loading and accessing exported Wasm module functions and constructs</ins>. This allows to re-use many libraries and functions compiled to wasm directly in Dpdl.
 
 **Example (compiling WAT and call wasm module functions from 'dpdl' and from 'javascript'):**
 
@@ -96,7 +90,14 @@ In this folder you'll find further examples:
 
 [DpdlLibs/wasm](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/wasm)
 
+
 ### Runtimes available:
+
+To cover at best many use cases and technologies, DpdlEngine provides 2 distinct runtimes for executing wasm, each of them providing functionalities to sweet particular use cases. The dpdl language plug-ins have been developed on top of popular open source wasm runtimes available (see References below).
+
+The wasm runtime included supports also **WASIX**, a superset of **WASI (Web Assembly System Interface)**, and **Emscripten** as pluggable extensions.
+
+The Wasm dpdl language plug-in provided enables <ins>also to **compile WebAssembly**</ins> text format code (WAT) to WebAssembly binary format (WASM) directly, which can than be executed in the selected wasm runtime available.
 
 As mentioned the dpdl wasm plug-in implements two distinct runtime:
 
@@ -155,7 +156,7 @@ The 'Wasmer' ruby runtime bindings are available here: https://github.com/wasmer
 
 ## Some Examples
 
-#### Modules
+### Modules
 
 Dpdl script that compiles two WebAssembly modules (in WAT code), with 1st module that exports functions to the 2nd module, to WASM binary format. The function 'add_and_sub' exported by the 2nd module is than called from Dpdl
 
@@ -228,7 +229,6 @@ println("finished")
 
 - WasmEdge (https://wasmedge.org/)
 - Wasmer (https://wasmer.io/)
-- WATB (https://github.com/WebAssembly/wabt)
  
 
 
