@@ -1,9 +1,16 @@
 # Dpdl and C compiler documentation
 
+![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
+
+				www.dpdl.io
+
+developed by
+**SEE Solutions**
+&copy; 2003 
 
 ## Dpdl
 
-Dpdl provides a mechanism for embedded code substitution at runtime. This enables an easy and straight forward way of complementing or setting  variables or code sections inside the embedded code definitions.
+Dpdl provides a mechanism to compile variables and constructs in embedded code templates at runtime. This enables an easy and straight forward way of complementing or setting  variables or code sections inside the embedded code definitions.
 
 ### Option settings
 
