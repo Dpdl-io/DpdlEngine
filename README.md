@@ -29,7 +29,7 @@ A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>autom
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Clojure + Wasm + AI) = <ins>Powerful and Versatile</ins>
 
-Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
+Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. This allows developers to easily create embedded custom syntax interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 
