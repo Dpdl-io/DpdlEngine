@@ -21,7 +21,7 @@ Many compiler toolchains nowadays can target also WASM (eg. for C/C++, Rust, Jav
 
 Also <ins>**Dpdl** supports loading and accessing exported Wasm module functions and constructs</ins>. This allows to re-use many libraries and functions compiled to wasm directly in Dpdl.
 
-**Example (compiling WAT and call wasm module functions from 'dpdl' and from 'javascript'):**
+**Example (compiling WAT and call wasm module functions from <ins>'dpdl'</ins> and from <ins>'javascript'</ins>):**
 
 ```python
 import('dpdlwasm.h')
