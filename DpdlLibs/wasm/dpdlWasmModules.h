@@ -13,9 +13,7 @@ include('wasm/dpdlwasm.h')
 # main
 println("testing embedded WAT compiler and WASM runtime...")
 
-dpdl_stack_push("dpdlstack:mywasm", "dpdl:compile")
-
->>wasm(module:math)
+>>wasmc(module:math)
 (module
   (func (export "add") (param i32 i32) (result i32)
     (i32.add (local.get 0) (local.get 1))
@@ -30,7 +28,7 @@ int status_module1 = dpdl_exit_code()
 raise(status_module1, "Error in compiling module 'math'")
 
 dpdl_runtime_push(module:math)
->>wasm(mycalc)
+>>wasmc(mycalc)
 (module
   (type $type0 (func (param i32 i32)(result i32)))
   (import "math" "add" (func $math-add (type $type0)))
@@ -47,6 +45,8 @@ dpdl_runtime_push(module:math)
 int status_compile = dpdl_exit_code()
 
 raise(status_compile, "Error in compiling module 'mycalc'")
+
+dpdl_runtime_push("dpdlruntime:wasmedge")
 
 object module_calc = dpdl_wasm_obj_get("mycalc")
 

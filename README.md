@@ -17,7 +17,7 @@ developed by
 ## Dpdl - rapid development programming language and constrained device framework
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl enables access to java platform API's and to external native libraries and supports the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure** and **Wasm modules** <ins>**directly embedded** within Dpdl code</ins>.
+Dpdl enables access to java platform API's and to Native shared libraries and supports the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure** and **Wasm modules** <ins>**directly embedded** within Dpdl code</ins>.
 
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface. 
 

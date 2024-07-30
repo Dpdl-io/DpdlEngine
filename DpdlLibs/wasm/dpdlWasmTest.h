@@ -8,14 +8,10 @@
 #
 #
 
-include('wasm/dpdlwasm.h')
-
 # main
 println("testing embedded WAT compiler and WASM runtime...")
 
-dpdl_stack_push("dpdlstack:mywasm", "dpdl:compile")
-
->>wasm(fibonacci)
+>>wasmc(fibonacci)
 (module
   (func $fib (export "fib") (param $n i32) (result i32)
     local.get $n
@@ -64,6 +60,7 @@ for (let i = 0; i < 10; i++) {
 <<
 int exit_code = dpdl_exit_code()
 
-println("wasm fib exit code: " + exit_code)
+println("embedded javascript wasm fib exit code: " + exit_code)
 
 println("finished")
+

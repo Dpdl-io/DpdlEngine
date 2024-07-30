@@ -24,14 +24,12 @@ Also <ins>**Dpdl** supports loading and accessing exported Wasm module functions
 **Example (compiling WAT and call wasm module functions from 'dpdl' and from 'javascript'):**
 
 ```python
-include('dpdlwasm.h')
+import('dpdlwasm.h')
 
 # main
 println("testing embedded WAT compiler and WASM runtime...")
 
-dpdl_stack_push("dpdlstack:mywasm", "dpdl:compile")
-
->>wasm(fibonacci)
+>>wasmc(fibonacci)
 (module
   (func $fib (export "fib") (param $n i32) (result i32)
     local.get $n
@@ -70,7 +68,6 @@ println("fibonacci of 10 is: " + res_fib)
 
 println("2) we can also access the wasm module function with javascript:")
 
-dpdl_stack_push("dpdlruntime:wasmer")
 >>js
 const wasmMod = new Dpdl.dpdl_wasm_obj_get("fibonacci")
 const wasmInst = new WebAssembly.Instance(wasmMod, {});
@@ -81,7 +78,7 @@ for (let i = 0; i < 10; i++) {
 <<
 int exit_code = dpdl_exit_code()
 
-println("wasm fib exit code: " + exit_code)
+println("embedded javascript wasm fib exit code: " + exit_code)
 
 println("finished")
 ```
@@ -107,12 +104,12 @@ WasmEdge is a lightweight, high-performance, and extensible WebAssembly runtime 
 
 WasmEdge supports all standard WebAssembly features and many proposed extensions including some tailored extensions for cloud-native and edge computing uses (WasmEdge network sockets, WasmEdge AI extension).
 
-This runtime can be activated and used in Dpdl by pushing the configuration **`dpdlruntime:wasmedge`** on the dpdl stack before executing dpdl embedded code sections.
+This runtime can be activated and used in Dpdl by pushing the configuration **`dpdlruntime:wasmedge`** on the dpdl runtime before executing dpdl embedded code sections.
 
 Example:
 
 ```python
-dpdl_stack_push("dpdlruntime:wasmedge")
+dpdl_runtime_push("dpdlruntime:wasmedge")
 >>js
 here your javascript
 <<
@@ -125,12 +122,12 @@ Wasmer is a Wasm Runtime that provides a secure and fast sandbox environment sup
 
 Particularly interesting is the integration of **WASIX**, which is an effort to <ins>extend the existing **WASI (Web Assembly System Interface)**</ins> with non-invasive system call extensions that provide support for Networking, Multi-threading, Asynchronous Runtimes, Filesystem, Sub-processes and forking of processes, TTY etc..
 
-This runtime can be activated and used in Dpdl by pushing the configuration **`dpdlruntime:wasmer`** on the dpdl stack before executing dpdl embedded code sections.
+This runtime can be activated and used in Dpdl by pushing the configuration **`dpdlruntime:wasmer`** on the dpdl runtime before executing dpdl embedded code sections.
 
 Example:
 
 ```python
-dpdl_stack_push("dpdlruntime:wasmedge")
+dpdl_runtime_push("dpdlruntime:wasmedge")
 >>ruby
 require "wasmer"
 require "dpdl"
@@ -166,9 +163,8 @@ include('wasm/dpdlwasm.h')
 # main
 println("testing embedded WAT compiler and WASM runtime...")
 
-dpdl_stack_push("dpdlstack:mywasm", "dpdl:compile")
 
->>wasm(module:math)
+>>wasmc(module:math)
 (module
   (func (export "add") (param i32 i32) (result i32)
     (i32.add (local.get 0) (local.get 1))
@@ -183,7 +179,7 @@ int status_module1 = dpdl_exit_code()
 raise(status_module1, "Error in compiling module 'math'")
 
 dpdl_runtime_push(module:math)
->>wasm(mycalc)
+>>wasmc(mycalc)
 (module
   (type $type0 (func (param i32 i32)(result i32)))
   (import "math" "add" (func $math-add (type $type0)))
