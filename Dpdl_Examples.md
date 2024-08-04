@@ -77,6 +77,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
 	
+* Example Dpdl script that make use of Wgsl (WebGPU shading language) to speed-up computations for a high-performing neural network activation function (GELU) directly on GPUs
+
+	[wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
+	
 * Example Dpdl script that embeds javascript code (with  Mode2 using 'qjs') that loads an object implemented in a native C library (see point.c)
 
 	[js/dpdlQJsPoint.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsPoint.h) 

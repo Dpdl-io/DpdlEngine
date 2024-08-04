@@ -17,7 +17,7 @@ developed by
 ## Dpdl - rapid development programming language and constrained device framework
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl enables access to java platform API's and to Native shared libraries and supports the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure** and **Wasm modules** <ins>**directly embedded** within Dpdl code</ins>.
+Dpdl enables access to java platform API's and to Native shared libraries and supports the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure, Wgsl** and **Wasm modules** <ins>**directly embedded** within Dpdl code</ins>.
 
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface. 
 
@@ -58,7 +58,7 @@ These features make Dpdl a powerful development platform for rapid prototyping, 
 
 ### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and a simple access to java api's and native libraries, Dpdl provides a powerful development platform for industrial applications, education and research.
+By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and a simple access to java api's, native libraries and GPUs, Dpdl provides a powerful development platform for industrial applications, education and research.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API, external java libraries and enables access also to native libraries.
 
@@ -119,8 +119,9 @@ The speedup is x 25 times faster compared to a standard record store access
 * **JSON**
 * **Easy integration of custom libraries**
 * **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
-* Tools for automatically converting Dpdl code to Java , C/C++ and V code
+* Tools for automatically converting Dpdl code to Java , C/C++ and V code (in development)
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
+* Allows to **scale computations on GPUs using the Wgsl (WebGPU shading language) dpdl language plug-in**
 * Open Source programming language plug-ins
 
 
@@ -159,6 +160,8 @@ The size of the DpdlEngine core can be stripped down even further by excluding c
 [Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
 
 [Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
+
+[Dpdl Wgsl on GPU](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wgsl_GPU.md)
 
 [DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
@@ -209,6 +212,13 @@ The Dpdl script connects to the database and performs a query, retrieves and pri
 than decodes the json string to an object that can be accessed as a HashMap
 
 [sql/dpdlSqlExampleJson.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExampleJson.h) 
+
+
+### Dpdl example that uses the 'Wgsl' Dpdl language plug-in to scale computations directly on GPU's
+
+The Dpdl script implements a high-performing neural network activation function (GELU) on GPUs using the dpdl language plug-in 'Wgsl' that allows to embed and execute WGSL code (WebGPU Shading language) directly within Dpdl.
+
+[wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
 
 
 ### More Dpdl Examples
@@ -362,7 +372,9 @@ This features is very useful for rapid development and rapid prototyping and is 
 
 **available Add-on plug-ins:**
 
+* **`Wasm`** (WAT Compiler and Wasm Runtime)
 * **`Sql`**
+* **`Wgsl`** (WebGPU shading language)
 * **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 

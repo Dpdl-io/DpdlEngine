@@ -39,6 +39,7 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 
 * **`Wasm`** (WAT Compiler and Wasm Runtime)
 * **`Sql`**
+* **`Wgsl`** (WebGPU shading language)
 * **`Ai`** (DpdlAINerd)
 
 
