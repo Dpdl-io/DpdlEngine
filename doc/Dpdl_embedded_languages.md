@@ -44,8 +44,8 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 
 
 ### Embedded programming languages - compatibility matrix
- 
-| Platform |Embedded ANSI C |Python |Julia |Js |Clojure |Lua |ROOT C++ |Ruby |Java |OCaml |
+
+| Platform |Embedded ANSI C |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |OCaml |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Linux x86_64 |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v4.01|
 | Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v4.01|
@@ -56,7 +56,8 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
  
 ### Add-on Dpdl language plug-ins - compatibility matrix
 
-| Platform |Wasm |Sql |Wsgl |AI | 
+| Platform |Wasm |Sql |Wsgl |AI |
+| ---  | --- | --- | --- | --- |
 | Linux x86_64 |X|X|X|X|
 | Mac OS X (aarch64) |X|X|X|X|
 | Raspberry PI 3 (armv7)|*|X|*|X|
