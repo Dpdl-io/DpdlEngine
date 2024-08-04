@@ -56,7 +56,7 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
  
 ### Add-on Dpdl language plug-ins - compatibility matrix
 
-| Platform |Wasm |Sql |Wsgl |AI
+| Platform |Wasm |Sql |Wsgl |AI | 
 | Linux x86_64 |X|X|X|X|
 | Mac OS X (aarch64) |X|X|X|X|
 | Raspberry PI 3 (armv7)|*|X|*|X|
