@@ -121,7 +121,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
 * Tools for automatically converting Dpdl code to Java , C/C++ and V code (in development)
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
-* Allows to **scale computations on GPUs using the Wgsl (WebGPU shading language) dpdl language plug-in**
+* Allows to **scale computations on GPUs using the 'Wgsl' dpdl language plug-in** (WebGPU shading language)
 * Open Source programming language plug-ins
 
 
