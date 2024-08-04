@@ -367,7 +367,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`Ruby`**
 * **`OCaml`**
 * **`Java`**
-* **`ROOT C++`**
+* **`C++`**
 * **`Clojure`**
 
 **available Add-on plug-ins:**

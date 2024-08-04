@@ -32,7 +32,7 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 * **`Lua`**
 * **`Ruby`**
 * **`Java`**
-* **`C++ ROOT`**
+* **`C++`**
 * **`Clojure`**
 
 **available Add-on plug-ins:**
@@ -46,8 +46,8 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 ### Embedded programming languages - compatibility matrix
 
 | Platform |Embedded ANSI C |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v4.01|
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v4.01|
 | Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v4.01|
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v4.01|
 | Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v4.01|
