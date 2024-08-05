@@ -68,7 +68,7 @@ dpdl_stack_var_put("workgroup_size", "256, 1, 1")
 dpdl_stack_push("dpdl:applyvars")
 
 >>wgsl(gelu_alg)
-const SCALING_FACTOR: f32 = 0.7978845608028654; // sqrt(2.0 / PI)
+const SCALING_FACTOR: f32 = 0.7978845608028654; // sqrt(2.0 / Math.PI)
 
 @group(0) @binding(0) var<storage, read_write> inp: array<{{precision}}>;
 @group(0) @binding(1) var<storage, read_write> out: array<{{precision}}>;
