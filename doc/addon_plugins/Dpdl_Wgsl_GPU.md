@@ -107,8 +107,8 @@ println("Output: ")
 float f_val_in, f_val_out
 long c = 0L
 for(c < DATA_SIZE)
-	f_val_in = input_arr.getFloat(cnt);
-	f_val_out = output_arr.getFloat(cnt);
+	f_val_in = input_arr.getFloat(c);
+	f_val_out = output_arr.getFloat(c);
 
 	println(f_val_in + "=" + f_val_out)
 
