@@ -27,7 +27,7 @@ A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>autom
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
-## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Clojure + Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
+## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Clojure + WAT/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
 Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. This allows developers to easily create embedded custom syntax interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
@@ -58,44 +58,115 @@ These features make Dpdl a powerful development platform for rapid prototyping, 
 
 ### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and a simple access to java api's, native libraries and GPUs, Dpdl provides a powerful development platform for industrial applications, education and research.
+By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and a simple access to <ins>**java Api's, Native libraries, Wasm modules and GPUs**</ins>, Dpdl provides a powerful development platform for industrial applications, education and research.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API, external java libraries and enables access also to native libraries.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
 are integrated by default and third party libraries and protocols can be added as extensions.
 
-The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes use of AI generative code to enable to automatically generate and embedded executable code and content or data by natural language descriptions contained in Dpdl code.
+The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of AI generative code to enable to automatically generate and embedded executable code and content or data</ins> by natural language descriptions contained in Dpdl code.
 
 Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
-### Sample Dpdl code (Bluetooth device discovery using high level Dpdl BT API):
+### Sample Dpdl code (GELU neural network activation function on GPU via 'Wgsl' code):
 ```python
- int status = DPDLAPI_searchClientsOnServer()
- int status_discovery = dpdlFalse
- int service_discovery = dpdlFalse
- int counter = 0
- if(status == dpdlTrue)
-     while (status_discovery != dpdlTrue) && (service_discovery != dpdlTrue)
-         status_discovery = DPDLAPI_discoveryServerFinished()
-         service_discovery = DPDLAPI_serviceDiscoveryServerFinished()
-         print(".")
-         counter = counter+1
-         sleep(3000)
-     endwhile
-	 string dev = "n"
-	 int dev_found = 0
-     while(dev != "null")
-          dev = DPDLAPI_getServerVisibleBTAddr()
-          if(dev != "null")
-              println("bluetooth device visible: " + dev)
-              saveData(dev)
-			  dev_found = dev_found + 1
-          fi
-     endwhile
- else
- 	println("No working Bluetooth stack found")
- fi
+import('native')
+
+# main
+println("testing 'Wgsl' algorithm on GPU...")
+
+println("loading native libraries 'c' and 'dpdlgpu'...")
+
+object libc = native.loadLib("c")
+
+object libgpu = native.loadLib("dpdlgpu")
+
+raise(libgpu, "Error in loading 'dpdlgpu' lib")
+
+println("getting dpdlgpu lib version...")
+
+string ver = libgpu.DPDLNATIVE_GPU_getVersion()
+
+println("version: " + ver)
+
+# we allocate a data buffer with 10000 entries
+long DATA_SIZE = 10000
+
+# indexes of the tensors and kernel created
+int idx_tensor_in = 0
+int idx_tensor_out = 0
+int idx_kernel = 0
+
+println("allocating input buffer...")
+
+object input_arr = libc.malloc(DATA_SIZE*4)
+input_arr.setMemory(0L, DATA_SIZE, 0x00)
+
+object output_arr = libc.malloc(DATA_SIZE*4)
+input_arr.setMemory(0L, DATA_SIZE, 0x00)
+
+println("populating input data...")
+
+long cnt = 0L
+float f_val
+for(cnt < DATA_SIZE)
+	f_val = rand_f(1000)
+	input_arr.setFloat(cnt, f_val);
+	cnt = cnt+1
+endfor
+
+int tensor_in = DPDLNATIVE_GPU_createTensorInputS1x1(idx_tensor_in, "f32", DATA_SIZE, input_arr)
+int tensor_out =  DPDLNATIVE_GPU_createTensorOutputS1x1(idx_tensor_out, "f32", DATA_SIZE)
+
+dpdl_stack_var_put("precision", "f32")
+dpdl_stack_var_put("workgroup_size", "256, 1, 1")
+
+dpdl_stack_push("dpdl:applyvars")
+
+>>wgsl(gelu_alg)
+const SCALING_FACTOR: f32 = 0.7978845608028654; // sqrt(2.0 / Math.PI)
+
+@group(0) @binding(0) var<storage, read_write> inp: array<{{precision}}>;
+@group(0) @binding(1) var<storage, read_write> out: array<{{precision}}>;
+@group(0) @binding(1) var<storage, read_write> dummy: array<{{precision}}>;
+
+@compute @workgroup_size({{workgroup_size}})
+fn main(
+    @builtin(global_invocation_id) GlobalInvocationID: vec3<u32>) {
+    let i: u32 = GlobalInvocationID.x;
+    if (i < arrayLength(&inp)) {
+        let x: f32 = inp[i];
+        out[i] = select(0.5 * x * (1.0 + tanh(SCALING_FACTOR
+                 * (x + .044715 * x * x * x))), x, x > 10.0);
+    }
+}
+<<
+int exit_code = dpdl_exit_code()
+
+println("Wgsl exit code: " + exit_code)
+
+int kernel_status = DPDLNATIVE_GPU_createKernelS1x1(idx_kernel, idx_tensor_in, idx_tensor_out, DATA_SIZE)
+
+int kernel_dispatch = DPDLNATIVE_GPU_dispatchKernel(idx_kernel)
+
+int wait_copy = DPDLNATIVE_GPU_waitCopyCPU(idx_kernel, idx_tensor_out, output_arr, DATA_SIZE)
+
+println("Output: ")
+
+float f_val_in, f_val_out
+long c = 0L
+for(c < DATA_SIZE)
+	f_val_in = input_arr.getFloat(c);
+	f_val_out = output_arr.getFloat(c);
+
+	println(f_val_in + "=" + f_val_out)
+
+	c = c+1
+endfor
+
+println("finished")
+
 ```
 
 ## Features
@@ -103,7 +174,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
 * Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
-* **Dpdl Wasm runtime** plug-in included allows to compile and access 'Wasm' module functions within dpdl and from embedded language code
+* **Dpdl Wasm runtime** plug-in included allows to compile (WAT) and access 'Wasm' module functions within dpdl and from embedded language code
 * No additional installations required (except add-on libraries)
 * **Further programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different targets (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
@@ -125,8 +196,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * Open Source programming language plug-ins
 
 
-Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** for the development of
-applications and embedded system software and in particular is ideal to foster rapid application development and rapid prototyping.
+Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** to foster research and development of applications and embedded system software which is ideal for rapid application development and rapid prototyping.
 
 Embedded ANSI C code, OCaml and Clojure can also be <ins>**dynamically compiled in memory** at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
 
