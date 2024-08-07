@@ -74,7 +74,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 import('native')
 
 # main
-println("testing 'Wgsl' algorithm on GPU...")
+println("testing Wgsl algorithm on GPU...")
 
 println("loading native libraries 'c' and 'dpdlgpu'...")
 
@@ -100,11 +100,11 @@ int idx_kernel = 0
 
 println("allocating input buffer...")
 
-object input_arr = libc.malloc(DATA_SIZE*4)
-input_arr.setMemory(0L, DATA_SIZE, 0x00)
+object input_arr = libc.malloc(DATA_SIZE * 4)
+input_arr.setMemory(0L, DATA_SIZE * 4, 0x00)
 
-object output_arr = libc.malloc(DATA_SIZE*4)
-input_arr.setMemory(0L, DATA_SIZE, 0x00)
+object output_arr = libc.malloc(DATA_SIZE * 4)
+input_arr.setMemory(0L, DATA_SIZE * 4, 0x00)
 
 println("populating input data...")
 
@@ -198,7 +198,7 @@ The speedup is x 25 times faster compared to a standard record store access
 
 Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** to foster research and development of applications and embedded system software which is ideal for rapid application development and rapid prototyping.
 
-Embedded ANSI C code, OCaml and Clojure can also be <ins>**dynamically compiled in memory** at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
+Embedded ANSI C code, OCaml and Clojure are <ins>**dynamically compiled in memory** at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
 
 These features make Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 

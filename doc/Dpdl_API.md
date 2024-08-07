@@ -137,6 +137,7 @@ loadObj(string name, object params, ...) return object
 loadCode(string dpdl_script_ref, object args, ...) return object
 genObjCode(object dpdl_obj) return object obj
 
+arr(object elem, ...) return object ArrayList
 vec(object elem, ...) return object Vector
 map(string elem, ...) return object HashMap
 list(object elem, ...) return object LinkedList
@@ -208,6 +209,7 @@ dpdl_stack_var_glob_get(string key) return string value
 dpdl_stack_obj_glob_get(string key) return object obj
 dpdl_stack_obj_put(string key, object obj) return int status
 dpdl_stack_obj_get(string key) return object obj
+dpdl_runtime_push(string param1, ...)
 dpdl_exit_code() return int exit_code
 
 [Exception handling]

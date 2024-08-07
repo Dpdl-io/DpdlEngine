@@ -106,11 +106,27 @@ println("last element: " + lastelem)
 lastelem = mystack.pop()
 println("last element removed: " + lastelem)
 
-object lastelem = mystack.pop()
+object lastelem2 = mystack.pop()
 println("last element: " + lastelem)
 
 int idx = mystack.search("a")
 println("value 'a' is at index: " + idx)
 
+println("------------------------------------------------------------------")
+println("testing arr(...)")
 
+object myarr = arr("a", 1, 0.1, 1000.3d, 100000L, 100s, 0x03)
+
+println("myarr is of size: " + myarr.size() + " contents: " + myarr)
+
+int arr_size = myarr.size()
+
+int c = 0
+for(c < arr_size)
+	object arrelem = myarr.get(c)
+
+	println("myarr[" + c + "]=" + arrelem + " is of type: " + typeof(arrelem))
+
+	c=c+1
+endfor
 

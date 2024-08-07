@@ -50,11 +50,11 @@ int idx_kernel = 0
 
 println("allocating input buffer...")
 
-object input_arr = libc.malloc(DATA_SIZE*4)
-input_arr.setMemory(0L, DATA_SIZE, 0x00)
+object input_arr = libc.malloc(DATA_SIZE * 4)
+input_arr.setMemory(0L, DATA_SIZE * 4, 0x00)
 
-object output_arr = libc.malloc(DATA_SIZE*4)
-input_arr.setMemory(0L, DATA_SIZE, 0x00)
+object output_arr = libc.malloc(DATA_SIZE * 4)
+input_arr.setMemory(0L, DATA_SIZE * 4, 0x00)
 
 println("populating input data...")
 
@@ -74,7 +74,7 @@ dpdl_stack_var_put("workgroup_size", "256, 1, 1")
 
 dpdl_stack_push("dpdl:applyvars")
 
->>wgsl
+>>wgsl(gelu_alg)
 const SCALING_FACTOR: f32 = 0.7978845608028654; // sqrt(2.0 / Math.PI)
 
 @group(0) @binding(0) var<storage, read_write> inp: array<{{precision}}>;
