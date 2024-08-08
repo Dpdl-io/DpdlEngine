@@ -95,9 +95,9 @@ long DATA_SIZE = 10L
 long byte_cnt = 4L
 
 # indexes of the tensors & kernel created
-int idx_tensor_in = 0
-int idx_tensor_out = 0
-int idx_kernel = 0
+int idx_tensor_in = 1
+int idx_tensor_out = 1
+int idx_kernel = 1
 
 println("allocating input buffer...")
 
@@ -135,7 +135,6 @@ const SCALE_FACTOR: f32 = 0.7978845608028654; // sqrt(2.0 / Math.PI)
 
 @group(0) @binding(0) var<storage, read_write> inp: array<{{precision}}>;
 @group(0) @binding(1) var<storage, read_write> out: array<{{precision}}>;
-@group(0) @binding(1) var<storage, read_write> dummy: array<{{precision}}>;
 
 @compute @workgroup_size({{workgroup_size}})
 fn main(
@@ -156,7 +155,7 @@ int status_kernel = libgpu.DPDLNATIVE_GPU_createKernelS1x1(idx_kernel, idx_tenso
 
 int status_dispatch = libgpu.DPDLNATIVE_GPU_dispatchKernel(idx_kernel)
 
-int wait_copy = DPDLNATIVE_GPU_waitCopyCPU(idx_kernel, idx_tensor_out, output_arr, DATA_SIZE)
+int wait_copy = libgpu.DPDLNATIVE_GPU_waitCopyCPU(idx_kernel, idx_tensor_out, output_arr, DATA_SIZE)
 
 println("OUTPUT: ")
 
