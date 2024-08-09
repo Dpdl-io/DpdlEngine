@@ -91,7 +91,7 @@ string ver = libgpu.DPDLNATIVE_GPU_getVersion()
 println("version: " + ver)
 
 # we allocate a data buffer with 10000 entries
-long DATA_SIZE = 10L
+long DATA_SIZE = 10000L
 long byte_cnt = 4L
 
 # indexes of the tensors & kernel created
