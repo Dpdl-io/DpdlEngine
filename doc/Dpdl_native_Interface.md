@@ -42,7 +42,7 @@ On Windows systems it's possible also to access the system library 'kernel32' an
 rage of windows components.
 
 
-Example Dpdl code accessing the system library 'libc' functions:
+**Example Dpdl code accessing the system library 'libc' functions:**
 ```python
 import('native')
 
@@ -143,6 +143,31 @@ if(comp == 0)
 fi
 
 println("done")
+```
+
+### Native memory
+
+Native memory can be allocated via the the 'libc' library function 'malloc', which returns a [Pointer](https://www.dpdl.io/doc/dpdl_jna/javadoc/com/sun/jna/Pointer.html) object.
+
+**Example in C using 'malloc':**
+```c
+#import <stdio.h>
+
+...
+
+void *buffer = malloc(4096 * sizeof(char));
+```
+
+**In Dpdl, the equivalent native memory can be allocated as follows:**
+```python
+import('native')
+
+object clib = native.loadLib("c")
+
+object buffer = clib.malloc(4096L)
+
+# optionally we can also zero the memory buffer
+buffer.setMemory(0L, 4096L, 0x00)
 ```
 
 ### Type mapping
