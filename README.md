@@ -69,7 +69,7 @@ The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of 
 
 Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
-### Sample Dpdl code (GELU neural network activation function on GPU via embedded 'Wgsl' code):
+### Sample Dpdl code (GELU neural network activation function on GPU with embedded 'Wgsl' code):
 ```python
 import('native')
 
