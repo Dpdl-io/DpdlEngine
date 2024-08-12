@@ -17,7 +17,7 @@ developed by
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
 * Inline string expressions allowed
-* native data function types to handle data structures **`vec`**, **`map`**, **`list`** and **`stack`**.
+* native data function types to handle data structures **`arr`**, **`vec`**, **`map`**, **`list`** and **`stack`**.
 * APIs: Dpdl API, JRE API, MIDP API
 * Access to the full underlying Java Platform API's or other external java libraries
 * Access to Native shared libraries with simple approach
@@ -26,7 +26,7 @@ developed by
 * Multiple embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Clojure and OCaml**. These programming can be embedded directly within Dpdl code (interpreted/compiled code).
 * Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
-* Multi-line structured text, data and code resources supported.
+* Multi-line structured text, data and code resources
 * Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
@@ -142,6 +142,9 @@ Note: for multiplication (*) it's necessary to have blank spaces between the num
 Dpdl has some built-it data function types for handling <ins>**vectors**</ins>, <ins>**maps**</ins>, <ins>**linked-lists**</ins> and <ins>**stacks**</ins>
 
 ```python
+# ArrayList
+object my_arr = arr("supports multiple types", 1, 2, 3, 4.0, 5.0, 6.0d)
+
 # Vector
 object my_vec = vec(1, 2, 3, 4, "my element1", 0.23, 999.9d, 100000L, ...)
 

@@ -69,7 +69,7 @@ The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of 
 
 Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
-### Sample Dpdl code (GELU neural network activation function on GPU via 'Wgsl' code):
+### Sample Dpdl code (GELU neural network activation function on GPU via embedded 'Wgsl' code):
 ```python
 import('native')
 
@@ -442,7 +442,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`Ruby`**
 * **`OCaml`**
 * **`Java`**
-* **`C++`**
+* **`C++`** (Root)
 * **`Clojure`**
 
 **available Add-on plug-ins:**
@@ -455,13 +455,13 @@ This features is very useful for rapid development and rapid prototyping and is 
 
 See this doc for more details: [Dpdl_embedded_languages.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
 
-#### Dpdl example with embedded 'ROOT C++' code
+#### Dpdl example with embedded 'C++' (Root) code
 
 ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/) .
 
 ROOT C++ code can be embedded within Dpdl via the keyord **`>>root`**
 
-Example Dpdl code embedding 'ROOT C++':
+Example Dpdl code embedding 'C++' (Root):
 
 <img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="60%" height="60%">
 
@@ -587,12 +587,22 @@ Note: The 'DpdlEngine lite' release needs to be re-packaged for running on Andro
 
 (*) **available soon**
 
-| Platform |Embedded ANSI C |Python |Julia |Js |Clojure |Lua |ROOT C++ |Ruby |Java |SQL |OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X|X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X|X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X|X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X|X v4.01|
+| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v4.01|
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v4.01|
+
+
+### Add-on Dpdl language plug-ins - compatibility matrix
+
+| Platform |Wasm |Sql |Wsgl |AI |
+| ---  | --- | --- | --- | --- |
+| Linux x86_64 |X|X|X|X|
+| Mac OS X (aarch64) |X|X|X|X|
+| Raspberry PI 3 (armv7)|*|X|*|X|
+| Windows64|*|X|*|*|X|
 
 	
 ## Documentation

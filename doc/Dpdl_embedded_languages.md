@@ -32,7 +32,7 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 * **`Lua`**
 * **`Ruby`**
 * **`Java`**
-* **`C++`**
+* **`C++`** (Root)
 * **`Clojure`**
 
 **available Add-on plug-ins:**
