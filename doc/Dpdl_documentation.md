@@ -57,12 +57,12 @@ bool t = true
 myarr[] = [1, 0.3, 23.d, 1000L, 0x09, "mydata"]
 var v = "some variable type var"
 object myobj = loadObj(..)
-object myobj = getObj(..)
+object myobj_static = getObj(..)
 struct myStruct a
 enum myenum e
 ```
 
-Note: double end with 'd', long with 'L' and short end with 's'
+Note: numbers must have the following suffix: doubles with '**d**', long with '**L**' and short end with '**s**'
 
 
 ### Function and Control flow
@@ -141,6 +141,8 @@ Note: for multiplication (*) it's necessary to have blank spaces between the num
 
 Dpdl has some built-it data function types for handling <ins>**vectors**</ins>, <ins>**maps**</ins>, <ins>**linked-lists**</ins> and <ins>**stacks**</ins>
 
+The objects returned by these functions have <ins>all methods and fields as the corresponding java classes</ins> (**ArrayList**, **Vector**, **HashMap**, **LinkedList**, **Stack**)
+
 ```python
 # ArrayList
 object my_arr = arr("supports multiple types", 1, 2, 3, 4.0, 5.0, 6.0d)
@@ -157,8 +159,6 @@ object my_list = list("A", "Costa", 1, 0.3, 999.9d, 10000L, ...)
 # Stack
 object my_stack = stack()
 ```
-
-The objects returned by these functions have <ins>all methods and fields as the corresponding java classes</ins> (**Vector**, **HashMap**, **LinkedList**, **Stack**)
 
 **Example:**
 ```python
@@ -256,7 +256,7 @@ Arrays are defined with **`[ ]`**
 
 Arrays are dynamic and can grow or shrink in size
 
-Arrays support multiple types and can be accessed also as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`getArrObj()`** )
+Arrays elements can have multiple types and can be accessed also as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`myarray.getArrObj()`** )
 
 Array can be initialized directly, via a **`string`** and also with **`struct`**
 
@@ -392,10 +392,10 @@ The type 'struct' can also be conveniently compiled at runtime into a java bytec
 
 This may be useful for exchanging data structures with other native java classes or to speedup performance critical function calls.
 
-Structs that are compiled into java bytecode can contain 1 embedded **`>>java`** section containing native java methods which is than also compiled as bytecode into the generated object. Other embedded code sections are executed only.
+Structs that are compiled into java bytecode can contain 1 embedded **`>>java`** section containing native java methods which are than also compiled as bytecode into the generated object. <ins>Only the first embedded code definition</ins> is compiled into the resulting object. Other embedded code sections are executed only.
 
 
-Example:
+**Example:**
 ```c
 struct A {
 	int x = 10
@@ -457,7 +457,7 @@ Dpdl supports the type **`enum`**
 
 The keywords by default have increasing 'int' values starting from 0. Desired values can be assigned explicitly
 
-Example:
+**Example:**
 ```c
 enum myStatus {
 	PENDING,DONE, ERROR, RUNNING=23
@@ -491,7 +491,7 @@ The types for which pointers are currently supported:
 * struct
 
 
-Example:
+**Example:**
 ```c
 int i = 10
 string s = "Mega"
@@ -947,15 +947,19 @@ raise(o =! null, "o =! null")
 dpdl_print_exception_table()
 ```
 
-### Import and Include code
+### 'Import' and 'Include' statements
 
 #### Import 
 
 Dpdl libraries can be imported via the **`import`** statement.
 
-The default location for imported library code is './DpdlLibs/libs/'.
+Import libraries can be of native Dpdl object type, or can be simply other Dpdl library scripts.
 
-You can import available libraries or place your own libs in this directory and import the code with the following statement:
+The default location for imported Dpdl script library code is './DpdlLibs/libs/'.
+
+Dpdl object type libraries can be implemented and added with a straight forward configuration. They can be implemented in java or other languages and wrapped into a dedicated interface extension that can be registered via a configuration. 
+
+You can import available libraries or place your own libs in the dedicated directory and import the code with the following statement:
 
 ```python
 import("dpdllib.h")
@@ -983,7 +987,7 @@ The path needs to be relative to the folder where the executed script is located
 NOTE: Currently the 'include' statement need to be placed <ins>before any defined 'import' statements</ins> -> this will change in the next release
 
 
-### Embedding of other programming languages directly within Dpdl
+### Embedding of other programming languages directly within Dpdl (Dpdl language plug-ins)
 
 A particular feature of Dpdl is the possibility to embed and execute other programming languages directly within Dpdl code. This feature enables
 to use the appropriate language and libraries for particular implementation needs.
@@ -1077,7 +1081,7 @@ Embedded C code can be executed in 2 different Modes:
 
 1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library <ins>standard headers already included</ins> (**default mode**)
 
-2) Compiled (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution, path to standard C header and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:compile**'
+2) Compiled (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution. Searches default locations for lib path and include path. Further paths to standard C headers and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:compile**'
 
 #### Mode 1 (interpreted)
 

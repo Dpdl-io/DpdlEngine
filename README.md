@@ -58,7 +58,7 @@ These features make Dpdl a powerful development platform for rapid prototyping, 
 
 ### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-By combining the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and a simple access to <ins>**java Api's, Native libraries, Wasm modules and GPUs**</ins>, Dpdl provides a powerful development platform for industrial applications, education and research.
+By providing the possibility to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and a simple access to <ins>**java Api's, Native libraries, Wasm modules and GPUs**</ins>, Dpdl provides a powerful development platform for industrial applications, education and research.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API, external java libraries and enables access also to native libraries.
 
