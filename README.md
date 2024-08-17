@@ -21,7 +21,7 @@ Dpdl enables access to **java platform API's, Native shared libraries, Wasm modu
 
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface. 
 
-A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>automatically generate</ins> via <ins>**generative AI code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
+A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>automatically generate</ins> via <ins>**AI generative code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
