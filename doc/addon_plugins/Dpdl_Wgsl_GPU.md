@@ -12,7 +12,7 @@ developed by
 
 ## Dpdl 'Wgsl' plug-in (on GPU)
 
-The dedicated dpdl language plug-in 'Wgsl' can execute WGSL (WebGPU Shading Language) compute code, which is executed on GPU and complies to the [WebGPU](https://www.w3.org/TR/webgpu/) specification, directly embedded within Dpdl code.
+The dedicated dpdl language plug-in 'Wgsl' can execute WGSL (**WebGPU Shading Language**) compute code, which is executed on GPUs and complies to the [WebGPU](https://www.w3.org/TR/webgpu/) specification, directly embedded within Dpdl code.
 
 The WGSL language can be used to programmatically execute workloads of graphic compute pipelines as well as compute algorithms directly on GPUs and GPGPU's
 

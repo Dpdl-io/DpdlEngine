@@ -158,9 +158,11 @@ array(object o) return [] array
 println(string s)
 print(string s)
 currentTimeMillis() return long time
+nanoTime() return long time
 systemExec(string cmd, int wait_for, int verbose_output) return int status
 hash(string s) return int res
 mod(int val, int mod) return int res
+randInt(int bound) return int res
 randInt(int bits, int modulo) return int res
 nextInt(int modulo) return int res
 abs(int val) return int res

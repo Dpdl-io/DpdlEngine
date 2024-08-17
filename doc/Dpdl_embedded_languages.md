@@ -894,5 +894,8 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 - java -> http://janino-compiler.github.io/janino/
 - ocaml -> http://www.ocamljava.org/
 - clj -> https://clojure.org/
+
+- wgsl -> https://www.w3.org/TR/webgpu/
+- wasm -> https://webassembly.org/
  
  
