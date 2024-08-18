@@ -17,7 +17,7 @@ developed by
 ## Dpdl - rapid development programming language and constrained device framework
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl enables access to **java platform API's, Native shared libraries, Wasm modules and GPUs** and supports the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Wgsl and Clojure** <ins>**directly embedded** within Dpdl code</ins>.
+Dpdl enables access to **java platform API's, Native shared libraries, Wasm modules and GPUs** and supports the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Wgsl, Groovy and Clojure** <ins>**directly embedded** within Dpdl code</ins>.
 
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface. 
 
@@ -27,7 +27,7 @@ A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>autom
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
-## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
+## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
 Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. This allows developers to easily create embedded custom syntax interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
@@ -58,7 +58,7 @@ These features make Dpdl a powerful development platform for rapid prototyping, 
 
 ### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-By providing the possibility to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and a simple access to <ins>**java Api's, Native libraries, Wasm modules and GPUs**</ins>, Dpdl provides a powerful development platform for industrial applications, education and research.
+By providing the possibility to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and a simple access to <ins>**java Api's, Native libraries, Wasm modules and GPUs**</ins>, Dpdl provides a powerful development platform for industrial applications, education and research.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API, external java libraries and enables access also to native libraries.
 
@@ -68,6 +68,31 @@ are integrated by default and third party libraries and protocols can be added a
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to enable to automatically generate and embedded executable code and content or data</ins> by natural language descriptions contained in Dpdl code.
 
 Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
+
+
+### Sample Dpdl code that makes use of embedded 'Groovy' code to read a file line by line and print it to the console
+
+```python
+println("reading a file line by line using embedded 'Groovy' code...")
+
+dpdl_stack_push("./Test/see_solutions.html")
+>>groovy
+
+def dpdl_main(Object[] param, Object var_map){
+	String myfile = (String)param[0];
+	new File(myfile).eachLine { line ->
+	  println line
+	}
+	return 1;
+}
+
+<<
+int exit_code = dpdl_exit_code()
+
+println("embedded groovy exit code: " + exit_code)
+```
+
+Below a more complex example of how Dpdl can be used to accomplish tasks
 
 ### Sample Dpdl code (GELU neural network activation function on GPU with embedded 'Wgsl' code):
 ```python
@@ -178,7 +203,7 @@ println("finished")
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
-* Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
+* Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
 * **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
 * No additional installations required (except add-on libraries)
 * **Further programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
@@ -194,7 +219,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **XML** with XPath parser
 * **JSON**
 * **Easy integration of custom libraries**
-* **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`60 Kb`** for minimal setup
+* **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`80 Kb`** for minimal setup
 * Tools for automatically converting Dpdl code to Java , C/C++ and V code (in development)
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'Wgsl' dpdl language plug-in** (WebGPU shading language)
@@ -203,7 +228,7 @@ The speedup is x 25 times faster compared to a standard record store access
 
 Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** to foster research and development of applications and embedded system software which is ideal for rapid application development and rapid prototyping.
 
-Embedded ANSI C code, OCaml and Clojure are <ins>**dynamically compiled in memory** at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
+Dpdl embedded ANSI C code, OCaml, Groovy and Clojure are <ins>**dynamically compiled in memory** at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
 
 These features make Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 
@@ -442,8 +467,9 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`Ruby`**
 * **`OCaml`**
 * **`Java`**
-* **`C++`** (Root)
+* **`Groovy`**
 * **`Clojure`**
+* **`C++`** (Root)
 
 **available Add-on plug-ins:**
 
@@ -583,16 +609,18 @@ Note: The 'DpdlEngine lite' release needs to be re-packaged for running on Andro
 
 ### Embedded programming language plug-ins - compatibility matrix
 
+Currently the 'DpdlEngine' release supports and provides the following Dpdl language plug-ins compliant to the corresponding language implementation version.
+
 (X + version) **Supported**
 
 (*) **available soon**
 
-| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v4.01|
+| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01|
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|
 
 
 ### Add-on Dpdl language plug-ins - compatibility matrix

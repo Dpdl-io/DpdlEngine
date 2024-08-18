@@ -154,6 +154,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaHttp.h)
 		
+* Example Dpdl script that executes an embedded 'groovy' code (dummy)
+
+	[groovy/dpdlGroovyExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/groovy/dpdlGroovyExample.h)
+	
 * Example Dpdl script using pointers and references
 
 	[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)

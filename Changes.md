@@ -9,9 +9,11 @@ developed by
 
 ## New features
 
-* NEW Dpdl language plug-in 'Wgsl' that allows to scale computations on GPU's by using WGSL code (WebGPU Shading Language)
+* NEW Dpdl language plug-in for 'Groovy' is now available
 
-* NEW Dpdl Wasm runtime plug-in for compiling and accessing 'Wasm' module functions from 'dpdl' and from embedded code
+* Dpdl language plug-in 'Wgsl' that allows to scale computations on GPU's by using WGSL code (WebGPU Shading Language)
+
+* Dpdl Wasm runtime plug-in for compiling and accessing 'Wasm' module functions from 'dpdl' and from embedded code
 
 * Multi-line structured text, data and code resources are supported
 

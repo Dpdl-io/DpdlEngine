@@ -21,10 +21,12 @@ No additional installation is required, except add-on libraries.
 
 This plug-in oriented approach allows to integrate also custom syntax or natural language interpreters or all sorts.
 
-### Currently Dpdl supports the embedding of the following languages available as independent Dpdl language plug-ins:
+### Dpdl supports the embedding of the following languages available as independent Dpdl language plug-ins:
+
+Currently the 'DpdlEngine' release supports and provides the following Dpdl language plug-ins compliant to the corresponding language implementation version.
 
 * **`Embedded C`** (minimal subset of C90)
-* **`ANSI C`** (full C99)
+* **`ANSI C`** (full ANSI C99)
 * **`Python`**
 * **`Julia`**
 * **`JavaScript`**
@@ -32,8 +34,9 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 * **`Lua`**
 * **`Ruby`**
 * **`Java`**
-* **`C++`** (Root)
+* **`Groovy`**
 * **`Clojure`**
+* **`C++`** (Root)
 
 **available Add-on plug-ins:**
 
@@ -43,14 +46,16 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 * **`Ai`** (DpdlAINerd)
 
 
+Dpdl language plug-ins can be developed and integrated via defined interfaces and a simple configuration.
+
 ### Embedded programming languages - compatibility matrix
 
-| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v4.01|
+| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01|
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|
 
 
 Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
@@ -695,6 +700,37 @@ The Dpdl language plug-in uses the 'Janino' library to compile code blocks:
 
 Refer to the 'Janino' documentation for the java language features supported: http://janino-compiler.github.io/janino/
 
+### Embedding Groovy
+
+Groovy code can be embedded and executed within Dpdl using the keyword **`>>groovy`**
+
+The execution entry point is the a groovy method 'dpdl_main(Object[] param, Object var_map)' which receives as parameters all the parameters and variables from the current Dpdl stack.
+
+**Example:**
+```python
+println("reading a file line by line with 'Groovy'")
+
+dpdl_stack_push("./Test/see_solutions.html")
+>>groovy
+
+def dpdl_main(Object[] param, Object var_map){
+	String myfile = (String)param[0];
+	new File(myfile).eachLine { line ->
+	  println line
+	}
+	return 1;
+}
+
+<<
+int exit_code = dpdl_exit_code()
+
+println("embedded groovy exit code: " + exit_code)
+```
+
+The 'var_map' object is a 'HashMap' containing variables and objects that have been pushed onto the execution stack.
+
+The 'dpdl_main' method needs to return an object, either of type Integer or != null
+
 
 ### Embedding ROOT C++ Data Analysis Framework
 
@@ -890,8 +926,9 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 - javascript -> ECMAScript (Oracle nashorn) for '>>js' && QuickJS (https://bellard.org/quickjs/quickjs.html) for '>>qjs' 
 - lua -> https://www.lua.org/
 - ruby -> https://www.ruby-lang.org
-- root (c++) -> https://root.cern/
+- root (C++) -> https://root.cern/
 - java -> http://janino-compiler.github.io/janino/
+- groovy -> https://groovy-lang.org/
 - ocaml -> http://www.ocamljava.org/
 - clj -> https://clojure.org/
 
