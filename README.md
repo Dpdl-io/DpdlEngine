@@ -94,7 +94,7 @@ println("embedded groovy exit code: " + exit_code)
 
 Below a more complex example of how Dpdl can be used to accomplish tasks
 
-### Sample Dpdl code (GELU neural network activation function on GPU with embedded 'Wgsl' code):
+### Sample Dpdl code (GELU neural network activation function the runs on GPUs using embedded 'Wgsl' code):
 ```python
 import('native')
 
@@ -201,13 +201,13 @@ println("finished")
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (J2ME, JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
+* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
 * Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
 * **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
 * No additional installations required (except add-on libraries)
-* **Further programming languages can be embedded via a dedicated kernel execution interface** (see 'DpdlCustom' tag in DpdlEngine.ini)
-* Includes embedded C compiler: **On-the-fly compilation of embedded ANSI C code** in memory at runtime (via option 'dpdl:compile') for different targets (i386, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time</ins>
+* **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
+* **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time!!!</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * On the fly conversion/compilation of Dpdl data struct's into native java bytecode
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
@@ -236,7 +236,7 @@ Further, Dpdl can be used to encode, store, control and query data efficiently a
 
 ### Small Memory footprint:
 
-* **DpdlEngine core** (<ins>**Basic**</ins> configuration) **`60 Kb`**
+* **DpdlEngine core** (<ins>**Basic**</ins> configuration) **`80 Kb`**
 * **DpdlEngine core** (<ins>**Full**</ins> configuration) **`372 Kb`**
 * **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
 
@@ -588,12 +588,11 @@ for the target platform.
 
 ### Dpdl itself is compatible with:
 
-* J2ME MIDP (Mobile Information Device Profile) -> MIDP 1.0 and MIDP 2.0 (CLDC 1.0, CLDC 2.0)
 * Java ME CLDC & GCF (JSR 360)
 * Java ME Embedded Profile (JSR 361)
 * Java versions >= 1.4 and later
 * Java > 1.1 (but without 'loadObj' and 'getObj' methods)
-* All Platforms where the included Open Source virtual machine (miniJVM) can be compiled
+* All Platforms where the included Open Source virtual machine 'miniJVM' can be compiled
 
 DpdlEngine V1.0 has been tested on:
 
