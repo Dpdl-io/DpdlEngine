@@ -673,6 +673,7 @@ See 'Download' page for more details:
 Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
 
 * Back-end compiler that compiles Dpdl code to native machine code for most target architectures.
+* DpdlEngine port to 'MicroEJ' platform
 
 
 ### Embedding of 'Python' code
