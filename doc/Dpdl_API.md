@@ -24,7 +24,7 @@ The Dpdl API's are available as:
 
 ### Native java APIs
 
-Dpdl allows to load and access java classes and methods via dedicated API functions **`loadObj(..)`** and **`getObj(..)`**.
+Dpdl allows to load and access java classes and methods (JRE and of external libraries) via dedicated API functions **`loadObj(..)`** and **`getObj(..)`**.
 
 This allows Dpdl to access a broad set of API's and libraries.
 
@@ -37,7 +37,7 @@ The 'DpdlEgine lite' demo/shareware release includes the Java <ins>JRE API</ins>
 [Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
 
 
-NOTE: Additional APIs and classes can be added freely in the registered version of DpdlEngine.
+NOTE: Additional APIs and classes can be added freely by means of a simple configuration in the registered version of DpdlEngine.
 
 
 ### Dpdl import Libraries

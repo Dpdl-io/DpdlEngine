@@ -92,7 +92,7 @@ int exit_code = dpdl_exit_code()
 println("embedded groovy exit code: " + exit_code)
 ```
 
-Below a more complex example of how Dpdl can be used to accomplish tasks
+Below you can find a more complex example of how Dpdl can be used to accomplish tasks:
 
 ### Sample Dpdl code (GELU neural network activation function the runs on GPUs using embedded 'Wgsl' code):
 ```python
@@ -205,11 +205,11 @@ println("finished")
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
 * Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
 * **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
-* No additional installations required (except add-on libraries)
+* **No additional installations required** (except add-on libraries)
 * **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time!!!</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
-* On the fly conversion/compilation of Dpdl data struct's into native java bytecode
+* **On the fly conversion/compilation of Dpdl data struct's into native java bytecode**
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.

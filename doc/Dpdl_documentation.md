@@ -331,7 +331,7 @@ endwhile
 
 Dpdl supports the type **`struct`** with the following definitions:
 
-* Structs can contain other 'struct'
+* Structs may contain other 'struct' variable declarations
 
 * Structs can call functions defined in the outer scope
 
