@@ -17,12 +17,12 @@ DpdlEngine V1.0
 This is the Dpdl API documentation. 
 
 The Dpdl API's are available as:
-- Native API's
+- Native java API's
 - Dpdl import Libraries
 - Native Libraries
 - Dpdl native functions
 
-### Native APIs
+### Native java APIs
 
 Dpdl allows to load and access java classes and methods via dedicated API functions **`loadObj(..)`** and **`getObj(..)`**.
 
