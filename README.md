@@ -17,9 +17,9 @@ developed by
 ## Dpdl - rapid development programming language and constrained device framework
 
 Dpdl is a <ins>**rapid development** programming language</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
-Dpdl enables access to **java platform API's, Native shared libraries, Wasm modules and GPUs** and supports the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Wgsl, Groovy and Clojure** <ins>**directly embedded** within Dpdl code</ins>.
+Dpdl enables access to **java platform API's, Native shared libraries, Wasm modules and GPUs** and allows the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like **ANSI C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Wgsl, Groovy and Clojure** <ins>**directly embedded** within Dpdl code</ins>.
 
-Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface. 
+Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible plug-in interface. 
 
 A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>automatically generate</ins> via <ins>**AI generative code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
 
@@ -29,7 +29,7 @@ A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>autom
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
-Further programming languages and natural language interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. This allows developers to easily create embedded custom syntax interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
+Further programming languages and syntax interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. This allows developers to easily create embedded custom syntax interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 
@@ -209,7 +209,7 @@ println("finished")
 * **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time!!!</ins>
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
-* **On the fly conversion/compilation of Dpdl data struct's into native java bytecode**
+* **On the fly conversion/compilation of Dpdl data struct's into native java bytecode classes**
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
@@ -336,7 +336,7 @@ Or full featured Applications written with Dpdl in the following repository:
 Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for small development of
 applications on <ins>small memory footprint devices</ins>, and can be used as embedded scripting engine for various applications.
 
-The main nature of Dpdl is for enabling rapid prototyping, rapid development, code reuse and allow a high degree of portability while being simple,
+The main nature of Dpdl is for enabling rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
 that a vaster set of APIs are available for a given platform.
 
@@ -398,7 +398,8 @@ The default configuration <ins>can be easily extended or updated</ins> to resolv
 
 #### Dpdl Java API's access documentation (default configuration)
 
-The set of classes accessible with Dpdl (default) is defined to be the following set.
+The default set of classes accessible with Dpdl is defined to be the following set. Additional classes and API's can be added by means of a simple configuration.
+
 The methods of the classes that are accessible are referred to the current JRE instance on which Dpdl is running.
 
 [Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
@@ -406,8 +407,6 @@ The methods of the classes that are accessible are referred to the current JRE i
 [JavaFX API](https://docs.oracle.com/javafx/2/api/index.html)
 
 [Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
-
-NOTE: Additional classes and API's can be added to the class definition file as needed.
 
 It's worth mentioning here that 'Java' code can also be embedded directly within Dpdl as described below.
 
@@ -528,7 +527,7 @@ The C code can be embedded with 2 different Modes:
 2) <ins>Compiled in memory at runtime</ins> (if option '**dpdl:compile**' is enabled)
 
 
-Example Dpdl code with embedded C code (Mode 1):
+Example Dpdl code with embedded C code (Mode 1 - interpreted):
 ```c
 # main
 # starting with Dpdl, pushing parameters on the stack and embedding C code

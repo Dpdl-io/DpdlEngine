@@ -9,6 +9,7 @@ developed by
 
 ## New features
 
+* NEW Dpdl now supports also the type 'class' for a better integration
 * NEW Dpdl language plug-in for 'Groovy' is now available
 
 * Dpdl language plug-in 'Wgsl' that allows to scale computations on GPU's by using WGSL code (WebGPU Shading Language)

@@ -13,7 +13,7 @@ developed by
 
 ### Features:
 
-* Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`object`** **`struct`** **`enum`**
+* Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`enum`**
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
 * Inline string expressions allowed
@@ -56,6 +56,7 @@ char c = 'a'
 bool t = true
 myarr[] = [1, 0.3, 23.d, 1000L, 0x09, "mydata"]
 var v = "some variable type var"
+class myClass cl
 object myobj = loadObj(..)
 object myobj_static = getObj(..)
 struct myStruct a
@@ -327,9 +328,52 @@ while(iter.hasNext())
 endwhile
 ```
 
+### Class
+
+Dpdl allows to define and use **`class`** objects. This type definition is similar to the class type found in C++ or Java.
+
+* Class objects can contains all variable types
+
+* Class objects can define a constructor that is called upon initialization
+
+* Class objects can contain function definitions
+
+* Class objects can be entirely compiled into java bytecode (in development), and therefore can be passed to java methods.
+
+**Example:**
+```python
+class A {
+	int id = 1
+	string s = "A"
+
+	struct myStruct data
+
+	func A(int x)
+		id = x
+	end
+
+	func printit()
+		println("an A class function with id: " + id)
+		println("data: " + data)
+	end
+
+}
+
+# instance with constructor
+class A mya(1)
+
+mya.printit()
+
+# instance without constructor
+class A mya2
+
+mya.printit()
+```
+
+
 ### Struct
 
-Dpdl supports the type **`struct`** with the following definitions:
+Dpdl supports the type **`struct`**, with the following definitions:
 
 * Structs may contain other 'struct' variable declarations
 
@@ -455,7 +499,7 @@ The native struct function 'myNativeJavaFunc' call in this example executes in a
 
 Dpdl supports the type **`enum`**
 
-The keywords by default have increasing 'int' values starting from 0. Desired values can be assigned explicitly
+The keywords by default have increasing **`int`** values starting from **1**. Desired values can be assigned explicitly.
 
 **Example:**
 ```c
@@ -727,7 +771,7 @@ object mycode = loadCode("LoadCodeFunc.h", mymap)
 
 ### Types
 
-#### 'object' type
+#### **`object`** type
 
 All types in Dpdl can be handled as objects.
 
@@ -741,7 +785,7 @@ int myi = 9999
 object myiobj = myi
 ```
 
-IFF you want to re-assign an already declared and assigned object to a variable of <ins>different type</ins>, you must redefine the object as follows:
+IFF you want to re-assign an already declared and assigned object to a variable with same name of <ins>different type</ins>, you must redefine the object as follows:
 ```python
 int myi = 9999
 float myf = 999.9
@@ -751,7 +795,7 @@ object myiobj = myf
 Note: 'DPDL_ALLOW_VAR_REDEFINITION' must be enabled if you want to allow variable redefinition within same scope
 
 
-#### 'var' type
+#### **`var`** type
 
 The **`var`** variable can have an arbitrary type and is dispatched at runtime by type inference.
 
