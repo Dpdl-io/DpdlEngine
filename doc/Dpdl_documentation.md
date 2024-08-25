@@ -44,7 +44,7 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 ### Variable Types
 
 Dpdl support the following type definitions:
-```c
+```java
 int i = 1
 short s = 10s
 float f = 0.1
