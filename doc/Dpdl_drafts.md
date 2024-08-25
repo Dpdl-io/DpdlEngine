@@ -9,14 +9,14 @@ developed by
 **SEE Solutions**
 &copy; 2003
 
-The following document contains proposals for new Dpdl features that are considered and evaluated.
+The following document contains proposals for new Dpdl features that are considered and in development.
 
 These features may eventually be available in coming releases.
 
 Suggestions and comments are very appreciated.
 
 
-## class Type
+## class Type compilation to java bytecode
 
 The possibility to defined a **`class`** having member variables and functions.
 
@@ -35,6 +35,12 @@ class A {
 	end
 }
 
-class a = A(2)
+class A a(1)
 a.myFunc()
+
+# now we generate java byte code from the defined dpdl class
+
+object bcA = genObjByteCode(A)
+
+...
 ```
