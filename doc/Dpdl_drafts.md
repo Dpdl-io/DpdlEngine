@@ -38,7 +38,7 @@ class A {
 class A a(1)
 a.myFunc()
 
-# now we generate java byte code from the defined dpdl class
+# now we generate java byte code from the defined dpdl class and obtain an object (like a java object loaded via 'loadObj(...)'
 
 object bcA = genObjByteCode(A)
 
