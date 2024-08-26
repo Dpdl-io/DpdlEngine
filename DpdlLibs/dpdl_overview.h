@@ -52,6 +52,7 @@ struct myStruct {
 	float f = 0.1
 	double d = 0.3d
 	long l = 1000L
+	short sh = 10s
 	byte b = 0x01
 	bool bo = true
 	string s = "Test my code"
@@ -74,9 +75,30 @@ struct myStruct {
 	end
 }
 
+class MyClass {
+	int id
+	string msg = "I'm a dpdl class"
+
+	struct myStruct data
+
+	func MyClass(int nid)
+		id = nid
+	end
+
+	func printMsg()
+		println(msg)
+		println("data: " + data)
+	end
+
+}
+
 # main
 bool startThreads = false
 println("a sample program written with Dpdl (Dynamic Packet Definition Language). (c) 2003 Armin Costa...")
+
+class MyClass myc
+
+myc.printMsg()
 
 string mystr = "my message: "
 object mystrobj = "my dpdl object"
@@ -163,8 +185,10 @@ int i = 3
 float f = 0.1
 double d = 0.2d
 long l = 1000000L
+short sh = 10s
 byte c = 0x02
 char ch = 'a'
+object stro = "a Test str"
 
 bool b = true
 struct myStruct aa
@@ -177,8 +201,10 @@ println("i=" + i + " type=" + typeof(i))
 println("f=" + f + " type=" + typeof(f))
 println("d=" + d + " type=" + typeof(d))
 println("l=" + l + " type=" + typeof(l))
+println("sh=" + sh + " type=" + typeof(sh))
 println("c=" + c + " type=" + typeof(c))
 println("ch=" + ch + " type=" + typeof(ch))
+println("stro=" + stro + " type=" + typeof(stro))
 println("b=" + b + " type=" + typeof(b))
 println("aa=" + aa + " type=" + typeof(aa))
 println("myo=" + myo + " type=" + typeof(myo))

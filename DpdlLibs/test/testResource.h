@@ -7,13 +7,15 @@
 #
 #
 
+
 # main
 println("testing access to embedded multi-line resources...")
 
+dpdl_stack_var_put("msg", "Hello World from Dpdl")
 >>res(my_html)
 <html>
 <body>
-<p>Hello World from Dpdl</p>
+<p>{{msg}}</p>
 </body>
 </html>
 <<
@@ -41,6 +43,9 @@ object myres = dpdl_res_obj_get(resid2)
 println("myres: ")
 println(myres)
 
+# we can update the placeholder stack variable 'msg', which is than aslo updated in the returned obj
+
+dpdl_stack_var_put("msg", "a NEW Hello World from Dpdl")
 
 object myoldres = dpdl_res_obj_get("my_html")
 

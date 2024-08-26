@@ -55,7 +55,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[test/testGenObjCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testGenObjCode.h)
 
-* Example 'dummy' Dpdl script that shows some functionalities provided by Dpdl
+* Example Dpdl script (dummy) that shows some functionalities of Dpdl
 
 	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
 

@@ -11,6 +11,10 @@ developed by
 
 ## Dpdl language specification
 
+Dpdl is a self-contained programming language, interpreted, statically as well as dynamically typed, with a very compact footprint and portable to most platforms.
+
+Additionally Dpdl allows to embed and execute code of other programming languages directly within Dpdl. Embedded programming language code is executed in form of plug-ins (Dpdl language plug-ins) distributed with the DpdlEngine release package (no additional installations required)
+
 ### Features:
 
 * Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`enum`**
@@ -217,7 +221,9 @@ Note: Currently only one in-line expression definition '${ ... }' is allowed ins
 
 By using the **`>>res(...)`** keyword it's possible to embed multi-line structured text, data or code resources and retrieve and access them as an object.
 
-The resources are stacked on the dpdl stack and can be accessed by id or by it's name at any execution point.
+The resources are stacked on the dpdl stack and can be accessed by 'id' or by 'name' at any execution point.
+
+Stack variables available on the current execution stack can be referenced via place-holders in the resource that are than compiled into the returned object at every invocation.
 
 This approach provides a flexible and readable way to handle different kind of resources like structured text, data and code.
 
@@ -226,10 +232,11 @@ This approach provides a flexible and readable way to handle different kind of r
 ```python
 println("testing access to embedded multi-line resources...")
 
+dpdl_stack_var_put("msg", "Hello World")
 >>res(my_html)
 <html>
 <body>
-<p>Hello World from Dpdl</p>
+<p>{{msg}} from Dpdl</p>
 </body>
 </html>
 <<
@@ -248,6 +255,14 @@ println(myhtml)
 object myhtml2 = dpdl_res_obj_get("my_html")
 
 println(myhtml2)
+
+# we can change the stack variable 'msg', which is than also updated in the returned resource object
+dpdl_stack_var_put("msg", "Hello World again!!!")
+
+object myhtml3 = dpdl_res_obj_get("my_html")
+
+println(myhtml3)
+
 ```
 
 
