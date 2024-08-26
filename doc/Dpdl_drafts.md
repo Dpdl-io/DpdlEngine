@@ -18,7 +18,7 @@ Suggestions and comments are very appreciated.
 
 ## class Type compilation to java bytecode
 
-The possibility to defined a **`class`** having member variables and functions.
+Provide a native Dpdl function 'genObjByteCode(...)' that allows to compile a defined dpdl class into native java bytecode.
 
 proposed draft:
 ```c++
