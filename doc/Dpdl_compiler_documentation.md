@@ -44,7 +44,7 @@ println("embedded code exit code: " + exit_code)
 
 Embedded C code within Dpdl scripts can be dynamically compiled in memory at runtime (see execution Mode (2))
 
-The C compiler used and executed in form of a Dpdl language plugin is the <ins>super fast Fabrice Bellard's TCC</ins>.
+The C compiler implemented in form of a Dpdl language plugin makes use of the <ins>super fast Fabrice Bellard's TCC</ins>.
 
 
 ### Library and include paths

@@ -21,7 +21,7 @@ Dpdl enables access to **java platform API's, Native shared libraries, Wasm modu
 
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible plug-in interface. 
 
-A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>automatically generate</ins> via <ins>**AI generative code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
+A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data, and embed it directly within Dpdl code.
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
@@ -65,7 +65,7 @@ The Dpdl language constructs and syntax is kept simple and follows an object ori
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
 are integrated by default and third party libraries and protocols can be added as extensions.
 
-The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to enable to automatically generate and embedded executable code and content or data</ins> by natural language descriptions contained in Dpdl code.
+The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to automatically generate and embed executable code and content or data</ins> by natural language descriptions contained inside Dpdl code.
 
 Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
@@ -92,7 +92,7 @@ int exit_code = dpdl_exit_code()
 println("embedded groovy exit code: " + exit_code)
 ```
 
-Below you can find a more complex example of how Dpdl can be used to accomplish tasks:
+Below you can find a more complex example of how Dpdl can be used to accomplish even complex tasks:
 
 ### Sample Dpdl code (GELU neural network activation function the runs on GPUs using embedded 'Wgsl' code):
 ```python
@@ -201,13 +201,13 @@ println("finished")
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform)
+* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform. The core engine runs also on Java 1.1)
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
 * Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
-* **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
 * **No additional installations required** (except add-on libraries)
 * **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time!!!</ins>
+* **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
 * **On the fly conversion/compilation of Dpdl data struct's into native java bytecode classes**
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
@@ -272,7 +272,7 @@ The size of the DpdlEngine core can be stripped down even further by excluding c
 
 ## Dpdl sample code
 
-### Full featured sample applications developed with Dpdl
+### Full featured sample prototype applications developed with Dpdl
 
 In this GitHub repository you can find full featured working prototype applications written with Dpdl:
 
@@ -571,7 +571,7 @@ Other programming languages or natural language interpreters can be easily integ
 'Discussion' section on the DpdlEngine GitHub repository
 
 
-## Generative AI code with 'DpdlAINerd' (DAN) Dpdl language plug-in
+## AI generative code with 'DpdlAINerd' (DAN) Dpdl language plug-in
 
 The Dpdl language plug-in 'DpdlAINerd' (DAN) allows to generate and embed code via popular AI engine (eg. OpenAI, Google Vertex AI, CodePal etc..)
 
