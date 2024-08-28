@@ -61,8 +61,8 @@ bool t = true
 myarr[] = [1, 0.3, 23.d, 1000L, 0x09, "mydata"]
 var v = "some variable type var"
 class myClass cl
-object myobj = loadObj(..)
-object myobj_static = getObj(..)
+object myobj = loadObj(...)
+object myobj_static = getObj(...)
 struct myStruct a
 enum myenum e
 ```
@@ -809,6 +809,33 @@ object myiobj = myf
 ```
 Note: 'DPDL_ALLOW_VAR_REDEFINITION' must be enabled if you want to allow variable redefinition within same scope
 
+##### casting to **`object`** type
+
+Primitive types such as **int, float, double, long, short, byte, char, string and var** can be casted and compliant to the equivalent java object type.
+
+In this way it's possible to access all methods of the object available on the underlying JRE platform.
+
+**Example:**
+```python
+int x = 10
+
+object o_x = x
+
+float f_x = o_x.floatValue()
+
+println("f_x: " + f_x)
+
+string s = "Dpdl is a rapid prototyping programming language"
+
+object s_o = s
+
+println("s_o: " + s_o.length())
+```
+
+In Java notation you would write the equivalent 'f_x' assignment as follows:
+```java
+float f_x = new Integer(10).floatValue()
+```
 
 #### **`var`** type
 
