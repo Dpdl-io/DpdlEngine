@@ -584,12 +584,12 @@ This feature will be further developed.
 	
 ### Function return type
 
-By default functions can return any possible variable type.
+By default functions can return any possible variable type, or none.
 
 To improve code readability and enforce a further check on the function return type, it's possible to specify a
-specific return type in function definitions via return type specifiers **`func myfunc() $type`**.
+specific return type in the function definition via return type specifiers **`func myfunc() $type`**.
 
-The return type specifiers are optional.
+The return type specifiers are optional. For functions that do not return any value, **`void`** can be specified as function return type.
 
 The variable type **`var`** is always accepted for all return types as the values are dispatched at runtime.
 
@@ -606,10 +606,15 @@ func testFuncRetFloat() float
 	return 0.22
 end
 
+func testFuncVoid() void
+	println("this function does not return a value")
+end
+
 int y = testFuncRetInt()
 var yv = testFuncRetInt()
 println("y: " + y)
 println("yv: " + yv)
+testFuncVoid()
 ```
 
 ### Dpdl Threads
@@ -994,7 +999,7 @@ println("ds: " + ds)
 
 Exceptions can be handled with the **`raise(..)`** function. 
 
-The following conditions are checked and an exception is raised if the expression on the type condition == false:
+The following conditions are checked and an exception is raised if the expression on the type condition evaluates to 'false':
 
 * string -> **`(condition =! "null")`** ? true : false 
 * int -> **`(condition =! -1)`**  : true : false
