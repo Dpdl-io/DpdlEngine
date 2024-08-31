@@ -12,8 +12,8 @@ import("dpdllib.h")
 # main
 println("testing concurrent embedded code...")
 
-int tIdx0 = createThread(0, "dpdlSampleC.h", dpdlNormPriority, 2000)
-int tIdx1 = createThread(1, "dpdlSampleC.h", dpdlNormPriority, 2000)
+int tIdx0 = createThread(0, "C/dpdlSampleC.h", dpdlNormPriority, 2000)
+int tIdx1 = createThread(1, "C/dpdlSampleC.h", dpdlNormPriority, 2000)
 
 println("threads running...")
 
