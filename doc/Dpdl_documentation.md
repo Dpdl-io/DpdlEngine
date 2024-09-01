@@ -390,13 +390,13 @@ mya.printit()
 
 Dpdl supports the type **`struct`**, with the following definitions:
 
-* Structs may contain other 'struct' variable declarations
+* Structs may contain other 'struct' variable declarations (but not 'struct' definitions)
 
 * Structs can call functions defined in the outer scope
 
 * Variable shadowing is enabled
 
-* Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct function' changes the variable <ins>only during the function scope</ins>.
+* Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct' function changes the variable <ins>only during the function scope</ins>.
 
 * Structs can contain multiple embedded code sections in various programming languages (eg. **`>>c`**)
 
@@ -404,6 +404,8 @@ Dpdl supports the type **`struct`**, with the following definitions:
 
 * Structs can contain arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed very soon,
 a workaround is to assign the array to an object and access the object instead.
+
+* Structs cannot contain variable definitions of 'class' type
 
 * Structs can conveniently be <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
 
@@ -424,6 +426,14 @@ struct myStruct {
 	func myStructCall()
 		println("myStructCall: " + s + " so: " + so)
 		return 1
+	end
+	
+	func myStructCallNativeC()
+		>>c
+		#include <stdio.h>
+
+		printf("Hello myStructCallNativeC from C\n");
+		<<
 	end
 }
 

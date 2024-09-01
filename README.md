@@ -201,7 +201,7 @@ println("finished")
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform. The core engine runs also on Java 1.1)
+* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform. The core engine runs also on Java 1.1 spec compliant VMs.
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
 * Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
 * **No additional installations required** (except add-on libraries)
