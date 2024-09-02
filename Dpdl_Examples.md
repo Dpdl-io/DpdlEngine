@@ -116,9 +116,13 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 		
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX.png" width="35%" height="35%">
 		
-* Example Dpdl script that shows how to use the type 'struct'
+* Example Dpdl script that makes use of the type 'struct'
 
 	[test/testStruct.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct.h)
+	
+* Example Dpdl script that makes use of the type 'class'
+
+	[test/testClass.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClass.h)
 	
 * Example Dpdl script that shows how exceptions can be raised and handled
 

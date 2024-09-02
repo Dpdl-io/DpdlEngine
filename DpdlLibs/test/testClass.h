@@ -1,6 +1,6 @@
 # File: test/testClass.h
 #
-# Example: Sample Dpdl script with 'class' type
+# Example: Sample Dpdl script that make use of 'class' type
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -16,7 +16,7 @@ class BaseA {
 	string id = "baseA"
 
 	func printBase()
-		println("my base A")
+		println("my base A id is: " + id)
 	end
 
 	func setId(string newid)
