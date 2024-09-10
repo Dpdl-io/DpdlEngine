@@ -9,7 +9,7 @@ developed by
 
 ## New features
 
-* NEW Asynchronous Tasks can now be executed via the keyword **`>>task`** containing embedded Dpdl code sections (will be included in coming release) 
+* NEW Asynchronous Tasks can now be executed via the keyword **`>>task`** containing embedded Dpdl code sections 
 
 * Dpdl now supports also the type 'class'
 
