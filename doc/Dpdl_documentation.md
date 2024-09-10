@@ -11,7 +11,7 @@ developed by
 
 ## Dpdl language specification
 
-Dpdl is a self-contained programming language, interpreted, statically as well as dynamically typed, with a very compact footprint and portable to most platforms.
+Dpdl is a self-contained programming language, interpreted, statically as well as dynamically typed, with a very compact footprint and portable to most platforms. On-going development will also enable compilation to native code.
 
 Additionally Dpdl allows to embed and execute code of other programming languages directly within Dpdl. Embedded programming language code is executed in form of plug-ins (Dpdl language plug-ins) distributed with the DpdlEngine release package (no additional installations required)
 
@@ -31,6 +31,7 @@ Additionally Dpdl allows to embed and execute code of other programming language
 * Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Multi-line structured text, data and code resources
+* Asynchronous Task execution
 * Static script execution: static code declarations (*.h_static)
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
@@ -264,6 +265,44 @@ object myhtml3 = dpdl_res_obj_get("my_html")
 println(myhtml3)
 
 ```
+
+### Asynchronous 'Task' execution via **`>>task`** keyword
+
+The keyword  **`>>task`** allows to execute Dpdl code sections asynchronously.
+
+The code runs in an isolated execution instance and is thread safe.
+
+**Example:**
+```python
+println("testing Dpdl tasks...")
+
+>>task
+	println("this is a dpdl Task that runs asynchronously")
+
+	int c = 0
+	while(c < 10)
+		print(".")
+		c=c+1
+		sleep(2000)
+	endwhile
+
+	println("task finished")
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("task started with exit code: " + exit_code)
+
+int c = 0
+for(c < 10)
+	print("#")
+	c=c+1
+	sleep(2000)
+endfor
+
+println("finished")
+```
+
 
 
 ### Arrays

@@ -219,14 +219,14 @@ The speedup is x 25 times faster compared to a standard record store access
 * **XML** with XPath parser
 * **JSON**
 * **Easy integration of custom libraries**
-* **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to **`80 Kb`** for minimal setup
+* **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
 * Tools for automatically converting Dpdl code to Java , C/C++ and V code (in development)
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'Wgsl' dpdl language plug-in** (WebGPU shading language)
 * Open Source programming language plug-ins
 
 
-Dpdl comes with a very compact and portable **scripting engine** and an **extensible API interface** to foster research and development of applications and embedded system software which is ideal for rapid application development and rapid prototyping.
+Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster research and development of applications and embedded system software which is ideal for rapid application development and rapid prototyping.
 
 Dpdl embedded ANSI C code, OCaml, Groovy and Clojure are <ins>**dynamically compiled in memory** at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
 
@@ -236,7 +236,7 @@ Further, Dpdl can be used to encode, store, control and query data efficiently a
 
 ### Small Memory footprint:
 
-* **DpdlEngine core** (<ins>**Basic**</ins> configuration) **`80 Kb`**
+* **DpdlEngine core** (<ins>**Minimal**</ins> configuration) **`80 Kb`**
 * **DpdlEngine core** (<ins>**Full**</ins> configuration) **`372 Kb`**
 * **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
 

@@ -9,7 +9,9 @@ developed by
 
 ## New features
 
-* NEW Dpdl now supports also the type 'class'
+* NEW Asynchronous Tasks can now be executed via the keyword **`>>task`** containing embedded Dpdl code sections (will be included in coming release) 
+
+* Dpdl now supports also the type 'class'
 
 * Dpdl language plug-in for 'Groovy' is now available
 

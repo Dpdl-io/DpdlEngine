@@ -51,6 +51,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[test/testDataFuncTypes.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testDataFuncTypes.h)
 
+* Example Dpdl code that make use of the **`>>task`** keyword to execute embedded Dpdl code sections asynchronously 
+
+	[test/testTask.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testTask.h)
+	
 * Example Dpdl code that converts/compiles  a 'struct' to a native java bytecode object and accesses member variables and methods
 
 	[test/testGenObjCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testGenObjCode.h)
