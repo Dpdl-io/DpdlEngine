@@ -1,6 +1,6 @@
 # File: validateDpdlDemo.h
 #
-# NOTE: Do not edit or delete this file, it's required to keep the Dpdl DEMO release active
+# NOTE: Do not edit or delete this file, it is required to validate the 'DpdlEngine lite' DEMO release
 #
 # This scripts serves as a validator for the DpdlEngine lite release of Dpdl. It simply accesses a web page of
 # SEE Solutions at the following url: https://www.dpdl.io
@@ -8,37 +8,41 @@
 # contact: info@dpdl.io
 #
 
+import('http')
+
 # main
 string URL_to_validate = "https://www.dpdl.io/DemoDpdl_validator.html"
 
-object url = loadObj("URL", URL_to_validate)
-raise(url, "Error: url not valid", true)
+object get = http.get(URL_to_validate)
 
-object url_connection = url.openConnection()
-raise(url_connection, "Error: unable to establish a connection to dpdl.io", true)
+object response_code = get.responseCode()
+object headers = get.headers()
+string web_content = get.text()
 
-object url_in = url_connection.getInputStream()
-raise(url_in, "Error: failed to get input stream. The 'DpdlEngine lite' release requires internet connectivity for validation", true)
+if(response_code == 200)
+	object check_url = loadObj("String", web_content)
 
-object url_in_read = loadObj("InputStreamReader", url_in)
-raise(url_in_read, "Error: unable to open input stream", true)
+	bool check_ok = check_url.contains("Dpdl (Dynamic Packet Definition Language) Demo validator 260a5348b")
 
-object buf_read = loadObj("BufferedReader", url_in_read)
-object buf_str = loadObj("String", "")
+	println("DEMO validation: " + check_ok)
 
-string web_content = ""
-while(buf_str != null)
-	buf_str = buf_read.readLine()
-	if(buf_str != null)
-		web_content = web_content + buf_str.toString()
+	if(check_ok == false)
+		println("This version of Dpdl has been deprecated. Please download the latest release.")
+		println("exiting...")
+		exit(-1)
+	else
+		println("")
+		int idx_s = check_url.indexOf("<msg>")
+		int idx_e = check_url.indexOf("</msg>")
+		idx_s = idx_s + 5
+		if(idx_e > idx_s)
+			string msg = check_url.substring(idx_s, idx_e)
+			println("Notice: " + msg)
+			println("")
+		fi
 	fi
-endwhile
-
-object check_url = loadObj("String", web_content)
-bool check_ok = check_url.contains("Dpdl (Dynamic Packet Definition Language) Demo validator 260a5348b14")
-println("DEMO validation: " + check_ok)
-if(check_ok == false)
-	println("exiting...")
+else
+	println("Notice: The dpdl.io web-site needs to be accessible for running the Demo version: " + URL_to_validate)
 	exit(-1)
 fi
 
