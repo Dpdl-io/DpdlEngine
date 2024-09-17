@@ -275,7 +275,7 @@ The code runs in an isolated execution instance and is thread safe to the embedd
 The running 'Task' object can be accessed by popping the task id from the dpdl stack and than calling the function 'dpdl_task_obj_get(object task_id)' which
 returns a 'Task' object which provides access to all functions needed to control the task execution (eg. interrupt, sleep, join, etc.)
 
-The task id is a unique identifier (UUID) for example like 312b01c1-9837-47f7-9c24-f5ec24fb9857
+The task id is a unique identifier (UUID) like for example 312b01c1-9837-47f7-9c24-f5ec24fb9857
 
 **Example:**
 ```python
