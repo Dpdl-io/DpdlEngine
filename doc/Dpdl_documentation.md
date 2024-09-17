@@ -266,7 +266,7 @@ println(myhtml3)
 
 ```
 
-### Asynchronous 'Task' execution via **`>>task`** keyword
+### Asynchronous 'Task' execution
 
 The keyword  **`>>task`** allows to execute Dpdl code sections asynchronously.
 
