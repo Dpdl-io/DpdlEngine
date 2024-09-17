@@ -167,7 +167,9 @@ The validation script can be inspected here:
 
 * The Demo release of 'DpdlEngine lite' has as slower startup due to security checks, compared to the full registered version of 'DpdlEngine lite'
 
-* The 'loadLib' and 'mapLib' functions of the 'native' Dpdl library are available only in the ful registered version of Dpdl
+* The 'loadLib' and 'mapLib' functions of the 'native' Dpdl library are available only in the full registered version of Dpdl
+
+* Multi-line resources 'res' and asynchronous 'task' are available only in the full registered version of DpdlEngine
 
 
     

@@ -212,6 +212,12 @@ dpdl_stack_obj_glob_get(string key) return object obj
 dpdl_stack_obj_put(string key, object obj) return int status
 dpdl_stack_obj_get(string key) return object obj
 dpdl_runtime_push(string param1, ...)
+dpdl_res_pop_id() return object res_id
+dpdl_res_obj_get(object res_id) return object res
+dpdl_res_obj_get_name(string res_name) return object res
+dpdl_res_clear()
+dpdl_task_pop_id() return object task_id
+dpdl_task_obj_get(object task_id) return object task
 dpdl_exit_code() return int exit_code
 
 [Exception handling]

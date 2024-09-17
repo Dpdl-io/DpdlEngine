@@ -24,6 +24,7 @@ developed by
 
 ## Fixes
 
+* 15.09.2024 Fix minor memory management issue when using 'DPDLAPI_createThread(...)'
 * 01.09.2024 Fix small bug related to formatting
 * 07.06.2024 Fixed bug related to enum type when field values were explicitly assigned and accessed without enum reference. Now works as espected in all cases
 * 22.05.2024 The power operator ^ now returns always a 'double' value
@@ -52,7 +53,7 @@ update of '.lib/ocamlrun-scripting.jar' and './lib/ocamljava.jar' might be requi
 * Dpdl backend compiler based on LLVM for generating native machine code for most target platform architectures
 
 
-### Dpdl language plugins
+### Dpdl language plug-ins
 
 The following programming language plug-ins will be developed:
 

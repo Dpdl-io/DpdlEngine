@@ -333,8 +333,7 @@ Or full featured Applications written with Dpdl in the following repository:
 
 ## Why Dpdl?
 
-Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for small development of
-applications on <ins>small memory footprint devices</ins>, and can be used as embedded scripting engine for various applications.
+Dpdl is suitable for <ins>rapid application development</ins> in various domains and can be used as embedded scripting engine for various applications, in particular also for development of small applications on <ins>small memory footprint devices</ins>.
 
 The main nature of Dpdl is for enabling rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact

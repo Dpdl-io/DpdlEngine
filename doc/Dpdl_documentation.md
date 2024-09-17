@@ -270,7 +270,12 @@ println(myhtml3)
 
 The keyword  **`>>task`** allows to execute Dpdl code sections asynchronously.
 
-The code runs in an isolated execution instance and is thread safe.
+The code runs in an isolated execution instance and is thread safe to the embedding code.
+
+The running 'Task' object can be accessed by popping the task id from the dpdl stack and than calling the function 'dpdl_task_obj_get(object task_id)' which
+returns a 'Task' object which provides access to all functions needed to control the task execution (eg. interrupt, sleep, join, etc.)
+
+The task id is a unique identifier (UUID) for example like 312b01c1-9837-47f7-9c24-f5ec24fb9857
 
 **Example:**
 ```python
@@ -291,14 +296,20 @@ println("testing Dpdl tasks...")
 
 int exit_code = dpdl_exit_code()
 
-println("task started with exit code: " + exit_code)
+object task_id = dpdl_task_pop_id()
+
+println("task started with exit code: " + exit_code + " and task id: " + task_id)
 
 int c = 0
-for(c < 10)
+for(c < 5)
 	print("#")
 	c=c+1
 	sleep(2000)
 endfor
+
+object task_obj = dpdl_task_obj_get(task_id)
+
+task_obj.sleep(20000L)
 
 println("finished")
 ```
@@ -331,7 +342,7 @@ bool b = myarrayobj.contains("Dpdl")
 println("array contains Dpdl: " + b) 
 ```
 
-The array elements can be separated with blank space ' ', with comma ' , ' or with semicolon ' ; '. All are valid.
+The array elements be pure or embedded in a string and can be separated with blank space ' ', with comma ' , ' or with semicolon ' ; '. All are valid.
 
 ```python
 myemptyarr[] = []
