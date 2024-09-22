@@ -59,11 +59,11 @@ println("popping data struct from the stack...")
 object ste = mys.pop()
 
 if(typeof(ste) == "struct:MyS")
-	println("st.id: " + st.id)
-	println("st.x: " + st.x)
-	println("st.y: " + st.y)
-	println("st.desc: " + st.desc)
-	println("st.nr: " + st.nr)
+	println("ste.id: " + ste.id)
+	println("ste.x: " + ste.x)
+	println("ste.y: " + ste.y)
+	println("ste.desc: " + ste.desc)
+	println("ste.nr: " + ste.nr)
 else
 	println("unknown type")
 fi
@@ -128,7 +128,7 @@ endwhile
 int ms = getEndTime()
 
 println("")
-println("exec time Result (ms): " + ms)
+println("exec time iteration Result (ms): " + ms)
 println("")
 
 println("finished!")
