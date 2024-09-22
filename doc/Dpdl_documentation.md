@@ -22,7 +22,7 @@ Additionally Dpdl allows to embed and execute code of other programming language
 * support for pointers and references (eg. int *px = &x)
 * Inline string expressions allowed
 * native data function types to handle data structures **`arr`**, **`vec`**, **`map`**, **`list`** and **`stack`**.
-* APIs: Dpdl API, JRE API, MIDP API
+* APIs: Dpdl API, JRE API, MIDP API, and enables to load and access third party java APIs and Native shared libraries
 * Access to the full underlying Java Platform API's or other external java libraries
 * Access to Native shared libraries with simple approach
 * Record Store creation and access via virtual file system
