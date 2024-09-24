@@ -47,7 +47,7 @@ setStartTime()
 >>java
 	public static void myloop(){
 		int val = 0;
-		String tag = "Java code"
+		String tag = "Java code";
 		for(int i = 0; i < 1000000; i++){
 			val=i * 2;
 			System.out.println(tag + " -> i: " + i + " val: " + val);
