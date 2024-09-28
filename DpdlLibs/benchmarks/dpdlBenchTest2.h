@@ -108,6 +108,8 @@ int ms4 = getEndTime()
 
 println("5) Simple loop with embedded javascript code...")
 
+setStartTime()
+
 >>qjs
 "use strict";
 
