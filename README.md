@@ -70,6 +70,81 @@ The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of 
 Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
 
+
+## Features
+
+* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform. The core engine runs also on Java 1.1 spec compliant VMs.
+* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
+* **Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
+* **No additional installations required** (except add-on libraries)
+* **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
+* **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time!!!</ins>
+* **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
+* **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
+* **On the fly conversion/compilation of Dpdl data struct's into native java bytecode classes**
+* **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
+**CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
+* **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
+The speedup is x 25 times faster compared to a standard record store access
+* **Virtual record store filesystem**
+* **Double precision floating point emulation** layer
+* **XML** with XPath parser
+* **JSON**
+* **Easy integration of custom libraries**
+* **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
+* Tools for automatically converting Dpdl code to Java , C/C++ and V code (in development)
+* Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
+* Allows to **scale computations on GPUs using the 'Wgsl' dpdl language plug-in** (WebGPU shading language)
+* Open Source programming language plug-ins
+
+
+Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster research and development of applications and embedded system software which is ideal for rapid application development and rapid prototyping.
+
+Dpdl embedded ANSI C code, OCaml, Groovy and Clojure are <ins>**dynamically compiled in memory** at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
+
+These features make Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
+
+Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as 'DpdlPacket'.
+
+### Small Memory footprint:
+
+* **DpdlEngine core** (<ins>**Minimal**</ins> configuration) **`80 Kb`**
+* **DpdlEngine core** (<ins>**Full**</ins> configuration) **`372 Kb`**
+* **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
+
+* **Total size** of DpdlEngine (Dpdl Full + C compiler/interpreter) = **`650 Kb`**
+ 
+The size of the DpdlEngine core can be stripped down even further by excluding certain functionalities.
+
+
+## Quick Links
+
+[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+  
+[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+
+[Dpdl_embedded_languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
+
+[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+
+[Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
+
+[Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
+
+[Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
+
+[Dpdl Wgsl on GPU](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wgsl_GPU.md)
+
+[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
+[Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
+
+[Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
+
+
+## Dpdl sample code
+
+
 ### Sample Dpdl code that makes use of embedded 'Groovy' code to read a file line by line and print it to the console
 
 ```python
@@ -199,80 +274,7 @@ println("finished")
 
 ```
 
-## Features
-
-* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform. The core engine runs also on Java 1.1 spec compliant VMs.
-* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
-* Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
-* **No additional installations required** (except add-on libraries)
-* **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
-* **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time!!!</ins>
-* **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
-* **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
-* **On the fly conversion/compilation of Dpdl data struct's into native java bytecode classes**
-* **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
-**CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
-* **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
-The speedup is x 25 times faster compared to a standard record store access
-* **Virtual record store filesystem**
-* **Double precision floating point emulation** layer
-* **XML** with XPath parser
-* **JSON**
-* **Easy integration of custom libraries**
-* **Small footprint**, Only **`372 Kb`** for core DpdlEngine -> can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
-* Tools for automatically converting Dpdl code to Java , C/C++ and V code (in development)
-* Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
-* Allows to **scale computations on GPUs using the 'Wgsl' dpdl language plug-in** (WebGPU shading language)
-* Open Source programming language plug-ins
-
-
-Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster research and development of applications and embedded system software which is ideal for rapid application development and rapid prototyping.
-
-Dpdl embedded ANSI C code, OCaml, Groovy and Clojure are <ins>**dynamically compiled in memory** at runtime</ins> in order to achieve <ins>faster execution</ins> performance.
-
-These features make Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
-
-Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as 'DpdlPacket'.
-
-### Small Memory footprint:
-
-* **DpdlEngine core** (<ins>**Minimal**</ins> configuration) **`80 Kb`**
-* **DpdlEngine core** (<ins>**Full**</ins> configuration) **`372 Kb`**
-* **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
-
-* **Total size** of DpdlEngine (Dpdl Full + C compiler/interpreter) = **`650 Kb`**
- 
-The size of the DpdlEngine core can be stripped down even further by excluding certain functionalities.
-
-
-## Quick Links
-
-[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
-  
-[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
-
-[Dpdl_embedded_languages](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
-
-[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
-[Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
-
-[Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
-
-[Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
-
-[Dpdl Wgsl on GPU](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wgsl_GPU.md)
-
-[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
-
-[Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
-
-[Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
-
-
-## Dpdl sample code
-
-### Full featured sample prototype applications developed with Dpdl
+### Full featured sample Prototype Applications developed with Dpdl
 
 In this GitHub repository you can find full featured working prototype applications written with Dpdl:
 

@@ -38,7 +38,7 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 * **`Clojure`**
 * **`C++`** (Root)
 
-**available Add-on plug-ins:**
+**Add-on plug-ins available:**
 
 * **`Wasm`** (WAT Compiler and Wasm Runtime)
 * **`Sql`**
@@ -419,7 +419,11 @@ Custom native functions and objects can be implemented as shared libraries and a
 
 You can find examples in the folder './DpdlLibs/js/'
 
-Refer to the official 'QuickJS' documentation for more info about the functions available (https://bellard.org/quickjs/quickjs.html)
+Refer to the official 'QuickJS' documentation for more info about the functions available:
+
+[QuickJS doc](https://www.dpdl.io/doc/qjs/quickjs.pdf)
+
+[JS Bignum extensions](https://bellard.org/quickjs/jsbignum.pdf)
 
 The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
 
