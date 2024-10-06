@@ -24,7 +24,6 @@ Also <ins>**Dpdl** supports loading and accessing exported Wasm module functions
 **Example (compiling WAT and call wasm module functions from <ins>'dpdl'</ins> and from <ins>'javascript'</ins>):**
 
 ```python
-import('dpdlwasm.h')
 
 # main
 println("testing embedded WAT compiler and WASM runtime...")
@@ -62,7 +61,7 @@ println("1) we can access the wasm module function with dpdl:")
 
 object module1 = dpdl_wasm_obj_get("fibonacci")
 
-i32 res_fib = module1.fib(10)
+int res_fib = module1.fib(10)
 
 println("fibonacci of 10 is: " + res_fib)
 
@@ -83,7 +82,12 @@ println("embedded javascript wasm fib exit code: " + exit_code)
 println("finished")
 ```
 
-In this folder you'll find further examples:
+**Example:** (compile a WAT script with dependencies to an already compiled WASM file and make function calls from Dpdl
+
+[wasm/dpdlWasmTest2.h](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/wasm/dpdlWasmTest2.h)
+
+
+In this folder you'll find further Dpdl examples with wasm:
 
 [DpdlLibs/wasm](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/wasm)
 
@@ -158,7 +162,6 @@ The 'Wasmer' ruby runtime bindings are available here: https://github.com/wasmer
 Dpdl script that compiles two WebAssembly modules (in WAT code), with 1st module that exports functions to the 2nd module, to WASM binary format. The function 'add_and_sub' exported by the 2nd module is than called from Dpdl
 
 ```python
-include('wasm/dpdlwasm.h')
 
 # main
 println("testing embedded WAT compiler and WASM runtime...")
@@ -199,7 +202,7 @@ raise(status_compile, "Error in compiling module 'mycalc'")
 
 object module_calc = dpdl_wasm_obj_get("mycalc")
 
-i32 res_calc1 = module_calc.add_and_sub(100, 200)
+int res_calc1 = module_calc.add_and_sub(100, 200)
 
 println("result is: " + res_calc1)
 
@@ -208,7 +211,7 @@ println("result is: " + res_calc1)
 
 object module_calc = dpdl_wasm_obj_load("mycalc.wasm")
 
-i32 res_calc2 = module_calc.add_and_sub(100, 200)
+int res_calc2 = module_calc.add_and_sub(100, 200)
 
 println("result is: " + res_calc2)
 

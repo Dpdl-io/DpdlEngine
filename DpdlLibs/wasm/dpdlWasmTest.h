@@ -1,7 +1,8 @@
 # File: wasm/dpdlWasmTest.h
 #
-# Example: Dpdl script that compiles a WebAssembly WAT script to binary WASM format and makes calls to the exported functions
-#			from both, Dpdl and javascript
+# Example: Dpdl script that compiles a WebAssembly WAT script to binary WASM format and makes calls
+#			to the exported functions from both, Dpdl and javascript
+#
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -38,15 +39,20 @@ int status_compile = dpdl_exit_code()
 
 raise(status_compile, "Error in compiling WAT code")
 
+println("status_compile: " + status_compile)
+
 # now we can access the exported wasm functions in two differet ways
 
-println("1) we can access the wasm module function with dpdl:")
+println("1) we can access the wasm module function with Dpdl:")
 
 object module1 = dpdl_wasm_obj_get("fibonacci")
 
-i32 res_fib = module1.fib(10)
+println("module1 is of type: " + typeof(module1))
+
+object res_fib = module1.fib(10)
 
 println("fibonacci of 10 is: " + res_fib)
+
 
 println("2) we can also access the wasm module function with javascript:")
 
