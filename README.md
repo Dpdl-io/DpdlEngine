@@ -29,7 +29,7 @@ A dedicated included **AI Dpdl language plug-in** (**DAN**) allows to <ins>**aut
 
 ## Dpdl = ( Java Api's + Embedded C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
-Further programming languages and syntax interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. This allows developers to easily create embedded custom syntax interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
+Further programming languages and syntax interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. This allows developers to easily create embedded custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 
@@ -75,7 +75,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any other JVM >= 1.4 Spec, and all platforms where the open source virtual machine 'miniJVM' can be compiled for the target platform. The core engine runs also on Java 1.1 spec compliant VMs.
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
-* **Multiple embeddable programming language plug-ins available: **ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure programming languages can be <ins>embedded and executed** directly within Dpdl code</ins> (interpreted/compiled code)
+* **Multiple embeddable programming language plug-ins available:** ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure **programming languages can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **No additional installations required** (except add-on libraries)
 * **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time!!!</ins>
