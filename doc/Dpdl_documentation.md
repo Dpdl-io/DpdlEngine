@@ -27,7 +27,7 @@ Additionally Dpdl allows to embed and execute code of other programming language
 * Access to Native shared libraries with simple approach
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
-* Multiple embeddable programming languages supported: **ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure**. These programming can be embedded and executed directly within Dpdl code (interpreted/compiled code).
+* **Multiple embeddable programming languages supported:** ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
 * Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Multi-line structured text, data and code resources
