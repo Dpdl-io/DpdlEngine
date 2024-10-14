@@ -141,6 +141,8 @@ The size of the DpdlEngine core can be stripped down even further by excluding c
 
 [Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
 
+[Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
+
 
 ## Dpdl sample code
 
