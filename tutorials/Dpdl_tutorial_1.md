@@ -110,7 +110,7 @@ We create a file named 'test_wasm.h' in the folder './DpdlLibs/DpdlWasm' with th
 ```python
 println("testing access to wasm functions...")
 
-object mylib = dpdl_wasm_obj_create("./DpdlLibs/DpdlWasm/mytest_lib/target/wasm32-wasi/release/mytest_lib.wasm")
+object mylib = dpdl_wasm_obj_load("./DpdlLibs/DpdlWasm/mytest_lib/target/wasm32-wasi/release/mytest_lib.wasm")
 
 raise(mylib, "Error in loading wasm lib")
 
