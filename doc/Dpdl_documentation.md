@@ -1193,7 +1193,7 @@ dpdl_stack_push("dpdl:applyvars", "dpdlbuf_var1",n, x, a)
 	#include <stdio.h>
 	#include <dpdl.h>
 	
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Hello C from Dpdl!\n");
 		printf("\n");
 		int my_i = {{my_int_var}};
@@ -1260,7 +1260,7 @@ dpdl_stack_push("dpdlbuf_var1",n, x, a)
 	#include <stdio.h>
 	#include <dpdl.h>
 	
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Hello C from Dpdl!\n");
 		printf("\n");
 		printf("num params: %d\n", argc);
@@ -1303,7 +1303,7 @@ dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C")
 	
 	extern void dpdl_stack_buf_put(char *buf);
 
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Dpdl C Bench\n");
 		printf("\n");
 		time_t start;

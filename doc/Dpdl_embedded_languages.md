@@ -26,7 +26,7 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 Currently the 'DpdlEngine' release supports and provides the following Dpdl language plug-ins compliant to the corresponding language implementation version.
 
 * **`Embedded C`** (minimal subset of C90)
-* **`ANSI C`** (full ANSI C99)
+* **`ANSI C`** (ANSI C99)
 * **`Python`**
 * **`Julia`**
 * **`JavaScript`**
@@ -40,7 +40,7 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 **Add-on plug-ins available:**
 
-* **`Wasm`** (WAT Compiler and Wasm Runtime)
+* **`Wasm`** (WAT code Compiler and Wasm Runtime)
 * **`Sql`**
 * **`Wgsl`** (WebGPU shading language)
 * **`Ai`** (DpdlAINerd)
