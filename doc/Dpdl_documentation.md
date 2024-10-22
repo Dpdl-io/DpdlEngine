@@ -741,40 +741,24 @@ See **`GC_THREAD_EXEC`** parameter in 'DpdlEngine.ini'. The value '-1' invalidat
 	
 ### DpdlObject's and Java bindings
 
-Dpdl can access the underlying classes of a given JRE implementation or any other external java library.
+Dpdl can access the underlying classes of a given java compliant JRE implementation or any other external java library.
 
-The classes are loaded within a DpdlObject that is handled by the Dpdl runtime.
+The classes are loaded and wrapped in a DpdlObject that is handled by the Dpdl runtime which make the java classes accessible to Dpdl.
 
-Static classes can be accessed via **`getObj(..)`** function and instance classes created via **`loadObj(..)`** function.
+Static classes can be accessed via **`getObj(..)`** function, and instance classes can be created via **`loadObj(..)`** function.
 
-The class references are resolved via the class definition file which can be update to resolve further classes (only for full registered version)
+The java class references are resolved via the class definition file which can be updated statically to resolve further classes, and can be also dynamically loaded and updated via the function call 'DPDLSYS_registerLib(...)'
 
-The name of the class must be specified without the package path, i.e 'String' and NOT 'java.lang.String'.
-
+By default, the name of the java class to be loaded must be specified without the java package path, i.e 'String' and NOT 'java.lang.String'. But this can be adjusted, even with custom naming.
 For some java classes that have duplicate entries as base name, the corresponding path prefix has to be specified when loading
 an object.
 
-The classes where this applies are listed here: [doc/Dpdl_class_resolve.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_class_resolve.md)
+The java classes where a path prefix applies are listed here: [doc/Dpdl_class_resolve.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_class_resolve.md)
 
 Note: the <ins>deprecated function 'getClass'</ins> is still supported for some time for backwards compatibility. The function '**getObj**' should be used instead.
 
 
-### The default configuration resolves the following API's:
-
-The set of classes accessible with Dpdl (default) is defined to be the following set.
-The methods of the classes that are accessible are referred to the current JRE instance on which Dpdl is running.
-
-[Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
-
-[JavaFX API](https://docs.oracle.com/javafx/2/api/index.html)
-
-[Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
-
-
-Additional API's and classes can be added (only in Full registered version) to the class definition file as needed with the syntax: '$full_class_name $class_alias'
-
-
-Example:
+**Example:**
 ```python
 # static class loading
 object calendar = getObj("Calendar")
@@ -789,7 +773,50 @@ string substr = str.substring(idx)
 println(substr)
 ```
 
-Currently referencing object variables supports 1 level of indirection only ('date.toString().toUpparCase()' will not work currently)
+### Default configuration resolves the following API's:
+
+The set of classes accessible with Dpdl (default) is defined to be the following set.
+The methods of the classes that are accessible are referred to the current JRE instance on which Dpdl is running.
+
+[Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
+
+[JavaFX API](https://docs.oracle.com/javafx/2/api/index.html)
+
+[Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
+
+
+Additional API's and classes can be added to the class definition file as needed with the syntax: '$full_class_name $class_alias'.
+
+NOTE: Only the full registered version of Dpdl allows editing of the class definition file. The default 'DpdlEngine lite' configuration contains
+only the class references of Java Platform JRE 1.5, JAVAFX and Bluetooth JSR-82 API.
+
+
+### Dynamic loading of java API's
+
+As mentioned above, java classes (or APIs), can be also be dynamically loaded and accesses at runtime by calling the function 'DPDLSYS_registerLib(...)'. The function accepts as parameter the path of a JAR file containing the java classes.
+
+This approach, compared to registering the classes statically in the class file definition, has a minimal overhead with the advantage to enable loading of many different libraries not foreseen in the standard setup.
+
+**Example:**
+```python
+int load_lib = DPDLSYS_registerLib("./lib/custom/MyTestLib.jar")
+
+raise(load_lib, "Error in loading java lib")
+
+# now we can instantiate a Dpdl object from the contained java classes
+
+object myobj = loadObj("MyTestClass")
+
+string mydata = myobj.getData()
+
+println("my data: " + mydata)
+
+println("now you can access all classes, methods and fields of the java classes contained in the specified jar file")
+```
+
+### Notes:
+
+Referencing object variables currently support 1 level of indirection only ('date.toString().toUpparCase()' will not work currently, but is in development)
 
 This is the correct approach:
 ```python
@@ -797,9 +824,6 @@ object date = loadObj("Date")
 object datestr = date.toString()
 println(datestr.toUpperCase())
 ```
-
-NOTE: Only the full registered version of Dpdl allows editing of the class definition file. The default 'DpdlEngine lite' configuration contains
-only the class references of Java Platform JRE 1.5 and Bluetooth JSR-82 API.
 
 ### Load Dpdl code as DpdlObject
 
@@ -848,6 +872,7 @@ The constructor is called if a parameter is supplied
 object mymap = loadObj("HashMap")
 object mycode = loadCode("LoadCodeFunc.h", mymap)
 ```
+
 
 ### Types
 
