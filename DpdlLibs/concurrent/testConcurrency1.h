@@ -34,7 +34,7 @@ func myThreadFunc4()
 	>>c
 	#include <stdio.h>
 
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Hello from thread 4\n");
 		printf("\n");
 		printf("num params: %d\n", argc);

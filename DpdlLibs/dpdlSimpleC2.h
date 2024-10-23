@@ -24,7 +24,7 @@ dpdl_stack_push(n, x, a)
 	#include <stdio.h>
 	#include <dpdl.h>
 	
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Hello C from Dpdl!\n");
 		dpdl_stack_push(1);
 		printf("\n");

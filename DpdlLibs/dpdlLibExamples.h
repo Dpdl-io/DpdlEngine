@@ -474,7 +474,7 @@ dpdl_stack_push(n, xc, a)
 	#include <stdio.h>
 	#include <dpdl.h>
 	
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Hello C from Dpdl!\n");
 		printf("\n");
 		printf("num params: %d\n", argc);

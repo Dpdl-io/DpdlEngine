@@ -16,7 +16,7 @@ dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C")
 	
 	extern void dpdl_stack_buf_put(char *buf);
 
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Dpdl C Bench\n");
 		printf("\n");
 		time_t start;

@@ -15,7 +15,7 @@ dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C", "dpdl
 
 	extern void dpdl_stack_buf_put(char *buf);
 
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Dpdl C Buf return\n");
 		printf("\n");
 		time_t start; // use int when compile option is not set

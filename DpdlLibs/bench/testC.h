@@ -24,7 +24,7 @@ func myAlg(object hm_p, string param, int n)
 	#include <stdlib.h>
 	#include <dpdl.h>
 	
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("--------------------------------------\n");
 		printf("Hello C from Dpdl!\n");
 		printf("\n");

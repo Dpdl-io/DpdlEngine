@@ -13,7 +13,7 @@ dpdl_stack_push("dpdl:compile", "dpdl:-I./DpdlLibs/C", "dpdl:-I/Library/Develope
 	#include <stdio.h>
 	#include <time.h>
 	
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Dpdl C Bench\n");
 		printf("\n");
 		time_t start; // use time_t when compile option is set

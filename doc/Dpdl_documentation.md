@@ -46,7 +46,7 @@ As Dpdl can access java classes directly, the whole Java JRE API and any other c
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
 
 
-### Variable Types
+### Types
 
 Dpdl support the following type definitions:
 ```c++
@@ -76,6 +76,13 @@ Note: numbers must have the following suffix: doubles with '**d**', long with '*
 **`function`** definition
 ```python
 func myFunction(string param, object param....)
+
+end
+```
+
+**`function`** definition with return type
+```python
+func myFunction(object param....) return int
 
 end
 ```
@@ -112,7 +119,7 @@ for(<expression>)
 endfor
 ```
 
-### Arithmetic and logical operators
+### Operators
 
 **Arithmetic:** 
 	
@@ -265,56 +272,6 @@ object myhtml3 = dpdl_res_obj_get("my_html")
 println(myhtml3)
 
 ```
-
-### Asynchronous 'Task' execution
-
-The keyword  **`>>task`** allows to execute Dpdl code sections asynchronously.
-
-The code runs in an isolated execution instance and is thread safe to the embedding code.
-
-The running 'Task' object can be accessed by popping the task id from the dpdl stack and than calling the function 'dpdl_task_obj_get(object task_id)' which
-returns a 'Task' object which provides access to all functions needed to control the task execution (eg. interrupt, sleep, join, etc.)
-
-The task id is a unique identifier (UUID) like for example 312b01c1-9837-47f7-9c24-f5ec24fb9857
-
-**Example:**
-```python
-println("testing Dpdl tasks...")
-
->>task
-	println("this is a dpdl Task that runs asynchronously")
-
-	int c = 0
-	while(c < 10)
-		print(".")
-		c=c+1
-		sleep(2000)
-	endwhile
-
-	println("task finished")
-<<
-
-int exit_code = dpdl_exit_code()
-
-object task_id = dpdl_task_pop_id()
-
-println("task started with exit code: " + exit_code + " and task id: " + task_id)
-
-int c = 0
-for(c < 5)
-	print("#")
-	c=c+1
-	sleep(2000)
-endfor
-
-object task_obj = dpdl_task_obj_get(task_id)
-
-task_obj.sleep(20000L)
-
-println("finished")
-```
-
-
 
 ### Arrays
 
@@ -1123,6 +1080,55 @@ raise(o =! null, "o =! null")
 dpdl_print_exception_table()
 ```
 
+### Asynchronous 'Task' execution
+
+The keyword  **`>>task`** allows to execute Dpdl code sections asynchronously.
+
+The code runs in an isolated execution instance and is thread safe to the embedding code.
+
+The running 'Task' object can be accessed by popping the task id from the dpdl stack and than calling the function 'dpdl_task_obj_get(object task_id)' which
+returns a 'Task' object which provides access to all functions needed to control the task execution (eg. interrupt, sleep, join, etc.)
+
+The task id is a unique identifier (UUID) like for example 312b01c1-9837-47f7-9c24-f5ec24fb9857
+
+**Example:**
+```python
+println("testing Dpdl tasks...")
+
+>>task
+	println("this is a dpdl Task that runs asynchronously")
+
+	int c = 0
+	while(c < 10)
+		print(".")
+		c=c+1
+		sleep(2000)
+	endwhile
+
+	println("task finished")
+<<
+
+int exit_code = dpdl_exit_code()
+
+object task_id = dpdl_task_pop_id()
+
+println("task started with exit code: " + exit_code + " and task id: " + task_id)
+
+int c = 0
+for(c < 5)
+	print("#")
+	c=c+1
+	sleep(2000)
+endfor
+
+object task_obj = dpdl_task_obj_get(task_id)
+
+task_obj.sleep(20000L)
+
+println("finished")
+```
+
+
 ### 'Import' and 'Include' statements
 
 #### Import 
@@ -1597,6 +1603,31 @@ dpdl:applyvars
 ```
 
 See this doc for more details: [Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
+
+
+### Dpdl C API
+
+Dpdl code can be executed also embedded in a C program. 
+
+**Example:**
+```c
+#include <stdio.h>
+#include "dpdl.h"
+
+extern int dpdl_exec_code(char **code, int priority);
+
+char *dpdl_script = "println(\"Hello embedded Dpdl from C\")\n";
+
+int main(int argc, char **argv){
+
+	printf("executing embedded Dpdl code...\n");
+
+	int status = dpdl_exec_code(dpdl_script, dpdlMaxPriority);
+
+	printf("dpdl exit status: %d\n", status);
+	return 0;
+}
+```
 
 
 ### Current limitations

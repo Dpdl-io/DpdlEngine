@@ -39,7 +39,7 @@ func myNativeFunc(string datastr, int val)
 	#include <time.h>
 	#include <dpdl.h>
 
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Hello Dpdl C function\n");
 		printf("\n");
 		int start; // use time_t when compile option is set

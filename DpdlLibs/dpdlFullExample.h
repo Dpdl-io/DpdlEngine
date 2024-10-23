@@ -95,7 +95,7 @@ int myAlgorithm(char *param, double d, float f, int n, int *a) {
     return 23;
 }
 
-int main(int argc, char **argv){
+int dpdl_main(int argc, char **argv){
 	printf("Hello C from Dpdl!\n");
 	printf("\n");
 	printf("num params: %d\n", argc);

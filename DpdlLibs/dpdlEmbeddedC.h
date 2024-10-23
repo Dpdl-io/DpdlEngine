@@ -57,7 +57,7 @@ func testEmbeddedC(int n, double x, string a)
 	}
 	
 	/* main entry */
-	int main(int argc, char **argv)
+	int dpdl_main(int argc, char **argv)
 	{
 	 	printf("********************************\n");
 		printf("hello embedded C from Dpdl\n\n");
