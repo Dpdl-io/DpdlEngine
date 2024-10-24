@@ -22,6 +22,11 @@ developed by
 * Multi-line structured text, data and code resources are supported
 
 
+## Adaption
+
+* Entry point for embedded C code, in interpreted as well as in compiled mode, is unified as 'dpdl_main(....)'
+
+
 ## Fixes
 
 * 15.09.2024 Fix minor memory management issue when using 'DPDLAPI_createThread(...)'
