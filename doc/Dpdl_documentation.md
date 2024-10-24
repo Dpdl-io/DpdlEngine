@@ -1614,17 +1614,18 @@ Dpdl code can be executed also embedded in a C program.
 #include <stdio.h>
 #include "dpdl.h"
 
-extern int dpdl_exec_code(char **code, int priority);
+extern int dpdl_exec_code(char **code, char **param, int priority);
 
-char *dpdl_script = "println(\"Hello embedded Dpdl from C\")\n";
+char *dpdl_code = "println(\"Hello embedded Dpdl from C\")\n";
 
 int main(int argc, char **argv){
 
 	printf("executing embedded Dpdl code...\n");
 
-	int status = dpdl_exec_code(dpdl_script, dpdlMaxPriority);
+	int status = dpdl_exec_code(dpdl_code, argv, dpdlMaxPriority);
 
 	printf("dpdl exit status: %d\n", status);
+
 	return 0;
 }
 ```
