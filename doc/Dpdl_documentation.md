@@ -82,7 +82,7 @@ end
 
 **`function`** definition with return type
 
-Specifying the return type of a function **<ins>is optional</ins>**, it enforces a further check on the execution.
+Specifying the return type of a function **<ins>is optional</ins>**, it enforces a further check on the execution and improves code readability
 
 ```python
 func myFunction(object param....) return int
