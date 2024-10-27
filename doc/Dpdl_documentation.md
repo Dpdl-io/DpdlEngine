@@ -53,7 +53,7 @@ Dpdl support the following type definitions:
 int i = 1
 short s = 10s
 float f = 0.1
-double d = 1.0d
+double d = 10000.0d
 long l = 1000L
 byte b = 0x01 
 string s = "mystr"
