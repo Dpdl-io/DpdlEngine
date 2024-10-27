@@ -59,7 +59,7 @@ byte b = 0x01
 string s = "mystr"
 char c = 'a'
 bool t = true
-myarr[] = [1, 0.3, 23.d, 1000L, 0x09, "mydata"]
+myarr[] = [1, 0.3, 23.0d, 1000L, 0x09, "mydata"]
 var v = "some variable type var"
 class myClass cl
 object myobj = loadObj(...)
