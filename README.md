@@ -21,7 +21,7 @@ Dpdl enables access to **java platform API's, Native shared libraries, Wasm modu
 
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible plug-in interface. 
 
-Custom programming language and syntax interpreters can be implemented and integrated in for of plug-ins (**Dpdl language plug-ins**).
+Custom programming language and syntax interpreters can be implemented and integrated in form of plug-ins (**Dpdl language plug-ins**).
 For example the included dedicated **AI Dpdl language plug-in** (**DAN**) allows to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
 
 <p align="center">
