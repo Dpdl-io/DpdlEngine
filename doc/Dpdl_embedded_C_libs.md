@@ -204,7 +204,7 @@ pid_t fork(void);
 int getlogin_r(char *, size_t);
 int getpagesize(void);
 char *getpass(char *);
-pid_t getpgrp(void);    -> On Window: pid_t getpgrp(pid_t);  
+pid_t getpgrp(void);    -> On Windows: pid_t getpgrp(pid_t);  
 pid_t getpid(void);
 pid_t getppid(void);"
 uid_t getuid(void);

@@ -43,10 +43,10 @@ These features make Dpdl a powerful development platform for rapid prototyping, 
 ### * Reuse code
 ### * No need to install, compile and configure environments
 ### * Runs on constrained devices
-### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Compressing, querying and handling data efficiently on constrained devices
 ### * Self-contained, No additional dependencies required (except add-on libraries)
 ### * Facilitate rapid prototyping for hardware programming
+### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Plug-in oriented
 ### * Leverage prototyping with built-in <ins>AI generative code</ins> plug-in
 
