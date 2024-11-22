@@ -11,7 +11,7 @@ developed by
 
 ## Dpdl language specification
 
-Dpdl is a self-contained programming language, interpreted, statically as well as dynamically typed, with a very compact footprint and portable to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
+Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins>, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>compact footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
 
 Additionally Dpdl allows to embed and execute code of other programming languages directly within Dpdl. Embedded programming language code is executed in form of plug-ins (Dpdl language plug-ins) distributed with the DpdlEngine release package (no additional installations required)
 
@@ -1612,22 +1612,42 @@ See this doc for more details: [Dpdl_compiler_documentation.md](https://github.c
 
 Dpdl code can be executed also embedded in a C program. 
 
-**Example:**
+**Example:** executing a Dpdl source file
 ```c
 #include <stdio.h>
 #include "dpdl.h"
 
-extern int dpdl_exec_code(char **code, char **param, int priority);
+int main(int argc, char **argv){
+	printf("executing Dpdl from C...\n");
 
-char *dpdl_code = "println(\"Hello embedded Dpdl from C\")\n";
+	char *dpdl_src_file = "test/testString.h";
+
+	int ret = dpdl_exec_script(dpdl_src_file);
+
+	printf("ret: %d\n", ret);
+
+	return 0;
+}
+```
+
+
+**Example:** executing plain Dpdl code
+```c
+#include <stdio.h>
+#include "dpdl.h"
+
+char *dpdl_src_code =  "int c = 0	\n"
+		  	"for(c < 1000)	\n"
+				"println(\"This is Dpdl from C=\" + c)	\n"
+				"c=c+1\n	\n"
+			"endfor	\n";
 
 int main(int argc, char **argv){
+	printf("executing Dpdl code from C...\n");
 
-	printf("executing embedded Dpdl code...\n");
+	int ret = dpdl_exec_code(dpdl_src_code);
 
-	int status = dpdl_exec_code(dpdl_code, argv, dpdlMaxPriority);
-
-	printf("dpdl exit status: %d\n", status);
+	printf("ret: %d\n", ret);
 
 	return 0;
 }
@@ -1660,386 +1680,15 @@ println("s: " + s)
 ```
 
 
-## DpdlClient
-
-DpdlClient is a console application that allows to use Dpdl via commands.
-
-The following commands are available:
-```
- -l  List DpdlPackets installed
- -i  Install DpdlPacket
- -d  Uninstall DpdlPacket
- -la List DpdlPackets allocated
- -a  Allocate DpdlPacket
- -da Deallocate DpdlPacket
- -qp Query DpdlPacket (needs to be allocated first)
- -c Create DpdlPacket
- -libs  List Dpdl libraries
- -slib  Show library
- -api   List Dpdl API functions
- -exec  Type && Execute a Dpdl script, between <script>...  </script>
- -load  Load && Execute a Dpdl script file (relative path to./DpdlLibs/ eg. arraylistExample.h)
- -bench  Run a query benchmark test (on DpdlPacket dpdl_PHONEBOOK)
- -lc List the classes of a given java jar file
- -h  Help
- -q  quit
-```
-
-To run to DpdlClient console application you need Java JRE >= 1.5 and run the following command:
-```
-java -jar DpdlEngine_V1.0_release.jar
-```
-
-To execute a Dpdl code directly use the '-load' parameter at DpdlEngine startup:
-```
-java -jar DpdlEngine_V1.0_release.jar -load yourScript.h
-```
-
-NOTE: The newer release of Java (Java20) has introduced the concepts of 'modules'. A compliant 
-version of DpdlEngine will be released soon.
-
-If you need to run the DpdlClient on the latest version of Java, use the following command and add the modules you want to access via Dpdl code:
-
-```
-java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED -cp ./lib/mjcoap.jar -jar DpdlEngine_V1.0_release.jar
-```
-
-## Run Dpdl scripts
-
-To run the Dpdl code examples start the DpdlClient by executing the following script:
-
-on Linux/MacOS
-```
-./run_DpdlClient.sh
-```
-
-on Windows
-```
-./run_DpdlClient.bat
-```
-
-
-You can execute Dpdl code in the following ways:
-
-* Load and execute the Dpdl script file with the -load command
-* Input the script directly in the DpdlClient command console with the -exec command ( with closing </script> tag)
-* Via '-load' parameter to the DpdlClient startup script/command
-* Trough the Dpdl API.
-
-
-1) using 'load' command:
-```
--load
-enter the Dpdl script file to execute:
-arraylistExample.h
-```
-
-2) using 'exec' command:
-```python
--exec
-<script>
-string str = "this is a test"
-println(str)
-</script>
-```
-
-3) using the -load command as startup parameter:
-
-example:
-```
-run_DpdlClientScript.sh 
-```
-
-4) using the Dpdl API
-```
-int status = DPDLAPI_execCode("sample.h", "null)
-```
-
-Here you can find all methods available for the Dpdl API: 
-
-[Dpdl_API](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
-
-Dpdl allows to access all java classes of the underlying JRE environment,
-providing access to the whole Java platform API via the loadObj(..) and the getObj(..)
-Dpdl API methods.
-
-In this way Dpdl can access the classes and api of external java libraries.
-
-Example (using String java class with method 'contains(..)':
-```python
-object str = loadObj("String", "This is my Java object string")
-bool contains = str.contains("Java")
-if(contains)
-	println("The string contains the word 'Java'")
-else
-	println("The string does NOT contain the word 'Java'")
-fi
-```
-
-The class references resolved by the methods 'loadObj' and 'getObj' are defined via the class reference file:
-./DpdlLibs/libs/classes.txt
-
-NOTE: This file can be edited or complemented only in the registered, Licensed version of Dpdl.
-
-
-**Example:** (Compress and de-compress a string of data)
-```python
-
-#main
-
-object str = loadObj("String", "my data for Dpdl")
-println("string to compress: " + str)
-
-object byte_out = loadObj("ByteArrayOutputStream")
-object zip_out = loadObj("GZIPOutputStream", byte_out)
-
-println("compressing...")
-zip_out.write(str.getBytes())
-zip_out.close()
-println("data compressed successfully")
-
-object compressed_str = byte_out.toString()
-println("compressed string: " + compressed_str)
-
-println("decompressing...")
-object byte_in = compressed_str.getBytes()
-
-object byte_arr_in = loadObj("ByteArrayInputStream", byte_in)
-object zip_in = loadObj("GZIPInputStream", byte_arr_in)
-
-object in_reader = loadObj("InputStreamReader", zip_in)
-object buf_reader = loadObj("BufferedReader", in_reader)
-
-string decompressed_str = ""
-string line = ""
-while(line != null)
-	line = buf_reader.readLine()
-	if(line != null)
-		decompressed_str = decompressed_str + line
-	fi
-endwhile
-println("decompressed: " + decompressed_str)
-
-```
 
 ## Small 'dummy' Dpdl sample app
 
 [Small Dpdl sample app](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
 
 
-## 'DpdlPacket' definition language
+## Dpdl API
 
-Dpdl allows to create compressed packets of data via a **`DpdlPacket`** code definition. The data in a DpdlPacket can be organized
-in chunks of highly compressed data, along with database indexes. Data chunks can be allocated, queried and deallocated when not
-needed anymore. This allows a very efficient method of accessing and searching big amounts of data in memory constrained 
-devices.
-
-Dpdl code can be embedded in the DpdlPacket code definition and allows to trigger its execution on predefined callbacks.
-This makes a DpdlPacket an executable packet of data.
-
-This is an example DpdlPacket code definition (a phonebook database):
-```c++
-call(dpdlInterpreter)
-::module dpdl_PHONEBOOK_BZ
-::module_SPEC 23452
-::model 836
-::dpdlVersion 1.0
-
-OPTIONS {
-    TARGET = CDC & CLDC
-    KVM = 1.0
-    ZIP = true
-    CHECKSUM = true
-    SIGNATURE = true
-    ENCRYPTION(RSA) = false
-}
-
-#defineDpdlEncoding UTF-8
-
-#defineDB phone_bz | ./Test/BolzanoPhone.csv | null null
-
-#defineSQL query_ SELECT name, phoneNR, e-mail FROM phone_bz end
-
-#defineProtocol-cHtml phonebook_visual phone_book.html
-
-import extern SystemData
-
-catch DPDL_Script OnInit() {
-    import("dpdllib.h") nl
-    println("OnInit()") nl
-}
-
-import virtual DATA none  {
-        class BolzanoPhone volatile phonebook_visual {
-              DATA::string const name;
-              DATA::string using phoneNR;
-              DATA::string using  e-mail;
-              #defineGUI Default <PhoneBook>  <Enter name and surname:>
-              
-              catch DPDL_Script OnDecode() {
-                 import("dpdllib.h") nl
-                 import("dpdlRS.h") nl
-                 println("OnDecode()") nl
-                 string time = getTime() nl
-                 println("storing access time..." + time) nl
-                 int rs_id = createRS("AccessStats", AUTHMODE_ANY, dpdlTrue, dpdlTrue) nl
-                 int rec_id = addRecord(rs_id, time) nl
-                 int status = closeRS(rs_id) nl
-                 println("done status: " + status) nl
-              }
-        }
-}
-#defineD BolzanoPhone source phone_bz SQL query {
-                CHUNK entry [6];
-                struct BTree DENSE_INDEX hashing *name
-                entry.content { name , phoneNR , e-mail }
-                entry.name TAG(0xef) const (string) = 20;
-                entry.phoneNR TAG(0xefe) (string) = 15;
-                entry.e-mail TAG(0xefee) (string) = 30;
-}
-
-```
-
-The DpdlPacket as defined above, can be allocated and queried via Dpdl API or via the equivalent Java API
-
-```python
-int status = DPDLAPI_swapDpdlChunk("dpdl_PHONEBOOK_BZ", "BolzanoPhone")
-if(status == dpdlTrue)
-	status = DPDLAPI_selectDpdlService("dpdl_PHONEBOOK_BZ",, "BolzanoPhone", "armin 369")
-fi
-```
-
-The first time a DpdlPacket is allocated (swapped), data is decompressed in a temporary storage. This process takes some time for the 1st allocation,
-but is immediate for subsequent allocations, as long as the DpdlPacket is not explicitly deallocated.
-
-### Data Types
-
-A DpdlPacket chunk allocation supports the following types:
-
-```c++
-int
-string
-char
-double
-float
-long
-byte
-Image
-class
-xml
-dpdlpacket
-```
-
-## DpdlPacket example (installation, allocation and query)
-
-The Demo release of Dpdl includes an encoded DpdlPacket (dpdl_PHONEBOOK.dpdl) that has 48877 data entries (name, phoneNR, e-email).
-
-The packet is approximately 1,2 MB in size and has been encoded with the following Dpdl source script (dpdl_PHONEBOOK.c):
-
-
-To run the example
-
-1. start the DpdlClient by executing the following script:
-
-on Linux/MacOS
-```
-./run_DpdlClient.sh
-```
-
-on Windows
-```
-./run_DpdlClient.bat
-```
-
-2. install the DpdlPacket (dpdl_PHONEBOOK.dpdl) which is located in the folder ./DpdlServices/data/
-
-	execute the command -i and enter the packet name: 
-	
-	```
-	-i
-	enter the DpdlPacket to install:
-	dpdl_PHONEBOOK
-	```
-	
-
-
-3. allocate the DpdlPacket and the corresponding data chunk:
-
-	execute the command -a and enter the packet name and data chunk name to allocate:
-	
-	```
-	-a
-	enter the DpdlPacket to allocate ($dpdl_packet:$chunk_name:)
-	dpdl_PHONEBOOK:BolzanoPhone
-	```
-	
-	The DpdlPacket will be de-compressed and allocated ready to query. The 1st time a packet is allocated it takes 
-	some time, subsequent allocations are immediate
-
-	
-4. run the query console example script
-
-	execute the command -load and enter the query console example script:
-	
-	```
-	-load
-	enter the Dpdl script name to execute:
-	testDpdlDB2.h
-	```
-	
-	
-	The script allows to perform either a single query, or n sequential or random queries, and measures the execution
-	time for searching and accessing data:
-	
-		1) To perform a single query (press 'q')
-		
-		2) To execute sequential or random queries, for each of the data entries (press ENTER)
-		   and than enter '**armin**' as constraint base name, which is part of the key of each data entry:
-		   i.e. "armin 1, armin 2, ..."
-		   
-		   For random vs. sequential queries comment or uncomment the following line of code in the script
-		   -> i #abs(search_rand_int) 
-		
-
-## DpdlEngine configuration
-
-Dpdl provides the following configuration options for the DpdlEngine, through the 'DpdlEngine.ini' config file
-
-'DpdlEngine.ini' example:
-```
-[DpdlBase]
-MAX_SCRIPT_THREADS=3
-MAX_BTCLIENTS=1
-MAX_DATA_STRUCTURES=10
-MAX_GUI_DEFINITIONS=10
-MAX_RESULT_SET=100
-MAX_CONSTRAINTS=2
-MAX_VAR=50
-POINTERS=10
-MAX_MENU_ENTRIES=10
-MAX_MULTIPLE_DECOMP_STORES=4
-DPDL_STORAGE_PATH=./DpdlServices/data/
-DPDL_SCRIPT_REPOSITORY=./DpdlScripts/
-DPDL_LIBRARY_PATH=./DpdlLibs/
-IS_BTREE_CACHE_ACTIVE=true
-IS_PAGER_CACHE_ACTIVE=false
-PRELOAD_CACHE_PAGER=4096
-MAX_SPACE=32000000
-[DpdlConfig]
-EXEC_STARTUP_CODE=false
-DPDL_NATIVE_LIB=dpdlnativeapi
-[DpdlPath]
-DPDL_JAVA_LIB_PATH=./lib:./lib/ext
-[DpdlExtensions]
-mytestext=dpdl.dpdlDpdlEngine.extensions.MyTestDpdlExt
-[DpdlCustom]
-python=dpdlpython
-lua=dpdllua
-julia=dpdljulia
-root=dpdlroot
-test=dpdltest
-```
-Note: This file can be edited only in the registered version of Dpdl
+[Dpdl_API](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 	
 ## Performance Benchmarks
