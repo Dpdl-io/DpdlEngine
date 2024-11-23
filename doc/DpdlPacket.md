@@ -19,7 +19,7 @@ devices.
 Dpdl code can be embedded in the DpdlPacket code definition and allows to trigger its execution on predefined callbacks.
 This makes a DpdlPacket an executable packet of data.
 
-This is an example DpdlPacket code definition (a phonebook database):
+This is an example DpdlPacket code definition (a phonebook database), which is compiled to a DpdlPacket containing all definitions and all chunks of data in a highly compressed format:
 ```c++
 call(dpdlInterpreter)
 ::module dpdl_PHONEBOOK_BZ
