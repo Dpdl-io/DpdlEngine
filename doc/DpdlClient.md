@@ -12,6 +12,7 @@ developed by
 ## DpdlClient
 
 The 'DpdlClient' is a console application that allows to execute certain functionalities of Dpdl via a command line.
+The same functionalities can be accessed also programmatically via the Dpdl API.
 
 
 The following commands are currently available:
@@ -44,9 +45,6 @@ To execute a Dpdl code directly use the '-load' parameter at DpdlEngine startup:
 ```
 java -jar DpdlEngine_V1.0_release.jar -load yourScript.h
 ```
-
-NOTE: The newer release of Java (Java20) has introduced the concepts of 'modules'. A compliant 
-version of DpdlEngine will be released soon.
 
 If you need to run the DpdlClient on the latest version of Java, use the following command and add the modules you want to access via Dpdl code:
 
@@ -101,7 +99,14 @@ run_DpdlClientScript.sh
 ```
 
 4) using the Dpdl API
+
 ```
-int status = DPDLAPI_execCode("sample.h", "null)
+int status = DPDLAPI_execCode("sample.h", null)
+```
+
+Or a subscripts
+
+```
+int status = DPDLAPI_execScript("println(\"Hello from Dpdl\")", null)
 ```
 

@@ -363,7 +363,7 @@ Dpdl allows to define and use **`class`** objects. This type definition is simil
 
 * Class objects can contain function definitions
 
-* Class objects can be entirely compiled into java bytecode (in development), and therefore can be passed to java methods.
+* Class objects can be in part compiled into java bytecode, and therefore can be passed to java methods.
 
 **Example:**
 ```python
@@ -545,7 +545,7 @@ enum myStatus {
 enum myStatus status
 println("init status: " + status.RUNNING)
 println("done status: " + status.DONE)
-println("enum values can also be accessed directly: " + DONE)
+println("enum values can also be accessed directly as in C: " + DONE)
 ```
 
 Note: Currently the comma separated tags and values need to be defined on different lines than the starting 'enum var {' definition (this will be fixed in the next release)
