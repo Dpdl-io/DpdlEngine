@@ -1,4 +1,4 @@
-# DpdlAINerd (DAN) AI language plug-in
+# DpdlAINerd (DAN) AI Dpdl language plug-in
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
