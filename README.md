@@ -927,7 +927,7 @@ All kind of data can be packed into a DpdlPacket.
 
 **Example DpdlPacket definition source file:**
 
-[dpdl_PHONEBOOK.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlPackets/dpdl_PHONEBOOK_BZ.c) 
+[dpdl_PHONEBOOK.dpdlpkt](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlPackets/dpdl_PHONEBOOK_BZ.dpdlpkt) 
 
 The 'DpdlEngine lite' release package includes an encoded DpdlPacket (dpdl_PHONEBOOK.dpdl) and the corresponding Dpdl code definition file used to encode the DpdlPacket.
 
