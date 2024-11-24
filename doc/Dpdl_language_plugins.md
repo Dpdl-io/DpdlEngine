@@ -28,6 +28,7 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 * **`Embedded C`** (minimal subset of C90)
 * **`ANSI C`** (ANSI C99)
 * **`Python`**
+* **`MicroPython`**
 * **`Julia`**
 * **`JavaScript`**
 * **`OCaml`**
