@@ -28,7 +28,7 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 * **`Embedded C`** (minimal subset of C90)
 * **`ANSI C`** (ANSI C99)
 * **`Python`**
-* **`MicroPython`**
+* **`MicroPython`** (for embedded systems)
 * **`Julia`**
 * **`JavaScript`**
 * **`OCaml`**
@@ -51,12 +51,12 @@ Dpdl language plug-ins can be developed and integrated via defined interfaces an
 
 ### Embedded programming languages - compatibility matrix
 
-| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|
+| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01| v1.24.0 |
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01| v1.24.0 |
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01| v1.24.0 |
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|X|
 
 
 Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
@@ -361,6 +361,46 @@ Currently the 'DpdlEngine lite' release includes the native Dpdl Python library 
 * on **MacOS:** Python version 3.12 (clang version 14.0.3)
 * on **Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
 * <ins>Windows version will follow soon</ins> in the coming release
+
+
+### Embedding MicroPython
+
+MicroPython is an efficient implementation of the Python 3 programming language that is optimised to run on microcontrollers and in constrained environments.
+
+MicroPython can be embedded directly within Dpdl via the following keyword.
+
+#### keyword **`>>mpython`**
+
+```mpython
+println("testing embedded micropython code...")
+
+>>mpython
+for i in range(10000):
+	print('iter {:08}'.format(i))
+
+try:
+	1/0
+except Exception as er:
+	print('caught exception', repr(er))
+
+address_book = {'Costa A.':'2604 Crosswind Drive','Alexis B.':'1301 Hillview Drive','Billy I.':'3236 Goldleaf Lane'}
+
+print("'ACosta' address: " + address_book['Costa A.'])
+
+import gc
+print('run GC collect')
+gc.collect()
+
+print('finish')
+
+<<
+int exit_code = dpdl_exit_code()
+
+println("exit code: " + exit_code)
+```
+
+On Linux x86_64 for example the Dpdl language plug-in library 'libdpdlmicropython.so' is just about **`194kb`**
+
 
 ### Embedding Julia
 
@@ -927,6 +967,7 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 
 - c -> https://bellard.org/tcc/tcc-doc.html
 - python -> https://www.python.org/
+- mpython -> https://micropython.org/
 - julia -> https://julialang.org/
 - javascript -> ECMAScript (Oracle nashorn) for '>>js' && QuickJS (https://bellard.org/quickjs/quickjs.html) for '>>qjs' 
 - lua -> https://www.lua.org/
