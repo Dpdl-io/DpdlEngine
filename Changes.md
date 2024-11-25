@@ -9,6 +9,8 @@ developed by
 
 ## New features
 
+* Dpdl language plug-in for 'MicroPython' is now available
+
 * NEW Asynchronous Tasks can now be executed via the keyword **`>>task`** containing embedded Dpdl code sections 
 
 * Dpdl now supports also the type 'class'

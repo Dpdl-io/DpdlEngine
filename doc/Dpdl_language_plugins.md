@@ -402,6 +402,18 @@ println("exit code: " + exit_code)
 On Linux x86_64 for example the Dpdl language plug-in library 'libdpdlmicropython.so' is just about **`194 kb`**
 
 
+##### MicroPython libraries
+
+The python libraries usable using 'MicroPython' within the Dpdl language plug-in are available on the official MicroPython GitHub repository:
+
+[micropython-lib](https://github.com/micropython/micropython-lib)
+
+**Documentation:**
+
+https://docs.micropython.org/en/latest/library/index.html
+
+
+
 ### Embedding Julia
 
 Julia is a powerful high performance computing programming language with many scientific library packages.

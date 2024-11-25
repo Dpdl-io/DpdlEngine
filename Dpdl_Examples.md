@@ -71,6 +71,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[dpdlFullExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFullExample.h)
 	
+* Example Dpdl script that shows how <ins>MicroPython</ins> code can be embedded and executed within Dpdl. MicroPython is suitable for embedded systems.
+
+	[micropython/dpdlMicroPythonTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/micropython/dpdlMicroPythonTest.h)
+	
 * Example Dpdl script executes an embedded 'clojure' code that creates a simple UI to convert values from Celsius to Fahrenheit
 
 	[clj/dpdlCljCelsiusConverterGUI.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/clj/dpdlCljCelsiusConverterGUI.h)
