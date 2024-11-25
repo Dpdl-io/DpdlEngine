@@ -371,7 +371,7 @@ MicroPython can be embedded directly within Dpdl via the following keyword.
 
 #### keyword **`>>mpython`**
 
-```mpython
+```python
 println("testing embedded micropython code...")
 
 >>mpython
