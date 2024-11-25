@@ -399,7 +399,7 @@ int exit_code = dpdl_exit_code()
 println("exit code: " + exit_code)
 ```
 
-On Linux x86_64 for example the Dpdl language plug-in library 'libdpdlmicropython.so' is just about **`194kb`**
+On Linux x86_64 for example the Dpdl language plug-in library 'libdpdlmicropython.so' is just about **`194 kb`**
 
 
 ### Embedding Julia
