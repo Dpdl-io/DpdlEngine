@@ -1,7 +1,7 @@
 # File: ui/dpdlGUIJavaFX_web.h
 #
 # Example: Dpdl app that uses JavaFX library to display a website within a WebView
-#			FXML file: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/fxml/myGUIreg.fxml
+#
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -43,5 +43,6 @@ object style = root.getStyleClass()
 style.add("browser")
 
 println("starting App....")
+
 object app = loadObj("DpdlJavaFXApp")
 app.initApp()
