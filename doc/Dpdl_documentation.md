@@ -11,9 +11,9 @@ developed by
 
 ## Dpdl language specification
 
-Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins>, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>compact footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
+Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins>, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
 
-Additionally Dpdl allows to embed and execute code of other programming languages directly within Dpdl. Embedded programming language code is executed in form of plug-ins (Dpdl language plug-ins) distributed with the DpdlEngine release package (no additional installations required)
+Additionally, Dpdl allows to execute code of other programming languages directly embedded within Dpdl. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (no further installations required)
 
 ### Features:
 
@@ -27,12 +27,13 @@ Additionally Dpdl allows to embed and execute code of other programming language
 * Access to Native shared libraries with simple approach
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
-* **Multiple embeddable programming languages supported:** ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
+* **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
 * Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Multi-line structured text, data and code resources
 * Asynchronous Task execution
 * Static script execution: static code declarations (*.h_static)
+* Dpdl can be embedded and called from C programs
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
 

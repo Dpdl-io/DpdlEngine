@@ -10,8 +10,7 @@ developed by
 &copy; 2003
 
 
-'DpdlEngine lite' V1.0 is available as Free Trial Shareware, with some limitations/restrictions (see [Download.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Download.md) doc),
-under the license agreement included in this distribution (see LICENSE.txt).
+'DpdlEngine lite' V1.0 is available as Free Trial Shareware, with some limitations/restrictions (see [Download.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Download.md) doc), under the license agreement included in this distribution (see LICENSE.txt).
 
 The full registered version of DpdlEngine can be requested via the order request form:
 [ORDER Full Version](https://www.dpdl.io/index_order.html)
@@ -26,12 +25,12 @@ The DpdlEngine documentation is located in the 'doc' folder, OR ideally more up 
 As DpdlEngine is in a fast development cycle and new features and fixes may be available from time to time (see [Changes.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Changes.md) doc)
 
 By filing the following form you'll get a permanent download link.
-[Direct DOWNLOAD request link](https://www.dpdl.io/download_request.htm)
+[DOWNLOAD request link](https://www.dpdl.io/download_request.htm)
 
 
 ### Important notice: 
 
-It's important to verify the integrity of the 'DpdlEngine lite' release zip file you downloaded or received the package () via third parties:
+It's important to verify the integrity of the 'DpdlEngine lite' release zip file you downloaded or received the package via third parties:
 
 The distributed package (DpdlEngine_V1.0_release.zip) <ins>**MUST**</ins> in any case match the <ins>SHA(256) checksum</ins> as reported on this site: 
 					
@@ -40,7 +39,7 @@ The distributed package (DpdlEngine_V1.0_release.zip) <ins>**MUST**</ins> in any
 
 ## System requirements
 
-Although Dpdl is compatible also with previews versions of Java and virtual machines, this release of 'DpdlEngine lite' requires a 
+Although Dpdl is compatible also with previews versions of Java and virtual machines, the Demo release of 'DpdlEngine lite' requires a 
 compatible Java Virtual Machine (JRE) version  >= 'Java 17'  to run.
 
 If your requirements are to run 'DpdlEngine lite' on an older version of java JRE, just drop an e-mail to: info@dpdl.io 
@@ -81,12 +80,12 @@ NOTE: On Windows OS use the appropriate 'javafx' startup script to run DpdlEngin
 
 (*) **available soon**
 
-| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|
+| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01| v1.24.0 |
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01| v1.24.0 |
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01| v1.24.0 |
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|X|
 
 
 Note: The Free trial shareware version of 'DpdlEngine lite' includes a subset of the Dpdl language plug-ins (see 'DpdlEngine.ini' section [DpdlCustom]) .

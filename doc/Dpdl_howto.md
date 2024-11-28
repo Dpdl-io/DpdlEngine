@@ -422,6 +422,52 @@ println("status exec: " + status_exec)
 
 ```
 
+### Embedding Dpdl in C code
+
+Dpdl can be conveniently embedded and executed also in C code.
+
+**Example:** executing a Dpdl source file
+```c
+#include <stdio.h>
+#include "dpdl.h"
+
+int main(int argc, char **argv){
+	printf("executing Dpdl from C...\n");
+
+	char *dpdl_src_file = "test/testString.h";
+
+	int ret = dpdl_exec_script(dpdl_src_file);
+
+	printf("ret: %d\n", ret);
+
+	return 0;
+}
+```
+
+
+**Example:** executing plain Dpdl code
+```c
+#include <stdio.h>
+#include "dpdl.h"
+
+char *dpdl_src_code =  "int c = 0	\n"
+		  	"for(c < 1000)	\n"
+				"println(\"This is Dpdl from C=\" + c)	\n"
+				"c=c+1\n	\n"
+			"endfor	\n";
+
+int main(int argc, char **argv){
+	printf("executing Dpdl code from C...\n");
+
+	int ret = dpdl_exec_code(dpdl_src_code);
+
+	printf("ret: %d\n", ret);
+
+	return 0;
+}
+```
+
+
 
 ## Dpdl data
 

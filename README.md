@@ -76,7 +76,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of java platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. Jam, miniJVM, and others).
+* **DpdlEngine is optimized to run on a wide range of java platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
 * **Multiple Dpdl language plug-ins available (embeddable programming languages):** ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure **programming languages can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **No additional installations required** (except add-on libraries)
