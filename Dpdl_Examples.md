@@ -43,10 +43,14 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	
 	[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
 	
-* Embedded C code execution within Dpdl script (interpreted Mode 1)
+* Example with embedded C code execution within Dpdl (interpreted Mode 1)
 	
 	[C/dpdlSample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlSampleC.h)
 
+* Example with embedded C code execution within Dpdl that is compiled in memory at runtime (compiled Mode 1)
+	
+	[C/dpdlCcompile.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompile.h)
+	
 * Example Dpdl code that uses vec(...), map(...), list(...) and stack(...) data functions
 
 	[test/testDataFuncTypes.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testDataFuncTypes.h)
