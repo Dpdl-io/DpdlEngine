@@ -70,7 +70,7 @@ are integrated by default and third party libraries and protocols can be added a
 
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to automatically generate and embed executable code and content or data</ins> by natural language descriptions contained inside Dpdl code.
 
-Dpdl is not intended to replace, but to enable integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
+Dpdl enables integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
 
 
 
@@ -83,7 +83,7 @@ Dpdl is not intended to replace, but to enable integration of different technolo
 * **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time!!!</ins>
 * **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
-* **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features
+* **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features at runtime
 * **Dpdl C API enables to execute Dpdl code embedded within programs written in C** 
 * **On the fly conversion/compilation of Dpdl data struct's into native java bytecode classes**
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
@@ -350,7 +350,7 @@ Or full featured Applications written with Dpdl in the following repository:
 
 ## Why Dpdl?
 
-Dpdl is suitable for <ins>rapid application development</ins> in various domains and can be used as embedded scripting engine for various applications, in particular also for development of small applications on <ins>small memory footprint devices</ins>.
+Dpdl is suitable for <ins>rapid application development</ins> in various domains and can be used as embedded scripting engine for various applications, in particular also for development of applications on <ins>small memory footprint devices</ins>.
 
 The main nature of Dpdl is for enabling rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
@@ -377,7 +377,7 @@ The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up 
 ## Access to the complete Java platform JRE API's and external java libraries
 
 
-The Dpdl API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and <ins>external java libraries</ins>.
+The Dpdl API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and of any <ins>external java library</ins>.
 
 **Example:** using a java HashMap (which interfaces to java.util.HashMap)
 ```python
@@ -465,7 +465,7 @@ println("embedded java exit code: " + exit_code)
 
 Multiple programming languages can be embedded and executed within the same **Dpdl** code via the keyword **`>>`**.
 
-Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration.
+Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration if form of **Dpdl language plug-ins**.
 
 This enables basically every sort of programming language or natural language interpreter to be embedded directly in Dpdl code.
 
@@ -476,6 +476,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`C interpreted`** code (minimal subset of C90 with standard C libs included)
 * **`ANSI C`**  (almost full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **`Python`**
+* **`MicroPython`** (for embedded systems)
 * **`Julia`**
 * **`JavaScript`**
 * **`Lua`**
@@ -629,12 +630,12 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 (*) **available soon**
 
-| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|
+| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01| v1.24.0 |
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01| v1.24.0 |
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01| v1.24.0 |
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|X|
 
 
 ### Add-on Dpdl language plug-ins - compatibility matrix
@@ -665,6 +666,10 @@ The Dpdl framework and API documentation is available via the following links:
 [Dpdl Wasm Runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
 [DpdlAINerd (DAN)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
+[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
+
+[DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
 
 [Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 

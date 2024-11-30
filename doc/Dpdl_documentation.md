@@ -33,7 +33,7 @@ Additionally, Dpdl allows to execute code of other programming languages directl
 * Multi-line structured text, data and code resources
 * Asynchronous Task execution
 * Static script execution: static code declarations (*.h_static)
-* Dpdl can be embedded and called from C programs
+* Dpdl can be embedded within C code
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
 
@@ -605,7 +605,7 @@ This feature will be further developed.
 	
 ### Function return type
 
-By default functions can return any possible variable type, or none.
+Specifying a return type in a function definition <ins>is optional</ins>. By default functions can return any possible variable type, or none.
 
 To improve code readability and enforce a further check on the function return type, it's possible to specify a
 specific return type in the function definition via return type specifiers **`func myfunc() $type`**.
@@ -1265,9 +1265,9 @@ Note: The keyword has to be on a single line
 
 Embedded C code can be executed in 2 different Modes:
 
-1) Interpreted C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library <ins>standard headers already included</ins> (**default mode**)
+1) **Interpreted** C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library <ins>standard headers already included</ins> (**default mode**)
 
-2) Compiled (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution. Searches default locations for lib path and include path. Further paths to standard C headers and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:compile**'
+2) **Compiled** (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution. Searches default locations for lib path and include path. Further paths to standard C headers and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:compile**'
 
 #### Mode 1 (interpreted)
 
