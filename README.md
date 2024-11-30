@@ -113,10 +113,10 @@ Further, Dpdl can be used to encode, store, control and query data efficiently a
 ### Small Memory footprint:
 
 * **DpdlEngine core** (<ins>**Minimal**</ins> configuration) **`80 Kb`**
-* **DpdlEngine ** (<ins>**Full**</ins> configuration) **`372 Kb`**
+* **DpdlEngine** (<ins>**Full**</ins> configuration) **`372 Kb`**
 * **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
 
-* **Total size** of DpdlEngine (Dpdl Full + C compiler/interpreter) = **`650 Kb`**
+* **Total size** of DpdlEngine (**Dpdl Full with C compiler/interpreter**) = **`650 Kb`**
  
 The size of the DpdlEngine core can be stripped down even further by excluding certain functionalities.
 
