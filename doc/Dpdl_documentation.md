@@ -69,7 +69,17 @@ struct myStruct a
 enum myenum e
 ```
 
-Note: numbers must have the following suffix: doubles with '**d**', long with '**L**' and short end with '**s**'
+#### Number Types
+
+The following number types must have the following suffix: 
+
+- **doubles** with **`d`**
+- **long** with **`L`**
+- **short** end with **`s`**
+
+#### 'null' values
+
+The value **`null`** can be assigned to any type.
 
 
 ### Function and Control flow
