@@ -608,7 +608,7 @@ for the target platform.
 * Java ME Embedded Profile (JSR 361)
 * Java versions >= 1.4 and later
 * Java 1.1 - 1.3 (without 'loadObj' and 'getObj' methods)
-* All Platforms where the included Open Source virtual machine 'miniJVM' can be compiled
+* All Platforms where the Open Source virtual machines 'JamVM' and 'miniJVM' can be compiled
 
 DpdlEngine V1.0 has been tested on:
 
