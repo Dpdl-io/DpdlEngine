@@ -81,7 +81,7 @@ Dpdl enables integration of different technologies seamlessly to leverage fast p
 * **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure **programming languages can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **No additional installations required** (except add-on libraries)
 * **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
-* **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very fast compile time!!!</ins>
+* **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very Fast compile time!!!</ins>
 * **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
 * **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features at runtime
 * **Dpdl C API enables to execute Dpdl code embedded within programs written in C** 
@@ -461,7 +461,7 @@ println("embedded java exit code: " + exit_code)
 
 ```
 
-## Dpdl embeddable programming languages
+## Dpdl embeddable programming languages (**Dpdl language plug-ins**)
 
 Multiple programming languages can be embedded and executed within the same **Dpdl** code via the keyword **`>>`**.
 
@@ -474,9 +474,9 @@ This features is very useful for rapid development and rapid prototyping and is 
 ### Currently the following programming languages can be embedded within Dpdl:
 
 * **`C interpreted`** code (minimal subset of C90 with standard C libs included)
-* **`ANSI C`**  (almost full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
+* **`C compiled`** code (almost full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **`Python`**
-* **`MicroPython`** (for embedded systems)
+* **`MicroPython`** (ideal for embedded systems)
 * **`Julia`**
 * **`JavaScript`**
 * **`Lua`**
@@ -588,7 +588,7 @@ Other programming languages or natural language interpreters can be easily integ
 'Discussion' section on the DpdlEngine GitHub repository
 
 
-## AI generative code with 'DpdlAINerd' (DAN) Dpdl language plug-in
+## AI generative code with '**DpdlAINerd**' (**DAN**) Dpdl language plug-in
 
 The Dpdl language plug-in 'DpdlAINerd' (DAN) allows to generate and embed code via popular AI engine (eg. OpenAI, Google Vertex AI, CodePal etc..)
 
@@ -607,7 +607,7 @@ for the target platform.
 * Java ME CLDC & GCF (JSR 360)
 * Java ME Embedded Profile (JSR 361)
 * Java versions >= 1.4 and later
-* Java > 1.1 (but without 'loadObj' and 'getObj' methods)
+* Java 1.1 - 1.3 (without 'loadObj' and 'getObj' methods)
 * All Platforms where the included Open Source virtual machine 'miniJVM' can be compiled
 
 DpdlEngine V1.0 has been tested on:
