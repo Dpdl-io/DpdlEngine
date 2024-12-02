@@ -77,6 +77,11 @@ The following number types must have the following suffix:
 - **long** with **`L`**
 - **short** end with **`s`**
 
+eg. 
+```c
+short mys = 10s
+```
+
 #### 'null' values
 
 The value **`null`** can be assigned to any type.
@@ -238,54 +243,6 @@ result is 3.0
 
 Note: Currently only one in-line expression definition '${ ... }' is allowed inside a given string. Coming releases will support multiple expression in-linings within a given string. 
 
-
-### Multi-line structured text, data and code resources
-
-By using the **`>>res(...)`** keyword it's possible to embed multi-line structured text, data or code resources and retrieve and access them as an object.
-
-The resources are stacked on the dpdl stack and can be accessed by 'id' or by 'name' at any execution point.
-
-Stack variables available on the current execution stack can be referenced via place-holders in the resource that are than compiled into the returned object at every invocation.
-
-This approach provides a flexible and readable way to handle different kind of resources like structured text, data and code.
-
-
-**Example:**
-```python
-println("testing access to embedded multi-line resources...")
-
-dpdl_stack_var_put("msg", "Hello World")
->>res(my_html)
-<html>
-<body>
-<p>{{msg}} from Dpdl</p>
-</body>
-</html>
-<<
-
-object resid = dpdl_res_pop_id()
-
-println("resource id: " + resid)
-
-object myhtml = dpdl_res_obj_get(resid)
-
-println("myhtml: ")
-
-println(myhtml)
-
-# same, but via res name
-object myhtml2 = dpdl_res_obj_get("my_html")
-
-println(myhtml2)
-
-# we can change the stack variable 'msg', which is than also updated in the returned resource object
-dpdl_stack_var_put("msg", "Hello World again!!!")
-
-object myhtml3 = dpdl_res_obj_get("my_html")
-
-println(myhtml3)
-
-```
 
 ### Arrays
 
@@ -648,6 +605,54 @@ println("yv: " + yv)
 testFuncVoid()
 ```
 
+### Multi-line structured text, data and code resources
+
+By using the **`>>res(...)`** keyword it's possible to embed multi-line structured text, data or code resources and retrieve and access them as an object.
+
+The resources are stacked on the dpdl stack and can be accessed by 'id' or by 'name' at any execution point.
+
+Stack variables available on the current execution stack can be referenced via place-holders in the resource that are than compiled into the returned object at every invocation.
+
+This approach provides a flexible and readable way to handle different kind of resources like structured text, data and code.
+
+
+**Example:**
+```python
+println("testing access to embedded multi-line resources...")
+
+dpdl_stack_var_put("msg", "Hello World")
+>>res(my_html)
+<html>
+<body>
+<p>{{msg}} from Dpdl</p>
+</body>
+</html>
+<<
+
+object resid = dpdl_res_pop_id()
+
+println("resource id: " + resid)
+
+object myhtml = dpdl_res_obj_get(resid)
+
+println("myhtml: ")
+
+println(myhtml)
+
+# same, but via res name
+object myhtml2 = dpdl_res_obj_get("my_html")
+
+println(myhtml2)
+
+# we can change the stack variable 'msg', which is than also updated in the returned resource object
+dpdl_stack_var_put("msg", "Hello World again!!!")
+
+object myhtml3 = dpdl_res_obj_get("my_html")
+
+println(myhtml3)
+
+```
+
 ### Dpdl Threads
 
 Threads can be created inside Dpdl with the **`Thread(..)`** api function.
@@ -710,7 +715,7 @@ The Dpdl Rutime can be configured to automatically run the garbage collector 'gc
 See **`GC_THREAD_EXEC`** parameter in 'DpdlEngine.ini'. The value '-1' invalidates this feature.
 
 	
-### DpdlObject's and Java bindings
+### DpdlObjects and access to JRE classes
 
 Dpdl can access the underlying classes of a given java compliant JRE implementation or any other external java library.
 
@@ -1671,7 +1676,7 @@ int main(int argc, char **argv){
 - Currently dpdl arrays only have one dimension. But creating an array of arrays is possible.
 
 
-## Considerations
+## Some considerations
 
 ### Dynamic function allocations
 
@@ -1689,7 +1694,6 @@ int s = my_non_existing_func()
 
 println("s: " + s)
 ```
-
 
 
 ## Small 'dummy' Dpdl sample app
