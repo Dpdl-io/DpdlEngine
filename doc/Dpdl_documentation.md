@@ -77,7 +77,8 @@ The following number types must have the following suffix:
 - **long** with **`L`**
 - **short** end with **`s`**
 
-**example:** 
+**example:**
+
 ```java
 short mys = 10s
 ```
