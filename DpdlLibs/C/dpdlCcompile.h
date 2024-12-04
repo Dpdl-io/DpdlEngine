@@ -10,7 +10,7 @@
 # main
 println("Dpdl embedded C with compile option and buffer return...")
 
-dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C/include", "dpdl:-F./DpdlLibs/C/lib/mydpdlc.c", "dpdl:-F./DpdlLibs/test/lib/mymodule.c")
+dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C/include", "dpdl:-F./DpdlLibs/C/lib/mydpdlc.c", "dpdl:-F./DpdlLibs/C/lib/mymodule.c")
 >>c
 	#include <stdio.h>
 	#include <time.h>
@@ -20,7 +20,7 @@ dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C/include
 
 	extern void dpdl_stack_buf_put(char *buf);
 
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("testC native...\n");
 		printf("\n");
 		dpdl_foo();

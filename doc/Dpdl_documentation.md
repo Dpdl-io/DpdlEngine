@@ -141,26 +141,50 @@ endfor
 
 ### Operators
 
-**Arithmetic:** 
+#### Arithmetic: 
 	
-* **`+`** (addition)
-* **`-`** (subtraction)
-* **`*`** (multiplication)
-* **`/`** (division)
-* **`^`** (power)
-* **`%`** (modulo)
-* **`-`** (negate a value eg. -x)
+* **`+`** (Addition)
+* **`-`** (Subtraction)
+* **`*`** (Multiplication)
+* **`/`** (Division)
+* **`%`** (Modulo)
+* **`-`** (Negate a value eg. -x)
 	
 Note: for multiplication (*) it's necessary to have blank spaces between the numbers and operator (eg. 1 * 2). 
 		This is currently not allowed '1\*2' but will be in future
 	
-**Logical:**
+#### Logical:
 
-* **`&&`** (and)
-* **`||`** (or)
-* **`!`** (not)
-	
-**Comparators:**
+* **`&&`** (AND)
+* **`||`** (OR)
+* **`!`** (NOT)
+
+
+#### Bitwise:
+
+* **`&`** (AND)
+* **`|`** (OR)
+* **`^`** (XOR)
+* **`<<`** (SHIFT Left)
+* **`>>`** (SHIFT Right)
+* **`>>>`** (Unsigned SHIFT Right)
+
+In case of Bitwise logical operators, the operands need to be of same type. To prevent loss of precision the result might be promoted to 'int' in some cases, so the receiving type needs to be 'int' as well.
+
+The following types are supported:
+- Byte (promoted to int)
+- Short (promoted to int)
+- Integer (int)
+- Long (long)
+
+**example:**
+```python
+byte inb = 0x06
+int res = inb << 0x01
+```
+
+
+#### Comparators:
 
 * **`>`** (greater than)
 * **`<`** (less than)
