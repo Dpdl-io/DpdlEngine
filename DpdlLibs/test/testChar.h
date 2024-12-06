@@ -66,7 +66,7 @@ d.print()
 d.append('z')
 
 char mc = 'p'
-arr[] = ["mega", 1, 0.1, 0x03, mc]
+arr[] = ["mega", 1, 0.1, 0x03B, mc]
 println("arr: " + arr)
 println("arr[4]: " + arr[4])
 

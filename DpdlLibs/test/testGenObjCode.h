@@ -18,7 +18,7 @@ struct A {
 	float myf = 1.9
 	long myl = 10000000L
 	short mys = 100s
-	byte myb = 0x01
+	byte myb = 0x01B
 	char mych = 'A'
 	bool mybool = true
 	object myobj = null

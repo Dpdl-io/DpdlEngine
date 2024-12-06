@@ -53,7 +53,7 @@ struct myStruct {
 	double d = 0.3d
 	long l = 1000L
 	short sh = 10s
-	byte b = 0x01
+	byte b = 0x01B
 	bool bo = true
 	string s = "Test my code"
 	var v = "a generic var type, dispatched at runtime"
@@ -145,7 +145,7 @@ myarr[] = [1, 2, 3, 4 , 5, 6]
 myarr_mix[] = [1, 0.1, 23.0d, 1000L, "mega"]
 
 myarr2[] = "1, 2, 3, 4 , 5, 6"
-myarr_mix2[] = "1, 0.1, 23.0d, 0x01, 1000L, mega"
+myarr_mix2[] = "1, 0.1, 23.0d, 0x01B, 1000L, mega"
 
 println("myarr: " + myarr)
 println("myarr_mix: " + myarr_mix)
@@ -186,7 +186,7 @@ float f = 0.1
 double d = 0.2d
 long l = 1000000L
 short sh = 10s
-byte c = 0x02
+byte c = 0x02B
 char ch = 'a'
 object stro = "a Test str"
 

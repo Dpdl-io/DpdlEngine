@@ -115,7 +115,7 @@ println("value 'a' is at index: " + idx)
 println("------------------------------------------------------------------")
 println("testing arr(...)")
 
-object myarr = arr("a", 1, 0.1, 1000.3d, 100000L, 100s, 0x03)
+object myarr = arr("a", 1, 0.1, 1000.3d, 100000L, 100s, 0x03B)
 
 println("myarr is of size: " + myarr.size() + " contents: " + myarr)
 

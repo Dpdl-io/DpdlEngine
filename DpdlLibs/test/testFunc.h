@@ -57,7 +57,7 @@ int i = 1
 float f = 0.1
 double d = 1.0d
 long l = 10L
-byte b = 0x01
+byte b = 0x01B
 bool bo = true
 var v = "This is a var"
 object strobj = loadObj("String", "my string obj")
@@ -69,7 +69,7 @@ myFunc(s, v, i, f, d, l, b, bo, strobj, a)
 
 println("direct parameters myFunc(..)...")
 
-myFunc("test2", "This is a var2", 1, 0.1, 1.0d, 10L, 0x01, true, strobj, a)
+myFunc("test2", "This is a var2", 1, 0.1, 1.0d, 10L, 0x01B, true, strobj, a)
 
 println("testing pointers...")
 

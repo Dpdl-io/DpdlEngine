@@ -55,7 +55,7 @@ size.setValue(4096L)
 long size_l = size.longValue()
 
 object memory = clib.malloc(4096)
-memory.setMemory(0L, 4096L, 0x00)
+memory.setMemory(0L, 4096L, 0x00B)
 
 println("memory: " + typeof(memory))
 
@@ -84,7 +84,7 @@ println("reading from file...")
 
 fh = clib.open("./Test/TestWriteNative.txt", fcntl.O_RDONLY)
 
-memory.setMemory(0L, 4096L, 0x00)
+memory.setMemory(0L, 4096L, 0x00B)
 
 object szr = clib.read(fh, memory, size)
 

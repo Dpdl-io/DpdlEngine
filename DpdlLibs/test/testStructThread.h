@@ -12,7 +12,7 @@ struct myStruct {
 	float f = 0.1
 	double d = 0.3d
 	long l = 1000L
-	byte b = 0x01
+	byte b = 0x01B
 	string s = "Test"
 	arr[] = "1, 2, 3, 4, 5"
 }

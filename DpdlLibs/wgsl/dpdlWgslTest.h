@@ -45,10 +45,10 @@ int idx_kernel = 1
 println("allocating input buffer...")
 
 object input_arr = libc.malloc(DATA_SIZE * byte_cnt)
-input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00)
+input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 object output_arr = libc.malloc(DATA_SIZE * byte_cnt)
-input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00)
+input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 println("populating input data...")
 

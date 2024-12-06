@@ -52,7 +52,7 @@ testProc()
 
 println("----------------------------")
 
-testarr2[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
+testarr2[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
 println("testarr2: " + testarr2)
 
 object arrobj2 = testarr2.getArrObj()

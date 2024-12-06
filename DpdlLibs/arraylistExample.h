@@ -25,12 +25,12 @@ while(x < arr_list.size())
    println("val: " + x)
 endwhile
 
-arr2[] = "1 1.0 0x01 test"
+arr2[] = "1 1.0 0x01B test"
 println("arr: " + arr2)
 object b = arr2[2]
 println("b: " + b.toString())
 
-arr3[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
+arr3[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
 println("arr3: " + arr3)
 float f3 = arr3[1] + arr3[2]
 println("f3: " + f3)
