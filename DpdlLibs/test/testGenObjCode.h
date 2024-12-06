@@ -29,7 +29,7 @@ struct A {
 
 		int myi = 0;
 		for(int i = 0; i < 10000000; i++){
-			//System.out.println("iter: " + i + " val: " + (val+i));
+			System.out.println("iter: " + i + " val: " + (val+i));
 			myi=i;
 		}
 		val=myi;
