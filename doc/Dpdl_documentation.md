@@ -49,7 +49,8 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 
 ### Types
 
-Dpdl support the following type definitions:
+Dpdl support the following Type definitions:
+
 ```c++
 int i = 1
 short s = 10s
@@ -69,23 +70,72 @@ struct myStruct a
 enum myenum e
 ```
 
-#### Number Types
+#### Numbers
 
-The following number types must have the following suffix: 
+Dpdl supports the number types **`int`** **`foat`** **`double`** **`long`** **`short`** **`byte`**
+  
+In some cases Dpdl uses suffixes for the representation of numbers to differentiate the type of number.
 
-- **doubles** with **`d`**
-- **long** with **`L`**
-- **short** end with **`s`**
+##### Suffixes:
 
-**example:**
+**int** -> no suffix
+**float** -> no suffix
+**double** -> **`d`**
+**long** -> **`L`**
+**short** -> **`s`**
+**byte** -> **`B`**
 
-```java
+**example: (value 10)**
+
+```c++
 short mys = 10s
+byte myb = 10B
+```
+
+###### Format (Hexadecimal)
+
+The number types **`int`**, **`long`** and **`byte`** can be represented also in <ins>Hexadecimal format</ins>, having either lower-case of upper-case letters (eg. 0x1627F **OR** 0x1627f)
+
+ **example:** int value 90751
+ 
+```c++
+int i = 0x1627F
+# or
+int i = 0x1627f
+```
+
+ **example:** byte value 1
+ 
+```c++
+byte b = 0x01B
+```
+
+ **example: (long)**
+ 
+```c++
+long l = 0x14269cae3c1ae6243L
 ```
 
 #### 'null' values
 
-The value **`null`** can be assigned to any type.
+The value **`null`** can be assigned to any type
+
+**Eg.**
+
+```c
+string tmps = null
+float tmpf = null
+```
+
+The types **`string`**, **`var`** and **`object`**, in case of a variable declaration <ins>without assignment</ins>, retain the value **`null`** 
+
+**Example:**
+
+```c
+string tmps
+var tmpv
+object tmpo
+```
 
 
 ### Function and Control flow
@@ -97,12 +147,12 @@ func myFunction(string param, object param....)
 end
 ```
 
-**`function`** definition with return type
+**`function`** definition <ins> with **return** type</ins>
 
 Specifying the return type of a function **<ins>is optional</ins>**, it enforces a further check on the execution and improves code readability
 
 ```python
-func myFunction(object param....) return int
+func myFunction(object param....) int
 
 end
 ```
@@ -348,11 +398,11 @@ endwhile
 
 ### Class
 
-Dpdl allows to define and use **`class`** objects. This type definition is similar to the class type found in C++ or Java.
+Dpdl allows to define and use **`class`** type objects. This type definition is similar to the class type found in C++ or Java and others.
 
 * Class objects can contains all variable types
 
-* Class objects can define a constructor that is called upon initialization
+* Class objects can define a constructor with variable number of parameters that is called upon class initialization
 
 * Class objects can contain function definitions
 
@@ -362,23 +412,29 @@ Dpdl allows to define and use **`class`** objects. This type definition is simil
 ```python
 class A {
 	int id = 1
-	string s = "A"
+	string str
+	object data = null
 
 	struct myStruct data
 
-	func A(int x)
-		id = x
+	func A(int id_, string str_, object data_)
+		id = id_
+		str = str_
+		data = data_
 	end
 
 	func printit()
-		println("an A class function with id: " + id)
+		println("an A class with with id: " + id)
+		println("str: " + str)
 		println("data: " + data)
 	end
 
 }
 
+object so = loadObj("String", "my data...")
+
 # instance with constructor
-class A mya(1)
+class A mya(23, "this is a Test", so)
 
 mya.printit()
 
@@ -400,6 +456,8 @@ Dpdl supports the type **`struct`**, with the following definitions:
 * Variable shadowing is enabled
 
 * Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct' function changes the variable <ins>only during the function scope</ins>.
+
+* Structs member variable can can be initialized upon 'struct' dectlaration
 
 * Structs can contain multiple embedded code sections in various programming languages (eg. **`>>c`**)
 
@@ -456,6 +514,51 @@ my_arr[] = array(a)
 
 println("my_arr: " + my_arr)
 ```
+
+#### 'struct' initialization
+
+Struct member variables can be statically initialized but can also be reassigned explicitly upon 'struc' variable declaration, in a similar way like in C.
+
+The ordering of the variables within the initialization (i.e {...}) need to reflect the ordering inside the 'struct'
+
+**Example:**
+
+```c
+struct A {
+	int id
+	float x, y
+	string str
+	object data
+}
+
+object d = loadObj("String", "some test data")
+
+struct A mya = {23, 0.3, 0.6, "Test", d}
+
+println("mya: " + mya)
+```
+
+is equivalent to
+
+```c
+struct A {
+	int id
+	float x, y
+	string str
+	object data
+}
+
+object d = loadObj("String", "some test data")
+
+struct A mya
+
+mya.id = 23
+mya.x = 0.3
+mya.y = 0.6
+mya.str = "Test"
+mya.data = d
+```
+
 
 #### 'struct' compiled as java bytecode
 
