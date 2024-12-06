@@ -112,11 +112,12 @@ These examples are demonstrators but are full running applications.
 	
 * Example program written in C that shows how to execute a given Dpdl script from C code
 
-	[embed_dpdl/test_dpdl_code_exec.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/test_dpdl_code_exec.c)
+	[embed_dpdl/test_dpdl_code_exec.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec.c)
 
 * Example program written in C that shows how to execute embedded Dpdl code within C code
 
-	[embed_dpdl/test_dpdl_code_exec2.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/test_dpdl_code_exec2.c)
+	[embed_dpdl/test_dpdl_code_exec2.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec2.c)
+
 
 ### Data
 
