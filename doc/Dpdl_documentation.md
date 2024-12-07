@@ -57,11 +57,11 @@ short s = 10s
 float f = 0.1
 double d = 10000.0d
 long l = 1000L
-byte b = 0x01 
+byte b = 0x01B
 string s = "mystr"
 char c = 'a'
 bool t = true
-myarr[] = [1, 0.3, 23.0d, 1000L, 0x09, "mydata"]
+myarr[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 var v = "some variable type var"
 class myClass cl
 object myobj = loadObj(...)
@@ -229,8 +229,8 @@ The following types are supported:
 
 **example:**
 ```python
-byte inb = 0x06
-int res = inb << 0x01
+byte inb = 0x06B
+int res = inb << 0x01B
 ```
 
 
@@ -331,9 +331,9 @@ Array can be initialized directly, via a **`string`** and also with **`struct`**
 
 Example:
 ```python
-myarrmix[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
+myarrmix[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
 
-myarray[] = "1 1.0 0x01 test Dpdl Dynamic Packet Definition Language"
+myarray[] = "1 1.0 0x01B test Dpdl Dynamic Packet Definition Language"
 
 # this returns an arraylist
 myarray2[0]  = myarray.getArrObj()
@@ -384,7 +384,7 @@ endfor
 All methods of the java class 'ArrayList' can be accessed
 
 ```python
-myarr[] = [1, 0.3, 23.0d, 1000L, 0x09, "mega"]
+myarr[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
 println("myarr: " + myarr)
 
 object myarrobj = myarr.getArrObj()
@@ -478,7 +478,7 @@ struct myStruct {
 	float f = 0.1
 	double d = 0.3d
 	long l = 1000L
-	byte b = 0x01
+	byte b = 0x01B
 	string s = "Test"
 	object so = loadObj("String", "my java obj in struct")
 		
@@ -577,7 +577,7 @@ struct A {
 	float f = 0.1
 	double d = 0.3d
 	long l = 1000L
-	byte b = 0x01
+	byte b = 0x01B
 	string s = "Test"
 	object so = loadObj("String", "my java obj in struct")
 	
