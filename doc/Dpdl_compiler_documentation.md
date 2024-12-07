@@ -18,7 +18,8 @@ Dpdl provides a mechanism to compile variables and constructs in embedded code t
 
 Variables that have been pushed onto the dpdl stack via **`dpdl_stack_var_put(..)`**, **`dpdl_stack_obj_put(..)`** etc., can be references inside embedded code with **`{{var_name}}`**. The dpdl stack configuration 'dpdl:applyvars' needs to be provided to apply the code substitution.
 
-Example:
+**Example:**
+
 ```python
 println("embedding some code...")
 
@@ -53,18 +54,21 @@ Even though the embedded C compiler Dpdl language plug-in comes with a minimal s
 by default the Dpdl language plug-in searches for 'include' and 'lib' files in the following paths:
 
 **Linux/Unix:**
+
 ```
 /usr/include
 /usr/lib
 ```
 
 **MacOS:**
+
 ```
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include/
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/
 ```
 
 **Windows:**
+
 ```
 MinGW or equivalent installation 'include' and 'lib' folders
 ```
@@ -129,6 +133,7 @@ Any other option supported by the compiler can be passed using the prefix 'dpdl:
 
 
 **Example:**
+
 ```c
 println("this Dpdl demo shows how C code can be dynamically compiled (in memory at runtime) within Dpdl")
 

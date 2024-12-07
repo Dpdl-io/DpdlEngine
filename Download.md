@@ -172,7 +172,6 @@ The validation script can be inspected here:
 * Multi-line resources 'res' and asynchronous 'task' are available only in the full registered version of DpdlEngine
 
 
-    
 
 **NOTE:** The native Dpdl library for embedded C support within Dpdl scripts is currently available for MacOS, Linux x86_64, Windows 64-bit and Raspberry Pi. 
 

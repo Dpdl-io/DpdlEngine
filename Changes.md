@@ -7,6 +7,7 @@ developed by
 
 # DpdlEngine V1.0 features/changes/fixes
 
+
 ## New features
 
 * Dpdl language plug-in for 'MicroPython' is now available
@@ -26,20 +27,7 @@ developed by
 
 ## Adaption
 
-* Entry point for embedded C code, in interpreted as well as in compiled mode, is unified as 'dpdl_main(....)'
-
-
-## Fixes
-
-* 15.09.2024 Fix minor memory management issue when using 'DPDLAPI_createThread(...)'
-* 01.09.2024 Fix small bug related to formatting
-* 07.06.2024 Fixed bug related to enum type when field values were explicitly assigned and accessed without enum reference. Now works as espected in all cases
-* 22.05.2024 The power operator ^ now returns always a 'double' value
-* 07.01.2024 Fixed some duplicate entries in the class definition file
-* 13.12.2023 Fixed issue in nested 'struct' type
-* 09.12.2023 Fixed bug for 'long' definition inside functions
-* 02.11.2023 Fixed bug for Python indentation
-* Fixed bug resulted from integration of pointers/references
+* Entry point for embedded C code, in interpreted as well as in compiled mode, is now unified as 'dpdl_main(....)'
 
 
 ## Known Issues

@@ -212,12 +212,12 @@ Note: for multiplication (*) it's necessary to have blank spaces between the num
 
 #### Bitwise:
 
-* **`&`** (AND)
-* **`|`** (OR)
-* **`^`** (XOR)
-* **`<<`** (SHIFT Left)
-* **`>>`** (SHIFT Right)
-* **`>>>`** (Unsigned SHIFT Right)
+* **`&`** (bitwise AND)
+* **`|`** (bitwise OR)
+* **`^`** (bitwise XOR)
+* **`<<`** (bit SHIFT Left)
+* **`>>`** (bit SHIFT Right)
+* **`>>>`** (bit Unsigned SHIFT Right)
 
 In case of Bitwise logical operators, the operands need to be of same type. To prevent loss of precision the result might be promoted to 'int' in some cases, so the receiving type needs to be 'int' as well.
 

@@ -52,37 +52,51 @@ If you need to run the DpdlClient on the latest version of Java, use the followi
 java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED -cp ./lib/mjcoap.jar -jar DpdlEngine_V1.0_release.jar
 ```
 
+
 ## Run Dpdl scripts
-
-To run the Dpdl code examples start the DpdlClient by executing the following script:
-
-on Linux/MacOS
-```
-./run_DpdlClient.sh
-```
-
-on Windows
-```
-./run_DpdlClient.bat
-```
 
 
 You can execute Dpdl code in the following ways:
 
-* Load and execute the Dpdl script file with the -load command
-* Input the script directly in the DpdlClient command console with the -exec command ( with closing </script> tag)
-* Via '-load' parameter to the DpdlClient startup script/command
-* Trough the Dpdl API.
+1) Programmatically by using the Dpdl API
+2) Load and execute the Dpdl script file with the '-load' command
+3) Load and execute the Dpdl script file with the '-load' command at DpdlClient startup
+4) Input the script directly in the DpdlClient command console by using the '-exec' command ( with closing </script> tag)
 
 
-1) using 'load' command:
+### 1) Programmatically by using the Dpdl API
+
+
+```python
+int status = DPDLAPI_execCode("sample.h", null)
+```
+
+You can also embed the code directly in Dpdl
+
+```
+int status = DPDLAPI_execScript("println(\"Hello from Dpdl\")", null)
+```
+
+### 2) Load and execute the Dpdl scripts with the '-load' command:
+
 ```
 -load
 enter the Dpdl script file to execute:
 arraylistExample.h
 ```
 
-2) using 'exec' command:
+### 3) Load and execute the Dpdl scripts with the '-load' command at DpdlClient startup:
+
+example:
+```
+java -jar DpdlEngine_V1.0_release.jar -load yourScript.h
+```
+
+Note: see also 'run_SampleApp_java17.sh'
+
+
+### 4) Input the Dpdl script directly in the DpdlClient command console by using '-exec' command:
+
 ```python
 -exec
 <script>
@@ -91,22 +105,6 @@ println(str)
 </script>
 ```
 
-3) using the -load command as startup parameter:
 
-example:
-```
-run_DpdlClientScript.sh 
-```
 
-4) using the Dpdl API
-
-```
-int status = DPDLAPI_execCode("sample.h", null)
-```
-
-Or a subscripts
-
-```
-int status = DPDLAPI_execScript("println(\"Hello from Dpdl\")", null)
-```
 
