@@ -219,7 +219,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	
 	[ui/dpdlGUIExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample.h)
 	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_dpdlGUIExample.png" width="35%" height="35%">
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_dpdlGUIExample.png" width="30%" height="30%">
 
 
 ### Small Apps
