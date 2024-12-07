@@ -78,7 +78,7 @@ println("testing malloc...")
 
 object ptr = libc.malloc(1024)
 
-ptr.setMemory(0L, 1024L, 0x00)
+ptr.setMemory(0L, 1024L, 0x00B)
 libc.free(ptr)
 
 println("done")
@@ -111,7 +111,7 @@ char_src.setString(0L, mymem_data)
 println("char_src is of type: " + typeof(char_src))
 
 object char_dest = libc.malloc(1024)
-char_dest.setMemory(0L, 1024L, 0x00)
+char_dest.setMemory(0L, 1024L, 0x00B)
 
 println("char_dest is of type: " + typeof(char_src))
 
@@ -167,7 +167,7 @@ object clib = native.loadLib("c")
 object buffer = clib.malloc(4096L)
 
 # optionally we can also zero the memory buffer
-buffer.setMemory(0L, 4096L, 0x00)
+buffer.setMemory(0L, 4096L, 0x00B)
 ```
 
 ### Type mapping
