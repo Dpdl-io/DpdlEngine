@@ -215,10 +215,11 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	
 	[J2MEDrawDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/J2MEDrawDemo.h)
 
-* Creates a graphical user interface with some UI components (Button, Panel, Checkbox, List, draw Panel) using Java Swing classes. The list is updated, the button command is intercepted with the
-  'actionPerformed' function, the checkbox status is printed, and a text and rectangle is drawn at random location on the draw panel.
+* Creates a graphical user interface with some UI components (Button, Panel, Checkbox, List, draw Panel) using Java Swing classes. The list is updated, the button command is intercepted with the 'actionPerformed' function, the checkbox status is printed to stdout, and a text and rectangle is drawn at random location on the draw panel using a thread.
 	
 	[ui/dpdlGUIExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample.h)
+	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_dpdlGUIExample.png" width="35%" height="35%">
 
 
 ### Small Apps
