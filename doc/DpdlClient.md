@@ -73,7 +73,7 @@ int status = DPDLAPI_execCode("sample.h", null)
 
 You can also embed the code directly in Dpdl
 
-```
+```python
 int status = DPDLAPI_execScript("println(\"Hello from Dpdl\")", null)
 ```
 
