@@ -24,7 +24,7 @@ These examples are demonstrators but are full running applications.
 
 ### Basic
 
-* Array definition, population and access
+* Basic Array definition, population and access
 	
 	[arraylistExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/arraylistExample.h)
 	
@@ -36,6 +36,10 @@ These examples are demonstrators but are full running applications.
 
 	[test/testStruct.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct.h)
 	
+* More articulated Array definition, population and access using java 'Iterator'
+	
+	[test/testArray.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testArray.h)
+
 * Example Dpdl code that shows how exceptions can be raised and handled
 
 	[testRaiseException.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testRaiseException.h)
@@ -85,6 +89,10 @@ These examples are demonstrators but are full running applications.
 * Example Dpdl code (dummy) that shows some functionalities of Dpdl
 
 	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
+	
+* Example Dpdl code that shows how <ins>C</ins> code and <ins>Java</ins> can be embedded and executed within Dpdl
+
+	[app/simple/dpdlSimpleJavaAndC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/simple/dpdlSimpleJavaAndC.h)
 
 
 
@@ -322,11 +330,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 * Example with embedded C code execution within Dpdl that is compiled in memory at runtime (compiled Mode 1)
 	
 	[C/dpdlCcompile.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompile.h)
-	
-* Example Dpdl code that shows how <ins>C</ins> code and <ins>Java</ins> can be embedded and executed within Dpdl
-
-	[app/simple/dpdlSimpleJavaAndC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/simple/dpdlSimpleJavaAndC.h)
-	
+		
 * Example Dpdl code that shows how <ins>C</ins> code and <ins>Python</ins> can be embedded and executed within Dpdl
 
 	[dpdlFullExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFullExample.h)
@@ -408,7 +412,34 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	[julia/dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
  
 
-### Tests
+### Benchmark Tests
+
+* Simple benchmark to measure the execution speed of Dpdl function calls with access to JRE objects
+
+	[benchmarks/dpdlBenchTest1.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/benchmarks/dpdlBenchTest1.h)
+
+* Simple benchmark to measure the execution speed of different embedded code sections including Dpdl, Java, C (interpreted), C (compiled), JavaScript and Clojure
+
+	[benchmarks/dpdlBenchTest2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/benchmarks/dpdlBenchTest2.h)
+
+* Simple benchmark to measure the execution speed of 'struct' function calls (with embedded Java code), compiled and executed with java bytecode
+
+	[benchmarks/dpdlBenchTest3.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/benchmarks/dpdlBenchTest3.h)
+	
+* Simple benchmark to measure the execution speed of embedded javascript executed within a dedicated dpdl thread
+
+	[benchmarks/dpdlBenchTest4.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/benchmarks/dpdlBenchTest4.h)
+	
+* Simple test that executes some 'task' asynchronously
+
+	[benchmarks/dpdlBenchTest5.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/benchmarks/dpdlBenchTest5.h)
+	
+* Simple benchmark that makes use of 'class'
+
+	[benchmarks/dpdlBenchTest6.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/benchmarks/dpdlBenchTest6.h)
+	
+
+### More Tests
 
 * Small 'dummy' sample application
 
