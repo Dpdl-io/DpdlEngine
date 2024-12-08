@@ -11,10 +11,32 @@ developed by
 
 ## 'DpdlPacket'
 
-Dpdl allows to create compressed packets of data via a **`DpdlPacket`** code definition. The data in a DpdlPacket can be organized
-in chunks of highly compressed data, along with database indexes. Data chunks can be allocated, queried and deallocated when not
-needed anymore. This allows a very efficient method of accessing and searching big amounts of data in memory constrained 
-devices.
+Dpdl allows to create compressed packets of data **`DpdlPacket`** via a dedicated code definition.
+The data in a DpdlPacket is organized in chunks of highly compressed data, along with database indexes and code definitions.
+
+Data chunks of a DpdlPacket can be allocated, queried and deallocated when not needed anymore.
+
+The speedup is x25 when querying a DpdlPacket compared to the standard record store access.
+
+### Layout of a DpdlPacket
+
+
+							---------------------------
+							| Dpdl header & code		|								#######################
+							--------------------------	-								# Indexed B-Tree    	#
+							| Chunk #1			     |----> allocate (de-compress)	-->	#					#
+							|__________________________|								# DATA				#
+							| Chunk #2			     |								#######################
+							|__________________________|
+							| Chunk #3			     |
+							|__________________________|
+							| ....		     	     |
+							|__________________________|
+							| Chunk #N			     |
+							|__________________________|	
+															
+											
+This allows a very efficient method of accessing and searching big amounts of data in memory constrained devices.
 
 Dpdl code can be embedded in the DpdlPacket code definition and allows to trigger its execution on predefined callbacks.
 This makes a DpdlPacket an executable packet of data.

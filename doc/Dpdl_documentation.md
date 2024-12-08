@@ -28,12 +28,12 @@ Additionally, Dpdl allows to execute code of other programming languages directl
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
 * **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
-* Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration
+* Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration (**Dpdl language plug-ins**)
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Multi-line structured text, data and code resources
 * Asynchronous Task execution
 * Static script execution: static code declarations (*.h_static)
-* Dpdl can be embedded within C code
+* Dpdl can be embedded and called within C code
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
 
@@ -78,12 +78,12 @@ In some cases Dpdl uses suffixes for the representation of numbers to differenti
 
 ##### Suffixes:
 
-**int** -> no suffix
-**float** -> no suffix
-**double** -> **`d`**
-**long** -> **`L`**
-**short** -> **`s`**
-**byte** -> **`B`**
+- **int** -> no suffix
+- **float** -> no suffix
+- **double** -> **`d`**
+- **long** -> **`L`**
+- **short** -> **`s`**
+- **byte** -> **`B`**
 
 **example: (value 10)**
 
@@ -222,10 +222,10 @@ Note: for multiplication (*) it's necessary to have blank spaces between the num
 In case of Bitwise logical operators, the operands need to be of same type. To prevent loss of precision the result might be promoted to 'int' in some cases, so the receiving type needs to be 'int' as well.
 
 The following types are supported:
-- Byte (promoted to int)
-- Short (promoted to int)
-- Integer (int)
-- Long (long)
+- **byte** (promoted to int)
+- **short** (promoted to int)
+- **int** (int)
+- **long** (long)
 
 **example:**
 ```python
