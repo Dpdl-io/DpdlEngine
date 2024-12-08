@@ -21,19 +21,19 @@ The speedup is x25 when querying a DpdlPacket compared to the standard record st
 ### Layout of a DpdlPacket
 
 ```
-							---------------------------
-							| Dpdl header & code		|								#######################
-							--------------------------	-								# Indexed B-Tree    	#
-							| Chunk #1			     |----> allocate (de-compress)	-->	#					#
-							|__________________________|								# DATA				#
-							| Chunk #2			     |								#######################
-							|__________________________|
-							| Chunk #3			     |
-							|__________________________|
-							| ....		     	     |
-							|__________________________|
-							| Chunk #N			     |
-							|__________________________|	
+		---------------------------
+		| Dpdl header & code		|								#######################
+		--------------------------	-								# Indexed B-Tree    	#
+		| Chunk #1                 |----> allocate (de-compress)	-->	#					#
+		|__________________________|								# DATA				#
+		| Chunk #2                 |								#######################
+		|__________________________|
+		| Chunk #3                 |
+		|__________________________|
+		| ....                     |
+		|__________________________|
+		| Chunk #N                 |
+		|__________________________|	
 														
 ```											
 This allows a very efficient method of accessing and searching big amounts of data in memory constrained devices.
