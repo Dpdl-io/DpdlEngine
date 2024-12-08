@@ -11,14 +11,16 @@ developed by
 
 ## 'DpdlPacket'
 
-Dpdl allows to create compressed packets of data **`DpdlPacket`** via a dedicated code definition.
-The data in a DpdlPacket is organized in chunks of highly compressed data, along with database indexes and code definitions.
+Dpdl allows to <ins>create compressed packets</ins> of data **`DpdlPacket`** via a dedicated <ins>code definition</ins>.
 
-Data chunks of a DpdlPacket can be allocated, queried and deallocated when not needed anymore.
+The data in a 'DpdlPacket' is organized in <ins>**chunks of highly compressed data**</ins>, along with <ins>database indexes and code definitions</ins>.
 
-The speedup is x25 when querying a DpdlPacket compared to the standard record store access.
+Chunks of data contained in a 'DpdlPacket' can be <ins>allocated, queried and deallocated</ins> when data is not needed anymore. This approach enables to handle efficiently big amounts of data on memory scarse devices.
 
-### Layout of a DpdlPacket
+The performance of query execution when querying a DpdlPacket is <ins>**x25 times faster**</ins> compared to the standard record store access.
+
+
+### Layout of a 'DpdlPacket'
 
 ```
 		---------------------------
