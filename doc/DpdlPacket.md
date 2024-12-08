@@ -22,11 +22,11 @@ The speedup is x25 when querying a DpdlPacket compared to the standard record st
 
 ```
 		---------------------------
-		| Dpdl header & code		|								#######################
-		--------------------------	-								# Indexed B-Tree    	#
-		| Chunk #1                 |----> allocate (de-compress)	-->	#					#
-		|__________________________|								# DATA				#
-		| Chunk #2                 |								#######################
+		| Dpdl header & code       |								#######################
+		--------------------------	-                                  # Indexed B-Tree    	#
+		| Chunk #1                 |----> allocate (de-compress)	--> #					#
+		|__________________________|                                 # DATA				#
+		| Chunk #2                 |                                 #######################
 		|__________________________|
 		| Chunk #3                 |
 		|__________________________|
