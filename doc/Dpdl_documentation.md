@@ -21,7 +21,7 @@ Additionally, Dpdl allows to execute code of other programming languages directl
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
 * Inline string expressions allowed
-* native data function types to handle data structures **`arr`**, **`vec`**, **`map`**, **`list`** and **`stack`**.
+* native data function types to handle data structures **`arr(..)`**, **`vec(..)`**, **`map(..)`**, **`list(..)`** and **`stack(..)`**.
 * APIs: Dpdl API, JRE API, MIDP API, and enables to load and access third party java APIs and Native shared libraries
 * Access to the full underlying Java Platform API's or any external java libraries
 * Access to Native shared libraries with simple approach
