@@ -20,7 +20,7 @@ The speedup is x25 when querying a DpdlPacket compared to the standard record st
 
 ### Layout of a DpdlPacket
 
-
+```
 							---------------------------
 							| Dpdl header & code		|								#######################
 							--------------------------	-								# Indexed B-Tree    	#
@@ -34,8 +34,8 @@ The speedup is x25 when querying a DpdlPacket compared to the standard record st
 							|__________________________|
 							| Chunk #N			     |
 							|__________________________|	
-															
-											
+														
+```											
 This allows a very efficient method of accessing and searching big amounts of data in memory constrained devices.
 
 Dpdl code can be embedded in the DpdlPacket code definition and allows to trigger its execution on predefined callbacks.
