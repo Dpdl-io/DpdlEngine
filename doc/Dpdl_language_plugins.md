@@ -21,7 +21,7 @@ No additional installation is required, except add-on libraries.
 
 This plug-in oriented approach allows to integrate also custom syntax or natural language interpreters or all sorts.
 
-### Dpdl supports the embedding of the following languages available as independent Dpdl language plug-ins:
+### Dpdl supports the embedding of the following languages available as independent 'Dpdl language plug-ins':
 
 Currently the 'DpdlEngine' release supports and provides the following Dpdl language plug-ins compliant to the corresponding language implementation version.
 
@@ -41,7 +41,7 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 **Add-on plug-ins available:**
 
-* **`Wasm`** (WAT code Compiler and Wasm Runtime)
+* **`Wasm`** (Wasm Runtime and Wat code Compiler)
 * **`Sql`**
 * **`Wgsl`** (WebGPU shading language)
 * **`Ai`** (DpdlAINerd)

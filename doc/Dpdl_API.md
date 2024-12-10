@@ -24,11 +24,11 @@ The Dpdl API's are available as:
 
 ### Native java APIs
 
-Dpdl allows to load and access java classes and methods (JRE and of external libraries) via dedicated API functions **`loadObj(..)`** and **`getObj(..)`**.
+Dpdl allows to load and access java classes and methods (JRE and external java libraries) via the dedicated Dpdl API functions (**`loadObj(..)`** and **`getObj(..)`**).
 
 This allows Dpdl to access a broad set of API's and libraries.
 
-The 'DpdlEgine lite' demo/shareware release includes the Java <ins>JRE API</ins>, the <ins>JavaFX API</ins> and the <ins>Bluecove JRS-82 API</ins> as defined in the  class definition file:
+By default 'DpdlEngine lite' includes the Java <ins>**JRE API**</ins>, the <ins>**JavaFX API**</ins> and the <ins>**Bluecove JRS-82 API**</ins>:
 
 [Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
@@ -37,8 +37,30 @@ The 'DpdlEgine lite' demo/shareware release includes the Java <ins>JRE API</ins>
 [Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
 
 
-NOTE: Additional APIs and classes can be added freely by means of a simple configuration in the registered version of DpdlEngine.
+The 'DpdlEngine pro' allows also to register dynamically external java libraries as described below.
 
+
+#### Registering external java libraries at runtime
+
+External java libraries packed in '*.jar' files can be dynamically registered at runtime to make them available in Dpdl:
+
+
+**Example:**
+
+```python
+# register dynamically a jar file containing the java class 'MyTestClass'
+
+int load_lib = DPDLSYS_registerLib("./lib/custom/MyTestLib.jar")
+
+raise(load_lib, "Error in loading java lib")
+
+# now we can instantiate a Dpdl object from the contained java classes
+
+object myobj = loadObj("MyTestClass")
+
+...
+
+```
 
 ### Dpdl import Libraries
 
