@@ -10,6 +10,28 @@
 #
 import('thread')
 
+
+double CAMERA_INITIAL_DISTANCE = -450.0d
+double CAMERA_INITIAL_X_ANGLE = 70.0d
+double CAMERA_INITIAL_Y_ANGLE = 320.0d
+double CAMERA_NEAR_CLIP = 0.1d
+double CAMERA_FAR_CLIP = 10000.0d
+double AXIS_LENGTH = 250.0d
+double HYDROGEN_ANGLE = 104.5d
+double CONTROL_MULTIPLIER = 0.1d
+double SHIFT_MULTIPLIER = 10.0d
+double MOUSE_SPEED = 0.1d
+double ROTATION_SPEED = 2.0d
+double TRACK_SPEED = 0.3d
+
+double mousePosX
+double mousePosY
+double mouseOldX
+double mouseOldY
+double mouseDeltaX
+double mouseDeltaY
+
+
 func dpdl_javafx_start(object stage)
 	stage.setTitle("Dpdl Sample Application (Molecule 3D)")
 
@@ -208,25 +230,6 @@ func buildMolecule()
 	world.addAllTMP1(moleculeGroup)
 end
 
-double CAMERA_INITIAL_DISTANCE = -450.0d
-double CAMERA_INITIAL_X_ANGLE = 70.0d
-double CAMERA_INITIAL_Y_ANGLE = 320.0d
-double CAMERA_NEAR_CLIP = 0.1d
-double CAMERA_FAR_CLIP = 10000.0d
-double AXIS_LENGTH = 250.0d
-double HYDROGEN_ANGLE = 104.5d
-double CONTROL_MULTIPLIER = 0.1d
-double SHIFT_MULTIPLIER = 10.0d
-double MOUSE_SPEED = 0.1d
-double ROTATION_SPEED = 2.0d
-double TRACK_SPEED = 0.3d
-
-double mousePosX
-double mousePosY
-double mouseOldX
-double mouseOldY
-double mouseDeltaX
-double mouseDeltaY
 
 # main
 println("starting...")
