@@ -92,7 +92,24 @@ short mys = 10s
 byte myb = 10B
 ```
 
-###### Format (Hexadecimal)
+##### Double and Floating point Scientific Notation
+
+Double and floating point numbers can be represented also with the scientific notation using **`e`** or **`E`** for representing the exponent:
+
+**example:**
+
+```python
+double myd1 = 1.2345E3d
+
+double myd2 = -1.2345e3d
+
+float myf1 = 1.2345E3
+
+float myf2 = -1.2345e3
+```
+
+
+##### Hexadecimal Format
 
 The number types **`int`**, **`long`** and **`byte`** can be represented also in <ins>Hexadecimal format</ins>, having either lower-case of upper-case letters (eg. 0x1627F **OR** 0x1627f)
 
