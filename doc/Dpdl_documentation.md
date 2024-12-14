@@ -139,7 +139,7 @@ The value **`null`** can be assigned to any type
 
 **Eg.**
 
-```c
+```python
 string tmps = null
 float tmpf = null
 ```
@@ -148,7 +148,7 @@ The types **`string`**, **`var`** and **`object`**, in case of a variable declar
 
 **Example:**
 
-```c
+```python
 string tmps
 var tmpv
 object tmpo
