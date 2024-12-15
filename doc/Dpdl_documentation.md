@@ -98,7 +98,7 @@ Double and floating point numbers can be represented also with the scientific no
 
 **example:**
 
-```python
+```c++
 double myd1 = 1.2345E3d
 
 double myd2 = -1.2345e3d
@@ -139,7 +139,7 @@ The value **`null`** can be assigned to any type
 
 **Eg.**
 
-```python
+```c++
 string tmps = null
 float tmpf = null
 ```
@@ -245,7 +245,7 @@ The following types are supported:
 - **long** (long)
 
 **example:**
-```python
+```c++
 byte inb = 0x06B
 int res = inb << 0x01B
 ```
