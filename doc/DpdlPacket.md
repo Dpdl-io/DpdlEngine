@@ -28,7 +28,7 @@ The performance of query execution when querying a DpdlPacket is <ins>**x25 time
 		---------------------------
 		| Dpdl header & code       |
 		----------------------------
-		| Chunk #1                 |----> allocate (de-compress, decode)
+		| Chunk #1                 |----> allocate (de-compress, decode, execute)
 		|__________________________|          |
 		| Chunk #2                 |          |
 		|__________________________|     #######################

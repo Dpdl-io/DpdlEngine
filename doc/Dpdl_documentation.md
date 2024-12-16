@@ -13,21 +13,21 @@ developed by
 
 Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins>, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
 
-Additionally, Dpdl allows to execute code of other programming languages directly embedded within Dpdl. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (no further installations required)
+Additionally, Dpdl allows to embed and execute code of other programming languages directly within Dpdl. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (no further installations required)
 
 ### Features:
 
 * Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`enum`**
 * Multiple native Threads within same script
 * support for pointers and references (eg. int *px = &x)
-* Inline string expressions allowed
+* Inline string expressions
 * native data function types to handle data structures **`arr(..)`**, **`vec(..)`**, **`map(..)`**, **`list(..)`** and **`stack(..)`**.
 * APIs: Dpdl API, JRE API, MIDP API, and enables to load and access third party java APIs and Native shared libraries
 * Access to the full underlying Java Platform API's or any external java libraries
 * Access to Native shared libraries with simple approach
 * Record Store creation and access via virtual file system
 * Support for custom function extensions
-* **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
+* **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** <em>ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure</em>. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
 * Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration (**Dpdl language plug-ins**)
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Multi-line structured text, data and code resources
@@ -43,7 +43,7 @@ The Dpdl API functions usable inside Dpdl are listed here:
 
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-As Dpdl can access java classes directly, the whole Java JRE API and any other configured java library is available inside Dpdl.
+As Dpdl can access java classes directly, the whole Java JRE API and any other configured or loaded java library is available inside Dpdl.
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
 
 
@@ -74,7 +74,7 @@ enum myenum e
 
 Dpdl supports the number types **`int`** **`foat`** **`double`** **`long`** **`short`** **`byte`**
   
-In some cases Dpdl uses suffixes for the representation of numbers to differentiate the type of number.
+For some numbers, Dpdl makes use of suffixes for the representation to differentiate the type of number.
 
 ##### Suffixes:
 
@@ -109,7 +109,7 @@ float myf2 = -1.2345e3
 ```
 
 
-##### Hexadecimal Format
+##### Hexadecimal Number Format
 
 The number types **`int`**, **`long`** and **`byte`** can be represented also in <ins>Hexadecimal format</ins>, having either lower-case of upper-case letters (eg. 0x1627F **OR** 0x1627f)
 
@@ -137,16 +137,16 @@ long l = 0x14269cae3c1ae6243L
 
 The value **`null`** can be assigned to any type
 
-**Eg.**
+**example**
 
 ```c++
 string tmps = null
 float tmpf = null
 ```
 
-The types **`string`**, **`var`** and **`object`**, in case of a variable declaration <ins>without assignment</ins>, retain the value **`null`** 
+The types **`string`**, **`var`** and **`object`**, in case of a variable declaration <ins>without assignment</ins>, by default retain the value **`null`**
 
-**Example:**
+**example:**
 
 ```python
 string tmps
@@ -244,7 +244,7 @@ The following types are supported:
 - **int** (int)
 - **long** (long)
 
-**example:**
+**example:** (byte shift promoted to 'int')
 ```c++
 byte inb = 0x06B
 int res = inb << 0x01B
@@ -304,7 +304,7 @@ Strings can contain in-line expressions that are evaluated at runtime, when the 
 This may reduce code at some performance expense.
 
 **Example:**
-```python
+```c++
 int a = 10
 int b = 20
 string mystr = "my result is ${a + b}"
@@ -314,7 +314,8 @@ println("mystr: " + mystr)
 The expressions can also contain function calls like in the following examples:
 
 **Example:**
-```python
+
+```c++
 string input = "some input"
 string mystr = "this is a my result ${ myFunc(input) }"
 println("mystr: " + mystr)
@@ -322,7 +323,7 @@ println("mystr: " + mystr)
 
 Example using 'sqrt(...)' function:
 
-```python
+```c++
 double dv = 9.0d
 
 println("result is ${ sqrt(dv) }")
@@ -577,10 +578,10 @@ mya.data = d
 ```
 
 
-#### 'struct' compiled as java bytecode
+#### 'struct' compiled to java bytecode
 
 
-The type 'struct' can also be conveniently compiled at runtime into a java bytecode object (java class) by using the **`genObjCode(...)`** api function.
+The type 'struct' can also be conveniently compiled at runtime into a java bytecode object (java Class) by using the **`genObjCode(...)`** api function.
 
 This may be useful for exchanging data structures with other native java classes or to speedup performance critical function calls.
 
@@ -820,11 +821,13 @@ int thread_id = Tread("myFunc", 3000)
 ```
 
 Example Thread(..) with iteration interval of 3000 ms, and 23 iterations:
+
 ```python
 int thread_id = Tread("myFunc", 3000, 23)
 ```
 
 Example starting 2 threads
+
 ```python
 func myThreadFunc1(int t_id)
 	println("Hello from thread: " + t_id)
@@ -880,6 +883,7 @@ Note: the <ins>deprecated function 'getClass'</ins> is still supported for some 
 
 
 **Example:**
+
 ```python
 # static class loading
 object calendar = getObj("Calendar")
@@ -978,6 +982,7 @@ The script file loaded in the example above 'LoadCodeFunc.h' may also define a *
 iff parameters are supplied.
 
 LoadCodeFunc.h
+
 ```python
 # constructor
 func LoadCodeFunc(object map)
@@ -1006,13 +1011,15 @@ The type 'object' is in first place used to load java objects available within D
 Every type can be assigned to an **`object`** variable. But not the other way around.
 
 **Example:**
-```python
+
+```c++
 int myi = 9999
 object myiobj = myi
 ```
 
 IFF you want to re-assign an already declared and assigned object to a variable with same name of <ins>different type</ins>, you must redefine the object as follows:
-```python
+
+```c++
 int myi = 9999
 float myf = 999.9
 object myiobj = myi
@@ -1027,7 +1034,8 @@ Primitive types such as **int, float, double, long, short, byte, char, string an
 In this way it's possible to access all methods of the object available on the underlying JRE platform.
 
 **Example:**
-```python
+
+```c++
 int x = 10
 
 object o_x = x
@@ -1080,6 +1088,7 @@ double dist = calculateDistance(a, aa)
 ```
 
 The function 'calculateDistance(..)' can accept the parameters as follows:
+
 ```c
 func calculateDistance(var p1, var p2) double
     float dx = p2.x - p1.x
@@ -1088,6 +1097,7 @@ func calculateDistance(var p1, var p2) double
 end
 ```
 and is equivalent to:
+
 ```c
 func calculateDistance(struct p1, struct p2) double
     float dx = p2.x - p1.x
@@ -1100,7 +1110,8 @@ end
 
 The type of a given variable can be determined with the **`typeof(..)`** function
 
-ex:
+**example:**
+
 ```python
 var s = "this is a string"
 var i = 10
@@ -1109,19 +1120,23 @@ println("var 'i' is a: " + typeof(i))
 ```
 
 The above statement will print out:
+
 ```
 var 's' is a: string
 var 'i' is a: int
 ```
 
 For clarity, a variable other than 'var' type can also be determined:
+
 ```python
 int i = 10
 println("variable 'i' is of type: " + typeof(i))
 ```
 
 By determining the type of a 'struct' variable type, the type returned contains also a type identifier.
-eg.
+
+**example:**
+
 ```c
 struct A a
 println("variable 'a' is of type: " + typeof(a))
@@ -1131,7 +1146,8 @@ The above statements will return **`struct:A`**
 
 Whenever a java object is loaded, the type of the variable returned by **`typeof(..)`** is the name of the class.
 
-eg.
+**example:**
+
 ```python
 object map = loadObj("HashMap")
 println("variable 'map' is of type: " + typeof(map))
@@ -1156,7 +1172,8 @@ Some variable types can be converted either by casting or by using the **`conver
 Casting numeric values can be performed using the functions **`to_int(..)`** , **`to_float(..)`** or **`to_double(..)`**
 
 **Example:**
-```python
+
+```c++
 float f = 999.3
 double d = 2000000.5d
 
@@ -1183,7 +1200,8 @@ Currently the following conversions are supported, more will follow:
 
 
 **Example:**
-```python
+
+```c++
 int xc = 10
 float f = 0.3
 double d = 23.0d
@@ -1221,7 +1239,8 @@ raise(object condition, string msg)
 raise(object condition, string msg, bool exit)
 ```
 
-Example:
+**Example:**
+
 ```python
 string s1 = "nul(l)"
 raise(s1, "s1 is null")
@@ -1256,6 +1275,7 @@ returns a 'Task' object which provides access to all functions needed to control
 The task id is a unique identifier (UUID) like for example 312b01c1-9837-47f7-9c24-f5ec24fb9857
 
 **Example:**
+
 ```python
 println("testing Dpdl tasks...")
 
@@ -1319,7 +1339,8 @@ A Dpdl script may include other Dpdl scripts with the **`include`** statement.
 
 The functions and variables of the included code are than available also in the main module.
 
-Example:
+**Example:**
+
 ```python
 include("testImportInc.h")
 import("dpdllib.h")
@@ -1371,7 +1392,8 @@ Variables pushed on the dpdl stack are passed as parameters to the embedded code
 In the latter case the variables are replaced with the actual values before code compilation and execution.
 
 
-Example:
+**Example:**
+
 ```python
 println("testing embedded C code in Dpdl")
 
@@ -1442,7 +1464,8 @@ The stack size can be customized by applying configurable settings.
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 Example **Mode (1)**:
-```python
+
+```c
 println("testing embedded C code in Dpdl")
 
 int n = 6
@@ -1488,7 +1511,8 @@ see the following documentation for more info
 [doc/Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md) 
 
 Example **Mode (2)**:
-```python
+
+```c
 println("Benchmarking Dpdl embedded C with compile option...")
 
 dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C")
@@ -1542,6 +1566,7 @@ Note: For Mode(2), in order to use the function dpdl_stack_buf_put(..), instead 
 Python code can be embedded within Dpdl code by using the keyword '**>>python**'.
 
 Example Dpdl code with embedded 'Python' code:
+
 ```python
 println("testing embedding python code")
 println("")
@@ -1569,7 +1594,8 @@ The indentation needs to be consistent with the Python language specification
 
 The Dpdl runtime considers the '**>>python**' tag (\t) as starting indentation point
 
-example (correct):
+**example** (correct):
+
 ```python
 println("start executing a python script...")
 
@@ -1580,7 +1606,8 @@ print("Hello py\n")
 println("finished")
 ```
 
-example (Wrong -> gives IndentationError: unexpected indent):
+**example** (Wrong -> gives IndentationError: unexpected indent):
+
 ```python
 println("start executing a python script...")
 
@@ -1615,6 +1642,7 @@ If the 'dpdl:compile' option has been set, the OCaml code is compiled at runtime
 The 'ocamljava.jar' in this case needs to be present in the 'lib' folder. 
 
 Example Dpdl code with embedded 'OCaml' code:
+
 ```python
 println("testing Dpdl embedded OCaml..")
 
@@ -1657,7 +1685,8 @@ To exchange data between native Dpdl code and the supported embedded languages, 
 By pushing a string variable with the following definition: 'dpdlbuf_$varname' on the Dpdl stack via the function **`dpdl_stack_push(..)`**,
 the data written or returned by the embedded code (eg. C code) can be retrieved in the native Dpdl code via the function **`dpdl_stack_buf_get(..)`**
 
-Example:
+**Example:**
+
 ```c
 string buf_key = "dpdlbuf_var1"
 dpdl_stack_push(buf_key)
@@ -1673,11 +1702,13 @@ dpdl_stack_push(buf_key)
 string buf = dpdl_stack_buf_get(buf_key)
 println("response buffer: " + buf)
 ```
+
 The method to write data to the buffer within the embedded language is language dependent, either it's written with the
 function **`dpdl_stack_buf_put(..)`** or in some cases returned by the embedded function itself, as in 'Lua' for example,
 where the a data 'table' is returned and written to the Dpdl stack buffer.
 
-Example with embedded 'Lua':
+**Example** with embedded 'Lua':
+
 ```python
 println("testing embedding lua....")
 
@@ -1742,7 +1773,8 @@ Some Dpdl runtime behavior can be parameterized by pushing dedicated parameters 
 
 Each Dpdl language plug-in can be parameterized in this way (see plug-in spec)
 
-Example:
+**Example:**
+
 ```
 dpdl_stack_push("dpdl:compile","dpdl:-I./DpdlLibs/C")
 ```
@@ -1752,6 +1784,7 @@ dpdl_stack_push("dpdl:compile","dpdl:-I./DpdlLibs/C")
 Embedded ANSI C code and OCaml code can be compiled on-the-fly in memory at runtime in order to speedup execution.
 
 **Compiles embedded code before execution:**
+
 ```
 dpdl:compile
 ```
@@ -1762,6 +1795,7 @@ See this doc for more details: [Dpdl_compiler_documentation.md](https://github.c
 #### Code substitution
 
 **Applies the variables to the embedded code:**
+
 ```
 dpdl:applyvars
 ```
@@ -1774,6 +1808,7 @@ See this doc for more details: [Dpdl_compiler_documentation.md](https://github.c
 Dpdl code can be executed also embedded in a C program. 
 
 **Example:** executing a Dpdl source file
+
 ```c
 #include <stdio.h>
 #include "dpdl.h"
@@ -1793,6 +1828,7 @@ int main(int argc, char **argv){
 
 
 **Example:** executing plain Dpdl code
+
 ```c
 #include <stdio.h>
 #include "dpdl.h"
@@ -1833,7 +1869,8 @@ This feature is useful for dynamically generated code implementations and will b
 
 A call to a non existent function will therefore not generate an unrecoverable exception, but will only return -1 if the function is not available.
 
-Example:
+**Example:**
+
 ```python
 int s = my_non_existing_func()
 
@@ -1866,6 +1903,7 @@ This simple benchmark gives the following results:
 * **Compiled Java code**, execution time: 5.7 seconds
 
 C code used for benchmark:
+
 ```c
 	#include <stdio.h>
 	#include <time.h>
@@ -1889,6 +1927,7 @@ C code used for benchmark:
 ```
 
 Java code used for benchmark:
+
 ```java
 public class testCBench {
 
