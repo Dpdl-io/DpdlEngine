@@ -237,6 +237,7 @@ Note: for multiplication (*) it's necessary to have blank spaces between the num
 * **`&`** (bitwise AND)
 * **`|`** (bitwise OR)
 * **`^`** (bitwise XOR)
+* **`~`** (bitwise COMPLEMENT - NOT)
 * **`<<`** (bit SHIFT Left)
 * **`>>`** (bit SHIFT Right)
 * **`>>>`** (bit Unsigned SHIFT Right)
