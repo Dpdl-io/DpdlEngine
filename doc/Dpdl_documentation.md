@@ -117,7 +117,7 @@ The number types **`int`**, **`long`** and **`byte`** can be represented also in
  
 ```c++
 int i = 0x1627F
-# or
+#or
 int i = 0x1627f
 ```
 
