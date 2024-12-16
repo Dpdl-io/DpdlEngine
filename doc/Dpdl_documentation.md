@@ -458,7 +458,7 @@ class A {
 		println("data: " + data)
 	end
 
-};
+}
 
 object so = loadObj("String", "my data...")
 
