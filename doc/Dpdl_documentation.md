@@ -158,6 +158,7 @@ object tmpo
 ### Function and Control flow
 
 **`function`** definition
+
 ```python
 func myFunction(string param, object param....)
 
@@ -175,6 +176,7 @@ end
 ```
 
 **`if`** statement
+
 ```python
 if(<expression>)
 
@@ -182,6 +184,7 @@ fi
 ```
 
 **`if elseif`** statement
+
 ```python
 if(<expression>)
 
@@ -193,6 +196,7 @@ fi
 ```
 
 **`while`** statement
+
 ```python
 while(<expression>)
 
@@ -200,6 +204,7 @@ endwhile
 ```
 
 **`for`** statement
+
 ```python
 for(<expression>)
 
@@ -245,6 +250,7 @@ The following types are supported:
 - **long** (long)
 
 **example:** (byte shift promoted to 'int')
+
 ```c++
 byte inb = 0x06B
 int res = inb << 0x01B
@@ -285,6 +291,7 @@ object my_stack = stack()
 ```
 
 **Example:**
+
 ```python
 object myvec = vec("a", "b", "c", 1, 2, 3)
 
@@ -304,6 +311,7 @@ Strings can contain in-line expressions that are evaluated at runtime, when the 
 This may reduce code at some performance expense.
 
 **Example:**
+
 ```c++
 int a = 10
 int b = 20
@@ -347,7 +355,8 @@ Arrays elements can have multiple types and can be accessed also as a java [Arra
 
 Array can be initialized directly, via a **`string`** and also with **`struct`**
 
-Example:
+**Example:**
+
 ```python
 myarrmix[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
 
@@ -378,6 +387,7 @@ arr4[] = "[1,2,3,4,5]"
 ```
 
 Initializing an array with a **`struct`**:
+
 ```c
 struct myStruct a
 arr[] = array(a)
@@ -388,6 +398,7 @@ Multidimensional arrays will be supported in the coming release
 #### Looping through arrays
 
 1) looping through an array with  **`for`**  or  **`while`**  statements:
+
 ```python
 myarr[] = [1, 2, 3, 4, 5]
 int c = 0
@@ -447,7 +458,7 @@ class A {
 		println("data: " + data)
 	end
 
-}
+};
 
 object so = loadObj("String", "my data...")
 
