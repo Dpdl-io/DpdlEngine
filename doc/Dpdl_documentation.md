@@ -11,7 +11,7 @@ developed by
 
 ## Dpdl language specification
 
-Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins>, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
+Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins> and in part also bytecode compiled, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
 
 Additionally, Dpdl allows to embed and execute code of other programming languages directly within Dpdl. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (no further installations required)
 
@@ -19,14 +19,14 @@ Additionally, Dpdl allows to embed and execute code of other programming languag
 
 * Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`enum`**
 * Multiple native Threads within same script
-* support for pointers and references (eg. int *px = &x)
+* Pointers and references (eg. int *px = &x)
 * Inline string expressions
-* native data function types to handle data structures **`arr(..)`**, **`vec(..)`**, **`map(..)`**, **`list(..)`** and **`stack(..)`**.
+* Native data function types to handle data structures **`arr(..)`**, **`vec(..)`**, **`map(..)`**, **`list(..)`** and **`stack(..)`**.
 * APIs: Dpdl API, JRE API, MIDP API, and enables to load and access third party java APIs and Native shared libraries
 * Access to the full underlying Java Platform API's or any external java libraries
 * Access to Native shared libraries with simple approach
-* Record Store creation and access via virtual file system
-* Support for custom function extensions
+* Virtual file system via Record Stores
+* Support for custom extensions
 * **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** <em>ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure</em>. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
 * Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration (**Dpdl language plug-ins**)
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')

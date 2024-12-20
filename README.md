@@ -24,7 +24,7 @@ The core Dpdl engine can also be run on very small memory footprint devices via 
 
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible plug-in interface. 
 
-Custom programming language and syntax interpreters can be implemented and integrated in form of plug-ins (**Dpdl language plug-ins**).
+Custom code and syntax interpreters can be implemented and integrated in form of plug-ins (**Dpdl language plug-ins**).
 For example the included dedicated **AI Dpdl language plug-in** (**DAN**) allows to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
 
 
@@ -34,9 +34,7 @@ For example the included dedicated **AI Dpdl language plug-in** (**DAN**) allows
 
 ## Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
-Further programming languages and syntax interpreters can be added as extensions and embedded via a dedicated plug-in interface and configuration. This allows developers to easily create embedded custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
-
-These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
+Further programming languages and syntax interpreters can be added as extensions and embedded via a dedicated interface and configuration. This allows developers to easily create embedded custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 
 ## Dpdl is designed to:
@@ -62,8 +60,6 @@ These features make Dpdl a powerful development platform for rapid prototyping, 
 </p>
 
 ### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
-
-By providing the possibility to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and a simple access to <ins>**java Api's, Native libraries, Wasm modules and GPUs**</ins>, Dpdl provides a powerful development platform for industrial applications, education and research.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API, external java libraries and enables access also to native libraries.
 
@@ -106,11 +102,15 @@ The speedup is x 25 times faster compared to a standard record store access
 
 Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster research and development of applications and embedded system software which is ideal for rapid application development and rapid prototyping.
 
+Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and provides a simple access to <ins>**java Api's, Native libraries, Wasm modules and GPUs**</ins>.
+
 Dpdl embedded ANSI C code, Java, JavaScript, OCaml, Groovy and Clojure are <ins>**dynamically compiled in memory** at runtime</ins> which results in <ins>faster execution</ins> performance.
 
 These features make Dpdl suitable for a wide range of use-cases and applications in particular also for <ins>Hardware programming</ins>.
 
-Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups 
+Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups
+
+These features make Dpdl a powerful development platform for rapid prototyping, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 
 ### Small Memory footprint:
 
@@ -143,11 +143,11 @@ The size of the DpdlEngine core can be stripped down even further by excluding c
 
 [Dpdl Wgsl on GPU](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wgsl_GPU.md)
 
-[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
-
 [DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
+
+[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
 ### More...
@@ -667,11 +667,13 @@ The Dpdl framework and API documentation is available via the following links:
 
 [Dpdl Wasm Runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
-[DpdlAINerd (DAN)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
-
 [DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
+
+[DpdlAINerd (DAN)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
+### More...
 
 [Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 
