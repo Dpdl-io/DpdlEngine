@@ -53,10 +53,12 @@ Dpdl support the following Type definitions:
 
 ```c++
 int i = 1
+int ih = 0x67452301
 short s = 10s
 float f = 0.1
 double d = 10000.0d
 long l = 1000L
+byte b = 1B
 byte b = 0x01B
 string s = "mystr"
 char c = 'a'
