@@ -14,18 +14,18 @@ developed by
 &copy; 2003
 
 
-## Dpdl - rapid development programming language and constrained device framework
+## Dpdl - a rapid development programming language and constrained device framework
 
 Dpdl is a <ins>rapid development **programming language**</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 
-Dpdl enables access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and allows the <ins>**embedding** and **on-the-fly execution**</ins> of multiple programming languages like <em>ANSI C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, Wgsl, Groovy and Clojure</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, no additional installations required.
+Dpdl enables access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and allows to  <ins>**embed** and **execute on-the-fly**</ins> of multiple programming languages like <em>ANSI C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, Wgsl, Groovy and Clojure</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, no additional installations required.
 
 The core Dpdl engine can also be run on very small memory footprint devices via a dedicated kilobyte range virtual machine.
 
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible plug-in interface. 
 
 Custom code and syntax interpreters can be implemented and integrated in form of plug-ins (**Dpdl language plug-ins**).
-For example the included dedicated **AI Dpdl language plug-in** (**DAN**) allows to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
+The included dedicated **AI Dpdl language plug-in** (**DAN**) for example allows to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
 
 
 <p align="center">
@@ -59,17 +59,16 @@ Further programming languages and syntax interpreters can be added as extensions
 	<img src="http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg">
 </p>
 
-### Dpdl is designed to be <ins>Simple</ins>, <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
+### Dpdl is designed to be <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API, external java libraries and enables access also to native libraries.
+The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API, external java libraries and simple access also to native libraries.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
 are integrated by default and third party libraries and protocols can be added as extensions.
 
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to automatically generate and embed executable code and content or data</ins> by natural language descriptions contained inside Dpdl code.
 
-Dpdl enables integration of different technologies seamlessly to leverage fast prototyping and foster research and development.
-
+Dpdl enables integration of different technologies to leverage fast prototyping and foster research and development.
 
 
 ## Features
