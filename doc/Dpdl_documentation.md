@@ -350,13 +350,52 @@ Note: Currently only one in-line expression definition '${ ... }' is allowed ins
 
 ### Arrays
 
-Arrays are defined with **`[ ]`**
+Dpdl has two kind of array types:
+- Primitive arrays
+- Dynamic arrays
 
-Arrays are dynamic and can grow or shrink in size
+#### Primitive arrays
 
-Arrays elements can have multiple types and can be accessed also as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`myarray.getArrObj()`** )
+Primitive arrays can be allocated for the following types:
 
-Array can be initialized directly, via a **`string`** and also with **`struct`**
+- **`int`**
+- **`float`**
+- **`double`**
+- **`short`**
+- **`byte`**
+- **`char`**
+
+The size of the array is specified at declaration, and is fixed.
+
+This type can be passed also to java methods.
+
+**Example:** (array allocation)
+
+```python
+int myiarr[32]
+
+myiarr[0] = 23
+myiarr[1] = 369
+```
+
+Primitive arrays can also be allocated and initialized right away.
+
+**Example:** (array allocation and initialization)
+
+```python
+int myiarr[] = {23, 369}
+```
+
+
+#### Dynamic arrays
+
+Dynamic arrays are defined with **`somevar[ ]`**
+
+Dynamic arrays can grow or shrink in size dynamically and its elements can have multiple mixed types.
+
+Dynamic arrays can also be accessed as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`myarray.getArrObj()`** )
+
+Array can be initialized directly, via a **`string`** and also with a **`struct`**
 
 **Example:**
 
