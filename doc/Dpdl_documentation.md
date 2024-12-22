@@ -588,7 +588,7 @@ println("my_arr: " + my_arr)
 
 #### 'struct' initialization
 
-Struct member variables can be statically initialized but can also be reassigned explicitly upon 'struc' variable declaration, in a similar way like in C.
+Struct member variables can be statically initialized but can also be reassigned explicitly upon 'struct' variable declaration, in a similar way like in C.
 
 The ordering of the variables within the initialization (i.e {...}) need to reflect the ordering inside the 'struct'
 

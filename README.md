@@ -14,7 +14,7 @@ developed by
 &copy; 2003
 
 
-## Dpdl - a rapid development programming language and constrained device framework
+## Dpdl - rapid development programming language and constrained device framework
 
 Dpdl is a <ins>rapid development **programming language**</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 
@@ -61,12 +61,12 @@ Further programming languages and syntax interpreters can be added as extensions
 
 ### Dpdl is designed to be <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API, external java libraries and simple access also to native libraries.
+The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API and external java libraries and provides a simple access also to native libraries.
+
+The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to automatically generate and embed executable code and content or data</ins> by natural language descriptions contained inside Dpdl code.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
 are integrated by default and third party libraries and protocols can be added as extensions.
-
-The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to automatically generate and embed executable code and content or data</ins> by natural language descriptions contained inside Dpdl code.
 
 Dpdl enables integration of different technologies to leverage fast prototyping and foster research and development.
 
