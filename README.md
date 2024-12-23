@@ -22,10 +22,9 @@ Dpdl enables access to <ins>**java platform API's, Native shared libraries, Wasm
 
 The core Dpdl engine can also be run on very small memory footprint devices via a dedicated kilobyte range virtual machine.
 
-Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible plug-in interface. 
-
 A dedicated AI **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
 
+Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface.
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
