@@ -24,8 +24,7 @@ The core Dpdl engine can also be run on very small memory footprint devices via 
 
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible plug-in interface. 
 
-Custom code and syntax interpreters can be implemented and integrated in form of plug-ins (**Dpdl language plug-ins**).
-The included dedicated **AI Dpdl language plug-in** (**DAN**) for example allows to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
+A dedicated AI **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
 
 
 <p align="center">
@@ -34,7 +33,9 @@ The included dedicated **AI Dpdl language plug-in** (**DAN**) for example allows
 
 ## Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
-Further programming languages and syntax interpreters can be added as extensions and embedded via a dedicated interface and configuration. This allows developers to easily create embedded custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
+Custom code and syntax interpreters can be implemented and integrated in form of plug-ins (**Dpdl language plug-ins**)
+
+In this way further programming languages and custom syntax interpreters can be added as extensions and embedded via a dedicated interface and configuration. This allows developers to easily create embedded custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
 
 ## Dpdl is designed to:

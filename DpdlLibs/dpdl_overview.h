@@ -94,7 +94,7 @@ class MyClass {
 
 # main
 bool startThreads = false
-println("a sample program written with Dpdl (Dynamic Packet Definition Language). (c) 2003 Armin Costa...")
+println("a sample program written with Dpdl (Dynamic Packet Definition Language). (c) 2003 SEE Solutions")
 
 class MyClass myc
 
@@ -140,6 +140,33 @@ println("st.DONE: " + st.DONE)
 println("st.ERROR: " + st.ERROR)
 
 println("array allocation and access...")
+
+int arrint[] = {1, 2, 3, 4, 5, 6}
+float arrflt[] = {1.1, 2.2, 3.3, 4.4, 5.5, 6.6}
+
+int myarrint[6]
+float myarrflt[6]
+byte myarrbty[3]
+
+myarrint[0] = arrint[0]
+myarrint[1] = arrint[1]
+myarrint[2] = arrint[2]
+myarrflt[0] = arrflt[0]
+myarrflt[1] = arrflt[1]
+myarrflt[2] = arrflt[2]
+myarrbty[0] = 3B
+myarrbty[1] = 6B
+myarrbty[2] = 9B
+
+println("myarrint[0]=" + myarrint[0])
+println("myarrint[1]=" + myarrint[1])
+println("myarrint[2]=" + myarrint[2])
+println("myarrflt[0]=" + myarrflt[0])
+println("myarrflt[1]=" + myarrflt[1])
+println("myarrflt[2]=" + myarrflt[2])
+println("myarrbty[0]=" + myarrbty[0])
+println("myarrbty[1]=" + myarrbty[1])
+println("myarrbty[2]=" + myarrbty[2])
 
 myarr[] = [1, 2, 3, 4 , 5, 6]
 myarr_mix[] = [1, 0.1, 23.0d, 1000L, "mega"]
