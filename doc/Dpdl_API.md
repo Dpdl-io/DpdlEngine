@@ -24,18 +24,26 @@ The Dpdl API's are available as:
 
 ### Native java APIs
 
-Dpdl allows to load and access java classes and methods (JRE and external java libraries) via the dedicated Dpdl API functions (**`loadObj(..)`** and **`getObj(..)`**).
+Dpdl allows to load and access java classes and methods (JRE and external java libraries) via the dedicated Dpdl API functions **`loadObj(..)`** and **`getObj(..)`**.
 
 This allows Dpdl to access a broad set of API's and libraries.
 
 By default 'DpdlEngine lite' includes the Java <ins>**JRE API**</ins>, the <ins>**JavaFX API**</ins> and the <ins>**Bluecove JRS-82 API**</ins>:
 
-[Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
+[Java JRE API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
 [JavaFX API](https://docs.oracle.com/javafx/2/api/index.html)
 
 [Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
 
+**Example:** using a java JRE class 'java.util.MashMap'
+
+```python
+object myhashmap = loadObj("HashMap")
+
+myhashmap.put("my key1", "my value 1")
+
+```
 
 The 'DpdlEngine pro' allows also to register dynamically external java libraries as described below.
 
