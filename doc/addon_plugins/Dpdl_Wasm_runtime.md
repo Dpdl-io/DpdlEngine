@@ -13,7 +13,7 @@ developed by
 ## Dpdl 'Wasm' plug-in
 
 
-Dpdl provides also a dedicated dpdl language runtime plug-in that enables to <ins>**compile, run** and **access** **WebAssembly (WASM)**</ins> **directly from Dpdl**.
+Dpdl provides also a dedicated Dpdl language plug-in that enables to <ins>**compile, run** and **access** a **WebAssembly (WASM)**</ins> runtime **directly from Dpdl**.
 
 Wasm is growing in popularity for being a cross platform binary instruction format for multiple application domains that range from Web-apps, Desktop and Cloud apps, serverless applications, Edge containers and others.
 

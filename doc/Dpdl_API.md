@@ -179,6 +179,7 @@ convert(string type, object obj) return object converted_obj
 to_int(object val) return int value
 to_float(object val) return float value
 to_double(object val) return double value
+to_long(object val) return long value
 
 array[] ->
 size() return int size
