@@ -28,7 +28,7 @@ Dpdl allows to load and access java classes and methods (JRE and external java l
 
 This allows Dpdl to access a broad set of API's and libraries.
 
-By default 'DpdlEngine lite' includes the Java <ins>**JRE API**</ins>, the <ins>**JavaFX API**</ins> and the <ins>**Bluecove JRS-82 API**</ins>:
+By default 'DpdlEngine lite' includes the Java <ins>**JRE API**</ins>, the <ins>**JavaFX API**</ins> and the <ins>**Bluecove JRS-82 API**</ins>, further libraries can be included by means of configuration:
 
 [Java JRE API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
