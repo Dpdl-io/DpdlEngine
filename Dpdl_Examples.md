@@ -321,7 +321,6 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 		3) start the 2nd client in a thread instance: CoAP/startClientThread.h
 	
 
-
 ### Dpdl language plug-ins (embeddable programming languages)
 
 * Example with embedded C code execution within Dpdl (interpreted Mode 1)
@@ -339,6 +338,10 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 * Example Dpdl code that shows how <ins>MicroPython</ins> code can be embedded and executed within Dpdl. MicroPython is suitable for embedded systems.
 
 	[micropython/dpdlMicroPythonTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/micropython/dpdlMicroPythonTest.h)
+
+* Example Dpdl code that makes use of an embedded Java code block to perform a dummy calculation on an array passed from Dpdl
+
+	[java/dpdlJavaExample2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/java/dpdlJavaExample2.h)
 
 * Embedded C code execution within Dpdl code
 	
@@ -412,6 +415,7 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[julia/dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
  
+
 
 ### Benchmark Tests
 
