@@ -24,6 +24,8 @@ The core Dpdl engine can also be run on very small memory footprint devices via 
 
 A dedicated AI **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
 
+The 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
+
 Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface.
 
 <p align="center">
