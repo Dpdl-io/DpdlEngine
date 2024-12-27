@@ -10,16 +10,18 @@
 # main
 println("testing embedded java code block...")
 
-int myarr[3000]
+int myarr[300000]
 int myi = 100
 
 int c
-for(c < 3000)
+for(c < 300000)
 	myarr[c] = c
 	c=c+1
 endfor
 
 dpdl_stack_push(myarr, myi)
+
+setStartTime()
 
 >>java
 
@@ -46,5 +48,8 @@ for(int x = 0; x < res.length; x++){
 return 1;
 <<
 
+int ms = getEndTime()
+
 int exit_code = dpdl_exit_code()
-println("embedded java exit code: " + exit_code)
+
+println("embedded java exit code: " + exit_code + " exec time (ms): " + ms)
