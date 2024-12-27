@@ -301,11 +301,16 @@ In this GitHub repository you can find full featured working prototype applicati
 
 ### Dpdl example to Get and decode News via http in JSON format 
 
-This is a small sample app written with Dpdl that gets the top 10 news stories via http get in json format:
+This is a small sample app written with Dpdl that gets the top 10 news stories via http in 'json' format:
 
 [app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
 
-Note: The example 'app/getnews/dpdlGetNews2.h' is identical, but data is decoded in a java object instead of a struct
+
+### Dpdl implementation of SHA-1 hash algorithm
+
+Implementation of SHA-1 hash algorithm entirely written in Dpdl
+
+[app/dpdlSHA-1/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/dpdlSHA-1/dpdlSHA-1impl.h)
 
 
 ### Dpdl example using external java libraries
@@ -548,6 +553,7 @@ The C code can be embedded with 2 different Modes:
 
 
 Example Dpdl code with embedded C code (Mode 1 - interpreted):
+
 ```c
 # main
 # starting with Dpdl, pushing parameters on the stack and embedding C code
