@@ -20,9 +20,9 @@ Dpdl is a <ins>rapid development **programming language**</ins> and <ins>**const
 
 Dpdl enables access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and allows to  <ins>**embed** and **execute on-the-fly**</ins> of multiple programming languages like <em>ANSI C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, Wgsl, Groovy and Clojure</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, no additional installations required.
 
-The core Dpdl engine can also be run on very small memory footprint devices via a dedicated kilobyte range virtual machine.
-
 A dedicated AI **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
+
+The core Dpdl engine can also be run on very small memory footprint devices via a dedicated kilobyte range virtual machine.
 
 The 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
 
