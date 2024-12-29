@@ -18,6 +18,7 @@ Additionally, Dpdl allows to embed and execute code of other programming languag
 ### Features:
 
 * Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`enum`**
+* Inheritance and Polymorphism for type **`class`** and **`struct`**
 * Multiple native Threads within same script
 * Pointers and references (eg. int *px = &x)
 * Inline string expressions
@@ -471,15 +472,18 @@ endwhile
 
 Dpdl allows to define and use **`class`** type objects. This type definition is similar to the class type found in C++ or Java and others.
 
-* Class objects can contains all variable types
+* Class objects can contains member variable of all type
 
 * Class objects can define a constructor with variable number of parameters that is called upon class initialization
 
 * Class objects can contain function definitions
 
+* Class object can be derived from another class (inheritance)
+
 * Class objects can be in part compiled into java bytecode, and therefore can be passed to java methods.
 
 **Example:**
+
 ```python
 class A {
 	int id = 1
@@ -515,20 +519,73 @@ class A mya2
 mya.printit()
 ```
 
+#### Inheritance and Polymorphism
+
+Dpdl class type can be derived from a base class (superclass), inheriting all functions and member variables.
+
+Functions in the base class (superclass) can be overridden by  
+
+**Example:**
+
+```python
+class A {
+	int id
+	string desc
+	
+	func setId(int id_)
+		id = id_
+	end
+	
+	func getId() int
+		return id
+	end
+	
+	func getDesc() string
+		return desc
+	end
+	
+	func printMe()
+		println("this is A")
+	end
+}
+
+class B : A {
+	
+	func B(string desc_)
+		desc = desc_
+	end
+	
+	func printMe()
+		println("this is B")
+	end
+}
+
+class B myb("this is a B instance")
+myb.setId(369)
+myb.printMe()
+
+println("myb.id: " + myb.getId())
+println("myb.desc: " + myb.getDesc())
+
+```
+
+Note that in this case the 'class A' function 'printMe(...)' is being overwritten
 
 ### Struct
 
 Dpdl supports the type **`struct`**, with the following definitions:
 
-* Structs may contain other 'struct' variable declarations (but not 'struct' definitions)
+* Structs may contain member variables of all type, including 'struct' variable declarations (but not 'struct' definitions)
 
 * Structs can call functions defined in the outer scope
 
 * Variable shadowing is enabled
 
+* Structs can be derived from a base 'struct', inheriting all member variables and function definitions (inheritance)
+
 * Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct' function changes the variable <ins>only during the function scope</ins>.
 
-* Structs member variable can can be initialized upon 'struct' dectlaration
+* Structs member variable can can be initialized upon 'struct' declaration
 
 * Structs can contain multiple embedded code sections in various programming languages (eg. **`>>c`**)
 
@@ -539,10 +596,11 @@ a workaround is to assign the array to an object and access the object instead.
 
 * Structs cannot contain variable definitions of 'class' type
 
-* Structs can conveniently be <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
+* Structs can be conveniently <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
 
 
 Example:
+
 ```c
 struct myStruct {
 	int x = 10
@@ -588,7 +646,7 @@ println("my_arr: " + my_arr)
 
 #### 'struct' initialization
 
-Struct member variables can be statically initialized but can also be reassigned explicitly upon 'struct' variable declaration, in a similar way like in C.
+Struct member variables can be statically initialized but can also be re-assigned explicitly upon 'struct' variable declaration, in a similar way like in C.
 
 The ordering of the variables within the initialization (i.e {...}) need to reflect the ordering inside the 'struct'
 
@@ -630,6 +688,33 @@ mya.str = "Test"
 mya.data = d
 ```
 
+#### Inheritance
+
+The type 'struct' can also be derived from a base 'struct', inheriting all member variables and functions from the base struct.
+
+**Example:**
+
+```c
+struct myA {
+	int id
+	string desc
+
+	func printIt()
+		println("id: " + id + " desc: " + desc)
+	end
+}
+
+struct myB : myA {
+	int x = 23
+	int y = 888
+}
+
+struct myB b
+
+p.printIt()
+```
+
+
 
 #### 'struct' compiled to java bytecode
 
@@ -642,6 +727,7 @@ Structs that are compiled into java bytecode can contain 1 embedded **`>>java`**
 
 
 **Example:**
+
 ```c
 struct A {
 	int x = 10
