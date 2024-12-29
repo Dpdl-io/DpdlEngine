@@ -387,6 +387,29 @@ Primitive arrays can also be allocated and initialized right away.
 int myiarr[] = {23, 369}
 ```
 
+##### Passing Primitive arrays to functions
+
+While dynamic arrays can be defined as type in a function signature (eg. func myF(arr[], object val, ...) ), primitive arrays can simply be defined as 'var' type in function signatures.
+
+This approach might also have some practical advantages compared to a static type definition.
+
+**Example:**
+
+```python
+func printValues(var data_arr)
+	int c
+	for(c <= 4)
+		println("data_arr[" + c + "]=" + data_arr[c])
+		c=c+1
+	endfor
+end
+
+int myarr[] = {10, 20, 30, 40, 50}
+
+printValues(myarr)
+
+```
+
 
 #### Dynamic arrays
 
@@ -780,7 +803,7 @@ println("res: " + res + " executed in " + ms + " milliseconds (ms)")
 
 This approach allows to speedup performance critical sections.
 
-The native struct function 'myNativeJavaFunc' call in this example executes in avg. **`12 ms`** (on 'Apple M2 pro').
+The native 'struct' function 'myNativeJavaFunc' call in this example executes in avg. **`12 ms`** (on 'Apple M2 pro').
 
 
 ### Enum
@@ -790,6 +813,7 @@ Dpdl supports the type **`enum`**
 The keywords by default have increasing **`int`** values starting from **1**. Desired values can be assigned explicitly.
 
 **Example:**
+
 ```c
 enum myStatus {
 	PENDING,DONE, ERROR, RUNNING=23
@@ -824,6 +848,7 @@ The types for which pointers are currently supported:
 
 
 **Example:**
+
 ```c
 int i = 10
 string s = "Mega"
@@ -902,6 +927,7 @@ This approach provides a flexible and readable way to handle different kind of r
 
 
 **Example:**
+
 ```python
 println("testing access to embedded multi-line resources...")
 
@@ -950,11 +976,13 @@ Optionally the number of iterations for a Thread can also be provided
 Further parameters passed to the 'Thread(..)' function are than passed also to the callback function.
 
 Example Thread(..) with default iteration interval of 1000 ms:
+
 ```python
 int thread_id = Tread("myFunc")
 ```
 
 Example Thread(..) with iteration interval of 3000 ms:
+
 ```python
 int thread_id = Tread("myFunc", 3000)
 ```
@@ -1191,6 +1219,7 @@ println("s_o: " + s_o.length())
 ```
 
 In Java notation you would write the equivalent 'f_x' assignment as follows:
+
 ```java
 float f_x = new Integer(10).floatValue()
 ```
