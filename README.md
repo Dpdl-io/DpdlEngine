@@ -32,10 +32,10 @@ Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly
 
 ## Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
-A dedicated AI **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
-
 Custom code and syntax interpreters can be implemented and integrated in form of plug-ins (**Dpdl language plug-ins**)
 In this way further code and custom syntax interpreters can be added as extensions and embedded via a dedicated interface and configuration. This allows developers to easily create embedded custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
+
+A dedicated AI **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
 
 The 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
 
