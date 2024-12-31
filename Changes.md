@@ -10,6 +10,8 @@ developed by
 
 ## New features
 
+* Inheritance and Polymorphism for type 'class' and 'struct'
+
 * Dpdl language plug-in for 'MicroPython' is now available
 
 * NEW Asynchronous Tasks can now be executed via the keyword **`>>task`** containing embedded Dpdl code sections 

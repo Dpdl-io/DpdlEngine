@@ -14,6 +14,8 @@ struct myStruct {
 
 class BaseA {
 	string id = "baseA"
+	int arr_i[20]
+	float arr_f[20]
 
 	func printBase()
 		println("my base A id is: " + id)

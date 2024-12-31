@@ -592,7 +592,8 @@ println("myb.desc: " + myb.getDesc())
 
 ```
 
-Note that in this case the 'class A' function 'printMe(...)' is being overwritten
+Note that in this case the 'class A' function 'printMe(...)' is being overwritten by the same function definition in 'class B' 
+
 
 ### Struct
 
@@ -614,8 +615,7 @@ Dpdl supports the type **`struct`**, with the following definitions:
 
 * Structs can be used to initialize arrays, (see 'array(...)' function)
 
-* Structs can contain arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed very soon,
-a workaround is to assign the array to an object and access the object instead.
+* Structs can contain dynamic arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed soon., a workaround is to assign the array to an object and access the object instead.
 
 * Structs cannot contain variable definitions of 'class' type
 

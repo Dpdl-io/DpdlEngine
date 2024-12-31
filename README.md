@@ -32,10 +32,10 @@ Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly
 
 ## Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
-Custom code and syntax interpreters can be implemented and integrated in form of plug-ins (**Dpdl language plug-ins**)
+Custom code and syntax interpreters can be implemented and integrated in form of **'Dpdl language plug-ins'**.
 In this way further code and custom syntax interpreters can be added as extensions and embedded via a dedicated interface and configuration. This allows developers to easily create embedded custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as Dpdl language plug-in.
 
-A dedicated AI **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code.
+The included 'DpdlAINerd' **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed.
 
 The 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
 
@@ -65,8 +65,7 @@ The 'DpdlPacket' data container provides a convenient way to package and handle 
 
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to automatically generate and embed executable code and content or data</ins> by natural language descriptions contained inside Dpdl code.
 
-Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol)
-are integrated by default and third party libraries and protocols can be added as extensions.
+Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol) are integrated by default and other third party libraries and protocols can be added as extensions.
 
 Dpdl enables integration of different technologies to leverage fast prototyping and foster research and development.
 
@@ -99,11 +98,11 @@ The speedup is x 25 times faster compared to a standard record store access
 * Open Source programming language plug-ins
 
 
-Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster development and research of applications, in is suitable also for <ins>Hardware programming</ins>
+Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster development and research of applications, and is suitable also for <ins>Hardware programming</ins>.
 
 Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and provides a simple access to <ins>**java Api's, Native libraries, Wasm modules and GPUs**</ins>.
 
-Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups
+Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups.
 
 These features make Dpdl a powerful development platform for rapid development, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 
