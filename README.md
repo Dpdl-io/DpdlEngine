@@ -65,9 +65,9 @@ The 'DpdlPacket' data container provides a convenient way to package and handle 
 
 ### Dpdl is designed to be <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to automatically generate and embed executable code and content or data</ins> by natural language descriptions contained inside Dpdl code.
-
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol) are integrated by default and other third party libraries and protocols can be added as extensions.
+
+The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to automatically generate and embed executable code and content or data</ins> by natural language descriptions contained inside Dpdl code.
 
 Dpdl enables integration of different technologies to leverage fast prototyping and foster research and development.
 
@@ -76,33 +76,31 @@ Dpdl enables integration of different technologies to leverage fast prototyping 
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
-* **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** ANSI C code, C++, Python, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure **programming languages can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
+* **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** ANSI C code, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, Groovy and Clojure **programming languages can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **No additional installations required** (except add-on libraries)
-* **Further programming languages can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
+* **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very Fast compile time!!!</ins>
-* **Dpdl Wasm runtime** plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
-* **Built-in Dpdl scripting engine with support for custom extensions** (DpdlExtension interface) -> allows to dynamically add language features at runtime
+* **Wasm runtime** Dpdl language plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
+* **Built-in Dpdl scripting engine with support for custom extensions** -> allows to dynamically add language features at runtime
 * **Dpdl C API enables to execute Dpdl code embedded within programs written in C** 
-* **On the fly conversion/compilation of Dpdl data struct's into native java bytecode classes**
+* **On the fly conversion/compilation of Dpdl types 'class' and 'struct' into native java bytecode classes**
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
 The speedup is x 25 times faster compared to a standard record store access
 * **Virtual record store filesystem**
-* **Double precision floating point emulation** layer
+* **Double precision floating point emulation**
 * **XML** with XPath parser
 * **JSON**
 * **Easy integration of custom libraries**
 * **Small footprint**, Only **`372 Kb`** for DpdlEngine -> can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
-* Tools for automatically converting Dpdl code to Java , C/C++ and V code (in development)
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'Wgsl' dpdl language plug-in** (WebGPU shading language)
 * Open Source programming language plug-ins
 
-
 Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster development and research of applications, and is suitable also for <ins>Hardware programming</ins>.
 
-Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and provides a simple access to <ins>**java Api's, Native libraries, Wasm modules and GPUs**</ins>.
+Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and provides a simple access to <ins>**java Api's, Native shared libraries, Wasm modules and GPU compute**</ins>.
 
 Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups.
 

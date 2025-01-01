@@ -18,6 +18,7 @@ Additionally, Dpdl allows to embed and execute code of other programming languag
 ### Features:
 
 * Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`enum`**
+* Primitive arrays and dynamic arrays
 * Inheritance and Polymorphism for type **`class`** and **`struct`**
 * Multiple native Threads within same script
 * Pointers and references (eg. int *px = &x)
@@ -64,7 +65,19 @@ byte b = 0x01B
 string s = "mystr"
 char c = 'a'
 bool t = true
-myarr[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
+int arr_i[10]
+float arr_f[10]
+double arr_d[10]
+short arr_s[10]
+byte arr_b[10]
+char arr_c[10]
+int arr_i_ini[] = {1, 2, 3}
+float arr_f_ini[] = {1.0, 2.0, 3.0}
+double arr_d_ini[] = {1.0d, 2.0d, 3.0d}
+short arr_s_ini[] = {10s, 20s, 30s}
+byte arr_b_ini[] = {1B, 2B, 0x03B}
+char arr_c_ini[] = {'a', 'b', 'c'}
+my_arr_dyn[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 var v = "some variable type var"
 class myClass cl
 object myobj = loadObj(...)
