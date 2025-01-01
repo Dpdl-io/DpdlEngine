@@ -24,13 +24,13 @@ The Dpdl language constructs and syntax is kept simple and follows an object ori
 
 The core Dpdl engine can also be run on very small memory footprint devices via a dedicated kilobyte range virtual machine.
 
-Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface.
+### Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface.
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
-## Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
+#### Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
 Custom code and syntax interpreters can be implemented and integrated in form of **'Dpdl language plug-ins'**.
 In this way further code and custom syntax interpreters can be added as extensions and embedded via a dedicated interface and configuration.
