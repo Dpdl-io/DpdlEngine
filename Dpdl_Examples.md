@@ -24,9 +24,9 @@ These examples are demonstrators but are full running applications.
 
 ### Basic
 
-* Basic Array definition, population and access
+* Example Dpdl Code with Array definition, population and access using a JRE 'Iterator'
 	
-	[arraylistExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/arraylistExample.h)
+	[test/testArray.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testArray.h)
 	
 * Example Dpdl code that makes use of the type 'class'
 
@@ -39,10 +39,10 @@ These examples are demonstrators but are full running applications.
 * Example Dpdl code that makes use of the type 'struct'
 
 	[test/testStruct.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct.h)
+
+* Dynamic Array definition, population and access
 	
-* More articulated Array definition, population and access using java 'Iterator'
-	
-	[test/testArray.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testArray.h)
+	[arraylistExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/arraylistExample.h)
 
 * Example Dpdl code that shows how exceptions can be raised and handled
 

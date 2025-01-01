@@ -11,7 +11,7 @@ developed by
 
 ## Dpdl language specification
 
-Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins> and in part also bytecode compiled, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
+Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins> and in part also bytecode compiled, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
 Additionally, Dpdl allows to embed and execute code of other programming languages directly within Dpdl. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (no further installations required)
 
@@ -88,7 +88,7 @@ For some numbers, Dpdl makes use of suffixes for the representation to different
 - **short** -> **`s`**
 - **byte** -> **`B`**
 
-**example: (value 10)**
+**example: (type short value 10)**
 
 ```c++
 short mys = 10s
