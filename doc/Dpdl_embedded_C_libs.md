@@ -10,7 +10,7 @@ developed by
 &copy; 2003
 
 
-## Minimal C library documentation for embedded C code execution (interpreted - Mode 1)
+## Minimal C library documentation (interpreted - Mode 1)
 
 This is the minimal C library documentation for the <ins>interpreted</ins> embedded C code execution (Mode 1).
 
@@ -18,6 +18,7 @@ When executing embedded C code with interpreted Mode (1), <ins>all libraries and
 
 
 Example:
+
 ```c
 println("embedding some C code...")
 

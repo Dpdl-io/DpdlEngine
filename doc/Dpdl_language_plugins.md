@@ -11,7 +11,7 @@ developed by
 		
 ## Dpdl embeddable programming languages
 
-**Multiple programming languages or custom syntax interpreters can be <ins>embedded directly within Dpdl code</ins>** by using the keyword **`>>`**, for example: **>>python**
+**Multiple programming languages and custom syntax interpreters can be <ins>embedded directly within Dpdl code</ins>** by using the keyword **`>>`**, for example: **>>python**
 
 The execution of embedded programming languages is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings (**Dpdl language plug-ins**). This allows developers to easily implement custom functionalities in form of plug-ins.
 
@@ -23,7 +23,7 @@ This plug-in oriented approach allows to integrate also custom syntax or natural
 
 ### Dpdl supports the embedding of the following languages available as independent 'Dpdl language plug-ins':
 
-Currently the 'DpdlEngine' release supports and provides the following Dpdl language plug-ins compliant to the corresponding language implementation version.
+Currently the 'DpdlEngine' release supports and provides the following <ins>**Dpdl language plug-ins**</ins> compliant to the corresponding language implementation version.
 
 * **`Embedded C`** (minimal subset of C90)
 * **`ANSI C`** (ANSI C99)
@@ -39,15 +39,15 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 * **`Clojure`**
 * **`C++`** (Root)
 
-**Add-on plug-ins available:**
+**Add-on 'Dpdl language plug-ins' available:**
 
 * **`Wasm`** (Wasm Runtime and Wat code Compiler)
-* **`Sql`**
-* **`Wgsl`** (WebGPU shading language)
+* **`Sql`** (for querying databases via SQL)
+* **`Wgsl`** (WebGPU compute shading language)
 * **`Ai`** (DpdlAINerd)
 
 
-Dpdl language plug-ins can be developed and integrated via defined interfaces and a simple configuration.
+**Dpdl language plug-ins** can be developed and integrated via defined interfaces and a simple configuration.
 
 ### Embedded programming languages - compatibility matrix
 
