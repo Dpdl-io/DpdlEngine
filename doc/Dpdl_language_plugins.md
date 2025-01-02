@@ -42,7 +42,7 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 **Add-on 'Dpdl language plug-ins' available:**
 
 * **`Wasm`** (Wasm Runtime and Wat code Compiler)
-* **`Sql`** (for querying databases via SQL)
+* **`Sql`** (query databases via SQL)
 * **`Wgsl`** (WebGPU compute shading language)
 * **`Ai`** (DpdlAINerd)
 

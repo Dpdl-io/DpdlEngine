@@ -18,7 +18,7 @@ developed by
 
 Dpdl is a <ins>rapid development **programming language**</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 
-Dpdl enables access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and allows to  <ins>**embed** and **execute on-the-fly**</ins> of multiple programming languages like <em>ANSI C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, Wgsl, Groovy and Clojure</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, no additional installations required.
+Dpdl enables access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and allows to  <ins>**embed** and **execute on-the-fly**</ins> of multiple programming languages like <em>ANSI C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, Wgsl, Groovy and Clojure</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, <ins>No additional installations needed</ins>.
 
 The Dpdl language constructs and syntax is kept simple and follows an object oriented paradigm interoperable with the java platform JRE API and external java libraries and provides a simple access also to native libraries.
 
@@ -33,11 +33,11 @@ The core Dpdl engine can also be run on very small memory footprint devices via 
 ### Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Lua + Ruby + Java + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
 Custom code and syntax interpreters can be implemented and integrated in form of **'Dpdl language plug-ins'**.
-In this way further code and custom syntax interpreters can be added as extensions and embedded via a dedicated interface and configuration.
+In this way further code and custom execution engines can be added as extensions and embedded via a dedicated interface and configuration.
 
 This allows developers to easily create embedded custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **Dpdl language plug-in**.
 
-The included 'DpdlAINerd' **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed.
+The included 'DpdlAINerd' **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed right away.
 
 The 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
 
@@ -488,10 +488,10 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`Clojure`**
 * **`C++`** (Root)
 
-**available Add-on plug-ins:**
+**available Add-on 'Dpdl language plug-ins':**
 
 * **`Wasm`** (WAT Compiler and Wasm Runtime)
-* **`Sql`**
+* **`Sql`** (query databases via SQL)
 * **`Wgsl`** (WebGPU shading language)
 * **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
@@ -532,8 +532,6 @@ canvas->Modified(); canvas->Update();
 int exit_code = dpdl_exit_code()
 println("embedded ROOT exit code: " + exit_code)
 ```
-
-NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Download section below)
  
 ### Dpdl with embedded C code
 
@@ -541,8 +539,8 @@ Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly w
 
 The C code can be embedded with 2 different Modes:
  
-1) <ins>Interpreted</ins>
-2) <ins>Compiled in memory at runtime</ins> (if option '**dpdl:compile**' is enabled)
+1) <ins>Interpreted code</ins> (Mode 1)
+2) <ins>Compiled code</ins> (Mode 2) -> in memory at runtime
 
 
 Example Dpdl code with embedded C code (Mode 1 - interpreted):
