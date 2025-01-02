@@ -170,8 +170,8 @@ dpdl_stack_push("dpdlstack:myconfig")
 
 C code can be executed in 2 different modes:
 
-1) Interpreted C code (<ins>minimal subset of C90</ins>)
-2) Compiled C code (in memory at runtime) (most <ins>ANSI C99</ins>)
+1) Interpreted C code (Mode 1) --> <ins>minimal subset of C90</ins>)
+2) Compiled C code (Mode 2) --> compiled in memory at runtime, supports <ins>ANSI C99</ins>
 
 
 #### Mode 1 (minimal and interpreted code)
