@@ -21,7 +21,7 @@ No additional installation is required, except add-on libraries.
 
 This plug-in oriented approach allows to integrate also custom syntax or natural language interpreters or all sorts.
 
-### Dpdl supports the embedding of the following languages available as independent 'Dpdl language plug-ins':
+### Dpdl supports the embedding of the following languages available as 'Dpdl language plug-ins':
 
 Currently the 'DpdlEngine' release supports and provides the following <ins>**Dpdl language plug-ins**</ins> compliant to the corresponding language implementation version.
 
