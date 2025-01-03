@@ -112,7 +112,7 @@ These features make Dpdl a powerful development platform for rapid development, 
 * **DpdlEngine** (<ins>**Full**</ins> configuration) **`372 Kb`**
 * **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
 
-* **Total size** of DpdlEngine (**Dpdl Full with embedded C compiler/interpreter**) = **`650 Kb`**
+* **TOTAL SIZE** of DpdlEngine (**Dpdl Full configuration with embedded C compiler/interpreter**) = **`650 Kb`**
  
 The size of the DpdlEngine core can be stripped down even further by excluding certain functionalities.
 

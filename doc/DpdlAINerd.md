@@ -12,7 +12,7 @@ developed by
 ## DpdlAINerd (DAN) - Dpdl language plug-in for AI generative code
 
 
-'**DpdlAINerd**' (**DAN**) is a dedicated Dpdl language plug-in for <ins>**AI generative code**</ins>.
+'**DpdlAINerd**' (**DAN**) is a dedicated **Dpdl language plug-in** for <ins>**AI generative code**</ins>.
 
 The plug-in provided allows to <ins>**automatically generate and execute** embedded code sections in various programming languages within Dpdl</ins> via a configurable **AI engine**. Currently the OpenAI engine is supported, others like Google Vertex AI, CodePal, etc.. will be integrated in near future.
 

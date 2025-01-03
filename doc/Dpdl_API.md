@@ -17,9 +17,10 @@ DpdlEngine V1.0
 This is the Dpdl API documentation. 
 
 The Dpdl API's are available as:
+
 - Native java API's
 - Dpdl import Libraries
-- Native Libraries
+- Native shared Libraries
 - Dpdl native functions
 
 ### Native java APIs
@@ -28,7 +29,7 @@ Dpdl allows to load and access java classes and methods (JRE and external java l
 
 This allows Dpdl to access a broad set of API's and libraries.
 
-By default 'DpdlEngine lite' includes the Java <ins>**JRE API**</ins>, the <ins>**JavaFX API**</ins> and the <ins>**Bluecove JRS-82 API**</ins>, further libraries can be included by means of configuration:
+By default 'DpdlEngine lite' includes the Java <ins>**JRE API**</ins>, the <ins>**JavaFX API**</ins> and the <ins>**Bluecove JRS-82 API**</ins>. Further libraries can be included by means of configuration:
 
 [Java JRE API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
@@ -121,6 +122,7 @@ https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/json/dpdlDecodeJSON.h
 
 
 **`native`**
+
 ```python
 loadLib(string lib) return object lib
 mapLib(string lib, object class) return object lib
@@ -133,14 +135,14 @@ Example:
 
 https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h
 
-
-### The Native libraries:
+### Native shared Libraries:
 
 Dpdl allows to access natively loaded libraries (libc, msvcrt, etc..) on different operating systems (Linux, Windows, Android) throught a unified interface.
 
 To load and access a native lib the Dpdl 'native' library module needs to be imported.
 
 Example:
+
 ```python
 import('native')
 

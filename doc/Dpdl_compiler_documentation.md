@@ -43,15 +43,14 @@ println("embedded code exit code: " + exit_code)
 
 ## C Compiler
 
-Embedded C code within Dpdl scripts can be dynamically compiled in memory at runtime (see execution Mode (2))
+Embedded C code within Dpdl code can be dynamically compiled in memory at runtime (see execution Mode (2))
 
-The C compiler implemented in form of a Dpdl language plugin makes use of the <ins>super fast Fabrice Bellard's TCC</ins>.
+The C compiler implemented in form of a **Dpdl language plugin** makes use of the <ins>super fast Fabrice Bellard's TCC</ins>.
 
 
 ### Library and include paths
 
-Even though the embedded C compiler Dpdl language plug-in comes with a minimal set of header files located in '**./lib/native/$platform/include**',
-by default the Dpdl language plug-in searches for 'include' and 'lib' files in the following paths:
+Even though the embedded C compiler Dpdl language plug-in comes with a minimal set of header files located in '**./lib/native/$platform/include**', by default the Dpdl language plug-in searches for 'include' and 'lib' files in the following paths:
 
 **Linux/Unix:**
 

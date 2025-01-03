@@ -10,10 +10,10 @@ developed by
 &copy; 2003
 		
 
-## Dpdl 'Wasm' plug-in
+## Dpdl language plug-in 'Wasm' 
 
 
-Dpdl provides also a dedicated Dpdl language plug-in that enables to <ins>**compile, run** and **access** **WebAssembly (WASM)**</ins> code **directly from Dpdl** via a dedicated runtime.
+Dpdl provides also a dedicated **Dpdl language plug-in** that enables to <ins>**compile, run** and **access** **WebAssembly (WASM)**</ins> code **directly from Dpdl** via a dedicated runtime.
 
 Wasm is growing in popularity for being a cross platform binary instruction format for multiple application domains that range from Web-apps, Desktop and Cloud apps, serverless applications, Edge containers and others.
 
@@ -21,7 +21,7 @@ Many compiler toolchains nowadays can target also WASM (eg. for C/C++, Rust, Jav
 
 Also <ins>**Dpdl** supports loading and accessing exported Wasm module functions and constructs</ins>. This allows to re-use many libraries and functions compiled to wasm directly in Dpdl.
 
-**Example (compiling WAT and call wasm module functions from <ins>'dpdl'</ins> and from <ins>'javascript'</ins>):**
+**Example (compiling WAT and call wasm module functions from <ins>Dpdl</ins> and from <ins>JavaScript</ins>):**
 
 ```python
 
