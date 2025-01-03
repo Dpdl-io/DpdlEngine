@@ -76,9 +76,9 @@ NOTE: On Windows OS use the appropriate 'javafx' startup script to run DpdlEngin
 
 ### Embedded languages - compatibility matrix
 
-(X + version) **Supported**
+(X + version) **Available**
 
-(*) **available soon**
+(*) **coming soon**
 
 | Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

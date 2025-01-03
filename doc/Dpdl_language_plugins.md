@@ -49,6 +49,10 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 
 ### Embedded programming languages - compatibility matrix
 
+(X + version) **Available**
+
+(*) **coming soon**
+
 | Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01| v1.24.0 |
