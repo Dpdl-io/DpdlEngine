@@ -630,9 +630,9 @@ Dpdl supports the type **`struct`**, with the following definitions:
 
 * Structs can contain dynamic arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed soon., a workaround is to assign the array to an object and access the object instead.
 
-* Structs cannot contain variable definitions of 'class' type
-
 * Structs can be conveniently <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
+
+* Structs cannot contain variable definitions of 'class' type
 
 
 Example:
