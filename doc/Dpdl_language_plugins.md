@@ -639,7 +639,7 @@ println(resp_buf)
 
 #### keyword **`>>ruby`**
 
-The 'Ruby' programming language code can be embedded within Dpdl using the keyword **`ruby`**
+The 'Ruby' programming language code can be embedded within Dpdl using the keyword **`>>ruby`**
 
 ```ruby
 println("Dpdl is embedding some ruby code...")
@@ -865,6 +865,58 @@ int exit_code = dpdl_exit_code()
 println("embedded Clojure exit code: " + exit_code)
 ```
 
+### PHP
+
+#### keyword **`>>php`**
+
+The web scripting language PHP can be embedded within Dpdl code using the keyword **`php`**
+
+**Example:** (reading a csv file, counting the fields in each line, and print the values)
+
+```python
+println("testing embedded php code execution...")
+println("")
+
+dpdl_stack_push("dpdlbuf_d1", "Test/stockdata.csv")
+
+>>php
+	$row = 1;
+	$rec_nr = 0;
+	if( count($argv) > 0 ){
+	 $file = $argv[0];
+	}else{
+	 $file = 'Test/tmp.csv';
+	 }
+	if (($handle = fopen($file, "r")) !== FALSE) {
+		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+			$num = count($data);
+			echo "$num fields in line $row:\n";
+			$row++;
+			for ($c=0; $c < $num; $c++) {
+				echo $data[$c] . "\n";
+			}
+		}
+		fclose($handle);
+		$rec_nr = $row;
+	}else{
+	 die("IO error while opening CSV file: $file");
+	}
+
+	dpdl_stack_buf_put("nr. of records parsed is " . $rec_nr);
+<<
+
+int exit_code = dpdl_exit_code()
+
+raise(exit_code, "Error in executing embedded php code")
+
+string result = dpdl_stack_buf_get("dpdlbuf_d1")
+
+println("")
+println("result: " + result)
+println("")
+println("finished")
+```
+
 ### Embedding SQL
 
 #### keyword **`>>sql`**
@@ -929,57 +981,6 @@ println("finished")
 
 Note: The 'DpdlEngine lite' release includes only the 'postgresql' JDBC driver. Additional drivers to connect to different databases must eventually be installed.
 
-### Php
-
-#### keyword **`>>php`**
-
-The web scripting language PHP can be embedded within Dpdl code using the keyword **`php`**
-
-**Example:** (reading a csv file, counting the fields in each line, and print the values)
-
-```python
-println("testing embedded php code execution...")
-println("")
-
-dpdl_stack_push("dpdlbuf_d1", "Test/stockdata.csv")
-
->>php
-	$row = 1;
-	$rec_nr = 0;
-	if( count($argv) > 0 ){
-	 $file = $argv[0];
-	}else{
-	 $file = 'Test/tmp.csv';
-	 }
-	if (($handle = fopen($file, "r")) !== FALSE) {
-		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-			$num = count($data);
-			echo "$num fields in line $row:\n";
-			$row++;
-			for ($c=0; $c < $num; $c++) {
-				echo $data[$c] . "\n";
-			}
-		}
-		fclose($handle);
-		$rec_nr = $row;
-	}else{
-	 die("IO error while opening CSV file: $file");
-	}
-
-	dpdl_stack_buf_put("nr. of records parsed is " . $rec_nr);
-<<
-
-int exit_code = dpdl_exit_code()
-
-raise(exit_code, "Error in executing embedded php code")
-
-string result = dpdl_stack_buf_get("dpdlbuf_d1")
-
-println("")
-println("result: " + result)
-println("")
-println("finished")
-```
 
 ### OCaml (Experimental)
 
