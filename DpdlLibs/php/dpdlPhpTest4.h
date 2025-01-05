@@ -1,6 +1,8 @@
 # File: php/dpdlPhpTest4.h
 #
-# Example: Dpdl Example with embedded PHP code to read a CSV file, count the number of fields in each line and print the values
+# Example: Dpdl Example with embedded PHP code to read a CSV file, count the number of fields in each line and print the values.
+#			The file to be parsed is pushed onto the dpdl stack, and a record containing the nr. of records parsed is returned
+#			via a dpdl stack buffer
 #
 # Author: A.Costa
 # e-mail: info@dpdl.io
@@ -48,7 +50,5 @@ string result = dpdl_stack_buf_get("dpdlbuf_d1")
 
 println("")
 println("result: " + result)
-
-
 println("")
 println("finished")
