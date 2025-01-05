@@ -95,10 +95,10 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Easy integration of custom libraries**
 * **Small footprint**, Only **`372 Kb`** for DpdlEngine -> can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
-* Allows to **scale computations on GPUs using the 'Wgsl' dpdl language plug-in** (WebGPU shading language)
+* Allows to **scale computations on GPUs using the 'Wgsl' Dpdl language plug-in** (WebGPU shading language)
 * Open Source programming language plug-ins
 
-Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster development and research of applications, and is suitable also for <ins>Hardware programming</ins>.
+Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster research and development of applications, and is suitable also for <ins>Hardware programming</ins>.
 
 Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and provides a simple access to <ins>**java Api's, Native shared libraries, Wasm modules and GPU compute**</ins>.
 
@@ -560,7 +560,7 @@ dpdl_stack_push(n, x, a)
 >>c
 #include <stdio.h>
 
-int main(int argc, char **argv){
+int dpdl_main(int argc, char **argv){
 	printf("Hello C from Dpdl!\n");
 	printf("\n");
 	printf("num params: %d\n", argc);

@@ -13,7 +13,7 @@ developed by
 
 Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins> and in part also bytecode compiled, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-Additionally, Dpdl allows to embed and execute code of other programming languages directly within Dpdl. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (no further installations required)
+Additionally, Dpdl allows to embed and <ins>execute code of other programming languages directly within Dpdl</ins>. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (No further installations needed)
 
 ### Features:
 
@@ -153,7 +153,7 @@ long l = 0x14269cae3c1ae6243L
 
 The value **`null`** can be assigned to any type
 
-**example**
+**example:**
 
 ```c++
 string tmps = null
@@ -1542,7 +1542,7 @@ to use the appropriate language and libraries for particular implementation need
 
 The code of other programming languages can be embedded by simply using the keyword **`>>`** along with the language specifier.
 
-See [Dpdl_embedded_languages.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md) for more details.
+See [Dpdl_language_plugins.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md) for more details.
 
 Data and variables can be exchanged with the embedded code via the dpdl stack by using the API functions:
 
