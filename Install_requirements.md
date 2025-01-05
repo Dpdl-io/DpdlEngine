@@ -80,13 +80,12 @@ NOTE: On Windows OS use the appropriate 'javafx' startup script to run DpdlEngin
 
 (*) **coming soon**
 
-| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01| v1.24.0 |
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01| v1.24.0 |
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01| v1.24.0 |
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|X|
-
+| Platform | C |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython | PHP |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|*|*|
 
 Note: The Free trial shareware version of 'DpdlEngine lite' includes a subset of the Dpdl language plug-ins (see 'DpdlEngine.ini' section [DpdlCustom]) .
 

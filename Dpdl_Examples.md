@@ -424,6 +424,9 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
 	[julia/dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
  
+* Example Dpdl code that embeds 'PHP' code to read a CSV file, count the number of fields in each line and print the values
+
+	[php/dpdlPhpTest4.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/php/dpdlPhpTest4.h)
 
 
 ### Benchmark Tests

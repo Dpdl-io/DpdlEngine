@@ -33,6 +33,7 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 * **`Lua`**
 * **`Ruby`**
 * **`Java`**
+* **`PHP`**
 * **`Groovy`**
 * **`Clojure`**
 * **`C++`** (Root)
@@ -53,12 +54,12 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 
 (*) **coming soon**
 
-| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01| v1.24.0 |
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01| v1.24.0 |
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01| v1.24.0 |
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|X|
+| Platform | C |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython | PHP |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|*|*|
 
 
 Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
@@ -103,6 +104,7 @@ Variables that are pushed on the dpdl stack are passed as parameters to the embe
 Variables can also be embedded directly in the code as placeholder, see **`{{var_name}}`**. In the latter case the variables are replaced with the actual values before code compilation and execution.
 
 Example:
+
 ```python
 println("testing embedded C code in Dpdl")
 
@@ -536,6 +538,7 @@ NOTE: The Dpdl embedded javascript plug-in needs specific features that must be 
 Variables can be passed to the embedded javascript by pushing them onto the Dpdl stack with the api function **`dpdl_stack_push(..)`**
 
 Example that passes an integer variable and an array to the embedded js code:
+
 ```python
 int val = 23
 arr[] = [1, 2, 3, 4]
@@ -636,6 +639,8 @@ println(resp_buf)
 
 #### keyword **`>>ruby`**
 
+The 'Ruby' programming language code can be embedded within Dpdl using the keyword **`ruby`**
+
 ```ruby
 println("Dpdl is embedding some ruby code...")
 
@@ -729,6 +734,7 @@ The following imports are predefined so that contained code can be accessed clas
 - java.sql.*
 
 Example with a return buffer:
+
 ```python
 println("testing buf return from embedded java...")
 
@@ -766,6 +772,7 @@ Groovy code can be embedded and executed within Dpdl using the keyword **`>>groo
 The execution entry point is the a groovy method 'dpdl_main(Object[] param, Object var_map)' which receives as parameters all the parameters and variables from the current Dpdl stack.
 
 **Example:**
+
 ```python
 println("reading a file line by line with 'Groovy'")
 
@@ -833,6 +840,7 @@ The functional programming language 'Clojure' can be embedded within Dpdl via th
 The embedded 'Clojure' code is compiled before execution. The function 'dpdl_main' is the entry point
 
 Example Dpdl code with embedded 'Clojure':
+
 ```python
 println("testing embedded Clojure...")
 
@@ -871,6 +879,7 @@ Variables that are needed to construct the embedded query can also be pushed ont
 
 
 Example Dpdl code with embedded 'SQL':
+
 ```python
 println("testing 'sql' queries with Dpdl...")
 
@@ -920,6 +929,57 @@ println("finished")
 
 Note: The 'DpdlEngine lite' release includes only the 'postgresql' JDBC driver. Additional drivers to connect to different databases must eventually be installed.
 
+### Php
+
+#### keyword **`>>php`**
+
+The web scripting language PHP can be embedded within Dpdl code using the keyword **`php`**
+
+**Example:** (reading a csv file, counting the fields in each line, and print the values)
+
+```python
+println("testing embedded php code execution...")
+println("")
+
+dpdl_stack_push("dpdlbuf_d1", "Test/stockdata.csv")
+
+>>php
+	$row = 1;
+	$rec_nr = 0;
+	if( count($argv) > 0 ){
+	 $file = $argv[0];
+	}else{
+	 $file = 'Test/tmp.csv';
+	 }
+	if (($handle = fopen($file, "r")) !== FALSE) {
+		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+			$num = count($data);
+			echo "$num fields in line $row:\n";
+			$row++;
+			for ($c=0; $c < $num; $c++) {
+				echo $data[$c] . "\n";
+			}
+		}
+		fclose($handle);
+		$rec_nr = $row;
+	}else{
+	 die("IO error while opening CSV file: $file");
+	}
+
+	dpdl_stack_buf_put("nr. of records parsed is " . $rec_nr);
+<<
+
+int exit_code = dpdl_exit_code()
+
+raise(exit_code, "Error in executing embedded php code")
+
+string result = dpdl_stack_buf_get("dpdlbuf_d1")
+
+println("")
+println("result: " + result)
+println("")
+println("finished")
+```
 
 ### OCaml (Experimental)
 
@@ -988,6 +1048,7 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 - ruby -> https://www.ruby-lang.org
 - root (C++) -> https://root.cern/
 - java -> http://janino-compiler.github.io/janino/
+- php -> https://ph7.symisc.net/
 - groovy -> https://groovy-lang.org/
 - ocaml -> http://www.ocamljava.org/
 - clj -> https://clojure.org/
