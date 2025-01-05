@@ -233,6 +233,11 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	[app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
 
 
+* Implementation of SHA-1 hash algorithm entirely written in Dpdl
+
+	[app/dpdlSHA-1/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/dpdlSHA-1/dpdlSHA-1impl.h)
+
+
 * Example Dpdl app that uses the JavaFX library to render and animate a 3D model of a chemical molecule (hydrogen)
 
 	[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
