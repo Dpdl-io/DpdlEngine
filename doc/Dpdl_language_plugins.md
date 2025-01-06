@@ -121,7 +121,7 @@ dpdl_stack_push("dpdl:applyvars", "dpdlbuf_var1",n, x, a)
 	#include <stdio.h>
 	#include <dpdl.h>
 	
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Hello C from Dpdl!\n");
 		printf("\n");
 		int my_i = {{my_int_var}};
@@ -235,7 +235,7 @@ dpdl_stack_push("dpdlbuf_myresult", "param1", "param 2", 23)
 #include <stdio.h>
 #include <dpdl.h>
 
-int main(int argc, char **argv){
+int dpdl_main(int argc, char **argv){
 	printf("Hello C from Dpdl!\n");
 	printf("\n");
 	printf("num params: %d\n", argc);
@@ -871,7 +871,9 @@ println("embedded Clojure exit code: " + exit_code)
 
 The web scripting language PHP can be embedded within Dpdl code using the keyword **`php`**
 
-**Example:** (reading a csv file, counting the fields in each line, and print the values)
+The Dpdl language plug-in is developed on top of PH7, an efficient compiler and interpreter for PHP (v5.3) 
+
+**Example:** (reading a CSV file, counting the fields in each line, and print the values. A record with )
 
 ```python
 println("testing embedded php code execution...")
@@ -1049,7 +1051,7 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 - ruby -> https://www.ruby-lang.org
 - root (C++) -> https://root.cern/
 - java -> http://janino-compiler.github.io/janino/
-- php -> https://ph7.symisc.net/
+- php -> https://ph7.symisc.net/features.html
 - groovy -> https://groovy-lang.org/
 - ocaml -> http://www.ocamljava.org/
 - clj -> https://clojure.org/
