@@ -885,9 +885,9 @@ dpdl_stack_push("dpdlbuf_d1", "Test/stockdata.csv")
 	$row = 1;
 	$rec_nr = 0;
 	if( count($argv) > 0 ){
-	 $file = $argv[0];
+		$file = $argv[0];
 	}else{
-	 $file = 'Test/tmp.csv';
+		die("Error no input file provided");
 	 }
 	if (($handle = fopen($file, "r")) !== FALSE) {
 		while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
@@ -901,7 +901,7 @@ dpdl_stack_push("dpdlbuf_d1", "Test/stockdata.csv")
 		fclose($handle);
 		$rec_nr = $row;
 	}else{
-	 die("IO error while opening CSV file: $file");
+		die("IO error while opening CSV file: $file");
 	}
 
 	dpdl_stack_buf_put("nr. of records parsed is " . $rec_nr);
