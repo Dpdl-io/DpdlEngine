@@ -13,7 +13,7 @@ developed by
 
 Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins> and in part also bytecode compiled, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-Additionally, Dpdl allows to embed and <ins>execute code of other programming languages directly within Dpdl</ins>. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (No further installations needed)
+In addition Dpdl allows also to embed and <ins>execute code of other programming languages directly within Dpdl</ins>. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (No further installations needed)
 
 ### Features:
 
@@ -29,7 +29,7 @@ Additionally, Dpdl allows to embed and <ins>execute code of other programming la
 * Access to Native shared libraries with simple approach
 * Virtual file system via Record Stores
 * Support for custom extensions
-* **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** <em>ANSI C code, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure</em>. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
+* **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** <em>C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure</em>. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
 * Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration (**Dpdl language plug-ins**)
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Multi-line structured text, data and code resources

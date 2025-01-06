@@ -37,7 +37,7 @@ In this way further code execution engines can be added as extensions and embedd
 
 This allows developers to easily create custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **Dpdl language plug-in**.
 
-The included 'DpdlAINerd' **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> different programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed right away.
+The included 'DpdlAINerd' **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed right away.
 
 The 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
 
@@ -76,11 +76,11 @@ Dpdl enables integration of different technologies to leverage fast prototyping 
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
-* **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** ANSI C code, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Groovy and Clojure **programming languages can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
+* **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Groovy and Clojure **programming languages can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **No additional installations required** (except add-on libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very Fast compile time!!!</ins>
-* **Wasm runtime** Dpdl language plug-in included allows to compile WAT code and access 'Wasm' module functions from Dpdl and from embedded language code
+* **Wasm runtime** Dpdl language plug-in included allows to access 'Wasm' module functions from Dpdl and from embedded language code. Also WAT code can be directly compiled on-the-fly and executed.
 * **Built-in Dpdl scripting engine with support for custom extensions** -> allows to dynamically add language features at runtime
 * **Dpdl C API enables to execute Dpdl code embedded within programs written in C** 
 * **On the fly conversion/compilation of Dpdl types 'class' and 'struct' into native java bytecode classes**
