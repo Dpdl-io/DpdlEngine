@@ -1,6 +1,7 @@
 # File: java/dpdlJavaExample2.h
 #
-# Example: Dpdl script that makes use of an embedded java code bock to perform some dummy calculations on an array passed from Dpdl
+# Example: Dpdl script that makes use of an embedded java code bock to perform some dummy calculations on an array passed from Dpdl,
+#			and a some dummy result buffer is written back and intercepted in Dpdl
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -19,7 +20,7 @@ for(c < 300000)
 	c=c+1
 endfor
 
-dpdl_stack_push(myarr, myi)
+dpdl_stack_push("dpdlbuf_test", myarr, myi)
 
 setStartTime()
 
@@ -41,11 +42,13 @@ static int[] myCalc(int[] arr){
 
 int[] res = myCalc(arg0);
 
+long sum = 0;
 for(int x = 0; x < res.length; x++){
 	System.out.println("res[" + x + "]=" + res[x]);
+	sum += res[x];
 }
 
-return 1;
+return "Some test data to write back-> " + sum;
 <<
 
 int ms = getEndTime()
@@ -53,3 +56,7 @@ int ms = getEndTime()
 int exit_code = dpdl_exit_code()
 
 println("embedded java exit code: " + exit_code + " exec time (ms): " + ms)
+
+string ret_buf = dpdl_stack_buf_get("dpdlbuf_test")
+
+println("result buffer: " + ret_buf)

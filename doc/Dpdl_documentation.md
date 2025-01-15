@@ -378,6 +378,7 @@ Primitive arrays can be allocated for the following types:
 - **`short`**
 - **`byte`**
 - **`char`**
+- **`var`** 
 
 The size of the array is specified at declaration, and is fixed.
 
@@ -394,10 +395,20 @@ myiarr[1] = 369
 
 Primitive arrays can also be allocated and initialized right away.
 
-**Example:** (array allocation and initialization)
+**Example:** (array type 'int' allocation and initialization)
 
 ```python
 int myiarr[] = {23, 369}
+```
+
+**Example:** (array type 'var' allocation and initialization)
+
+The 'var' type array can contain all types available
+
+```python
+object so = loadObj("String", "a test str2")
+
+var myvarr[] = {1, "a test str1", so}
 ```
 
 ##### Passing Primitive arrays to functions

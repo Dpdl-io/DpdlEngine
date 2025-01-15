@@ -368,11 +368,12 @@ The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up 
 
 * Rapid application development platform
 * Embedded scripting engine
-* Library module
-* Utility tool
-* Data handling on memory constrained devices
 * Development of Domain Specific Languages (DSL)
-* Generative AI code
+* Data handling on memory constrained devices
+* AI generative code
+* Library module
+* Testing framework for heterogeneous code bases
+* Utility tool
 	
 
 ## Access to the complete Java platform JRE API's and external java libraries
@@ -380,7 +381,8 @@ The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up 
 
 The Dpdl API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and of any <ins>external java library</ins>.
 
-**Example:** using a java HashMap (which interfaces to java.util.HashMap)
+**Example:** using a java HashMap (which interfaces to <em>java.util.HashMap</em>)
+
 ```python
 object map, s
 
@@ -397,6 +399,7 @@ println(s)
 ```
 
 Iterate over the obove HashMap using the same objects and methods as provided by the java API:
+
 ```python
 object es = map.entrySet()
 object iter = es.iterator()
@@ -428,6 +431,7 @@ The methods of the classes that are accessible are referred to the current JRE i
 It's worth mentioning here that 'Java' code can also be embedded directly within Dpdl as described below.
 
 Here just a quick example:
+
 ```python
 println("Dpdl can also embed native java code...")
 
@@ -462,7 +466,7 @@ println("embedded java exit code: " + exit_code)
 
 ```
 
-## Dpdl embeddable programming languages (**Dpdl language plug-ins**)
+## **Dpdl language plug-ins** (Dpdl embeddable programming languages)
 
 Multiple programming languages can be embedded and executed within the same **Dpdl** code via the keyword **`>>`**.
 
@@ -484,6 +488,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`Ruby`**
 * **`OCaml`**
 * **`Java`**
+* **`PHP`**
 * **`Groovy`**
 * **`Clojure`**
 * **`C++`** (Root)
@@ -584,8 +589,7 @@ println("Dpdl contains C: " + b)
 
 ### Embedding other programming languages
 
-Other programming languages or natural language interpreters can be easily integrated in Dpdl via a dedicated plug-in interface and configuration. Please feel free to suggest your opinion on the
-'Discussion' section on the DpdlEngine GitHub repository
+Other programming languages or natural language interpreters can be easily integrated in Dpdl via a dedicated plug-in interface and configuration (**Dpdl language plug-ins**). Please feel free to suggest your opinion on the 'Discussion' section on the DpdlEngine GitHub repository
 
 
 ## AI generative code with '**DpdlAINerd**' (**DAN**) Dpdl language plug-in
@@ -630,12 +634,12 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 (*) **available soon**
 
-| Platform | C (ANSI C99) |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01| v1.24.0 |
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01| v1.24.0 |
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01| v1.24.0 |
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|X|
+| Platform | C |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython | PHP |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|*|*|
 
 
 ### Add-on Dpdl language plug-ins - compatibility matrix
@@ -705,6 +709,7 @@ Python code can be embedded within Dpdl code by using the keyword **`>>python`**
 MicroPython will also be supported as option in the coming release.
 
 Example Dpdl code with embedded 'Python' code:
+
 ```python
 println("testing embedding python code")
 println("")
@@ -730,6 +735,7 @@ Julia code can be embedded within Dpdl via the keyord **`>>julia`**
 
 Example Dpdl code embedding 'Julia' that generates a Plot and saves the result as PDF file:
 <img src="http://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="60%" height="60%">
+
 ```python
 #main
 println("Testing Plot data with Julia programming language...")
@@ -766,6 +772,7 @@ Dpdl allows the embedding of javascript with 2 different Modes:
 
 
 Example:
+
 ```python
 println("testing embedded qjs...")
 

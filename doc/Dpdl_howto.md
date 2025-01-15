@@ -29,6 +29,7 @@ and at a given time interval, over and over.
 This is particularly useful for processes that need a stable and robust iteration mechanism.
 
 Example:
+
 ```python
 import("dpdllib.h")
 
@@ -42,6 +43,7 @@ raise(server, "The process did not start correctly")
 
 println("process started successfully")
 ```
+
 The advantage in using 'DPDLAPI_createThread(..)' compared to a normal 'Thread(..)' is the fact that the DPDLAPI_createThread(..)
 runs the script in a dedicated interpreter execution environment, improving performance and reducing dead-lock pitfalls.
 
@@ -63,6 +65,7 @@ When defining an embedded java code section via **`>>java`** keyword, the contai
 
 
 Example:
+
 ```python
 
 struct A {
@@ -138,6 +141,7 @@ Note that function calls to dpdl script loaded objects must include the base nam
 better readability and also due to performance improvements.
 
 Example dpdl script that loads a dpdl script as object
+
 ```c
 struct myA {
 	string id = "this is an A"
@@ -165,6 +169,7 @@ myload.myFuncStruct("MyLC", ana)
 ```
 
 MyLC.h
+
 ```c
 func MyLC()
 	println("MyLC()")
@@ -207,6 +212,7 @@ Within the embedded C code the function **`dpdl_stack_buf_put(..)`** can be used
 to the keyword specified. The maximum size of the memory buffer is currently fixed to 4096 bytes (but can be changed in the registered version of DpdlEngine)
 
 Example:
+
 ```python
 println("testing embedded C code in Dpdl")
 
@@ -254,6 +260,7 @@ To modularize code it's convenient to create a set of files/modules that can be 
 The **`include(..)`** function serves this purpose.
 
 Example:
+
 ```python
 include("myincludedir/module1.h")
 
@@ -274,6 +281,7 @@ The Dpdl language plug-in 'DpdlAINerd' (DAN) allows to generate code and data or
 This is a powerful tool for fast prototyping and experimenting with code.
 
 The following example shows one possible execution path:
+
 ```python
 println("Testing generative AI code with Dpdl....")
 
@@ -312,6 +320,7 @@ The **`>>res(...)`** keyword allows to embed multi-line structured text, data an
 The resources can be stacked and retrieved where in the code they are needed.
 
 **Example:**
+
 ```python
 println("testing access to embedded multi-line resources...")
 
@@ -427,6 +436,7 @@ println("status exec: " + status_exec)
 Dpdl can be conveniently embedded and executed also in C code.
 
 **Example:** executing a Dpdl source file
+
 ```c
 #include <stdio.h>
 #include "dpdl.h"
@@ -446,6 +456,7 @@ int main(int argc, char **argv){
 
 
 **Example:** executing plain Dpdl code
+
 ```c
 #include <stdio.h>
 #include "dpdl.h"
@@ -482,6 +493,7 @@ The object returned implements the same methods as available in a java [HashMap]
 The values of the map for example can than be accessed via **`get(..)`** function.
 
 Example:
+
 ```python
 import('json')
 
@@ -510,6 +522,7 @@ println("popup_obj: " + popup_obj)
 Iterating over json data can be performed in the same way as iterating over a 'HashMap' object:
 
 Example:
+
 ```python
 object map = json.parse(json_str, 0)
 
@@ -532,6 +545,7 @@ This function can be used to map json data to a given Dpdl **`struct`** or **`ob
 The tags and values of the json data are mapped to the corresponding variable names and types in Dpdl.
 
 Example:
+
 ```python
 import('json')
 
@@ -570,6 +584,7 @@ The result is retrieved from the Dpdl stack in form of a Vector, it can be a pur
 enables to access the fields via a key/value approach.
 
 Example (in this case a vector of maps is retrieved)
+
 ```python
 println("performing database SQL queries with Dpdl...")
 
@@ -632,6 +647,7 @@ Dpdl allows to store and access data in Record Stores.
 The Record Store functions can be used directly (via DPDLAPI_* calls), or with the functions defined in the import library 'dpdlRS.h' 
 
 Example:
+
 ```python
 import("dpdllib.h")
 import("dpdlRS.h")

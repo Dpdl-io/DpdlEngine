@@ -31,7 +31,7 @@ Example:
 ```python
 import('native')
 
-object clib = loadLib("c")
+object clib = native.loadLib("c")
 
 clib.printf("This message comes from native printf function: %s %d", "Hello", 23)
 ```
