@@ -89,6 +89,7 @@ char arr_c_ini[] = {'a', 'b', 'c'}
 var arr_v_ini[] = {"can contain all types", 23.0d, loadObj(HashMap")}
 
 # dynamic arrays (can grow and shrink in size)
+
 my_arr_dyn[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 ```
 
