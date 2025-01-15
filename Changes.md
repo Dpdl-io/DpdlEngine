@@ -10,11 +10,13 @@ developed by
 
 ## New features
 
+* NEW Dpdl language plugin for 'Perl' is now available
+
 * Inheritance and Polymorphism for type 'class' and 'struct'
 
 * Dpdl language plug-in for 'MicroPython' is now available
 
-* NEW Asynchronous Tasks can now be executed via the keyword **`>>task`** containing embedded Dpdl code sections 
+* Asynchronous Tasks can now be executed via the keyword **`>>task`** containing embedded Dpdl code sections 
 
 * Dpdl now supports also the type 'class'
 

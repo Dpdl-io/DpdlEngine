@@ -1553,7 +1553,7 @@ The path needs to be relative to the folder where the executed script is located
 NOTE: Currently the 'include' statement need to be placed <ins>before any defined 'import' statements</ins> -> this will change in the next release
 
 
-### Embedding of other programming languages directly within Dpdl (Dpdl language plug-ins)
+### Embedding of other programming languages directly within Dpdl code (Dpdl language plug-ins)
 
 A particular feature of Dpdl is the possibility to embed and execute other programming languages directly within Dpdl code. This feature enables
 to use the appropriate language and libraries for particular implementation needs.
