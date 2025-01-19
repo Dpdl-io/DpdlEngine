@@ -630,7 +630,7 @@ Note that in this case the 'class A' function 'printMe(...)' is being overwritte
 
 Dpdl supports the type **`struct`**, with the following definitions:
 
-* Structs may contain member variables of all type, including 'struct' variable declarations (but not 'struct' definitions)
+* Structs may contain member variables of all type (except classes), including 'struct' variable declarations (but not 'struct' definitions)
 
 * Structs can call functions defined in the outer scope
 
@@ -742,9 +742,11 @@ mya.str = "Test"
 mya.data = d
 ```
 
-#### Inheritance
+#### 'struct' inheritance
 
-The type 'struct' can also be derived from a base 'struct', inheriting all member variables and functions from the base struct.
+The type 'struct' can also be derived from a base 'struct', as a sub-struct, inheriting all member variables and functions from the base struct.
+
+Variables and functions with the same name are overwritten by the sub-struct.
 
 **Example:**
 
