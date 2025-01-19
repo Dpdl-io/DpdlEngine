@@ -18,13 +18,13 @@ developed by
 
 Dpdl is a <ins>rapid development **programming language**</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 
-Dpdl enables access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and allows to  <ins>**embed** and **execute on-the-fly**</ins> of multiple programming languages like <em>ANSI C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Wgsl, Groovy and Clojure</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations needed</ins>**.
+Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Wgsl, Groovy and Clojure</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
-The Dpdl language constructs and syntax is simple, powerful and follows an object oriented paradigm interoperable with the java platform JRE API and external java libraries and provides a simple access also to native libraries.
+The Dpdl language constructs and syntax is simple, powerful and follows an object oriented paradigm interoperable with the java platform JRE API and external java libraries and provides also a simple access to native shared libraries.
 
-The core Dpdl engine can also be run on very small memory footprint devices via a dedicated kilobyte range virtual machine.
+The core Dpdl engine has the capability to run even on scarce memory platforms via a dedicated kilobyte range virtual machine.
 
-### Dpdl is <ins>**Self contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface.
+### Dpdl is <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface.
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
@@ -32,26 +32,25 @@ The core Dpdl engine can also be run on very small memory footprint devices via 
 
 ### Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
 
-Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'**.
-In this way further code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
+Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
 
 This allows developers to easily create custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **Dpdl language plug-in**.
 
 The included 'DpdlAINerd' **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed right away.
 
-The 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
+Additionally, the 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
 
 ## Dpdl is designed to:
 
 ### * Develop your ideas faster
 ### * On multiple platforms
-### * Using the power of multiple programming languages and API's within single source
+### * Using the power of multiple programming languages and API's within a single source
 ### * Reuse code
 ### * No need to install, compile and configure environments
 ### * Runs on constrained devices
 ### * Compressing, querying and handling data efficiently on constrained devices
 ### * Self-contained, No additional dependencies required (except add-on libraries)
-### * Facilitate rapid prototyping for hardware programming
+### * Facilitate rapid prototyping for Hardware programming
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
 ### * Plug-in oriented
 ### * Leverage prototyping with built-in <ins>AI generative code</ins> plug-in
@@ -635,12 +634,12 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 (*) **available soon**
 
-| Platform | C |Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |OCaml | MicroPython | PHP | Perl |
+| Platform | C | Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |MicroPython | PHP | Perl | OCaml |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |X v5.40.0 |
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |X v5.40.0 |
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v4.01|X v1.24.0 |X v5.3 |X v5.40.0 |
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|X v4.01|*|*|*|
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|*|*|*|X v4.01|
 
 
 ### Add-on Dpdl language plug-ins - compatibility matrix

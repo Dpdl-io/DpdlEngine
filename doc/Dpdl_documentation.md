@@ -636,7 +636,7 @@ Dpdl supports the type **`struct`**, with the following definitions:
 
 * Variable shadowing is enabled
 
-* Structs can be derived from a base 'struct', inheriting all member variables and function definitions (inheritance)
+* Structs can be derived from a base 'struct', inheriting all member variables and function definitions (inheritance), variables and functions can be overridden
 
 * Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct' function changes the variable <ins>only during the function scope</ins>.
 
@@ -646,7 +646,7 @@ Dpdl supports the type **`struct`**, with the following definitions:
 
 * Structs can be used to initialize arrays, (see 'array(...)' function)
 
-* Structs can contain dynamic arrays[], but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed soon., a workaround is to assign the array to an object and access the object instead.
+* Structs can contain dynamic arrays, but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed soon., a workaround is to assign the array to an object and access the object instead.
 
 * Structs can be conveniently <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
 
