@@ -14,7 +14,7 @@ developed by
 
 '**DpdlAINerd**' (**DAN**) is a dedicated **Dpdl language plug-in** for <ins>**AI generative code**</ins>.
 
-The plug-in provided allows to <ins>**automatically generate and execute** embedded code sections in various programming languages within Dpdl</ins> via a configurable **AI engine**. Currently the OpenAI engine is supported, others like Google Vertex AI, CodePal, etc.. will be integrated in near future.
+The plug-in provided allows to <ins>**automatically generate and execute** embedded code sections in various programming languages within Dpdl</ins> via a configurable **AI engine**.
 
 More generally, the plug-in <ins>allows also to **generate content or data**</ins> used during the code execution.
 
@@ -23,6 +23,16 @@ This enables to write code faster in the prototyping phase and allows also to ge
 The 'DpdlAINerd' (**DAN**) Dpdl language plug-in can be embedded and executed within Dpdl via the keyword **`>>ai`**
 
 see Dpdl examples in: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/ai)
+
+
+### Currently supported AI engines
+
+At current state the 'DpdlAINerd' Dpdl language plugin supports the following AI engines:
+
+- DeepSeek (deepseek)
+- OpenAI (openai)
+
+The AI engine used can be specified in the file 'DpdlPlugins.ini' under the section 'DpdlAINerd'
 
 
 ### Modes of execution:
@@ -108,6 +118,7 @@ println(my_test_json)
 ```
 
 when executed the code above generates the following output:
+
 ```
 this is my sample json:
 {
@@ -135,6 +146,7 @@ this is my sample json:
 The following example shows how code can be generated and than executed in a later point in the program.
 
 **Example:**
+
 ```python
 println("testing generative AI code with Dpdl....")
 
@@ -175,6 +187,7 @@ The code generation function can be activated by providing the '@gen' parameter 
 The DpdlEngine will generate a new file, in the same directory, with the '_gen' suffix.
 
 **Example:**
+
 ```
 java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED -jar DpdlEngine_V1.0_release.jar -load ai/dpdlAITest.h @gen
 ```
@@ -197,7 +210,11 @@ A full registered version of Dpdl is required to have an unlimited buffer size.
 
 Currently 'DpdlAINerd' supports the following AI engines:
 
+- DeepSeek (Models: deepseek-chat, deepseek-reasoner)
 - OpenAI (Model: gpt-3.5-turbo)
+
+The following AI engines will be supported in near future:
+
 - Google Vertex AI (supported soon)
 - CodePal (supported soon)
 - *support for more engines will follow
@@ -205,11 +222,13 @@ Currently 'DpdlAINerd' supports the following AI engines:
 
 The engine used can be configured via the 'DpdlPlugins.ini' configuration file, along with the appropriate access key 
 
-DpdlPlugins.ini sample:
+**example:**
+
 ```
 [DpdlAINerd]
-DAN_ENGINE=openai
-DAN_API_KEY=put_your_openai_api_key_here
+DAN_ENGINE=deepseek
+DAN_API_KEY=your_api_key_here
+DAN_AI_MODEL=deepseek-chat
 ```
 
 
@@ -226,6 +245,7 @@ The plan is to release the 'DpdlAINerd' language plug-in as fully Open Source so
 
 - Image generation for test data
 - Speech to Code generation 
+- Visual diagram/schema to code generation
 
  
 

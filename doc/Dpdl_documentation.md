@@ -636,9 +636,9 @@ Dpdl supports the type **`struct`**, with the following definitions:
 
 * Variable shadowing is enabled
 
-* Structs can be derived from a base 'struct', inheriting all member variables and function definitions (inheritance), variables and functions can be overridden
+* Structs can be derived from a base 'struct' as sub-struct, inheriting all member variables and function definitions (inheritance), variables and functions can be overridden in the base-struct
 
-* Structs can contain 'struct functions' that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct' function changes the variable <ins>only during the function scope</ins>.
+* Structs can contain 'struct' functions that can be called. Within struct functions all 'struct' variables can be accessed in READ mode. Changing a struct variable within a 'struct' function changes the variable <ins>only during the function scope</ins>.
 
 * Structs member variable can can be initialized upon 'struct' declaration
 
@@ -646,7 +646,7 @@ Dpdl supports the type **`struct`**, with the following definitions:
 
 * Structs can be used to initialize arrays, (see 'array(...)' function)
 
-* Structs can contain dynamic arrays, but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed soon., a workaround is to assign the array to an object and access the object instead.
+* Structs can also contain 'dynamic arrays', but currently accessing and via $struct.arr[] is not yet possible -> this will be allowed soon., a workaround is to assign the array to an object and access the object instead.
 
 * Structs can be conveniently <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
 
@@ -702,7 +702,9 @@ println("my_arr: " + my_arr)
 
 Struct member variables can be statically initialized but can also be re-assigned explicitly upon 'struct' variable declaration, in a similar way like in C.
 
-The ordering of the variables within the initialization (i.e {...}) need to reflect the ordering inside the 'struct'
+The ordering of the variables within the initialization (i.e {...}) need to reflect the ordering inside the 'struct'.
+
+A given variable initialization can be skipped, by invalidating the entry with a '.' entry
 
 **Example:**
 
@@ -742,11 +744,27 @@ mya.str = "Test"
 mya.data = d
 ```
 
+##### Skipping a given 'struct' variable initialization
+
+By using the placeholder '.' a given variable initialization entry is invalidated.
+
+In the example below, only 'x' and 'z' are initialized explicitly in the initialization, while 'y' retain the base-struct value
+
+```c
+struct A {
+	int x
+	int y = 6
+	int z
+}
+
+struct A mya = {3,.,9}
+```
+
 #### 'struct' inheritance
 
 The type 'struct' can also be derived from a base 'struct', as a sub-struct, inheriting all member variables and functions from the base struct.
 
-Variables and functions with the same name are overwritten by the sub-struct.
+Variables and functions in the sub-struct having the same name as the base-struct, are overwritten in the base-struct.
 
 **Example:**
 
@@ -770,6 +788,14 @@ struct myB b
 p.printIt()
 ```
 
+Initialization of a 'struct' which has a base-struct, only the member variables of the sub-struct are initialized.
+
+**Example:** (struct initialization 
+
+```python
+# this sets 'x' and 'y' only
+struct myB ab = {369, 963}
+```
 
 
 #### 'struct' compiled to java bytecode

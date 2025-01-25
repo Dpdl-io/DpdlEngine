@@ -38,7 +38,7 @@ These examples are demonstrators but are full running applications.
 
 * Example Dpdl code that makes use of the type 'struct'
 
-	[test/testStruct.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct.h)
+	[test/testStruct3.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct3.h)
 
 * Dynamic Array definition, population and access
 	

@@ -34,7 +34,7 @@ The core Dpdl engine has the capability to run even on scarce memory platforms v
 
 Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
 
-This allows developers to easily create custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **Dpdl language plug-in**.
+This allows developers to easily create and integrate custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **Dpdl language plug-in**.
 
 The included 'DpdlAINerd' **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed right away.
 
