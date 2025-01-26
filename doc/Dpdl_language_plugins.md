@@ -1043,7 +1043,7 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 
 ### Embedded language references
 
-- c -> https://bellard.org/tcc/tcc-doc.html
+- c -> https://www.dpdl.io/doc/dpdl_tcc/Dpdl_C_Compiler_reference_documentation.html
 - python -> https://www.python.org/
 - mpython -> https://micropython.org/
 - julia -> https://julialang.org/

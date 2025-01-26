@@ -186,7 +186,17 @@ These examples are demonstrators but are full running applications.
 
 ### AI
 
-* Example Dpdl code that that leverages generative AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate embedded code sections which can than be executed
+* Example Dpdl code that makes use of the Dpdl language plugin 'DpdlAINerd' (DAN) to automatically generate a simple <ins>**SNAKE Game**</ins> console application (written in C) via AI generative code.
+
+	[ai/dpdlAISnakeGame.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAISnakeGame.h)
+
+<img src="https://www.dpdl.io/images/platform/examples/dpdlcodegenai/dpdlcodegenai_game_snake.png" width="65%" height="65%">
+
+The code above 'ai/dpdlAISnakeGame.h' automatically generated the following Dpdl code: [ai/dpdlAISnakeGame_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAISnakeGame_gen.h)
+
+The AI engine used in this case was the available 'DeepSeek' model. No adaptations were needed to successfully run the program.
+
+* Example Dpdl code that leverages generative AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate embedded code sections which can than be executed
 
 	[ai/dpdlAICodeSort.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAICodeSort.h)
 	

@@ -192,5 +192,7 @@ int exit_code = dpdl_exit_code()
 println("embedded C code compiled and run with exit code: " + exit_code)
 ```
 
+The full list of option parameter settings can be inspected here:
 
+[Dpdl_C_Compiler_reference_documentation](https://www.dpdl.io/doc/dpdl_tcc/Dpdl_C_Compiler_reference_documentation.html)
 
