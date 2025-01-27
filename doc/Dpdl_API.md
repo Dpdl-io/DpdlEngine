@@ -270,11 +270,11 @@ dpdl_thread_finalize(int t_id, object param...)
 
 [GPU]
 DPDLNATIVE_GPU_getVersion() return string vers
-DPDLNATIVE_GPU_createTensorInputS1x1(int idx_t, string type, long x, Pointer data) return int status
+DPDLNATIVE_GPU_createTensorInputS1x1(int idx_t, string type, long x, object Pointer) return int status
 DPDLNATIVE_GPU_createTensorOutputS1x1(int idx_t, string type, long x) return int status
 DPDLNATIVE_GPU_createKernelS1x1(int idx_k, int idx_in, int idx_out, long x) return int status
 DPDLNATIVE_GPU_dispatchKernel(int idx_k) return int status
-DPDLNATIVE_GPU_waitCopyCPU(int idx_k, int idx_out, Pointer data, int x) return int status
+DPDLNATIVE_GPU_waitCopyCPU(int idx_k, int idx_out, object Pointer, int x) return int status
 
 [ActionListenerInterface]
 actionPerformed(string event)
