@@ -24,7 +24,7 @@ These examples are demonstrators but are full running applications.
 
 ### Basic
 
-* Example Dpdl Code with Array definition, population and access using a JRE 'Iterator'
+* Example Dpdl Code with Array definition, population and access using an 'Iterator'
 	
 	[test/testArray.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testArray.h)
 	
@@ -44,6 +44,10 @@ These examples are demonstrators but are full running applications.
 	
 	[arraylistExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/arraylistExample.h)
 
+* Example Dpdl code that loads and accesses natively the 'libc' shared library functions
+
+	[native/dpdlTestNative.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h)
+	
 * Example Dpdl code that shows how exceptions can be raised and handled
 
 	[testRaiseException.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testRaiseException.h)
@@ -102,9 +106,6 @@ These examples are demonstrators but are full running applications.
 
 ### Special
 
-* Example Dpdl code that loads and accesses natively the 'libc' system library functions
-
-	[native/dpdlTestNative.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h)
 	
 * Execute a Dpdl script continuously in a dedicated Thread instance
 	
@@ -184,17 +185,21 @@ These examples are demonstrators but are full running applications.
 	[fs/dpdlVirtualFS.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/fs/dpdlVirtualFS.h)
 
 
-### AI
+### AI generative code using the **Dpdl langage plugin** 'DpdlAINerd'
 
-* Example Dpdl code that makes use of the Dpdl language plugin 'DpdlAINerd' (DAN) to automatically generate a simple <ins>**SNAKE Game**</ins> console application (written in C) via AI generative code.
+The following examples make use of the **Dpdl langage plugin** 'DpdlAINerd (DAN)' to <ins>automatically generate</ins> embedded code sections in various programming languages within Dpdl which can than be executed right away on the DpdlEngine.
 
+* Example Dpdl code that makes use of the **Dpdl language plugin** 'DpdlAINerd' (DAN) to <ins>automatically generate</ins> a simple <ins>**SNAKE Game**</ins> console application (written in C) via AI generative code using DeepSeek AI Models.
+	
 	[ai/dpdlAISnakeGame.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAISnakeGame.h)
 
-<img src="https://www.dpdl.io/images/platform/examples/dpdlcodegenai/dpdlcodegenai_game_snake.png" width="65%" height="65%">
+The code is <ins>generated, compiled and executed in a single step</ins>
+	
+<img src="https://www.dpdl.io/images/platform/examples/dpdlcodegenai/dpdlcodegenai_game_snake.png" width="55%" height="55%">
 
-The code above 'ai/dpdlAISnakeGame.h' automatically generated the following Dpdl code: [ai/dpdlAISnakeGame_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAISnakeGame_gen.h)
+The code above 'ai/dpdlAISnakeGame.h' automatically generated the following Dpdl code with embedded C: [ai/dpdlAISnakeGame_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAISnakeGame_gen.h)
 
-The AI engine used in this case was the available 'DeepSeek' model. No adaptations were needed to successfully run the program.
+The AI engine used in this case was the available 'DeepSeek' model. No adaptations were needed to successfully run the program right away.
 
 * Example Dpdl code that leverages generative AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate embedded code sections which can than be executed
 
@@ -210,6 +215,57 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 
  	[ai/dpdlAITestExec.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAITestExec.h) 
 
+**this program Output:**
+
+```
+this is my sample json:
+{
+  "documentType": "National ID",
+  "issuingCountry": "United States",
+  "issuingAuthority": "Department of Motor Vehicles",
+  "documentNumber": "123456789",
+  "issueDate": "2020-05-15",
+  "expiryDate": "2030-05-15",
+  "personalDetails": {
+    "firstName": "John",
+    "middleName": "Michael",
+    "lastName": "Doe",
+    "dateOfBirth": "1985-07-20",
+    "gender": "Male",
+    "placeOfBirth": "New York, USA",
+    "nationality": "American"
+  },
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "postalCode": "10001",
+    "country": "USA"
+  },
+  "biometricData": {
+    "photo": "base64EncodedPhotoString",
+    "signature": "base64EncodedSignatureString",
+    "fingerprints": {
+      "leftThumb": "base64EncodedFingerprint",
+      "rightThumb": "base64EncodedFingerprint"
+    }
+  },
+  "additionalInformation": {
+    "height": "180 cm",
+    "eyeColor": "Brown",
+    "bloodType": "O+",
+    "organDonor": true
+  },
+  "securityFeatures": {
+    "barcode": "base64EncodedBarcode",
+    "mrz": "P<USADOE<<JOHN<MICHAEL<<<<<<<<<<<<<<<<<<<<<<<1234567890USA8507201M3005159<<<<<<<<<<<<<<02",
+    "chip": {
+      "encryptedData": "base64EncodedEncryptedData",
+      "publicKey": "base64EncodedPublicKey"
+    }
+  }
+}
+```
 
 ### Graphical User Interface (UI)
 
@@ -264,7 +320,11 @@ The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSo
 	
 * Example Dpdl code that executes an embedded 'Julia' script to plot data using the 'Plots' package, and to save the chart as PDF
 
-	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)	
+	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)
+	
+	**here the exported PDF:**
+	
+	<img src="https://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="33%" height="33%">
 
 * Example Dpdl app that uses the JavaFX java library to visualize a website within a WebView component
 
