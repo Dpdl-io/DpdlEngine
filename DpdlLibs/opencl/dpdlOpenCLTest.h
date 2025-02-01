@@ -58,15 +58,15 @@ for(cnt < DATA_SIZE)
 endfor
 
 # indexes of input & output vectors
-int idx_vec1 = 0
-int idx_vec2 = 1
-int idx_vec3 = 2
+int idx_vec_a = 0
+int idx_vec_b = 1
+int idx_vec_c = 2
 
 int status
 
-status = libgpu.DPDLNATIVE_OPENCL_addVec(idx_vec1, "f64", DATA_SIZE, input_arr1)
-status = libgpu.DPDLNATIVE_OPENCL_addVec(idx_vec2, "f64", DATA_SIZE, input_arr2)
-status = libgpu.DPDLNATIVE_OPENCL_addVec(idx_vec3, "f64", DATA_SIZE, output_arr)
+status = libgpu.DPDLNATIVE_OPENCL_addVec(idx_vec_a, "f64", DATA_SIZE, input_arr1)
+status = libgpu.DPDLNATIVE_OPENCL_addVec(idx_vec_b, "f64", DATA_SIZE, input_arr2)
+status = libgpu.DPDLNATIVE_OPENCL_addVec(idx_vec_c, "f64", DATA_SIZE, output_arr)
 
 println("executing kernel...")
 
@@ -89,7 +89,7 @@ int exit_code = dpdl_exit_code()
 
 println("embedded ocl exit code: " + exit_code)
 
-int wait_copy = libgpu.DPDLNATIVE_OPENCL_waitReadBuffer(idx_vec3, output_arr, DATA_SIZE)
+int wait_copy = libgpu.DPDLNATIVE_OPENCL_waitReadBuffer(idx_vec_c, output_arr, DATA_SIZE)
 
 println("OUTPUT: ")
 
