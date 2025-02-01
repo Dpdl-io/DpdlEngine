@@ -16,6 +16,70 @@ These features may eventually be available in coming releases.
 Suggestions and comments are very appreciated.
 
 
+## Dpdl Interfaces
+
+Proposal for supporting Interfaces.
+
+An Interface describes a list of functions that a class, which inherits from the interface, must implement.
+
+```python
+
+interface IA {
+	func foo()
+	func bar() void
+	func foo_bar() int
+}
+
+
+class A : IA {
+
+	int id
+
+	func A(int id_)
+		id = id_
+	end
+
+	func foo()
+		println("foo()")
+	end
+
+	func bar() void
+		println("bar()")
+	end
+
+	func foo_bar() int
+		println("A->foo_bar()")
+
+		return id
+	end
+}
+
+class B : A {
+
+	func foo_bar() int
+		println("B->foo_bar()")
+
+		return 369
+	end
+}
+
+
+println("testing interfaces...")
+
+class A mya(999)
+
+mya.foo()
+mya.bar()
+
+println("mya->" + mya.foo_bar())
+
+class B myb
+
+myb.foo()
+myb.bar()
+
+println("myb->" + myb.foo_bar())
+```
 
 ## Compile Dpdl code sections to java bytecode
 
@@ -24,7 +88,7 @@ This is a proposal draft for enabling Dpdl code sections to be compiled to java 
 
 The purpose of this feature is to improve performance critical code sections
 
-The meta instruction **`[bytecode]`** signalizes the beginning of Dpdl to bytecode compilation, untile the first empty code line.
+The meta instruction **`[bytecode]`** signalizes the beginning of Dpdl to bytecode compilation, until the first empty code line in found.
 
 **Example:**
 

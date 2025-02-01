@@ -10,23 +10,13 @@ developed by
 
 ## New features
 
-* NEW Dpdl language plugin for 'Perl' is now available
+* NEW Dpdl language plugin for 'OCL' (OpenCL) is now available
+
+* Dpdl language plugin for 'Perl' is now available
 
 * Inheritance and Polymorphism for type 'class' and 'struct'
 
 * Dpdl language plug-in for 'MicroPython' is now available
-
-* Asynchronous Tasks can now be executed via the keyword **`>>task`** containing embedded Dpdl code sections 
-
-* Dpdl now supports also the type 'class'
-
-* Dpdl language plug-in for 'Groovy' is now available
-
-* Dpdl language plug-in 'Wgsl' that allows to scale computations on GPU's by using WGSL code (WebGPU Shading Language)
-
-* Dpdl Wasm runtime plug-in for compiling and accessing 'Wasm' module functions from 'dpdl' and from embedded code
-
-* Multi-line structured text, data and code resources are supported
 
 
 ## Adaption

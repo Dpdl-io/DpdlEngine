@@ -185,6 +185,19 @@ These examples are demonstrators but are full running applications.
 	[fs/dpdlVirtualFS.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/fs/dpdlVirtualFS.h)
 
 
+### GPU Compute
+
+The following Dpdl examples show how to exploit capabilities of a GPU via embedded 'Wgsl' and 'OCL' code sections
+
+* Dpdl sample code that makes use of the Dpdl language plug-in 'dpdlopencl' to execute embedded OCL code (OpenCL)
+
+	[opencl/dpdlOpenCLTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/opencl/dpdlOpenCLTest.h)
+	
+* Example Dpdl code that make use of Wgsl (WebGPU shading language) to speed-up computations for a high-performing neural network activation function (GELU) directly on GPUs
+
+	[wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
+	
+	
 ### AI generative code using the **Dpdl langage plugin** 'DpdlAINerd'
 
 The following examples make use of the **Dpdl langage plugin** 'DpdlAINerd (DAN)' to <ins>automatically generate</ins> embedded code sections in various programming languages within Dpdl which can than be executed right away on the DpdlEngine.
@@ -441,10 +454,6 @@ this is my sample json:
 * Example Dpdl code that embeds C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
-	
-* Example Dpdl code that make use of Wgsl (WebGPU shading language) to speed-up computations for a high-performing neural network activation function (GELU) directly on GPUs
-
-	[wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
 	
 * Example Dpdl code that embeds javascript code (with  Mode2 using 'qjs') that loads an object implemented in a native C library (see point.c)
 

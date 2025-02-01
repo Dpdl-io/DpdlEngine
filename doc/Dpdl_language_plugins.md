@@ -41,10 +41,11 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 
 **Add-on 'Dpdl language plug-ins' available:**
 
-* **`Wasm`** (Wasm Runtime and Wat code Compiler)
-* **`Sql`** (query databases via SQL)
-* **`Wgsl`** (WebGPU compute shading language)
-* **`Ai`** (DpdlAINerd)
+* **`Wasm`** -> WAT Compiler and Wasm Runtime
+* **`Sql`** -> query databases via SQL
+* **`Wgsl`** -> WebGPU shading language
+* **`OCL`** -> Open Computing Language (OpenCL)
+* **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
 **Dpdl language plug-ins** can be developed and integrated via defined interfaces and a simple configuration.
@@ -67,11 +68,11 @@ Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with th
  
 ### Add-on Dpdl language plug-ins - compatibility matrix
 
-| Platform |Wasm |Sql |Wsgl |AI |
-| ---  | --- | --- | --- | --- |
-| Linux x86_64 |X|X|X|X|
-| Mac OS X (aarch64) |X|X|X|X|
-| Raspberry PI 3 (armv7)|*|X|*|X|
+| Platform |Wasm |Sql |Wsgl |OCL (OpenCL) |AI |
+| ---  | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X|X|X|X|
+| Mac OS X (aarch64) |X|X|X|X|X|
+| Raspberry PI 3 (armv7)|*|X|*|*|X|
 | Windows64|*|X|*|*|X|
 
 ### Dpdl embedded code API

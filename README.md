@@ -18,7 +18,7 @@ developed by
 
 Dpdl is a <ins>rapid development **programming language**</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
 
-Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Wgsl, Groovy and Clojure</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
+Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,, Clojure, Wgsl and OpenCL</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
 The Dpdl language constructs and syntax is simple, powerful and follows an object oriented paradigm interoperable with the java platform JRE API and external java libraries and provides also a simple access to native shared libraries.
 
@@ -30,7 +30,7 @@ The core Dpdl engine has the capability to run even on scarce memory platforms v
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
-### Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + Clojure + Wat/Wasm + Wgsl + AI) = <ins>Powerful and Versatile</ins>
+### Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + Clojure + Wat/Wasm + Wgsl + OpenCL + AI) = <ins>Powerful and Versatile</ins>
 
 Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
 
@@ -75,7 +75,7 @@ Dpdl enables integration of different technologies to leverage fast prototyping 
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
-* **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Wgsl, Groovy and Clojure</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
+* **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, Clojure, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **No additional installations required** (except add-on libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very Fast compile time!!!</ins>
@@ -495,9 +495,10 @@ This features is very useful for rapid development and rapid prototyping and is 
 
 **available Add-on 'Dpdl language plug-ins':**
 
-* **`Wasm`** (WAT Compiler and Wasm Runtime)
-* **`Sql`** (query databases via SQL)
-* **`Wgsl`** (WebGPU shading language)
+* **`Wasm`** -> WAT Compiler and Wasm Runtime
+* **`Sql`** -> query databases via SQL
+* **`Wgsl`** -> WebGPU shading language
+* **`OCL`** -> Open Computing Language (OpenCL)
 * **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
@@ -644,11 +645,11 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 ### Add-on Dpdl language plug-ins - compatibility matrix
 
-| Platform |Wasm |Sql |Wsgl |AI |
-| ---  | --- | --- | --- | --- |
-| Linux x86_64 |X|X|X|X|
-| Mac OS X (aarch64) |X|X|X|X|
-| Raspberry PI 3 (armv7)|*|X|*|X|
+| Platform |Wasm |Sql |Wsgl |OCL (OpenCL)|AI |
+| ---  | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X|X|X|X|
+| Mac OS X (aarch64) |X|X|X|X|X|
+| Raspberry PI 3 (armv7)|*|X|*|*|X|
 | Windows64|*|X|*|*|X|
 
 	
