@@ -48,6 +48,10 @@ These examples are demonstrators but are full running applications.
 
 	[native/dpdlTestNative.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h)
 	
+* Example Dpdl code that writes and reads a data buffer to a file using the native library functions in 'libc'
+
+	[native/dpdlNativeExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlNativeExample.h)
+	
 * Example Dpdl code that shows how exceptions can be raised and handled
 
 	[testRaiseException.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testRaiseException.h)
@@ -118,10 +122,6 @@ These examples are demonstrators but are full running applications.
 * Example Dpdl code that converts/compiles a 'struct' to a native java bytecode object and accesses member variables and methods
 
 	[test/testGenObjCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testGenObjCode.h)
-
-* Example Dpdl code that writes and reads a data buffer to a file using the native library functions in 'libc'
-
-	[native/dpdlNativeExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlNativeExample.h)
 	
 * Example program written in C that shows how to execute a given Dpdl script from C code
 

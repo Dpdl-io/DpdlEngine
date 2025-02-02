@@ -20,7 +20,7 @@ Dpdl is a <ins>rapid development **programming language**</ins> and <ins>**const
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,, Clojure, Wgsl and OpenCL</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
-The Dpdl language constructs and syntax is simple, powerful and follows an object oriented paradigm interoperable with the java platform JRE API and external java libraries and provides also a simple access to native shared libraries.
+The Dpdl language constructs and syntax is simple yet powerful and follows an object oriented paradigm interoperable with the java platform JRE API and external java libraries and provides also a simple access to native shared libraries.
 
 The core Dpdl engine has the capability to run even on scarce memory platforms via a dedicated kilobyte range virtual machine.
 
@@ -36,7 +36,7 @@ Custom code and syntax interpreters can be implemented and integrated in form of
 
 This allows developers to easily create and integrate custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **Dpdl language plug-in**.
 
-The included 'DpdlAINerd' **Dpdl language plug-in** (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed right away.
+The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed right away.
 
 Additionally, the 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
 
