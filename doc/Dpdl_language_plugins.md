@@ -1045,6 +1045,7 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 ### Embedded language references
 
 - c -> https://www.dpdl.io/doc/dpdl_tcc/Dpdl_C_Compiler_reference_documentation.html
+- java -> https://www.dpdl.io/doc/dpdl_java/Dpdl_Java_Compiler_reference_documentation.html
 - python -> https://www.python.org/
 - mpython -> https://micropython.org/
 - julia -> https://julialang.org/
@@ -1052,12 +1053,12 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 - lua -> https://www.lua.org/
 - ruby -> https://www.ruby-lang.org
 - root (C++) -> https://root.cern/
-- java -> http://janino-compiler.github.io/janino/
 - php -> https://ph7.symisc.net/features.html
 - groovy -> https://groovy-lang.org/
 - ocaml -> http://www.ocamljava.org/
 - clj -> https://clojure.org/
 
+- ocl -> https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html
 - wgsl -> https://www.w3.org/TR/webgpu/
 - wasm -> https://webassembly.org/
  
