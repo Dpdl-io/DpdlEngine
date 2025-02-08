@@ -17,11 +17,11 @@ This can be performed via embedded code sections implemented directly in OCL (Op
 
 The following **Dpdl language plug-ins** that enable GPU compute are currently available:
 
-	- Dpdl language plugin 'opencl'
-	- Dpdl language plugin 'wgsl'
+- **Dpdl language plug-in** 'opencl'
+- **Dpdl language plug-in** 'wgsl'
 
 
-## Dpdl language plugin 'opencl'
+## Dpdl language plug-in 'opencl'
 
 This dedicated Dpdl language plug-in for 'OpenCL' can execute OCL (**OpenCL Compute Language**) compute code, which can be executed directly on GPGPUs, GPU's and even on multiple ordinary CPUs.
 
@@ -129,7 +129,7 @@ println("finished")
 
 ```
 
-## Dpdl language plugin 'Wgsl'
+## Dpdl language plug-in 'Wgsl'
 
 This dedicated dpdl language plug-in for 'Wgsl' can execute WGSL (**WebGPU Shading Language**) compute code, which is executed on GPUs and complies to the [WebGPU](https://www.w3.org/TR/webgpu/) specification, directly embedded within Dpdl code.
 
