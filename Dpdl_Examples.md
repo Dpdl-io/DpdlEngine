@@ -32,7 +32,7 @@ These examples are demonstrators but are full running applications.
 
 	[test/testClass.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClass.h)
 	
-* Example Dpdl code that makes use of derived type 'class' (Inheritance and Polymorphism)
+* Example Dpdl code that makes use of derived type 'class' (Inheritance and Polymorphism). Some functions make use of embedded code (java and C)
 
 	[test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h)
 
