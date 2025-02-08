@@ -32,9 +32,9 @@ These examples are demonstrators but are full running applications.
 
 	[test/testClass.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClass.h)
 	
-* Example Dpdl code that makes use of derived type 'class' (inheritance)
+* Example Dpdl code that makes use of derived type 'class' (Inheritance and Polymorphism)
 
-	[test/testClassSub.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub.h)
+	[test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h)
 
 * Example Dpdl code that makes use of the type 'struct'
 

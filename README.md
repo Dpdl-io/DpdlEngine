@@ -16,13 +16,13 @@ developed by
 
 ## Dpdl - rapid development programming language and constrained device framework
 
-Dpdl is a <ins>rapid development **programming language**</ins> and <ins>**constrained device** framework</ins> with built-in database technology.
+**Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,, Clojure, Wgsl and OpenCL</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
-The Dpdl language constructs and syntax is simple yet powerful and follows an object oriented paradigm interoperable with the java platform JRE API and external java libraries and provides also a simple access to native shared libraries.
+The Dpdl language constructs and syntax is simple yet powerful and follows an object oriented paradigm **interoperable with the java platform APIs and external java and native shared libraries**.
 
-The core Dpdl engine has the capability to run even on scarce memory platforms via a dedicated kilobyte range virtual machine.
+The core Dpdl engine has the **capability to run even on scarce memory platforms** via an included dedicated kilobyte range virtual machine.
 
 ### Dpdl is <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface.
 
@@ -132,9 +132,9 @@ The size of the DpdlEngine core can be stripped down even further by excluding c
 
 [Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
 
-[Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
+[Dpdl GPU Compute](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_GPU_compute.md)
 
-[Dpdl Wgsl on GPU](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wgsl_GPU.md)
+[Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
 [DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
@@ -154,6 +154,171 @@ The size of the DpdlEngine core can be stripped down even further by excluding c
 
 ## Dpdl sample code
 
+### Sample Dpdl code that make use of type 'class' Inheritance and Polymorphism
+
+```python
+struct property {
+	int max_weight_gr
+	float max_height_m
+	string desc = null
+}
+
+class Animal {
+	int id
+	string name
+	struct property info = {100000, 2.5,.}
+
+	func Animal(int id_)
+		id = id_
+		name = "No name"
+
+		println("new Animal() with id: " + id + " info: " + info)
+	end
+
+	func Animal(int id_, string name_)
+		id = id_
+		name = name_
+
+		println("new Animal with id: " + id + " and name: " + name + " - info: " + info)
+	end
+
+	func print()
+		println("This is an Animal")
+	end
+
+	func makeSound()
+		println("kind of animal is not defined")
+	end
+
+	func getHashMap()
+		object h_map = loadObj("HashMap")
+
+		info_arr[] = array(info)
+		int i = 0
+		for(i < info_arr.size())
+			h_map.put(i, info_arr[i])
+			i=i+1
+		endfor
+
+		return h_map
+	end
+}
+
+class Dog : Animal {
+
+	func Dog(int id_, string name_)
+		super(id_, name_)
+
+		info.max_weight_gr = 8000
+		info.max_height_m = 0.5
+		info.desc = "this breed is Shitzu"
+
+		println("new Dog() with id: " + id + " and name: " + name + " - info: " + info)
+	end
+
+	func print()
+		println("This is a Dog with name: " + name)
+	end
+
+	func makeSound()
+		println("WOOF WOOF")
+	end
+
+	func makeSound(int times) int
+		int ret_val
+
+		dpdl_stack_push(times)
+
+		>>java
+			int iter = arg0.intValue();
+			for(int i = 0; i < iter; i++){
+				System.out.println("WOOF");
+			}
+			return 1;
+		<<
+		ret_val = dpdl_exit_code()
+
+		return ret_val
+	end
+
+}
+
+class Cat : Animal {
+
+	func Cat(int id_, string name_)
+		super(id_, name_)
+
+		info.max_weight_gr = 1000
+		info.max_height_m = 0.25
+		info.desc = "thie breed is Siamese"
+
+		println("new Cat() with id: " + id + " and name: " + name + " - info: " + info)
+	end
+
+	func print()
+		println("This is a Cat with name: " + name)
+	end
+
+	func makeSound()
+		println("MIAUU MIAUU")
+	end
+
+	func makeSound(int beep) int
+		int ret_val
+
+		dpdl_stack_obj_put("iter", beep)
+
+		dpdl_stack_push("dpdl:applyvars")
+		>>c
+			#include <stdio.h>
+			#include <unistd.h>
+
+			// we output the character to ring 'bell' in the console
+			for(int i = 0; i < {{iter}}; i++){
+				putchar('\a');
+			}
+			return 23;
+		<<
+		ret_val = dpdl_exit_code()
+
+		return ret_val
+	end
+
+}
+
+println("testing class type Inheritance and Polymorphism...")
+println("")
+
+class Animal ani(1)
+
+ani.print()
+ani.makeSound()
+
+println("")
+
+class Dog mydog(2, "Rosa")
+
+mydog.print()
+mydog.makeSound()
+int sd = mydog.makeSound(10)
+
+object map_dog = mydog.getHashMap()
+println("map dog: " + map_dog)
+
+println("")
+
+class Cat mycat(3, "Minni")
+
+mycat.print()
+mycat.makeSound()
+int sc = mycat.makeSound(3)
+
+object map_cat = mycat.getHashMap()
+println("map cat: " + map_cat)
+
+println("")
+println("finished")
+```
 
 ### Sample Dpdl code that makes use of embedded 'Groovy' code to read a file line by line and print it to the console
 
@@ -180,6 +345,7 @@ println("embedded groovy exit code: " + exit_code)
 Below you can find a more complex example of how Dpdl can be used to accomplish even complex tasks:
 
 ### Sample Dpdl code (GELU neural network activation function the runs on GPUs using embedded 'Wgsl' code):
+
 ```python
 import('native')
 
@@ -603,9 +769,7 @@ see doc for more info:
 
 ## Supported Platforms
 
-Dpdl runs on a wide range of platforms and supports also a small footprint java virtual machine (miniJVM),
-released as open-source, that can  be compiled for almost every platform as soon as an ANSI C compiler is available 
-for the target platform.
+Dpdl runs on a wide range of platforms and supports also a small footprint kilobyte range java virtual machine that can be compiled for almost every platform as soon as an ANSI C compiler is available for the target platform.
 
 ### Dpdl itself is compatible with:
 
@@ -658,8 +822,10 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 The Dpdl framework and API documentation is available via the following links:
  
 
-[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+### Documentation
 
+[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+  
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 [Dpdl language plug-ins](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
@@ -668,13 +834,18 @@ The Dpdl framework and API documentation is available via the following links:
 
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
-[Dpdl Wasm Runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
+[Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
+
+[Dpdl GPU Compute](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_GPU_compute.md)
+
+[Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
 [DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
 
-[DpdlAINerd (DAN)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
 
 ### More...
 
@@ -682,7 +853,7 @@ The Dpdl framework and API documentation is available via the following links:
 
 [Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
 
-[Track Changes](https://github.com/Dpdl-io/DpdlEngine/blob/main/Changes.md)
+[Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
 
  Dpdl Java API Documentation (available only for the registered version of DpdlEngine)
@@ -700,7 +871,6 @@ See 'Download' page for more details:
 Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
 
 * Back-end compiler that compiles Dpdl code to native machine code for most target architectures.
-* DpdlEngine port to 'MicroEJ' platform
 * Dpdl-IDE and provide also plug-ins for popular IDEs (IntelliJ, eclipse, MSVS)
 
 

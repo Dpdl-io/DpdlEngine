@@ -532,7 +532,9 @@ Dpdl allows to define and use **`class`** type objects. This type definition is 
 
 * Class objects can contain function definitions
 
-* Class object can be derived from another class (inheritance)
+* Class object can be derived from another class (Inheritance)
+
+* Class functions in the base-class can be overridden (**overriding** and **overloading)** by the sub-class (Polymorphism)
 
 * Class objects can be in part compiled into java bytecode, and therefore can be passed to java methods.
 
