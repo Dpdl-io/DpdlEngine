@@ -22,7 +22,7 @@ Dpdl provides access to <ins>**java platform API's, Native shared libraries, Was
 
 The Dpdl language constructs and syntax is simple yet powerful and follows an object oriented paradigm **interoperable with the java platform APIs and external java and native shared libraries**.
 
-The core Dpdl engine has the **capability to run even on scarce memory platforms** via an included dedicated kilobyte range virtual machine.
+The core Dpdl engine has the **capability to run even on memory scarce devices and platforms** via an included dedicated kilobyte range virtual machine.
 
 ### Dpdl is <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface.
 
@@ -157,6 +157,7 @@ The size of the DpdlEngine core can be stripped down even further by excluding c
 ### Sample Dpdl code that make use of type 'class' Inheritance and Polymorphism
 
 ```python
+
 struct property {
 	int max_weight_gr
 	float max_height_m
@@ -179,7 +180,7 @@ class Animal {
 		id = id_
 		name = name_
 
-		println("new Animal with id: " + id + " and name: " + name + " - info: " + info)
+		println("new Animal() with id: " + id + " and name: " + name + " - info: " + info)
 	end
 
 	func print()
@@ -305,6 +306,9 @@ int sd = mydog.makeSound(10)
 object map_dog = mydog.getHashMap()
 println("map dog: " + map_dog)
 
+var entry_di = map_dog.get(0)
+println("1st entry: " + entry_di +  " is of type: " + typeof(entry_di))
+
 println("")
 
 class Cat mycat(3, "Minni")
@@ -315,6 +319,9 @@ int sc = mycat.makeSound(3)
 
 object map_cat = mycat.getHashMap()
 println("map cat: " + map_cat)
+
+var entry_ci = map_dog.get(1)
+println("2nd entry: " + entry_ci +  " is of type: " + typeof(entry_ci))
 
 println("")
 println("finished")
