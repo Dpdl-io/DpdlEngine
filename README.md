@@ -94,7 +94,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Easy integration of custom libraries**
 * **Small footprint**, Only **`372 Kb`** for DpdlEngine -> can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
-* Allows to **scale computations on GPUs using the 'Wgsl' Dpdl language plug-in** (WebGPU shading language)
+* Allows to **scale computations on GPUs using the 'OpenCL' and 'Wgsl' (WebGPU shading language) Dpdl language plug-in**
 * Open Source programming language plug-ins
 
 Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster research and development of applications, and is suitable also for <ins>Hardware programming</ins>.
@@ -113,7 +113,7 @@ These features make Dpdl a powerful development platform for rapid development, 
 
 * **TOTAL SIZE** of DpdlEngine (**Dpdl Full configuration with embedded C compiler/interpreter**) = **`650 Kb`**
  
-The size of the DpdlEngine core can be stripped down even further by excluding certain functionalities.
+The size of the DpdlEngine core can be stripped down to **`80 Kb`** for a minimal setup.
 
 
 ## Quick Links
@@ -784,7 +784,7 @@ Dpdl runs on a wide range of platforms and supports also a small footprint kilob
 * Java ME Embedded Profile (JSR 361)
 * Java versions >= 1.4 and later
 * Java 1.1 - 1.3 (without 'loadObj' and 'getObj' methods)
-* All Platforms where the Open Source virtual machines 'JamVM' and 'miniJVM' can be compiled
+* Platforms with ANSI C compiler where the included kilobyte range java virtual machine can be compiled
 
 DpdlEngine V1.0 has been tested on:
 
@@ -877,7 +877,7 @@ See 'Download' page for more details:
 
 Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
 
-* Back-end compiler that compiles Dpdl code to native machine code for most target architectures.
+* Back-end compiler that compiles Dpdl code to native machine code for most target architectures (LLVM)
 * Dpdl-IDE and provide also plug-ins for popular IDEs (IntelliJ, eclipse, MSVS)
 
 
