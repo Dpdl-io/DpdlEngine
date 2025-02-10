@@ -95,7 +95,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Small footprint**, Only **`372 Kb`** for DpdlEngine -> can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'OpenCL' and 'Wgsl' (WebGPU shading language) Dpdl language plug-in**
-* Open Source programming language plug-ins
+* Open Source **Dpdl language plug-ins**
 
 Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster research and development of applications, and is suitable also for <ins>Hardware programming</ins>.
 
@@ -640,9 +640,10 @@ println("embedded java exit code: " + exit_code)
 
 ## **Dpdl language plug-ins** (Dpdl embeddable programming languages)
 
-Multiple programming languages can be embedded and executed within the same **Dpdl** code via the keyword **`>>`**.
+Multiple programming languages can be embedded and executed within the same **Dpdl** code via configurable **Dpdl language plug-ins** by
+using the keyword **`>>`**.
 
-Further programming languages can be developed and integrated via a dedicated plug-in interface and configuration if form of **Dpdl language plug-ins**.
+Further programming languages and syntax interpreters can be developed and integrated via a dedicated plug-in interface and configuration if form of **Dpdl language plug-ins**.
 
 This enables basically every sort of programming language or natural language interpreter to be embedded directly in Dpdl code.
 
@@ -650,7 +651,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 
 ### Currently the following programming languages can be embedded within Dpdl:
 
-* **`C interpreted`** code (minimal subset of C90 with standard C libs included)
+* **`C interpreted`** code (minimal subset of C90 with standard C libs included and avaiable in the Dpdl runtime)
 * **`C compiled`** code (almost full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **`Python`**
 * **`MicroPython`** (ideal for embedded systems)
@@ -808,8 +809,8 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 | Platform | C | Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |MicroPython | PHP | Perl | OCaml |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|*|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v6.28|X 3.2.2|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
 | Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|*|*|*|X v4.01|
 
