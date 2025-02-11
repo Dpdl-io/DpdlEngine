@@ -11,7 +11,7 @@ developed by
 
 ## Dpdl language specification
 
-Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins> and in part also bytecode compiled, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
+Dpdl is a <ins>**self-contained programming language**</ins>, <ins>**interpreted**</ins> and <ins>**in part also bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
 In addition Dpdl allows also to <ins>embed and execute code of other programming languages directly within Dpdl</ins>. Embedded programming language code within Dpdl is executed in form of custom plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (No further installations needed).
 
