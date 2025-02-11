@@ -579,7 +579,9 @@ mya.printit()
 
 Dpdl class type can be derived from a base class (superclass), inheriting all functions and member variables.
 
-Functions in the base class (superclass) can be overridden by  
+Functions in the base class (super-class) can be overridden by the derived class (sub-class).
+
+The base-class constructor can be called via the function **`super(...)`** that matches the corresponding parameters.
 
 **Example:**
 
@@ -587,6 +589,10 @@ Functions in the base class (superclass) can be overridden by
 class A {
 	int id
 	string desc
+	
+	func A(int id_)
+		id = id_
+	end
 	
 	func setId(int id_)
 		id = id_
@@ -608,6 +614,7 @@ class A {
 class B : A {
 	
 	func B(string desc_)
+		super(888)
 		desc = desc_
 	end
 	
