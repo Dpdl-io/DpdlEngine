@@ -13,7 +13,7 @@ developed by
 
 Dpdl is a <ins>self-contained programming language</ins>, <ins>interpreted</ins> and in part also bytecode compiled, <ins>statically</ins> as well as <ins>dynamically typed</ins>, with a very <ins>small footprint</ins> and <ins>portable</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-In addition Dpdl allows also to embed and <ins>execute code of other programming languages directly within Dpdl</ins>. Embedded programming language code is executed in form of plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (No further installations needed)
+In addition Dpdl allows also to <ins>embed and execute code of other programming languages directly within Dpdl</ins>. Embedded programming language code within Dpdl is executed in form of custom plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (No further installations needed).
 
 ### Features:
 
@@ -26,11 +26,11 @@ In addition Dpdl allows also to embed and <ins>execute code of other programming
 * Native data function types to handle data structures **`arr(..)`**, **`vec(..)`**, **`map(..)`**, **`list(..)`** and **`stack(..)`**.
 * APIs: Dpdl API, JRE API, MIDP API, and enables to load and access third party java APIs and Native shared libraries
 * Access to the full underlying Java Platform API's or any external java libraries
-* Access to Native shared libraries with simple approach
+* Access to Native shared libraries
 * Virtual file system via Record Stores
 * Support for custom extensions
 * **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** <em>C, C++, Python, Julia, JavaScript, Lua, Ruby, Java, Groovy, OCaml and Clojure</em>. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
-* Additional programming languages or natural language interpreters can be easily integrated via a defined plug-in interface and configuration (**Dpdl language plug-ins**)
+* Additional programming languages or syntax interpreters can be easily integrated via a defined plug-in interface and configuration (**Dpdl language plug-ins**)
 * ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Multi-line structured text, data and code resources
 * Asynchronous Task execution
@@ -41,11 +41,11 @@ In addition Dpdl allows also to embed and <ins>execute code of other programming
 
 ### Dpdl API functions
 
-The Dpdl API functions usable inside Dpdl are listed here:
+The Dpdl API functions available in Dpdl are listed here:
 
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-As Dpdl can access java classes directly, the whole Java JRE API and any other configured or loaded java library is available inside Dpdl.
+As Dpdl can access also java classes, the whole Java JRE API and any other configured or loaded java library is available inside Dpdl.
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
 
 
