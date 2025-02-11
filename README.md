@@ -18,9 +18,11 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,, Clojure, Wgsl and OpenCL</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
-
 The Dpdl language constructs and syntax is simple yet powerful and follows an object oriented paradigm **interoperable with the java platform APIs and external java and native shared libraries**.
+
+Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** that enables also to execute code of multiple programming languages directly embedded within the same code base, simultaneously.
+
+Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,, Clojure, Wgsl and OpenCL</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
 The core Dpdl engine has the **capability to run even on memory scarce devices and platforms** via an included dedicated kilobyte range virtual machine.
 
@@ -34,9 +36,9 @@ The core Dpdl engine has the **capability to run even on memory scarce devices a
 
 Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
 
-This allows developers to easily create and integrate custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **Dpdl language plug-in**.
+This allows developers to easily create and integrate custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**.
 
-The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data and embed it automatically directly within Dpdl code, which can than be executed right away.
+The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically directly within Dpdl code and execute the code right away. Alternatively the generated code can be rewritten to a new file and executed in a subsequent step.
 
 Additionally, the 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
 
@@ -76,9 +78,9 @@ Dpdl enables integration of different technologies to leverage fast prototyping 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
 * **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, Clojure, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
-* **No additional installations required** (except add-on libraries)
-* **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of plug-ins** (see 'DpdlCustom' tag in DpdlEngine.ini)
-* **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> (for different targets: i386, x86_64, RISC-V, ARM and TMS320C67xx) -> <ins>very Fast compile time!!!</ins>
+* **Everything is already included**, **No additional installations required** (except add-on libraries)
+* **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of plug-ins**
+* **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
 * **Wasm runtime** Dpdl language plug-in included allows to access 'Wasm' module functions from Dpdl and from embedded language code. Also WAT code can be directly compiled on-the-fly and executed.
 * **Built-in Dpdl scripting engine with support for custom extensions** -> allows to dynamically add language features at runtime
 * **Dpdl C API enables to execute Dpdl code embedded within programs written in C** 
@@ -92,18 +94,16 @@ The speedup is x 25 times faster compared to a standard record store access
 * **XML** with XPath parser
 * **JSON**
 * **Easy integration of custom libraries**
-* **Small footprint**, Only **`372 Kb`** for DpdlEngine -> can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
+* **Small footprint**, Only **`372 Kb`** for DpdlEngine, that can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'OpenCL' and 'Wgsl' (WebGPU shading language) Dpdl language plug-in**
 * Open Source **Dpdl language plug-ins**
 
-Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** to foster research and development of applications, and is suitable also for <ins>Hardware programming</ins>.
-
-Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language and provides a simple access to <ins>**java Api's, Native shared libraries, Wasm modules and GPU compute**</ins>.
+Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, and provides a simple access to <ins>**java Api's, Native shared libraries, Wasm modules and GPU compute**</ins>.
 
 Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups.
 
-These features make Dpdl a powerful development platform for rapid development, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
+These features make Dpdl a powerful rapid development platform for industrial applications, education and research, in particular also due to the fact that software written with Dpdl will be enabled to access thousands of existing high-quality software libraries.
 
 ### Small Memory footprint:
 
@@ -111,7 +111,7 @@ These features make Dpdl a powerful development platform for rapid development, 
 * **DpdlEngine** (<ins>**Full**</ins> configuration) **`372 Kb`**
 * **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
 
-* **TOTAL SIZE** of DpdlEngine (**Dpdl Full configuration with embedded C compiler/interpreter**) = **`650 Kb`**
+* <ins>**TOTAL SIZE** of DpdlEngine</ins> (**Dpdl Full configuration with embedded C compiler/interpreter**) = **`650 Kb`**
  
 The size of the DpdlEngine core can be stripped down to **`80 Kb`** for a minimal setup.
 
