@@ -39,7 +39,7 @@ However, more functions and libraries will be included in different distribution
 Also custom setups can be provided as needed.
 
 
-## Currently supported C Libraries and Functions
+## Currently included C Libraries and Functions
 
 ```c
 <stdio.h>
