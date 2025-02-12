@@ -20,7 +20,7 @@ developed by
 
 The Dpdl language constructs and syntax is simple yet powerful and follows an object oriented paradigm **interoperable with the java platform APIs and external java and native shared libraries**.
 
-Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** that enables also to execute code of multiple programming languages directly embedded within the same code base, simultaneously.
+Dpdl comes with a very compact and portable **execution engine** with an **extensible API interface** that enables also to execute code of multiple programming languages directly embedded within the same dpdl code base, simultaneously.
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,, Clojure, Wgsl and OpenCL</em> <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
