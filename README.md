@@ -76,9 +76,10 @@ Dpdl enables integration of different technologies to leverage fast prototyping 
 ## Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
-* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java and Native shared libraries**
+* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java libraries**
+* **Dpdl enabled also to load and access Native shared libraries**
 * **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, Clojure, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
-* **Everything is already included**, **No additional installations required** (except add-on libraries)
+* **Everything is already included**, **<ins>No additional installations needed</ins>** (except add-on libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of plug-ins**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
 * **Wasm runtime** Dpdl language plug-in included allows to access 'Wasm' module functions from Dpdl and from embedded language code. Also WAT code can be directly compiled on-the-fly and executed.
