@@ -26,7 +26,7 @@ This keyword can be enabled or disabled in the main configuration file.
 
 **Example:**
 
-```python
+```c
 typedef byte u8
 typedef int i32
 
