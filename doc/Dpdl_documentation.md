@@ -191,18 +191,8 @@ typedef int i32
 
 
 func myTest(i8 val, i32 x, i32 y) float
-	float ret
+	float ret = to_float(x * y + val)
 	
-	if(val == 1B)
-		ret = to_float(x + y)
-	elseif(val == 2B)
-		ret = to_float(x * y)
-	elseif(val == 3B)
-		ret = to_float(x * y + 3)
-	else
-		ret = to_float(1)
-	fi
-
 	return ret
 end
 
