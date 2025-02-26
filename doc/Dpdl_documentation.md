@@ -177,6 +177,51 @@ var tmpv
 object tmpo
 ```
 
+#### 'typedef' specifier
+
+The 'typedef' specifier allows to create aliases for given types (ex. int, float, class, etc..), similar as in C/C++, where the defined alias can than be used instead.
+
+This may come handy for example for porting code, it might improve code readability and facilitate faster code writing.
+
+**Example:**
+
+```c++
+typedef byte i8
+typedef int i32
+
+
+func myTest(i8 val, i32 x, i32 y) float
+	float ret
+	
+	if(val == 1B)
+		ret = to_float(x + y)
+	elseif(val == 2B)
+		ret = to_float(x * y)
+	elseif(val == 3B)
+		ret = to_float(x * y + 3)
+	else
+		ret = to_float(1)
+	fi
+
+	return ret
+end
+
+#main
+
+i8 myval = 0x03B
+i32 myx = 100
+i32 myy = 200
+
+println("myval: " + myval)
+println("myx: " + myx)
+println("myy: " + myy)
+
+println("calling function...")
+
+float res = myTest(myval, myx, myy)
+
+println("res: " + res)
+```
 
 ### Function and Control flow
 

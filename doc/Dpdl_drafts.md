@@ -16,24 +16,6 @@ These features may eventually be available in coming releases.
 Suggestions and comments are very appreciated.
 
 
-## 'typedef' keyword
-
-Introduce the keyword 'typedef' that allows to create aliases for given types (ex. int, float, class, etc..), similar as in C.
-
-This may come handy for example for porting code, it may improve code readability and facilitates faster code writing.
-
-This keyword can be enabled or disabled in the main configuration file.
-
-**Example:**
-
-```c
-typedef byte u8
-typedef int i32
-
-u8 myval1 = 3
-i32 myvar = 1000000
-```
-
 
 ## Dpdl Interfaces
 
