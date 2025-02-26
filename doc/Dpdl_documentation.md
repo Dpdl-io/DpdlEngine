@@ -196,8 +196,6 @@ func myTest(i8 val, i32 x, i32 y) float
 	return ret
 end
 
-#main
-
 i8 myval = 0x03B
 i32 myx = 100
 i32 myy = 200
