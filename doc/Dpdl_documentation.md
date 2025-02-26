@@ -177,7 +177,7 @@ var tmpv
 object tmpo
 ```
 
-#### 'typedef' specifier
+#### **`typedef`** specifier
 
 The 'typedef' specifier allows to create aliases for given types (ex. int, float, class, etc..), similar as in C/C++, where the defined alias can than be used instead.
 
