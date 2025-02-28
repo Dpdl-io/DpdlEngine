@@ -35,6 +35,10 @@ class A {
 class B : A {
 	string desc = "this is derived class from A"
 
+	func B(int id_)
+		super(id_)
+	end
+
 	func setDesc(string d)
 		desc = d
 	end
@@ -55,6 +59,10 @@ class B : A {
 class C : B {
 	int id = 369
 	string desc = "this is a class derived from B"
+
+	func C(int id_)
+		super(id_)
+	end
 
 	func print()
 		id = 23

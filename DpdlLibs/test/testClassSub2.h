@@ -102,7 +102,7 @@ class Cat : Animal {
 
 		info.max_weight_gr = 1000
 		info.max_height_m = 0.25
-		info.desc = "thie breed is Siamese"
+		info.desc = "this breed is Siamese"
 
 		println("new Cat() with id: " + id + " and name: " + name + " - info: " + info)
 	end
