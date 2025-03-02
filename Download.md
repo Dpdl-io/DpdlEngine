@@ -94,7 +94,7 @@ or utility tools.
 	  
 * Dpdl scripting engine with Dpdl API libraries.
 
-* Support for the following embeddable languages: Embedded C (interpreted and compiled), Python, JavaScript, Lua, Java and OCaml)
+* Support for the following embeddable languages: Embedded C (interpreted and compiled), JavaScript, Java
 	
 * Example Dpdl scripts (located in the folder and './DpdlLibs/' and './DpdlPackets/' )
 	
@@ -110,15 +110,6 @@ please submit your request via the following order request form, you will be con
 
 Or simply write an e-mail to info@dpdl.io
 
-
-## Other Downloads
-
-### Dpdl embedded language plug-in Add-ons:
-
-The following Dpdl language plug-in Add-on contains the Dpdl native library for embedding 'ROOT' and 'Julia' languages.
-
-Available soon...
-https://www.dpdl.io/downloads/Dpdl_language_plugins.zip
 
 
 ## 'DpdlEngine lite' Demo free trial shareware release limitations/restrictions
@@ -138,7 +129,7 @@ The validation script can be inspected here:
 	
 * Further API's can be added only in the full registered version of 'DpdlEngine'
 	
-* The execution of Dpdl scripts is limited to 500 lines of code, embedded language code (C, Python, JavaScript, Lua, Java and OCaml) is limited to 100 lines of code per section.
+* The execution of Dpdl scripts is limited to 500 lines of code, embedded language code (C, JavaScript, Java) is limited to 100 lines of code per section.
 	
 * The Dpdl scripting API function 'systemExec' is available only in the registered version of Dpdl
 	
