@@ -68,6 +68,10 @@ These examples are demonstrators but are full running applications.
 
 	[test/testDataFuncTypes.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testDataFuncTypes.h)
 
+* Example Dpdl code that make use of the 'typedef' specifier
+
+	[test/testTypeDef.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testTypeDef.h)
+
 * Example Dpdl code that launches multiple threads
 
 	[concurrent/testConcurrency1.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/concurrent/testConcurrency1.h)
