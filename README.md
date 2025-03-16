@@ -679,6 +679,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 
 See this doc for more details: [Dpdl_embedded_languages.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
 
+
 #### Dpdl example with embedded 'C++' (Root) code
 
 ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/) .
@@ -881,6 +882,8 @@ Dpdl is currently developed by SEE Solutions and the following integrations has 
 
 * Back-end compiler that compiles Dpdl code to native machine code for most target architectures (LLVM)
 * Dpdl-IDE and provide also plug-ins for popular IDEs (IntelliJ, eclipse, MSVS)
+
+* Development of a dedicated **Dpdl language plug-in** for enabling QUANTUM computing via OpenQASM 2.0 (circuit description language)
 
 
 ### Embedding of 'Python' code

@@ -91,7 +91,7 @@ println("arr list: " + arr)
 # get ArrayList obj
 object arr_obj = arr.getArrObj()
 bool isincluded = arr_obj.contains("mega")
-println("the list cointains \"mega\": " + isincluded)
+println("the list contains \"mega\": " + isincluded)
 println("removing \"mega\"...")
 arr_obj.remove(1)
 println("the new list: " + arr)
@@ -399,7 +399,7 @@ println("-------------------------------")
 # get Web content via URL 
 println("testing get web content via java.net.URL")
 println("")
-object url = loadObj("URL", "http://www.dpdl.io")
+object url = loadObj("URL", "https://www.dpdl.io")
 object url_connection = url.openConnection()
 object url_in = url_connection.getInputStream()
 object url_in_read = loadObj("InputStreamReader", url_in)
@@ -443,6 +443,7 @@ while(matcher.find())
 endwhile
 println("done")
 println("")
+println("-------------------------------")
 
 #@TEST14
 println("TEST 14 #######################################")
@@ -471,23 +472,23 @@ string a = "test"
 dpdl_stack_push(n, xc, a)
 
 >>c
-	#include <stdio.h>
-	#include <dpdl.h>
-	
-	int dpdl_main(int argc, char **argv){
-		printf("Hello C from Dpdl!\n");
-		printf("\n");
-		printf("num params: %d\n", argc);
-		int cnt;
-	    for (cnt = 0; cnt < argc; cnt++){
-	        printf("	param %d: %s\n", cnt, argv[cnt]);
-	    }
-	    return 0;
-	}
+#include <stdio.h>
+#include <dpdl.h>
+
+int dpdl_main(int argc, char **argv){
+	printf("Hello C from Dpdl!\n");
+	printf("\n");
+	printf("num params: %d\n", argc);
+	int cnt;
+    for (cnt = 0; cnt < argc; cnt++){
+        printf("	param %d: %s\n", cnt, argv[cnt]);
+    }
+    return 0;
+}
 <<
 int exit_code = dpdl_exit_code()
 
-println("ebedded C exit code: " + exit_code)
+println("embedded C exit code: " + exit_code)
 println("done")
 println("")
 println("-------------------------------")
@@ -507,8 +508,7 @@ println("")
 
 int exit_code_py = dpdl_exit_code()
 
-println("ebedded python exit code: " + exit_code_py)
+println("embedded python exit code: " + exit_code_py)
 println("finished")
 println("")
 println("-------------------------------")
-

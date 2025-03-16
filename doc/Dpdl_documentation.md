@@ -49,6 +49,7 @@ As Dpdl can access also java classes, the whole Java JRE API and any other confi
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
 
 
+
 ### Types
 
 Dpdl support the following Type definitions:
@@ -211,6 +212,7 @@ float res = myTest(myval, myx, myy)
 println("res: " + res)
 ```
 
+  
 ### Function and Control flow
 
 **`function`** definition
