@@ -67,10 +67,10 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 	* [`struct` initialization](#struct-initialization)
 	* [`struct` inheritance](#struct-inheritance)
 	* [`struct` compiled to java bytecode](#struct-compiled-to-java-bytecode)
-* [Enum type](#enum-type)
+* [`Enum` type](#enum-type)
 * [Pointers](#pointers)
 * [Function return type](#function-return-type)
-* [Dpdl Threads](#dpdl-threads)
+* [Dpdl `Threads`](#dpdl-threads)
 * [Exception handling](#exception-handling)
 * [Type handling](#type-handling)
 * [In-line string expressions](#in-line-string-expressions)
@@ -80,7 +80,7 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 * [Asynchronous Task execution](#asynchronous-task-execution)
 * [DpdlObjects and access to JRE classes](#dpdlobjects-and-access-to-jre-classes)
 * [Multi-line structured text, data and code resources](#multi-line-structured-text-data-and-code-resources)
-* [Embedding other programming languages directly within Dpdl code](#embedding-other-programming-languages-directly-within-dpdl-code)
+* [`Embedding other programming languages` directly within Dpdl code](#embedding-other-programming-languages-directly-within-dpdl-code)
 
 
 </td><td valign=top>
