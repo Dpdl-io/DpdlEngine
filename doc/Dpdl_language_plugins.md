@@ -25,6 +25,7 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 
 * **`Embedded C`** (minimal subset of C90)
 * **`ANSI C`** (ANSI C99)
+* **`C++`**
 * **`Python`**
 * **`MicroPython`** (for embedded systems)
 * **`Julia`**
@@ -36,8 +37,8 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 * **`PHP`**
 * **`Perl`**
 * **`Groovy`**
+* **`V`**
 * **`Clojure`**
-* **`C++`** (Root)
 
 **Add-on 'Dpdl language plug-ins' available:**
 
@@ -56,12 +57,12 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 
 (*) **coming soon**
 
-| Platform | C | Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |MicroPython | PHP | Perl | OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v1.24.0 |X v5.3 |X v5.40.0 |X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|*|*|*|X v4.01|
+| Platform | C | Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |MicroPython |V | PHP | Perl | OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v4.01|
+| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v4.01|
 
 
 Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
@@ -1055,6 +1056,7 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 - root (C++) -> https://root.cern/
 - php -> https://ph7.symisc.net/features.html
 - groovy -> https://groovy-lang.org/
+- v -> https://vlang.io/
 - ocaml -> http://www.ocamljava.org/
 - clj -> https://clojure.org/
 

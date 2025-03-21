@@ -10,9 +10,11 @@ developed by
 
 ## New features
 
-* NEW Dpdl language plugin for 'OCL' (OpenCL) is now available
+* NEW Dpdl language plug-in for 'V' is now available
 
-* Dpdl language plugin for 'Perl' is now available
+* Dpdl language plug-in for 'OCL' (OpenCL) is now available
+
+* Dpdl language plug-in for 'Perl' is now available
 
 * Inheritance and Polymorphism for type 'class' and 'struct'
 
@@ -27,7 +29,7 @@ developed by
 ## Known Issues
 
 * The Dpdl language plugin for 'OCaml' is working on Java JRE versions 1.7 and 1.8. On newer versions of java an
-update of '.lib/ocamlrun-scripting.jar' and './lib/ocamljava.jar' might be required (available from http://www.ocamljava.org)
+update of OCaml libraries might be required.
 
 
 ## Work in progress
@@ -40,6 +42,7 @@ update of '.lib/ocamlrun-scripting.jar' and './lib/ocamljava.jar' might be requi
 ### Features
 
 * Dpdl backend compiler based on LLVM for generating native machine code for most target platform architectures
+* Development of a dedicated **Dpdl language plug-in** for enabling QUANTUM computing via OpenQASM 2.0 (circuit description language)
 
 
 ### Dpdl language plug-ins

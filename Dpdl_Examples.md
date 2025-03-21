@@ -451,9 +451,13 @@ this is my sample json:
 	
 	[lua/dpdlLuaBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/lua/dpdlLuaBufRet.h)
 	
-* Emedded Ruby code execution within Dpdl code
+* Embedded Ruby code execution within Dpdl code
 
 	[ruby/dpdlRubyExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ruby/dpdlRubyExample.h)
+	
+* Embedded V code execution within Dpdl code (fibonacci sequence)
+
+	[v/dpdlVFibonacci.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/v/dpdlVFibonacci.h)
 	
 * Example Dpdl code that embeds C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
 

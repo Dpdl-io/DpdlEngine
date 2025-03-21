@@ -11,16 +11,16 @@ developed by
 
 ## Dpdl language specification
 
-Dpdl is a <ins>**self-contained programming language**</ins>, <ins>**interpreted**</ins> and <ins>**in part also bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
+Dpdl is a dedicated <ins>**programming language**</ins>, <ins>**interpreted**</ins> and <ins>**in part also bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, **self-contained**, with a very <ins>**compact footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-In addition Dpdl <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>. Embedded programming language code within Dpdl is executed in form of custom plug-ins (**Dpdl language plug-ins**) distributed along with the DpdlEngine release package (No further installations needed).
+In addition Dpdl <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (<ins>No further installations needed</ins>).
 
 ### Features:
 
 * Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`enum`**
 * Primitive arrays and dynamic arrays
 * Inheritance and Polymorphism for type **`class`** and **`struct`**
-* Multiple native Threads within same script
+* Multiple native Threads within same module
 * Pointers and references (eg. int *px = &x)
 * Inline string expressions
 * Native data function types to handle data structures **`arr(..)`**, **`vec(..)`**, **`map(..)`**, **`list(..)`** and **`stack(..)`**.
@@ -48,6 +48,50 @@ The Dpdl API functions available in Dpdl are listed here:
 As Dpdl can access also java classes, the whole Java JRE API and any other configured or loaded java library is available inside Dpdl.
 Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
 
+
+## Table of Contents
+
+<table>
+<tr><td width=33% valign=top>
+
+* [Types](#types)
+* [Function and Control flow](#function-and-control-flow)
+* [Operators](#operators)
+* [Data Function Types](#data-function-types)
+* [Arrays](#arrays)
+	* [Primitive arrays](#primitive-arrays)
+	* [Dynamic arrays](#dynamic-arrays)
+* [`Class` type](#class-type)
+	* [Inheritance and Polymorphism](#inheritance-and-polymorphism)
+* [`Struct` type](#struct-type)
+	* [`struct` initialization](#struct-initialization)
+	* [`struct` inheritance](#struct-inheritance)
+	* [`struct` compiled to java bytecode](#struct-compiled-to-java-bytecode)
+* [Enum type](#enum-type)
+* [Pointers](#pointers)
+* [Function return type](#function-return-type)
+* [Dpdl Threads](#dpdl-threads)
+* [Exception handling](#exception-handling)
+* [Type handling](#type-handling)
+* [In-line string expressions](#in-line-string-expressions)
+
+</td><td width=33% valign=top>
+
+* [Asynchronous Task execution](#asynchronous-task-execution)
+* [DpdlObjects and access to JRE classes](#dpdlobjects-and-access-to-jre-classes)
+* [Multi-line structured text, data and code resources](#multi-line-structured-text-data-and-code-resources)
+* [Embedding other programming languages directly within Dpdl code](#embedding-other-programming-languages-directly-within-dpdl-code)
+
+
+</td><td valign=top>
+
+* [`Import` and `Include` statements](#import-and-include-statements)
+* [Load Dpdl code as a DpdlObject](#load-dpdl-code-as-a-dpdlobject)
+* [DpdlPacket query and access](#dpdlpacket-query-and-access)
+* [Dpdl C API](#dpdl-c-api)
+
+</td></tr>
+</table>
 
 
 ### Types
@@ -269,6 +313,8 @@ for(<expression>)
 endfor
 ```
 
+* [Table of Contents](#table-of-contents)
+
 ### Operators
 
 #### Arithmetic: 
@@ -315,7 +361,6 @@ byte inb = 0x06B
 int res = inb << 0x01B
 ```
 
-
 #### Comparators:
 
 * **`>`** (greater than)
@@ -326,6 +371,9 @@ int res = inb << 0x01B
 * **`!=`** (not equal)
 	
 	
+* [Table of Contents](#table-of-contents)
+
+
 ### Data Function Types
 
 Dpdl has some built-it data function types for handling <ins>**vectors**</ins>, <ins>**maps**</ins>, <ins>**linked-lists**</ins> and <ins>**stacks**</ins>
@@ -363,6 +411,9 @@ object mystack = stack()
 mystack.push("my item")
 
 ```
+
+* [Table of Contents](#table-of-contents)
+
 
 ### In-line string expressions
 
@@ -403,6 +454,7 @@ result is 3.0
 
 Note: Currently only one in-line expression definition '${ ... }' is allowed inside a given string. Coming releases will support multiple expression in-linings within a given string. 
 
+* [Table of Contents](#table-of-contents)
 
 ### Arrays
 
@@ -557,7 +609,9 @@ while(iter.hasNext())
 endwhile
 ```
 
-### Class
+* [Table of Contents](#table-of-contents)
+
+### Class type
 
 Dpdl allows to define and use **`class`** type objects. This type definition is similar to the class type found in C++ or Java and others.
 
@@ -669,8 +723,10 @@ println("myb.desc: " + myb.getDesc())
 
 Note that in this case the 'class A' function 'printMe(...)' is being overwritten by the same function definition in 'class B' 
 
+* [Table of Contents](#table-of-contents)
 
-### Struct
+
+### Struct type
 
 Dpdl supports the type **`struct`**, with the following definitions:
 
@@ -742,7 +798,7 @@ my_arr[] = array(a)
 println("my_arr: " + my_arr)
 ```
 
-#### 'struct' initialization
+#### struct initialization
 
 Struct member variables can be statically initialized but can also be re-assigned explicitly upon 'struct' variable declaration, in a similar way like in C.
 
@@ -804,7 +860,7 @@ struct A {
 struct A mya = {3,.,9}
 ```
 
-#### 'struct' inheritance
+#### struct inheritance
 
 The type 'struct' can also be derived from a base 'struct', as a sub-struct, inheriting all member variables and functions from the base struct.
 
@@ -842,7 +898,7 @@ struct myB ab = {369, 963}
 ```
 
 
-#### 'struct' compiled to java bytecode
+#### struct compiled to java bytecode
 
 
 The type 'struct' can also be conveniently compiled at runtime into a java bytecode object (java Class) by using the **`genObjCode(...)`** api function.
@@ -909,7 +965,10 @@ This approach allows to speedup performance critical sections.
 The native 'struct' function 'myNativeJavaFunc' call in this example executes in avg. **`12 ms`** (on 'Apple M2 pro').
 
 
-### Enum
+* [Table of Contents](#table-of-contents)
+
+
+### Enum type
 
 Dpdl supports the type **`enum`**
 
@@ -929,6 +988,8 @@ println("enum values can also be accessed directly as in C: " + DONE)
 ```
 
 Note: Currently the comma separated tags and values need to be defined on different lines than the starting 'enum var {' definition (this will be fixed in the next release)
+
+* [Table of Contents](#table-of-contents)
 
 ### Pointers
 
@@ -982,7 +1043,9 @@ NOTE: Due to the nature of how pointers are implemented, to gain maximum perform
 
 
 This feature will be further developed.
-	
+
+* [Table of Contents](#table-of-contents)
+
 ### Function return type
 
 Specifying a return type in a function definition <ins>is optional</ins>. By default functions can return any possible variable type, or none.
@@ -1017,6 +1080,8 @@ println("y: " + y)
 println("yv: " + yv)
 testFuncVoid()
 ```
+
+* [Table of Contents](#table-of-contents)
 
 ### Multi-line structured text, data and code resources
 
@@ -1066,6 +1131,9 @@ object myhtml3 = dpdl_res_obj_get("my_html")
 println(myhtml3)
 
 ```
+
+* [Table of Contents](#table-of-contents)
+
 
 ### Dpdl Threads
 
@@ -1132,7 +1200,9 @@ fi
 The Dpdl Rutime can be configured to automatically run the garbage collector 'gc()' after a given number of iterations.
 See **`GC_THREAD_EXEC`** parameter in 'DpdlEngine.ini'. The value '-1' invalidates this feature.
 
-	
+
+* [Table of Contents](#table-of-contents)
+
 ### DpdlObjects and access to JRE classes
 
 Dpdl can access the underlying classes of a given java compliant JRE implementation or any other external java library.
@@ -1168,7 +1238,7 @@ string substr = str.substring(idx)
 println(substr)
 ```
 
-### Default configuration resolves the following API's:
+#### Default configuration resolves the following API's:
 
 The set of classes accessible with Dpdl (default) is defined to be the following set.
 The methods of the classes that are accessible are referred to the current JRE instance on which Dpdl is running.
@@ -1186,7 +1256,7 @@ NOTE: Only the full registered version of Dpdl allows editing of the class defin
 only the class references of Java Platform JRE 1.5, JAVAFX and Bluetooth JSR-82 API.
 
 
-### Dynamic loading of java API's
+#### Dynamic loading of java API's
 
 As mentioned above, java classes (or APIs), can be also be dynamically loaded and accesses at runtime by calling the function 'DPDLSYS_registerLib(...)'. The function accepts as parameter the path of a JAR file containing the java classes.
 
@@ -1209,7 +1279,7 @@ println("my data: " + mydata)
 println("now you can access all classes, methods and fields of the java classes contained in the specified jar file")
 ```
 
-### Notes:
+#### Notes:
 
 Referencing object variables currently support 1 level of indirection only ('date.toString().toUpparCase()' will not work currently, but is in development)
 
@@ -1220,7 +1290,10 @@ object datestr = date.toString()
 println(datestr.toUpperCase())
 ```
 
-### Load Dpdl code as DpdlObject
+* [Table of Contents](#table-of-contents)
+
+
+### Load Dpdl code as a DpdlObject
 
 Dpdl code can be loaded as an ordinary DpdlObjects with the function **`loadCode(..)`**.
 
@@ -1269,8 +1342,10 @@ object mymap = loadObj("HashMap")
 object mycode = loadCode("LoadCodeFunc.h", mymap)
 ```
 
+* [Table of Contents](#table-of-contents)
 
-### Types
+
+### Type handling
 
 #### **`object`** type
 
@@ -1489,8 +1564,10 @@ string ds = convert("string", d)
 println("ds: " + ds)
 ```
 
+* [Table of Contents](#table-of-contents)
 
-### Exception handling using 'raise(..)'
+
+### Exception handling
 
 Exceptions can be handled with the **`raise(..)`** function. 
 
@@ -1534,7 +1611,10 @@ raise(o =! null, "o =! null")
 dpdl_print_exception_table()
 ```
 
-### Asynchronous 'Task' execution
+* [Table of Contents](#table-of-contents)
+
+
+### Asynchronous Task execution
 
 The keyword  **`>>task`** allows to execute Dpdl code sections asynchronously.
 
@@ -1583,8 +1663,10 @@ task_obj.sleep(20000L)
 println("finished")
 ```
 
+* [Table of Contents](#table-of-contents)
 
-### 'Import' and 'Include' statements
+
+### `Import` and `Include` statements
 
 #### Import 
 
@@ -1625,42 +1707,17 @@ The path needs to be relative to the folder where the executed script is located
 NOTE: Currently the 'include' statement need to be placed <ins>before any defined 'import' statements</ins> -> this will change in the next release
 
 
-### Embedding of other programming languages directly within Dpdl code (Dpdl language plug-ins)
+* [Table of Contents](#table-of-contents)
 
-A particular feature of Dpdl is the possibility to embed and execute other programming languages directly within Dpdl code. This feature enables
-to use the appropriate language and libraries for particular implementation needs.
+
+### Embedding other programming languages directly within Dpdl code
+
+A particular feature of Dpdl is the possibility to embed and execute code of other programming languages directly within Dpdl code. The execution is driven by the Dpdl runtime via dedicated **Dpdl language plug-ins** that are avaiable as part of the DpdlEngine distributions.t
+This feature enables to use the appropriate language and libraries for particular implementation needs.
 
 The code of other programming languages can be embedded by simply using the keyword **`>>`** along with the language specifier.
 
 See [Dpdl_language_plugins.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md) for more details.
-
-Data and variables can be exchanged with the embedded code via the dpdl stack by using the API functions:
-
-**`dpdl_stack_var_put(..)`**
-
-**`dpdl_stack_var_get(..)`**
-
-**`dpdl_stack_push(..)`**
-
-**`dpdl_stack_buf_put(..)`**
-
-**`dpdl_stack_buf_get(..)`**
-
-**`dpdl_stack_obj_put(..)`**
-
-**`dpdl_stack_obj_get(..)`**
-
-**`dpdl_stack_var_glob_put(..)`**
-
-**`dpdl_stack_var_glob_get(..)`**
-
-**`dpdl_stack_obj_glob_put(..)`**
-
-**`dpdl_stack_obj_glob_get(..)`**
-
-
-Variables pushed on the dpdl stack are passed as parameters to the embedded code, and can also be embedded directly in the code as placeholder, see **`{{var_name}}`**.
-In the latter case the variables are replaced with the actual values before code compilation and execution.
 
 
 **Example:**
@@ -1703,6 +1760,34 @@ println("embedded C exit code: " + exit_code);
 string buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("response buffer: " + buf)
 ```
+
+Data and variables can be exchanged with the embedded code via the dpdl stack by using Dpdl API functions:
+
+**`dpdl_stack_var_put(..)`**
+
+**`dpdl_stack_var_get(..)`**
+
+**`dpdl_stack_push(..)`**
+
+**`dpdl_stack_buf_put(..)`**
+
+**`dpdl_stack_buf_get(..)`**
+
+**`dpdl_stack_obj_put(..)`**
+
+**`dpdl_stack_obj_get(..)`**
+
+**`dpdl_stack_var_glob_put(..)`**
+
+**`dpdl_stack_var_glob_get(..)`**
+
+**`dpdl_stack_obj_glob_put(..)`**
+
+**`dpdl_stack_obj_glob_get(..)`**
+
+
+Variables pushed on the dpdl stack are passed as parameters to the embedded code, and can also be embedded directly in the code as placeholder, see **`{{var_name}}`**.
+In the latter case the variables are replaced with the actual values before code compilation and execution.
 
 
 ### Dpdl embedded C code
@@ -1889,7 +1974,7 @@ println("start executing a python script...")
 println("finished")
 ```
 
-#### Supported platforms (Python language plugin)
+#### Supported platforms (Python language plug-in)
 
 Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
 
@@ -1940,14 +2025,8 @@ println("embedded OCaml exit code: " + exit_code);
 
 ```
 
-NOTE: The 'ocamljava' library can be downloaded from http://www.ocamljava.org/downloads/
-	
+* [Table of Contents](#table-of-contents)
 
-In order to enable the execution of OCaml code via the keyword '**>>ocaml**', the 'ocamlrun-scripting.jar' library jar file
-located in the lib folder (./lib) is required (download from www.ocamljava.org)
-
-If the 'dpdl:compile' option has been set (the OCaml code is compiled at runtime to improve speed) --> dpdl_stack_push("compile"),
-also the 'ocamljava.jar' file needs to be present in the './lib' folder.
 
 ### Dpdl Stack buffers
 
@@ -2121,6 +2200,8 @@ int main(int argc, char **argv){
 }
 ```
 
+* [Table of Contents](#table-of-contents)
+
 
 ### Current limitations
 
@@ -2221,7 +2302,7 @@ public class testCBench {
 }
 ```
 
-### DpdlPacket data query and access
+### DpdlPacket query and access
 
 The benchmark has been performed on a data set of 48877 entries (name, phone nr, e-mail), with the 'name' numbered
 sequentially i.e 'armin 1', 'armin 2', etc.
@@ -2242,6 +2323,9 @@ Queries on a JavaME RecordStore are feasible only with via RecordFilter and Reco
 in terms of speed (too slow).
 
 Anyhow the average record store access time for 48877 entries is: 55 milliseconds
+
+* [Table of Contents](#table-of-contents)
+
 
 ## HowTo's
 
