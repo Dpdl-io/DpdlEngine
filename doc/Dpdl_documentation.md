@@ -13,7 +13,7 @@ developed by
 
 Dpdl is a dedicated <ins>**programming language**</ins>, <ins>**interpreted**</ins> and <ins>**in part also bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, **self-contained**, with a very <ins>**compact footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-In addition Dpdl <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (<ins>No further installations needed</ins>).
+Dpdl also <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (<ins>No further installations needed</ins>).
 
 ### Features:
 
@@ -87,7 +87,6 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 
 * [`Import` and `Include` statements](#import-and-include-statements)
 * [Load Dpdl code as a DpdlObject](#load-dpdl-code-as-a-dpdlobject)
-* [DpdlPacket query and access](#dpdlpacket-query-and-access)
 * [Dpdl C API](#dpdl-c-api)
 
 </td></tr>
@@ -1301,7 +1300,7 @@ The object can be accessed like an other object except that the function calls c
 
 Loading a Dpdl script as an object has some advantages with respect to just include a given Dpdl script with via the 'include' statement:
 
-- The code runs in a dedicated interpreter instance -> more convenient especially for multi-threading applications.
+- The code runs in a dedicated execution instance -> convenient especially for multi-threading applications.
 - Variables have a dedicated scope
 - Performance improvements when using multiple extensions
 
