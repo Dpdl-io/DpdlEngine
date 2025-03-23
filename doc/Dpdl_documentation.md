@@ -722,7 +722,51 @@ println("myb.desc: " + myb.getDesc())
 
 Note that in this case the 'class A' function 'printMe(...)' is being overwritten by the same function definition in 'class B' 
 
+
+#### Inheritance of a dpdl `class` from a java class object 
+
+The dpdl type `class` can also have java classes as a base-class. This can be done by using `refObj(..)`
+
+**Example:** A dpdl class a that has the java "String" class as base class
+
+```python
+class A : refObj("String") {
+
+	func A(string str)
+		super(str)
+	end
+
+	func printMe()
+		println("this is me: " + this.toString())
+	end
+
+	func getData()
+		this.getBytes()
+	end
+}
+
+
+class A mya("This is my message str")
+
+int str_len = mya.length()
+
+println("mya: " + mya)
+println("length of mya is: " + str_len)
+
+byte barr[] = mya.getBytes()
+
+println("mya bytes: ")
+
+int i
+for(i < str_len)
+	print(barr[i])
+	i=i+1 
+endfor
+```
+
+
 * [Table of Contents](#table-of-contents)
+
 
 
 ### Struct type
