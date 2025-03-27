@@ -137,6 +137,15 @@ var arr_v_ini[] = {"can contain all types", 23.0d, loadObj(HashMap")}
 my_arr_dyn[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 ```
 
+#### Strings
+
+Strings in dpdl code are encoded using Unicode `UTF-16` format. 
+
+```python
+string msg = "你好世界"
+
+println("I'd like to say: " + msg)
+```
 
 #### Numbers
 
@@ -220,16 +229,6 @@ The types **`string`**, **`var`** and **`object`**, in case of a variable declar
 string tmps
 var tmpv
 object tmpo
-```
-
-#### Strings
-
-Strings in dpdl code are encoded using Unicode UTF-16 format. 
-
-```python
-string msg = "你好世界"
-
-println("I'd like to say: " + msg)
 ```
 
 
