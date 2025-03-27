@@ -166,6 +166,7 @@ import(string lib_path) return int
 
 getObj(string name) return object
 loadObj(string name, object params, ...) return object
+refObj(string name) return object
 loadCode(string dpdl_script_ref, object args, ...) return object
 genObjCode(object dpdl_obj) return object obj
 

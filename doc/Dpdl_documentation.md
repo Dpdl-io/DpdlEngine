@@ -137,6 +137,7 @@ var arr_v_ini[] = {"can contain all types", 23.0d, loadObj(HashMap")}
 my_arr_dyn[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 ```
 
+
 #### Numbers
 
 Dpdl supports the number types **`int`** **`foat`** **`double`** **`long`** **`short`** **`byte`**
@@ -220,6 +221,17 @@ string tmps
 var tmpv
 object tmpo
 ```
+
+#### Strings
+
+Strings in dpdl code are encoded using Unicode UTF-16 format. 
+
+```python
+string msg = "你好世界"
+
+println("I'd like to say: " + msg)
+```
+
 
 #### **`typedef`** specifier
 
@@ -1616,10 +1628,10 @@ Exceptions can be handled with the **`raise(..)`** function.
 
 The following conditions are checked and an exception is raised if the expression on the type condition evaluates to 'false':
 
-* string -> **`(condition =! "null")`** ? true : false 
-* int -> **`(condition =! -1)`**  : true : false
-* bool -> **`(condition == true)`**  ? true : false
-* object -> **`(condition =! null)`**  ? true : false
+* string -> **`(condition != "null")`** ? true : false 
+* int -> **`(condition != -1)`**  : true : false
+* bool -> **`(condition != false)`**  ? true : false
+* object -> **`(condition != null)`**  ? true : false
 
 
 The raise(..) function can be called in the following ways:
