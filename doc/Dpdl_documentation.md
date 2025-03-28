@@ -142,9 +142,10 @@ my_arr_dyn[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 Strings in dpdl code are encoded using Unicode `UTF-16` format. 
 
 ```python
-string msg = "你好世界"
+string msg1 = "Hello World"
+string msg2 = "你好世界"
 
-println("I'd like to say: " + msg)
+println("I'd like to say: " + msg1 + " and " + msg2)
 ```
 
 #### Numbers
