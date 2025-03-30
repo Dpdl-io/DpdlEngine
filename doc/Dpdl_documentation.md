@@ -191,7 +191,7 @@ float myf2 = -1.2345e3
 
 The number types **`int`**, **`long`** and **`byte`** can be represented also in <ins>Hexadecimal format</ins>, having either lower-case of upper-case letters (eg. 0x1627F **OR** 0x1627f)
 
- **example:** int value 90751
+ **example:** `int` value 90751
  
 ```c++
 int i = 0x1627F
@@ -199,13 +199,13 @@ int i = 0x1627F
 int i = 0x1627f
 ```
 
- **example:** byte value 1
+ **example:** `byte` value 1
  
 ```c++
 byte b = 0x01B
 ```
 
- **example: (long)**
+ **example:** `long` value
  
 ```c++
 long l = 0x14269cae3c1ae6243L
@@ -735,21 +735,26 @@ println("myb.desc: " + myb.getDesc())
 Note that in this case the 'class A' function 'printMe(...)' is being overwritten by the same function definition in 'class B' 
 
 
-#### Inheritance of a dpdl `class` from a java class object 
+#### Deriving a dpdl `class` from a java class object 
 
-The dpdl type `class` can also have java classes as a base-class. This can be done by using `refObj(..)`
+The dpdl type `class` can also be derived directly from a java class object. This can be done by using the `refObj(..)` function.
 
-**Example:** A dpdl class a that has the java "String" class as base class
+In the example below a dpdl `class` 'Msg' is created, which is derived from a 'String' java object. In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: length(), toString(), getBytes(), etc.
+
+
+**Example:** A dpdl `class` a that is derived from a 'String' java class object
 
 ```python
-class A : refObj("String") {
+class Msg : refObj("String") {
 
-	func A(string str)
+	func Msg(string str)
 		super(str)
+
+		println("a new message")
 	end
 
 	func printMe()
-		println("this is me: " + this.toString())
+		println("message: " + this.toString())
 	end
 
 	func getData()
@@ -758,19 +763,22 @@ class A : refObj("String") {
 }
 
 
-class A mya("This is my message str")
+class Msg mym("This is a test message")
 
-int str_len = mya.length()
+int msg_len = mym.length()
 
-println("mya: " + mya)
-println("length of mya is: " + str_len)
+println("length of mym is: " + msg_len)
 
-byte barr[] = mya.getBytes()
+println("mym: " + mym.toString())
 
-println("mya bytes: ")
+mym.printMe()
+
+byte barr[] = mym.getBytes()
+
+println("mym bytes: ")
 
 int i
-for(i < str_len)
+for(i < msg_len)
 	print(barr[i])
 	i=i+1 
 endfor
