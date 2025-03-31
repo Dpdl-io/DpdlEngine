@@ -739,8 +739,11 @@ Note that in this case the 'class A' function 'printMe(...)' is being overwritte
 
 The dpdl type `class` can also be derived directly from a java class object. This can be done by using the `refObj(..)` function.
 
-In the example below a dpdl `class` 'Msg' is created, which is derived from a '[String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)' java object. In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: length(), toString(), getBytes(), etc.
+In the example below a dpdl `class` 'Msg' is created, which is derived from a '[String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)' java object.
 
+In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: length(), toString(), getBytes(), etc. 
+
+The methods of the java object super-class can also be overloaded by dpdl functions and customized.
 
 **Example:** A dpdl `class` a that is derived from a 'String' java class object
 
@@ -758,7 +761,7 @@ class Msg : refObj("String") {
 	end
 
 	func getData()
-		this.getBytes()
+		return this.getBytes()
 	end
 }
 
