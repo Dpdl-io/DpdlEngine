@@ -55,7 +55,7 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 <tr><td width=33% valign=top>
 
 * [Types](#types)
-* [Function and Control flow](#function-and-control-flow)
+* [Functions, Loops and Control flow](#functions-loops-and-control-flow)
 * [Operators](#operators)
 * [Data Function Types](#data-function-types)
 * [Arrays](#arrays)
@@ -268,7 +268,7 @@ println("res: " + res)
 ```
 
   
-### Function and Control flow
+### Functions, Loops and Control flow
 
 **`function`** definition
 
