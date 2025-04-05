@@ -16,22 +16,6 @@ These features may eventually be available in coming releases.
 Suggestions and comments are very appreciated.
 
 
-## Deriving a class from java classes
-
-By using the inheritance mechanism available for the dpdl type `class`, 
-
-```python
-class A : refObj(String) {
-
-	func A(string str)
-		super(str)
-	end
-
-	func printMe()
-		println("this is me: " + toString())
-	end
-}
-```
 
 ## Dpdl Interfaces
 
