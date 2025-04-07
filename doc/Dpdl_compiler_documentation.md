@@ -41,7 +41,7 @@ int exit_code = dpdl_exit_code()
 println("embedded code exit code: " + exit_code)
 ```
 
-## C Compiler
+## Embedded C Compiler
 
 Within Dpdl code, embedded C code can be dynamically <ins>compiled in memory at runtime</ins> (see execution Mode (2))
 
