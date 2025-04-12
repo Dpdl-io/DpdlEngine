@@ -34,6 +34,8 @@ The core Dpdl engine has the **capability to run even on memory scarce devices a
 
 ### Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + AI) = <ins>Powerful and Versatile</ins>
 
+Dpdl is a dedicated <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and <ins>**in part also bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
+
 Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
 
 It allows to easily create and integrate custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**.
@@ -65,8 +67,6 @@ Additionally, the 'DpdlPacket' data container provides a convenient way to packa
 </p>
 
 ## <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
-
-Dpdl is a dedicated <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and <ins>**in part also bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol) are integrated by default and other third party libraries and protocols can be added as extensions.
 
