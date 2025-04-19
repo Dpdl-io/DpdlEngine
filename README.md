@@ -18,11 +18,11 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-Dpdl is available as a very compact and portable **execution engine** with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages directly embedded within the same Dpdl source code, simultaneously and of multiple types.
+Dpdl is available as a very compact and portable **execution engine** (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
 The Dpdl language constructs and syntax is simple, yet powerful, and follows an object oriented paradigm **interoperable with java platform APIs and external native shared libraries**.
 
-Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
+Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
 The core Dpdl engine has the **capability to run even on memory scarce devices and platforms** via a dedicated kilobyte range virtual machine.
 
@@ -34,11 +34,11 @@ The core Dpdl engine has the **capability to run even on memory scarce devices a
 
 ### Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + AI) = <ins>Powerful and Versatile</ins>
 
-Dpdl is a dedicated <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and <ins>**in part also bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
+Dpdl is a dedicated <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
 
-Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
+Dpdl also allows to create and integrate custom syntax and language interpreters of all sorts that can be embedded and executed inside Dpdl code, for example code in other programming languages.
 
-It allows to easily create and integrate custom syntax and language interpreters of all sorts. For example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**.
+Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration. Multiple Dpdl language plug-ins are available, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**.
 
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically directly within Dpdl code and execute the code right away. Alternatively the generated code can be rewritten to a new file and executed in a subsequent step.
 
