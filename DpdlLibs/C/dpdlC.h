@@ -13,7 +13,7 @@ int n = 6
 double x = 10.0d
 string a = "test"
 
-dpdl_stack_push("dpdlbuf_var1",n, x, a)
+dpdl_stack_push("dpdlbuf_var1", n, x, a)
 
 >>c
 	#include <stdio.h>
