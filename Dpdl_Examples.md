@@ -157,6 +157,10 @@ These examples are demonstrators but are full running applications.
 * Example Dpdl code that makes use of multi-line structured text resources
 
 	[test/testResource.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testResource.h)
+	
+* Example Dpdl code that makes use of a code resource that is than dynamically compiled and executed inside an embedded C code section
+
+	[res/dpdlResCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/res/dpdlResCode.h)
 		
 * Example Dpdl code that compresses and de-compresses a string of data using the Java platform API
 

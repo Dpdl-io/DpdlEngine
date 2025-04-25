@@ -52,7 +52,7 @@ Additionally, the 'DpdlPacket' data container provides a convenient way to packa
 ### * Reuse code
 ### * No need to install, compile and configure environments
 ### * Runs on constrained devices
-### * Compressing, querying and handling data efficiently on constrained devices
+### * Compress, query and handle data efficiently on constrained devices
 ### * Self-contained, No additional dependencies required (except add-on libraries)
 ### * Facilitate rapid prototyping for Hardware programming
 ### * Support for IoT protocols such as Bluetooth(tm) and CoAP
@@ -157,7 +157,7 @@ The size of the DpdlEngine core can be stripped down to **`80 Kb`** for a minima
 
 ## Dpdl sample code
 
-### Sample Dpdl code that make use of type 'class' Inheritance and Polymorphism
+### Sample Dpdl code that make use of type 'class' Inheritance and Polymorphism and make use of some embedded code section in other programming languages
 
 ```python
 
