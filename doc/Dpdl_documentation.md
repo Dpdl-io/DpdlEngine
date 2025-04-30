@@ -63,6 +63,7 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 	* [Dynamic arrays](#dynamic-arrays)
 * [`Class` type](#class-type)
 	* [Inheritance and Polymorphism](#inheritance-and-polymorphism)
+	* [Inheritance of dpdl `class` objects from java classes](#inheritance-of-dpdl-class-objects-from-java-classes)
 * [`Struct` type](#struct-type)
 	* [`struct` initialization](#struct-initialization)
 	* [`struct` inheritance](#struct-inheritance)
@@ -735,15 +736,15 @@ println("myb.desc: " + myb.getDesc())
 Note that in this case the 'class A' function 'printMe(...)' is being overwritten by the same function definition in 'class B' 
 
 
-#### Deriving a dpdl `class` from a java class object 
+#### Inheritance of dpdl `class` objects from java classes 
 
-The dpdl type `class` can also be derived directly from a java class object. This can be done by using the `refObj(..)` function.
+The dpdl type `class` can also be derived directly from a java class object. This is done by using the `refObj(..)` function.
 
-In the example below a dpdl `class` 'Msg' is created, which is derived from a '[String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)' java object.
+In the example below a dpdl `class` 'Msg' is created, which is derived from the java object '[String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)'.
 
-In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: length(), toString(), getBytes(), etc. 
+In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: `length()`, `toString()`, `getBytes()`, etc. (see java 'String' documentation) 
 
-The methods of the java object super-class can also be overloaded by dpdl functions and customized.
+The methods of the java object super-class <ins>can also be overloaded</ins> by dpdl functions and customized.
 
 **Example:** A dpdl `class` a that is derived from a 'String' java class object
 

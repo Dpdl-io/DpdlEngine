@@ -25,7 +25,7 @@ object f2_new_res = dpdl_res_obj_get("my_new_code_f2")
 
 raise(f2_new_res, "Error in getting code resource")
 
-println("setting the variable on the stack...")
+println("setting the variables on the stack...")
 
 dpdl_stack_var_put("f2_new_name", "f2_new")
 dpdl_stack_obj_put("f2_new_code", f2_new_res)

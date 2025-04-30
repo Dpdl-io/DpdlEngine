@@ -89,7 +89,7 @@ This is a proposal draft for enabling Dpdl code sections to be compiled to java 
 
 The purpose of this feature is to improve performance critical code sections
 
-The meta instruction **`[bytecode]`** signalizes the beginning of Dpdl to bytecode compilation, until the first empty code line in found.
+The meta instruction **`[bytecode]`** signalizes the beginning of Dpdl to bytecode compilation, until the first empty code line is found.
 
 **Example:**
 
