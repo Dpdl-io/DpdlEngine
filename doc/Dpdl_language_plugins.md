@@ -81,7 +81,7 @@ Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with th
 
 The size of each individual Dpdl language plug-in varies.
 
-Here just some examples for the size (in Kb),  for each 'Dpdl lanugage plug-in':
+Here just some examples for the size (in kilobyte),  for each 'Dpdl lanugage plug-in':
 
 | Platform | C | MicroPython |Python |Js |Lua |...|
 | ---  | --- | --- | --- | --- | --- | --- |
