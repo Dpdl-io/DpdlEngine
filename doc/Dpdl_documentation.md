@@ -55,7 +55,8 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 <tr><td width=33% valign=top>
 
 * [Types](#types)
-* [Functions, Loops and Control flow](#functions-loops-and-control-flow)
+* [Functions](#functions)
+* [Control flow](#control-flow)
 * [Operators](#operators)
 * [Data Function Types](#data-function-types)
 * [Arrays](#arrays)
@@ -268,8 +269,45 @@ float res = myTest(myval, myx, myy)
 println("res: " + res)
 ```
 
+* [Table of Contents](#table-of-contents)
+
+
+### Functions
+
+In Dpdl functions are defined via the keyword `func` with the following definitions:
+
+- Functions can be defined anywhere within a dpdl module (source file), in `class` types and in `struct ` types
+
+- The functions can take any number of parameters of different types
+
+- The functions may, or may not define a return type, both are valid
+
+
+#### Function return type
+
+The return type of a given function can be specified as follows, where '$type' is one of the supported types:
+
+**syntax:**
+
+```
+func myname() $type
+```
+
+Specifying the return type of a function **<ins>is optional</ins>**, it enforces a further check on the execution and improves code readability
+
+Example: 
+
+```python
+func myFunction(object param....) int
+	return 23
+end
+```
+
+
+* [Table of Contents](#table-of-contents)
+
   
-### Functions, Loops and Control flow
+### Control flow
 
 **`function`** definition
 
@@ -279,15 +317,7 @@ func myFunction(string param, object param....)
 end
 ```
 
-**`function`** definition <ins> with **return** type</ins>
 
-Specifying the return type of a function **<ins>is optional</ins>**, it enforces a further check on the execution and improves code readability
-
-```python
-func myFunction(object param....) int
-
-end
-```
 
 **`if`** statement
 

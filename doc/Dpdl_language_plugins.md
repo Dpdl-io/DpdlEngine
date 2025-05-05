@@ -51,7 +51,7 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 
 **Dpdl language plug-ins** can be developed and integrated via defined interfaces and a simple configuration.
 
-### Embedded programming languages - compatibility matrix
+### Dpdl embedded programming languages ('Dpdl language plug-ins') - compatibility matrix
 
 (X + version) **Available**
 
@@ -75,6 +75,20 @@ Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with th
 | Mac OS X (aarch64) |X|X|X|X|X|
 | Raspberry PI 3 (armv7)|*|X|*|*|X|
 | Windows64|*|X|*|*|X|
+
+
+#### Size of 'Dpdl language plug-ins'
+
+The size of each individual Dpdl language plug-in varies.
+
+Here some examples for the size expressed in Kilo Bytes (Kb):
+
+| Platform | C | MicroPython |Python |Js |Lua |...|
+| ---  | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |278 Kb|194 Kb|2491 Kb|2856 Kb|174 Kb|...|
+
+Other platforms have similar sizes, but vary slightly.
+
 
 ### Dpdl embedded code API
 
