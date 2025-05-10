@@ -68,6 +68,42 @@ Additionally, the 'DpdlPacket' data container provides a convenient way to packa
 
 ## <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
+## Quick Links
+
+### Documentation
+
+[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+  
+[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+
+[Dpdl language plug-ins](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
+
+[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
+
+[Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
+
+[Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
+
+[Dpdl GPU Compute](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_GPU_compute.md)
+
+[Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
+
+[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
+
+[DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
+
+[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
+
+### More...
+
+[Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
+
+[Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
+
+[Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
+
+
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol) are integrated by default and other third party libraries and protocols can be added as extensions.
 
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) makes <ins>use of **AI generative code** to automatically generate and embed executable code and content or data</ins> by natural language descriptions contained inside Dpdl code.
@@ -117,42 +153,6 @@ These features make Dpdl a powerful rapid development platform for industrial ap
 * <ins>**TOTAL SIZE** of DpdlEngine</ins> (**Dpdl Full configuration with embedded C compiler/interpreter**) = **`650 Kb`**
  
 The size of the DpdlEngine core can be stripped down to **`80 Kb`** for a minimal setup.
-
-
-## Quick Links
-
-### Documentation
-
-[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
-  
-[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
-
-[Dpdl language plug-ins](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
-
-[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
-[Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
-
-[Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
-
-[Dpdl GPU Compute](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_GPU_compute.md)
-
-[Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
-
-[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
-
-[DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
-
-[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
-
-
-### More...
-
-[Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
-
-[Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
-
-[Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
 
 ## Dpdl sample code
