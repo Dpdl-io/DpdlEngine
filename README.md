@@ -68,7 +68,6 @@ Additionally, the 'DpdlPacket' data container provides a convenient way to packa
 
 ## <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-## Quick Links
 
 ### Documentation
 
