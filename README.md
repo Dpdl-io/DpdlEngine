@@ -14,7 +14,7 @@ developed by
 &copy; 2003
 
 
-## Dpdl - rapid development programming language and constrained device framework
+## Dpdl - a rapid development programming language and constrained device framework
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
@@ -42,7 +42,7 @@ Custom code and syntax interpreters can be implemented and integrated in form of
 
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically directly within Dpdl code and execute the code right away. Alternatively the generated code can be rewritten to a new file and executed in a subsequent step.
 
-Additionally, the 'DpdlPacket' data container provides a convenient way to package and handle data efficiently on memory scarce devices.
+Further, the 'DpdlPacket' data container provides a convenient way to package and handle and query data efficiently on memory scarce devices.
 
 ## Dpdl is designed to:
 
