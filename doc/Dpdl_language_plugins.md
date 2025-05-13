@@ -87,7 +87,7 @@ Here just some examples for the size (in kilobyte),  for each 'Dpdl lanugage plu
 | ---  | --- | --- | --- | --- | --- | --- |
 | Linux (x86_64) |278 Kb|194 Kb|2491 Kb|2856 Kb|174 Kb|...|
 
-Other platforms have similar sizes, but vary slightly.
+The 'Dpdl language plug-ins' for other available platforms have similar sizes, but vary slightly.
 
 
 ### Dpdl embedded code API
