@@ -16,7 +16,7 @@ developed by
 
 The plug-in provided allows to <ins>**automatically generate and execute** embedded code sections in various programming languages within Dpdl</ins> via a configurable **AI engine**.
 
-More generally, the plug-in <ins>allows also to **generate content or data**</ins> used during the code execution.
+More generally, the plug-in <ins>allows also to **generate any kind of content or data**</ins> used during the code execution for example.
 
 This enables to write code faster in the prototyping phase and allows also to generate data on the fly needed for example for development or testing.
 

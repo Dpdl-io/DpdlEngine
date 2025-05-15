@@ -5,13 +5,14 @@ This tutorial shows how you can make use of WebAssemby code function calls withi
 
 ## Introduction
 
+The 'DpdlEngine' release <ins>**includes** a dedicated 'Dpdl language plug-in' for **loading and executing WASM code** (with WASI support)</ins> and perform function calls to wasm code from Dpdl code. The plug-in <ins>allows also to compile WAT code to wasm on-the-fly</ins>.
+
 WebAssemby (Wasm) is a portable and performant binary instruction format for a stack-based virtual machine that is executed in popular web browsers and clients or on server side runtime applications. Modern compilers like Rust and LLVM based compilers can mostly target also WASM as executable format. 
 
 Many libraries and modules are nowadays available in WASM that can for example be loaded and executed in JavaScript within a web-client or in a native server-less rust application on server side.
 
 For these reasons it may be very handy to be able to load and execute WASM code within your codebase.
 
-Dpdl provides a dedicated Dpdl language plug-in for loading and executing WASM code (with WASI support) and perform function calls to wasm code from Dpdl code. The plug-in <ins>allows also to compile WAT code to wasm on-the-fly</ins>.
 
 ## Description
 
