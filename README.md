@@ -18,7 +18,7 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-Dpdl is available as a very compact and portable **execution engine** (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages directly embedded within the same Dpdl source code, simultaneously and of multiple types.
+Dpdl is available as a very compact and portable **execution engine** (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages or custom syntaxes directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
 The Dpdl language constructs and syntax is simple, yet powerful, and follows an object oriented paradigm **interoperable with java platform APIs and external native shared libraries**.
 
@@ -38,7 +38,9 @@ Dpdl is a dedicated <ins>**programming language**</ins>, <ins>**self-contained**
 
 Dpdl also allows to create and integrate custom syntax and language interpreters of all sorts that can be embedded and executed inside Dpdl code, for example code in other programming languages.
 
-Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration. Multiple Dpdl language plug-ins are available, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**.
+Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
+
+Multiple Dpdl language plug-ins are currently available, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development (i.e. for *Modelica* and *OpenQWASM* code) to enable also physical Model Simulations and Quantum Computing inside Dpdl.
 
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically directly within Dpdl code and execute the code right away. Alternatively the generated code can be rewritten to a new file and executed in a subsequent step.
 
@@ -885,7 +887,9 @@ Dpdl is currently developed by SEE Solutions and the following integrations has 
 * Back-end compiler that compiles Dpdl code to native machine code for most target architectures (LLVM)
 * Dpdl-IDE and provide also plug-ins for popular IDEs (IntelliJ, eclipse, MSVS)
 
-* Development of a dedicated **Dpdl language plug-in** for enabling QUANTUM computing via OpenQASM 2.0 (circuit description language)
+* Development of a dedicated **'Dpdl language plug-in'** for enabling <ins>**QUANTUM computing**</ins> via embedded OpenQASM 2.0 (Circuit description language) code within Dpdl
+
+* Development of a dedicated **'Dpdl language plug-in'** for enabling the embedding and execution of [**Modelica language**](https://modelica.org/language/) code within Dpdl
 
 
 ### Embedding of 'Python' code

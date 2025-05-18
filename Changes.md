@@ -10,6 +10,8 @@ developed by
 
 ## New features
 
+* NEW In Development: Dpdl language plug-in for 'Modelica' language code. Modelica is pogramming language to model cyber-physical systems and components.
+ 
 * NEW Dpdl language plug-in for 'V' is now available
 
 * Dpdl language plug-in for 'OCL' (OpenCL) is now available

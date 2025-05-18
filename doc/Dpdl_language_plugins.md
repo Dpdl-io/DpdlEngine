@@ -40,16 +40,21 @@ Currently the 'DpdlEngine' release supports and provides the following <ins>**Dp
 * **`V`**
 * **`Clojure`**
 
-**Add-on 'Dpdl language plug-ins' available:**
+#### Add-on 'Dpdl language plug-ins' available:
 
-* **`Wasm`** -> WAT Compiler and Wasm Runtime
-* **`Sql`** -> query databases via SQL
-* **`Wgsl`** -> WebGPU shading language
-* **`OCL`** -> Open Computing Language (OpenCL)
+* **`Wasm`** -> *WAT* Compiler and *Wasm Runtime*
+* **`Sql`** -> query databases via *SQL*
+* **`Wgsl`** -> WebGPU shading language (*WGSL*)***`OCL`** -> Open Computing Language (*OpenCL*)
 * **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
+**Dpdl language plug-ins** can be developed and integrated via defined Dpdl API interfaces and a simple configuration.
 
-**Dpdl language plug-ins** can be developed and integrated via defined interfaces and a simple configuration.
+
+#### In development 'Dpdl language plug-ins', available soon in coming releases:
+
+* **`quantum`** -> *OpenQWASM* compiler and executor
+
+* **`modelica`** -> *Modelica language* compiler and executor. *Modelica* is an object-oriented, multi-domain modeling language for component-oriented modeling and mathematical equation programming of complex systems, e.g., systems containing mechanical, electrical, electronic, hydraulic, thermal, control, electric power or process-oriented subcomponents
 
 ### Dpdl embedded programming languages ('Dpdl language plug-ins') - compatibility matrix
 
