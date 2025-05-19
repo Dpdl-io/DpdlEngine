@@ -40,7 +40,7 @@ Dpdl also allows to create and integrate custom syntax and language interpreters
 
 Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
 
-Multiple Dpdl language plug-ins are currently available, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development (i.e. for *Modelica* and *OpenQWASM* code) to enable also *Physical Model Simulations* and *Quantum Computing* inside Dpdl.
+Multiple Dpdl language plug-ins are currently available, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development (i.e. for *Modelica* and *OpenQWASM* code) to enable also *Cyber-Physical Model Simulations* and *Quantum Computing* inside Dpdl.
 
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically directly within Dpdl code and execute the code right away. Alternatively the generated code can be rewritten to a new file and executed in a subsequent step.
 
