@@ -1,4 +1,4 @@
-# Dpdl Examples
+sica# Dpdl Examples
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
@@ -36,7 +36,7 @@ These examples are demonstrators but are full running applications.
 
 	[test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h)
 
-* Example Dpdl code that makes use of the type 'struct'
+* Example Dpdl code that makes use of the type 'struc
 
 	[test/testStruct3.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct3.h)
 
@@ -421,7 +421,7 @@ this is my sample json:
 		3) start the 2nd client in a thread instance: CoAP/startClientThread.h
 	
 
-### Dpdl language plug-ins (embeddable programming languages)
+### Dpdl language plug-ins (embeddable programming languages or custom syntax interpreters)
 
 * Example with embedded C code execution within Dpdl (interpreted Mode 1)
 	
@@ -518,6 +518,10 @@ this is my sample json:
 * Example Dpdl code that embeds 'PHP' code to read a CSV file, count the number of fields in each line and print the values
 
 	[php/dpdlPhpTest4.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/php/dpdlPhpTest4.h)
+
+* Example Dpdl code that makes use of embedded 'Modelica' code to simulate the physical model mechanics of a Second Order Rotational System
+
+	[modelica/dpdlModelicaExample_mechanics.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/modelica/dpdlModelicaExample_mechanics.h)
 
 
 ### Benchmark Tests
