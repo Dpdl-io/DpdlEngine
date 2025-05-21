@@ -34,15 +34,13 @@ The core Dpdl engine has the **capability to run even on memory scarce devices a
 
 ### Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + AI) = <ins>Powerful and Versatile</ins>
 
-Dpdl is a dedicated <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
+Dpdl is a multi domain <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
 
-Dpdl also allows to create and integrate custom syntax and language interpreters of all sorts that can be embedded and executed inside Dpdl code, for example code in other programming languages.
+Dpdl allows also to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'** that can be embedded and executed within Dpdl code, for example code in other programming languages.
 
-Custom code and syntax interpreters can be implemented and integrated in form of **'<ins>Dpdl language plug-ins</ins>'** and code execution engines can be added as extensions and embedded via a dedicated interface and configuration.
+<ins>Multiple **'Dpdl language plug-ins<'** are currently available</ins>, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development, for example for *Modelica* and *OpenQWASM* code to enable also *Cyber-Physical Model Simulations* and *Quantum Computing* directly inside Dpdl.
 
-Multiple Dpdl language plug-ins are currently available, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development (i.e. for *Modelica* and *OpenQWASM* code) to enable also *Cyber-Physical Model Simulations* and *Quantum Computing* inside Dpdl.
-
-The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables also to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically directly within Dpdl code and execute the code right away. Alternatively the generated code can be rewritten to a new file and executed in a subsequent step.
+The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can be rewritten to a new file and executed in a subsequent step if required.
 
 Further, the 'DpdlPacket' data container provides a convenient way to package and handle and query data efficiently on memory scarce devices.
 
@@ -682,6 +680,13 @@ This features is very useful for rapid development and rapid prototyping and is 
 
 
 See this doc for more details: [Dpdl_embedded_languages.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
+
+
+### In development 'Dpdl language plug-ins' (available soon in coming releases):
+
+* **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
+
+* **`modelica`** -> *Modelica language* compiler and executor. *Modelica* is an object-oriented, multi-domain modeling language for component-oriented modeling and mathematical equation programming of complex systems, e.g., systems containing mechanical, electrical, electronic, hydraulic, thermal, control, electric power or process-oriented subcomponents
 
 
 #### Dpdl example with embedded 'C++' (Root) code
