@@ -519,6 +519,10 @@ this is my sample json:
 
 	[php/dpdlPhpTest4.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/php/dpdlPhpTest4.h)
 
+* Example Dpdl code that makes use of embedded 'Modelica' code to simulate a bouncing ball physical model
+
+	[modelica/dpdlModelicaExample_simple.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/modelica/dpdlModelicaExample_simple.h)
+	
 * Example Dpdl code that makes use of embedded 'Modelica' code to simulate the physical model mechanics of a Second Order Rotational System
 
 	[modelica/dpdlModelicaExample_mechanics.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/modelica/dpdlModelicaExample_mechanics.h)

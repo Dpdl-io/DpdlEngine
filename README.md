@@ -18,7 +18,7 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-The Dpdl language constructs and syntax are simple, yet powerful, and follow an object oriented paradigm **interoperable with java JVM platform APIs and external native shared libraries**.
+The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm **interoperable with java JVM platform APIs and external native shared libraries**.
 
 Dpdl is available as a very compact and portable **execution engine** (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
