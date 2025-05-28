@@ -18,15 +18,15 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-Dpdl is available as a very compact and portable **execution engine** (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
+The Dpdl language constructs and syntax are simple, yet powerful, and follow an object oriented paradigm **interoperable with java JVM platform APIs and external native shared libraries**.
 
-The Dpdl language constructs and syntax is simple, yet powerful, and follows an object oriented paradigm **interoperable with java JVM platform APIs and external native shared libraries**.
+Dpdl is available as a very compact and portable **execution engine** (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
 The core Dpdl engine has the **capability to run even on memory scarce devices and platforms** via a dedicated kilobyte range virtual machine.
 
-### Dpdl is <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins> via an extensible interface.
+### Dpdl is <ins>**Self-contained**</ins>, <ins>**Compact**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins>
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
@@ -51,7 +51,7 @@ Further, the 'DpdlPacket' data container provides a convenient way to package an
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Reuse code
 ### * No need to install, compile and configure environments
-### * Runs on constrained devices
+### * Run on constrained devices
 ### * Compress, query and handle data efficiently on constrained devices
 ### * Self-contained, No additional dependencies required (except add-on libraries)
 ### * Facilitate rapid prototyping for Hardware programming
