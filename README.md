@@ -18,7 +18,7 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm **interoperable with java JVM platform APIs and external native shared libraries**.
+The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm **interoperable with java JVM platform APIs and external native shared libraries**.
 
 Dpdl is available as a very compact and portable **execution engine** (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
@@ -137,7 +137,8 @@ The speedup is x 25 times faster compared to a standard record store access
 * Allows to **scale computations on GPUs using the 'OpenCL' and 'Wgsl' (WebGPU shading language) Dpdl language plug-in**
 * Open Source **Dpdl language plug-ins**
 
-Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, and provides a simple access to <ins>**java Api's, Native shared libraries, Wasm modules and GPU compute**</ins>.
+Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code.
+It also provides a simple access to <ins>**java Api's, Native shared libraries, Wasm modules and GPU compute**</ins>.
 
 Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container referred to as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups.
 
@@ -500,17 +501,23 @@ This is a 3D model visualization of chemical molecules (in this case hydrogen) u
 
 ### Dpdl example that uses the 'sql' Dpdl language plug-in to retrieve data from a database and handle the result set
 
-The Dpdl script connects to the database and performs a query, retrieves and prints out the result set, encodes the result set to a json string, and 
-than decodes the json string to an object that can be accessed as a HashMap
+Dpdl sample code that connects to the database and performs a query, retrieves and prints out the result set, encodes the result set to a json string, and than decodes the json string to an object that can be accessed as a HashMap
 
 [sql/dpdlSqlExampleJson.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExampleJson.h) 
 
 
 ### Dpdl example that uses the 'Wgsl' Dpdl language plug-in to scale computations directly on GPU's
 
-The Dpdl script implements a high-performing neural network activation function (GELU) on GPUs using the dpdl language plug-in 'Wgsl' that allows to embed and execute WGSL code (WebGPU Shading language) directly within Dpdl.
+Dpdl sample code that implements a high-performing neural network activation function (GELU) on GPUs using the dpdl language plug-in 'Wgsl' that allows to embed and execute WGSL code (WebGPU Shading language) directly within Dpdl.
 
 [wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
+
+
+### Dpdl example that uses the 'Modelica' Dpdl language plug-in to run a cyber-physical model simulation
+
+Dpdl sample code that performs the physical simulation of a bouncing ball with embedded 'Modelica' code
+
+[modelica/dpdlModelicaExample_simple.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/modelica/dpdlModelicaExample_simple.h)
 
 
 ### More Dpdl Examples
