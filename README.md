@@ -22,7 +22,7 @@ The Dpdl language constructs and syntax are simple and intuitive, yet powerful, 
 
 Dpdl is available as a very compact and portable **execution engine** (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
-Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
+Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
 The core Dpdl engine has the **capability to run even on memory scarce devices and platforms** via a dedicated kilobyte range virtual machine.
 
@@ -32,13 +32,13 @@ The core Dpdl engine has the **capability to run even on memory scarce devices a
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
-### Dpdl = ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + AI) = <ins>Powerful and Versatile</ins>
+### Dpdl + ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica + AI) = <ins>Powerful and Versatile</ins>
 
 Dpdl is a multi-domain <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
 
 Dpdl allows also to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'** that can be embedded and executed within Dpdl code, for example code in other programming languages.
 
-<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development, for example for *Modelica* and *OpenQWASM* code to enable also *Cyber-Physical Model Simulations* and *Quantum Computing* directly inside Dpdl.
+<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development, for example for *OpenQWASM* code to enable also *Quantum Computing* directly inside Dpdl.
 
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can be rewritten to a new file and executed in a subsequent step if required.
 
@@ -115,7 +115,7 @@ Dpdl enables integration of different technologies to leverage fast prototyping 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
 * **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java libraries**
 * **Dpdl enables also to load and access Native shared libraries**
-* **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
+* **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Modelica, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except add-on libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of plug-ins**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
@@ -668,6 +668,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`Groovy`**
 * **`V`**
 * **`Clojure`**
+* **`Modelica`**
 * **`C++`** (Root)
 
 **available Add-on 'Dpdl language plug-ins':**
@@ -685,8 +686,6 @@ See this doc for more details: [Dpdl_embedded_languages.md](https://github.com/D
 ### In development 'Dpdl language plug-ins' (available soon in coming releases):
 
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
-
-* **`modelica`** -> *Modelica language* compiler and executor. *Modelica* is an object-oriented, multi-domain modeling language for component-oriented modeling and mathematical equation programming of complex systems, e.g., systems containing mechanical, electrical, electronic, hydraulic, thermal, control, electric power or process-oriented subcomponents
 
 
 #### Dpdl example with embedded 'C++' (Root) code
@@ -818,12 +817,12 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 (*) **available soon**
 
-| Platform | C | Python |Julia |Js |Clojure |Lua |C++ |Ruby |Java |Groovy |MicroPython |V | PHP | Perl | OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.12.0|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.12.0|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v4.01|
-| Windows64|X|*|*|X|X v1.12.0|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v4.01|
+| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.26.0|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.26.0|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.26.0|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
+| Windows64|X|*|*|X|X v1.26.0|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |X v4.01|
 
 
 ### Add-on Dpdl language plug-ins - compatibility matrix
@@ -893,8 +892,6 @@ Dpdl is currently developed by SEE Solutions and the following integrations has 
 * Dpdl-IDE and provide also plug-ins for popular IDEs (IntelliJ, eclipse, MSVS)
 
 * Development of a dedicated **'Dpdl language plug-in'** for enabling <ins>**QUANTUM computing**</ins> via embedded OpenQASM 2.0 (Circuit description language) code within Dpdl
-
-* Development of a dedicated **'Dpdl language plug-in'** for enabling the embedding and execution of [**Modelica language**](https://modelica.org/language/) code within Dpdl
 
 
 ### Embedding of 'Python' code

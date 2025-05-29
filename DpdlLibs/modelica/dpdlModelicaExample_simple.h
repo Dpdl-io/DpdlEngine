@@ -1,6 +1,7 @@
 # File: modelica/dpdlModelicaExample_simple.h
 #
-# Example: Dpdl sample code that makes use of embedded 'Modelica' code to simulate a bouncing ball physical model
+# Example: Dpdl sample code that makes use of embedded 'Modelica' code to simulate a bouncing ball physical model.
+#			The results of the simulation is saved in a csv file which can than be further processed or plotted
 #
 #
 # Author: A.Costa
@@ -51,3 +52,4 @@ simulate(BouncingBall, outputFormat="csv");
 int exit_code = dpdl_exit_code()
 
 println("model simulation exit code: " + exit_code)
+
