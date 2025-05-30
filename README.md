@@ -24,7 +24,7 @@ Dpdl is available as a very compact and portable **execution engine** (DpdlEngin
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
-The core Dpdl engine has the **capability to run even on memory scarce devices and platforms** via a dedicated kilobyte range virtual machine.
+The core Dpdl engine has the **capability to run even on memory constrained devices and platforms** via a dedicated kilobyte range virtual machine.
 
 ### Dpdl is <ins>**Self-contained**</ins>, <ins>**Compact**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins>
 
@@ -34,7 +34,7 @@ The core Dpdl engine has the **capability to run even on memory scarce devices a
 
 ### Dpdl + ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica + AI) = <ins>Powerful and Versatile</ins>
 
-Dpdl is a multi-domain <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
+Dpdl itself is a multi-purpose <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
 
 Dpdl allows also to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'** that can be embedded and executed within Dpdl code, for example code in other programming languages.
 
@@ -51,13 +51,12 @@ Further, the 'DpdlPacket' data container provides a convenient way to package an
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Reuse code
 ### * No need to install, compile and configure environments
-### * Run on constrained devices
-### * Compress, query and handle data efficiently on constrained devices
 ### * Self-contained, No additional dependencies required (except add-on libraries)
 ### * Facilitate rapid prototyping for Hardware programming
-### * Support for IoT protocols such as Bluetooth(tm) and CoAP
+### * Run on constrained devices
+### * Customizable
 ### * Plug-in oriented
-### * Leverage prototyping with built-in <ins>AI generative code</ins> plug-in
+### * Leverage prototyping with <ins>AI generative code</ins>
 
 
 **DpdlEngine stack overview**
