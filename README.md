@@ -20,11 +20,11 @@ developed by
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm **interoperable with java JVM platform APIs and external native shared libraries**.
 
-Dpdl comes as a <ins>compact and portable **execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
+Dpdl comes as a <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as code in other programming languages</ins> or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
-The core Dpdl engine has the **capability to run also on memory constrained devices and platforms** via a dedicated <ins>kilobyte range</ins> virtual machine.
+The core Dpdl engine has the <ins>**capability to run also on memory constrained devices and platforms</ins>** via a dedicated <ins>kilobyte range</ins> virtual machine.
 
 ### Dpdl is <ins>**Self-contained**</ins>, <ins>**Compact**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins>
 
@@ -38,7 +38,7 @@ Dpdl itself is a multi-purpose <ins>**programming language**</ins>, <ins>**self-
 
 Dpdl allows also to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'** that can be embedded and executed within Dpdl code, for example code in other programming languages.
 
-<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development, for example to enable also *Quantum Computing* directly inside Dpdl via embedded *OpenQWASM* code.
+<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'** and others are currently in active development, for example to enable also *Quantum Computing* directly inside Dpdl via embedded *OpenQWASM* code.
 
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in a subsequent step if required.
 
@@ -68,7 +68,7 @@ Further, the 'DpdlPacket' data container provides a convenient way to package, h
 ## <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
 
-### Documentation
+### Docs
 
 [Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
@@ -353,7 +353,7 @@ println("embedded groovy exit code: " + exit_code)
 
 Below you can find a more complex example of how Dpdl can be used to accomplish even complex tasks:
 
-### Sample Dpdl code that makes use of embedded 'Wgsl' code to accelerate a GELU neural network activation function on GPUs:
+### Sample Dpdl code that makes use of embedded 'Wgsl' code to accelerate a GELU Neural Network activation function on GPUs:
 
 ```python
 import('native')
@@ -459,7 +459,7 @@ println("finished")
 
 ```
 
-### Full featured sample Prototype Applications developed with Dpdl
+### Featured sample Prototype Applications developed with Dpdl
 
 In this GitHub repository you can find full featured working prototype applications written with Dpdl:
 
@@ -555,10 +555,10 @@ The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up 
 * Utility tool
 	
 
-## Access to the complete Java platform JRE API's and external java libraries
+## Access to the complete Java JVM platform JRE API's and external java libraries
 
 
-The Dpdl API allows to access all classes and methods of the <ins>underlying Java Platform (JRE)</ins> and of any <ins>external java library</ins>.
+The Dpdl API allows to access all classes and methods of the <ins>underlying Java JVM platform (JRE)</ins> and of any <ins>external java library</ins>.
 
 **Example:** using a java HashMap (which interfaces to <em>java.util.HashMap</em>)
 
@@ -645,7 +645,7 @@ println("embedded java exit code: " + exit_code)
 
 ```
 
-## **Dpdl language plug-ins** (Dpdl embeddable programming languages)
+## **Dpdl language plug-ins** (Dpdl embeddable code)
 
 Multiple programming languages can be embedded and executed within the same **Dpdl** code via configurable **Dpdl language plug-ins** by
 using the keyword **`>>`**.
@@ -658,8 +658,8 @@ This features is very useful for rapid development and rapid prototyping and is 
 
 ### Currently the following programming languages can be embedded within Dpdl:
 
-* **`C interpreted`** code (minimal subset of C90 with standard C libs included and avaiable in the Dpdl runtime)
-* **`C compiled`** code (almost full ISO C99 standard) compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
+* **`C`** (**interpreted**) --> minimal subset of C90 with standard C libs included and avaiable in the Dpdl runtime
+* **`C`** (**compiled**) code --> ISO C99 standard, compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **`Python`**
 * **`MicroPython`** (ideal for embedded systems)
 * **`Julia`**
@@ -738,7 +738,7 @@ The C code can be embedded with 2 different Modes:
 2) <ins>Compiled code</ins> (Mode 2) -> in memory at runtime
 
 
-Example Dpdl code with embedded C code (Mode 1 - interpreted):
+**Example Dpdl code with embedded C code** (Mode 1 - interpreted):
 
 ```c
 # main
