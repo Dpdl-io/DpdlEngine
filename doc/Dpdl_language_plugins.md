@@ -11,6 +11,8 @@ developed by
 
 
 
+**Multiple programming languages and custom syntax interpreters can be <ins>embedded and executed directly within Dpdl code</ins>** by means of available '**Dpdl language plug-ins**' by using the keyword **`>>`**, for example: **>>python**
+
 ## Table of Contents
 
 <table>
@@ -40,8 +42,6 @@ developed by
 
 
 ## Dpdl embeddable code
-
-**Multiple programming languages and custom syntax interpreters can be <ins>embedded directly within Dpdl code</ins>** by means of available '**Dpdl language plug-ins**' by using the keyword **`>>`**, for example: **>>python**
 
 The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings (**Dpdl language plug-ins**). This allows developers to easily implement and embed custom functionalities in form of plug-ins.
 
