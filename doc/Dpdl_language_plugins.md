@@ -250,7 +250,7 @@ easy integration of custom extensions. No compile time overhead, minimal but all
 
 This mode can be activated via the dpdl stack option '**dpdl:compile**'.
 
-This operation mode supports ANSI C (almost full ISO C99 standard) and many GNUC extensions including inline assembly on x86. cComplex and imaginary numbers are currently not available.
+This operation mode supports ANSI C (almost full ISO C99 standard) and many GNUC extensions including inline assembly on x86. Complex and imaginary numbers are currently not available.
 
 The 'dpdl:compile' option currently is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**. 
 
@@ -263,7 +263,7 @@ For mode (2) a basic set of include headers are located in the folder './lib/nat
 If the main function is defined, parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function
 are passed as parameters to the main function in the C code.
 
-* The embedded C code for mode (2) must contain a 'main(..)' or a '**dpdl_main(..)**' function
+* The embedded C code for mode (2) must contain a '**dpdl_main(..)**' function which serves as entry point for execution
 
 #### Example execution Mode (1) (without main(..) function):
 ```python
