@@ -20,11 +20,11 @@ developed by
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm **interoperable with java JVM platform APIs and external native shared libraries**.
 
-Dpdl is available as a very compact and portable **execution engine** (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
+Dpdl is available as a very <ins>compact and portable **execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables to execute Dpdl code, as well as code in other programming languages or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
-The core Dpdl engine has the **capability to run even on memory constrained devices and platforms** via a dedicated kilobyte range virtual machine.
+The core Dpdl engine has the **capability to run also on memory constrained devices and platforms** via a dedicated <ins>kilobyte range</ins> virtual machine.
 
 ### Dpdl is <ins>**Self-contained**</ins>, <ins>**Compact**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins>
 
@@ -38,11 +38,11 @@ Dpdl itself is a multi-purpose <ins>**programming language**</ins>, <ins>**self-
 
 Dpdl allows also to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'** that can be embedded and executed within Dpdl code, for example code in other programming languages.
 
-<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development, for example for *OpenQWASM* code to enable also *Quantum Computing* directly inside Dpdl.
+<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Additional Dpdl language plug-ins are currently in active development, for example to enable also *Quantum Computing* directly inside Dpdl via embedded *OpenQWASM* code.
 
-The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can be rewritten to a new file and executed in a subsequent step if required.
+The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in a subsequent step if required.
 
-Further, the 'DpdlPacket' data container provides a convenient way to package and handle and query data efficiently on memory scarce devices.
+Further, the 'DpdlPacket' data container provides a convenient way to package, handle and query data efficiently on memory scarce devices via built-in database technology.
 
 ## Dpdl is designed to:
 
@@ -112,7 +112,7 @@ Dpdl enables integration of different technologies to leverage fast prototyping 
 ## Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
-* **Dpdl API provides access to the complete underlying Java JRE platform API's and to external java libraries**
+* **Dpdl API provides access to the complete underlying Java JVM JRE platform API's and to external java libraries**
 * **Dpdl enables also to load and access Native shared libraries**
 * **Multiple 'Dpdl language plug-ins' available (embeddable programming languages):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Modelica, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except add-on libraries)
@@ -353,7 +353,7 @@ println("embedded groovy exit code: " + exit_code)
 
 Below you can find a more complex example of how Dpdl can be used to accomplish even complex tasks:
 
-### Sample Dpdl code (GELU neural network activation function the runs on GPUs using embedded 'Wgsl' code):
+### Sample Dpdl code that makes use of embedded 'Wgsl' code to accelerate a GELU neural network activation function on GPUs:
 
 ```python
 import('native')
@@ -531,11 +531,10 @@ Or full featured Applications written with Dpdl in the following repository:
 
 ## Why Dpdl?
 
-Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for development of applications on <ins>small memory footprint devices</ins>, and can be used as embedded scripting engine for applications.
+Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for development of applications on <ins>small memory footprint devices</ins>. It can also be used as embedded scripting engine for applications.
 
 The main nature of Dpdl is for enabling rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple,
-extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages due to the fact
-that a vaster set of APIs are available for a given platform.
+extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
 
 Dpdl has also built-in constructs that enable dynamic code generation for <ins>**generative AI code**</ins> and provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
 
