@@ -14,7 +14,9 @@ developed by
 ## Table of Contents
 
 <table>
+
 <tr><td width=33% valign=top>
+
 * [Dpdl embeddable code](#dpdl-embeddable-code)
 * [Dpdl embedded programming languages compatibility Matrix](#dpdl-embedded-programming-languages-compatibility-matrix)
 * [Dpdl embedded code API](#dpdl-embedded-code-api)
