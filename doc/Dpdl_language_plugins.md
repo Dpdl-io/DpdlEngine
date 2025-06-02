@@ -38,6 +38,7 @@ The execution of embedded code is driven by the Dpdl runtime through a configura
 * [Embedding 'PHP' code](#embedding-php-code)
 * [Embedding 'SQL' code](#embedding-sql-code)
 * [Embedding 'OCaml' code](#embedding-ocaml-code)
+* [Embedding 'Modelica' code](#embedding-modelica-code)
 
 </td></tr>
 </table>
@@ -223,6 +224,41 @@ dpdl_stack_push("dpdlstack:myconfig")
 <<
 ```
 
+**Example Dpdl code with embedded 'C' code:**
+
+```python
+println("testing embedded C code in Dpdl")
+
+int n = 6
+double x = 10.0d
+string a = "test"
+
+dpdl_stack_push("dpdlbuf_var1", n, x, a)
+
+>>c
+	#include <stdio.h>
+	#include <dpdl.h>
+	
+	int dpdl_main(int argc, char **argv){
+		printf("Hello C from Dpdl!\n");
+		printf("\n");
+		printf("num params: %d\n", argc);
+		int cnt;
+	    for (cnt = 0; cnt < argc; cnt++){
+	        printf("	param %d: %s\n", cnt, argv[cnt]);
+	    }
+	    	char *buf = "My result";
+		dpdl_stack_buf_put(buf);
+	    return 0;
+	}
+<<
+int exit_code = dpdl_exit_code()
+
+println("embedded C exit code: " + exit_code);
+string buf = dpdl_stack_buf_get("dpdlbuf_var1")
+println("response buffer: " + buf)
+```
+
 #### Modes of execution
 
 
@@ -266,6 +302,7 @@ are passed as parameters to the main function in the C code.
 * The embedded C code for mode (2) must contain a '**dpdl_main(..)**' function which serves as entry point for execution
 
 #### Example execution Mode (1) (without main(..) function):
+
 ```python
 println("my Dpdl script embeds some C code")
 
@@ -393,6 +430,8 @@ println("result: " + buf)
 
 #### keyword **`>>python`**
 
+**Example Dpdl code with embedded 'Python' code:**
+
 ```python
 println("testing embedding python code")
 println("")
@@ -437,6 +476,8 @@ MicroPython is an efficient implementation of the Python 3 programming language 
 'MicroPython' can be embedded and executed directly within Dpdl via the following keyword **`>>mpython`**.
 
 #### keyword **`>>mpython`**
+
+**Example Dpdl code with embedded 'MicroPython' code:**
 
 ```python
 println("testing embedded micropython code...")
@@ -491,6 +532,8 @@ Julia is a powerful high performance computing programming language with many sc
 
 #### keyword **`>>julia`**
 
+**Example Dpdl code with embedded 'Julia' code:**
+
 ```python
 println("testing embedding of 'julia' code...")
 
@@ -530,6 +573,46 @@ NOTE: The native Dpdl library 'dpdljulia' is not included in the 'DpdlEngine lit
 JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
 
 'JavaScript' code can be embedded and executed within Dpdl via the keyword **`>>js`** or **`>>qjs`**
+
+
+**Example Dpdl code with embedded 'JavaScript' code:**
+
+```python
+println("testing embedded js...")
+
+dpdl_stack_push("dpdlbuf_var1", 23)
+>>qjs
+"use strict";
+
+function main(args) {
+	console.log('embedded javascript...');
+	var result = "This is my Result=";
+	if(scriptArgs > 0){
+		std.printf("parameter: %d\n", scriptArgs[0]);
+		result = result + scriptArgs[0];
+	}
+
+    dpdl_stack_buf_put(result);
+}
+
+var args;
+if (typeof scriptArgs != "undefined") {
+    args = scriptArgs;
+} else if (typeof arguments != "undefined") {
+    args = arguments;
+} else {
+    args=[1000];
+}
+
+main(args);
+<<
+int exit_code = dpdl_exit_code()
+println("Dpdl embedded qjs terminated with exit code: " + exit_code)
+
+string res_buf = dpdl_stack_buf_get("dpdlbuf_var1")
+println("result: ")
+println(res_buf)
+```
 
 JavaScript can be executed with 2 Modes:
 1) Using the 'QuickJS' javascript engine from Fabrice Bellard, ES2023 compliant '**>>qjs**' (<ins>Suggested mode</ins>)
@@ -648,6 +731,65 @@ println("Dpdl js exited with exit code: " + exit_code)
 <<
 ```
 
+**Example Dpdl code with embedded 'Lua' code:**
+
+```python
+println("testing embedding lua....")
+
+string buffer_key = "dpdlbuf_result"
+
+dpdl_stack_push(buffer_key, "name", "Alexis", "surname", "Kunst")
+
+>>lua
+function doSomeAlg()
+	local home_dir = os.getenv("HOME")
+	print("user home: ", home_dir)
+	
+	local x = os.clock()
+	    local s = 0
+	    for i=1,100 do 
+	    	s = s + i
+	    	io.write(".")
+	    end
+	    print("")
+	    print(string.format("elapsed time: %.2f\n", os.clock() - x))
+end
+
+function paramLen(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
+end
+
+function dpdl_main(params)
+	local num_params = paramLen(params)
+	io.write("dpdl_main call with number of params: ")
+	io.write(num_params)
+	print()
+	print("executing my embedded algorithm...")
+	print("")
+	doSomeAlg()
+	print()
+	print("returning param values in 'uppercase'")
+	local tab_out = {numfields=1}
+	for k,v in pairs(params) do
+		tab_out.numfields = tab_out.numfields + 1
+		tab_out[tostring(k)] = string.upper(tostring(v))
+	end
+	tab_out.numfields = tostring(tab_out.numfields)
+	return tab_out
+end
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("embedded lua exit code: " + exit_code)
+
+string resp_buf = dpdl_stack_buf_get(buffer_key)
+println("lua response buffer: ")
+println(resp_buf)
+```
+
 The embedded 'Lua' code may or may not include a 'main(..)' function.
 If the 'main(..)' function is defined, parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function
 are passed as parameters to the main function in the Lua code via a table type.
@@ -719,6 +861,8 @@ println(resp_buf)
 
 The 'Ruby' programming language code can be embedded within Dpdl using the keyword **`>>ruby`**
 
+**Example Dpdl code with embedded 'Ruby' code:**
+
 ```ruby
 println("Dpdl is embedding some ruby code...")
 
@@ -766,6 +910,8 @@ println("embedded ruby code exit code: " + exit_code)
 #### keyword **`>>java`**
 
 Java code blocks i.e a body of a method, can be embedded with the keyword **`>>java`**.
+
+**Example Dpdl code with embedded 'Java' code:**
 
 ```python
 println("testing embedding of java code...")
@@ -816,7 +962,7 @@ The following imports are predefined so that contained code can be accessed clas
 - java.time.*
 - java.sql.*
 
-Example with a return buffer:
+**Example with a return buffer:**
 
 ```python
 println("testing buf return from embedded java...")
@@ -858,7 +1004,7 @@ Refer to the 'Janino' documentation for the java language features supported: ht
 
 The execution entry point is the a groovy method 'dpdl_main(Object[] param, Object var_map)' which receives as parameters all the parameters and variables from the current Dpdl stack.
 
-**Example:**
+**Example Dpdl code with embedded 'Groovy' code:**
 
 ```python
 println("reading a file line by line with 'Groovy'")
@@ -898,6 +1044,8 @@ https://root.cern/gallery/
 
 #### keyword **`>>root`**
 
+**Example Dpdl code with embedded 'C++' code that rewrites an image format using of the ROOT framework libraries:**
+
 ```python
 println("test embedded ROOT C/C++...")
 
@@ -929,7 +1077,7 @@ The functional programming language 'Clojure' can be embedded within Dpdl via th
 
 The embedded 'Clojure' code is compiled before execution. The function 'dpdl_main' is the entry point
 
-Example Dpdl code with embedded 'Clojure':
+**Example Dpdl code with embedded 'Clojure' code:**
 
 ```python
 println("testing embedded Clojure...")
@@ -968,7 +1116,7 @@ The web scripting language PHP can be embedded within Dpdl code using the keywor
 
 The Dpdl language plug-in is developed on top of PH7, an efficient compiler and interpreter for PHP (v5.3) 
 
-**Example:** (reading a CSV file, counting the fields in each line, and print the values. A record with )
+**Example Dpdl with embeddd 'PHP' code:** (reading a CSV file, counting the fields in each line, and print the values. A record with )
 
 ```python
 println("testing embedded php code execution...")
@@ -1032,7 +1180,7 @@ The connection parameters **`db_url`** **`db_user`** **`db_pass`** need to be pu
 Variables that are needed to construct the embedded query can also be pushed onto the Dpdl stack and referenced within double curly brackets eg. **`{{my_var}}`**
 
 
-Example Dpdl code with embedded 'SQL':
+**Example Dpdl code with embedded 'SQL' query:**
 
 ```python
 println("testing 'sql' queries with Dpdl...")
@@ -1103,7 +1251,8 @@ The library allows also to compile on the fly OCaml code in order to speedup exe
 <<
 ```
 
-Example Dpdl script with embedded 'OCaml' code:
+**Example Dpdl script with embedded 'OCaml' code:**
+
 ```python
 println("testing Dpdl embedded OCaml..")
 
@@ -1148,6 +1297,60 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 * [Table of Contents](#table-of-contents)
 
 
+### Embedding 'Modelica' code
+
+'Modelica' code can be embedded and executed within Dpdl by using the keyword **`>>modelica`**
+
+The 'Dpdl language plug-in' **`>>modelica`** is implemented on top to the *OpenModelica* compiler
+
+**Example Dpdl script with embedded 'Modelica' code:**
+
+```python
+println("executing a bouncing ball physical model simulation using embedded Modelica code...")
+
+float coeff_restitution = 0.7
+float initial_height = 9.81
+
+dpdl_stack_obj_put("cR", coeff_restitution)
+dpdl_stack_obj_put("gA", initial_height)
+
+dpdl_stack_push("dpdl:applyvars")
+
+>>modelica
+
+model BouncingBall
+  parameter Real e={{cR}} "coefficient of restitution";
+  parameter Real g={{gA}} "gravity acceleration";
+  Real h(fixed=true, start=1) "height of ball";
+  Real v(fixed=true) "velocity of ball";
+  Boolean flying(fixed=true, start=true) "true, if ball is flying";
+  Boolean impact;
+  Real v_new(fixed=true);
+  Integer foo;
+
+equation
+  impact = h <= 0.0;
+  foo = if impact then 1 else 2;
+  der(v) = if flying then -g else 0;
+  der(h) = v;
+
+  when {h <= 0.0 and v <= 0.0,impact} then
+    v_new = if edge(impact) then -e*pre(v) else 0;
+    flying = v_new > 0;
+    reinit(v, v_new);
+  end when;
+
+end BouncingBall;
+
+simulate(BouncingBall, outputFormat="csv");
+
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("model simulation exit code: " + exit_code)
+```
+
 ### Embedded language references
 
 - c -> https://www.dpdl.io/doc/dpdl_tcc/Dpdl_C_Compiler_reference_documentation.html
@@ -1158,7 +1361,7 @@ NOTE: The Dpdl language plugin for OCaml uses 'OCaml-java' library (http://www.o
 - javascript -> ECMAScript (Oracle nashorn) for '>>js' && QuickJS (https://bellard.org/quickjs/quickjs.html) for '>>qjs' 
 - lua -> https://www.lua.org/
 - ruby -> https://www.ruby-lang.org
-- root (C++) -> https://root.cern/
+- C++ (Root) -> https://root.cern/
 - php -> https://ph7.symisc.net/features.html
 - groovy -> https://groovy-lang.org/
 - v -> https://vlang.io/

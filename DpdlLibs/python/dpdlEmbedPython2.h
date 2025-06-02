@@ -11,7 +11,7 @@
 # main
 println("testing embedding python code")
 
-dpdl_stack_push("var1", "var2", "var3")  # currently arguments are not intercepted in python main function, will be fixed in next release
+dpdl_stack_push("var1", "var2", "var3")
 >>python
 import sys
 
