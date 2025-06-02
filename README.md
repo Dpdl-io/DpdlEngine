@@ -18,9 +18,9 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm **interoperable with java JVM platform APIs and external native shared libraries**.
+The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm **interoperable with java JVM platform APIs and external Native shared libraries**.
 
-Dpdl comes as a <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as code in other programming languages</ins> or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
+Dpdl comes as a <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
@@ -38,7 +38,7 @@ Dpdl itself is a multi-purpose <ins>**programming language**</ins>, <ins>**self-
 
 Dpdl allows also to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'** that can be embedded and executed within Dpdl code, for example code in other programming languages.
 
-<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'** and others are currently in active development, for example to enable also *Quantum Computing* directly inside Dpdl via embedded *OpenQWASM* code.
+<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the ROOT C++ Data Analysis framework from Cern is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl via embedded *OpenQWASM* code.
 
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in a subsequent step if required.
 
@@ -130,17 +130,18 @@ The speedup is x 25 times faster compared to a standard record store access
 * Open Source **Dpdl language plug-ins**
 
 
-Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol) are integrated by default and other third party libraries and protocols can be added as extensions.
+Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol) are integrated by default and third party libraries and protocols can be added as extensions.
 
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) enables to make use of <ins>**AI generative code** to automatically generate and embed executable code and content or data</ins> by means of natural language descriptions contained inside Dpdl code.
 
+Dpdl provides a simple access to <ins>**java API's, Native shared libraries, Wasm modules and GPU compute**</ins>.
+
+Further, Dpdl can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins> via a custom data container defined as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups.
+
 Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, enabling developers to use thousands of existing high-quality software libraries. 
 
-Dpdl provides also a simple access to <ins>**java Api's, Native shared libraries, Wasm modules and GPU compute**</ins>.
 
-Further, Dpdl can be used to encode, store, control and query data efficiently also on small memory footprint devices via a custom data container defined as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups.
-
-Dpdl enables integration of different technologies to leverage fast prototyping and foster research and development.
+Dpdl enables the integration of different technologies to leverage fast prototyping and foster research and development.
 
 
 ### Small Memory footprint:
@@ -645,7 +646,7 @@ println("embedded java exit code: " + exit_code)
 
 ```
 
-## **Dpdl language plug-ins** (Dpdl embeddable code)
+## **Dpdl language plug-ins** (dpdl embeddable code)
 
 Multiple programming languages can be embedded and executed within the same **Dpdl** code via configurable **Dpdl language plug-ins** by
 using the keyword **`>>`**.
@@ -891,12 +892,13 @@ See 'Download' page for more details:
 
 ## Roadmap
 
-Dpdl is currently developed by SEE Solutions and the following integrations has been defined: 
+Dpdl is currently developed by SEE Solutions and the following integrations are in development: 
 
-* Back-end compiler that compiles Dpdl code to native machine code for most target architectures (LLVM)
-* Dpdl-IDE and provide also plug-ins for popular IDEs (IntelliJ, eclipse, MSVS)
+* Back-end compiler to **compile Dpdl code to native machine code** for most target architectures (LLVM)
 
-* Development of a dedicated **'Dpdl language plug-in'** for enabling <ins>**QUANTUM computing**</ins> via embedded OpenQASM 2.0 (Circuit description language) code within Dpdl
+* Dpdl-IDE with plug-ins for popular IDEs (IntelliJ, eclipse, VS Code)
+
+* Development of a dedicated **'Dpdl language plug-in'** for enabling <ins>**Quantum Computing**</ins> via embedded OpenQASM 2.0 (Circuit description language) code within Dpdl
 
 
 ### Embedding of 'Python' code
