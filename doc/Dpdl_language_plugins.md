@@ -11,7 +11,7 @@ developed by
 
 
 
-**Multiple programming languages and custom syntax interpreters can be <ins>embedded and executed directly within Dpdl code</ins>** by means of available '**Dpdl language plug-ins**' by using the keyword **`>>`**, for example: **>>python**
+**Multiple programming languages and custom syntax interpreters can be <ins>embedded and executed directly within Dpdl code</ins>** by means of available '**Dpdl language plug-ins**' by using the keyword **`>>`** (ex. >>python )
 
 The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings (**Dpdl language plug-ins**). This allows developers to easily implement and embed custom functionalities in form of plug-ins.
 
@@ -512,7 +512,7 @@ On Linux x86_64 for example the Dpdl language plug-in library 'libdpdlmicropytho
 
 ##### MicroPython libraries
 
-The python libraries usable using 'MicroPython' within the Dpdl language plug-in are available on the official MicroPython GitHub repository:
+The python user libraries for 'MicroPython' usable with this Dpdl language plug-in are available on the official MicroPython GitHub repository:
 
 [micropython-lib](https://github.com/micropython/micropython-lib)
 
@@ -560,9 +560,6 @@ return 1
 int exit_code = dpdl_exit_code()
 println("embedded julia code exit code: " + exit_code)
 ```
-
-NOTE: The native Dpdl library 'dpdljulia' is not included in the 'DpdlEngine lite' release, and needs to be downloaded and
-      deployed separately (see 'Downloads' section in README.md)
 
 
 * [Table of Contents](#table-of-contents)
@@ -1028,7 +1025,7 @@ println("embedded groovy exit code: " + exit_code)
 
 The 'var_map' object is a 'HashMap' containing variables and objects that have been pushed onto the execution stack.
 
-The 'dpdl_main' method needs to return an object, either of type Integer or != null
+The 'dpdl_main' method needs to return an object, either of type Integer or an Object != null
 
 
 * [Table of Contents](#table-of-contents)
