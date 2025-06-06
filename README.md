@@ -18,9 +18,9 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm **interoperable with java JVM platform APIs and external Native shared libraries**.
+The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with java JVM platform APIs and external Native shared libraries**.
 
-Dpdl comes as a <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
@@ -42,7 +42,7 @@ Dpdl allows also to create and integrate custom syntax and language interpreters
 
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in a subsequent step if required.
 
-Further, the 'DpdlPacket' data container provides a convenient way to package, handle and query data efficiently on memory scarce devices via built-in database technology.
+Further, the custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>package, handle and query data efficiently on memory scarce devices</ins>.
 
 ## Dpdl is designed to:
 
@@ -157,7 +157,7 @@ The size of the DpdlEngine core can be stripped down to **`80 Kb`** for a minima
 
 ## Dpdl sample code
 
-### Sample Dpdl code that make use of type 'class' Inheritance and Polymorphism and make use of some embedded code section in other programming languages
+### Sample Dpdl code that make use of type **`class`** Inheritance and Polymorphism. Some functions make use of embedded code sections in other programming languages
 
 ```python
 
@@ -388,10 +388,10 @@ int idx_kernel = 1
 println("allocating input buffer...")
 
 object input_arr = libc.malloc(DATA_SIZE * byte_cnt)
-input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00)
+input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 object output_arr = libc.malloc(DATA_SIZE * byte_cnt)
-input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00)
+input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 println("populating input data...")
 
@@ -825,10 +825,10 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 | Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | OCaml |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v1.26.0|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v1.26.0|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v1.26.0|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Windows64|X|*|*|X|X v1.26.0|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |X v4.01|
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
+| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |X v4.01|
 
 
 ### Add-on Dpdl language plug-ins - compatibility matrix
