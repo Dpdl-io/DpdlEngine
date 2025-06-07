@@ -10,10 +10,11 @@ developed by
 &copy; 2003
 
 
+Dpdl introduces the concept of arbitrary embedded code sections that can be executed by dedicated plug-ins available (**Dpdl language plug-ins**).
 
-**Multiple programming languages and custom syntax interpreters can be <ins>embedded and executed directly within Dpdl code</ins>** by means of available '**Dpdl language plug-ins**' by using the keyword **`>>`** (ex. >>python )
+**Multiple programming languages and custom syntax interpreters can be <ins>embedded and executed directly within Dpdl code</ins>**, simultaneously and of multiple types, by using the keyword **`>>`** (ex. >>python ) inside Dpdl code.
 
-The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings (**Dpdl language plug-ins**). This allows developers to easily implement and embed custom functionalities in form of plug-ins.
+The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings. This allows developers to easily implement and embed custom functionalities in form of plug-ins.
 
 ## Table of Contents
 
@@ -48,7 +49,7 @@ The execution of embedded code is driven by the Dpdl runtime through a configura
 
 In case of programming languages the **Dpdl language plug-ins** are implemented on top of the official reference implementation of each supported programming language as listed below (see 'Embedded language references' section) and include everything needed to run the code, <ins>No additional installation are needed (except add-on libraries)</ins>.
 
-This plug-in oriented approach allows to integrate also custom syntax or natural language interpreters or all sorts.
+This plug-in oriented approach allows developers to develop and integrate also custom syntax or natural language interpreters or all sorts.
 
 ### Dpdl supports the embedding of the following languages available as 'Dpdl language plug-ins':
 
@@ -268,156 +269,9 @@ C code can be executed in 2 different modes:
 2) Compiled C code (Mode 2) --> compiled in memory at runtime, supports <ins>ANSI C99</ins>
 
 
-#### Mode 1 (interpreted)
+### Plug-in documentation/Specification
 
-The code is executed via a native Dpdl library that has a very small footprint (278 Kb) and **includes all essential C libraries**
-and language constructs with **no additional dependencies** required.
-
-Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
-
-**Features:**
-
-easy integration of custom extensions. No compile time overhead, minimal but all basic C libraries and headers already included, no dependencies, POSIX compliant (**default Mode**)
-
-**Minimal embedded C library documentation, for Mode (1):**
-[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
-#### Mode 2 (compiled)
-
-This mode can be activated via the dpdl stack option '**dpdl:compile**'.
-
-This operation mode supports ANSI C (almost full ISO C99 standard) and many GNUC extensions including inline assembly on x86. Complex and imaginary numbers are currently not available.
-
-The 'dpdl:compile' option currently is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**. 
-
-The embedded C compiler is built on the super fast <ins>**Fabrice Bellard's TCC**</ins>.
-
-For mode (2) a basic set of include headers are located in the folder './lib/native/$platform/include', additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L'
-
-
-* The embedded C code for mode (1) may, or may not include a 'main(..)' function. 
-If the main function is defined, parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function
-are passed as parameters to the main function in the C code.
-
-* The embedded C code for mode (2) must contain a '**dpdl_main(..)**' function which serves as entry point for execution
-
-#### Example execution Mode (1) (without main(..) function):
-
-```python
-println("my Dpdl script embeds some C code")
-
->>c
-#include <stdio.h>
-
-printf("Hello C from Dpdl\n");
-<<
-```
-
-Note: When compiling and executing embedded C with mode (2), the appropriate 'include' and 'lib' paths need to be pushed on the dpdl stack so that
-the Dpdl runtime is able to find your libraries. A set of default platform directories are searched for include files and libraries (eg. /usr/include etc.)
-
-#### Example execution Mode (1) (with main(..) function) -> function accepting parameters, and writing a result to the Dpdl stack:
-
-```python
-println("my Dpdl script embeds some C code")
-
-dpdl_stack_push("dpdlbuf_myresult", "param1", "param 2", 23)
->>c
-#include <stdio.h>
-#include <dpdl.h>
-
-int dpdl_main(int argc, char **argv){
-	printf("Hello C from Dpdl!\n");
-	printf("\n");
-	printf("num params: %d\n", argc);
-	int cnt;
-    for (cnt = 0; cnt < argc; cnt++){
-        printf("	param %d: %s\n", cnt, argv[cnt]);
-    }
-    dpdl_stack_buf_put("my result from C");
-    return 0;
-}
-<<
-int exit_code = dpdl_exit_code()
-println("finished executing embedded C code: " + exit_code)
-
-string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
-println("response buffer: " + buf)
-```
-
-#### Example with embedded C code which is compiled in memory at runtime
-
-For the dynamic on-the-fly compilation of the embedded C code (mode 2), the option '**dpdl:compile**' and eventually further compiler
-parameters needs to be pushed on the dpdl stack. The compilation is performed in memory and per default does not generate
-any output files. Output files may be generated by activating a specific option.
-
-Using this approach is useful for achieving optimal speed of the executing C code.
-This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
-
-The default location for include header files is './lib/native/$platform/include', and for library files (static and dynamic) in './lib/native/$platform'
-Custom include and library settings can be provided with the options 'dpdl:-I$INC_DIR' and 'dpdl:-L$LIB_DIR' pushed on the dpdl stack.
-
-```python
-# main
-println("this Dpdl example shows how C code can be dynamically compiled (in memory at runtime) and executed on Dpdl")
-
-# we instuct the Dpdl runtime to compile the C code
-dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C", "var1")
-
->>c
-#include <stdio.h>
-
-extern void dpdl_stack_buf_put(char *buf);
-	
-static inline void * my_memcpy(void * to, const void * from, size_t n)
-{
-// NOTE: inline assembly is avaiable only on i386 and X86_64 platforms, but compiles also on ARM
-int d0, d1, d2;
-__asm__ __volatile__(
-        "rep ; movsl\n\t"
-        "testb $2,%b4\n\t"
-        "je 1f\n\t"
-        "movsw\n"
-        "1:\ttestb $1,%b4\n\t"
-        "je 2f\n\t"
-        "movsb\n"
-        "2:"
-        : "=&c" (d0), "=&D" (d1), "=&S" (d2)
-        :"0" (n/4), "q" (n),"1" ((long) to),"2" ((long) from)
-        : "memory");
-		return (to);
-}
-
-int dpdl_main(int argc, char **argv){
-	printf("This code will be compiled before it's being executed...\n");
-	int i = 0;
-	while(i < 30000000){
-		printf("The Future is NOW ^ %d \n", i);
-		i++;
-	}
-
-	char *str_src = "MEGA source";
-	char str_dest[256];
-	//my_memcpy(str_dest, str_src, strlen(str_src));
-	//printf("copied str: %s\n", str_dest);
-	dpdl_stack_buf_put(str_src);
-	return 0;
-}
-<<
-int exit_code = dpdl_exit_code()
-println("embedded C compiled and run with exit code: " + exit_code)
-
-string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
-println("result: " + buf)
-```
-
-#### Documentation C libraries (interpreted Mode 1)
-
-[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
-#### Documentation C compiler (compiled Mode 2)
-
-[Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
+[specs/Dpdl_embed_C_spec.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/specs/Dpdl_embed_C_spec.md)
 
 
 * [Table of Contents](#table-of-contents)
@@ -567,7 +421,6 @@ println("embedded julia code exit code: " + exit_code)
 
 ### Embedding 'JavaScript' code
 
-JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
 
 'JavaScript' code can be embedded and executed within Dpdl via the keyword **`>>js`** or **`>>qjs`**
 
@@ -611,107 +464,10 @@ println("result: ")
 println(res_buf)
 ```
 
-JavaScript can be executed with 2 Modes:
-1) Using the 'QuickJS' javascript engine from Fabrice Bellard, ES2023 compliant '**>>qjs**' (<ins>Suggested mode</ins>)
-2) Using the 'Nashorn' javascript engine '**>>js**' -> available only on JRE version 11 to 15
+### Plug-in documentation/Specification
 
+[specs/Dpdl_embed_JS_spec.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/specs/Dpdl_embed_JS_spec.md)
 
-#### Mode (1)
-
-The QuickJS engine used provides a powerful and complete API (supports ES2023 spec https://tc39.es/ecma262/2023/)
-to interact with the javascript engine at low level.
-Custom native functions and objects can be implemented as shared libraries and accessed inside javascript code.
-
-You can find examples in the folder './DpdlLibs/js/'
-
-Refer to the official 'QuickJS' documentation for more info about the functions available:
-
-[QuickJS doc](https://www.dpdl.io/doc/qjs/quickjs.pdf)
-
-[JS Bignum extensions](https://bellard.org/quickjs/jsbignum.pdf)
-
-The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
-
-The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write data to the 'dpdlbuf_*' variable pushed on the dpdl stack.
-See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
-
-
-##### keyword **`>>qjs`**
-
-```python
-println("testing embedded qjs...")
-
-dpdl_stack_push("my Hello Message!!!")
->>qjs
-
-import { fib } from "./DpdlLibs/js/fib_module.js";
-
-var a_message = "null";
-
-console.log(scriptArgs)
-console.log('Dpdl sends a message with QuickJS');
-
-if(scriptArgs.length > 0){
-	a_message = scriptArgs[0];
-}
-std.printf("Message = %s %d", a_message, 23);
-console.log('');
-console.log("fib(10)=", fib(10));
-<<
-
-int exit_code = dpdl_exit_code()
-println("Dpdl qjs exited with exit code: " + exit_code)
-```
-
-#### Mode (2)
-
-##### keyword **`>>js`**
-
-```python
-
-dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
-dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
->>js
-your javascript code 
-print(var1)....
-<<
-```
-
-NOTE: The Dpdl embedded javascript plug-in needs specific features that must be supported by the java JRE/JDK implementation.
-	  Not all java virtual machines support these features. In future releases the V8 JavaScript engine will be supported.
-
-
-#### Passing data to the embedded javascript
-
-Variables can be passed to the embedded javascript by pushing them onto the Dpdl stack with the api function **`dpdl_stack_push(..)`**
-
-Example that passes an integer variable and an array to the embedded js code:
-
-```python
-int val = 23
-arr[] = [1, 2, 3, 4]
-
-dpdl_stack_push(val, arr)
->>qjs
-	var sa;
-	var arr;
-	var v;
-	if(scriptArgs.length > 1){
-		v = scriptArgs[0];
-		sa = scriptArgs[1];
-		arr = sa.split(",");
-		std.printf("val=%d\n", v);
-		console.log(arr);
-	}else{
-		sa = "";
-	}
-	for(let i = 0; i < arr.length; i++) {
-		std.printf("arr[%d]=%d\n", i, arr[i]);
-	}
-<<
-int exit_code = dpdl_exit_code()
-println("Dpdl js exited with exit code: " + exit_code)
-```
 
 * [Table of Contents](#table-of-contents)
 
@@ -787,65 +543,10 @@ println("lua response buffer: ")
 println(resp_buf)
 ```
 
-The embedded 'Lua' code may or may not include a 'main(..)' function.
-If the 'main(..)' function is defined, parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function
-are passed as parameters to the main function in the Lua code via a table type.
+### Plug-in documentation/Specification
 
+[specs/Dpdl_embed_Lua_spec.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/specs/Dpdl_embed_Lua_spec.md)
 
-#### Example without main(..):
-
-```python
-println("my Dpdl script embeds some Lua script...")
-
->>lua
-io.write("TEST ")
-print()
-<<
-```
-
-#### Example with main(..):
-
-The parameters pushed on the Dpdl stack are passed to the Lua 'main(..)' function as table.
-The main function returns also a table which is buffered info the stack variable defined 'dpdlbuf_var1'
-
-```python
-println("my Dpdl script embeds some Lua script...")
-
-dpdl_stack_push("dpdlbuf_var1", "name", "Alexis", "surname", "Kunst")
-
->>lua
-function paramLen(T)
-  local count = 0
-  for _ in pairs(T) do count = count + 1 end
-  return count
-end
-
-function dpdl_main(params)
-	local num_params = paramLen(params)
-	io.write("dpdl_main call with number of params: ")
-	io.write(num_params)
-	print()
-	print("executing my embedded algorithm...")
-	print("")
-	print("returning param values in 'uppercase'")
-	local tab_out = {numfields=1}
-	for k,v in pairs(params) do
-		tab_out.numfields = tab_out.numfields + 1
-		tab_out[tostring(k)] = string.upper(tostring(v))
-	end
-	tab_out.numfields = tostring(tab_out.numfields)
-	return tab_out
-end
-<<
-int exit_code = dpdl_exit_code()
-
-println("embedded Lua exit code: " + exit_code)
-
-string resp_buf = dpdl_stack_buf_get("dpdlbuf_var1")
-
-println("Lua response buffer: ")
-println(resp_buf)
-```
 
 * [Table of Contents](#table-of-contents)
 
