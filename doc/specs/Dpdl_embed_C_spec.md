@@ -1,5 +1,5 @@
 
-# Dpdl language plug-in
+# Dpdl language plug-in specification
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
