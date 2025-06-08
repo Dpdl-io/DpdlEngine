@@ -102,7 +102,7 @@ Further, the custom '**DpdlPacket**' data container with built-in database techn
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
 
-## Features
+## Dpdl Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
 * **Dpdl API provides access to the complete underlying Java JVM JRE platform API's and to external java libraries**
@@ -130,7 +130,70 @@ The speedup is x 25 times faster compared to a standard record store access
 * Open Source **Dpdl language plug-ins**
 
 
-Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (Constrained Application Protocol) are integrated by default and third party libraries and protocols can be added as extensions.
+### Dpdl memory footprint:
+
+* **DpdlEngine core** (<ins>**Minimal**</ins> configuration) **`80 Kb`**
+* **DpdlEngine** (<ins>**Full**</ins> configuration) **`372 Kb`**
+* **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
+
+* <ins>**TOTAL SIZE** of DpdlEngine</ins> (**Dpdl Full configuration with embedded C compiler/interpreter**) = **`650 Kb`**
+ 
+The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a minimal setup</ins>.
+
+
+**Simple example:** a Dpdl class makes use of a java *BufferedWriter* to write data efficiently on a file
+
+```python
+class W {
+
+	object header = loadObj("String", "data init head str")
+
+	object file_writer = null
+	object buf_writer = null
+
+	func W(string f, int off)
+
+		println("new W()-> f:" + f + " offset:" + off)
+
+		file_writer = loadObj("FileWriter", f)
+		
+		raise(file_writer, "could not open file")
+		
+		buf_writer = loadObj("BufferedWriter", file_writer)
+
+		println("type of buf_writer is: " + typeof(buf_writer))
+
+		buf_writer.write(header, off, header.length())
+
+		println("started")
+	end
+
+	func writeData(string data, int nr)
+		int i
+		for(i < nr)
+			buf_writer.write(data, 0, strlen(data))
+
+			print(".")
+
+			i=i+1
+		endfor
+		println("")
+
+		buf_writer.newLine()
+		buf_writer.flush()
+	end
+}
+
+println("testing object depth calls...")
+
+class W myw("./Test/mydata.txt", 0)
+
+myw.writeData("data 1", 10)
+myw.writeData("data 2", 20)
+
+```
+
+Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
 
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) enables to make use of <ins>**AI generative code** to automatically generate and embed executable code and content or data</ins> by means of natural language descriptions contained inside Dpdl code.
 
@@ -143,16 +206,6 @@ Dpdl enables to combine the <ins>portability and vast API availability</ins> of 
 
 Dpdl enables the integration of different technologies to leverage fast prototyping and foster research and development.
 
-
-### Small Memory footprint:
-
-* **DpdlEngine core** (<ins>**Minimal**</ins> configuration) **`80 Kb`**
-* **DpdlEngine** (<ins>**Full**</ins> configuration) **`372 Kb`**
-* **DpdlNative library** (includes embedded C **Interpreter** and **Compiler**) **`278 Kb`**
-
-* <ins>**TOTAL SIZE** of DpdlEngine</ins> (**Dpdl Full configuration with embedded C compiler/interpreter**) = **`650 Kb`**
- 
-The size of the DpdlEngine core can be stripped down to **`80 Kb`** for a minimal setup.
 
 
 ## Dpdl sample code
