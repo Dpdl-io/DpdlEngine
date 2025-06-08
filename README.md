@@ -141,7 +141,7 @@ The speedup is x 25 times faster compared to a standard record store access
 The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a minimal setup</ins>.
 
 
-**Simple example:** a Dpdl class makes use of a java *BufferedWriter* to write data efficiently on a file
+**Simple example:** a Dpdl class that makes use of a java *BufferedWriter* to write data efficiently on a file
 
 ```python
 class W {
@@ -184,7 +184,7 @@ class W {
 	end
 }
 
-println("testing object depth calls...")
+println("testing my buffered file writer...")
 
 class W myw("./Test/mydata.txt", 0)
 
