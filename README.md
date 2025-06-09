@@ -146,18 +146,18 @@ The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a m
 ```c++
 class MyWriter {
 
-	object header = loadObj("String", "data init head str")
+	object header = loadObj("String", "some data init head str")
 
 	object file_writer = null
 	object buf_writer = null
 
 	func MyWriter(string file_n, int off)
 
-		println("new W()-> f:" + file_n + " offset:" + off)
+		println("new MyWriter()-> file:" + file_n + " offset:" + off)
 
 		file_writer = loadObj("FileWriter", file_n)
 
-		raise(file_writer, "could not open file")
+		raise(file_writer, "could not open file: " + file_n)
 
 		buf_writer = loadObj("BufferedWriter", file_writer)
 
@@ -188,8 +188,8 @@ println("testing my buffered file writer...")
 
 class MyWriter myw("./Test/mydata.txt", 0)
 
-myw.writeData("data 1", 10)
-myw.writeData("data 2", 20)
+myw.writeData("data 1", 1000)
+myw.writeData("data 2", 2000)
 
 ```
 
