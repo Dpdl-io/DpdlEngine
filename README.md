@@ -143,7 +143,7 @@ The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a m
 
 **Simple example:** a Dpdl class that makes use of a java [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) to write data efficiently on a file
 
-```c++
+```python
 class MyWriter {
 
 	object header = loadObj("String", "data init head str")
