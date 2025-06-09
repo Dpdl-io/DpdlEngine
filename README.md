@@ -141,7 +141,9 @@ The speedup is x 25 times faster compared to a standard record store access
 The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a minimal setup</ins>.
 
 
-**Simple example:** a Dpdl class that makes use of a java [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) to write data efficiently on a file
+## Dpdl example:
+
+The Dpdl code below illustrates the use of a dpdl class that implements a function to write data files efficiently by means of a [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) java JRE object
 
 ```c++
 class MyWriter {
@@ -190,8 +192,14 @@ class MyWriter myw("./Test/mydata.txt", 0)
 
 myw.writeData("data 1", 1000)
 myw.writeData("data 2", 2000)
+myw.writeData("data 3", 3000)
 
 ```
+
+This example implements the same logic as the example above, but with a derived class:
+
+[jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
+
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
 

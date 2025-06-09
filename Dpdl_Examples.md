@@ -110,10 +110,12 @@ These examples are demonstrators but are full running applications.
 
 	[app/simple/dpdlSimpleJavaAndC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/simple/dpdlSimpleJavaAndC.h)
 
+* Example Dpdl code that implements a dpdl class that provides a function to write buffered data efficiently to files by making use of a java JRE [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) object
+
+	[jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
 
 ### Special
-
 	
 * Execute a Dpdl script continuously in a dedicated Thread instance
 	
