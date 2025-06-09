@@ -212,7 +212,7 @@ Dpdl enables the integration of different technologies to leverage fast prototyp
 
 ### Dpdl example that make use of type **`class`** Inheritance and Polymorphism. Some functions make use of embedded code sections in other programming languages
 
-```python
+```c++
 
 struct property {
 	int max_weight_gr
