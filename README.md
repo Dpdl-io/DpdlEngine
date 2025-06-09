@@ -143,22 +143,22 @@ The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a m
 
 **Simple example:** a Dpdl class that makes use of a java [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) to write data efficiently on a file
 
-```python
-class W {
+```c++
+class MyWriter {
 
 	object header = loadObj("String", "data init head str")
 
 	object file_writer = null
 	object buf_writer = null
 
-	func W(string f, int off)
+	func MyWriter(string file_n, int off)
 
-		println("new W()-> f:" + f + " offset:" + off)
+		println("new W()-> f:" + file_n + " offset:" + off)
 
-		file_writer = loadObj("FileWriter", f)
-		
+		file_writer = loadObj("FileWriter", file_n)
+
 		raise(file_writer, "could not open file")
-		
+
 		buf_writer = loadObj("BufferedWriter", file_writer)
 
 		println("type of buf_writer is: " + typeof(buf_writer))
@@ -186,7 +186,7 @@ class W {
 
 println("testing my buffered file writer...")
 
-class W myw("./Test/mydata.txt", 0)
+class MyWriter myw("./Test/mydata.txt", 0)
 
 myw.writeData("data 1", 10)
 myw.writeData("data 2", 20)
@@ -210,7 +210,7 @@ Dpdl enables the integration of different technologies to leverage fast prototyp
 
 ## Dpdl sample code
 
-### Sample Dpdl code that make use of type **`class`** Inheritance and Polymorphism. Some functions make use of embedded code sections in other programming languages
+### Dpdl example that make use of type **`class`** Inheritance and Polymorphism. Some functions make use of embedded code sections in other programming languages
 
 ```python
 
