@@ -36,7 +36,7 @@ The core Dpdl engine has the <ins>**capability to run also on memory constrained
 
 Dpdl itself is a multi-purpose <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
 
-Dpdl allows also to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'** that can be embedded and executed within Dpdl code, for example code in other programming languages.
+In addition Dpdl introduces the concept of *embedded code sections*  that can be embedded and executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages.
 
 <ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the '**Modelica**' language for cyber-physical simulations is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl via embedded *OpenQWASM* code.
 
@@ -218,7 +218,7 @@ Dpdl enables the integration of different technologies to leverage fast prototyp
 
 ## Dpdl sample code
 
-### Dpdl example that make use of type **`class`** Inheritance and Polymorphism. Some functions make use of embedded code sections in other programming languages
+### Dpdl example that make use of dpdl **`class`** type Inheritance and Polymorphism. Some functions in this case make use of embedded code sections in other programming languages
 
 ```c++
 
