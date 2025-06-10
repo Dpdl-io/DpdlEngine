@@ -36,11 +36,11 @@ The core Dpdl engine has the <ins>**capability to run also on memory constrained
 
 Dpdl itself is a multi-purpose <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
 
-In addition Dpdl introduces the concept of *embedded code sections*  that can be embedded and executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages.
+In addition Dpdl introduces the concept of *embedded code sections* that can be executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages.
 
 <ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the '**Modelica**' language for cyber-physical simulations is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl via embedded *OpenQWASM* code.
 
-The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in a subsequent step if required.
+The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in a subsequent step.
 
 Further, the custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>package, handle and query data efficiently on memory scarce devices</ins>.
 
@@ -196,7 +196,7 @@ myw.writeData("data 3", 3000)
 
 ```
 
-This example implements the same logic as the example above, but with a derived class:
+The example here, to show the flexibility of dpdl, implements the same logic as the example above, but with a derived dpdl class:
 
 [jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
@@ -219,6 +219,11 @@ Dpdl enables the integration of different technologies to leverage fast prototyp
 ## Dpdl sample code
 
 ### Dpdl example that make use of dpdl **`class`** type Inheritance and Polymorphism. Some functions in this case make use of embedded code sections in other programming languages
+
+Here is the full Dpdl code of the example summarized below:
+
+	[test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h)
+
 
 ```c++
 
@@ -286,109 +291,16 @@ class Dog : Animal {
 	end
 
 	func makeSound()
-		println("WOOF WOOF")
-	end
-
-	func makeSound(int times) int
-		int ret_val
-
-		dpdl_stack_push(times)
-
-		>>java
-			int iter = arg0.intValue();
-			for(int i = 0; i < iter; i++){
-				System.out.println("WOOF");
-			}
-			return 1;
-		<<
-		ret_val = dpdl_exit_code()
-
-		return ret_val
-	end
-
-}
-
-class Cat : Animal {
-
-	func Cat(int id_, string name_)
-		super(id_, name_)
-
-		info.max_weight_gr = 1000
-		info.max_height_m = 0.25
-		info.desc = "thie breed is Siamese"
-
-		println("new Cat() with id: " + id + " and name: " + name + " - info: " + info)
-	end
-
-	func print()
-		println("This is a Cat with name: " + name)
-	end
-
-	func makeSound()
-		println("MIAUU MIAUU")
-	end
-
-	func makeSound(int beep) int
-		int ret_val
-
-		dpdl_stack_obj_put("iter", beep)
-
-		dpdl_stack_push("dpdl:applyvars")
-		>>c
-			#include <stdio.h>
-			#include <unistd.h>
-
-			// we output the character to ring 'bell' in the console
-			for(int i = 0; i < {{iter}}; i++){
-				putchar('\a');
-			}
-			return 23;
-		<<
-		ret_val = dpdl_exit_code()
-
-		return ret_val
-	end
-
-}
-
-println("testing class type Inheritance and Polymorphism...")
-println("")
-
+		...
+		
+		
+# use the  class
 class Animal ani(1)
 
 ani.print()
 ani.makeSound()
+...
 
-println("")
-
-class Dog mydog(2, "Rosa")
-
-mydog.print()
-mydog.makeSound()
-int sd = mydog.makeSound(10)
-
-object map_dog = mydog.getHashMap()
-println("map dog: " + map_dog)
-
-var entry_di = map_dog.get(0)
-println("1st entry: " + entry_di +  " is of type: " + typeof(entry_di))
-
-println("")
-
-class Cat mycat(3, "Minni")
-
-mycat.print()
-mycat.makeSound()
-int sc = mycat.makeSound(3)
-
-object map_cat = mycat.getHashMap()
-println("map cat: " + map_cat)
-
-var entry_ci = map_dog.get(1)
-println("2nd entry: " + entry_ci +  " is of type: " + typeof(entry_ci))
-
-println("")
-println("finished")
 ```
 
 ### Sample Dpdl code that makes use of embedded 'Groovy' code to read a file line by line and print it to the console
@@ -413,7 +325,8 @@ int exit_code = dpdl_exit_code()
 println("embedded groovy exit code: " + exit_code)
 ```
 
-Below you can find a more complex example of how Dpdl can be used to accomplish even complex tasks:
+**Below you can find a more complex example of how Dpdl can be used to accomplish even complex tasks, in this case via embedded WebGPU shading language (Wgsl)**:
+
 
 ### Sample Dpdl code that makes use of embedded 'Wgsl' code to accelerate a GELU Neural Network activation function on GPUs:
 
