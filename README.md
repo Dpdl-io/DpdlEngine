@@ -220,9 +220,9 @@ Dpdl enables the integration of different technologies to leverage fast prototyp
 
 ### Dpdl example that make use of dpdl **`class`** type Inheritance and Polymorphism. Some functions in this case make use of embedded code sections in other programming languages
 
-Here is the full Dpdl code of the example summarized below:
+**Here is the full Dpdl code of the example summarized below**:
 
-	[test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h)
+[test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h)
 
 
 ```c++
