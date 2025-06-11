@@ -42,7 +42,7 @@ In addition Dpdl introduces the concept of *embedded code sections* that can be 
 
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in a subsequent step.
 
-Further, the custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>package, handle and query data efficiently on memory scarce devices</ins>.
+Further, the custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce devices**</ins>.
 
 ## Dpdl is designed to:
 
