@@ -18,9 +18,9 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platforms APIs and Native shared libraries**.
+The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platforms APIs and Native shared libraries**. 
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types.
 
 Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
@@ -32,7 +32,7 @@ The core Dpdl engine has the <ins>**capability to run also on memory constrained
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png" width="95%" height="95%">
 </p>
 
-### Dpdl + ( Java Api's + C + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica + AI) = <ins>Powerful and Versatile</ins>
+### **Dpdl** = Dpdl lang + ( *C + Java + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
 
 Dpdl itself is a multi-purpose <ins>**programming language**</ins>, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
 
@@ -46,7 +46,7 @@ Further, the custom '**DpdlPacket**' data container with built-in database techn
 
 ## Dpdl is designed to:
 
-### * Develop your ideas faster
+### * Develop ideas faster
 ### * On multiple platforms
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Reuse code
@@ -1106,7 +1106,7 @@ Further Dpdl examples can be found on this page:
 [Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 
 
-## What is a DpdlPacket?
+## 'DpdlPacket' data container
 
 A DpdlPacket is a compact, highly compressed executable packet of data with built-in database technology that
 can be created based on a defined Dpdl code definition.
@@ -1119,7 +1119,7 @@ A DpdlPacket contains 1 - n chunks of compressed data that can be allocated, que
 
 All kind of data can be packed into a DpdlPacket.
 
-### DpdlPacket
+### DpdlPacket flow-chart
 
 ![DpdlPacket](http://www.dpdl.io/images/platform/DpdlPacket_FlowChart.jpg)
 
@@ -1205,13 +1205,14 @@ It started with a BsC thesis by A.Costa:
 [Advanced database techniques in Dpdl : dynamic packet definition language ; a portable data protocol for small embedded systems](https://unibz.primo.exlibrisgroup.com/permalink/39UBZ_INST/hl3dt9/alma9928450240001241)
 
 
-## What is the DpdlClient console application?
+## 'DpdlClient' console application
 
 The DpdlClient console application included in the 'DpdlEngine lite' release is a small console application
 that exposes some functionalities of Dpdl via a simple command line console. Dpdl code can be
 executed and DpdlPackets handled. The same functionalities can be accessed via the java or Dpdl API.
 
 These are the console commands available:
+
 ```
 Usage: 
  -l  List DpdlPackets installed
