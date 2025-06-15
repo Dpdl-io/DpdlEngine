@@ -10,7 +10,7 @@ developed by
 &copy; 2003
 
 
-Dpdl introduces the concept of arbitrary embedded code sections that can be executed by dedicated plug-ins available (**Dpdl language plug-ins**).
+Dpdl introduces the concept of arbitrary *embedded code sections* that can be executed by dedicated plug-ins available (**Dpdl language plug-ins**).
 
 **Multiple programming languages and custom syntax interpreters can be <ins>embedded and executed directly within Dpdl code</ins>**, simultaneously and of multiple types, by using the keyword **`>>`** (ex. >>python ) inside Dpdl code.
 

@@ -18,7 +18,7 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP), **interoperable with java JVM platform APIs and external Native shared libraries**.
+The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platforms APIs and Native shared libraries**.
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax directly embedded within the same Dpdl source code, simultaneously and of multiple types.
 
@@ -105,7 +105,7 @@ Further, the custom '**DpdlPacket**' data container with built-in database techn
 ## Dpdl Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
-* **Dpdl API provides access to the complete underlying Java JVM JRE platform API's and to external java libraries**
+* **Dpdl API provides access to the complete underlying JVM platforms API's and to external java libraries**
 * **Dpdl enables also to load and access Native shared libraries**
 * **Multiple 'Dpdl language plug-ins' available (embeddable code):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Modelica, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
@@ -540,10 +540,10 @@ The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up 
 * Utility tool
 	
 
-## Access to the complete Java JVM platform JRE API's and external java libraries
+## Access to the complete JVM platforms API's and external java libraries
 
 
-The Dpdl API allows to access all classes and methods of the <ins>underlying Java JVM platform (JRE)</ins> and of any <ins>external java library</ins>.
+The Dpdl API allows to access all classes and methods of the <ins>underlying JVM platforms (JRE)</ins> and of any <ins>external java library</ins>.
 
 **Example:** using a java HashMap (which interfaces to <em>java.util.HashMap</em>)
 
