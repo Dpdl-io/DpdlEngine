@@ -141,7 +141,15 @@ my_arr_dyn[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 
 #### Strings
 
-Strings in dpdl code are encoded using Unicode `UTF-16` format. 
+- Strings can be enclosed either within double quotation mark **`"`** or within single quotation mark **`'`**, both are valid and can be used accordingly where more convenient, for example to avoid escapes when quotations are included in the strings, etc.
+
+```python
+string s1 = "This is a valid test"
+
+string s2 = 'Also this valid'
+```
+
+- Strings in dpdl code are encoded using Unicode `UTF-16` format
 
 ```python
 string msg1 = "Hello World"
@@ -2282,11 +2290,12 @@ int main(int argc, char **argv){
 #include <stdio.h>
 #include "dpdl.h"
 
-char *dpdl_src_code =  "int c = 0	\n"
-		  	"for(c < 1000)	\n"
-				"println(\"This is Dpdl from C=\" + c)	\n"
-				"c=c+1\n	\n"
-			"endfor	\n";
+char *dpdl_src_code =   ""
+                        "int c = 0      \n"
+                        "for(c < 1000)  \n"
+                        "       println('This is Dpdl from C=' + c)     \n"
+                        "       c=c+1\n \n"
+                        "endfor \n";
 
 int main(int argc, char **argv){
 	printf("executing Dpdl code from C...\n");
