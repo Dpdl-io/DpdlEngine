@@ -97,7 +97,25 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 
 ### Types
 
-Dpdl support the following Type definitions:
+Dpdl support the following Types:
+
+- **`int`**
+- **`short`**
+- **`float`**
+- **`double`**
+- **`long`**
+- **`byte`**
+- **`string`**
+- **`char`**
+- **`bool`**
+- **`var`**
+- **`object`**
+- **`class`**
+- **`struct`**
+- **`enum`**
+
+
+**Examples:**
 
 ```c++
 int i = 1
@@ -141,12 +159,15 @@ my_arr_dyn[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 
 #### Strings
 
-- Strings can be enclosed either within double quotation mark **`"`** or within single quotation mark **`'`**, both are valid and can be used accordingly where more convenient, for example to avoid escapes when quotations are included in the strings, etc.
+- Strings can be defined enclosed either within double quotation mark **`"`** , or within single quotation mark **`'`**, <ins>both are valid</ins> and can be used accordingly where more convenient, for example to avoid quotation escapes, etc.
 
 ```python
 string s1 = "This is a valid test"
+println("s1: " + s1)
 
 string s2 = 'Also this valid'
+println('s1: ' + s1)
+println("s1: " + s1)
 ```
 
 - Strings in dpdl code are encoded using Unicode `UTF-16` format

@@ -147,7 +147,7 @@ println("")
 println("TEST 7 #######################################")
 # Inline script execution
 println("Executing inline dpdl script...")
-int status_execscript = DPDLAPI_execScript("println(\"Hello\")")  
+int status_execscript = DPDLAPI_execCode("println('Hello')")  
 sleep(2000)
 println("")
 

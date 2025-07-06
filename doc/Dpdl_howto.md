@@ -52,6 +52,7 @@ The above script can than be run also in the Dpdl console with the '-load' comma
 
 ## Dpdl code
 
+
 ### Generating a native java bytecode object from a 'struct'
 
 The dpdl type **`struct`** can be used to represent data structures within a Dpdl program, almost like in the C programming language.
@@ -193,6 +194,27 @@ object mystr = loadObj("String", "MyLoadObj str")
 return 1
 ```
 Note: The dpdl script loaded must always return a status (int) in order to load successfully (1) or with error (-1)
+
+
+### Executing dpdl code within Dpdl
+
+Dpdl can be executed also separately within an isolated environment inside Dpdl code, either by specifying a dpdl script filename, or by executing raw dpdl code directly.
+
+
+#### Executing a dpdl script
+
+```python
+int s = DPDLAPI_execScript("test/hello_world.h")
+```
+
+#### Executing dpdl code
+
+```python
+int s = DPDLAPI_execCode("	int x, i	\n for(i < 23)	\n	x = i + 3 \n	println('Hello ' + x)	\n	i=i+1	\n endfor")
+
+println("status: " + s)
+```
+
 
 
 ### Data exchange with embedded code via the Dpdl stack
@@ -425,7 +447,7 @@ object code = dpdl_res_obj_get("dpdl_struct_printS")
 
 string code_str = code.toString()
 
-int status_exec = DPDLAPI_execScript(code_str)
+int status_exec = DPDLAPI_execCode(code_str)
 
 println("status exec: " + status_exec)
 

@@ -326,7 +326,7 @@ DPDLAPI_createThread(int instance, string script, int priority, int milliseconds
 DPDLAPI_callThread(int instance, String func_name, object param, ...
 DPDLAPI_threadRunning(int instance) return int status
 DPDLAPI_execScript(string script) return int status
-DPDLAPI_execCode(string file) return int status
+DPDLAPI_execCode(string code) return int status
 
 [DPDLAPI Bluetooth]
 DPDLAPI_discoverBTDevices() return status
@@ -411,4 +411,8 @@ MIDPLIB_setRSData(int rs_id, int rec_id, string data) return int status
 MIDPLIB_getRSData(int rs_id, int rec_id) return string data
 MIDPLIB_deleteRSData(int rs_id, int rec_id) return int status
 MIDPLIB_getCalendarField(int field_name) return int value
+
+[Dpdl C API]
+int ret = dpdl_exec_code(const char *code);
+int ret = dpdl_exec_script(const char *script)
 ```

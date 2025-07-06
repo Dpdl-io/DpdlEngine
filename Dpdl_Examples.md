@@ -583,9 +583,9 @@ this is my sample json:
 
 The Dpdl example scripts are located in the './DpdlLibs/' folder and can be executed in different ways:
 
-1) or directly via the '-load' parameter at startup
-2) using the **`DpdlClient`** console application with commands
-3) or using the API function call DPDLAPI_execCode(..).
+1) Passing the script to be executed via the '-load' parameter at startup
+2) using the **`DpdlClient`** console application with provided commands
+3) or using the API function call DPDLAPI_execScript(..) or DPDLAPI_execCode(..)
 
 The script path per default configuration need to be relative to the './DpdlLibs/' folder
 
@@ -609,7 +609,7 @@ arraylistExample.h [@TEST1]
 
 ```python
 println("executing dpdl script...")
-int s = DPDLAPI_execCode("mydpdlscript.h")
+int s = DPDLAPI_execScript("mydpdlscript.h")
 println("status: " + s)
 ```
 

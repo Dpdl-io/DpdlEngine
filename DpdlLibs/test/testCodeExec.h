@@ -82,7 +82,7 @@ object code = dpdl_res_obj_get("dpdl_struct_printS")
 
 string code_str = code.toString()
 
-int status_exec = DPDLAPI_execScript(code_str)
+int status_exec = DPDLAPI_execCode(code_str)
 
 println("status exec: " + status_exec)
 

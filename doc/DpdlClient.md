@@ -68,13 +68,13 @@ You can execute Dpdl code in the following ways:
 
 
 ```python
-int status = DPDLAPI_execCode("sample.h", null)
+int status = DPDLAPI_execScript("sample.h", null)
 ```
 
 You can also embed the code directly in Dpdl
 
 ```python
-int status = DPDLAPI_execScript("println(\"Hello from Dpdl\")", null)
+int status = DPDLAPI_execCode("println('Hello from Dpdl')", null)
 ```
 
 ### 2) Load and execute the Dpdl scripts with the '-load' command:
