@@ -170,7 +170,23 @@ println('s1: ' + s1)
 println("s1: " + s1)
 ```
 
-- Strings in dpdl code are encoded using Unicode `UTF-16` format
+- String can be defined as multi-line strings by using **`"'"`** as enclosures
+
+```python
+string mystr = "'"
+
+		writing multi-line strings in Dpdl
+		is also possible
+
+		:D
+
+		"'"
+		
+println(mystr)
+
+```
+
+- Strings are encoded using 16-bit Unicode format `UTF-16`
 
 ```python
 string msg1 = "Hello World"
