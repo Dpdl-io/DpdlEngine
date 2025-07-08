@@ -123,7 +123,7 @@ func handlerGet(object target, object name, ... )
 		if(ret != null && ((typeof(ret)=="int") && ret != 0))
 			return ret
 		else
-			23
+			return 23
 		fi
 	else
 		return 23
