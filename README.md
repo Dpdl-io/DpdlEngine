@@ -2,7 +2,7 @@
 # Dynamic Packet Definition Language
 
 <p align="center">
-	<img src="https://www.dpdl.io/images/dpdl-io.png" width="60%" height="60%">
+	<img src="https://www.dpdl.io/images/dpdl-io.png" width="60%" height="100%">
 </p>
 
 				  www.dpdl.io
@@ -18,7 +18,7 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
 
-The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platforms APIs and Native shared libraries**.
+The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platforms APIs** and **Native shared libraries**. Dpdl enables dynamic code generation and execution of heterogeneous embedded code sections, featuring also meta-programming techniques.
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types.
 
@@ -106,7 +106,9 @@ Further, the custom '**DpdlPacket**' data container with built-in database techn
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all VMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
 * **Dpdl API provides access to the complete underlying JVM platforms API's and to external java libraries**
-* **Dpdl enables also to load and access Native shared libraries**
+* **Access to Native shared libraries**
+* **Provides meta-programming features**
+* **Automatic code generation and execution of embedded code sections at runtime**
 * **Multiple 'Dpdl language plug-ins' available (embeddable code):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Modelica, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of Dpdl language plug-ins**
