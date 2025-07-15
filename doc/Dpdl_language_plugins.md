@@ -10,50 +10,18 @@ developed by
 &copy; 2003
 
 
-Dpdl introduces the concept of arbitrary *embedded code sections* that can be executed by dedicated plug-ins available (**Dpdl language plug-ins**).
+Dpdl introduces the concept of arbitrary '*embedded code sections*' that can be executed inside Dpdl code via dedicated plug-ins available (see **Dpdl language plug-ins**).
 
-**Multiple programming languages and custom syntax interpreters can be <ins>embedded and executed directly within Dpdl code</ins>**, simultaneously and of multiple types, by using the keyword **`>>`** (ex. >>python ) inside Dpdl code.
+In this way **multiple programming languages** and **custom syntax interpreters** can be <ins>**embedded and executed** directly within Dpdl code</ins>, simultaneously and of multiple types.
 
-The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings. This allows developers to easily implement and embed custom functionalities in form of plug-ins.
+The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings. 
 
-## Table of Contents
-
-<table>
-
-<tr><td width=33% valign=top>
-
-* [Dpdl embeddable code](#dpdl-embeddable-code)
-* [Dpdl embedded programming languages compatibility Matrix](#dpdl-embedded-programming-languages-compatibility-matrix)
-* [Dpdl embedded code API](#dpdl-embedded-code-api)
-* [Embedding 'C' code](#embedding-c-code)
-* [Embedding 'Python' code](#embedding-python-code)
-* [Embedding 'MicroPython' code](#embedding-micropython-code)
-* [Embedding 'Julia' code](#embedding-julia-code)
-* [Embedding 'JavaScript' code](#embedding-javascript-code)
-* [Embedding 'Lua' code](#embedding-lua-code)
-* [Embedding 'Ruby' code](#embedding-ruby-code)
-* [Embedding 'Java' code](#embedding-java-code)
-* [Embedding 'Groovy' code](#embedding-groovy-code)
-* [Embedding 'CPP' code (C++)](#embedding-cpp-code)
-* [Embedding 'Clojure' code](#embedding-clojure-code)
-* [Embedding 'PHP' code](#embedding-php-code)
-* [Embedding 'SQL' code](#embedding-sql-code)
-* [Embedding 'OCaml' code](#embedding-ocaml-code)
-* [Embedding 'Modelica' code](#embedding-modelica-code)
-
-</td></tr>
-</table>
+The plug-in oriented approach allows developers to develop and integrate also custom syntax or natural language interpreters or all sorts usable inside Dpdl code.
 
 
-## Dpdl embeddable code
+### Dpdl supports the embedding and execution of the following languages, available in from of 'Dpdl language plug-ins':
 
-In case of programming languages the **Dpdl language plug-ins** are implemented on top of the official reference implementation of each supported programming language as listed below (see 'Embedded language references' section) and include everything needed to run the code, <ins>No additional installation are needed (except user libraries)</ins>.
-
-This plug-in oriented approach allows developers to develop and integrate also custom syntax or natural language interpreters or all sorts.
-
-### Dpdl supports the embedding of the following languages available as 'Dpdl language plug-ins':
-
-The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins**</ins> available, compliant to the corresponding language implementation version (see compatibility Matrix).
+The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins**</ins> available, for different platforms (see compatibility Matrix):
 
 * **`C`** compiled code (full ANSI C99) & interpreted code (minimal subset of C90)
 * **`C++`**
@@ -87,47 +55,80 @@ The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins
 
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
 
-
-### Dpdl embedded programming languages - compatibility Matrix
-
-(X + version) **Available**
-
-(*) **coming soon**
-
-| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |X v4.01|
+In case of programming languages, the available **Dpdl language plug-ins** are implemented on top of the official reference implementation of each supported programming language as listed below (see 'Embedded language references' section) and include everything needed to run the code, <ins>No additional installation are needed (except user libraries)</ins>.
 
 
-Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
- 
-#### Add-on Dpdl language plug-ins - compatibility Matrix
+## Table of Contents
 
-| Platform |Wasm |Sql |Wsgl |OCL (OpenCL) |AI |
-| ---  | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X|X|X|X|
-| Mac OS X (aarch64) |X|X|X|X|X|
-| Raspberry PI 3 (armv7)|*|X|*|*|X|
-| Windows64|*|X|*|*|X|
+<table>
+
+<tr><td width=33% valign=top>
+
+* [Dpdl embedded code](#dpdl-embedded-code)
+* [Dpdl embedded code API](#dpdl-embedded-code-api)
+* [Dpdl embedded programming languages compatibility Matrix](#dpdl-embedded-programming-languages-compatibility-matrix)
+* [Embedding 'C' code](#embedding-c-code)
+* [Embedding 'Python' code](#embedding-python-code)
+* [Embedding 'MicroPython' code](#embedding-micropython-code)
+* [Embedding 'Julia' code](#embedding-julia-code)
+* [Embedding 'JavaScript' code](#embedding-javascript-code)
+* [Embedding 'Lua' code](#embedding-lua-code)
+* [Embedding 'Ruby' code](#embedding-ruby-code)
+* [Embedding 'Java' code](#embedding-java-code)
+* [Embedding 'Groovy' code](#embedding-groovy-code)
+* [Embedding 'CPP' code (C++)](#embedding-cpp-code)
+* [Embedding 'Clojure' code](#embedding-clojure-code)
+* [Embedding 'PHP' code](#embedding-php-code)
+* [Embedding 'SQL' code](#embedding-sql-code)
+* [Embedding 'OCaml' code](#embedding-ocaml-code)
+* [Embedding 'Modelica' code](#embedding-modelica-code)
+
+</td></tr>
+</table>
 
 
-#### Size of 'Dpdl language plug-ins'
+## Dpdl embedded code
 
-The size of each individual Dpdl language plug-in varies depending on the language implementation.
+Dpdl enables the embedding and execution of arbitrary *embedded code sections* within Dpdl code, which can be other programming languages as well as custom syntaxes or even natural language descriptions that are than evaluated and processed by AI inference.
 
-Here just some examples for the size (in kilobyte), for each 'Dpdl lanugage plug-in':
+### embedding code within Dpdl
 
-| Platform | C | MicroPython |Python |Js |Lua |...|
-| ---  | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |278 Kb|194 Kb|2491 Kb|2856 Kb|174 Kb|...|
-
-The 'Dpdl language plug-ins' for other available platforms have similar sizes, but vary slightly.
+Code of other than Dpdl can be embedded and executed inside Dpdl by using the *embedding keyword* **`>>`** (ex. >>python )
 
 
-### Dpdl embedded code API
+**Example:** dpdl code with an embedded C code section
+
+```python
+println("executing some C code...."
+
+>>c
+#include <stdio.h>
+#include <dpdl.h>
+
+int dpdl_main(int argc, char **argv){
+	printf("Hello C from Dpdl!\n");
+	printf("\n");
+	printf("num params: %d\n", argc);
+	int cnt;
+	for (cnt = 0; cnt < argc; cnt++){
+		printf("	param %d: %s\n", cnt, argv[cnt]);
+	}
+	char *buf = "My result";
+	dpdl_stack_buf_put(buf);
+	return 0;
+}
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("embedded C exit code: " + exit_code)
+
+```
+
+* [Table of Contents](#table-of-contents)
+
+
+## Dpdl embedded code API
 
 Data and variables can be exchanged with the embedded code via the dpdl runtime stack by using the API functions:
 
@@ -212,6 +213,49 @@ dpdl_stack_push("dpdlstack:myconfig")
 ...
 
 ```
+
+* [Table of Contents](#table-of-contents)
+
+### Dpdl embedded programming languages - compatibility Matrix
+
+(X + version) **Available**
+
+(*) **coming soon**
+
+| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
+| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |X v4.01|
+
+
+Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
+ 
+#### Add-on Dpdl language plug-ins - compatibility Matrix
+
+| Platform |Wasm |Sql |Wsgl |OCL (OpenCL) |AI |
+| ---  | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X|X|X|X|
+| Mac OS X (aarch64) |X|X|X|X|X|
+| Raspberry PI 3 (armv7)|*|X|*|*|X|
+| Windows64|*|X|*|*|X|
+
+
+#### Size of 'Dpdl language plug-ins'
+
+The size of each individual Dpdl language plug-in varies depending on the language implementation.
+
+Here just some examples for the size (in kilobyte), for each 'Dpdl lanugage plug-in':
+
+| Platform | C | MicroPython |Python |Js |Lua |...|
+| ---  | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |278 Kb|194 Kb|2491 Kb|2856 Kb|174 Kb|...|
+
+The 'Dpdl language plug-ins' for other available platforms have similar sizes, but vary slightly.
+
+
+* [Table of Contents](#table-of-contents)
 
 ### Embedding 'C' code
 
@@ -734,20 +778,20 @@ The 'dpdl_main' method needs to return an object, either of type Integer or an O
 
 ### Embedding 'CPP' code
 
-'C++' code along with the ROOT toolkit can be embedded within Dpdl with the keyword '**>>root**'
-
-The ROOT toolkit provides full featured APIs for Data visualization, modeling, statistics and many other.
+'C++' code can be embedded within Dpdl with the keyword '**>>cpp**'
 
 https://root.cern/gallery/
 
-#### keyword **`>>root`**
+#### keyword **`>>cpp`**
 
 **Example Dpdl code with embedded 'C++' code that rewrites an image format using of the ROOT framework libraries:**
+
+The ROOT toolkit from Cern provides full featured APIs for Data visualization, modeling, statistics and many other
 
 ```python
 println("test embedded ROOT C/C++...")
 
->>root
+>>cpp
    TImage *img = TImage::Open("./Test/Dpdl.png");
    if (!img) {
       printf("Error: Could not open image\n");

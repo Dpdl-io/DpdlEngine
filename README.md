@@ -82,8 +82,6 @@ Further, the custom '**DpdlPacket**' data container with built-in database techn
 
 [Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
 
-[Dpdl Meta](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
-
 [Dpdl GPU Compute](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_GPU_compute.md)
 
 [Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
@@ -91,6 +89,8 @@ Further, the custom '**DpdlPacket**' data container with built-in database techn
 [DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
+
+[Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
 [DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
@@ -682,13 +682,11 @@ See this doc for more details: [Dpdl_embedded_languages.md](https://github.com/D
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
 
 
-#### Dpdl example with embedded 'C++' (Root) code
+#### Dpdl example with embedded 'C++' code
 
-ROOT is a powerful Data Analysis Framework developed by CERN (https://root.cern/) .
+C++ code can be embedded within Dpdl via the keyord **`>>cpp`**
 
-ROOT C++ code can be embedded within Dpdl via the keyord **`>>root`**
-
-Example Dpdl code embedding 'C++' (Root):
+Example Dpdl code embedding 'C++' that makes use of the powerful Root Data Analysis Framework developed by CERN (https://root.cern/):
 
 <img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="60%" height="60%">
 
@@ -696,7 +694,7 @@ Example Dpdl code embedding 'C++' (Root):
 # main
 println("test embedded ROOT C++...")
 
->>root
+>>cpp
 auto canvas = new TCanvas("c","Graph2D example",0,0,700,600);
 
 double x, y, z, P = 6.;
@@ -855,6 +853,8 @@ The Dpdl framework and API documentation is available via the following links:
 [DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
+
+[Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
 [DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
