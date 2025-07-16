@@ -22,11 +22,13 @@ The Dpdl language constructs and syntax is simple and intuitive, yet powerful, w
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types.
 
-Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
+Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>.
+
+Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
 The core Dpdl engine has the <ins>**capability to run also on memory constrained devices and platforms</ins>** via a dedicated <ins>kilobyte range</ins> virtual machine.
 
-### Dpdl is <ins>**Self-contained**</ins>, <ins>**Compact**</ins>, <ins>**Portable**</ins> and <ins>**Highly customizable**</ins>
+### Dpdl is <ins>**Self-contained**</ins>, <ins>**Compact**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
@@ -34,15 +36,15 @@ The core Dpdl engine has the <ins>**capability to run also on memory constrained
 
 ### **Dpdl** = Dpdl lang + ( *C + Java + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
 
-Dpdl itself is a multi-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also directly to native code for multiple target platforms.
+Dpdl itself is a multi-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
 
-In addition Dpdl introduces the concept of *embedded code sections* that can be executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages.
+Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages.
 
 <ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the '**Modelica**' language for cyber-physical simulations is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl via embedded *OpenQWASM* code.
 
-The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in a subsequent step.
+The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in subsequent steps.
 
-Further, the custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce devices**</ins>.
+The custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce devices**</ins>.
 
 ## Dpdl is designed to:
 
@@ -147,7 +149,7 @@ The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a m
 
 ## Dpdl example:
 
-The Dpdl code below illustrates the use of a dpdl class that implements a function to write data files efficiently by means of a [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) java JRE object
+The Dpdl code below illustrates the use of a dpdl class that implements a function to write data files efficiently by means of a java JRE object (i.e. [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) )
 
 ```c++
 class MyWriter {
@@ -200,7 +202,7 @@ myw.writeData("data 3", 3000)
 
 ```
 
-The example here, to show the flexibility of dpdl, implements the same logic as the example above, but with a derived dpdl class:
+The example below, to show the flexibility of dpdl, implements the same logic as the example above, but with a derived dpdl class:
 
 [jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
@@ -663,7 +665,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`V`**
 * **`Clojure`**
 * **`Modelica`**
-* **`C++`** (Root)
+* **`C++`**
 
 **available Add-on 'Dpdl language plug-ins':**
 
@@ -686,13 +688,13 @@ See this doc for more details: [Dpdl_embedded_languages.md](https://github.com/D
 
 C++ code can be embedded within Dpdl via the keyord **`>>cpp`**
 
-Example Dpdl code embedding 'C++' that makes use of the powerful Root Data Analysis Framework developed by CERN (https://root.cern/):
+Example below shows Dpdl code embedding 'C++' that makes use of the powerful Root Data Analysis Framework developed by CERN (https://root.cern/):
 
 <img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="60%" height="60%">
 
 ```python
 # main
-println("test embedded ROOT C++...")
+println("test embedded C++ that uses the Root framework...")
 
 >>cpp
 auto canvas = new TCanvas("c","Graph2D example",0,0,700,600);

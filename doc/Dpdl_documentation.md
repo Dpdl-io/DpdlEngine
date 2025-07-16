@@ -475,7 +475,8 @@ object my_arr = arr("supports multiple types", 1, 2, 3, 4.0, 5.0, 6.0d)
 object my_vec = vec(1, 2, 3, 4, "my element1", 0.23, 999.9d, 100000L, ...)
 
 # HashMap (key:value)
-object my_map = map("a:1", "b:2", "c:3", ...)
+object my_map = map("a"::1, "b"::2, "c"::3, ...)
+object my_map2 = map(1::"A", 2::"B", 3::"C", ...)
 
 # LinkedList
 object my_list = list("A", "Costa", 1, 0.3, 999.9d, 10000L, ...)

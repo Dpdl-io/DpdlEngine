@@ -19,7 +19,7 @@ The execution of embedded code is driven by the Dpdl runtime through a configura
 The plug-in oriented approach allows developers to develop and integrate also custom syntax or natural language interpreters or all sorts usable inside Dpdl code.
 
 
-### Dpdl supports the embedding and execution of the following languages, available in from of 'Dpdl language plug-ins':
+### Dpdl supports the embedding and execution of the following language code, available in from of 'Dpdl language plug-ins':
 
 The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins**</ins> available, for different platforms (see compatibility Matrix):
 
@@ -47,8 +47,6 @@ The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins
 * **`Wgsl`** -> WebGPU shading language (*WGSL*)
 * **`OCL`** -> Open Computing Language (*OpenCL*)
 * **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
-
-**Dpdl language plug-ins** can be developed and integrated via defined Dpdl API interfaces and a simple configuration.
 
 
 #### In development 'Dpdl language plug-ins' (available soon in coming releases):
@@ -158,7 +156,8 @@ Variables that are pushed on the dpdl stack are passed as parameters to the embe
 
 Variables can also be embedded directly in the code as placeholder, see **`{{var_name}}`**. In the latter case the variables are replaced with the actual values before code compilation and execution.
 
-Example:
+
+**Example:**
 
 ```python
 println("testing embedded C code in Dpdl")
