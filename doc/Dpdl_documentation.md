@@ -13,7 +13,7 @@ developed by
 
 Dpdl is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and <ins>**in part also bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-Dpdl introduces the concept of '*embedded code secitons*' that <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (<ins**>No further installations required**</ins>).
+Dpdl introduces the concept of '*embedded code secitons*' that <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (<ins>**>No further installations required**</ins>).
 
 ### Features:
 
@@ -38,15 +38,6 @@ Dpdl introduces the concept of '*embedded code secitons*' that <ins>**enables to
 * Dpdl can be embedded and called within C code
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
-
-### Dpdl API functions
-
-The Dpdl API functions available in Dpdl are listed here:
-
-[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
-
-As Dpdl can access also java classes, the whole Java JRE API and any other configured or loaded java library is available inside Dpdl.
-Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
 
 
 ## Table of Contents
@@ -89,6 +80,7 @@ Refer to the java documentation for Dpdl objects loaded with **`loadObj(..)`** a
 
 * [`Import` and `Include` statements](#import-and-include-statements)
 * [Load Dpdl code as a DpdlObject](#load-dpdl-code-as-a-dpdlobject)
+* [Dpdl API](#dpdl-api)
 * [Dpdl C API](#dpdl-c-api)
 
 </td></tr>
@@ -321,12 +313,22 @@ println("res: " + res)
 
 In Dpdl functions are defined via the keyword `func` with the following definitions:
 
-- Functions can be defined anywhere within a dpdl module (source file), in `class` types and in `struct ` types
+- Functions can be defined anywhere within a dpdl module (dpdl source file), in `class` types and in `struct ` types
 
-- The functions can take any number of parameters of different types
+- The functions can take any number of parameters of different types, and the function calls can be variadic
 
-- The functions may, or may not define a return type, both are valid
+- Functions may or may not return a value
 
+- The functions may, or may not define a return type
+
+- In case a return type is specified, a type checking is performed on the receiving variable
+
+
+```
+func myfunction(string s, int x, float y, object o, ...)
+	...
+end
+```
 
 #### Function return type
 
@@ -1855,6 +1857,28 @@ NOTE: Currently the 'include' statement need to be placed <ins>before any define
 * [Table of Contents](#table-of-contents)
 
 
+
+## Dpdl API
+
+Dpdl API's are available as:
+
+- Native JVM API's
+- Dpdl import Libraries
+- Native shared Libraries
+- Dpdl native functions
+
+As Dpdl can access also java classes, the whole JVM JRE API and any other configured or loaded java compatible library is available inside Dpdl.
+
+Refer to the java JRE documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
+
+### API Documentation
+
+[Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
+
+
+* [Table of Contents](#table-of-contents)
+
+
 ### Embedding other programming languages directly within Dpdl code
 
 A particular feature of Dpdl is the possibility to embed and execute code of other programming languages directly within Dpdl code. The execution is driven by the Dpdl runtime via dedicated **Dpdl language plug-ins** that are avaiable as part of the DpdlEngine distributions.t
@@ -2379,11 +2403,6 @@ println("s: " + s)
 ## Small 'dummy' Dpdl sample app
 
 [Small Dpdl sample app](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
-
-
-## Dpdl API
-
-[Dpdl_API](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 	
 ## Performance Benchmarks

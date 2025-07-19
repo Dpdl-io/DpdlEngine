@@ -18,14 +18,14 @@ This is the Dpdl API documentation.
 
 The Dpdl API's are available as:
 
-- Native java API's
+- Native JVM API's
 - Dpdl import Libraries
 - Native shared Libraries
 - Dpdl native functions
 
-### Native java APIs
+### Native JVM APIs
 
-Dpdl allows to load and access java classes and methods (JRE and external java libraries) via the dedicated Dpdl API functions **`loadObj(..)`** and **`getObj(..)`**.
+Dpdl allows to load and access java and JVM compatible classes and methods (JRE and external java libraries) via the dedicated Dpdl API functions **`loadObj(..)`** and **`getObj(..)`**.
 
 This allows Dpdl to access a broad set of API's and libraries.
 
