@@ -52,7 +52,7 @@ ana.printit()
 
 ### Custom operations
 
-This proposal draft is intended to provide a way to intercept and re-define customizable behaviors for dpdl language operations that can be manipulated at runtime.
+Dpdl provides a mechanism to intercept and re-define customizable behaviors for dpdl language operations so that they can be manipulated at runtime.
 
 Possible operations are:
 
