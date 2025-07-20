@@ -73,7 +73,7 @@ Dpdl introduces the concept of '*embedded code secitons*' that <ins>**enables to
 * [Asynchronous Task execution](#asynchronous-task-execution)
 * [DpdlObjects and access to JRE classes](#dpdlobjects-and-access-to-jre-classes)
 * [Multi-line structured text, data and code resources](#multi-line-structured-text-data-and-code-resources)
-* [`Embedding other programming languages` directly within Dpdl code](#embedding-other-programming-languages-directly-within-dpdl-code)
+* [`Embedded code sections: embedding other programming languages` directly within Dpdl code](#embedded-code-sections-embedding-other-programming-languages-directly-within-dpdl-code)
 
 
 </td><td valign=top>
@@ -178,7 +178,7 @@ println(mystr)
 
 ```
 
-- Strings are encoded using 16-bit Unicode format `UTF-16`
+- Strings support 16-bit Unicode format `UTF-16`
 
 ```python
 string msg1 = "Hello World"
@@ -1879,9 +1879,9 @@ Refer to the java JRE documentation for Dpdl objects loaded with **`loadObj(..)`
 * [Table of Contents](#table-of-contents)
 
 
-### Embedding other programming languages directly within Dpdl code
+### Embedded code sections: embedding other programming languages directly within Dpdl code
 
-A particular feature of Dpdl is the possibility to embed and execute code of other programming languages directly within Dpdl code. The execution is driven by the Dpdl runtime via dedicated **Dpdl language plug-ins** that are avaiable as part of the DpdlEngine distributions.t
+A particular feature of Dpdl are *embedded code sections* that allows to embed and execute code of other programming languages directly within Dpdl code. The execution is driven by the Dpdl runtime via dedicated **Dpdl language plug-ins** that are avaiable as part of the DpdlEngine distributions.t
 This feature enables to use the appropriate language and libraries for particular implementation needs.
 
 The code of other programming languages can be embedded by simply using the keyword **`>>`** along with the language specifier.

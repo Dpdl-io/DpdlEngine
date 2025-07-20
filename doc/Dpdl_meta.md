@@ -50,3 +50,76 @@ ana.printit()
 
 ```
 
+### Custom operations
+
+This proposal draft is intended to provide a way to intercept and re-define customizable behaviors for dpdl language operations that can be manipulated at runtime.
+
+Possible operations are:
+
+- **`get`**
+- **`set`**
+- **`has`**
+- **`apply`**
+- **`call`**
+- **`construct`** 
+
+The following example shows how member variable access behavior on a type **`class`** can be customized via custom handlers.
+
+At the first invocation of the 'printit(..)' function, the constant value 23 is returned.
+After the setting of the member variable 'hash', the computed hash of the string is returned.
+
+**Example:**
+
+```python
+
+func handlerGet(object target, object name, ... )
+	if(name == "hash")
+		object ret = Reflect.get(target, name)
+		if(ret != null && ((typeof(ret)=="int") && ret != 0))
+			return ret
+		else
+			return 23
+		fi
+	else
+		return 23
+	fi
+end
+
+
+class MyStr : refObj("String") {
+
+	int hash = 0
+
+	func MyStr(string s)
+		super(s)
+	end
+
+	func setHash()
+		hash = this.hashCode()
+	end
+
+	func printit()
+		this.toString()
+		println("hash code: " + hash)
+	end
+
+}
+
+
+println("this example shows how dpdl language operations can be intercepted and redefined...")
+
+println('TEST')
+
+class MyStr mys("this is a test")
+
+mys.proxy("get", handlerGet)
+
+mys.printit()
+
+mys.setHash()
+
+mys.printit()
+```
+
+
+
