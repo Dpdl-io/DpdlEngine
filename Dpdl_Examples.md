@@ -21,7 +21,7 @@ These examples are demonstrators but are full running applications.
 
 ## Dpdl sample code (examples)
 
-```python
+```c++
 println("dpdl example with use of static arrays vs. dynamic arrays")
 
 float myarr_static[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0}
