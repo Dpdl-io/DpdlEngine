@@ -10,7 +10,7 @@ developed by
 
 
 
-## Dpdl sample Applications
+## Dpdl sample prototype applications
 
 More advanced sample applications written with Dpdl that serve as demonstrators are published in this repository:
 
@@ -19,8 +19,38 @@ More advanced sample applications written with Dpdl that serve as demonstrators 
 These examples are demonstrators but are full running applications.
 
 
-## Dpdl sample code (Examples)
+## Dpdl sample code (examples)
 
+```python
+println("dpdl example with use of static arrays vs. dynamic arrays")
+
+float myarr_static[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0}
+
+myarr_dyn[] = [1, 2, 3, 4, 5, 6]
+
+println("dynamic array: " + myarr_dyn)
+
+float v
+int i
+for(i < 5)
+	v = 10.0 * myarr_static[i]
+	if((i % 2) == 0)
+		myarr_dyn[i] = v
+	else
+		myarr_dyn[i] = to_string(v/10.0)
+	fi
+	i=i+1
+endfor
+
+object arrobj = myarr_dyn.getArrObj()
+
+object iter = arrobj.iterator()
+
+while(iter.hasNext())
+	object elem = iter.next()
+	println("elem: " + elem + " is of type: " + typeof(elem))
+endwhile
+```
 
 ### Basic
 
