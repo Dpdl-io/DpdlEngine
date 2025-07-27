@@ -184,6 +184,7 @@ to_float(object val) return float value
 to_double(object val) return double value
 to_long(object val) return long value
 to_byte(object val) return byte value
+to_string(object val) return string value
 
 array[] ->
 size() return int size
