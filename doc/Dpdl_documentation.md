@@ -324,7 +324,7 @@ In Dpdl functions are defined via the keyword `func` with the following definiti
 - In case a return type is specified, a type checking is performed on the receiving variable
 
 
-```
+```go
 func myfunction(string s, int x, float y, object o, ...)
 	...
 end
