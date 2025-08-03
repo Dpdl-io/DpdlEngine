@@ -10,17 +10,9 @@ developed by
 
 ## New features
 
-* Dpdl language plug-in for 'Modelica' is now available. Modelica is programming language to model cyber-physical systems and components.
- 
-* NEW Dpdl language plug-in for 'V' is now available
+* NEW Dpdl language plug-in for 'Scheme' is now available
 
-* Dpdl language plug-in for 'OCL' (OpenCL) is now available
-
-* Dpdl language plug-in for 'Perl' is now available
-
-* Inheritance and Polymorphism for type 'class' and 'struct'
-
-* Dpdl language plug-in for 'MicroPython' is now available
+* NEW Dpdl language plug-in for 'Modelica' is now available. Modelica is programming language to model cyber-physical systems and components.
 
 
 ## Adaption
