@@ -1,7 +1,7 @@
 # File: dpdlLuaBufRet.h
 #
 # Example: 
-# This Dpdl script executes an embedded 'ROOT' C/C++ script
+# This Dpdl script executes an embedded C++ code section
 #			
 #
 # Author: AC
@@ -11,9 +11,9 @@
 
 # main
 
-println("test embedded ROOT C/C++...")
+println("test embedded C++...")
 
->>root
+>>cpp
 int np = 1000000;
 for (int N=0; N<np; N++) {
 	printf("Test: %d\n", N);

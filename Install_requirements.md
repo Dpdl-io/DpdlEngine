@@ -153,8 +153,6 @@ eg. symbolic links in the folder './dpdl_env_paths/'
 ROOT_LIB_PATH -> /Users/arcosta/APP/devel/ROOT_Devel/lib
 ```
 
-NOTE: The native Dpdl library 'dpdlroot' needs to be downloaded and deployed separately (see Downloads section in README.md)
-
 
 ### Embedded 'OCaml' code (experimental)
 

@@ -1,5 +1,5 @@
 
-# Dpdl language plug-ins
+# Dpdl language plug-ins (embedded code sections)
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
@@ -12,7 +12,7 @@ developed by
 
 Dpdl introduces the concept of arbitrary '*embedded code sections*' that can be executed inside Dpdl code via dedicated plug-ins available (see **Dpdl language plug-ins**).
 
-In this way **multiple programming languages** and **custom syntax interpreters** can be <ins>**embedded and executed** directly within Dpdl code</ins>, simultaneously and of multiple types.
+In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within Dpdl code</ins>, simultaneously and of multiple types.
 
 The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings. 
 
@@ -40,6 +40,8 @@ The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins
 * **`Clojure`**
 * **`Modelica`**
 
+NOTE: In case of programming languages, the available **Dpdl language plug-ins** are implemented on top of the official reference implementation of each supported programming language as listed below (see 'Embedded language references' section) and include everything needed to run the code, <ins>No additional installation are needed (except user libraries)</ins>.
+
 #### Add-on 'Dpdl language plug-ins' available:
 
 * **`Wasm`** -> *WAT* Compiler and *Wasm Runtime*
@@ -53,7 +55,6 @@ The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins
 
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
 
-In case of programming languages, the available **Dpdl language plug-ins** are implemented on top of the official reference implementation of each supported programming language as listed below (see 'Embedded language references' section) and include everything needed to run the code, <ins>No additional installation are needed (except user libraries)</ins>.
 
 
 ## Table of Contents
@@ -788,7 +789,7 @@ https://root.cern/gallery/
 The ROOT toolkit from Cern provides full featured APIs for Data visualization, modeling, statistics and many other
 
 ```python
-println("test embedded ROOT C/C++...")
+println("test embedded C++ using ROOT libraries...")
 
 >>cpp
    TImage *img = TImage::Open("./Test/Dpdl.png");
@@ -802,7 +803,7 @@ println("test embedded ROOT C/C++...")
 
 int exit_code = dpdl_exit_code()
 
-println("embedded ROOT exit code: " + exit_code)
+println("embedded C++ exit code: " + exit_code)
 ```
 
 * [Table of Contents](#table-of-contents)
