@@ -147,65 +147,54 @@ The speedup is x 25 times faster compared to a standard record store access
 The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a minimal setup</ins>.
 
 
-## Dpdl example:
+## Dpdl example
 
-The Dpdl code below illustrates the use of a dpdl class that implements a function to write data files efficiently by means of a java JRE object (i.e. [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) )
+```c
+import('http')
+import('json')
 
-```c++
-class MyWriter {
-
-	object header = loadObj("String", "some data init head str")
-
-	object file_writer = null
-	object buf_writer = null
-
-	func MyWriter(string file_n, int off)
-
-		println("new MyWriter()-> file:" + file_n + " offset:" + off)
-
-		file_writer = loadObj("FileWriter", file_n)
-
-		raise(file_writer, "could not open file: " + file_n)
-
-		buf_writer = loadObj("BufferedWriter", file_writer)
-
-		println("type of buf_writer is: " + typeof(buf_writer))
-
-		buf_writer.write(header, off, header.length())
-
-		println("started")
-	end
-
-	func writeData(string data, int nr)
-		int i
-		for(i < nr)
-			buf_writer.write(data, 0, strlen(data))
-
-			print(".")
-
-			i=i+1
-		endfor
-		println("")
-
-		buf_writer.newLine()
-		buf_writer.flush()
-	end
+struct Story {
+	int id
+	string title
+	string url
 }
 
-println("testing my buffered file writer...")
+# main
+string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
+string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
 
-class MyWriter myw("./Test/mydata.txt", 0)
+println("downloading and displaying the top 10 news stories from hacker-news, decoded from json format...")
 
-myw.writeData("data 1", 1000)
-myw.writeData("data 2", 2000)
-myw.writeData("data 3", 3000)
+string resp = http.getraw(stories_url)
 
+raise(resp, "Error in downloading data")
+
+object jsonobj = json.parse(resp, 0)
+ids[] = array(jsonobj)
+
+string story_url
+struct Story storyobj
+
+int c = 0
+for(c < 10)
+	println("---------------------------------------------------------------------")
+
+	story_url = item_base_url + ids[c] + ".json"
+	resp = http.getraw(story_url)
+
+	raise(resp, "Error in downloading story")
+
+	storyobj = json.decode(resp, storyobj)
+
+	println("id: " + storyobj.id)
+	println("title: " + storyobj.title)
+	println("url: " + storyobj.url)
+
+	c = c+1
+endfor
+
+println("finished!")
 ```
-
-The example below, to show the flexibility of dpdl, implements the same logic as the example above, but with a derived dpdl class:
-
-[jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
-
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
 
@@ -341,10 +330,70 @@ int exit_code = dpdl_exit_code()
 println("embedded groovy exit code: " + exit_code)
 ```
 
+### Dpdl sample code that make use of java JRE classes
+
+The Dpdl code below illustrates the use of a dpdl class that implements a function to write data files efficiently by means of a java JRE class (i.e. [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) )
+
+```c++
+class MyWriter {
+
+	object header = loadObj("String", "some data init head str")
+
+	object file_writer = null
+	object buf_writer = null
+
+	func MyWriter(string file_n, int off)
+
+		println("new MyWriter()-> file:" + file_n + " offset:" + off)
+
+		file_writer = loadObj("FileWriter", file_n)
+
+		raise(file_writer, "could not open file: " + file_n)
+
+		buf_writer = loadObj("BufferedWriter", file_writer)
+
+		println("type of buf_writer is: " + typeof(buf_writer))
+
+		buf_writer.write(header, off, header.length())
+
+		println("started")
+	end
+
+	func writeData(string data, int nr)
+		int i
+		for(i < nr)
+			buf_writer.write(data, 0, strlen(data))
+
+			print(".")
+
+			i=i+1
+		endfor
+		println("")
+
+		buf_writer.newLine()
+		buf_writer.flush()
+	end
+}
+
+println("testing my buffered file writer...")
+
+class MyWriter myw("./Test/mydata.txt", 0)
+
+myw.writeData("data 1", 1000)
+myw.writeData("data 2", 2000)
+myw.writeData("data 3", 3000)
+
+```
+
+The example below, to show the flexibility of dpdl, implements the same logic as the example above, but with a derived dpdl class:
+
+[jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
+
+
 **Below you can find a more complex example of how Dpdl can be used to accomplish even complex tasks, in this case via embedded WebGPU shading language (Wgsl)**:
 
 
-### Sample Dpdl code that makes use of embedded 'Wgsl' code to accelerate a GELU Neural Network activation function on GPUs:
+### Dpdl sample code that makes use of embedded 'Wgsl' code to accelerate a GELU Neural Network activation function on GPUs:
 
 ```python
 import('native')
