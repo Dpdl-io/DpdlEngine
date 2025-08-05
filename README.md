@@ -69,6 +69,54 @@ The custom '**DpdlPacket**' data container with built-in database technology pro
 
 ## <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
+## Dpdl example
+
+```c
+import('http')
+import('json')
+
+struct Story {
+	int id
+	string title
+	string url
+}
+
+# main
+string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
+string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
+
+println("downloading and displaying the top 10 news stories from hacker-news, decoded from json format...")
+
+string resp = http.getraw(stories_url)
+
+raise(resp, "Error in downloading data")
+
+object jsonobj = json.parse(resp, 0)
+ids[] = array(jsonobj)
+
+string story_url
+struct Story storyobj
+
+int c = 0
+for(c < 10)
+	println("---------------------------------------------------------------------")
+
+	story_url = item_base_url + ids[c] + ".json"
+	resp = http.getraw(story_url)
+
+	raise(resp, "Error in downloading story")
+
+	storyobj = json.decode(resp, storyobj)
+
+	println("id: " + storyobj.id)
+	println("title: " + storyobj.title)
+	println("url: " + storyobj.url)
+
+	c = c+1
+endfor
+
+println("finished!")
+```
 
 ## Docs
 
@@ -147,55 +195,6 @@ The speedup is x 25 times faster compared to a standard record store access
 The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a minimal setup</ins>.
 
 
-## Dpdl example
-
-```c
-import('http')
-import('json')
-
-struct Story {
-	int id
-	string title
-	string url
-}
-
-# main
-string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
-string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
-
-println("downloading and displaying the top 10 news stories from hacker-news, decoded from json format...")
-
-string resp = http.getraw(stories_url)
-
-raise(resp, "Error in downloading data")
-
-object jsonobj = json.parse(resp, 0)
-ids[] = array(jsonobj)
-
-string story_url
-struct Story storyobj
-
-int c = 0
-for(c < 10)
-	println("---------------------------------------------------------------------")
-
-	story_url = item_base_url + ids[c] + ".json"
-	resp = http.getraw(story_url)
-
-	raise(resp, "Error in downloading story")
-
-	storyobj = json.decode(resp, storyobj)
-
-	println("id: " + storyobj.id)
-	println("title: " + storyobj.title)
-	println("url: " + storyobj.url)
-
-	c = c+1
-endfor
-
-println("finished!")
-```
-
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
 
 The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) enables to make use of <ins>**AI generative code** to automatically generate and embed executable code and content or data</ins> by means of natural language descriptions contained inside Dpdl code.
@@ -208,7 +207,6 @@ Dpdl enables to combine the <ins>portability and vast API availability</ins> of 
 
 
 Dpdl enables the integration of different technologies to leverage fast prototyping and foster research and development.
-
 
 
 ## Dpdl sample code
