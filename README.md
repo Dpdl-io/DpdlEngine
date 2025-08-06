@@ -42,7 +42,7 @@ Dpdl introduces the concept of '*embedded code sections*' that can be executed w
 
 <ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the '**Modelica**' language for cyber-physical simulations is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl via embedded *OpenQWASM* code.
 
-The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in subsequent steps.
+The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data by means of natural language descriptions contained inside Dpdl code, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in subsequent steps.
 
 The custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce devices**</ins>.
 
@@ -197,11 +197,7 @@ The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`** for a m
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
 
-The included Dpdl language plug-in '**DpdlAINerd**' (**DAN**) enables to make use of <ins>**AI generative code** to automatically generate and embed executable code and content or data</ins> by means of natural language descriptions contained inside Dpdl code.
-
-Dpdl provides a simple access to <ins>**java API's, Native shared libraries, Wasm modules and GPU compute**</ins>.
-
-Further, Dpdl can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins> via a custom data container defined as '**DpdlPacket**'. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups.
+Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins>. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups.
 
 Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, enabling developers to use thousands of existing high-quality software libraries. 
 
@@ -569,9 +565,9 @@ Or full featured Applications written with Dpdl in the following repository:
 
 ## Why Dpdl?
 
-Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for development of applications on <ins>small memory footprint devices</ins>. It can also be used as embedded scripting engine for applications.
+Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for development of applications on <ins>small memory footprint devices</ins>, and suitable to be used as embedded scripting engine for applications.
 
-The main nature of Dpdl is for enabling rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple,
+Dpdl enables rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
 
 Dpdl has also built-in constructs that enable dynamic code generation for <ins>**generative AI code**</ins> and provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
@@ -674,7 +670,16 @@ for(int x = 0; x < arg2; x++){
 	System.out.println("x: " + x);
 }
 
-File myfile = new File(arg1);
+try{
+	File myfile = new File(arg1);
+	
+	boolean b_writable = myfile.canWrite();
+	
+	System.out.println("file: " + myfile.getName() + " is writable: " + b_writable);
+	
+}catch(IOException e){
+	System.out.println("Error in accessing file");
+}
 
 return 1;
 <<
