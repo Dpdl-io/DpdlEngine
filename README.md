@@ -678,7 +678,7 @@ try{
 	System.out.println("file: " + myfile.getName() + " is writable: " + b_writable);
 	
 }catch(IOException e){
-	System.out.println("Error in accessing file");
+	System.out.println("Error in accessing file: " + e.getMessage());
 }
 
 return 1;
