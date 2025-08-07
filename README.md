@@ -728,7 +728,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
-See this doc for more details: [Dpdl_embedded_languages.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_languages.md)
+See this doc for more details: [Dpdl_language_plugins.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
 
 
 ### In development 'Dpdl language plug-ins' (available soon in coming releases):
