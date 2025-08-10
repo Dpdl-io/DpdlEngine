@@ -1037,10 +1037,10 @@ p.printIt()
 
 Initialization of a 'struct' which has a base-struct, only the member variables of the sub-struct are initialized.
 
-**Example:** (struct initialization 
-
-```python
-# this sets 'x' and 'y' only
+**Example:**
+ 
+```c
+// this sets 'x' and 'y' only
 struct myB ab = {369, 963}
 ```
 
