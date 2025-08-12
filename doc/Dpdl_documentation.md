@@ -1039,8 +1039,9 @@ Initialization of a 'struct' which has a base-struct, only the member variables 
 
 **Example:**
  
+this sets only 'x' and 'y' in the sub-struct
+ 
 ```c
-// this sets 'x' and 'y' only
 struct myB ab = {369, 963}
 ```
 
