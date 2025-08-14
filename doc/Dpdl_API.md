@@ -12,9 +12,8 @@ developed by
 
 ## Dpdl API documentation
 
-DpdlEngine V1.0
-		
-This is the Dpdl API documentation. 
+
+This is the Dpdl API documentation for DpdlEngine V1.1 
 
 The Dpdl API's are available as:
 
@@ -22,6 +21,7 @@ The Dpdl API's are available as:
 - Dpdl import Libraries
 - Native shared Libraries
 - Dpdl native functions
+- Dpdl embedded C library
 
 ### Native JVM APIs
 
@@ -67,6 +67,9 @@ raise(load_lib, "Error in loading java lib")
 
 object myobj = loadObj("MyTestClass")
 
+# use the obj...
+object d = myobj.getMyData()
+
 ...
 
 ```
@@ -109,6 +112,7 @@ Example:
 https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/http/dpdlHttpExample.h
 
 **`json`**
+
 ```python
 parse(string json) return object json
 encode(struct data) return string json
@@ -155,6 +159,9 @@ For more details visit the doc:
 
 [Dpdl_native_Interface.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
 
+### Dpdl embedded C library
+
+[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 ### Dpdl native functions
 

@@ -126,8 +126,6 @@ println("finished!")
 
 [Dpdl language plug-ins](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
 
-[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
 [Dpdl Native Interface](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
@@ -893,8 +891,6 @@ The Dpdl framework and API documentation is available via the following links:
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
 [Dpdl language plug-ins](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
-
-[Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
