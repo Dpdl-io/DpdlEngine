@@ -1,4 +1,4 @@
-# Dpdl resolve
+# Dpdl
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 

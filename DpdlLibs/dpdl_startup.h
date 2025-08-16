@@ -12,7 +12,7 @@
 # e-mail: info@dpdl.io
 #
 #
-import("dpdllib.h")
+include("dpdllib.h")
 
 func printlnScreen(string m)
      println(m+"\n")
@@ -22,24 +22,25 @@ func printScreen(string m)
      print(m)
 end
 
-#begin of execution
 string dpdl_script = "bluetoothDiscoverySave.h"
 
 int commThread = 0
+
 printlnScreen("--------------------------")
-printlnScreen("init() startup.h")
+printlnScreen("init() dpdl_startup.h")
 printlnScreen("please wait while initializing " + dpdl_script)
+
 int DELAY_PAUSE = 1000
 int SERVER_REFRESH = 5000
 int server = -1
 
 server = createThread(commThread, dpdl_script, dpdlNormPriority, SERVER_REFRESH)
+
 if server == dpdlTrue
     printlnScreen(dpdl_script + " inited: " + server + " Thread interval: " + SERVER_REFRESH + " ms")
 else
-    printlnScreen("ERROR in starting " + dpdl_script)
+    printlnScreen("Error in starting " + dpdl_script)
 fi
+
 printlnScreen("--------------------------")
-
-
 
