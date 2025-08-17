@@ -16,7 +16,7 @@ developed by
 
 ## Dpdl - rapid development programming language and constrained device framework
 
-**Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database technology.
+**Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database and agent technology.
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types.
 
@@ -154,21 +154,22 @@ println("finished!")
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all JVMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on small footprint Virtual Machines (eg. JamVM, miniJVM, and others).
-* **Dpdl API provides access to the complete underlying JVM platforms API's and to external java libraries**
+* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all JVMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on small footprint Virtual Machines (eg. JamVM, miniJVM, and others)
+* **Dpdl API provides access to the complete underlying JVM platform API's and to external java libraries**
 * **Access to Native shared libraries**
-* **Provides meta-programming features**: compile-time (CTMP) and runtime (RTMP) meta-programming
-* **Automatic code generation and execution of embedded code sections at runtime**
-* **Multiple 'Dpdl language plug-ins' available (embeddable code):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Modelica, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
+* **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
+* **Automatic code generation and execution of embedded code sections at runtime** (Dpdl language plug-ins)
+* **Multiple 'Dpdl language plug-ins' available (embedded code sections):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Modelica, Wgsl and OpenCL</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of Dpdl language plug-ins**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded ANSI C code (C99) <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
-* **Wasm runtime** Dpdl language plug-in included allows to access 'Wasm' module functions from Dpdl and from embedded language code. Also WAT code can be directly compiled on-the-fly and executed.
+* **Wasm runtime** Dpdl language plug-in included allows to access 'Wasm' module functions from Dpdl and from embedded language code. Also WAT code can be directly compiled on-the-fly and executed
 * **Built-in Dpdl scripting engine with support for custom extensions** -> allows to dynamically add language features at runtime
 * **Dpdl C API enables to execute Dpdl code embedded within programs written in C** 
 * **On the fly conversion/compilation of Dpdl types 'class' and 'struct' into native java bytecode classes**
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
+* **Distributed Agents** paradigm (FIPA compliant)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
 The speedup is x 25 times faster compared to a standard record store access
 * **Virtual record store filesystem**
@@ -821,9 +822,13 @@ Other programming languages or natural language interpreters can be easily integ
 
 ## AI generative code with '**DpdlAINerd**' (**DAN**) Dpdl language plug-in
 
-The Dpdl language plug-in 'DpdlAINerd' (DAN) allows to generate and embed code via popular AI engine (eg. OpenAI, Google Vertex AI, CodePal etc..)
+The Dpdl language plug-in '*DpdlAINerd*' (DAN) allows to automatically generate code via configurable AI engines (eg. OpenAI, Google Vertex AI, CodePal etc..), embed it within dpdl, and execute the code right away.
 
 **Example:**
+
+The code below generated and executed the following code:
+
+[ai/dpdlAISnakeGame_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAISnakeGame_gen.h)
 
 ```c
 println("testing the Dpdl language plug-in 'DpdlAINerd' to automatically generate and execute code...")
@@ -841,7 +846,9 @@ println("exit code: " + exit_code)
 println("finished")
 ```
 
-see doc for more info:
+find here the example with screenshots: [DpdlCodeGenAI.md](https://github.com/Dpdl-io/Dpdl-sample-Apps/blob/main/DpdlCodeGenAI.md)
+
+see '*DpdlAINerd*' doc for more info:
 [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
