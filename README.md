@@ -22,9 +22,7 @@ Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlE
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platforms APIs** and **Native shared libraries**. Dpdl enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
-Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>.
-
-Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
+Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Modelica, Wgsl and OpenCL</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
 The core Dpdl engine has the <ins>**capability to run also on memory constrained devices and platforms</ins>** via a dedicated <ins>kilobyte range</ins> virtual machine.
 
@@ -154,7 +152,7 @@ println("finished!")
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all JVMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on small footprint Virtual Machines (eg. JamVM, miniJVM, and others)
+* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all JVMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines
 * **Dpdl API provides access to the complete underlying JVM platform API's and to external java libraries**
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
@@ -169,7 +167,7 @@ println("finished!")
 * **On the fly conversion/compilation of Dpdl types 'class' and 'struct' into native java bytecode classes**
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
-* **Distributed Agents** paradigm (FIPA compliant)
+* **Distributed Agents** (FIPA compliant)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
 The speedup is x 25 times faster compared to a standard record store access
 * **Virtual record store filesystem**
