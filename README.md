@@ -953,7 +953,7 @@ See 'Download' page for more details:
 
 Dpdl is currently developed by SEE Solutions and the following integrations are in development: 
 
-* Back-end compiler to **compile Dpdl code to native machine code** for most target architectures (LLVM)
+* Back-end compiler to **compile Dpdl code to native machine code** for most target architectures
 
 * Dpdl-IDE with plug-ins for popular IDEs (IntelliJ, eclipse, VS Code)
 
