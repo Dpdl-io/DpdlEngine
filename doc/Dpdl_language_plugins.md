@@ -23,10 +23,10 @@ The plug-in oriented approach allows developers to develop and integrate also cu
 
 The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins**</ins> available, for different platforms (see compatibility Matrix):
 
-* **`C`** compiled code (full ANSI C99) & interpreted code (minimal subset of C90)
+* **`C`** compiled code (full ANSI C & ISO C99) & interpreted code (minimal subset of C90)
 * **`C++`**
 * **`Python`**
-* **`MicroPython`** (for embedded systems)
+* **`MicroPython`** (Python for embedded systems)
 * **`Julia`**
 * **`JavaScript`**
 * **`OCaml`**
@@ -310,7 +310,7 @@ println("response buffer: " + buf)
 C code can be executed in 2 different modes:
 
 1) Interpreted C code (Mode 1) --> <ins>minimal subset of C90</ins>)
-2) Compiled C code (Mode 2) --> compiled in memory at runtime, supports <ins>ANSI C99</ins>
+2) Compiled C code (Mode 2) --> compiled in memory at runtime, supports <ins>ANSI C & ISO C99</ins>
 
 
 ### Plug-in documentation/Specification
