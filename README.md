@@ -18,7 +18,7 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database and agent technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom code syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types.
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. Dpdl enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
@@ -38,9 +38,9 @@ Dpdl itself is a general-purpose programming language, <ins>**self-contained**</
 
 Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages.
 
-<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the '**Modelica**' language for cyber-physical simulations is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl via embedded *OpenQWASM* code.
+<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the '**Modelica**' language for cyber-physical simulations is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
-The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data by means of natural language descriptions contained inside Dpdl code, embed it automatically within Dpdl code and execute the code right away. Alternatively the generated code can also be rewritten to a new file and executed in subsequent steps.
+The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data by means of natural language descriptions contained inside Dpdl code, embed it automatically within Dpdl code and execute the code right away or alternatively to be written to a new file and executed in subsequent steps.
 
 The custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce devices**</ins>.
 
@@ -152,7 +152,7 @@ println("finished!")
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any all JVMs >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant VMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines
+* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any JVM platform >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant JVMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines
 * **Dpdl API provides access to the complete underlying JVM platform API's and to external java libraries**
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
@@ -187,12 +187,12 @@ The speedup is x 25 times faster compared to a standard record store access
 * **DpdlEngine** (<ins>**Full**</ins> configuration) **`372 Kb`**
 * **DpdlEngine** (<ins>**Full**</ins> configuration) including embedded C compiler/interpreter **`650 Kb`**
  
-The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`**</ins> if needed.
+The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`**</ins> for very compact setups.
 
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
 
-Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins>. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket may may also include Dpdl code for custom setups.
+Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins>. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket can also include Dpdl code for custom setups.
 
 Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, enabling developers to use thousands of existing high-quality software libraries. 
 
