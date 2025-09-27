@@ -40,6 +40,10 @@ Dpdl introduces the concept of '*embedded code sections*' that can be executed w
 
 <ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the '**Modelica**' language for cyber-physical simulations is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
+<p align="left">
+	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
+</p>
+
 The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data by means of natural language descriptions contained inside Dpdl code, embed it automatically within Dpdl code and execute the code right away or alternatively to be written to a new file and executed in subsequent steps.
 
 The custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce devices**</ins>.
@@ -114,6 +118,71 @@ for(c < 10)
 endfor
 
 println("finished!")
+```
+
+## Dpdl example with 'embedded code sections'
+
+```c
+println("with Dpdl you can embed and execute code sections in many different programming languages, simultaneously and of multiple types...")
+println("")
+
+println("embedding some C code...")
+
+>>c
+	#include <stdio.h>
+
+	int v = 1000;
+	float x = 23.0;
+	char *m = "this message is printed in c";
+
+	for(int i = 0; i < v; i++){
+		printf("msg: %s %d %lf\n", m, i, x);
+	}
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("embedded C exit code: " + exit_code)
+println("")
+
+println("embedding some javascript code...")
+
+
+dpdl_stack_push("my Hello Message!!!")
+>>js
+	import { fib } from "./DpdlLibs/js/fib_module.js";
+
+	var a_message = "null";
+
+	if(scriptArgs.length > 0){
+		a_message = scriptArgs[0];
+	}
+	std.printf("Message = %s %d", a_message, 23);
+	console.log('');
+	console.log('this fibonacci calculation is perfomed in javascript');
+	console.log("fib(10)=", fib(10));
+<<
+
+exit_code = dpdl_exit_code()
+
+println("embedded javascript exit code: " + exit_code)
+println("")
+
+println("you can embed many other languages too...")
+
+println("we list them with via embedded python code:")
+
+>>python
+languages = ['C', 'C++', 'Python', 'JavaScript', 'Julia', 'Lua', 'Ruby', 'Java', 'PHP', 'Perl', 'Groovy', 'Clojure', 'Modelica']
+
+for language in languages:
+	print(language)
+<<
+
+exit_code = dpdl_exit_code()
+
+println("embedded python exit code: " + exit_code)
+println("")
 ```
 
 ## Docs
@@ -202,7 +271,9 @@ Dpdl enables the integration of different technologies to leverage fast prototyp
 
 ## Dpdl sample code
 
-### Dpdl example that make use of dpdl **`class`** type Inheritance and Polymorphism. Some functions in this case make use of embedded code sections in other programming languages
+### Dpdl example that make use of dpdl **`class`** type Inheritance and Polymorphism.
+
+Note: some functions in this example make use of 'embedded code sections' in other programming languages
 
 **Here is the link for the full Dpdl code of the example that is summarized below**:
 

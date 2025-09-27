@@ -145,29 +145,6 @@ endwhile
 	[jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
 
-### Special
-	
-* Execute a Dpdl script continuously in a dedicated Thread instance
-	
-	[dpdl_startup.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_startup.h)
-	
-* Uses the Dpdl API library DoubleEmul and FloatEmul to emulate floating point and double precision math operations
-	
-	[dpdlFloatDoubleEmul.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFloatDoubleEmul.h)
-
-* Example Dpdl code that converts/compiles a 'struct' to a native java bytecode object and accesses member variables and methods
-
-	[test/testGenObjCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testGenObjCode.h)
-	
-* Example program written in C that shows how to execute a given Dpdl script from C code
-
-	[embed_dpdl/test_dpdl_code_exec.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec.c)
-
-* Example program written in C that shows how to execute embedded Dpdl code within C code
-
-	[embed_dpdl/test_dpdl_code_exec2.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec2.c)
-
-
 ### Data
 
 * Example Dpdl code that parses an XML document with the xml pull parser
@@ -223,6 +200,29 @@ endwhile
 * Dpdl code that shows how to read and write data to a virtual record store filesystem
 
 	[fs/dpdlVirtualFS.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/fs/dpdlVirtualFS.h)
+
+
+### Integration
+	
+* Execute a Dpdl script continuously in a dedicated Thread instance
+	
+	[dpdl_startup.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_startup.h)
+	
+* Uses the Dpdl API library DoubleEmul and FloatEmul to emulate floating point and double precision math operations
+	
+	[dpdlFloatDoubleEmul.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFloatDoubleEmul.h)
+
+* Example Dpdl code that converts/compiles a 'struct' to a native java bytecode object and accesses member variables and methods
+
+	[test/testGenObjCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testGenObjCode.h)
+	
+* Example program written in C that shows how to execute a given Dpdl script from C code
+
+	[embed_dpdl/test_dpdl_code_exec.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec.c)
+
+* Example program written in C that shows how to execute embedded Dpdl code within C code
+
+	[embed_dpdl/test_dpdl_code_exec2.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec2.c)
 
 
 ### GPU Compute
@@ -559,7 +559,10 @@ this is my sample json:
 
 	[modelica/dpdlModelicaExample_mechanics.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/modelica/dpdlModelicaExample_mechanics.h)
 
+* Example Dpdl code that generates a Quantum Circuit via embedded python code using the Qiskit quantum computing libraries.
 
+	[quantum/dpdlQuantumExampleQiskit.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/quantum/dpdlQuantumExampleQiskit.h)
+	
 ### Benchmark Tests
 
 * Simple benchmark to measure the execution speed of Dpdl function calls with access to JRE objects

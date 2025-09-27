@@ -822,7 +822,7 @@ In the example below a dpdl `class` 'Msg' is created, which is derived from the 
 
 In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: `length()`, `toString()`, `getBytes()`, etc. (see java 'String' documentation)
 
-Within the dpdl class, the methods derived from the java based super-class can be accessed via the **`this`** instance object (ex. **this**.lenght() )
+Within the dpdl class, the methods derived from the java based super-class can be accessed via the **`this`** instance object (ex. **this**.length() )
 
 The methods of the java object super-class <ins>can also be overloaded</ins> by dpdl functions and customized.
 
