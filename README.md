@@ -173,7 +173,7 @@ println("you can embed many other languages too...")
 println("we list them with via embedded python code:")
 
 >>python
-languages = ['C', 'C++', 'Python', 'JavaScript', 'Julia', 'Lua', 'Ruby', 'Java', 'PHP', 'Perl', 'Groovy', 'Clojure', 'Modelica']
+languages = ['C', 'C++', 'Python', 'JavaScript', 'Julia', 'Lua', 'Ruby', 'Java', 'PHP', 'Perl', 'Groovy', 'Clojure', 'Modelica', '...']
 
 for language in languages:
 	print(language)
@@ -183,6 +183,8 @@ exit_code = dpdl_exit_code()
 
 println("embedded python exit code: " + exit_code)
 println("")
+
+println("and more 'Dpdl lanuage plug-ins' will follow and you can also create your owns")
 ```
 
 ## Docs
