@@ -18,13 +18,13 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database and agent technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables <ins>to execute **Dpdl** code, as well as **code in other programming languages**</ins> or any custom code syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlEngine) with an **extensible API interface** that enables to execute **Dpdl** programming language code, <ins>as well as **code in other programming languages**</ins> or any custom code syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types.
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. Dpdl enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
-Dpdl provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wgsl, OpenCL and Modelica</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
+The *DpdlEngine* provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wgsl, OpenCL and Modelica</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
-The core Dpdl engine has the <ins>**capability to run also on memory constrained devices and platforms</ins>** via a dedicated <ins>kilobyte range</ins> virtual machine.
+The core *DpdlEngine* has the <ins>**capability to run also on memory constrained devices and platforms</ins>** via a dedicated <ins>kilobyte range</ins> virtual machine.
 
 ### Dpdl is <ins>**Self-contained**</ins>, <ins>**Compact**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
@@ -34,9 +34,9 @@ The core Dpdl engine has the <ins>**capability to run also on memory constrained
 
 ### **Dpdl** = Dpdl lang + ( *C + Java + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
 
-Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part also <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
+Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
 
-Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages.
+Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages or any other custom code syntax.
 
 <ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the '**Modelica**' language for cyber-physical simulations is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
@@ -54,7 +54,7 @@ The custom '**DpdlPacket**' data container with built-in database technology pro
 ### * On multiple platforms
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Reuse code
-### * No need to install, compile and configure environments
+### * No need to install, compile and configure dev environments
 ### * Self-contained, No additional dependencies required (except user libraries)
 ### * Facilitate rapid prototyping for Hardware programming
 ### * Runs on constrained devices
@@ -223,7 +223,7 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (JavaME, J2SE, any JVM platform >= 1.4 Spec). The core engine runs also on Java 1.1 spec compliant JVMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines
+* **DpdlEngine is optimized to run on a wide range of platforms** (J2SE, any JVM platform > 1.3 Spec, JavaME). The core engine runs also on Java 1.1 spec compliant JVMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines
 * **Dpdl API provides access to the complete underlying JVM platform API's and to external java libraries**
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
@@ -252,8 +252,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * Open Source **Dpdl language plug-ins**
 
 
-### Dpdl memory footprint:
-
+### DpdlEngine memory footprint:
 
 * **DpdlEngine** (<ins>**Full**</ins> configuration) **`372 Kb`**
 * **DpdlEngine** (<ins>**Full**</ins> configuration) including embedded C compiler/interpreter **`650 Kb`**
@@ -771,6 +770,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 
 * **`C`** (**interpreted**) --> minimal subset of C90 with standard C libs included and avaiable in the Dpdl runtime
 * **`C`** (**compiled**) code --> ANSI C & ISO C99 standard, compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
+* **`C++`**
 * **`Python`**
 * **`MicroPython`** (ideal for embedded systems)
 * **`Julia`**
@@ -785,7 +785,6 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`V`**
 * **`Clojure`**
 * **`Modelica`**
-* **`C++`**
 
 **available Add-on 'Dpdl language plug-ins':**
 
@@ -793,7 +792,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`Sql`** -> query databases via SQL
 * **`Wgsl`** -> WebGPU shading language
 * **`OCL`** -> Open Computing Language (OpenCL)
-* **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+* **`AI`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
 See this doc for more details: [Dpdl_language_plugins.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
@@ -929,10 +928,10 @@ Dpdl runs on a wide range of platforms and supports also a small footprint kilob
 
 ### Dpdl itself is compatible with:
 
+* Java versions > 1.3 and later
 * Java ME CLDC & GCF (JSR 360)
 * Java ME Embedded Profile (JSR 361)
-* Java versions >= 1.4 and later
-* Java 1.1 - 1.3 (without 'loadObj' and 'getObj' methods)
+* Java 1.1 until 1.3 (without 'loadObj' and 'getObj' methods)
 * Platforms with ANSI C compiler where the included kilobyte range java virtual machine can be compiled
 
 DpdlEngine V1.0 has been tested on:
