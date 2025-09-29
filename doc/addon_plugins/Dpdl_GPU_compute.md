@@ -56,13 +56,13 @@ long byte_cnt = 8L
 println("allocating input buffer...")
 
 object input_arr1 = libc.malloc(DATA_SIZE * byte_cnt)
-input_arr1.setMemory(0L, DATA_SIZE * byte_cnt, 0x00)
+input_arr1.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 object input_arr2 = libc.malloc(DATA_SIZE * byte_cnt)
-input_arr2.setMemory(0L, DATA_SIZE * byte_cnt, 0x00)
+input_arr2.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 object output_arr = libc.malloc(DATA_SIZE * byte_cnt)
-input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00)
+input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 println("populating some random input data...")
 
