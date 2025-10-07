@@ -23,8 +23,8 @@ raise(xml_content, "Error in reading xml file")
 
 println("creating xml pull parser instance...")
 
-object factory = getClass("XmlPullParserFactory")
-object XmlPull = getClass("XmlPull")
+object factory = getObj("XmlPullParserFactory")
+object XmlPull = getObj("XmlPull")
 
 object xml_factory = factory.create()
 

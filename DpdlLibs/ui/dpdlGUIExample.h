@@ -49,7 +49,7 @@ int height = 500
 bool isCheckbox1Enabled = false
 bool isCheckbox2Enabled = false
 
-object frame_class = getClass("JFrame")
+object frame_class = getObj("JFrame")
 object frame = loadObj("JFrame")
 frame.setDefaultCloseOperation(frame_class.EXIT_ON_CLOSE)
 

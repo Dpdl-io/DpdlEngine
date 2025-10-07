@@ -28,7 +28,7 @@ println("uid: " + uid)
 
 println("opening file in RW mode for writing...")
 
-object fcntl = getClass("Fcntl")
+object fcntl = getObj("Fcntl")
 
 int fh = clib.open("./Test/TestWriteNative.txt", fcntl.O_RDWR)
 

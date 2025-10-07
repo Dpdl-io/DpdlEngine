@@ -253,7 +253,7 @@ println("mystr2 contains 'Dpdl': " + isIn)
 println("------------------------")
 
 # use of a java.util.Clanendar
-object calendar = getClass("Calendar")
+object calendar = getObj("Calendar")
 object cal_inst = calendar.getInstance()
 
 int day_ = cal_inst.get(calendar.DAY_OF_MONTH)

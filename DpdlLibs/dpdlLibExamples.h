@@ -1,6 +1,6 @@
 # File: dpdlLibExamples.h
 #
-# Example: Various examples using Dpdl scripting. The single examples can be run individually via tagged execution by providing
+# Example: The Dpdl code shows various examples. The single examples can be run individually via tagged execution by providing
 #			the appropriate @TAG (i.e @TEST1, etc...)
 #
 # Author: A.Costa
@@ -16,6 +16,7 @@ import("dpdlBT.h")
 #@TEST1
 println("TEST 1 #######################################")
 # reading file
+
 string fname_r = "./Test/TestRead.txt"
 println("reading from a file ...")
 string content = ""
@@ -35,6 +36,7 @@ println("")
 #@TEST2
 println("TEST 2 #######################################")
 # writing file
+
 println("writing to a file ...")
 string fname_w = "./Test/TestWrite.txt"
 string str_out = "This is a Test"
@@ -47,6 +49,7 @@ println("")
 #@TEST3
 println("TEST 3 #######################################")
 # array allocation
+
 println("allocating and adding elements to dynamic vector array ...")
 allocMemArray(0, 10)
 allocMemArray(1, 10)
@@ -101,6 +104,7 @@ println("")
 #@TEST4
 println("TEST 4 #######################################")
 # Time
+
 println("get time ...")
 println(getTime())
 setStartTime()
@@ -113,6 +117,7 @@ println("")
 #@TEST5
 println("TEST 5 #######################################")
 # String operations
+
 string str = "Hello World from Dpdl"
 println("performing string operations on string: " + str)
 int len = strlen(str)
@@ -132,6 +137,7 @@ println("")
 #@TEST6
 println("TEST 6 #######################################")
 # Random Number generation
+
 println("generating random numbers ...")
 int c2 = 0
 int rand = -1
@@ -146,14 +152,16 @@ println("")
 #@TEST7
 println("TEST 7 #######################################")
 # Inline script execution
+
 println("Executing inline dpdl script...")
-int status_execscript = DPDLAPI_execCode("println('Hello')")  
+int status_execscript = DPDLAPI_execScript("println('Hello')")
 sleep(2000)
 println("")
 
 #@TEST8
 println("TEST 8 #######################################")
 # System exec operations
+
 println("executing system function 'echo test' ...")
 int status = systemExec("echo test", dpdlTrue, dpdlTrue)
 println("status: " + status)
@@ -163,6 +171,7 @@ println("")
 #@TEST9
 println("TEST 9 #######################################")
 # XML xpath query
+
 println("query xml document via xpath...")
 string result = DPDLAPI_processXPath("./Test/xpath_test.xml", "/Users/User/Name")
 int nr_results = DPDLAPI_getXPathNrResults()
@@ -178,6 +187,7 @@ println("")
 #@TEST10
 println("TEST 10 #######################################")
 # Bluetooth device discovery
+
 println("BT device discovery inited")
 int x = DPDLAPI_createObexServer(BT_GIAC_MODE)
 println("discovering BT devices...")
@@ -210,7 +220,8 @@ println("")
 
 #@TEST11
 println("TEST 11 #######################################")
-# Write and Read data to Recordstore
+# Write & Read data to Recordstore
+
 string my_record_store_name = "MyRecordStore"
 int nr_records = 10
 int cnt = 0
@@ -254,7 +265,7 @@ println("done")
 
 #@TEST12
 println("TEST 12 #######################################")
-# setup and access virtual Filesystem
+# setup & access virtual recordstore Filesystem
 
 println("creating virtual Dpdl filesystem...")
 int fs_id = DPDLLIB_createFS("MyFileSystem")
@@ -290,11 +301,12 @@ println("")
 
 #@TEST13
 println("TEST 13 #######################################")
-# loadObj(..) & getClass(..) methods to load dynamically java library classes and objects
-println("testing getClass() method invocation on java.lang.System")
+# loadObj(..) & getObj(..) methods to load dynamically java library classes & objects
+
+println("testing getObj() method invocation on java.lang.System")
 println("")
 object sys, out, out2
-sys=getClass("System")
+sys=getObj("System")
 out=sys.out
 out2=out
 
@@ -302,7 +314,8 @@ out.println("Hello World Dpdl ")
 out2.println("Hello World Dpdl Reflection 2")
 println("")
 println("-------------------------------")
-# put and get on HashMap
+
+# put & get on HashMap
 println("testing put(..) and get() method invocation on java.util.HashMap")
 println("")
 object map, s
@@ -318,6 +331,7 @@ s=map.get("4")
 out.println(s)
 println("")
 println("-------------------------------")
+
 # test Vector enumeration
 println("testing Enumeration on java.util.Vector")
 println("")
@@ -332,16 +346,18 @@ while(iter.hasMoreElements())
 endwhile
 println("")
 println("-------------------------------")
+
 # test Collection on array
 println("testing Collection min value on on array[]")
 println("")
 arr[] = "1 23 44 66 79 99 100"
 println("finding the min value of arr: " + arr)
 object arr_list = arr.getArrObj()
-object collections = getClass("Collections")
+object collections = getObj("Collections")
 object min_value = collections.min(arr_list)
 println("min value: " + min_value)
 println("-------------------------------")
+
 # write to file using FileWriter
 println("testing write(..) method invocation on java.io.FileWriter")
 println("")
@@ -354,6 +370,7 @@ file_writer.close()
 println("done")
 println("")
 println("-------------------------------")
+
 # get Date and converto to string
 println("testing toString() method invocation on java.util.Date")
 println("")
@@ -363,18 +380,22 @@ println("date: " + date_str)
 println("")
 date_str = "12/08/2023"
 println("converting date: " + date_str + " to other format")
+
 object date_format = loadObj("SimpleDateFormat", "dd/MM/yy")
 object date_ = date_format.parse(date_str)
 object date_format_dest = loadObj("SimpleDateFormat", "MM-dd-yyyy hh:mm:ss")
 date_str = date_format_dest.format(date_)
 println("converted date: " + date_str)
 println("")
+
 println("adding n days to current date")
-object calendar = getClass("Calendar")
+object calendar = getObj("Calendar")
 object cal_inst = calendar.getInstance()
+
 int day_ = cal_inst.get(calendar.DATE)
 int month_ = cal_inst.get(calendar.MONTH)
 int year_ = cal_inst.get(calendar.YEAR)
+
 println("" + day_ + "-" + month_ + "-" + year_ + "")
 println("adding 1 day..")
 cal_inst.add(calendar.DATE, 1)
@@ -384,10 +405,11 @@ year_ = cal_inst.get(calendar.YEAR)
 println("" + day_ + "-" + month_ + "-" + year_ + "")
 println("")
 println("-------------------------------")
+
 # use Math 
 println("testing sin(..) and cos(..) method invocation on java.lang.Math")
 println("")
-object math = getClass("Math")
+object math = getObj("Math")
 double d1 = 2.8d
 double d1_sin = math.sin(d1)
 double d1_cos = math.cos(d1)
@@ -396,6 +418,7 @@ println("sin d1: " + d1_sin)
 println("cos d1: " + d1_cos)
 println("")
 println("-------------------------------")
+
 # get Web content via URL 
 println("testing get web content via java.net.URL")
 println("")
@@ -415,6 +438,7 @@ endwhile
 println(web_content)
 println("")
 println("-------------------------------")
+
 # Tokenize a String using StringTokenizer 
 println("testing java.lang.StringTokenizer")
 println("")
@@ -426,13 +450,14 @@ while(str_tok.hasMoreElements())
 endwhile
 println("")
 println("-------------------------------")
+
 # regex using java.util.regex
 println("testing regex on java.util.regex")
 println("")
 string search_str = "Dpdl"
 string full_str = "asdfDpdlasdfDpdlasdf"
 println("searching \"" + search_str + "\" in: " + full_str)
-object pattern = getClass("Pattern")
+object pattern = getObj("Pattern")
 object pattern_str = pattern.compile(search_str)
 object matcher = pattern_str.matcher(full_str)
 int start_, end_
@@ -448,6 +473,7 @@ println("-------------------------------")
 #@TEST14
 println("TEST 14 #######################################")
 # Thread execution of Dpdl script
+
 int thread_instance = 0
 string mythread_process = "myThreadProcess.h"
 int ms_interval = 1000
@@ -464,7 +490,7 @@ println("-------------------------------")
 
 #@TEST15
 println("TEST 15 #######################################")
-println("Executing embedded C code")
+println("Executing some embedded C code")
 int n = 6
 double xc = 10.0d
 string a = "test"
@@ -475,7 +501,7 @@ dpdl_stack_push(n, xc, a)
 #include <stdio.h>
 #include <dpdl.h>
 
-int dpdl_main(int argc, char **argv){
+int main(int argc, char **argv){
 	printf("Hello C from Dpdl!\n");
 	printf("\n");
 	printf("num params: %d\n", argc);
@@ -495,7 +521,7 @@ println("-------------------------------")
 
 #@TEST16
 println("TEST 16 #######################################")
-println("testing embedding python code")
+println("testing some embedding python code")
 println("")
 
 >>python

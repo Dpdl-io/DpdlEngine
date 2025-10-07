@@ -31,14 +31,14 @@ println("testing Dpdl using JavaFX to create amazing UI")
 
 println("starting javafx runtime...")
 
-object runtime = getClass("Platform")
+object runtime = getObj("Platform")
 runtime.startup(thread.getRunnable())
 
 object file = loadObj("File", "./DpdlLibs/ui/fxml/myGUIreg.fxml")
 object file_uri = file.toURI()
 object fxml_url = file_uri.toURL()
 
-object fxml_load = getClass("FXMLLoader")
+object fxml_load = getObj("FXMLLoader")
 object parent_root = fxml_load.load(fxml_url)
 
 raise(parent_root, "Error in loading fxml definition")

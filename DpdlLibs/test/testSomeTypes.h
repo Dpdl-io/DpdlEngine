@@ -89,7 +89,7 @@ println("arr[4]: " + arr[4])
 
 char nc = 'b'
 
-object char_class = getClass("Character")
+object char_class = getObj("Character")
 int nc_val = char_class.getNumericValue(nc)
 
 println("nc: " + nc)

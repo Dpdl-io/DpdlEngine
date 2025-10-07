@@ -54,7 +54,7 @@ println("")
 
 println("testing file access...")
 
-object fcntl = getClass("Fcntl")
+object fcntl = getObj("Fcntl")
 
 int fh = libc.open("./Test/TestWrite.txt", fcntl.O_RDWR)
 

@@ -71,7 +71,7 @@ println("")
 
 println("decoding json to obj...")
 
-object dpdl_json = getClass("DpdlJson")
+object dpdl_json = getObj("DpdlJson")
 
 object json_obj = dpdl_json.parse(json_str)
 

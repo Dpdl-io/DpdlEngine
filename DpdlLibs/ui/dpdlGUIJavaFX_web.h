@@ -23,7 +23,7 @@ func dpdl_javafx_start(object stage)
 	root_child.add(browser)
 
 
-	object color = getClass("paint.Color")
+	object color = getObj("paint.Color")
 
 	object scene = loadObj("Scene", browser, 750.0d, 800.0d, color.web("#666970"))
 
@@ -34,7 +34,7 @@ end
 # main
 println("starting web app...")
 
-object runtime = getClass("Platform")
+object runtime = getObj("Platform")
 runtime.startup(thread.getRunnable())
 
 object root = loadObj("scene.Group")

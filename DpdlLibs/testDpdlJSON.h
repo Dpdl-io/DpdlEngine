@@ -20,7 +20,7 @@ raise(content, "Error in reading json file")
 println("content: " + content)
 println("")
 println("allocating DpdlJson...")
-object dpdl_json = getClass("DpdlJson")
+object dpdl_json = getObj("DpdlJson")
 object json_content = loadObj("String", content)
 
 println("parsing json...")

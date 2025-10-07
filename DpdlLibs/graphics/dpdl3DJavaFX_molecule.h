@@ -118,7 +118,7 @@ end
 func buildAxes()
 	println("constructing axes...")
 
-	object color = getClass("paint.Color")
+	object color = getObj("paint.Color")
 
 	object redMaterial = loadObj("PhongMaterial")
 	redMaterial.setDiffuseColor(color.DARKRED)
@@ -151,7 +151,7 @@ end
 func buildMolecule()
 	println("building molecules...")
 
-	object color = getClass("paint.Color")
+	object color = getObj("paint.Color")
 
 	object redMaterial = loadObj("PhongMaterial")
 	redMaterial.setDiffuseColor(color.DARKRED)
@@ -183,7 +183,7 @@ func buildMolecule()
 	hydrogen2Sphere.setMaterial(whiteMaterial)
 	hydrogen2Sphere.setTranslateZ(0.0d)
 
-	object rotate = getClass("Rotate")
+	object rotate = getObj("Rotate")
 
 	object bond1Cylinder = loadObj("Cylinder", 5.0d, 100.0d)
 	bond1Cylinder.setMaterial(greyMaterial)
@@ -234,7 +234,7 @@ end
 # main
 println("starting...")
 
-object runtime = getClass("Platform")
+object runtime = getObj("Platform")
 runtime.startup(thread.getRunnable())
 
 object root = loadObj("scene.Group")
@@ -250,8 +250,8 @@ object cameraXform = loadObj("DpdlTestForm")
 object cameraXform2 = loadObj("DpdlTestForm")
 object cameraXform3 = loadObj("DpdlTestForm")
 
-object depthtest = getClass("DepthTest")
-object color = getClass("paint.Color")
+object depthtest = getObj("DepthTest")
+object color = getObj("paint.Color")
 
 object root_child = root.getChildren()
 root_child.add(world)
