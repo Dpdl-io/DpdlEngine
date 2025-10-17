@@ -22,7 +22,9 @@ Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (DpdlE
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. Dpdl enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
-The *DpdlEngine* provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wgsl, OpenCL and Modelica</em>, <ins>**directly embedded within Dpdl code**</ins>. Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
+The *DpdlEngine* provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wgsl, OpenCL and Modelica</em>, <ins>**directly embedded within Dpdl code**</ins>.
+
+Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
 The core *DpdlEngine* has the <ins>**capability to run also on memory constrained devices and platforms</ins>** via a dedicated <ins>kilobyte range</ins> virtual machine.
 
@@ -32,13 +34,13 @@ The core *DpdlEngine* has the <ins>**capability to run also on memory constraine
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
 </p>
 
-### **Dpdl** = Dpdl lang + ( *C + Java + 'C++' + Python + Julia + JavaScript + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
+### **Dpdl** = Dpdl lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
 
 Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages or any other custom code syntax.
 
-<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example the '**Modelica**' language for cyber-physical simulations is also available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
+<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example also the '**Modelica**' language for cyber-physical simulations is  available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable even <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
