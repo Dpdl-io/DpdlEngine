@@ -453,7 +453,7 @@ this is my sample json:
 		3) start the 2nd client in a thread instance: CoAP/startClientThread.h
 	
 
-### Dpdl language plug-ins (embeddable programming languages or custom syntax interpreters)
+### Dpdl language plug-ins (embeddable code sections)
 
 * Example with embedded C code execution within Dpdl (interpreted Mode 1)
 	
@@ -562,6 +562,14 @@ this is my sample json:
 * Example Dpdl code that generates a Quantum Circuit via embedded python code using the Qiskit quantum computing libraries.
 
 	[quantum/dpdlQuantumExampleQiskit.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/quantum/dpdlQuantumExampleQiskit.h)
+
+
+### Dpdl Agents
+
+* Example Dpdl code that implements two independent Agents that exchange messages in a cyclic way
+	
+	[agent/testAgent.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/testAgent.h)
+
 	
 ### Benchmark Tests
 
