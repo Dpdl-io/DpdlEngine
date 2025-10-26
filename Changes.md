@@ -10,6 +10,8 @@ developed by
 
 ## New features
 
+* Support for in-code Asynchronous Multi-Agent development
+
 * NEW Dpdl language plug-in for 'Scheme' is now available
 
 * NEW Dpdl language plug-in for 'Modelica' is now available. Modelica is programming language to model cyber-physical systems and components.
