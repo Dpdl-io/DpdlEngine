@@ -39,7 +39,7 @@ println("done")
 
 println("parsing xml...")
 
-object str_reader = loadObj("StringReader", xml_content)
+object str_reader = new("StringReader", xml_content)
 xpp.setInput(str_reader)
 
 int eventType = xpp.getEventType()

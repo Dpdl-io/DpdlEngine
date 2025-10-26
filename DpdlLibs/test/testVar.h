@@ -33,7 +33,7 @@ func testFuncRetLong() long
 end
 
 func testFuncRetObj() object
-	object stro = loadObj("String", "myteststr")
+	object stro = new("String", "myteststr")
 	return stro
 end
 

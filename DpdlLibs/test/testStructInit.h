@@ -19,7 +19,7 @@ struct A {
 	struct InA ia
 }
 
-object d = loadObj("String", "some test data")
+object d = new("String", "some test data")
 
 struct InA myina
 myina.val = 888

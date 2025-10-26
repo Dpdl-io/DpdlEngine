@@ -25,7 +25,7 @@ The Dpdl API's are available as:
 
 ### Native JVM APIs
 
-Dpdl allows to load and access java and JVM compatible classes and methods (JRE and external java libraries) via the dedicated Dpdl API functions **`loadObj(..)`** and **`getObj(..)`**.
+Dpdl allows to load and access java and JVM compatible classes and methods (JRE and external java libraries) via the dedicated Dpdl API functions **`new(..)`** and **`getObj(..)`**.
 
 This allows Dpdl to access a broad set of API's and libraries.
 
@@ -40,7 +40,7 @@ By default 'DpdlEngine lite' includes the Java <ins>**JRE API**</ins>, the <ins>
 **Example:** using a java JRE class 'java.util.MashMap'
 
 ```python
-object myhashmap = loadObj("HashMap")
+object myhashmap = new("HashMap")
 
 myhashmap.put("my key1", "my value 1")
 
@@ -65,7 +65,7 @@ raise(load_lib, "Error in loading java lib")
 
 # now we can instantiate a Dpdl object from the contained java classes
 
-object myobj = loadObj("MyTestClass")
+object myobj = new("MyTestClass")
 
 # use the obj...
 object d = myobj.getMyData()
@@ -171,8 +171,8 @@ The following API function are implemented directly in the DpdlEngine core:
 include(string inc_path) return int
 import(string lib_path) return int
 
+new(string name, object params, ...) return object
 getObj(string name) return object
-loadObj(string name, object params, ...) return object
 refObj(string name) return object
 loadCode(string dpdl_script_ref, object args, ...) return object
 genObjCode(object dpdl_obj) return object obj

@@ -54,7 +54,7 @@ println("testing types...")
 char c = 'a'
 println("my char: " + c)
 
-object str = loadObj("String", "Dpdl_o")
+object str = new("String", "Dpdl_o")
 println("str: " + str)
 
 char c_old = 'o'
@@ -116,7 +116,7 @@ println("* sres: " + sres)
 sres = s1 / s2
 println("/ sres: " + sres)
 
-object so = loadObj("Short", "10")
+object so = new("Short", "10")
 println("so: " + so)
 
 struct myDataNum num

@@ -43,7 +43,7 @@ class Animal {
 	end
 
 	func getHashMap()
-		object h_map = loadObj("HashMap")
+		object h_map = new("HashMap")
 
 		info_arr[] = array(info)
 		int i = 0

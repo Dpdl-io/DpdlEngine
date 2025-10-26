@@ -20,7 +20,7 @@ object headers = get.headers()
 string web_content = get.text()
 
 if(response_code == 200)
-	object check_url = loadObj("String", web_content)
+	object check_url = new("String", web_content)
 
 	bool check_ok = check_url.contains("Dpdl (Dynamic Packet Definition Language) Demo validator 260a5348b")
 

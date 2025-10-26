@@ -34,7 +34,7 @@ println("")
 
 println("initialization with constructor:")
 
-object so = loadObj("String", "MEGA")
+object so = new("String", "MEGA")
 
 class A mya(23, "a Test is this", so)
 

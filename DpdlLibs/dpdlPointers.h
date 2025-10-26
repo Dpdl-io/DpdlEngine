@@ -41,7 +41,7 @@ println("testing pointers...")
 println("")
 
 # variables
-object test_obj = loadObj("String", "MEGA")
+object test_obj = new("String", "MEGA")
 string s = "mega"
 int x = 10
 int z = 3
@@ -68,7 +68,7 @@ println("Value changed: " + *xp)
 
 float f = 1.0
 double d = 2.0d
-object str = loadObj("String", "TestPtr")
+object str = new("String", "TestPtr")
 
 println("assign pointers...")
 println("")

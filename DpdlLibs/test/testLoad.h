@@ -24,7 +24,7 @@ println("mystr: " + myload.mystr)
 myload.s = "assigning a new str"
 println("s: " + myload.s)
 
-object mynewstr = loadObj("String", "This is my NEW str")
+object mynewstr = new("String", "This is my NEW str")
 myload.mystr = mynewstr
 println("NEW mystr: " + myload.mystr)
 

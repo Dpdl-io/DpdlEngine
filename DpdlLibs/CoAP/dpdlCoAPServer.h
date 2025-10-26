@@ -23,7 +23,7 @@ string resource_value = "Hello Dpdl CoAP"
 bool status
 
 println("starting CoAP server...")
-object coap_server = loadObj("DpdlCoAPServer", port, max_block_size, verbose, write_mode, resource, resource_type, resource_value)
+object coap_server = new("DpdlCoAPServer", port, max_block_size, verbose, write_mode, resource, resource_type, resource_value)
 coap_server.start()
 println("started successfully")
 # wait for the server to boot

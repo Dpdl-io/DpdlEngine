@@ -14,7 +14,7 @@ func dpdl_javafx_start(object stage)
 
 	println("loading WebView")
 
-	object browser = loadObj("WebView")
+	object browser = new("WebView")
 	object web_engine = browser.getEngine()
 
 	web_engine.load("https://www.dpdl.io")
@@ -25,7 +25,7 @@ func dpdl_javafx_start(object stage)
 
 	object color = getObj("paint.Color")
 
-	object scene = loadObj("Scene", browser, 750.0d, 800.0d, color.web("#666970"))
+	object scene = new("Scene", browser, 750.0d, 800.0d, color.web("#666970"))
 
 	stage.setScene(scene)
 	stage.show()
@@ -37,12 +37,12 @@ println("starting web app...")
 object runtime = getObj("Platform")
 runtime.startup(thread.getRunnable())
 
-object root = loadObj("scene.Group")
+object root = new("scene.Group")
 object style = root.getStyleClass()
 
 style.add("browser")
 
 println("starting App....")
 
-object app = loadObj("DpdlJavaFXApp")
+object app = new("DpdlJavaFXApp")
 app.initApp()

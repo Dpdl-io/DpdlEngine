@@ -22,7 +22,7 @@ bool b = true
 raise(b, "b == false")
 
 println("testing object raise")
-object o = loadObj("String", "test")
+object o = new("String", "test")
 raise(o, "o == null")
 
 println("testing bool expression raise")

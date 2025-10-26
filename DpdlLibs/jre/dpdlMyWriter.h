@@ -12,13 +12,13 @@
 
 class MyWriter : refObj("BufferedWriter") {
 
-	object header = loadObj("String", "some data init head str")
+	object header = new("String", "some data init head str")
 
 	object file_writer = null
 
 	func MyWriter(string file_n, int off)
 
-		file_writer = loadObj("FileWriter", file_n)
+		file_writer = new("FileWriter", file_n)
 
 		raise(file_writer, "could not open file: " + file_n)
 

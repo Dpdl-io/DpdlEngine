@@ -23,13 +23,13 @@ end
 # main
 println("Dpdl embedded C and Python example")
 println("")
-object my_java_obj = loadObj("String", "This is a test to access java API via Dpdl, every java class or library can be accessed in this way")
+object my_java_obj = new("String", "This is a test to access java API via Dpdl, every java class or library can be accessed in this way")
 println(my_java_obj)
 println("")
 println("let's start...")
 println("")
 # we allocate a java object java.lang.Hashtable
-object table = loadObj("Hashtable")
+object table = new("Hashtable")
 table.put("dpdl", "Dpdl")
 table.put("embed", "executes")
 table.put("c", "C")

@@ -35,8 +35,8 @@ func addToRecordStore(string name, string phoneNR, string email)
 	object entry
 	if(PTR_RS != -1)
 		println("adding record to recordstore...")
-		object baos = loadObj("ByteArrayOutputStream")
-		object outputStream = loadObj("DataOutputStream", baos)
+		object baos = new("ByteArrayOutputStream")
+		object outputStream = new("DataOutputStream", baos)
 			
 		outputStream.writeUTF(name)
 		outputStream.writeUTF(phoneNR)
@@ -44,7 +44,7 @@ func addToRecordStore(string name, string phoneNR, string email)
 
 		object byte_arr = baos.toByteArray()
 			
-		entry = loadObj("String", byte_arr)
+		entry = new("String", byte_arr)
 		int id = DPDLLIB_addRSData(PTR_RS, entry.toString())
 	else
 		println("Error opening record store for writing")

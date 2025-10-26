@@ -21,7 +21,7 @@ println("content: " + content)
 println("")
 println("allocating DpdlJson...")
 object dpdl_json = getObj("DpdlJson")
-object json_content = loadObj("String", content)
+object json_content = new("String", content)
 
 println("parsing json...")
 object json = dpdl_json.parseObj(json_content)

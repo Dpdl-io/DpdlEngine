@@ -120,21 +120,21 @@ func buildAxes()
 
 	object color = getObj("paint.Color")
 
-	object redMaterial = loadObj("PhongMaterial")
+	object redMaterial = new("PhongMaterial")
 	redMaterial.setDiffuseColor(color.DARKRED)
 	redMaterial.setSpecularColor(color.RED)
 
-	object greenMaterial = loadObj("PhongMaterial")
+	object greenMaterial = new("PhongMaterial")
 	greenMaterial.setDiffuseColor(color.DARKGREEN)
 	greenMaterial.setSpecularColor(color.GREEN)
 
-	object blueMaterial = loadObj("PhongMaterial")
+	object blueMaterial = new("PhongMaterial")
 	blueMaterial.setDiffuseColor(color.DARKBLUE)
 	blueMaterial.setSpecularColor(color.BLUE)
 
-	object xAxis = loadObj("shape.Box", AXIS_LENGTH, 1.0d, 1.0d)
-	object yAxis = loadObj("shape.Box", 1.0d, AXIS_LENGTH, 1.0d)
-	object zAxis = loadObj("shape.Box", 1.0d, 1.0d, AXIS_LENGTH)
+	object xAxis = new("shape.Box", AXIS_LENGTH, 1.0d, 1.0d)
+	object yAxis = new("shape.Box", 1.0d, AXIS_LENGTH, 1.0d)
+	object zAxis = new("shape.Box", 1.0d, 1.0d, AXIS_LENGTH)
 
 	xAxis.setMaterial(redMaterial)
 	yAxis.setMaterial(greenMaterial)
@@ -153,45 +153,45 @@ func buildMolecule()
 
 	object color = getObj("paint.Color")
 
-	object redMaterial = loadObj("PhongMaterial")
+	object redMaterial = new("PhongMaterial")
 	redMaterial.setDiffuseColor(color.DARKRED)
 	redMaterial.setSpecularColor(color.RED)
 
-	object whiteMaterial = loadObj("PhongMaterial")
+	object whiteMaterial = new("PhongMaterial")
 	whiteMaterial.setDiffuseColor(color.WHITE)
 	whiteMaterial.setSpecularColor(color.LIGHTBLUE)
 
-	object greyMaterial = loadObj("PhongMaterial")
+	object greyMaterial = new("PhongMaterial")
 	greyMaterial.setDiffuseColor(color.DARKGREY)
 	greyMaterial.setSpecularColor(color.GREY)
 
-	object moleculeXform = loadObj("DpdlTestForm")
-	object oxygenXform = loadObj("DpdlTestForm")
-	object hydrogen1SideXform = loadObj("DpdlTestForm")
-	object hydrogen1Xform = loadObj("DpdlTestForm")
-	object hydrogen2SideXform = loadObj("DpdlTestForm")
-	object hydrogen2Xform = loadObj("DpdlTestForm")
+	object moleculeXform = new("DpdlTestForm")
+	object oxygenXform = new("DpdlTestForm")
+	object hydrogen1SideXform = new("DpdlTestForm")
+	object hydrogen1Xform = new("DpdlTestForm")
+	object hydrogen2SideXform = new("DpdlTestForm")
+	object hydrogen2Xform = new("DpdlTestForm")
 
-	object oxygenSphere = loadObj("Sphere", 40.0d)
+	object oxygenSphere = new("Sphere", 40.0d)
 	oxygenSphere.setMaterial(redMaterial)
 
-	object hydrogen1Sphere = loadObj("Sphere", 30.0d)
+	object hydrogen1Sphere = new("Sphere", 30.0d)
 	hydrogen1Sphere.setMaterial(whiteMaterial)
 	hydrogen1Sphere.setTranslateX(0.0d)
 
-	object hydrogen2Sphere = loadObj("Sphere", 30.0d)
+	object hydrogen2Sphere = new("Sphere", 30.0d)
 	hydrogen2Sphere.setMaterial(whiteMaterial)
 	hydrogen2Sphere.setTranslateZ(0.0d)
 
 	object rotate = getObj("Rotate")
 
-	object bond1Cylinder = loadObj("Cylinder", 5.0d, 100.0d)
+	object bond1Cylinder = new("Cylinder", 5.0d, 100.0d)
 	bond1Cylinder.setMaterial(greyMaterial)
 	bond1Cylinder.setTranslateX(50.0d)
 	bond1Cylinder.setRotationAxis(rotate.Z_AXIS)
 	bond1Cylinder.setRotate(90.0d)
 
-	object bond2Cylinder = loadObj("Cylinder", 5.0d, 100.0d)
+	object bond2Cylinder = new("Cylinder", 5.0d, 100.0d)
 	bond2Cylinder.setMaterial(greyMaterial)
 	bond2Cylinder.setTranslateX(50.0d)
 	bond2Cylinder.setRotationAxis(rotate.Z_AXIS)
@@ -237,18 +237,18 @@ println("starting...")
 object runtime = getObj("Platform")
 runtime.startup(thread.getRunnable())
 
-object root = loadObj("scene.Group")
-object axisGroup = loadObj("DpdlTestForm")
-object moleculeGroup = loadObj("DpdlTestForm")
-object world = loadObj("DpdlTestForm")
+object root = new("scene.Group")
+object axisGroup = new("DpdlTestForm")
+object moleculeGroup = new("DpdlTestForm")
+object world = new("DpdlTestForm")
 
 bool b = true
 
-object camera = loadObj("PerspectiveCamera", b)
+object camera = new("PerspectiveCamera", b)
 
-object cameraXform = loadObj("DpdlTestForm")
-object cameraXform2 = loadObj("DpdlTestForm")
-object cameraXform3 = loadObj("DpdlTestForm")
+object cameraXform = new("DpdlTestForm")
+object cameraXform2 = new("DpdlTestForm")
+object cameraXform3 = new("DpdlTestForm")
 
 object depthtest = getObj("DepthTest")
 object color = getObj("paint.Color")
@@ -269,11 +269,11 @@ println("loading scene...")
 raise(root, "root Group scene is null")
 
 bool bs = true
-object scene = loadObj("Scene", root, 1024.0d, 768.0d, bs)
+object scene = new("Scene", root, 1024.0d, 768.0d, bs)
 scene.setFill(color.GREY)
 
 println("starting App....")
-object app = loadObj("DpdlJavaFXApp")
+object app = new("DpdlJavaFXApp")
 app.initApp()
 
 # mouse & key event handling
@@ -283,9 +283,9 @@ object camRotX = cameraXform.rx
 
 object cam2Trans = cameraXform2.t
 
-object mouse_event_handler = loadObj("MouseEventHandler")
+object mouse_event_handler = new("MouseEventHandler")
 scene.setOnMouseDragged(mouse_event_handler)
 
-object key_event_handler = loadObj("KeyEventHandler")
+object key_event_handler = new("KeyEventHandler")
 scene.setOnKeyPressed(key_event_handler)
 

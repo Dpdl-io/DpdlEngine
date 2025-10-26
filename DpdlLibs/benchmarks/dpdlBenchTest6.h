@@ -35,7 +35,7 @@ class A {
 
 class B {
 	string id = "B"
-	object so = loadObj("String", id)
+	object so = new("String", id)
 	object values = arr(1.0, 2, 3, 4, 5, 6.3d, 7s, 8, 9L, "x", "y", "z", so)
 
 	func getId() string

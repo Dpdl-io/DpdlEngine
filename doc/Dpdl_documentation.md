@@ -123,7 +123,7 @@ char c = 'a'
 bool t = true
 var v = "some variable type which is dispatched at runtime"
 class myClass cl
-object myobj = loadObj(...)
+object myobj = new(...)
 object myobj_static = getObj(...)
 struct myStruct a
 enum myenum e
@@ -142,7 +142,7 @@ double arr_d_ini[] = {1.0d, 2.0d, 3.0d}
 short arr_s_ini[] = {10s, 20s, 30s}
 byte arr_b_ini[] = {1B, 2B, 0x03B}
 char arr_c_ini[] = {'a', 'b', 'c'}
-var arr_v_ini[] = {"can contain all types", 23.0d, loadObj(HashMap")}
+var arr_v_ini[] = {"can contain all types", 23.0d, new(HashMap")}
 
 # dynamic arrays (can grow and shrink in size)
 
@@ -590,7 +590,7 @@ int myiarr[] = {23, 369}
 The 'var' type array can contain all types available
 
 ```python
-object so = loadObj("String", "a test str2")
+object so = new("String", "a test str2")
 
 var myvarr[] = {1, "a test str1", so}
 ```
@@ -741,7 +741,7 @@ class A {
 
 }
 
-object so = loadObj("String", "my data...")
+object so = new("String", "my data...")
 
 # instance with constructor
 class A mya(23, "this is a Test", so)
@@ -910,7 +910,7 @@ struct myStruct {
 	long l = 1000L
 	byte b = 0x01B
 	string s = "Test"
-	object so = loadObj("String", "my java obj in struct")
+	object so = new("String", "my java obj in struct")
 		
 	println("myStruct: " + s)
 	
@@ -963,7 +963,7 @@ struct A {
 	object data
 }
 
-object d = loadObj("String", "some test data")
+object d = new("String", "some test data")
 
 struct A mya = {23, 0.3, 0.6, "Test", d}
 
@@ -980,7 +980,7 @@ struct A {
 	object data
 }
 
-object d = loadObj("String", "some test data")
+object d = new("String", "some test data")
 
 struct A mya
 
@@ -1066,7 +1066,7 @@ struct A {
 	long l = 1000L
 	byte b = 0x01B
 	string s = "Test"
-	object so = loadObj("String", "my java obj in struct")
+	object so = new("String", "my java obj in struct")
 	
 	>>java
 	public int myNativeJavaFunc(int val){
@@ -1357,7 +1357,7 @@ Dpdl can access the underlying classes of a given java compliant JRE implementat
 
 The classes are loaded and wrapped in a DpdlObject that is handled by the Dpdl runtime which make the java classes accessible to Dpdl.
 
-Static classes can be accessed via **`getObj(..)`** function, and instance classes can be created via **`loadObj(..)`** function.
+Static classes can be accessed via **`getObj(..)`** function, and instance classes can be created via **`new(..)`** function.
 
 The java class references are resolved via the class definition file which can be updated statically to resolve further classes, and can be also dynamically loaded and updated via the function call 'DPDLSYS_registerLib(...)'
 
@@ -1380,7 +1380,7 @@ int day_ = cal_inst.get(calendar.DATE)
 println("day: " + day_)
 
 # instance class loading
-object str = loadObj("String", "Test MyString")
+object str = new("String", "Test MyString")
 int idx = str.indexOf(" ")
 string substr = str.substring(idx)
 println(substr)
@@ -1418,7 +1418,7 @@ raise(load_lib, "Error in loading java lib")
 
 # now we can instantiate a Dpdl object from the contained java classes
 
-object myobj = loadObj("MyTestClass")
+object myobj = new("MyTestClass")
 
 string mydata = myobj.getData()
 
@@ -1433,7 +1433,7 @@ Referencing object variables currently support 1 level of indirection only ('dat
 
 This is the correct approach:
 ```python
-object date = loadObj("Date")
+object date = new("Date")
 object datestr = date.toString()
 println(datestr.toUpperCase())
 ```
@@ -1459,7 +1459,7 @@ println("test loadCode(..) with dpdl script LoadCodeFunc.h")
 object mycode = loadCode("LoadCodeFunc.h")
 
 string mystr1 = "Test"
-object mystr2 = loadObj("String", "MEGA")
+object mystr2 = new("String", "MEGA")
 
 mycode.testFunc("LoadCodeFunc", mystr1, mystr2)
 mycode.ID = "set my id"
@@ -1486,7 +1486,7 @@ end
 
 The constructor is called if a parameter is supplied
 ```python
-object mymap = loadObj("HashMap")
+object mymap = new("HashMap")
 object mycode = loadCode("LoadCodeFunc.h", mymap)
 ```
 
@@ -1499,7 +1499,7 @@ object mycode = loadCode("LoadCodeFunc.h", mymap)
 
 All types in Dpdl can be handled as objects.
 
-The type 'object' is in first place used to load java objects available within Dpdl (see 'loadObj(...)' function), but can serve as a super type compatible with all other types.
+The type 'object' is in first place used to load java objects available within Dpdl (see 'new(...)' function), but can serve as a super type compatible with all other types.
 
 Every type can be assigned to an **`object`** variable. But not the other way around.
 
@@ -1643,7 +1643,7 @@ Whenever a java object is loaded, the type of the variable returned by **`typeof
 **example:**
 
 ```python
-object map = loadObj("HashMap")
+object map = new("HashMap")
 println("variable 'map' is of type: " + typeof(map))
 ```
 The above statement will return **`HashMap`**
@@ -1750,7 +1750,7 @@ bool b = true
 raise(b, "b == false")
 
 println("testing object raise")
-object o = loadObj("String", "test")
+object o = new("String", "test")
 raise(o, "o == null")
 
 println("testing bool expression raise")
@@ -1870,7 +1870,7 @@ Dpdl API's are available as:
 
 As Dpdl can access also java classes, the whole JVM JRE API and any other configured or loaded java compatible library is available inside Dpdl.
 
-Refer to the java JRE documentation for Dpdl objects loaded with **`loadObj(..)`** and **`getObj(..)`**
+Refer to the java JRE documentation for Dpdl objects loaded with **`new(..)`** and **`getObj(..)`**
 
 ### API Documentation
 

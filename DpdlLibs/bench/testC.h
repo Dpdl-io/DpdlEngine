@@ -57,7 +57,7 @@ println("starting test C bench...")
 # buffer key
 string buf_key = "dpdlbuf_myalg"
 
-object hm = loadObj("HashMap")
+object hm = new("HashMap")
 hm.put("test", "sometest")
 
 object *hm_p = &hm

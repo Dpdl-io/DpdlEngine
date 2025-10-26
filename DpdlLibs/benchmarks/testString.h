@@ -13,7 +13,7 @@
 # main
 println("testing access to jre String class...")
 
-object mystr = loadObj("String", "This is a test")
+object mystr = new("String", "This is a test")
 
 int len = mystr.length()
 

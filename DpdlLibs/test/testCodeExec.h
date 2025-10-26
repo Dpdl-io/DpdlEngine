@@ -46,7 +46,7 @@ struct S {
 	int x = 23
 	int y = 888
 	string str = "S"
-	object so = loadObj("String", "This is a test")
+	object so = new("String", "This is a test")
 
 	func print()
 		println("S:")

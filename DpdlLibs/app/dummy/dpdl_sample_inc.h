@@ -89,7 +89,7 @@ func getAppName()
 end
 
 func fillDataMap()
-	object hm = loadObj("HashMap")
+	object hm = new("HashMap")
 
 	string val
 	int c = 0

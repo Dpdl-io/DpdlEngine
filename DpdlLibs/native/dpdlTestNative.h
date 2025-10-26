@@ -65,7 +65,7 @@ string mydata_str = "this is the content MEGA I write to my file"
 object ptrstr = libc.malloc(1024)
 ptrstr.setString(0L, mydata_str, "utf-8")
 
-object sz = loadObj("size_t")
+object sz = new("size_t")
 sz.setValue(strlen(mydata_str))
 println("data size: " + sz)
 
@@ -88,14 +88,14 @@ char_dest.setMemory(0L, 1024L, 0x00B)
 
 println("char_dest is of type: " + typeof(char_src))
 
-object size = loadObj("size_t")
+object size = new("size_t")
 size.setValue(1024L)
 int comp = libc.memcmp(char_src, char_dest, size)
 if(comp > 0)
 	println("'*char_dest' is less than *char_src")
 fi
 
-object ptr_dest = loadObj("PointerByReference")
+object ptr_dest = new("PointerByReference")
 ptr_dest.setValue(char_dest)
 object ptr_content = ptr_dest.getValue()
 
@@ -103,7 +103,7 @@ println("before copy memory is: " + ptr_content.getString(0L))
 
 println("copying from source buffer...")
 
-object szm = loadObj("size_t")
+object szm = new("size_t")
 szm.setValue(1024L)
 
 object p = libc.memcpy(char_dest, char_src, szm)

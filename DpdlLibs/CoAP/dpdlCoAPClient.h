@@ -35,7 +35,7 @@ int response_counter = 0
 string original_msg = "null"
 
 println("allocating DpdlCoAPClient..")
-object dpdl_coap = loadObj("DpdlCoAPClient", coap_uri, port, max_block_size, verbose)
+object dpdl_coap = new("DpdlCoAPClient", coap_uri, port, max_block_size, verbose)
 println("done")
 object client
 object response_handler
@@ -44,7 +44,7 @@ if(dpdl_coap != null)
 	client = cast(client) # we make sure it's a DpdlObject
 	
 	println("registering response handler...")
-	response_handler = loadObj("DpdlCoAPResponseHandler", client)
+	response_handler = new("DpdlCoAPResponseHandler", client)
 
 	println("sending GET request..")
 	dpdl_coap.request(coap_uri, "GET", null, null, response_handler)

@@ -49,7 +49,7 @@ char ch5 = 'L'
 char ch6 = 'X'
 char ch7 = '\0'
 
-object size = loadObj("size_t")
+object size = new("size_t")
 size.setValue(4096L)
 
 long size_l = size.longValue()

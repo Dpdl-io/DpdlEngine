@@ -8,7 +8,7 @@
 
 println("basic test java String....")
 
-object mystr = loadObj("String", "This is a test")
+object mystr = new("String", "This is a test")
 
 int len = mystr.length()
 

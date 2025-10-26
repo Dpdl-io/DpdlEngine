@@ -57,7 +57,7 @@ struct myStruct {
 	bool bo = true
 	string s = "Test my code"
 	var v = "a generic var type, dispatched at runtime"
-	object o = loadObj("String", "my java obj str")
+	object o = new("String", "my java obj str")
 
 	struct A mya
 	enum status stat
@@ -219,7 +219,7 @@ object stro = "a Test str"
 
 bool b = true
 struct myStruct aa
-object myo = loadObj("String", "my java object")
+object myo = new("String", "my java object")
 var v = "my var"
 var v2 = 10
 
@@ -245,7 +245,7 @@ println("the variable 'i' is of type: " + typeof(i))
 println("------------------------")
 
 # use of a java.lang.String
-object mystr2 = loadObj("String", "my Dpdl java String obj")
+object mystr2 = new("String", "my Dpdl java String obj")
 
 println("mystr2: " + mystr2)
 bool isIn = mystr2.contains("Dpdl")
@@ -264,7 +264,7 @@ println("date: " + mydate)
 println("------------------------")
 
 # use a java.util.HashMap
-object myhm = loadObj("HashMap")
+object myhm = new("HashMap")
 
 myhm.put("my", 1)
 myhm.put("Dpdl", 2)

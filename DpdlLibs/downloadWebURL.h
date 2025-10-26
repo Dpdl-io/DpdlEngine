@@ -6,19 +6,19 @@
 # e-mail: info@dpdl.io
 #
 #
-object url = loadObj("URL", "https://www.dpdl.io")
+object url = new("URL", "https://www.dpdl.io")
 
 object url_connection = url.openConnection()
 
 raise(url_connection, "Error in opening connection")
 
 object url_in = url_connection.getInputStream()
-object url_in_read = loadObj("InputStreamReader", url_in)
+object url_in_read = new("InputStreamReader", url_in)
 
 raise(url_in_read, "Error in opening input stream")
 
-object buf_read = loadObj("BufferedReader", url_in_read)
-object buf_str = loadObj("String", "")
+object buf_read = new("BufferedReader", url_in_read)
+object buf_str = new("String", "")
 string web_content = ""
 while(buf_str != null)
 	buf_str = buf_read.readLine()
@@ -31,7 +31,7 @@ println(web_content)
 
 string myfile = "./Test/web_content.txt"
 println("writing file: " + myfile)
-object file_writer = loadObj("FileWriter", myfile)
+object file_writer = new("FileWriter", myfile)
 file_writer.write(web_content)
 file_writer.flush()
 file_writer.close()

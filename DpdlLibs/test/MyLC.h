@@ -56,6 +56,6 @@ end
 # main
 string s = "this is my loaded Obj"
 int x = 23
-object mystr = loadObj("String", "MyLoadObj str")
+object mystr = new("String", "MyLoadObj str")
 
 return 1

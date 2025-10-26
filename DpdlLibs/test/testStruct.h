@@ -16,10 +16,10 @@ struct B {
 	int y = 20
 	string s = "B"
 	arr[] = "a,b,c,d"
-	object so = loadObj("String", "my java obj " + s)
+	object so = new("String", "my java obj " + s)
 
-	object vec = loadObj("Vector")
-	object hashmap = loadObj("HashMap")
+	object vec = new("Vector")
+	object hashmap = new("HashMap")
 
 	myPrint(s)
 
@@ -77,7 +77,7 @@ struct A {
 	int x = 1
 	int y = 2
 	string s = "A"
-	object so = loadObj("String", "my java obj " + s)
+	object so = new("String", "my java obj " + s)
 	struct B bs
 
 	myPrint(s)

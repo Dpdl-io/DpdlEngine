@@ -13,8 +13,8 @@ println("Testing HTTP get data with embedded Julia code...")
 string url_to_download_1 = "{    \"file_name\": \"see_solutions.html\" , \"url_download\": \"http://www.seesolutions.it\"    }"
 string url_to_download_2 = "{    \"file_name\": \"info_see.jpg\" , \"url_download\": \"http://www.seesolutions.it/images/intro_see.jpg\"    }"
 
-object url1 = loadObj("String", url_to_download_1)
-object url2 = loadObj("String", url_to_download_2)
+object url1 = new("String", url_to_download_1)
+object url2 = new("String", url_to_download_2)
 
 dpdl_stack_push(url1, url2)
 >>julia

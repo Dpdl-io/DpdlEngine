@@ -71,7 +71,7 @@ fi
 println("")
 println("testing access to jre objects...")
 
-object myhash = loadObj("Hashtable")
+object myhash = new("Hashtable")
 
 myhash.put("Dpdl", "1")
 myhash.put("Java", "2")

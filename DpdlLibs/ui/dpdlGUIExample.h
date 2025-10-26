@@ -27,7 +27,7 @@ func myUpdateProc()
 		x = x + 1
 	else
 		x = 0
-		date = loadObj("Date")
+		date = new("Date")
 		date_str = date.toString()
 		date_time.setText(date_str)
 
@@ -50,21 +50,21 @@ bool isCheckbox1Enabled = false
 bool isCheckbox2Enabled = false
 
 object frame_class = getObj("JFrame")
-object frame = loadObj("JFrame")
+object frame = new("JFrame")
 frame.setDefaultCloseOperation(frame_class.EXIT_ON_CLOSE)
 
-object panel = loadObj("JPanel")
-object layout = loadObj("GridLayout", 0, 1)
-object panel_form = loadObj("JPanel")
-object list_model = loadObj("DefaultListModel")
-object list = loadObj("JList", list_model)
-object check_box1 = loadObj("JCheckBox", "Option 1")
-object check_box2 = loadObj("JCheckBox", "Option 2")
-object button = loadObj("JButton")
-object date_time = loadObj("JLabel", "Date:")
-object draw_canvas = loadObj("JPanel")
+object panel = new("JPanel")
+object layout = new("GridLayout", 0, 1)
+object panel_form = new("JPanel")
+object list_model = new("DefaultListModel")
+object list = new("JList", list_model)
+object check_box1 = new("JCheckBox", "Option 1")
+object check_box2 = new("JCheckBox", "Option 2")
+object button = new("JButton")
+object date_time = new("JLabel", "Date:")
+object draw_canvas = new("JPanel")
 
-object event_listener = loadObj("ActionListenerInterface")
+object event_listener = new("ActionListenerInterface")
 
 list.setSize(width-20, height/2)
 list_model.addElement("one")
@@ -97,7 +97,7 @@ int cnt = 0
 object date
 string date_str
 object graphics
-object color = loadObj("Color", 0, 0, 255)
+object color = new("Color", 0, 0, 255)
 
 int x_, y_
 

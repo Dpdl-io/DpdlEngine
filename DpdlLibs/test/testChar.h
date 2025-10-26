@@ -37,7 +37,7 @@ println("testing types...")
 char c = 'a'
 println("my char: " + c)
 
-object str = loadObj("String", "Dpdl_o")
+object str = new("String", "Dpdl_o")
 println("str: " + str)
 
 char c_old = 'o'

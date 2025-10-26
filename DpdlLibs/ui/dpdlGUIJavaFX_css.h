@@ -32,7 +32,7 @@ println("starting javafx runtime...")
 object runtime = getObj("Platform")
 runtime.startup(thread.getRunnable())
 
-object file = loadObj("File", "./DpdlLibs/ui/fxml/myGUIcss.fxml")
+object file = new("File", "./DpdlLibs/ui/fxml/myGUIcss.fxml")
 object file_uri = file.toURI()
 object fxml_url = file_uri.toURL()
 
@@ -42,15 +42,15 @@ object parent_root = fxml_load.load(fxml_url)
 raise(parent_root, "Error in loading fxml definition")
 
 println("loading css...")
-object css_file = loadObj("File", "./DpdlLibs/ui/fxml/demo.css")
+object css_file = new("File", "./DpdlLibs/ui/fxml/demo.css")
 object css_file_uri = css_file.toURI()
 object css_file_url = css_file_uri.toURL()
 string css_url_str = css_file_url.toExternalForm()
 
-object scene = loadObj("Scene", parent_root, 800.0d, 450.0d)
+object scene = new("Scene", parent_root, 800.0d, 450.0d)
 object scene_css = scene.getStylesheets()
 scene_css.add(css_url_str)
 
 println("starting App....")
-object app = loadObj("DpdlJavaFXApp")
+object app = new("DpdlJavaFXApp")
 app.initApp()

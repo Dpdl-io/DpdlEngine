@@ -34,7 +34,7 @@ println("starting javafx runtime...")
 object runtime = getObj("Platform")
 runtime.startup(thread.getRunnable())
 
-object file = loadObj("File", "./DpdlLibs/ui/fxml/myGUIreg.fxml")
+object file = new("File", "./DpdlLibs/ui/fxml/myGUIreg.fxml")
 object file_uri = file.toURI()
 object fxml_url = file_uri.toURL()
 
@@ -43,8 +43,8 @@ object parent_root = fxml_load.load(fxml_url)
 
 raise(parent_root, "Error in loading fxml definition")
 
-object scene = loadObj("Scene", parent_root)
+object scene = new("Scene", parent_root)
 
 println("starting App....")
-object app = loadObj("DpdlJavaFXApp")
+object app = new("DpdlJavaFXApp")
 app.initApp()

@@ -14,7 +14,7 @@ end
 struct A {
 	int x = 1
 	string s = "A"
-	object so = loadObj("String", "my java obj A")
+	object so = new("String", "my java obj A")
 	myPrint(s)
 
 	func thisAFunc()

@@ -161,7 +161,7 @@ println("mystr: " + myload.mystr)
 myload.s = "assigning a new str"
 println("s: " + myload.s)
 
-object mynewstr = loadObj("String", "This is my NEW str")
+object mynewstr = new("String", "This is my NEW str")
 myload.mystr = mynewstr
 println("NEW mystr: " + myload.mystr)
 
@@ -189,7 +189,7 @@ end
 # main
 string s = "this is my loaded Obj"
 int x = 23
-object mystr = loadObj("String", "MyLoadObj str")
+object mystr = new("String", "MyLoadObj str")
 
 return 1
 ```
@@ -411,7 +411,7 @@ struct S {
 	int x = 23
 	int y = 888
 	string str = "S"
-	object so = loadObj("String", "This is a test")
+	object so = new("String", "This is a test")
 
 	func print()
 		println("S:")

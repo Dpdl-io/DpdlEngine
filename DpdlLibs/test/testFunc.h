@@ -60,7 +60,7 @@ long l = 10L
 byte b = 0x01B
 bool bo = true
 var v = "This is a var"
-object strobj = loadObj("String", "my string obj")
+object strobj = new("String", "my string obj")
 struct myA a
 
 println("calling function myFunc(..)...")

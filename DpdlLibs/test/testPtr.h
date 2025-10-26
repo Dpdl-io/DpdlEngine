@@ -95,12 +95,12 @@ println("*avp: " + *avp)
 
 println("testing object pointers...")
 
-object str = loadObj("String", "Test")
+object str = new("String", "Test")
 object *pstr = &str
 println("str: " + str)
 println("pstr: " + *pstr)
 
-str = loadObj("String", "Test2")
+str = new("String", "Test2")
 
 println("pstr: " + *pstr)
 printStr(*pstr)
@@ -123,7 +123,7 @@ println("test b2: " + b2)
 
 println("######################################")
 
-object map = loadObj("HashMap")
+object map = new("HashMap")
 map.put(1, "test1")
 map.put(2, "test2")
 map.put(3, "test3")

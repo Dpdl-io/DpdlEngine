@@ -42,7 +42,7 @@ println("ebedded C exit code: " + exit_code)
 
 # again Dpdl...
 
-object str = loadObj("String", "Dpdl embedded C")
+object str = new("String", "Dpdl embedded C")
 bool b = str.contains("C")
 println("Dpdl contains C: " + b)
 println("testing dpdlbuf_...")

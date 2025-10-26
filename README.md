@@ -319,7 +319,7 @@ class Animal {
 	end
 
 	func getHashMap()
-		object h_map = loadObj("HashMap")
+		object h_map = new("HashMap")
 
 		info_arr[] = array(info)
 		int i = 0
@@ -400,7 +400,7 @@ The Dpdl code below illustrates the use of a dpdl class that implements a functi
 ```c++
 class MyWriter {
 
-	object header = loadObj("String", "some data init head str")
+	object header = new("String", "some data init head str")
 
 	object file_writer = null
 	object buf_writer = null
@@ -409,11 +409,11 @@ class MyWriter {
 
 		println("new MyWriter()-> file:" + file_n + " offset:" + off)
 
-		file_writer = loadObj("FileWriter", file_n)
+		file_writer = new("FileWriter", file_n)
 
 		raise(file_writer, "could not open file: " + file_n)
 
-		buf_writer = loadObj("BufferedWriter", file_writer)
+		buf_writer = new("BufferedWriter", file_writer)
 
 		println("type of buf_writer is: " + typeof(buf_writer))
 
@@ -668,7 +668,7 @@ The Dpdl API allows to access all classes and methods of the <ins>underlying JVM
 ```python
 object map, s
 
-map=loadObj("HashMap")
+map=new("HashMap")
 map.put(1,"Dpdl")
 map.put(2,"Packet")
 map.put(3,"Definition")
@@ -717,7 +717,7 @@ Here just a quick example:
 ```python
 println("Dpdl can also embed native java code...")
 
-object mystr = loadObj("String", "this is a Dpdl object mapped to java api, a str parameter")
+object mystr = new("String", "this is a Dpdl object mapped to java api, a str parameter")
 int x = 23
 
 dpdl_stack_push(mystr, "./Test/TestRead.txt", x)
@@ -882,7 +882,7 @@ println("embedded C exit code: " + exit_code);
 
 # again Dpdl code...
 
-object str = loadObj("String", "Dpdl embedded C")
+object str = new("String", "Dpdl embedded C")
 bool b = str.contains("C")
 println("Dpdl contains C: " + b)
 ```
@@ -933,7 +933,7 @@ Dpdl runs on a wide range of platforms and supports also a small footprint kilob
 * Java versions > 1.3 and later
 * Java ME CLDC & GCF (JSR 360)
 * Java ME Embedded Profile (JSR 361)
-* Java 1.1 until 1.3 (without 'loadObj' and 'getObj' methods)
+* Java 1.1 until 1.3 (without 'new' and 'getObj' methods)
 * Platforms with ANSI C compiler where the included kilobyte range java virtual machine can be compiled
 
 DpdlEngine V1.0 has been tested on:
