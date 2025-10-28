@@ -10,7 +10,7 @@ developed by
 
 ## New features
 
-* Support for in-code Asynchronous Multi-Agent development
+* NEW Support for in-code Asynchronous Multi-Agent development
 
 * NEW Dpdl language plug-in for 'Scheme' is now available
 
@@ -45,6 +45,7 @@ update of OCaml libraries might be required.
 
 The following programming language plug-ins will be developed:
 
-* Implement language plug-in to enable the embedding of 'octave' programming language -> keyword '**>>octave**'
-* Implement language plug-in to enable the embedding of 'go' programming language -> keyword '**>>go**'
+* Dpdl language plug-in to enable the embedding of 'Dart' programming language code -> keyword '**>>dart**'
+* Dpdl language plug-in to enable the embedding of 'octave' programming language code -> keyword '**>>octave**'
+* Dpdl language plug-in to enable the embedding of 'go' programming language code -> keyword '**>>go**'
 
