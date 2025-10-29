@@ -839,7 +839,7 @@ The dpdl type `class` can also be derived directly from a java class object. Thi
 
 In the example below a dpdl `class` 'Msg' is created, which is derived from the java JRE object.
 
-In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: `length()`, `toString()`, `getBytes()`, etc. (see java '[String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)' documentation)
+In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: `length()`, `toString()`, `getBytes()`, etc. (see '[java.lang.String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)' documentation)
 
 Within the dpdl class, the methods derived from the java based super-class can be accessed via the **`super`** instance object (ex. **super**.length() )
 
