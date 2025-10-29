@@ -89,7 +89,7 @@ Dpdl introduces the concept of '*embedded code secitons*' that <ins>**enables to
 
 ### Types
 
-Dpdl support the following Types:
+Dpdl supports the following Types:
 
 - **`int`**
 - **`short`**
@@ -157,7 +157,7 @@ my_arr_dyn[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 string s1 = "This is a valid test"
 println("s1: " + s1)
 
-string s2 = 'Also this valid'
+string s2 = 'Also this is valid'
 println('s1: ' + s1)
 println("s1: " + s1)
 ```
@@ -178,7 +178,7 @@ println(mystr)
 
 ```
 
-- Strings support 16-bit Unicode format `UTF-16`
+- Strings support character sets in 16-bit Unicode format `UTF-16`
 
 ```python
 string msg1 = "Hello World"
@@ -186,6 +186,25 @@ string msg2 = "你好世界"
 
 println("I'd like to say: " + msg1 + " and " + msg2)
 ```
+
+- String interpolation with values or expressions
+
+Strings may contain variable identifiers or even complete expressions that are compiled into the string
+
+```python
+int x = 10
+int y = 20
+float z = 23.3333
+object msg = new("String", "Hello test message")
+
+string s = "this is a test"
+
+println("the values are: $x $y $z and the message is: $msg")
+
+println("the expression x + y is equal to: ${x + y} ")
+```
+
+
 
 #### Numbers
 
@@ -818,11 +837,11 @@ Note that in this case the 'class A' function 'printMe(...)' is being overwritte
 
 The dpdl type `class` can also be derived directly from a java class object. This is done by using the `refObj(..)` function.
 
-In the example below a dpdl `class` 'Msg' is created, which is derived from the java object '[String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)'.
+In the example below a dpdl `class` 'Msg' is created, which is derived from the java JRE object.
 
-In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: `length()`, `toString()`, `getBytes()`, etc. (see java 'String' documentation)
+In this way all methods and fields available in the underlying native java object can be called as dpdl functions, for example: `length()`, `toString()`, `getBytes()`, etc. (see java '[String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)' documentation)
 
-Within the dpdl class, the methods derived from the java based super-class can be accessed via the **`this`** instance object (ex. **this**.length() )
+Within the dpdl class, the methods derived from the java based super-class can be accessed via the **`super`** instance object (ex. **super**.length() )
 
 The methods of the java object super-class <ins>can also be overloaded</ins> by dpdl functions and customized.
 
@@ -838,11 +857,11 @@ class Msg : refObj("String") {
 	end
 
 	func printMe()
-		println("message: " + this.toString())
+		println("message: " + super.toString())
 	end
 
 	func getData()
-		return this.getBytes()
+		return super.getBytes()
 	end
 }
 

@@ -29,9 +29,9 @@ class MyWriter : refObj("BufferedWriter") {
 	end
 
 	func init()
-		println("type of super class is: " + typeof(this))
+		println("type of super class is: " + typeof(super))
 
-		this.write(header, 0, header.length())
+		super.write(header, 0, header.length())
 
 		println("started")
 	end
@@ -39,7 +39,7 @@ class MyWriter : refObj("BufferedWriter") {
 	func writeStr(string data, int nr)
 		int i
 		for(i < nr)
-			this.write(data, 0, strlen(data))
+			super.write(data, 0, strlen(data))
 
 			print(".")
 
@@ -47,12 +47,12 @@ class MyWriter : refObj("BufferedWriter") {
 		endfor
 		println("")
 
-		this.newLine()
-		this.flush()
+		super.newLine()
+		super.flush()
 	end
 
 	func close()
-		this.close()
+		super.close()
 	end
 }
 

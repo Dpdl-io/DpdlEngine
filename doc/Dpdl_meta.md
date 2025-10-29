@@ -95,11 +95,11 @@ class MyStr : refObj("String") {
 	end
 
 	func setHash()
-		hash = this.hashCode()
+		hash = super.hashCode()
 	end
 
 	func printit()
-		this.toString()
+		super.toString()
 		println("hash code: " + hash)
 	end
 
