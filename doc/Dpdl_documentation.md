@@ -777,6 +777,25 @@ mya.printit()
 
 Dpdl class type can be derived from a base class (superclass), inheriting all functions and member variables.
 
+The dpdl keyword to subclass a given class from a base-class can either be **`extends`**, or can also be the shorter form **`:`**
+
+```python
+class A {
+	...
+}
+
+class B extends A {
+	...
+}
+
+# OR also in this form
+
+class C : B {
+	...
+}
+
+```
+
 Functions in the base class (super-class) can be overridden by the derived class (sub-class).
 
 The base-class constructor can be called via the function **`super(...)`** that matches the corresponding parameters.
