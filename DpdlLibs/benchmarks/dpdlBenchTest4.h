@@ -17,7 +17,7 @@ func myProc(int t_id, string param)
 
 	setStartTime()
 
-	>>qjs
+	>>js
 	"use strict";
 
 	function myloop(p) {

@@ -46,9 +46,9 @@ Dpdl introduces the concept of '*embedded code sections*' that can be executed w
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
 </p>
 
-The included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data by means of natural language descriptions contained inside Dpdl code, embed it automatically within Dpdl code and execute the code right away or alternatively to be written to a new file and executed in subsequent steps.
+Furthermore, the included **Dpdl language plug-in** 'DpdlAINerd' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data by means of natural language descriptions contained inside Dpdl code, embed it automatically within Dpdl code and execute the code right away or alternatively to be written to a new file and executed in subsequent steps.
 
-The custom '**DpdlPacket**' data container with built-in database technology provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce devices**</ins>.
+The '**DpdlPacket**' is a custom data container with built-in database technology, that provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce systems**</ins>.
 
 ## Dpdl is designed to:
 
@@ -59,7 +59,7 @@ The custom '**DpdlPacket**' data container with built-in database technology pro
 ### * No need to install, compile and configure dev environments
 ### * Self-contained, No additional dependencies required (except user libraries)
 ### * Facilitate rapid prototyping for Hardware programming
-### * Runs on constrained devices
+### * Runs on constrained devices and also Microcontroller units (MCUs)
 ### * Customizable
 ### * Plug-in oriented
 ### * Leverage prototyping with <ins>AI generative code</ins>
@@ -85,7 +85,7 @@ struct Story {
 	string url
 }
 
-# main
+
 string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
 string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
 
@@ -195,7 +195,7 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-[Dpdl language plug-ins (embedded code sections)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
+[Dpdl 'embedded code sections' (Dpdl language plug-ins)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
 
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
@@ -225,17 +225,17 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (J2SE, any JVM platform > 1.3 Spec, JavaME). The core engine runs also on Java 1.1 spec compliant JVMs. This makes it possible to run Dpdl also on very small footprint Virtual Machines
+* **DpdlEngine is optimized to run on a wide range of platforms** (J2SE, any JVM platform > 1.3 Spec, JavaME). The core engine runs also on Java 1.1 spec compliant JVMs
 * **Dpdl API provides access to the complete underlying JVM platform API's and to external java libraries**
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
-* **Automatic code generation and execution of embedded code sections at runtime** (Dpdl language plug-ins)
+* **Automatic code generation and execution of 'embedded code sections' at runtime** (Dpdl language plug-ins)
 * **Multiple 'Dpdl language plug-ins' available (embedded code sections):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
-* **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of Dpdl language plug-ins**
+* **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of 'Dpdl language plug-ins'**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded C code (ANSI C & ISO C99) <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
 * **Wasm runtime** Dpdl language plug-in included allows to access 'Wasm' module functions from Dpdl and from embedded language code. Also WAT code can be directly compiled on-the-fly and executed
-* **Built-in Dpdl scripting engine with support for custom extensions** -> allows to dynamically add language features at runtime
+* **Built-in support for custom extensions** -> allows to dynamically add language features at runtime
 * **Dpdl C API enables to execute Dpdl code embedded within programs written in C** 
 * **On the fly conversion/compilation of Dpdl types 'class' and 'struct' into native java bytecode classes**
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
@@ -249,6 +249,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **JSON**
 * **Easy integration of custom libraries**
 * **Small footprint**, Only **`372 Kb`** for DpdlEngine, that can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
+* **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), without dependencies
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'OpenCL' and 'Wgsl' (WebGPU shading language) Dpdl language plug-in**
 * Open Source **Dpdl language plug-ins**
@@ -985,7 +986,7 @@ The Dpdl framework and API documentation is available via the following links:
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-[Dpdl language plug-ins (embedded code sections)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
+[Dpdl 'embedded code sections' (Dpdl language plug-ins)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
 
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
@@ -1095,20 +1096,20 @@ NOTE: The native Dpdl library 'dpdljulia' needs to be downloaded and deployed se
 
 JavaScript is the ideal programming language for web applications as it's supported by all popular web browsers.
 
-JavaScript code can be embedded within Dpdl via the keyword **`>>js`** or  **`>>qjs`**
+JavaScript code can be embedded within Dpdl via the keyword **`>>js`**
 
 Dpdl allows the embedding of javascript with 2 different Modes:
-1) Using the 'QuickJS' javascript engine from Fabrice Bellard '>>qjs' (Suggested)
-2) Using the 'Nashorn' javascript engine embedded in the Java platform '>>js'
+1) Using the 'QuickJS' javascript engine (default mode)
+2) Using the 'Nashorn' javascript engine available on the Java platform
 
 
 Example:
 
 ```python
-println("testing embedded qjs...")
+println("testing embedded js...")
 
 dpdl_stack_push("my Hello Message!!!")
->>qjs
+>>js
 
 import { fib } from "./DpdlLibs/js/fib_module.js";
 
@@ -1126,12 +1127,12 @@ console.log("fib(10)=", fib(10));
 <<
 
 int exit_code = dpdl_exit_code()
-println("Dpdl qjs exited with exit code: " + exit_code)
+println("embedd3ed js exited with exit code: " + exit_code)
 ```
 
 QuickJS provides a powerful and complete API to interact with the javascript engine at low level.
 Custom native functions and objects can be implemented as shared libraries and loaded in javascript.
-You can find examples in the folder './DpdlLibs/js/'
+You can find examples in the folder [./DpdlLibs/js/](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/js)
 		
 
 ### Embedding of 'Lua' code

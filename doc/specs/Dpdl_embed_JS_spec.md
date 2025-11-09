@@ -13,20 +13,19 @@ developed by
 
 
 
-JavaScript can be executed within Dpdl code with 2 Modes:
+JavaScript can be executed within Dpdl code using the keyword **`>>js`**, and can be executed with 2 Modes:
 
-1) Using the '*QuickJS*' javascript engine from Fabrice Bellard, ES2023 compliant '**>>qjs**' (<ins>Suggested mode</ins>)
-2) Using the '*Nashorn*' javascript engine '**>>js**' -> available only on JRE version 11 to 15
+1) Using the '*QuickJS*' javascript engine, ES2023 compliant (<ins>default mode</ins>)
+2) Using the '*Nashorn*' javascript engine available on the Java platform -> only on JRE version 11 to 15
 
 
-## Mode (1)
+## Mode (1) (default mode)
 
-The embedded JavaScript engine engine used (*QuickJS*) provides a powerful and complete API (supports ES2023 spec https://tc39.es/ecma262/2023/)
-to interact with the javascript engine at low level.
+The embedded JavaScript engine engine used (*QuickJS*) provides a powerful and complete API to interact with javascript at low level (supports ES2023 spec https://tc39.es/ecma262/2023/)
 
 Custom native functions and objects can be implemented as shared libraries and accessed inside javascript code.
 
-You can find examples in the folder './DpdlLibs/js/'
+You can find examples in the folder [./DpdlLibs/js/](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/js)
 
 Refer to the official 'QuickJS' documentation for more info about the functions available:
 
@@ -40,13 +39,13 @@ The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write 
 See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
 
 
-### keyword **`>>qjs`**
+### Example
 
 ```python
-println("testing embedded qjs...")
+println("testing embedded js...")
 
 dpdl_stack_push("my Hello Message!!!")
->>qjs
+>>js
 
 import { fib } from "./DpdlLibs/js/fib_module.js";
 
@@ -64,14 +63,17 @@ console.log("fib(10)=", fib(10));
 <<
 
 int exit_code = dpdl_exit_code()
-println("Dpdl qjs exited with exit code: " + exit_code)
+println("embedded js exited with exit code: " + exit_code)
 ```
 
 ## Mode (2)
 
-### keyword **`>>js`**
+The '*Nashorn*' javascript engine can be activated by explicit configuration via the 'dpdlplugin:' option
+
 
 ```python
+
+dpdl_stack_push("dpdlplugin:nashorn")
 
 dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
 dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
@@ -96,14 +98,13 @@ int val = 23
 arr[] = [1, 2, 3, 4]
 
 dpdl_stack_push(val, arr)
->>qjs
+>>js
 	var sa;
 	var arr;
 	var v;
 	if(scriptArgs.length > 1){
 		v = scriptArgs[0];
-		sa = scriptArgs[1];
-		arr = sa.split(",");
+		arr = scriptArgs[1];
 		std.printf("val=%d\n", v);
 		console.log(arr);
 	}else{

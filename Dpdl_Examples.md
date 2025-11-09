@@ -499,7 +499,7 @@ this is my sample json:
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
 	
-* Example Dpdl code that embeds javascript code (with  Mode2 using 'qjs') that loads an object implemented in a native C library (see point.c)
+* Example Dpdl code that embeds javascript code (with  Mode2 using 'js') that loads an object implemented in a native C library (see point.c)
 
 	[js/dpdlQJsPoint.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsPoint.h) 
 

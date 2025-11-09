@@ -1,7 +1,7 @@
 # File: js/dpdlQJsPoint.h
 #
 # Example:
-# This Dpdl script executes an embedded 'qjs' javascript that make use of a Point class implemented in a native C library
+# This Dpdl script executes an embedded 'js' javascript that make use of a Point class implemented in a native C library
 # The coordinates of the poins are pushed on the dpdl stack
 # This javascript example is from the QuickJS repository https://github.com/bellard/quickjs/tree/master/examples
 #
@@ -13,10 +13,10 @@
 #
 
 # main
-println("testing embedded qjs with import of native library...")
+println("testing embedded js with import of native library...")
 
 dpdl_stack_push(3, 6, 9, 12)
->>qjs
+>>js
 
 import { Point } from "./DpdlLibs/js/point.so";
 
@@ -79,4 +79,4 @@ console.log('-------------------------------------');
 <<
 
 int exit_code = dpdl_exit_code()
-println("Dpdl qjs exited with exit code: " + exit_code)
+println("embedded js exit code: " + exit_code)

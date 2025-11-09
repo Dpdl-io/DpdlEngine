@@ -1,7 +1,7 @@
 # File: js/dpdlQJsBufRet.h
 #
 # Example:
-# Dpdl script that embeds javascript via 'qjs' that writes a result string buffer to the Dpdl stack which is than intercepted in Dpdl
+# Dpdl script that embeds javascript via 'js' that writes a result string buffer to the Dpdl stack which is than intercepted in Dpdl
 #
 # Author: AC
 # e-mail: ac@dpdl.io
@@ -9,10 +9,10 @@
 #
 
 # main
-println("testing quick js...")
+println("testing js...")
 
 dpdl_stack_push("dpdlbuf_var1", 23)
->>qjs
+>>js
 "use strict";
 
 function main(args) {
@@ -38,7 +38,7 @@ if (typeof scriptArgs != "undefined") {
 main(args);
 <<
 int exit_code = dpdl_exit_code()
-println("Dpdl embedded qjs terminated with exit code: " + exit_code)
+println("embedded js terminated with exit code: " + exit_code)
 
 string res_buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("result: ")

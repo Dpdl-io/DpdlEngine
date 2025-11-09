@@ -1,5 +1,5 @@
 
-# Dpdl language plug-ins (embedded code sections)
+# Dpdl 'embedded code sections' (Dpdl language plug-ins)
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
@@ -466,7 +466,7 @@ println("embedded julia code exit code: " + exit_code)
 ### Embedding 'JavaScript' code
 
 
-'JavaScript' code can be embedded and executed within Dpdl via the keyword **`>>js`** or **`>>qjs`**
+'JavaScript' code can be embedded and executed within Dpdl via the keyword **`>>js`**
 
 
 **Example Dpdl code with embedded 'JavaScript' code:**
@@ -475,10 +475,10 @@ println("embedded julia code exit code: " + exit_code)
 println("testing embedded js...")
 
 dpdl_stack_push("dpdlbuf_var1", 23)
->>qjs
+>>js
 "use strict";
 
-function main(args) {
+function dpdl_main(args) {
 	console.log('embedded javascript...');
 	var result = "This is my Result=";
 	if(scriptArgs > 0){
@@ -498,10 +498,10 @@ if (typeof scriptArgs != "undefined") {
     args=[1000];
 }
 
-main(args);
+dpdl_main(args);
 <<
 int exit_code = dpdl_exit_code()
-println("Dpdl embedded qjs terminated with exit code: " + exit_code)
+println("embedded js terminated with exit code: " + exit_code)
 
 string res_buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("result: ")
@@ -1101,7 +1101,7 @@ println("model simulation exit code: " + exit_code)
 - python -> https://www.python.org/
 - mpython -> https://micropython.org/
 - julia -> https://julialang.org/
-- javascript -> ECMAScript (Oracle nashorn) for '>>js' && QuickJS (https://bellard.org/quickjs/quickjs.html) for '>>qjs' 
+- javascript -> QuickJS (default) OR ECMAScript (Oracle Nashorn)
 - lua -> https://www.lua.org/
 - ruby -> https://www.ruby-lang.org
 - php -> https://ph7.symisc.net/features.html

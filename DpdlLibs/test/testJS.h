@@ -1,7 +1,7 @@
 # File: test/testJS.h
 #
 # Example:
-# This Dpdl script executes a function with an embedded 'qjs' javascript within a loop. Used to stress-test
+# This Dpdl script executes a function with an embedded 'js' javascript within a loop. Used to stress-test
 #
 # Author: AC
 # e-mail: ac@dpdl.io
@@ -12,7 +12,7 @@ func myJsFunc(string msg, int n) int
 	println("myJsFunc(..)")
 
 	dpdl_stack_push(msg, n)
-	>>qjs
+	>>js
 	var m, len
 	if(scriptArgs.length >= 2){
 		m = scriptArgs[0];

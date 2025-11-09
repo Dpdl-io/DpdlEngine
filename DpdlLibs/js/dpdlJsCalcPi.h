@@ -1,7 +1,7 @@
 # File: js/dpdlJsCalcPi.h
 #
 # Example:
-# This Dpdl script executes an embedded 'qjs' javascript that calculates n (suppied as argument) digits of PI number
+# This Dpdl script executes an embedded 'js' javascript that calculates n (suppied as argument) digits of PI number
 # The javascript code is from Fabrice Bellard's QuickJS repository (https://github.com/bellard/quickjs/blob/master/examples/pi_bigint.js)
 #
 # Note: This script exeeds the  'embedded code limit' on the trial version of 'DpdlEngine lite', in this case you may need to short it to fit 100 lines of code
@@ -15,7 +15,7 @@
 println("testing quick js...")
 
 dpdl_stack_push("dpdlbuf_var1", 1000)
->>qjs
+>>js
 "use strict";
 
 function floor_log2(a)
@@ -132,7 +132,7 @@ if (typeof scriptArgs != "undefined") {
 main(args);
 <<
 int exit_code = dpdl_exit_code()
-println("Dpdl qjs terminated with exit code: " + exit_code)
+println("embedded js terminated with exit code: " + exit_code)
 
 string res_buf = dpdl_stack_buf_get("dpdlbuf_var1")
 println("PI Number result: ")

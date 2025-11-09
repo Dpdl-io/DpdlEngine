@@ -110,7 +110,7 @@ println("5) Simple loop with embedded javascript code...")
 
 setStartTime()
 
->>qjs
+>>js
 "use strict";
 
 function myloop() {

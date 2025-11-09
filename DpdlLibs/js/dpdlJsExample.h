@@ -11,6 +11,8 @@
 # main
 println("test embedding javascript ...")
 
+dpdl_stack_push("dpdlplugin:nashorn");
+
 dpdl_stack_var_put("var1", "MEGA")
 dpdl_stack_var_put("var2", "MEGA")
 

@@ -1,7 +1,7 @@
 # File: js/dpdlQJsExample.h
 #
 # Example:
-# This Dpdl script executes an embedded 'qjs' javascript that prints out a message pushed on the dpdl stack and loads a module to calc fib
+# This Dpdl script executes an embedded 'js' javascript that prints out a message pushed on the dpdl stack and loads a module to calc fib
 #
 # Author: AC
 # e-mail: ac@dpdl.io
@@ -9,10 +9,10 @@
 #
 
 # main
-println("testing embedded qjs...")
+println("testing embedded js...")
 
 dpdl_stack_push("my Hello Message!!!")
->>qjs
+>>js
 
 import { fib } from "./DpdlLibs/js/fib_module.js";
 
@@ -30,5 +30,5 @@ console.log("fib(10)=", fib(10));
 <<
 
 int exit_code = dpdl_exit_code()
-println("Dpdl qjs exited with exit code: " + exit_code)
+println("embedded js exited with exit code: " + exit_code)
 
