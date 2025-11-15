@@ -189,7 +189,7 @@ println("I'd like to say: " + msg1 + " and " + msg2)
 
 - String interpolation with values or expressions
 
-Strings may contain variable identifiers or even complete expressions that are compiled into the string
+Strings may contain variable identifiers ( with **`$`** ) or even complete expressions ( enclosed in **`${...}`**) that are compiled into the string
 
 ```python
 int x = 10
@@ -326,6 +326,40 @@ println("res: " + res)
 ```
 
 * [Table of Contents](#table-of-contents)
+
+
+### Type `object`
+
+In Dpdl the type **`object`** is a baseline type. 
+
+Whether it's a dpdl **`class`** or a **`**, a whole dpdl module, or even a java JRE class, all of these types can be stored, referenced and handled via this type.
+
+**Example:** instantiation of a JVM java class
+
+```python
+object myc = new("test.MyTestClass", 1, 2, 3)
+
+myc.printValues()
+```
+
+The **`object`** type has also some intrinsic transformation capabilities that allows for example a primitive type, for example **`int`**, to be boxed to the corresponding JVM type class (i.e. **`Integer`**) so that all class methods and fields of the underlying JVM platform can be accessed.
+
+
+**Example:** instantiation of a JVM java class
+
+```python
+string mys = "This is a Test"
+
+object mys_obj = mys
+
+object mys_mod = mys_obj.replaceAll("Test", "MEGA Test")
+
+println("mys_mod: " + mys_mod + " is of type: " + typeof(mys_mod))
+
+string mys_new = mys_mod
+
+ 
+```
 
 
 ### Functions
@@ -852,6 +886,93 @@ println("myb.desc: " + myb.getDesc())
 Note that in this case the 'class A' function 'printMe(...)' is being overwritten by the same function definition in 'class B' 
 
 
+#### `class` type converted to java bytecode
+
+
+The type 'class' can be conveniently converted at runtime into an efficient and interoperable java bytecode object (java Class) with the **`genObjCode(...)`** dpdl api function.
+
+This can be useful for exchanging dpdl class objects with native java classes or to speedup performance critical function calls with dedicated java implementations.
+
+Dpdl Class objects that are compiled into java bytecode via the **`genObjCode(...)`** function call can contain 1 embedded **`>>java`** section containing native java methods which are than also compiled to bytecode in the resulting object. <ins>Only the first embedded code definition</ins> is compiled into the resulting object. Other embedded java code sections are executed only.
+
+**Example:**
+
+```python
+class A {
+
+	int id
+	string str
+	var obj = null
+
+	func A(int id_, string str_, object obj_)
+		id = id_
+		str = str_
+		obj = obj_
+	end
+
+	func print()
+		println("id: " + id)
+		println("str: " + str)
+		println("obj: " + obj)
+	end
+
+	>>java
+	public int myNativeJavaMethod(int val){
+		System.out.println("myNativeJavaMethod()");
+
+		int myi = 0;
+		for(int i = 0; i < 1000000; i++){
+			System.out.println("iter: " + i + " val: " + (val+i));
+			myi=i;
+		}
+		val=myi;
+		return (val+3);
+	}
+	<<
+}
+
+
+println("testing 'genObjCode(..)' on type class...")
+println("")
+
+println("initialization with constructor:")
+
+object so = new("String", "MEGA test")
+
+class A mya(23, "a Test is this", so)
+
+println("mya: " + mya + " is of type: " + typeof(mya))
+
+println("mya.id: " + mya.id)
+println("mya.str: " + mya.str)
+println("mya.obj: " + mya.obj)
+
+
+println("")
+println("generating java class object...")
+
+object myAobj = genObjCode(mya)
+
+println("myAobj: " + myAobj + " is of type: " + typeof(myAobj))
+
+println("myAobj.id: " + myAobj.id)
+println("myAobj.str: " + myAobj.str)
+println("myAobj.obj: " + myAobj.obj)
+
+println("calling native java bytecode method...")
+
+setStartTime()
+
+int res = myAobj.myNativeJavaMethod(23)
+
+int ms = getEndTime()
+
+println("res: " + res)
+
+println("finished in " + ms + " milliseconds (ms)")
+
+```
+
 #### Inheritance of dpdl `class` objects from java classes 
 
 The dpdl type `class` can also be derived directly from a java class object. This is done by using the `refObj(..)` function.
@@ -1173,7 +1294,7 @@ println("done status: " + status.DONE)
 println("enum values can also be accessed directly as in C: " + DONE)
 ```
 
-Note: Currently the comma separated tags and values need to be defined on different lines than the starting 'enum var {' definition (this will be fixed in the next release)
+Note: Currently the comma separated tags and values need to be defined on different lines than the starting 'enum myvar {' definition (this will be fixed in the next release)
 
 * [Table of Contents](#table-of-contents)
 
@@ -1888,7 +2009,7 @@ println("DpdlLib version: " + DpdlLibVersion)
 println("myx: " + myx)
 ```
 
-The path needs to be relative to the folder where the executed script is located. 
+The include path need to be relative to the folder where the mail module is located. 
 
 NOTE: Currently the 'include' statement need to be placed <ins>before any defined 'import' statements</ins> -> this will change in the next release
 

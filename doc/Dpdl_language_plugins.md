@@ -12,16 +12,17 @@ developed by
 
 Dpdl introduces the concept of arbitrary '*embedded code sections*' that can be executed inside Dpdl code via dedicated plug-ins available (see **Dpdl language plug-ins**).
 
+The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface dpdl API with plug-in configurable option settings.
+
 In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within Dpdl code</ins>, simultaneously and of multiple types.
+ 
 
-The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings. 
-
-The plug-in oriented approach allows developers to develop and integrate also custom syntax or natural language interpreters or all sorts usable inside Dpdl code.
+The plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts usable inside Dpdl code.
 
 
 ### Dpdl supports the embedding and execution of the following language code, available in from of 'Dpdl language plug-ins':
 
-The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins**</ins> available, for different platforms (see compatibility Matrix):
+At current state, the 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins**</ins> available for different platforms (see compatibility Matrix):
 
 * **`C`** compiled code (full ANSI C & ISO C99) & interpreted code (minimal subset of C90)
 * **`C++`**
@@ -40,8 +41,6 @@ The current 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins
 * **`Clojure`**
 * **`Modelica`**
 
-NOTE: In case of programming languages, the available **Dpdl language plug-ins** are implemented on top of the official reference implementation of each supported programming language as listed below (see 'Embedded language references' section) and include everything needed to run the code, <ins>No additional installation are needed (except user libraries)</ins>.
-
 #### Add-on 'Dpdl language plug-ins' available:
 
 * **`Wasm`** -> *WAT* Compiler and *Wasm Runtime*
@@ -56,6 +55,7 @@ NOTE: In case of programming languages, the available **Dpdl language plug-ins**
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
 
 
+NOTE: The available **Dpdl language plug-ins** listed above are implemented on top of the official reference implementation of each supported programming language as listed below (see 'Embedded language references' section) and include everything needed to run the code, <ins>No additional installation needed (except user libraries)</ins>.
 
 ## Table of Contents
 
@@ -127,7 +127,7 @@ println("embedded C exit code: " + exit_code)
 * [Table of Contents](#table-of-contents)
 
 
-## Dpdl embedded code API
+## Dpdl embedded code section API
 
 Data and variables can be exchanged with the embedded code via the dpdl runtime stack by using the API functions:
 
@@ -155,7 +155,7 @@ Data and variables can be exchanged with the embedded code via the dpdl runtime 
 
 Variables that are pushed on the dpdl stack are passed as parameters to the embedded code.
 
-Variables can also be embedded directly in the code as placeholder, see **`{{var_name}}`**. In the latter case the variables are replaced with the actual values before code compilation and execution.
+Variables can also be embedded directly in the code as placeholder, see **`{{var_name}}`**. In the latter case the variables are compiled with the actual values before code compilation and execution.
 
 
 **Example:**
