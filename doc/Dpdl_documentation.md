@@ -332,7 +332,7 @@ println("res: " + res)
 
 In Dpdl the type **`object`** is a baseline type. 
 
-Whether it's a dpdl **`class`** or a **`**, a whole dpdl module, or even a java JRE class, all of these types can be stored, referenced and handled via this type.
+Whether it's a dpdl **`class`** or a **`struct`**, a primitive type, a whole dpdl module, or even a java JRE class, all of these types can be stored, referenced and handled via this type.
 
 **Example:** instantiation of a JVM java class
 
