@@ -243,6 +243,8 @@ int my_function(const struct myS *data, int value){
 }
 ```
 
+The native library C function can be called from Dpdl with an interoperable data structure and semantics
+
 ```python
 
 struct myS {
