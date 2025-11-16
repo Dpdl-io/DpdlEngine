@@ -191,6 +191,8 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
 
 ## Docs
 
+[Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_overview.md)
+
 [Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
@@ -211,9 +213,9 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
 
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
-[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
-
 [DpdlVM](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlVM.md)
+
+[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 ### More...
 
@@ -983,6 +985,8 @@ The Dpdl framework and API documentation is available via the following links:
 
 ### Documentation
 
+[Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_overview.md)
+
 [Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
@@ -1003,9 +1007,10 @@ The Dpdl framework and API documentation is available via the following links:
 
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
+[DpdlVM](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlVM.md)
+
 [DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
-[DpdlVM](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlVM.md)
 
 ### More...
 

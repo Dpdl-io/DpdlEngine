@@ -38,7 +38,11 @@ Dpdl introduces the concept of '*embedded code secitons*' that <ins>**enables to
 * Dpdl can be embedded and called within C code
 * Tools for converting Dpdl code to Java and C/C++ code (in development)
 
+### Dpdl quick language Tour
 
+If you want to gain a quick intro to some of the features of Dpdl you can also take this quick overview tour
+
+[Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_overview.md)
 
 ## Table of Contents
 
@@ -342,7 +346,7 @@ object myc = new("test.MyTestClass", 1, 2, 3)
 myc.printValues()
 ```
 
-The **`object`** type has also some intrinsic transformation capabilities that allows for example a primitive type, for example **`int`**, to be boxed to the corresponding JVM type class (i.e. **`Integer`**) so that all class methods and fields of the underlying JVM platform can be accessed.
+The **`object`** type has also some intrinsic transformation capabilities that allows for example a primitive type, for example **`int`** or **`string`**, to be boxed to the corresponding JVM type class (i.e. **`java.lang.Integer`** or **`java.lang.String`**) so that all class methods and fields of the underlying JVM platform can be accessed.
 
 
 **Example:** instantiation of a JVM java class
