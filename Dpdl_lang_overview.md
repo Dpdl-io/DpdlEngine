@@ -111,6 +111,7 @@ println("The type of your car is: " + yourcar.getType() + " and the brand is: " 
 
 ### Interoperable with JVM and java classes
 
+The following Dpdl code makes use of a 'java.util.HashMap', allowing access to all methods of the underlying jre classes
 
 ```python
 object mymap = new("HashMap")
