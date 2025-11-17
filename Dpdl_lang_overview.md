@@ -30,8 +30,42 @@ end
 
 ### Simple 
 
-```python
+```
+import('json')
 
+struct myJsonData {
+	string mystr
+	int i_num
+	float f_num
+	double d_num
+	bool b_val
+}
+
+string myjson = "'"
+{
+  "mystr": "Hello Dpdl JSON",
+  "i_num": 10,
+  "f_num": 0.2,
+  "d_num": 23.1,
+  "b_val": true
+}
+"'"
+
+struct myJsonData data
+
+data = json.decode(myjson, data)
+
+println("data.mystr: " + data.mystr)
+println("data.i_num: " + data.i_num)
+println("data.f_num: " + data.f_num)
+println("data.d_num: " + data.d_num)
+println("data.b_val: " + data.b_val)
+
+```
+
+supports string interpolation and string templates
+
+```python
 func myCalc(long nr_iter)
 	int x, y
 	float z
