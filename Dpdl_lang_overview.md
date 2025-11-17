@@ -30,7 +30,7 @@ end
 
 ### Simple 
 
-```python
+```c
 import('json')
 
 struct myJsonData {
