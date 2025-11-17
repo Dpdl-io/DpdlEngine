@@ -339,7 +339,7 @@ println("embedding some javascript code...")
 
 
 dpdl_stack_push("my Hello Message!!!")
->>qjs
+>>js
 	import { fib } from "./DpdlLibs/js/fib_module.js";
 
 	var a_message = "null";
