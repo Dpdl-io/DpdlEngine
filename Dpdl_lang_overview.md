@@ -129,6 +129,10 @@ class Car extends Vehicle {
 		super(type)
 		this.brand = brand
 	end
+	
+	func getBrand()
+		return brand
+	end
 }
 
 class Car mycar("Jeep", "Mercedes")
@@ -171,7 +175,7 @@ or access any other custom java classes
 
 
 ```python
-object mycls = new("test.MyTest", 1, 2, 3, 23.0)
+object mycls = new("test.MyTestCalc", 1, 2, 3, 23.0)
 
 mycls.mycreateSum()
 
@@ -182,11 +186,14 @@ mycls.mycreateSum()
 ### Native library access
 
 ```python
+import('native')
+
+
 println("loading native 'libc' library...")
 
-object clib = native.loadLib("c")
+object libc = native.loadLib("c")
 
-raise(clib, "Error in loading library")
+raise(libc, "Error in loading library")
 
 println("getting 'uid' and 'gid'...")
 
@@ -212,7 +219,7 @@ println("opening file in RW mode for writing...")
 
 object fcntl = getObj("Fcntl")
 
-int fh = clib.open("./Test/TestWriteNative.txt", fcntl.O_RDWR)
+int fh = libc.open("./Test/TestWriteNative.txt", fcntl.O_RDWR)
 
 raise(fh, "Error in opening file")
 
@@ -236,7 +243,7 @@ size.setValue(4096L)
 
 long size_l = size.longValue()
 
-object memory = clib.malloc(4096)
+object memory = libc.malloc(4096)
 memory.setMemory(0L, 4096L, 0x00B)
 
 println("memory: " + typeof(memory))
@@ -256,11 +263,12 @@ bytebuf.putChar(ch5)
 bytebuf.putChar(ch6)
 bytebuf.putChar(ch7)
 
-object sz = clib.write(fh, memory, size)
+object sz = libc.write(fh, memory, size)
 
 println("nr of bytes written: " + sz)
 
-clib.close(fh)
+libc.close(fh)
+
 ```
 
 ### C compatibility for data structures
@@ -281,12 +289,14 @@ int my_function(const struct myS *data, int value){
 The native library C function can be called from Dpdl with an interoperable data structure and semantics
 
 ```c
+import('native')
 
 struct myS {
 	int id = 23
 	string desc = "my description"
 	string data = "some data from myA"
-	int x, y
+	int x
+	int y
 }
 
 struct myS s
@@ -314,6 +324,7 @@ println("returned value: " + ret)
 
 ```python
 println("with Dpdl you can embed and execute code sections in many different programming languages, simultaneously and of multiple types...")
+println("Everything is already included, NO need to install additional dependencies :)")
 println("")
 
 println("embedding some C code...")

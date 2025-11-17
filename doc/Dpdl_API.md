@@ -176,6 +176,7 @@ getObj(string name) return object
 refObj(string name) return object
 loadCode(string dpdl_script_ref, object args, ...) return object
 genObjCode(object dpdl_obj) return object obj
+genObjCodeC(object dpdl_struct) return object native_C_struct_obj
 
 arr(object elem, ...) return object ArrayList
 vec(object elem, ...) return object Vector
