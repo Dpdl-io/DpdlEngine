@@ -1,4 +1,4 @@
-# Dpdl language Overview
+# Dpdl language quick Overview
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
