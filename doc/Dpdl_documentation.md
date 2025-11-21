@@ -42,7 +42,7 @@ Dpdl introduces the concept of '*embedded code secitons*' that <ins>**enables to
 
 If you want to gain a quick intro to some of the features of Dpdl you can also take this quick overview tour
 
-[Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_overview.md)
+[Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
 
 ## Table of Contents
 

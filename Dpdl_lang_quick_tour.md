@@ -19,7 +19,7 @@ developed by
 println("Hello World")
 ```
 
-In case you want to pass parameters to the code
+In case parameters are passed as arguments
 
 ```python
 func dpdl_main(object args)
@@ -147,9 +147,9 @@ println("The type of your car is: " + yourcar.getType() + " and the brand is: " 
 
 ```
 
-### Interoperable with JVM and java classes
+### Interoperable with JVMs and java classes
 
-The following Dpdl code makes use of a 'java.util.HashMap', allowing access to all methods of the underlying jre classes
+The following Dpdl code makes use of a 'java.util.HashMap', enabling access to all methods of the underlying jre classes
 
 ```python
 object mymap = new("HashMap")
@@ -171,7 +171,7 @@ while(iter.hasNext())
 endwhile
 ```
 
-or access any other custom java classes
+or access any other custom java classes and libraries
 
 
 ```python
@@ -181,9 +181,9 @@ mycls.mycreateSum()
 
 ```
 
-
-
 ### Native library access
+
+Access native library functions seamlessly
 
 ```python
 import('native')
@@ -319,7 +319,34 @@ println("returned value: " + ret)
 
 ```
 
-### Multiple programming languages can be embedded and executed directly inside Dpdl (see **`Dpdl language plug-ins`**)
+### Multiple programming languages can be embedded and executed directly inside Dpdl code (see **`Dpdl language plug-ins`**)
+
+#### Currently the following 'Dpdl language plug-ins' are available:
+
+* **`C`**
+* **`C++`**
+* **`Python`**
+* **`MicroPython`**
+* **`Julia`**
+* **`JavaScript`**
+* **`OCaml`**
+* **`Lua`**
+* **`Ruby`**
+* **`Java`**
+* **`PHP`**
+* **`Perl`**
+* **`Groovy`**
+* **`V`**
+* **`Clojure`**
+* **`Modelica`**
+
+* **`Wasm`** -> *WAT* Compiler and *Wasm Runtime*
+* **`Sql`** -> query databases via *SQL*
+* **`Wgsl`** -> WebGPU shading language (*WGSL*)
+* **`OCL`** -> Open Computing Language (*OpenCL*)
+* **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
+* **`quantum`** -> In development
 
 
 ```python
@@ -386,6 +413,186 @@ println("embedded python exit code: " + exit_code)
 println("")
 
 ```
+
+### Dpdl to native Java bytecode generation at runtime
+
+```python
+class A {
+
+	int id
+	string str
+	var obj = null
+
+	func A(int id_, string str_, object obj_)
+		id = id_
+		str = str_
+		obj = obj_
+	end
+
+	func print()
+		println("id: " + id)
+		println("str: " + str)
+		println("obj: " + obj)
+	end
+
+	>>java
+	public int myNativeJavaMethod(int val){
+		System.out.println("myNativeJavaMethod()");
+
+		int myi = 0;
+		for(int i = 0; i < 1000000; i++){
+			System.out.println("iter: " + i + " val: " + (val+i));
+			myi=i;
+		}
+		val=myi;
+		return (val+3);
+	}
+	<<
+}
+
+
+println("testing 'genObjCode(..)' on type class...")
+println("")
+
+println("initialization with constructor:")
+
+object so = new("String", "MEGA test")
+
+class A mya(23, "a Test is this", so)
+
+println("mya: " + mya + " is of type: " + typeof(mya))
+
+println("mya.id: " + mya.id)
+println("mya.str: " + mya.str)
+println("mya.obj: " + mya.obj)
+
+
+println("")
+println("generating java class object...")
+
+object myAobj = genObjCode(mya)
+
+println("myAobj: " + myAobj + " is of type: " + typeof(myAobj))
+
+println("myAobj.id: " + myAobj.id)
+println("myAobj.str: " + myAobj.str)
+println("myAobj.obj: " + myAobj.obj)
+
+println("calling native java bytecode method...")
+
+setStartTime()
+
+int res = myAobj.myNativeJavaMethod(23)
+
+int ms = getEndTime()
+
+println("res: " + res)
+
+println("finished in " + ms + " milliseconds (ms)")
+
+```
+
+### Optimization with native C code sections
+
+Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed
+
+```python
+
+func myOptimizedMatrixCalculation(string mata, string matb, int m_size)
+
+	dpdl_stack_var_put("mat_a", mata)
+	dpdl_stack_var_put("mat_b", matb)
+
+	dpdl_stack_obj_put("size_matrix", m_size)
+
+	dpdl_stack_push("dpdl:applyvars", "dpdl:compile")
+
+	>>c
+	#include <stdio.h>
+
+	#define SIZE {{size_matrix}}
+
+	int a[SIZE][SIZE] = {{mat_a}};
+	int b[SIZE][SIZE] = {{mat_b}};
+
+	int result[SIZE][SIZE];
+
+	void matMult(int *a, int *b, int *result, int size) {
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				*(result + i * size + j) = 0;
+				for (int k = 0; k < size; k++) {
+					*(result + i * size + j) += *(a + i * size + k) * *(b + k * size + j);
+				}
+			}
+		}
+	}
+
+	void displayMatrix(int *mat, int size) {
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				printf("%d ", *(mat + i * size + j));
+			}
+			printf("\n");
+		}
+	}
+
+	int dpdl_main(int argc, char **argv) {
+
+		printf("init optimized matrix multiplication matMult\n");
+
+		matMult((int *)a, (int *)b, (int *)result, SIZE);
+
+		printf("result matrix:\n");
+
+		displayMatrix((int *)result, SIZE);
+
+		return 0;
+	}
+	<<
+
+	return dpdl_exit_code()
+
+end
+
+
+println("multiplying two matrixes with optimized embedded native C code")
+
+int mat_size = 2
+
+println("mat_size: " + mat_size)
+
+string mat_a = "{{1, 2}, {3, 4}}"
+
+string mat_b = "{{1, 2}, {3, 4}}"
+
+int status = myOptimizedMatrixCalculation(mat_a, mat_b, mat_size)
+
+println("status matrix calculation: " + status)
+
+```
+
+
+### AI assisted coding with Dpdl language plug-in 'DpdlAINerd'
+
+The example below generates, compiles and executes AI generated code (via DeepSeek, OpenAI, etc..) right away
+
+```python
+println("testing the Dpdl language plug-in 'DpdlAINerd' to automatically generate and execute code...")
+
+>>ai
+	>>c
+	write a console program in C that implements the famous SNAKE game, with colorful graphics using ncurses colors
+<<
+int exit_code = dpdl_exit_code()
+
+raise(exit_code, "Error in generating code from natural language description")
+
+println("exit code: " + exit_code)
+
+println("finished")
+```
+
 
 ### Check the full Documentation for a deeper insight
 
