@@ -394,6 +394,8 @@ See ['Dpdl language plug-ins'](https://github.com/Dpdl-io/DpdlEngine/blob/main/d
 
 ### Dpdl to native Java bytecode generation at runtime
 
+Dpdl `class`and `struct` types can be compiled into java bytecode classes at rutime
+
 ```python
 class A {
 
@@ -474,7 +476,7 @@ println("finished in " + ms + " milliseconds (ms)")
 
 Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed
 
-```python
+```c
 
 func myOptimizedMatrixCalculation(string mata, string matb, int m_size)
 
@@ -483,7 +485,7 @@ func myOptimizedMatrixCalculation(string mata, string matb, int m_size)
 
 	dpdl_stack_obj_put("size_matrix", m_size)
 
-	dpdl_stack_push("dpdl:applyvars", "dpdl:compile")
+	dpdl_stack_push("dpdlbuf_myresult", "dpdl:applyvars", "dpdl:compile")
 
 	>>c
 	#include <stdio.h>
@@ -494,6 +496,9 @@ func myOptimizedMatrixCalculation(string mata, string matb, int m_size)
 	int b[SIZE][SIZE] = {{mat_b}};
 
 	int result[SIZE][SIZE];
+
+	extern void dpdl_stack_buf_put(char *buf);
+
 
 	void matMult(int *a, int *b, int *result, int size) {
 		for (int i = 0; i < size; i++) {
@@ -506,12 +511,13 @@ func myOptimizedMatrixCalculation(string mata, string matb, int m_size)
 		}
 	}
 
-	void displayMatrix(int *mat, int size) {
+	void writeMatrixResult(char *res_buf, int *mat, int size) {
+		int rb = 0;
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
-				printf("%d ", *(mat + i * size + j));
+				rb += sprintf(res_buf+rb, "%d ", *(mat + i * size + j));
 			}
-			printf("\n");
+			rb += sprintf(res_buf+rb, "\n");
 		}
 	}
 
@@ -521,9 +527,13 @@ func myOptimizedMatrixCalculation(string mata, string matb, int m_size)
 
 		matMult((int *)a, (int *)b, (int *)result, SIZE);
 
+		char my_result[256];
+
 		printf("result matrix:\n");
 
-		displayMatrix((int *)result, SIZE);
+		writeMatrixResult(my_result, (int *)result, SIZE);
+
+		dpdl_stack_buf_put(my_result);
 
 		return 0;
 	}
@@ -546,7 +556,13 @@ string mat_b = "{{1, 2}, {3, 4}}"
 
 int status = myOptimizedMatrixCalculation(mat_a, mat_b, mat_size)
 
-println("status matrix calculation: " + status)
+raise(status, "Error in matrix calculation")
+
+string res_buf = dpdl_stack_buf_get("dpdlbuf_myresult")
+
+println("result: ")
+
+println(res_buf)
 
 ```
 
