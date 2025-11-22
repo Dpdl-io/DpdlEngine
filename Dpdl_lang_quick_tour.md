@@ -474,7 +474,7 @@ println("finished in " + ms + " milliseconds (ms)")
 
 ### Optimization with native C code sections
 
-Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed
+Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed.
 
 ```c
 
