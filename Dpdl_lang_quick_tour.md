@@ -319,35 +319,10 @@ println("returned value: " + ret)
 
 ```
 
-### Multiple programming languages can be embedded and executed directly inside Dpdl code (see **`Dpdl language plug-ins`**)
+### Multiple programming languages can be embedded and executed directly inside Dpdl code
 
-#### Currently the following 'Dpdl language plug-ins' are available:
 
-* **`C`**
-* **`C++`**
-* **`Python`**
-* **`MicroPython`**
-* **`Julia`**
-* **`JavaScript`**
-* **`OCaml`**
-* **`Lua`**
-* **`Ruby`**
-* **`Java`**
-* **`PHP`**
-* **`Perl`**
-* **`Groovy`**
-* **`V`**
-* **`Clojure`**
-* **`Modelica`**
-
-* **`Wasm`** -> *WAT* Compiler and *Wasm Runtime*
-* **`Sql`** -> query databases via *SQL*
-* **`Wgsl`** -> WebGPU shading language (*WGSL*)
-* **`OCL`** -> Open Computing Language (*OpenCL*)
-* **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
-
-* **`quantum`** -> In development
-
+**Example:**
 
 ```python
 println("with Dpdl you can embed and execute code sections in many different programming languages, simultaneously and of multiple types...")
@@ -413,6 +388,9 @@ println("embedded python exit code: " + exit_code)
 println("")
 
 ```
+
+See ['Dpdl language plug-ins'](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md) for more info
+
 
 ### Dpdl to native Java bytecode generation at runtime
 
