@@ -619,7 +619,7 @@ int main(int argc, char **argv){
 }
 ```
 
-Or by loading a dpdl source code file ( *.dpdl or *.h)
+Or by loading a dpdl source code file ( *.dpdl or *.h )
 
 ```c
 #include <stdio.h>
