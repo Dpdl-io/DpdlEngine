@@ -7,7 +7,7 @@
 		
 developed by
 **SEE Solutions**
-&copy; 2003
+&copy;
 
 
 Dpdl introduces the concept of arbitrary '*embedded code sections*' that can be executed inside Dpdl code via dedicated plug-ins available (see **Dpdl language plug-ins**).
@@ -64,7 +64,7 @@ NOTE: The available **Dpdl language plug-ins** listed above are implemented on t
 <tr><td width=33% valign=top>
 
 * [Dpdl embedded code](#dpdl-embedded-code)
-* [Dpdl embedded code API](#dpdl-embedded-code-api)
+* [Dpdl embedded code section API](#dpdl-embedded-code-section-api)
 * [Dpdl embedded programming languages compatibility Matrix](#dpdl-embedded-programming-languages-compatibility-matrix)
 * [Embedding 'C' code](#embedding-c-code)
 * [Embedding 'Python' code](#embedding-python-code)

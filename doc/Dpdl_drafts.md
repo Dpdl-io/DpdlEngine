@@ -7,7 +7,7 @@
 	
 developed by
 **SEE Solutions**
-&copy; 2003
+&copy;
 
 The following document contains proposals for new Dpdl features that are considered and in development.
 

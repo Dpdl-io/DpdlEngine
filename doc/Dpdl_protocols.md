@@ -6,7 +6,7 @@
 				
 developed by
 **SEE Solutions**
-&copy; 2003
+&copy;
 
 IoT is one of the application domains where Dpdl can be used
 

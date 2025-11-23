@@ -7,7 +7,7 @@
 		
 developed by
 **SEE Solutions**
-&copy; 2003
+&copy;
 
 
 

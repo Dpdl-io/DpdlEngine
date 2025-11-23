@@ -6,7 +6,7 @@
 
 developed by
 **SEE Solutions**
-&copy; 2003	
+&copy;	
 
 
 ## Dpdl Meta programming

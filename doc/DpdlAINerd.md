@@ -6,7 +6,7 @@
 
 developed by
 **SEE Solutions**
-&copy; 2003	
+&copy;	
 
 
 ## DpdlAINerd (DAN) - Dpdl language plug-in for AI generative code

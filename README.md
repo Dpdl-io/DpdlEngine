@@ -11,7 +11,7 @@
 
 developed by
 **SEE Solutions**
-&copy; 2003
+&copy;
 
 
 ## Dpdl - rapid development programming language and constrained device framework
