@@ -592,6 +592,53 @@ println("exit code: " + exit_code)
 println("finished")
 ```
 
+### Dpdl can be executed very efficiently from C code
+
+Either directly executing the dpdl code
+
+```c
+#include <stdio.h>
+#include "dpdl.h"
+
+char *dpdl_src_code =   ""
+			"println('Dpdl Hello World from C code')"
+			"int c = 0	\n"
+		  	"for(c < 1000)	\n"
+			"	println('This is Dpdl iteration #' + c)	\n"
+			"	c=c+1\n	\n"
+			"endfor	\n";
+
+int main(int argc, char **argv){
+	printf("executing Dpdl code from C...\n");
+
+	int ret = dpdl_exec_code(dpdl_src_code);
+
+	printf("ret: %d\n", ret);
+
+	return 0;
+}
+```
+
+Or by loading a dpdl source code file ( *.dpdl or *.h)
+
+```c
+#include <stdio.h>
+#include "dpdl.h"
+
+int main(int argc, char **argv){
+	printf("executing Dpdl from C...\n");
+
+	char *dpdl_src_file = "test/testString.dpdl";
+
+	int ret = dpdl_exec_script(dpdl_src_file);
+	
+	printf("ret: %d\n", ret);
+
+	return 0;
+}
+```
+
+
 
 ### Check the full Documentation for a deeper insight
 
