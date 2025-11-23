@@ -394,7 +394,7 @@ See ['Dpdl language plug-ins'](https://github.com/Dpdl-io/DpdlEngine/blob/main/d
 
 ### Dpdl to native Java bytecode generation at runtime
 
-Dpdl `class`and `struct` types can be compiled into java bytecode classes at rutime
+The dpdl types `class`and `struct` can also be compiled into java bytecode classes at runtime
 
 ```python
 class A {
