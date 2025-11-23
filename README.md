@@ -26,7 +26,7 @@ The *DpdlEngine* provides access to <ins>**java platform API's, Native shared li
 
 <ins>Everything comes already included with the DpdlEngine, **No additional installations required</ins>**.
 
-The core *DpdlEngine* has the <ins>**capability to run also on limited memory constrained devices and platforms</ins>** via a dedicated <ins>kilobyte range</ins> virtual machine.
+The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact <ins>kilobyte range</ins> virtual machine.
 
 ### Dpdl is <ins>**Self-contained**</ins>, <ins>**Compact**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
@@ -38,9 +38,8 @@ The core *DpdlEngine* has the <ins>**capability to run also on limited memory co
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
 
-Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code. It allows to create and integrate custom syntax and language interpreters of all sorts in form of **'<ins>Dpdl language plug-ins</ins>'**, for example code in other programming languages or any other custom code syntax.
-
-<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins>, for example also the '**Modelica**' language for cyber-physical simulations is  available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable even <ins>*Quantum Computing*</ins> directly inside Dpdl.
+Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code by means of dedicated 'Dpdl language plug-ins'.
+<ins>Multiple '**Dpdl language plug-ins**' are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
