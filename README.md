@@ -24,7 +24,7 @@ The Dpdl language constructs and syntax is simple and intuitive, yet powerful, w
 
 The *DpdlEngine* provides access to <ins>**java platform API's, Native shared libraries, Wasm modules and GPU compute**</ins> and enables the <ins>**embedding** and **execution**</ins> of multiple programming languages like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wasm, Wgsl, OpenCL and Modelica</em>, <ins>**directly embedded within Dpdl code**</ins>.
 
-<ins>Everything comes already included with the DpdlEngine, **No additional installations required</ins>**.
+Everything comes already included with the DpdlEngine, **<ins>No additional installations required</ins>**.
 
 The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact <ins>kilobyte range</ins> virtual machine.
 
