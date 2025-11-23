@@ -1,4 +1,4 @@
-# Dpdl language quick Overview
+# Dpdl (Dynamic Packet Definition Language)
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
@@ -63,7 +63,7 @@ println("data.b_val: " + data.b_val)
 
 ```
 
-supports string interpolation and string templates
+String interpolation and string templates
 
 ```python
 func myCalc(long nr_iter)
@@ -149,7 +149,7 @@ println("The type of your car is: " + yourcar.getType() + " and the brand is: " 
 
 ### Interoperable with JVMs and java classes
 
-The following Dpdl code makes use of a 'java.util.HashMap', enabling access to all methods of the underlying jre classes
+The following Dpdl code for example makes use of a 'java.util.HashMap', enabling access to all methods of the underlying jre classes
 
 ```python
 object mymap = new("HashMap")
@@ -171,7 +171,7 @@ while(iter.hasNext())
 endwhile
 ```
 
-or access any other custom java classes and libraries
+Access to any other custom java classes and libraries
 
 
 ```python
@@ -183,7 +183,7 @@ mycls.mycreateSum()
 
 ### Native library access
 
-Access native library functions seamlessly
+Access native library functions
 
 ```python
 import('native')
@@ -273,7 +273,7 @@ libc.close(fh)
 
 ### C compatibility for data structures
 
-assume we have a C library called 'my_native' ( libmy_native.so) with the following function
+assume we have a C library called 'my_native' ( libmy_native.so) with the following function declaration
 
 ```c
 struct myS {
@@ -286,7 +286,7 @@ int my_function(const struct myS *data, int value){
 }
 ```
 
-The native library C function can be called from Dpdl with an interoperable data structure and semantics
+The native library C function can be called from Dpdl with an interoperable `struct` data structure and semantics
 
 ```c
 import('native')
