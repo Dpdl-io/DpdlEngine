@@ -1545,7 +1545,7 @@ int my_function(union myU *u, int value){
 
 The dpdl code to call the native C library function with a 1:1 compatible 'union' looks like this:
 
-```python
+```c
 import('native')
 
 union myU {
