@@ -93,6 +93,10 @@ endwhile
 * Example Dpdl code that shows how to initialize 'struct' member variables upon declaration
 
 	[test/testStructInit.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStructInit.h)
+
+* Example Dpdl code that makes use of the dpdl type 'union'
+
+	[test/testUnion.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testUnion.h)
 	
 * Example Dpdl code that uses vec(...), map(...), list(...) and stack(...) data functions
 
@@ -212,10 +216,14 @@ endwhile
 	
 	[dpdlFloatDoubleEmul.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFloatDoubleEmul.h)
 
-* Example Dpdl code that converts/compiles a 'struct' to a native java bytecode object and accesses member variables and methods
+* Example Dpdl code that converts/compiles a 'struct' to a native java bytecode class object and accesses member variables and methods
 
 	[test/testGenObjCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testGenObjCode.h)
 	
+* Example Dpdl code that converts a dpdl type 'union' to the corresponding native C/C++ 'union' type which can be passed to native library functions
+
+	[test/testUnion2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testUnion2.h)
+
 * Example program written in C that shows how to execute a given Dpdl script from C code
 
 	[embed_dpdl/test_dpdl_code_exec.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec.c)

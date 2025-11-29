@@ -13,13 +13,13 @@ developed by
 
 Dpdl is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and <ins>**in part also bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-Dpdl introduces the concept of '*embedded code secitons*' that <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>).
+Dpdl introduces also the concept of '*embedded code secitons*' that <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>).
 
 ### Features:
 
-* Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`enum`**
+* Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`union`** **`enum`**
 * Primitive arrays and dynamic arrays
-* Inheritance and Polymorphism for type **`class`** and **`struct`**
+* Inheritance and Polymorphism for type **`class`**, **`struct`** and **`union`**
 * Multiple native Threads within same module
 * Pointers and references (eg. int *px = &x)
 * Inline string expressions
@@ -64,7 +64,12 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 	* [`struct` initialization](#struct-initialization)
 	* [`struct` inheritance](#struct-inheritance)
 	* [`struct` compiled to java bytecode](#struct-compiled-to-java-bytecode)
+	* [`struct` passed to a native library function](#struct-passed-to-a-native-library-function)
 * [`Enum` type](#enum-type)
+* [`Union` type](#union-type)
+	* [`union` initialization](#union-initialization)
+	* [`union` inheritance](#union-inheritance)
+	* [`union` passed to a native library function](#union-passed-to-a-native-library-function)
 * [Pointers](#pointers)
 * [Function return type](#function-return-type)
 * [Dpdl `Threads`](#dpdl-threads)
@@ -108,7 +113,9 @@ Dpdl supports the following Types:
 - **`object`**
 - **`class`**
 - **`struct`**
+- **`union`**
 - **`enum`**
+
 
 
 **Examples:**
@@ -129,7 +136,8 @@ var v = "some variable type which is dispatched at runtime"
 class myClass cl
 object myobj = new(...)
 object myobj_static = getObj(...)
-struct myStruct a
+struct myStruct a = {1, "a test", ., 23.3}
+union myUnnion u = {0}
 enum myenum e
 
 # primitive arrays
@@ -399,7 +407,7 @@ func myname() $type
 
 Specifying the return type of a function **<ins>is optional</ins>**, it enforces a further check on the execution and improves code readability
 
-Example: 
+**Example:** 
 
 ```python
 func myFunction(object param....) int
@@ -1060,10 +1068,12 @@ Dpdl supports the type **`struct`**, with the following definitions:
 
 * Structs can be conveniently <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
 
+* Structs can be converted into a compatible C code "struct" type using the dpdl api function '**genObjCodeC(...)**' -> this is useful for exchanging data with native C libraries
+
 * Structs cannot contain variable definitions of 'class' type
 
 
-Example:
+**Example:**
 
 ```c
 struct myStruct {
@@ -1212,7 +1222,7 @@ struct myB ab = {369, 963}
 #### struct compiled to java bytecode
 
 
-The type 'struct' can also be conveniently compiled at runtime into a java bytecode object (java Class) by using the **`genObjCode(...)`** api function.
+The type 'struct' can also be conveniently compiled at runtime into a java bytecode object (java Class) by using the **`genObjCode(...)`** dpdl api function.
 
 This may be useful for exchanging data structures with other native java classes or to speedup performance critical function calls.
 
@@ -1276,6 +1286,70 @@ This approach allows to speedup performance critical sections.
 The native 'struct' function 'myNativeJavaFunc' call in this example executes in avg. **`12 ms`** (on 'Apple M2 pro').
 
 
+#### struct passed to a native library function
+
+The dpdl type `struct` can be converted into a C/C++ code compatible "struct" so that it can be passed directly to a native C library function
+
+**Example:**
+
+Suppose we have the following C function code that is compiled to a native library (on Linux/Unix 'libmy_native.so', on Windows 'my_native.dll')
+
+```c
+#include <stdio.h>
+
+struct myS {
+	int id;
+	char *desc;
+	char *data;
+	int x;
+	int y;
+};
+
+int my_function(struct myS *s, int value){
+	printf("call to my_function(...)\n");
+	printf("value=%d\n", value);
+	printf("myS.id = %d\n", s->id);
+	printf("myS.desc = %s\n",  s->desc);
+	printf("myS.data = %s\n", s->data);
+	printf("myS.x = %d\n", s->x);
+	printf("myS.y = %d\n", s->y);
+	return 23;	
+}
+```
+
+The dpdl code to call the native C library function with a 1:1 compatible 'struct' looks like this:
+
+```python
+import('native')
+
+struct myS {
+	int id = 23
+	string desc = "my description"
+	string data = "some data from myA"
+	int x, y
+}
+
+
+struct myS s
+
+println("s: " + s)
+
+object s_structC = genObjCodeC(s)
+
+println("s_structC: " + s_structC + " type: " + typeof(s_structC))
+
+object mylib = native.loadLib("my_native")
+
+int some_val = 888
+
+object s_structC_ref = new("PointerByReference", s_structC.getPointer())
+
+int ret = mylib.my_function(s_structC_ref, some_val)
+
+println("returned value: " + ret)
+
+```
+
 * [Table of Contents](#table-of-contents)
 
 
@@ -1301,6 +1375,212 @@ println("enum values can also be accessed directly as in C: " + DONE)
 Note: Currently the comma separated tags and values need to be defined on different lines than the starting 'enum myvar {' definition (this will be fixed in the next release)
 
 * [Table of Contents](#table-of-contents)
+
+
+### Union type
+
+Dpdl supports the type **`union`**, with the following definitions:
+
+* Unions may contain member variables of all type (except classes), including 'union' variable declarations (but not 'union' definitions)
+
+* Variable shadowing is enabled
+
+* Unions can be derived from a base 'union' as sub-unions, inheriting all member variables. Variables can be overridden in the base-union
+
+* Unions member variable can can be initialized upon 'union' declaration
+
+* Unions can be used to initialize arrays, (see 'array(...)' function)
+
+* Unions can be conveniently <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
+
+* Unions can be converted into a compatible C/C++ code "union" type using the dpdl api function '**genObjCodeC(...)**' -> this might be useful for exchanging data with native C libraries
+
+* Only in the case where a 'union' is converted to the corresponding C/C++ union type, one of the available types must be enforced with 'setType(...)'
+
+**Example:**
+
+```c
+union myU1 {
+	int x, y, z
+}
+
+union myU2 : myU1 {
+	char a, b, c
+}
+
+println("testing union type...")
+
+union myU1 u1
+
+u1.x = 888
+
+println("u1: " + u1)
+
+union myU2 u2
+
+u2.x = 232323
+u2.a = 'A'
+
+println("u2: " + u2)
+```
+
+#### union initialization
+
+Union member variables can be statically initialized but can also be re-assigned explicitly upon 'union' declaration, in a similar way like in C.
+
+The ordering of the variables within the initialization (i.e {...}) need to reflect the ordering inside the 'union'.
+
+A given variable initialization can be skipped, by invalidating the entry with a '.' entry
+
+
+**Example:**
+
+```c
+union Data {
+	int x
+	int y
+	int z
+}
+
+union Data d = {1, 2, 3}
+
+println("d: " + d)
+```
+
+is equivalent to
+
+```c
+union Data {
+	int x
+	int y
+	int z
+}
+
+union Data d
+
+d.x = 1
+d.y = 2
+d.z = 3
+
+println("d: " + d)
+```
+
+##### Skipping a given 'union' variable initialization
+
+By using the placeholder '.' a given variable initialization entry is invalidated.
+
+In the example below, only 'x' and 'z' are initialized explicitly in the initialization, while 'y' retain the base-struct value
+
+```c
+union D {
+	int x
+	int y = 6
+	int z
+}
+
+unzion D myd = {3,.,9}
+```
+
+#### union inheritance
+
+The type 'union' can also be derived from a base 'union', as a sub-union, inheriting all member variables from the base union.
+
+Variables in the sub-union having the same name as the base-union are overwritten.
+
+**Example:**
+
+```c
+union myU1 {
+	int x, y, z
+}
+
+union myU2 : myU1 {
+	char a, b, c
+	int x = 5555
+}
+
+println("testing union type...")
+
+union myU1 u1
+
+u1.x = 888
+
+println("u1: " + u1)
+
+union myU2 u2
+
+u2.a = 'A'
+```
+
+
+#### union passed to a native library function
+
+The dpdl type `union` can be converted into a C/C++ code compatible "union" so that it can be passed directly to a native C library function.
+
+When a 'union' tpye is converted and passed to a native C/C++ function, by definition the union can just acquire one of the a field values at time. This is enforced by calling 'setType(...)' on the union object before calling the native function.
+
+**Example:*
+
+Suppose we have the following C code that is compiled to a native library (on Linux/Unix 'libmy_native.so', on Windows 'my_native.dll')
+
+```c
+#include <stdio.h>
+
+union myU {
+	int id;
+	char *desc;
+	char *data;
+	int x;
+	int y;
+	double z;
+};
+
+int my_function(union myU *u, int value){
+	printf("call to my_function(...)\n");
+	printf("value=%d\n", value);
+	printf("myU.id = %d\n", u->id);
+	return 23;	
+}
+```
+
+The dpdl code to call the native C library function with a 1:1 compatible 'union' looks like this:
+
+```python
+import('native')
+
+union myU {
+	int id = 23
+	string desc = "my description"
+	string data = "some data from myA"
+	int x, y
+	double z
+}
+
+
+union myU u
+
+println("u: " + u)
+
+object u_unionC = genObjCodeC(u)
+
+println("u_unionC: " + u_unionC + " type: " + typeof(u_unionC))
+
+object mylib = native.loadLib("my_native")
+
+int some_val = 888
+
+u_unionC.setType("int")
+
+object u_unionC_ref = new("PointerByReference", u_unionC.getPointer())
+
+int ret = mylib.my_function(u_unionC_ref, some_val)
+
+println("returned value: " + ret)
+
+```
+
+* [Table of Contents](#table-of-contents)
+
 
 ### Pointers
 
@@ -1370,6 +1650,7 @@ The variable type **`var`** is always accepted for all return types as the value
 
 
 Example:
+
 ```c
 func testFuncRetInt() int
 	println("testFuncRetInt")
@@ -1574,6 +1855,7 @@ As mentioned above, java classes (or APIs), can be also be dynamically loaded an
 This approach, compared to registering the classes statically in the class file definition, has a minimal overhead with the advantage to enable loading of many different libraries not foreseen in the standard setup.
 
 **Example:**
+
 ```python
 int load_lib = DPDLSYS_registerLib("./lib/custom/MyTestLib.jar")
 
@@ -1595,6 +1877,7 @@ println("now you can access all classes, methods and fields of the java classes 
 Referencing object variables currently support 1 level of indirection only ('date.toString().toUpparCase()' will not work currently, but is in development)
 
 This is the correct approach:
+
 ```python
 object date = new("Date")
 object datestr = date.toString()
@@ -1648,6 +1931,7 @@ end
 ```
 
 The constructor is called if a parameter is supplied
+
 ```python
 object mymap = new("HashMap")
 object mycode = loadCode("LoadCodeFunc.h", mymap)

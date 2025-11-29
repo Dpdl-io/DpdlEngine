@@ -14,7 +14,7 @@ Dpdl introduces the concept of arbitrary '*embedded code sections*' that can be 
 
 The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface dpdl API with plug-in configurable option settings.
 
-In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within Dpdl code</ins>, simultaneously and of multiple types.
+In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within Dpdl code</ins>, simultaneously and of multiple types and at native speed.
  
 
 The plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts usable inside Dpdl code.
