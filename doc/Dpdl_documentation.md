@@ -1426,6 +1426,8 @@ println("u2: " + u2)
 
 #### union initialization
 
+The dpdl type `union` has been introduced in first place for exchange with C "union" data structures.
+
 Union member variables can be statically initialized but can also be re-assigned explicitly upon 'union' declaration, in a similar way like in C.
 
 The ordering of the variables within the initialization (i.e {...}) need to reflect the ordering inside the 'union'.
