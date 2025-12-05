@@ -882,10 +882,6 @@ a.testIt()
 
 # with arguments
 
-class myA a1(100, 200, 300)
-
-a1.testIt()
-
 class myA a2(400, 500, 600, "myID232323")
 
 a2.testIt()
