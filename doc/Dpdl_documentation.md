@@ -834,7 +834,7 @@ A dpdl type class can be initialized with, or without calling onto the class con
 
 Consider the following dpdl class definition:
 
-```pyhton
+```c++
 class A {
 	int x, y, z
 	string id
@@ -865,7 +865,7 @@ class A {
 
 ##### Class instance without calling constructor 
 
-```
+```c++
 class myA a
 
 a.testIt()
@@ -873,7 +873,7 @@ a.testIt()
 
 ###### Class instance with call on a given available constructor
 
-```
+```c++
 # no arguments
 
 class myA a()
