@@ -58,6 +58,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 	* [Primitive arrays](#primitive-arrays)
 	* [Dynamic arrays](#dynamic-arrays)
 * [`Class` type](#class-type)
+	* [`class` initialization](#class-initialization)
 	* [Inheritance and Polymorphism](#inheritance-and-polymorphism)
 	* [Inheritance of dpdl `class` objects from java classes](#inheritance-of-dpdl-class-objects-from-java-classes)
 * [`Struct` type](#struct-type)
@@ -792,6 +793,10 @@ class A {
 
 	struct myStruct data
 
+	func A()
+		println("instance constructor with no parameters")
+	end
+	
 	func A(int id_, string str_, object data_)
 		id = id_
 		str = str_
@@ -808,15 +813,82 @@ class A {
 
 object so = new("String", "my data...")
 
-# instance with constructor
+# instance with calling constructor without parameters
+class A some()
+
+# instance with calling constructor with parameters
 class A mya(23, "this is a Test", so)
 
 mya.printit()
 
-# instance without constructor
+
+# instance without calling any constructor
 class A mya2
 
 mya.printit()
+```
+
+#### class initialization
+
+A dpdl type class can be initialized with, or without calling onto the class constructor.
+
+Consider the following dpdl class definition:
+
+```pyhton
+class A {
+	int x, y, z
+	string id
+	
+	func A()
+		println("default constructor")
+	end
+	
+	func A(int x, int y, int z)
+		this.x = x
+		this.y = y
+		this.z = z
+	end
+	
+	func A(int x, int y, int z, string id)
+		this.x = x
+		this.y = y
+		this.z = z
+		this.id = id
+	end
+	
+	
+	func testIt()
+		println("this is a test")
+	end
+}
+```
+
+##### Class instance without calling constructor 
+
+```
+class myA a
+
+a.testIt()
+```
+
+###### Class instance with call on a given available constructor
+
+```
+# no arguments
+
+class myA a()
+
+a.testIt()
+
+# with arguments
+
+class myA a1(100, 200, 300)
+
+a1.testIt()
+
+class myA a2(400, 500, 600, "myID232323")
+
+a2.testIt()
 ```
 
 #### Inheritance and Polymorphism

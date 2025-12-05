@@ -233,6 +233,17 @@ endwhile
 	[embed_dpdl/test_dpdl_code_exec2.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec2.c)
 
 
+### Some Algorithms implemented with Dpdl only
+
+* Dpdl code that implements a 'Double Linked List' data structure
+	
+	[alg/dpdlDoubleLinkedList.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/alg/dpdlDoubleLinkedList.h)
+	
+* Dpdl code that implements a SHA-1 hash algorithm
+	
+	[alg/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/alg/dpdlSHA-1impl.h)
+	
+
 ### GPU Compute
 
 The following Dpdl examples show how to exploit capabilities of a GPU via embedded 'Wgsl' and 'OCL' code sections
