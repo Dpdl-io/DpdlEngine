@@ -167,7 +167,7 @@ class LinkedList {
 
 class LinkedList ll
 
-println("insertion at tail: ")
+println("insertion of 5 elements at tail: ")
 
 ll.insertAtEnd(1)
 ll.insertAtEnd(2)
@@ -177,13 +177,13 @@ ll.insertAtEnd(5)
 
 ll.display()
 
-println("insertion at head: ")
+println("insertion of 0 at head: ")
 
 ll.insertAtBeginning(0)
 
 ll.display()
 
-println("insertion at 2nd position: ")
+println("insertion of 6 at 2nd position: ")
 
 ll.insertAtPosition(6, 2)
 

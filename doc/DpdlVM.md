@@ -29,10 +29,10 @@ The typical setup for Dpdl running on constrained systems is a DpdlVM that inclu
 - MicroPython
 - JavaScript
 
-As example, the size of the DpdlVM that includes the 'Dpdl langage plug-in' for executing 'embedded code sections' in C (interpreted & compiled) is only 298 Kb in total, packed in a single executable (also romizable)
+As example, the size of the DpdlVM that includes the Dpdl langage plug-in for executing C 'embedded code sections' (interpreted & compiled) is only **`298 Kb`** in Total, packed in a single executable (also romizable)
 
 
-**Example:** dpdl code with an 'embedded code section' in C
+**Example:** dpdl code with an 'embedded code section' in C (compiled)
 
 ```python
 println("Dpdl example with embedded C code section...")

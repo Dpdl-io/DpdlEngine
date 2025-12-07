@@ -36,7 +36,7 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 
 ### **Dpdl** = Dpdl lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
 
-Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part <ins>**dynamically bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
+Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
 
 Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code by means of dedicated 'Dpdl language plug-ins'.
 <ins>Multiple '**Dpdl language plug-ins**' are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as **'Dpdl language plug-in'**. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
@@ -211,6 +211,8 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
 
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
+
+[Dpdl Agents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
 
 [DpdlVM](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlVM.md)
 
@@ -1005,6 +1007,8 @@ The Dpdl framework and API documentation is available via the following links:
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
 
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
+
+[Dpdl Agents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
 
 [DpdlVM](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlVM.md)
 
