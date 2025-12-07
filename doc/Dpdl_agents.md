@@ -19,14 +19,6 @@ The agents can be implemented in Dpdl directly or via *embedded code sections* i
 **Example:**
 
 ```python
-# File: agent/testAgent.h
-#
-# Example: Dpdl code that implements two independent Distributed Mobile Agents that exchange messages in a cyclic way
-#
-# Author: A.Costa
-# e-mail: ac@dpdl.io
-#
-
 
 println("starting main agent management platform...")
 
