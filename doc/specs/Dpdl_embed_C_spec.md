@@ -94,9 +94,7 @@ This operation mode supports ANSI C (ISO C99 standard) and many GNUC extensions 
 
 The 'dpdl:compile' option is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**.
 
-The embedded C compiler included is built upon the super fast <ins>**Fabrice Bellard's TCC**</ins>.
-
-The compiler is self-relying and does not require an external assembler or linker.
+The embedded C compiler included is self-relying and does not require an external assembler or linker and is based on F.B's TCC.
 
 The required header files and libraries by default are searched in the default paths (i.e. /usr/local ) but alternative paths can be supplied as option parameters.
 
