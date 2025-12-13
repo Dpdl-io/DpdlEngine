@@ -13,10 +13,13 @@ developed by
 
 
 
-JavaScript can be executed within Dpdl code using the keyword **`>>js`**, and can be executed with 2 Modes:
+JavaScript can be executed within Dpdl code by using the keyword **`>>js`**.
+
+Currently the following modes are supported:
 
 1) Using the '*QuickJS*' javascript engine, ES2023 compliant (<ins>default mode</ins>)
-2) Using the '*Nashorn*' javascript engine available on the Java platform -> only on JRE version 11 to 15
+2) Using the '*Nashorn*' javascript engine available on the Java platform -> available only on JRE version from 11 to 15
+3) Using the '*V8*' javascript engine (* *available soon*)
 
 
 ## Mode (1) (default mode)
@@ -31,7 +34,7 @@ Refer to the official 'QuickJS' documentation for more info about the functions 
 
 [QuickJS doc](https://www.dpdl.io/doc/qjs/quickjs.pdf)
 
-[JS Bignum extensions](https://bellard.org/quickjs/jsbignum.pdf)
+[JS Bignum extensions](https://www.dpdl.io/doc/qjs/jsbignum.pdf)
 
 The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
 

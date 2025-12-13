@@ -1095,13 +1095,13 @@ println("model simulation exit code: " + exit_code)
 
 ### Embedded language references
 
-- c -> https://www.dpdl.io/doc/dpdl_tcc/Dpdl_C_Compiler_reference_documentation.html
+- C
 - C++
 - java
 - python -> https://www.python.org/
 - mpython -> https://micropython.org/
 - julia -> https://julialang.org/
-- javascript -> QuickJS (default) OR ECMAScript (Oracle Nashorn)
+- javascript -> QuickJS (default), ECMAScript (Nashorn), V8 (available soon) 
 - lua -> https://www.lua.org/
 - ruby -> https://www.ruby-lang.org
 - php -> https://ph7.symisc.net/features.html
