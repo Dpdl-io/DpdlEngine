@@ -1393,4 +1393,15 @@ Usage:
  -q  quit
 ```
 
+## Dpdl domains
 
+Currently the following domains point to the same web-site:
+
+https://www.dpdl-lang.org
+
+https://www.dpdl.dev
+
+https://www.dpdl.ai
+
+
+Stand by! There will be interesting developments
