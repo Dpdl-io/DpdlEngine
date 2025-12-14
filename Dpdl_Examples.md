@@ -248,16 +248,13 @@ endwhile
 
 * Dpdl code that implements a simple client and server communication using the ZeroMQ library, with clients implemented using dpdl *embedded code sections* in java and C 
 	
-server:
-	
+	server:
 	[networking/dpdlZeroMQServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/networking/dpdlZeroMQServer.h)
 	
-client #1:
-	
+	client #1:
 	[networking/dpdlZeroMQClient.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/networking/dpdlZeroMQClient.h)
 	
-client #2:
-	
+	client #2:
 	[networking/dpdlZeroMQClient2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/networking/dpdlZeroMQClient2.h)	
 	
 
