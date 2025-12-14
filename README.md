@@ -18,7 +18,7 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database and agent technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute **Dpdl** programming language code, <ins>as well as **code in other programming languages**</ins> or any custom code syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types and at native speed.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute **Dpdl** programming language code, as well as <ins>**code in different programming languages**</ins> or any custom code syntax <ins>directly embedded within the same Dpdl source code</ins>, simultaneously and of multiple types and at native speed.
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. Dpdl enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
@@ -55,7 +55,7 @@ The '**DpdlPacket**' is a custom data container with built-in database technolog
 ### * On multiple platforms
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Reuse code
-### * No need to install, compile and configure dev environments
+### * No need to install, compile and configure development environments
 ### * Self-contained, No additional dependencies required (except user libraries)
 ### * Facilitate rapid prototyping for Hardware programming
 ### * Runs on constrained devices and also Microcontroller units (MCUs)
@@ -233,7 +233,7 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
 * **Dpdl API provides access to the complete underlying JVM platform API's and to external java libraries**
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
-* **Automatic code generation and execution of 'embedded code sections' at runtime** (Dpdl language plug-ins)
+* **Automatic code generation and execution of 'embedded code sections' at runtime** (*Dpdl language plug-ins*)
 * **Multiple 'Dpdl language plug-ins' available (embedded code sections):** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Wasm, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of 'Dpdl language plug-ins'**
@@ -269,7 +269,7 @@ The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`**</ins> f
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
 
-Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins>. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A DpdlPacket can also include Dpdl code for custom setups.
+Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins>. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A *DpdlPacket* can also include Dpdl code for custom setups.
 
 Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, enabling developers to use thousands of existing high-quality software libraries. 
 
@@ -639,7 +639,7 @@ Or full featured Applications written with Dpdl in the following repository:
 
 ## Why Dpdl?
 
-Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for development of applications on <ins>small memory footprint devices</ins>, and suitable to be used as embedded scripting engine for applications.
+Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for development of applications on <ins>small memory footprint devices</ins>, and is suitable also to be used as embedded scripting engine for applications.
 
 Dpdl enables rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple,
 extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.

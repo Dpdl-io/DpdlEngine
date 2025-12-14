@@ -636,7 +636,7 @@ This type can be passed also to java methods.
 
 **Example:** (array allocation)
 
-```python
+```c++
 int myiarr[32]
 
 myiarr[0] = 23
@@ -647,7 +647,7 @@ Primitive arrays can also be allocated and initialized right away.
 
 **Example:** (array type 'int' allocation and initialization)
 
-```python
+```c++
 int myiarr[] = {23, 369}
 ```
 
@@ -2384,6 +2384,7 @@ Dpdl API's are available as:
 - Dpdl import Libraries
 - Native shared Libraries
 - Dpdl native functions
+- Dpdl embedded C library
 
 As Dpdl can access also java classes, the whole JVM JRE API and any other configured or loaded java compatible library is available inside Dpdl.
 

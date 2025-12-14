@@ -33,15 +33,8 @@ end
 ```c
 import('json')
 
-struct myJsonData {
-	string mystr
-	int i_num
-	float f_num
-	double d_num
-	bool b_val
-}
 
-string myjson = "'"
+string myjson_str = "'"
 {
   "mystr": "Hello Dpdl JSON",
   "i_num": 10,
@@ -51,9 +44,17 @@ string myjson = "'"
 }
 "'"
 
+struct myJsonData {
+	string mystr
+	int i_num
+	float f_num
+	double d_num
+	bool b_val
+}
+
 struct myJsonData data
 
-data = json.decode(myjson, data)
+data = json.decode(myjson_str, data)
 
 println("data.mystr: " + data.mystr)
 println("data.i_num: " + data.i_num)
@@ -149,7 +150,7 @@ println("The type of your car is: " + yourcar.getType() + " and the brand is: " 
 
 ### Interoperable with JVMs and java classes
 
-The following Dpdl code for example makes use of a 'java.util.HashMap', enabling access to all methods of the underlying jre classes
+The following Dpdl code for example makes use of a '**java.util.HashMap**', enabling access to all methods of the underlying jre classes
 
 ```python
 object mymap = new("HashMap")
@@ -458,7 +459,7 @@ println("myAobj.id: " + myAobj.id)
 println("myAobj.str: " + myAobj.str)
 println("myAobj.obj: " + myAobj.obj)
 
-println("calling native java bytecode method...")
+println("calling native java bytecode method on java class...")
 
 setStartTime()
 
