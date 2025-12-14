@@ -10,16 +10,8 @@ developed by
 
 
 
-## Dpdl sample prototype applications
 
-More advanced sample applications written with Dpdl that serve as demonstrators are published in this repository:
-
-[Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
-
-These examples are demonstrators but are full running applications.
-
-
-## Dpdl sample code (examples)
+## Dpdl examples
 
 ```c
 println("dpdl example with use of static arrays vs. dynamic arrays")
@@ -651,6 +643,16 @@ this is my sample json:
 	
 	....
 	```
+
+
+## Dpdl sample prototype applications
+
+More advanced sample applications written with Dpdl that serve as demonstrators are published in this repository:
+
+[Dpdl-sample-Apps](https://github.com/Dpdl-io/Dpdl-sample-Apps)
+
+These examples are demonstrators but are full running applications.
+
 
 
 ## How to run the examples
