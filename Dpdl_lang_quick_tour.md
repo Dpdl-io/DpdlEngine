@@ -13,6 +13,30 @@ developed by
 ## Dpdl language quick Tour
 
 
+## Contents
+
+<table>
+<tr><td width=33% valign=top>
+
+* [Hello World](#hello-world)
+* [Simple](#simple)
+* [Object oriented](#object-oriented)
+* [Interoperable with JVM classes](#interoperable-with-jvm-classes)
+* [Performance](#performance)
+* [Native library access](#native-library-access)
+* [C compatibility for data structures](#c-compatibility-for-data-structures)
+* [Multiple programming languages can be embedded and executed directly inside Dpdl code](#multiple-programming-languages-can-be-embedded-and-executed-directly-inside-dpdl-code)
+* [Dpdl to native java bytecode generation at runtime](#dpdl-to-native-java-bytecode-generation-at-runtime)
+* [Optimizations via native C code 'embedded code sections'](#optimizations-via-native-c-code-embedded-code-sections)
+* [AI generative code inside Dpdl](#ai-generative-code-inside-dpdl)
+* [Dpdl can be executed very efficiently from C code](#dpdl-can-be-executed-very-efficiently-from-c-code)
+
+
+</td></tr>
+</table>
+
+
+
 ### Hello World
 
 ```python
@@ -96,6 +120,8 @@ println("result: " + res)
 
 ```
 
+* [Contents](#contents)
+
 ### Object oriented
 
 
@@ -148,7 +174,10 @@ println("The type of your car is: " + yourcar.getType() + " and the brand is: " 
 
 ```
 
-### Interoperable with JVMs and java classes
+* [Contents](#contents)
+
+
+### Interoperable with JVM classes
 
 The following Dpdl code for example makes use of a '**java.util.HashMap**', enabling access to all methods of the underlying jre classes
 
@@ -181,6 +210,27 @@ object mycls = new("test.MyTestCalc", 1, 2, 3, 23.0)
 mycls.mycreateSum()
 
 ```
+
+* [Contents](#contents)
+
+
+### Performance
+
+Dpdl allows you to choose the optimal libraries for creating performance critical applications
+
+Here for example a Dpdl implementation of a 3D model visualization of chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events (ported to Dpdl from javafx examples)
+
+[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
+
+<p align="center">	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="85%" height="85%">
+</p>
+
+[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
+
+
+* [Contents](#contents)
+
 
 ### Native library access
 
@@ -272,6 +322,9 @@ libc.close(fh)
 
 ```
 
+* [Contents](#contents)
+
+
 ### C compatibility for data structures
 
 assume we have a C library called 'my_native' ( libmy_native.so) with the following function declaration
@@ -319,6 +372,9 @@ int ret = mylib.my_function(s_structC.ByReference(), value)
 println("returned value: " + ret)
 
 ```
+
+* [Contents](#contents)
+
 
 ### Multiple programming languages can be embedded and executed directly inside Dpdl code
 
@@ -393,7 +449,10 @@ println("")
 See ['Dpdl language plug-ins'](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md) for more info
 
 
-### Dpdl to native Java bytecode generation at runtime
+* [Contents](#contents)
+
+
+### Dpdl to native java bytecode generation at runtime
 
 The dpdl types `class`and `struct` can also be compiled into java bytecode classes at runtime
 
@@ -473,7 +532,10 @@ println("finished in " + ms + " milliseconds (ms)")
 
 ```
 
-### Optimization with native C code sections
+* [Contents](#contents)
+
+
+### Optimizations via native C code 'embedded code sections'
 
 Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed.
 
@@ -572,8 +634,12 @@ println(res_buf)
 
 ```
 
+* [Contents](#contents)
 
-### AI assisted coding with Dpdl language plug-in 'DpdlAINerd'
+
+### AI generative code inside Dpdl
+
+AI assisted coding with help of the Dpdl language plug-in 'DpdlAINerd'
 
 The example below generates, compiles and executes AI generated code (via DeepSeek, OpenAI, etc..) right away
 
@@ -592,6 +658,9 @@ println("exit code: " + exit_code)
 
 println("finished")
 ```
+
+* [Contents](#contents)
+
 
 ### Dpdl can be executed very efficiently from C code
 
@@ -639,6 +708,7 @@ int main(int argc, char **argv){
 }
 ```
 
+* [Contents](#contents)
 
 
 ### Check the full Documentation for a deeper insight
