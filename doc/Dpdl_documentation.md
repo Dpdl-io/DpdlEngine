@@ -13,7 +13,7 @@ developed by
 
 Dpdl is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-Dpdl introduces also the concept of '*embedded code secitons*' that <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>).
+Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>, simultaneously, of multiple types and at native speed. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>).
 
 ### Features:
 
@@ -402,7 +402,7 @@ The return type of a given function can be specified as follows, where '$type' i
 
 **syntax:**
 
-```
+```go
 func myname() $type
 ```
 
@@ -410,7 +410,7 @@ Specifying the return type of a function **<ins>is optional</ins>**, it enforces
 
 **Example:** 
 
-```python
+```go
 func myFunction(object param....) int
 	return 23
 end
@@ -421,15 +421,6 @@ end
 
   
 ### Control flow
-
-**`function`** definition
-
-```python
-func myFunction(string param, object param....)
-
-end
-```
-
 
 
 **`if`** statement
@@ -1065,7 +1056,7 @@ Within the dpdl class, the methods derived from the java based super-class can b
 
 The methods of the java object super-class <ins>can also be overloaded</ins> by dpdl functions and customized.
 
-**Example:** A dpdl `class` a that is derived from a 'String' java class object
+**Example:** A dpdl `class` a that is derived from a '**java.lang.String**' java class object
 
 ```python
 class Msg : refObj("String") {
