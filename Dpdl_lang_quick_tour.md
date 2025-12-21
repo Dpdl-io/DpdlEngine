@@ -13,7 +13,7 @@ developed by
 ## Dpdl language quick Tour
 
 
-## Contents
+### Contents
 
 <table>
 <tr><td width=33% valign=top>
