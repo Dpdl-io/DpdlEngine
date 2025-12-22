@@ -327,7 +327,11 @@ libc.close(fh)
 
 ### C compatibility for data structures
 
-assume we have a C library called 'my_native' ( libmy_native.so) with the following function declaration
+The dpdl type `struct` can be passed to C functions as an equivalent C 'struct' (see dpdl api function  `genObjCodeC(...)`)
+
+This ensures C compatibility for data structures.
+
+assume we have a C library called 'my_native' ( libmy_native.so) with the following function declaration:
 
 ```c
 struct myS {
