@@ -43,7 +43,7 @@ developed by
 println("Hello World")
 ```
 
-In case parameters are passed as arguments
+In case when parameters are passed as command line arguments
 
 ```python
 func dpdl_main(object args)
@@ -53,6 +53,8 @@ end
 
 
 ### Simple 
+
+Dpdl example loading a json data string into a dpdl `struct` which can than be accessed
 
 ```c
 import('json')
@@ -88,7 +90,7 @@ println("data.b_val: " + data.b_val)
 
 ```
 
-String interpolation and string templates
+Support for string interpolation and string templates
 
 ```python
 func myCalc(long nr_iter)
@@ -124,6 +126,7 @@ println("result: " + res)
 
 ### Object oriented
 
+Dpdl is intrinsically object oriented
 
 ```python
 
@@ -179,6 +182,8 @@ println("The type of your car is: " + yourcar.getType() + " and the brand is: " 
 
 ### Interoperable with JVM classes
 
+Dpdl can access classes of any underlying JVM platform and of any external Java, Kotlin, Scala, Groovy and Clojure library.
+
 The following Dpdl code for example makes use of a '**java.util.HashMap**', enabling access to all methods of the underlying jre classes
 
 ```python
@@ -216,9 +221,9 @@ mycls.mycreateSum()
 
 ### Performance
 
-Dpdl allows you to choose the optimal libraries for creating performance critical applications
+Dpdl allows to choose the optimal libraries for creating best performance critical applications
 
-Here for example a Dpdl implementation of a 3D model visualization of chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events (ported to Dpdl from javafx examples)
+Here for example a Dpdl implementation of a 3D model visualization app for chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events
 
 [graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
 
@@ -234,7 +239,7 @@ Here for example a Dpdl implementation of a 3D model visualization of chemical m
 
 ### Native library access
 
-Access native library functions
+Dpdl enables access to Native library functions seamlessly.
 
 ```python
 import('native')
@@ -327,11 +332,11 @@ libc.close(fh)
 
 ### C compatibility for data structures
 
+Dpdl ensures C compatibility for data structures.
+
 The dpdl type `struct` can be passed to C functions as an equivalent C 'struct' (see dpdl api function  `genObjCodeC(...)`)
 
-This ensures C compatibility for data structures.
-
-assume we have a C library called 'my_native' ( libmy_native.so) with the following function declaration:
+For example assume we have a C library called 'my_native' ( libmy_native.so) with the following function definition:
 
 ```c
 struct myS {
@@ -382,6 +387,7 @@ println("returned value: " + ret)
 
 ### Multiple programming languages can be embedded and executed directly inside Dpdl code
 
+Dpdl enables the use multiple programming languages right inside Dpdl code, of multiple types, simultaneously and at native speed.
 
 **Example:**
 
@@ -643,7 +649,7 @@ println(res_buf)
 
 ### AI generative code inside Dpdl
 
-AI assisted coding with help of the Dpdl language plug-in 'DpdlAINerd'
+Dpdl supports AI assisted coding with help of the **Dpdl language plug-in** '`DpdlAINerd`'
 
 The example below generates, compiles and executes AI generated code (via DeepSeek, OpenAI, etc..) right away
 
@@ -668,7 +674,9 @@ println("finished")
 
 ### Dpdl can be executed very efficiently from C code
 
-Either directly executing the dpdl code
+Dpdl can be easily embedded in C/C++ libraries and applications
+
+Either directly executing plain dpdl code
 
 ```c
 #include <stdio.h>
@@ -693,7 +701,7 @@ int main(int argc, char **argv){
 }
 ```
 
-Or by loading a dpdl source code file ( *.dpdl or *.h )
+Or by loading an external dpdl source code file ( *.dpdl or *.h )
 
 ```c
 #include <stdio.h>
