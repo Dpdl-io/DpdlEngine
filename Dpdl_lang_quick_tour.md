@@ -26,7 +26,7 @@ developed by
 * [Native library access](#native-library-access)
 * [C compatibility for data structures](#c-compatibility-for-data-structures)
 * [Multiple programming languages can be embedded and executed directly inside Dpdl code](#multiple-programming-languages-can-be-embedded-and-executed-directly-inside-dpdl-code)
-* [Dpdl to native java bytecode generation at runtime](#dpdl-to-native-java-bytecode-generation-at-runtime)
+* [Dpdl to native jvm bytecode generation at runtime](#dpdl-to-native-jvm-bytecode-generation-at-runtime)
 * [Optimizations via native C code 'embedded code sections'](#optimizations-via-native-c-code-embedded-code-sections)
 * [AI generative code inside Dpdl](#ai-generative-code-inside-dpdl)
 * [Dpdl can be executed very efficiently from C code](#dpdl-can-be-executed-very-efficiently-from-c-code)
@@ -43,7 +43,7 @@ developed by
 println("Hello World")
 ```
 
-In case when parameters are passed as command line arguments
+in case parameters are passed as command line arguments:
 
 ```python
 func dpdl_main(object args)
@@ -54,7 +54,9 @@ end
 
 ### Simple 
 
-Dpdl example loading a json data string into a dpdl `struct` which can than be accessed
+Dpdl syntax is simple and intuitive
+
+Example loading a json data string into a dpdl `struct` which can than be accessed as an object:
 
 ```c
 import('json')
@@ -184,7 +186,7 @@ println("The type of your car is: " + yourcar.getType() + " and the brand is: " 
 
 Dpdl can access classes of any underlying JVM platform and of any external Java, Kotlin, Scala, Groovy and Clojure library.
 
-The following Dpdl code for example makes use of a '**java.util.HashMap**', enabling access to all methods of the underlying jre classes
+The following dpdl code for example makes use of a '**java.util.HashMap**', enabling access to all methods of the underlying jre classes:
 
 ```python
 object mymap = new("HashMap")
@@ -221,9 +223,9 @@ mycls.mycreateSum()
 
 ### Performance
 
-Dpdl allows to choose the optimal libraries for creating best performance critical applications
+Dpdl allows to choose the optimal libraries for creating best performance critical applications.
 
-Here for example a Dpdl implementation of a 3D model visualization app for chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events
+Here for example a Dpdl implementation of a 3D model visualization app for chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events:
 
 [graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
 
@@ -239,7 +241,7 @@ Here for example a Dpdl implementation of a 3D model visualization app for chemi
 
 ### Native library access
 
-Dpdl enables access to Native library functions seamlessly.
+Dpdl enables access to Native shared library functions seamlessly.
 
 ```python
 import('native')
@@ -462,7 +464,7 @@ See ['Dpdl language plug-ins'](https://github.com/Dpdl-io/DpdlEngine/blob/main/d
 * [Contents](#contents)
 
 
-### Dpdl to native java bytecode generation at runtime
+### Dpdl to native jvm bytecode generation at runtime
 
 The dpdl types `class`and `struct` can also be compiled into java bytecode classes at runtime
 
@@ -674,9 +676,9 @@ println("finished")
 
 ### Dpdl can be executed very efficiently from C code
 
-Dpdl can be easily embedded in C/C++ libraries and applications
+Dpdl can be easily embedded in C/C++ libraries and applications:
 
-Either directly executing plain dpdl code
+- Either directly executing plain dpdl code
 
 ```c
 #include <stdio.h>
@@ -701,7 +703,7 @@ int main(int argc, char **argv){
 }
 ```
 
-Or by loading an external dpdl source code file ( *.dpdl or *.h )
+- Or by loading an external dpdl source code file ( *.dpdl or *.h )
 
 ```c
 #include <stdio.h>
