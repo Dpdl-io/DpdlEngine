@@ -44,7 +44,7 @@ Dpdl introduces the concept of '*embedded code sections*' that can be executed w
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
 </p>
 
-Furthermore, the included *Dpdl language plug-in* '*DpdlAINerd*' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data by means of natural language descriptions contained inside Dpdl code, embed it automatically within dpdl code and execute the code right away or executed in subsequent steps.
+Furthermore, the included *Dpdl language plug-in* '*DpdlAINerd*' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data by means of natural language descriptions contained inside Dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
 
 The '**DpdlPacket**' is a custom data container with built-in database technology, that provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce systems**</ins>.
 
