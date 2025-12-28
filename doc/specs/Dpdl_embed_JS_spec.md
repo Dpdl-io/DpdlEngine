@@ -22,7 +22,7 @@ Currently the following modes are supported:
 3) Using the '*V8*' javascript engine (* *available soon*)
 
 
-## Mode (1) (default mode)
+### Mode (1) (default mode)
 
 The embedded JavaScript engine engine used (*QuickJS*) provides a powerful and complete API to interact with javascript at low level (supports ES2023 spec https://tc39.es/ecma262/2023/)
 
@@ -42,7 +42,7 @@ The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write 
 See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
 
 
-### Example
+#### Example
 
 ```python
 println("testing embedded js...")
@@ -69,7 +69,7 @@ int exit_code = dpdl_exit_code()
 println("embedded js exited with exit code: " + exit_code)
 ```
 
-## Mode (2)
+### Mode (2)
 
 The '*Nashorn*' javascript engine can be activated by explicit configuration via the 'dpdlplugin:' option
 
@@ -90,7 +90,7 @@ NOTE: The Dpdl embedded javascript plug-in needs specific features that must be 
 	  Not all java virtual machines support these features. In future releases the V8 JavaScript engine will be supported.
 
 
-### Passing data to the embedded javascript
+#### Passing data to the embedded javascript
 
 Variables can be passed to the embedded javascript by pushing them onto the Dpdl stack with the api function **`dpdl_stack_push(..)`**
 
