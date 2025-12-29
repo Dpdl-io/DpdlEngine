@@ -72,10 +72,11 @@ See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsC
 
 The following options can be passed to the 'Dpdl language plug-in for executing the *embedded code section*
 
-- Memory size configuration **`dpdl:-M`** (ex. '**dpdl:-M20k**' for 20 Kb)
-- Stack size configuration **`dpdl:-S`** (ex. '**dpdl:-S10k**' for 10 Kb)
+- Memory size configuration **`dpdl:-M`** (ex. '**dpdl:-M20k**' for 20 Kb)*
+- Stack size configuration **`dpdl:-S`** (ex. '**dpdl:-S10k**' for 10 Kb)*
 - Include files **`dpdl:-I`** (ex. '**dpdl:-I./DpdlLibs/test/my_test_lib.js**' for including a js file)
 
+(*) suffixes: `k` (Kb) , `m` (Mb) , `g`(Gb) 
 
 ### Mode (2)
 
