@@ -13,7 +13,7 @@ developed by
 
 
 
-JavaScript can be executed within Dpdl code by using the keyword **`>>js`**.
+JavaScript can be embedded and executed within Dpdl code by using the keyword **`>>js`**.
 
 Currently the following modes are supported:
 
@@ -24,7 +24,7 @@ Currently the following modes are supported:
 
 ### Mode (1) (default mode)
 
-The embedded JavaScript engine engine used (*QuickJS*) provides a powerful and complete API to interact with javascript at low level (supports ES2023 spec https://tc39.es/ecma262/2023/)
+The 'Dpdl language plug-in' for executing JavaScript is built on the *QuickJS* JavaScript engine. It provides a powerful and complete API to interact with javascript at low level, supports most ES2023 specification (https://tc39.es/ecma262/2023/) and supports also some features of the ES2024 specification (https://tc39.es/ecma262/2024)
 
 Custom native functions and objects can be implemented as shared libraries and accessed inside javascript code.
 
@@ -32,14 +32,9 @@ You can find examples in the folder [./DpdlLibs/js/](https://github.com/Dpdl-io/
 
 Refer to the official 'QuickJS' documentation for more info about the functions available:
 
-[QuickJS doc](https://www.dpdl.io/doc/qjs/quickjs.pdf)
+[official QuickJS doc](https://www.dpdl.io/doc/qjs/quickjs.html)
 
-[JS Bignum extensions](https://www.dpdl.io/doc/qjs/jsbignum.pdf)
-
-The libraries **`std`** and **`os`** are already imported and accessible with 'std.*' and 'os.*' respectively.
-
-The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write data to the 'dpdlbuf_*' variable pushed on the dpdl stack.
-See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
+The libraries **`std`** and **`os`** are already imported and accessible with `std.*` and `os.*` respectively.
 
 
 #### Example
@@ -69,10 +64,22 @@ int exit_code = dpdl_exit_code()
 println("embedded js exited with exit code: " + exit_code)
 ```
 
+The native Dpdl api function **`dpdl_stack_buf_put(..)`** is available to write data to the 'dpdlbuf_*' variable pushed on the dpdl stack.
+See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsCalcPi.h
+
+
+#### Options
+
+The following options can be passed to the 'Dpdl language plug-in for executing the *embedded code section*
+
+- Memory size configuration **`dpdl:-M`** (ex. '**dpdl:-M20k**' for 20 Kb)
+- Stack size configuration **`dpdl:-S`** (ex. '**dpdl:-S10k**' for 10 Kb)
+- Include files **`dpdl:-I`** (ex. '**dpdl:-I./DpdlLibs/test/my_test_lib.js**' for including a js file)
+
+
 ### Mode (2)
 
 The '*Nashorn*' javascript engine can be activated by explicit configuration via the 'dpdlplugin:' option
-
 
 ```python
 
