@@ -13,9 +13,9 @@ developed by
 
 The dpdl embedded C code can be executed in 2 different modes, either 'interpreted' or 'compiled'.
 
-Each of the execution modes have some characteristics that may fit one case  
+Each of the execution modes have some characteristics that may fit better in one case.
 
-The code is executed via a native Dpdl plug-in library that has a very small footprint (278 Kb) and therefore is applicable also on small embedded systems.
+The code is executed via a native Dpdl plug-in library that has a small footprint (278 Kb) and therefore is applicable also on small embedded systems.
 
 ## Modes of execution
 
