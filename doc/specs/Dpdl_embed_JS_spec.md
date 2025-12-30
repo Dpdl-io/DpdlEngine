@@ -87,6 +87,14 @@ ex: **dpdl:-S10k** for 10 Kb (*)
 
 ex: **dpdl:-I./DpdlLibs/test/my_test_lib.js** for including a js file. Multiple 'dpdl:-I...' are allowed
 
+##### Output file
+
+Compile js file to bytecode 
+
+**`dpdl:-o`**
+
+ex: **dpdl:-o./DpdlLibs/test/my_out.bin**
+
 ###### Dump Memory stats
 
 **`dpdl:-d`**
