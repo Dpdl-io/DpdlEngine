@@ -36,7 +36,7 @@ class MyWriter : refObj("BufferedWriter") {
 		println("started")
 	end
 
-	func writeStr(string data, int nr)
+	func writeStr(int nr, string data)
 		int i
 		for(i < nr)
 			super.write(data, 0, strlen(data))
@@ -62,9 +62,9 @@ class MyWriter myw("./Test/mydata2.txt", 0)
 
 myw.init()
 
-myw.writeStr("data 1", 1000)
-myw.writeStr("data 2", 2000)
-myw.writeStr("data 3", 2000)
+myw.writeData(1000, "data 1")
+myw.writeData(2000, "data 2")
+myw.writeData(3000, "data 3")
 
 myw.close()
 

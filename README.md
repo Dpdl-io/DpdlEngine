@@ -26,7 +26,7 @@ The Dpdl language constructs and syntax is simple and intuitive, yet powerful, w
 
 Everything comes already included with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
-The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact <ins>kilobyte range</ins> virtual machine.
+The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact <ins>kilobyte range</ins> code virtual machine.
 
 ### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
@@ -34,19 +34,19 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
 </p>
 
-### **Dpdl** = Dpdl lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
+### **Dpdl** = dpdl-lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
 
-Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code by means of dedicated '*Dpdl language plug-ins*' distributed with the '*DpdlEngine*' release. <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
+Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code by means of dedicated '*Dpdl language plug-ins*' included in the '*DpdlEngine*' release. <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
 </p>
 
-Furthermore, the included *Dpdl language plug-in* '*DpdlAINerd*' (**DAN**) enables to <ins>**automatically generate**</ins> via <ins>**AI generative code**</ins> programming language code and content or data by means of natural language descriptions contained inside Dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
+Dpdl enables also **AI generative code** with the included *Dpdl language plug-in* '*DpdlAINerd*' (**DAN**), which enables to <ins>**automatically generate**</ins> programming language code and content or data by means of natural language descriptions contained inside dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
 
-The '**DpdlPacket**' is a custom data container with built-in database technology, that provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce systems**</ins>.
+Dpdl provides also access to a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce devices**</ins>.
 
 ## Dpdl is designed to:
 
@@ -63,7 +63,7 @@ The '**DpdlPacket**' is a custom data container with built-in database technolog
 ### * Leverage prototyping with <ins>AI generative code</ins>
 
 
-**DpdlEngine stack overview**
+### DpdlEngine stack overview
 
 <p align="center">
 	<img src="http://www.dpdl.io/images/platform/Dpdl_Dynamic_Packet_Definition_Language_components_thumb.jpg">
@@ -402,6 +402,20 @@ println("embedded groovy exit code: " + exit_code)
 The Dpdl code below illustrates the use of a dpdl class that implements a function to write data files efficiently by means of a java JRE class (i.e. [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) )
 
 ```c++
+import("MyWriter.h")
+
+println("testing my buffered file writer...")
+
+class MyWriter myw("./Test/mydata.txt", 0)
+
+myw.writeData(1000, "data 1")
+myw.writeData(2000, "data 2")
+myw.writeData(3000, "data 3")
+```
+
+This is the implementation of '**MyWriter**' class
+
+```c++
 class MyWriter {
 
 	object header = new("String", "some data init head str")
@@ -426,7 +440,7 @@ class MyWriter {
 		println("started")
 	end
 
-	func writeData(string data, int nr)
+	func writeData(int nr, string data)
 		int i
 		for(i < nr)
 			buf_writer.write(data, 0, strlen(data))
@@ -441,14 +455,6 @@ class MyWriter {
 		buf_writer.flush()
 	end
 }
-
-println("testing my buffered file writer...")
-
-class MyWriter myw("./Test/mydata.txt", 0)
-
-myw.writeData("data 1", 1000)
-myw.writeData("data 2", 2000)
-myw.writeData("data 3", 3000)
 
 ```
 
