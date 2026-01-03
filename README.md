@@ -120,73 +120,6 @@ endfor
 println("finished!")
 ```
 
-## Dpdl example with 'embedded code sections' in different programming languages
-
-```c
-println("with Dpdl you can embed and execute code sections in many different programming languages, simultaneously and of multiple types...")
-println("")
-
-println("embedding some C code...")
-
->>c
-	#include <stdio.h>
-
-	int v = 1000;
-	float x = 23.0;
-	char *m = "this message is printed in c";
-
-	for(int i = 0; i < v; i++){
-		printf("msg: %s %d %lf\n", m, i, x);
-	}
-<<
-
-int exit_code = dpdl_exit_code()
-
-println("embedded C exit code: " + exit_code)
-println("")
-
-println("embedding some javascript code...")
-
-
-dpdl_stack_push("my Hello Message!!!")
->>js
-	import { fib } from "./DpdlLibs/js/fib_module.js";
-
-	var a_message = "null";
-
-	if(scriptArgs.length > 0){
-		a_message = scriptArgs[0];
-	}
-	std.printf("Message = %s %d", a_message, 23);
-	console.log('');
-	console.log('this fibonacci calculation is perfomed in javascript');
-	console.log("fib(10)=", fib(10));
-<<
-
-exit_code = dpdl_exit_code()
-
-println("embedded javascript exit code: " + exit_code)
-println("")
-
-println("you can embed many other languages too...")
-
-println("we list them with via embedded python code:")
-
->>python
-languages = ['C', 'C++', 'Python', 'JavaScript', 'Julia', 'Lua', 'Ruby', 'Java', 'PHP', 'Perl', 'Groovy', 'Clojure', 'Modelica', '...']
-
-for language in languages:
-	print(language)
-<<
-
-exit_code = dpdl_exit_code()
-
-println("embedded python exit code: " + exit_code)
-println("")
-
-println("and more 'Dpdl lanuage plug-ins' will follow and you can also create your owns")
-```
-
 ## Docs
 
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
@@ -205,10 +138,6 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
 
 [Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
-[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
-
-[DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
-
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
 [Dpdl Agents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
@@ -216,6 +145,10 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
 [DpdlVM](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlVM.md)
 
 [DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+
+[DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
+
+[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 ### More...
 
@@ -465,6 +398,73 @@ The example below, to show the flexibility of dpdl, implements the same logic as
 
 **Below you can find a more complex example of how Dpdl can be used to accomplish even complex tasks, in this case via embedded WebGPU shading language (Wgsl)**:
 
+
+## Dpdl example with 'embedded code sections' in different programming languages
+
+```c
+println("with Dpdl you can embed and execute code sections in many different programming languages, simultaneously and of multiple types...")
+println("")
+
+println("embedding some C code...")
+
+>>c
+	#include <stdio.h>
+
+	int v = 1000;
+	float x = 23.0;
+	char *m = "this message is printed in c";
+
+	for(int i = 0; i < v; i++){
+		printf("msg: %s %d %lf\n", m, i, x);
+	}
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("embedded C exit code: " + exit_code)
+println("")
+
+println("embedding some javascript code...")
+
+
+dpdl_stack_push("my Hello Message!!!")
+>>js
+	import { fib } from "./DpdlLibs/js/fib_module.js";
+
+	var a_message = "null";
+
+	if(scriptArgs.length > 0){
+		a_message = scriptArgs[0];
+	}
+	std.printf("Message = %s %d", a_message, 23);
+	console.log('');
+	console.log('this fibonacci calculation is perfomed in javascript');
+	console.log("fib(10)=", fib(10));
+<<
+
+exit_code = dpdl_exit_code()
+
+println("embedded javascript exit code: " + exit_code)
+println("")
+
+println("you can embed many other languages too...")
+
+println("we list them with via embedded python code:")
+
+>>python
+	languages = ['C', 'C++', 'Python', 'JavaScript', 'Julia', 'Lua', 'Ruby', 'Java', 'PHP', 'Perl', 'Groovy', 'Clojure', 'Modelica', '...']
+	
+	for language in languages:
+		print(language)
+<<
+
+exit_code = dpdl_exit_code()
+
+println("embedded python exit code: " + exit_code)
+println("")
+
+println("and more 'Dpdl lanuage plug-ins' will follow and you can also create your owns")
+```
 
 ### Dpdl sample code that makes use of embedded 'Wgsl' code to accelerate a GELU Neural Network activation function on GPUs:
 
@@ -991,6 +991,7 @@ The Dpdl framework and API documentation is available via the following links:
 
 ### Documentation
 
+
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
 
 [Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
@@ -1007,10 +1008,6 @@ The Dpdl framework and API documentation is available via the following links:
 
 [Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
-[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
-
-[DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
-
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
 [Dpdl Agents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
@@ -1019,6 +1016,9 @@ The Dpdl framework and API documentation is available via the following links:
 
 [DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
+[DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
+
+[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 ### More...
 
@@ -1029,7 +1029,7 @@ The Dpdl framework and API documentation is available via the following links:
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
 
- Dpdl Java API Documentation (available only for the registered version of DpdlEngine)
+ Dpdl java API Documentation is available only for a registered version of DpdlEngine
 
 
 ## Download

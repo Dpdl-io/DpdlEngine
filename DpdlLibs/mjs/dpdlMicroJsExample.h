@@ -13,7 +13,7 @@
 # main
 println("rendering the Mandelbrot Fractal within the console...")
 
-dpdl_stack_push("dpdl:-m15k", "dpdl:-I./DpdlLibs/mjs/my_test_lib.js", "dpdl:-I./DpdlLibs/mjs/my_test2_lib.js", "test_param1", "test_param2")
+dpdl_stack_push("dpdl:-M15k", "dpdl:-I./DpdlLibs/mjs/my_test_lib.js", "dpdl:-I./DpdlLibs/mjs/my_test2_lib.js", "test_param1", "test_param2")
 >>mjs
 
 function mandelbrot(center_x, center_y, scale, w, h, max_it){
