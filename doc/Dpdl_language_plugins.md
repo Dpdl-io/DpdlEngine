@@ -10,21 +10,23 @@ developed by
 &copy;
 
 
-Dpdl introduces the concept of arbitrary '*embedded code sections*' that can be executed inside Dpdl code via dedicated plug-ins available (see **Dpdl language plug-ins**).
+Dpdl introduces the concept of '*embedded code sections*' that can be executed right inside dpdl code via dedicated plug-ins available distributed with the *DpdlEngine* (see **Dpdl language plug-ins**).
 
-The execution of embedded code is driven by the Dpdl runtime through a configurable dedicated native interface dpdl API with plug-in configurable option settings.
+The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
-In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within Dpdl code</ins>, simultaneously and of multiple types and at native speed.
+In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types and at native speed.
  
+This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts executable inside dpdl code.
 
-The plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts usable inside Dpdl code.
+The 'embedded code sections' are executed natively and run in an isolated memory region. The single 'Dpdl language plug-ins' can be activated or deactivated and are tamper-proof to avoid malicious code injections.
 
 
 ### Dpdl supports the embedding and execution of the following language code, available in from of 'Dpdl language plug-ins':
 
 At current state, the 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins**</ins> available for different platforms (see compatibility Matrix):
 
-* **`C`** compiled code (full ANSI C & ISO C99) & interpreted code (minimal subset of C90)
+* **`C`** (**interpreted**) --> minimal subset of C90 with standard C libs included and avaiable in the Dpdl runtime
+* **`C`** (**compiled**) code --> ANSI C & ISO C99 standard, compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **`C++`**
 * **`Python`**
 * **`MicroPython`** (Python for embedded systems)
@@ -38,8 +40,15 @@ At current state, the 'DpdlEngine' release has the following <ins>**Dpdl languag
 * **`Perl`**
 * **`Groovy`**
 * **`V`**
+* **`Scheme`** (ChezScheme)
 * **`Clojure`**
 * **`Modelica`**
+
+and also for some less known, but yet very powerful programming languages:
+
+* **`Umka`**
+* **`Janet`**
+
 
 #### Add-on 'Dpdl language plug-ins' available:
 
@@ -222,12 +231,12 @@ dpdl_stack_push("dpdlstack:myconfig")
 
 (*) **coming soon**
 
-| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |X v4.01|
+| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | Scheme | OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 | X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
+| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |*|X v4.01|
 
 
 Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
@@ -1107,9 +1116,13 @@ println("model simulation exit code: " + exit_code)
 - php -> https://ph7.symisc.net/features.html
 - groovy -> https://groovy-lang.org/
 - v -> https://vlang.io/
+- scheme -> https://www.scheme.com/
 - ocaml -> http://www.ocamljava.org/
 - clj -> https://clojure.org/
 - modelica -> https://openmodelica.org/
+
+- janet -> https://janet-lang.org/
+- umka -> https://github.com/vtereshkov/umka-lang
 
 - ocl -> https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html
 - wgsl -> https://www.w3.org/TR/webgpu/

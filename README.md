@@ -22,7 +22,7 @@ Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*Dpdl
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. Dpdl enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
-**Dpdl** provides access to <ins>**jvm platform API's, Native shared libraries, Wasm modules and GPU compute**</ins>. In addition Dpdl allows the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy,V, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em>, <ins>**directly embedded within dpdl code**</ins>.
+**Dpdl** provides access to <ins>**jvm platform API's, Native shared libraries, Wasm modules and GPU compute**</ins>. In addition Dpdl allows the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em>, <ins>**directly embedded within dpdl code**</ins>.
 
 Everything comes already included with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
@@ -34,7 +34,7 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
 </p>
 
-### **Dpdl** = dpdl-lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
+### **Dpdl** = dpdl-lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
 
@@ -166,7 +166,7 @@ println("finished!")
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
 * **Automatic code generation and execution of 'embedded code sections' at runtime** (*Dpdl language plug-ins*)
-* **Multiple 'Dpdl language plug-ins' available for 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
+* **Multiple 'Dpdl language plug-ins' available for 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded and executed directly within Dpdl code**</ins> (interpreted/compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of 'Dpdl language plug-ins'**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded C code (ANSI C & ISO C99) <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
@@ -193,8 +193,8 @@ The speedup is x 25 times faster compared to a standard record store access
 
 ### DpdlEngine memory footprint:
 
-* **DpdlEngine** (<ins>**Full**</ins> configuration) **`372 Kb`**
-* **DpdlEngine** (<ins>**Full**</ins> configuration) including embedded C compiler/interpreter **`650 Kb`**
+* **DpdlEngine** (<ins>**Full**</ins> configuration, with 'DpdlPacket' database support) **`372 Kb`**
+* **DpdlEngine** (<ins>**Full**</ins> configuration, with 'DpdlPacket' database support) including embedded C compiler/interpreter **`650 Kb`**
  
 The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`**</ins> for very compact setups.
 
@@ -784,19 +784,25 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`C`** (**compiled**) code --> ANSI C & ISO C99 standard, compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **`C++`**
 * **`Python`**
-* **`MicroPython`** (ideal for embedded systems)
+* **`MicroPython`** (Python for embedded systems)
 * **`Julia`**
 * **`JavaScript`**
+* **`OCaml`**
 * **`Lua`**
 * **`Ruby`**
-* **`OCaml`**
 * **`Java`**
 * **`PHP`**
 * **`Perl`**
 * **`Groovy`**
 * **`V`**
+* **`Scheme`** (ChezScheme)
 * **`Clojure`**
 * **`Modelica`**
+
+and also for some less known, but yet very powerful programming languages:
+
+* **`Umka`**
+* **`Janet`**
 
 **available Add-on 'Dpdl language plug-ins':**
 
@@ -966,12 +972,12 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 
 (*) **available soon**
 
-| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v4.01|
-| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |X v4.01|
+| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | Scheme | OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 | X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
+| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |*|X v4.01|
 
 
 ### Add-on Dpdl language plug-ins - compatibility matrix

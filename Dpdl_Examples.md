@@ -588,6 +588,14 @@ this is my sample json:
 
 	[quantum/dpdlQuantumExampleQiskit.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/quantum/dpdlQuantumExampleQiskit.h)
 
+* Example Dpdl code that generates a fractal in ascii form via embedded Umka code
+
+	[umka/dpdlUmkaExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/umka/dpdlUmkaExample.h)
+	
+* Example Dpdl code that implements a Chat-Server via embedded Janet code
+
+	[janet/dpdlJanetExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/janet/dpdlJanetExample.h)
+	
 
 ### Dpdl Agents
 
