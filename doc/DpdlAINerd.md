@@ -14,9 +14,9 @@ developed by
 
 '**DpdlAINerd**' (**DAN**) is a dedicated **Dpdl language plug-in** for <ins>**AI generative code**</ins>.
 
-The plug-in provided allows to <ins>**automatically generate and execute** embedded code sections in various programming languages within Dpdl</ins> via a configurable **AI engine**.
+The provided plug-in allows to <ins>**automatically generate and execute** embedded code sections in various programming languages within Dpdl</ins> via a configurable **AI engines**.
 
-More generally, the plug-in <ins>allows also to **generate any kind of content or data**</ins> used during the code execution for example.
+More generally, the Dpdl language plug-in <ins>allows also to **generate any kind of content or data**</ins> used during the code execution for example.
 
 This enables to write code faster in the prototyping phase and allows also to generate data on the fly needed for example for development or testing.
 
@@ -25,7 +25,23 @@ The 'DpdlAINerd' (**DAN**) Dpdl language plug-in can be embedded and executed wi
 see Dpdl examples in: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/ai)
 
 
-### Currently supported AI engines
+### supported AI engines
+
+The 'DpdlAINerd' supports the following AI engine types:
+
+- local AI deployments (provided as part of DpdlEngine)
+- public AI (eg. ChatGPT, etc.)
+
+
+#### Local AI engine
+
+As part of the *DpdlEngione* setup there is the possibility to request a local AI engine setup package (fully based OpenSource components), for deployment on a local P PC, workstation or server.
+
+With the provided deployment you can autonomously choose from 781 AI models available, it supports a wide range of back-ends, and you can install the models locally with a simple click as needed. 
+
+The 'DpdlAINerd' than connects to this local instance and the requests run completely locally.
+
+#### Public AI engines
 
 At current state the 'DpdlAINerd' Dpdl language plugin supports the following AI engines:
 
@@ -33,7 +49,6 @@ At current state the 'DpdlAINerd' Dpdl language plugin supports the following AI
 - OpenAI (openai)
 
 The AI engine used can be specified in the file 'DpdlPlugins.ini' under the section 'DpdlAINerd'
-
 
 ### Modes of execution:
 
