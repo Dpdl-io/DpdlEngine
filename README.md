@@ -767,7 +767,7 @@ println("embedded java exit code: " + exit_code)
 
 ```
 
-## **Dpdl language plug-ins** (dpdl embeddable code)
+## **Dpdl language plug-ins** ('*embedded code sections*')
 
 Multiple programming languages can be embedded and executed within the same **Dpdl** code via configurable **Dpdl language plug-ins** by
 using the keyword **`>>`**.
@@ -778,7 +778,7 @@ This enables basically every sort of programming language or natural language in
 
 This features is very useful for rapid development and rapid prototyping and is also a key feature for generative code.
 
-### Currently the following programming languages can be embedded within Dpdl:
+### Currently the following programming languages can be embedded directly within Dpdl:
 
 * **`C`** (**interpreted**) --> minimal subset of C90 with standard C libs included and avaiable in the Dpdl runtime
 * **`C`** (**compiled**) code --> ANSI C & ISO C99 standard, compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
