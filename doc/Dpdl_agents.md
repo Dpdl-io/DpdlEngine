@@ -32,7 +32,7 @@ println("starting agent1...")
 
 dpdl_stack_push("dpdlstack:myagent_config", "dpdlagent:-code java -container -host localhost -port 1049")
 
->>agent(my_agent1)
+>>agent(myagent1)
 	protected void setup() {
 		System.out.println("Agent #1  " + this.getLocalName() + " is ready");
 
@@ -44,10 +44,10 @@ dpdl_stack_push("dpdlstack:myagent_config", "dpdlagent:-code java -container -ho
 		                	System.out.println("message received: " + msg.getContent());
 
 		                    ACLMessage reply = msg.createReply();
-		                    reply.addReceiver(new AID("my_agent2", AID.ISLOCALNAME));
+		                    reply.addReceiver(new AID("myagent2", AID.ISLOCALNAME));
 		                    reply.setPerformative(ACLMessage.INFORM);
 		                    try {
-		                        String replyStr= "HELLO TEST from my_agent1";
+		                        String replyStr= "HELLO TEST from myagent1";
 		                        System.out.println("sending reply: " + replyStr);
 		                        reply.setContent(replyStr);
 		                    } catch (Exception e) {
@@ -70,16 +70,16 @@ dpdl_stack_push("dpdlstack:myagent_config", "dpdlagent:-code java -container -ho
 
 <<
 
-object my_agent1_obj = dpdl_agent_get("my_agent1")
+object myagent1_obj = dpdl_agent_get("myagent1")
 
-println("Agent #1 GUID is: " + my_agent1_obj.getName())
+println("Agent #1 GUID is: " + myagent1_obj.getName())
 println("")
 
 println("starting agent2...")
 
 dpdl_stack_push("dpdlstack:myagent_config")
 
->>agent(my_agent2)
+>>agent(myagent2)
 	protected void setup() {
         System.out.println("Agent #2" + getLocalName() + " is ready");
         addBehaviour(new CyclicBehaviour(this) {
@@ -89,7 +89,7 @@ dpdl_stack_push("dpdlstack:myagent_config")
                 ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
                 if(reply != null) {
                     try {
-                        reply = "Hello MEGA TEST from my_agent2";
+                        reply = "Hello MEGA TEST from myagent2";
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
@@ -103,16 +103,15 @@ dpdl_stack_push("dpdlstack:myagent_config")
                     }
                 }
 
-                msg.addReceiver(new AID("my_agent1", AID.ISLOCALNAME));
+                msg.addReceiver(new AID("myagent1", AID.ISLOCALNAME));
 
                 send(msg);
 
                 ACLMessage replyACL = receive();
                 System.out.println("Agent #2 received reply: " + replyACL);
                 if (replyACL != null) {
-                	System.out.println("Agent #2 received reply: " + replyACL.getContent());
+                	  System.out.println("Agent #2 received reply: " + replyACL.getContent());
                     reply = replyACL.getContent();
-
                 } else {
                     block();
                 }
@@ -128,9 +127,9 @@ dpdl_stack_push("dpdlstack:myagent_config")
 
 <<
 
-object my_agent2_obj = dpdl_agent_get("my_agent2")
+object myagent2_obj = dpdl_agent_get("myagent2")
 
-println("Agent #2 GUID is: " + my_agent2_obj.getName())
+println("Agent #2 GUID is: " + myagent2_obj.getName())
 println("")
 
 println("both agents are now running and can be controlled individually and via the DpdlAgentManagementPlatform object functions")

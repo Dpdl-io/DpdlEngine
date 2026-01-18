@@ -18,7 +18,7 @@ developed by
 
 **Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database and agent technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl** programming language code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and at native speed. Dpdl enables polyglot programs.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at **native speed**</ins>. Dpdl enables polyglot programs.
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
@@ -46,7 +46,7 @@ Dpdl introduces the concept of '*embedded code sections*' that can be executed w
 
 Dpdl enables also **AI generative code** with the included *Dpdl language plug-in* '*DpdlAINerd*' (**DAN**), which enables to <ins>**automatically generate**</ins> programming language code and content or data by means of natural language descriptions contained inside dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
 
-Dpdl provides also access to a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package, handle and query data efficiently on memory scarce devices**</ins>.
+Dpdl provides also access to a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package, handle and query data very efficiently on memory scarce devices**</ins>.
 
 ## Dpdl is designed to:
 
@@ -210,6 +210,19 @@ Dpdl enables the integration of different technologies to leverage fast prototyp
 
 
 ## Dpdl sample code
+
+### Dpdl example that makes use of external java libraries
+
+This is a 3D model visualization of chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events (ported to Dpdl from javafx examples)
+
+[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
+
+<p align="center">	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="85%" height="85%">
+</p>
+
+[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
+
 
 ### Dpdl example that make use of dpdl **`class`** type Inheritance and Polymorphism.
 
@@ -572,7 +585,7 @@ println("finished")
 
 ```
 
-### Featured sample Prototype Applications developed with Dpdl
+### Featured sample Applications (prototypes) developed with Dpdl
 
 In this GitHub repository you can find full featured working prototype applications written with Dpdl:
 
@@ -591,19 +604,6 @@ This is a small sample app written with Dpdl that gets the top 10 news stories v
 Implementation of SHA-1 hash algorithm entirely written in Dpdl
 
 [app/dpdlSHA-1/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/dpdlSHA-1/dpdlSHA-1impl.h)
-
-
-### Dpdl example using external java libraries
-
-This is a 3D model visualization of chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events (ported to Dpdl from javafx examples)
-
-[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
-
-<p align="center">	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="85%" height="85%">
-</p>
-
-[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
 
 
 ### Simple Dpdl example that executes an embedded 'java' code and an embedded 'C' code directly within Dpdl
