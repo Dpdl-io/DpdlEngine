@@ -25,9 +25,8 @@ This Dpdl language plug-in requires java 7 or later.
 |11 |adopt_openjdk-11.0.11.9-hotspot |? |passed |
 |17 	|adopt_openjdk-17.0.1+12 |? 	|passed |
 
-Refer to the 'Janino' documentation for the java language features supported: http://janino-compiler.github.io/janino/
 
-### Properties
+### Supported java language properties
 
 Note: All the language features below are supported, even if *DpdlEngine* itself runs in an older JRE version
 
