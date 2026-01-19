@@ -322,7 +322,7 @@ C code can be executed in 2 different modes:
 2) Compiled C code (Mode 2) --> compiled in memory at runtime, supports <ins>ANSI C & ISO C99</ins>
 
 
-### Plug-in documentation/Specification
+#### Plug-in documentation/Specification
 
 [specs/Dpdl_embed_C_spec.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/specs/Dpdl_embed_C_spec.md)
 
@@ -517,7 +517,7 @@ println("result: ")
 println(res_buf)
 ```
 
-### Plug-in documentation/Specification
+#### Plug-in documentation/Specification
 
 [specs/Dpdl_embed_JS_spec.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/specs/Dpdl_embed_JS_spec.md)
 
@@ -596,7 +596,7 @@ println("lua response buffer: ")
 println(resp_buf)
 ```
 
-### Plug-in documentation/Specification
+#### Plug-in documentation/Specification
 
 [specs/Dpdl_embed_Lua_spec.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/specs/Dpdl_embed_Lua_spec.md)
 
@@ -741,9 +741,10 @@ string resp_buf = dpdl_stack_buf_get("dpdlbuf_myres")
 println("response buffer: " + resp_buf)
 ```
 
-The Dpdl language plug-in uses the 'Janino' library to compile code blocks:
+#### Plug-in documentation/Specification
 
-Refer to the 'Janino' documentation for the java language features supported: http://janino-compiler.github.io/janino/
+[specs/Dpdl_embed_Java_spec.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/specs/Dpdl_embed_Java_spec.md)
+
 
 
 * [Table of Contents](#table-of-contents)

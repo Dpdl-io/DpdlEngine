@@ -1,5 +1,5 @@
 
-# Dpdl language plug-in documentation
+# Dpdl language plug-in documentation for 'C' code
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 

@@ -263,6 +263,7 @@ dpdl_res_obj_get_name(string res_name) return object res
 dpdl_res_clear()
 dpdl_task_pop_id() return object task_id
 dpdl_task_obj_get(object task_id) return object task
+dpdl_agent_obj_get(object agent_id) return object agent
 dpdl_exit_code() return int exit_code
 
 [Exception handling]
