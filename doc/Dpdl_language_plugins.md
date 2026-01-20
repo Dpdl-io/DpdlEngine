@@ -702,34 +702,6 @@ int exit_code = dpdl_exit_code()
 println("embedded java exit code: " + exit_code)
 ```
 
-**Example with a return buffer in for of a String:**
-
-```python
-println("testing buf return from embedded java...")
-
-dpdl_stack_push("dpdlbuf_myres", 10)
-
->>java
-static void myM(int val){
-	System.out.println("myM: " + val);
-}
-
-myM(arg0);
-
-String res = "";
-for(int i = 0; i < arg0; i++){
-	res = res + i;
-}
-
-return res;
-<<
-exit_code = dpdl_exit_code()
-println("embedded java exit code: " + exit_code)
-
-string resp_buf = dpdl_stack_buf_get("dpdlbuf_myres")
-println("response buffer: " + resp_buf)
-```
-
 #### Plug-in documentation/Specification
 
 [specs/Dpdl_embed_Java_spec.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/specs/Dpdl_embed_Java_spec.md)
