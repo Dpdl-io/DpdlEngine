@@ -68,11 +68,12 @@ string ret_buf = dpdl_stack_buf_get("dpdlbuf_test")
 println("result buffer: " + ret_buf)
 ```
 
-The Dpdl language plug-in for 'java' is built upon the *Janino* library to compile code blocks.
 
 ### Requirements
 
-This Dpdl language plug-in requires java 7 or later.
+This Dpdl language plug-in is built upon the *Janino* library to compile code blocks.
+
+It requires java 1.7 or later.
 
 #### Compatibility matrix
 

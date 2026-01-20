@@ -1,5 +1,5 @@
 
-# Dpdl 'embedded code sections' (Dpdl language plug-ins)
+# Dpdl language plug-ins ('embedded code sections')
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
