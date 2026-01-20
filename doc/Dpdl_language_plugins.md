@@ -702,18 +702,7 @@ int exit_code = dpdl_exit_code()
 println("embedded java exit code: " + exit_code)
 ```
 
-The embedded java code must return a value, either of type 'int' or a 'String'
-
-Parameters that are pushed onto the Dpdl stack are accessible in java via the variable names 'args0, args1, ....argsN'
-
-The following imports are predefined so that contained code can be accessed classes directly:
-
-- java.io.*
-- java.util.*
-- java.time.*
-- java.sql.*
-
-**Example with a return buffer:**
+**Example with a return buffer in for of a String:**
 
 ```python
 println("testing buf return from embedded java...")

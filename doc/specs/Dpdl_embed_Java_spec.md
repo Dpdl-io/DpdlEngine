@@ -85,6 +85,21 @@ It requires java 1.7 or later.
 |17 	|adopt_openjdk-17.0.1+12 |? 	|passed |
 
 
+###
+
+The embedded java code must return a value, either of type 'int', 'String' or any other 'Object'
+
+Parameters that are pushed onto the dpdl stack are accessible in the embedded java code via the variable names 'args0, args1, ....argsN'
+
+The following imports are predefined and default, so that embedded code can be access the classes directly:
+
+- java.io.*
+- java.util.*
+- java.time.*
+- java.sql.*
+
+Further imports can be defined in the 'DpdlEngine.ini' configuration
+
 ### Supported java language properties
 
 Note: All the language features below are supported, even if *DpdlEngine* itself runs in an older JRE version
