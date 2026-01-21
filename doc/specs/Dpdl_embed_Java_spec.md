@@ -1,5 +1,5 @@
 
-# Dpdl language plug-in documentation for 'Java'
+## Dpdl language plug-in documentation for 'Java'
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
@@ -91,18 +91,18 @@ The embedded java code must return a value, either of type 'int', 'String' or an
 
 Parameters that are pushed onto the dpdl stack are accessible in the embedded java code via the variable names 'args0, args1, ....argsN'
 
-The following imports are predefined and default, so that embedded code can be access the classes directly:
+The following imports are predefined as default, so that embedded code can be access the classes directly:
 
 - java.io.*
 - java.util.*
 - java.time.*
 - java.sql.*
 
-Further imports can be defined in the 'DpdlEngine.ini' configuration
+Further default imports can be defined in the 'DpdlEngine.ini' configuration
 
 ### Supported java language properties
 
-Note: All the language features below are supported, even if *DpdlEngine* itself runs in an older JRE version
+All the language features listed below are supported, even in case *DpdlEngine* itself runs in an older JRE version
 
 #### Java 1.4 language features:
 - **package** declaration, **import** declaration
