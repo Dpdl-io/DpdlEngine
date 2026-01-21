@@ -1,5 +1,5 @@
 
-# Dpdl language plug-in documentation for 'Lua'
+## Dpdl language plug-in documentation for 'Lua'
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
