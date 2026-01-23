@@ -22,20 +22,36 @@ This enables to write code faster in the prototyping phase and allows also to ge
 
 The 'DpdlAINerd' (**DAN**) Dpdl language plug-in can be embedded and executed within Dpdl via the keyword **`>>ai`**
 
-see Dpdl examples in: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/ai)
 
+```python
+println("testing the Dpdl language plugin 'DpdlAINerd' to automatically generate and execute code...")
+
+>>ai
+	>>c
+	write a console program in C that implements the famous SNAKE game, with colorful graphics using ncurses colors
+<<
+int exit_code = dpdl_exit_code()
+
+raise(exit_code, "Error in generating code from natural language description")
+
+println("exit code: " + exit_code)
+
+println("finished")
+```
+
+find more examples here: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/ai)
 
 ### supported AI engines
 
 The 'DpdlAINerd' supports the following AI engine types:
 
-- local AI deployments (provided as part of DpdlEngine)
+- local AI deployments (provided as part of *DpdlEngine*)
 - public AI (eg. ChatGPT, etc.)
 
 
 #### Local AI engine
 
-As part of the *DpdlEngione* setup there is the possibility to request a local AI engine setup package (fully based OpenSource components), for deployment on a local P PC, workstation or server.
+As part of the *DpdlEngine* setup there is the possibility to request a local AI engine setup package (fully based OpenSource components), for deployment on a local PC, workstation, vitual machine or server.
 
 With the provided deployment you can autonomously choose from 781 AI models available, it supports a wide range of back-ends, and you can install the models locally with a simple click as needed. 
 
@@ -119,6 +135,7 @@ This code generates a json file on-the fly for testing purposes:
 ```python
 println("generating a json file with AI....")
 
+dpdl_stack_push("dpdlai:-engine deepseek -model deepseek-chat")
 >>ai
 generate a sample json file which contains all fields for a personal identity document (ID)
 <<
@@ -220,31 +237,6 @@ retrieved with the key **`dpdlainerd_buf`**
 NOTE: The 'DpdlEngine lite' shareware/demo release has a response buffer limit of 500 characters only, the content is trimmed when exceeded.
 A full registered version of Dpdl is required to have an unlimited buffer size.
 
-
-### Supported AI engines
-
-Currently 'DpdlAINerd' supports the following AI engines:
-
-- DeepSeek (Models: deepseek-chat, deepseek-reasoner)
-- OpenAI (Model: gpt-3.5-turbo)
-
-The following AI engines will be supported in near future:
-
-- Google Vertex AI (supported soon)
-- CodePal (supported soon)
-- *support for more engines will follow
-
-
-The engine used can be configured via the 'DpdlPlugins.ini' configuration file, along with the appropriate access key 
-
-**example:**
-
-```
-[DpdlAINerd]
-DAN_ENGINE=deepseek
-DAN_API_KEY=your_api_key_here
-DAN_AI_MODEL=deepseek-chat
-```
 
 
 ### Current status
