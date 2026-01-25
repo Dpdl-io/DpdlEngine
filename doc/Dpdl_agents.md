@@ -13,7 +13,7 @@ developed by
 
 The *DpdlEngine* has built-in support for **Agent** technology that enables the implementation of Distributed Mobile Agents.
 
-The 'agent' Dpdl lanugage plug-in is a FIPA-compliant middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The Dpdl lanugage plug-in '**agent**' hosts a FIPA-compliant middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 The platform components supports agent mobility, allowing agents to be dynamically created, suspended, and migrated across heterogeneous hosts at runtime without OS dependency. System configuration and supervision can be handled programmatically or through a remote management GUI, enabling flexible and scalable deployment.
 

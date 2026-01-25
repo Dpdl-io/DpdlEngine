@@ -14,9 +14,9 @@ developed by
 &copy;
 
 
-## Dpdl - rapid development programming language and constrained device framework
+## Dpdl - rapid development programming language and constrained device platform
 
-**Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device framework**</ins> with built-in database and agent technology.
+**Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device platform**</ins> with built-in database and agent technology.
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at **native speed**</ins>. Dpdl enables polyglot programs.
 
@@ -991,7 +991,7 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 	
 ## Documentation
 
-The Dpdl framework and API documentation is available via the following links:
+The Dpdl platform and API documentation is available via the following links:
  
 
 ### Documentation
