@@ -48,6 +48,9 @@ Dpdl enables also **AI generative code** with the included *Dpdl language plug-i
 
 Dpdl provides also access to a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package, handle and query data very efficiently on memory scarce devices**</ins>.
 
+The included Dpdl lanugage plug-in '**agent**' hosts a FIPA-compliant middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+
+
 ## Dpdl is designed to:
 
 ### * Develop ideas faster
@@ -643,18 +646,18 @@ Or full featured Applications written with Dpdl in the following repository:
 
 ## Why Dpdl?
 
-Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for development of applications on <ins>small memory footprint devices</ins>, and is suitable also to be used as embedded scripting engine for applications.
+Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for development of applications on <ins>small memory footprint devices</ins>, and it is suitable also to be used as embedded scripting engine in applications.
 
-Dpdl enables rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple,
-extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
+Dpdl enables rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple, extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
 
 Dpdl has also built-in constructs that enable dynamic code generation for <ins>**generative AI code**</ins> and provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
 
-The **`DpdlPacket`** data container is a highly optimized way to store, query and access data
-on devices that have limited memory and storage capabilities.
+The **`DpdlPacket`** data container is a highly optimized way to store, query and access data on devices that have limited memory and storage capabilities.
 
-The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the prototyping and development process by leveraging generative AI code for embedded code and data within Dpdl.
+The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the prototyping and development process by leveraging generative AI code for embedded code and data generation within dpdl.
 
+The Dpdl language plug-in '**DpdlAgent**' can be used to build solid *Distributed Mobile Agents* that communicate asynchronously following the FIPA (*Foundation for Intelligent Physical Agents*) specification are able to migrate or copy themselves across multiple network hosts.
+ 
 **Dpdl can be used as:**
 
 * Rapid application development platform
