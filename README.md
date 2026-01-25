@@ -176,7 +176,7 @@ println("finished!")
 * **On the fly conversion/compilation of Dpdl types 'class' and 'struct' into native java bytecode classes**
 * **Support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
-* **Distributed Agents** (FIPA compliant)
+* Includes a full stack for building **Distributed Mobile Agents** (FIPA compliant)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data**.
 The speedup is x 25 times faster compared to a standard record store access
 * **Virtual record store filesystem**
@@ -204,7 +204,6 @@ Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained 
 Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins>. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A *DpdlPacket* can also include Dpdl code for custom setups.
 
 Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, enabling developers to use thousands of existing high-quality software libraries. 
-
 
 Dpdl enables the integration of different technologies to leverage fast prototyping and foster research and development.
 

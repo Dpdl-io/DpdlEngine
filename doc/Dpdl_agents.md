@@ -1,4 +1,4 @@
-# Dpdl agents
+## Dpdl agents
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 
@@ -9,14 +9,39 @@ developed by
 &copy;	
 
 
-## Dpdl agent specification
+### Dpdl agent specification
 
-The *DpdlEngine* has built-in support for Agent technology (compliant to FIPA specification) that enables the implementation of Distributed Mobile Agents.
+The *DpdlEngine* has built-in support for **Agent** technology that enables the implementation of Distributed Mobile Agents.
 
-The agents can be implemented in Dpdl directly or via *embedded code sections* in java or python.
+The 'agent' Dpdl lanugage plug-in is a FIPA-compliant middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+
+The platform components supports agent mobility, allowing agents to be dynamically created, suspended, and migrated across heterogeneous hosts at runtime without OS dependency. System configuration and supervision can be handled programmatically or through a remote management GUI, enabling flexible and scalable deployment.
+
+It implements the complete FIPA communication model, including ACL messaging, interaction protocols, content languages, ontologies, and adaptive transport mechanisms. Communication is asynchronous and queue-based, providing efficient, flexible message handling suited to dynamic and mobile agent environments.
 
 
-**Example:**
+### Agent platform features
+
+- Distributed, FIPA-compliant agent platform with built-in AMS and DF services
+
+- Remote UI for managing agents and containers
+
+- Tools for debugging and developing multi-agent applications
+
+- Support for agent mobility, including state and (when needed) code transfer
+
+- Parallel and concurrent agent behaviors with non-preemptive scheduling
+
+- Multiple, federated Directory Facilitators for multi-domain applications
+
+- Efficient ACL message transport (object-based internally, FIPA-compliant across platforms)
+
+- Built-in FIPA interaction protocols, naming service, and automatic agent registration
+
+- Extensible content languages, ontologies, and in-process API for external applications
+
+
+**Example:** Two 'agents' that communicate via a *Cyclic* behaviour
 
 ```python
 
@@ -142,7 +167,6 @@ endwhile
 ```
 
 
-More examples and API doc will follow soon, stand by
 
 
 

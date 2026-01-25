@@ -45,8 +45,8 @@ find more examples here: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/t
 
 The 'DpdlAINerd' supports the following AI engine types:
 
-- local AI deployments (provided as part of *DpdlEngine*)
-- public AI (eg. ChatGPT, etc.)
+- local AI deployments -> provided as part of *DpdlEngine*), Open source, provides access to many open AI models and backends
+- public AI (eg. DeepSeek, ChatGPT, etc.)
 
 
 #### Local AI engine
