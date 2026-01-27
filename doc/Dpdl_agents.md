@@ -41,7 +41,10 @@ It implements the complete FIPA communication model, including ACL messaging, in
 - Extensible content languages, ontologies, and in-process API for external applications
 
 
-**Example:** Two 'agents' that communicate via a *Cyclic* behaviour
+### Example
+
+Two 'agents' that communicate with a *Cyclic* behaviour.
+
 
 ```python
 
