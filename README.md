@@ -16,7 +16,7 @@ developed by
 
 ## Dpdl - rapid development programming language and constrained device platform
 
-**Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device platform**</ins> with built-in database and agent technology.
+**Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device platform**</ins> with built-in database and agents technology.
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at **native speed**</ins>. Dpdl enables polyglot programs.
 
@@ -38,7 +38,7 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
 
-Dpdl introduces the concept of '*embedded code sections*' that can be executed within Dpdl code by means of dedicated '*Dpdl language plug-ins*' included in the '*DpdlEngine*' release. <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
+Dpdl introduces the concept of '*embedded code sections*' in different programming languages that can be executed within Dpdl code by means of dedicated '*Dpdl language plug-ins*' included in the '*DpdlEngine*' release. <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
@@ -86,7 +86,6 @@ struct Story {
 	string url
 }
 
-
 string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
 string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
 
@@ -131,7 +130,7 @@ println("finished!")
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-[Dpdl language plug-ins ('embedded code sections')](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
+[Dpdl 'embedded code sections' (Dpdl language plug-ins)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
 
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
@@ -769,7 +768,7 @@ println("embedded java exit code: " + exit_code)
 
 ```
 
-## **Dpdl language plug-ins** ('*embedded code sections*')
+## **Dpdl 'embedded code sections'** (*Dpdl language plug-ins*)
 
 Multiple programming languages can be embedded and executed within the same **Dpdl** code via configurable **Dpdl language plug-ins** by
 using the keyword **`>>`**.
@@ -1006,7 +1005,7 @@ The Dpdl platform and API documentation is available via the following links:
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
-[Dpdl language plug-ins ('embedded code sections')](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
+[Dpdl 'embedded code sections' (Dpdl language plug-ins)](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md)
 
 [Dpdl compiler documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
 
