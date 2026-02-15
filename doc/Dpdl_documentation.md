@@ -1,4 +1,4 @@
-# Dpdl documentation
+# dpdl-lang documentation
 
 ![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
 

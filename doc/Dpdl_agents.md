@@ -9,9 +9,9 @@ developed by
 &copy;	
 
 
-### Dpdl agent specification
+### DpdlAgent specification
 
-The *DpdlEngine* has built-in support for **Agent** technology that enables the implementation of Distributed Mobile Agents.
+The *DpdlEngine* has built-in support for **Agent** technology that enables the implementation of Distributed Mobile Agents (*DpdlAgent*)
 
 The Dpdl lanugage plug-in '**DpdlAgent**' hosts a FIPA-compliant middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
@@ -20,11 +20,11 @@ The platform components supports agent mobility, allowing agents to be dynamical
 It implements the complete FIPA communication model, including ACL messaging, interaction protocols, content languages, ontologies, and adaptive transport mechanisms. Communication is asynchronous and queue-based, providing efficient, flexible message handling suited to dynamic and mobile agent environments.
 
 
-### Agent platform features
+### Platform features
 
-- Distributed, FIPA-compliant agent platform with built-in AMS and DF services
+- Distributed, FIPA-compliant agent platform with built-in AMP (Agent Management Platform) and DF (Directory Facility) services
 
-- Remote UI for managing agents and containers
+- Remote Management UI for managing agents and containers
 
 - Tools for debugging and developing multi-agent applications
 

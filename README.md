@@ -66,6 +66,13 @@ The included Dpdl lanugage plug-in '**DpdlAgent**' hosts a FIPA-compliant middle
 ### * Leverage prototyping with <ins>AI generative code</ins>
 
 
+### DpdlEngine consists of:
+
+- **dpdl-lang** -> Dpdl programming language
+- **DpdlPacket** -> Dpdl database technology
+- **DpdlAI** -> AI generative code within dpdl code
+- **DpdlAgent** -> Mobile Agent platform within dpdl code
+
 ### DpdlEngine stack overview
 
 <p align="center">
@@ -126,7 +133,7 @@ println("finished!")
 
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
 
-[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+[Dpdl lang Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
@@ -1001,7 +1008,7 @@ The Dpdl platform and API documentation is available via the following links:
 
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
 
-[Dpdl Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+[Dpdl lang Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
