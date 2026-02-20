@@ -51,6 +51,14 @@ Dpdl provides also access to a custom data container with built-in database tech
 The included Dpdl lanugage plug-in '**DpdlAgent**' hosts a FIPA-compliant middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
+## DpdlEngine consists of:
+
+- **dpdl-lang** -> Dpdl programming language
+- **DpdlPacket** -> Dpdl database technology
+- **DpdlAI** -> AI generative code within dpdl code
+- **DpdlAgent** -> Mobile Agent platform within dpdl code
+
+
 ## Dpdl is designed to:
 
 ### * Develop ideas faster
@@ -65,13 +73,6 @@ The included Dpdl lanugage plug-in '**DpdlAgent**' hosts a FIPA-compliant middle
 ### * Plug-in oriented
 ### * Leverage prototyping with <ins>AI generative code</ins>
 
-
-### DpdlEngine consists of:
-
-- **dpdl-lang** -> Dpdl programming language
-- **DpdlPacket** -> Dpdl database technology
-- **DpdlAI** -> AI generative code within dpdl code
-- **DpdlAgent** -> Mobile Agent platform within dpdl code
 
 ### DpdlEngine stack overview
 
