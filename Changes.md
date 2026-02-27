@@ -1,5 +1,5 @@
 
-![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
+![Dpdl](https://www.dpdl.io/images/dpdl-io_blue_small.png)
 
 developed by
 **SEE Solutions**

@@ -1,7 +1,7 @@
 
 ## Dpdl language plug-in documentation for 'Java'
 
-![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
+![Dpdl](https://www.dpdl.io/images/dpdl-io_blue_small.png)
 
 				www.dpdl.io
 		

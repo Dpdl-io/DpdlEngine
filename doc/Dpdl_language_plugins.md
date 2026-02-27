@@ -1,7 +1,7 @@
 
 # Dpdl 'embedded code sections' (*Dpdl language plug-ins*)
 
-![Dpdl](https://www.dpdl.io/images/dpdl-io.png)
+![Dpdl](https://www.dpdl.io/images/dpdl-io_blue_small.png)
 
 				www.dpdl.io
 		
