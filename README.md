@@ -2,7 +2,7 @@
 # Dynamic Packet Definition Language
 
 <p align="center">
-	<img src="https://www.dpdl.io/images/dpdl-io.png">
+	<img src="https://www.dpdl.io/images/dpdl-io.png" width="80%" height="80%">
 </p>
 
 				  www.dpdl.io
