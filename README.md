@@ -16,9 +16,9 @@ developed by
 
 ## Dpdl - rapid development programming language and constrained device platform
 
-**Dpdl** is a <ins>rapid development **programming language**</ins> and <ins>**constrained device platform**</ins> with built-in database and agents technology.
+**Dpdl** is a rapid development <ins>**programming language**</ins> and <ins>**constrained device platform**</ins> with built-in database and agents technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at **native speed**</ins>. Dpdl enables polyglot programs.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at **Native Speed**</ins>. Dpdl enables polyglot programming.
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
@@ -36,15 +36,15 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 
 ### **Dpdl** = dpdl-lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + AI = <ins>Powerful and Versatile</ins>
 
-Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to native code</ins> for multiple target platforms.
+Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be <ins>compiled also directly to Native code</ins> for multiple target platforms.
 
-Dpdl introduces the concept of '*embedded code sections*' in different programming languages that can be executed within Dpdl code by means of dedicated '*Dpdl language plug-ins*' included in the '*DpdlEngine*' release. <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
+Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages to be executed within Dpdl code by means of dedicated '*Dpdl language plug-ins*' included in the '*DpdlEngine*' release. <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
 </p>
 
-Dpdl enables also **AI generative code** with the included *Dpdl language plug-in* '*DpdlAINerd*' (**DAN**), which enables to <ins>**automatically generate**</ins> programming language code and content or data by means of natural language descriptions contained inside dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
+Dpdl enables also **AI generative code** by means of the included *Dpdl language plug-in* '*DpdlAINerd*' (**DAN**), which enables to <ins>**automatically generate**</ins> programming language code and content or data by means of natural language descriptions contained inside dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
 
 Dpdl provides also access to a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package, handle and query data very efficiently on memory scarce devices**</ins>.
 
