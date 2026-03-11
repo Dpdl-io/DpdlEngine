@@ -14,15 +14,15 @@ developed by
 &copy;
 
 
-## Dpdl - rapid development programming language and constrained device platform
+## Dpdl - rapid development Programming Language and constrained Device platform
 
-**Dpdl** is a rapid development <ins>**programming language**</ins> and <ins>**constrained device platform**</ins> with built-in database and agents technology.
+**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in Database and Agents technology.
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at **Native Speed**</ins>. Dpdl enables polyglot programming.
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
-**Dpdl** provides access to <ins>**jvm platform API's, Native shared libraries, Wasm modules and GPU compute**</ins>. In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em>, <ins>**directly embedded within dpdl code**</ins>.
+**Dpdl** provides access to <ins>**jvm platform API's, Native shared libraries, Wasm modules and GPU compute**</ins>. In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica and also others</em>, <ins>**directly embedded and within dpdl code**</ins>.
 
 Everything comes already included with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
@@ -48,7 +48,7 @@ Dpdl enables also **AI generative code** by means of the included *Dpdl language
 
 Dpdl provides also access to a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package, handle and query data very efficiently on memory scarce devices**</ins>.
 
-The included Dpdl lanugage plug-in '**DpdlAgent**' hosts a FIPA-compliant middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The included Dpdl lanugage plug-in '**DpdlAgent**' hosts an agent development framework for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
 ## DpdlEngine consists of:
@@ -64,7 +64,7 @@ The included Dpdl lanugage plug-in '**DpdlAgent**' hosts a FIPA-compliant middle
 ### * Develop ideas faster
 ### * On multiple platforms
 ### * Using the power of multiple programming languages and API's within a single source
-### * Reuse code
+### * Re-use code
 ### * No need to install, compile and configure development environments
 ### * Self-contained, No additional dependencies required (except user libraries)
 ### * Facilitate rapid prototyping for Hardware programming
