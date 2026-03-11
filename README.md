@@ -48,7 +48,7 @@ Dpdl enables also **AI generative code** by means of the included *Dpdl language
 
 Dpdl provides also access to a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package, handle and query data very efficiently on memory scarce devices**</ins>.
 
-The included Dpdl lanugage plug-in '**DpdlAgent**' hosts an agent development framework for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development framework for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
 ## DpdlEngine consists of:
