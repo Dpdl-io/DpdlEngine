@@ -37,6 +37,13 @@ As example, the size of the DpdlVM that includes the Dpdl langage plug-in for ex
 **Example:** dpdl code with an 'embedded code section' in C (compiled)
 
 ```python
+
+int i
+for(i < 10000)
+	println("This is printed from Dpdl:" + i)
+	i=i+1
+endfor
+
 println("Dpdl example with embedded C code section...")
 
 dpdl_stack_push("dpdl:compile")

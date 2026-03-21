@@ -49,7 +49,7 @@ Two 'agents' that communicate with a *Cyclic* behaviour.
 
 #### Implementation using **dpdl** code
 
-This is the implementation of the two agents by using dpdl code
+This is the implementation of the two agents by using <ins>**dpdl**</ins> code
 
 ```python
 
@@ -212,7 +212,7 @@ endwhile
 
 ```
 
-The same implementation as above, implemented using **java** language, here the example:
+The same implementation as above, implemented using <ins>**java**</ins> language, here the example:
 
 
 ### Implementation using embedded **java** code
