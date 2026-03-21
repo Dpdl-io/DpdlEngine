@@ -188,15 +188,18 @@ on Windows
 
 	
 4. run the query console example script
-
-	execute the command -load and enter the query console example script:
+	
+	The example dpdl script to perform the queries is [dpdlpacket/testDpdlDB2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlpacket/testDpdlDB2.h)
+	
+	To run the dpdl script execute the command -load command in the console and enter the query console example script:
 	
 	```
 	-load
 	enter the Dpdl script name to execute:
-	testDpdlDB2.h
+	dpdlpacket/testDpdlDB2.h
 	```
 	
+	The dpdl script will print this, where you can choose a test method:
 	
 	The script allows to perform either a single query, or n sequential or random queries, and measures the execution
 	time for searching and accessing data:
