@@ -22,7 +22,7 @@ Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*Dpdl
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
-**Dpdl** provides access to <ins>**jvm platform API's, Native shared libraries, Wasm modules and GPU compute**</ins>. In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica and also others</em>, <ins>**directly embedded and within dpdl code**</ins>.
+**Dpdl** provides access to <ins>**JVM platform API's, Native shared libraries, WASM modules and GPU compute**</ins>. In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica and also others</em>, <ins>**directly embedded and within dpdl code**</ins>.
 
 Everything comes already included with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
@@ -48,20 +48,20 @@ Dpdl enables also **AI generative code** by means of the included *Dpdl language
 
 Dpdl provides also access to a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package, handle and query data very efficiently on memory scarce devices**</ins>.
 
-The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development framework for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
 ## DpdlEngine consists of:
 
 - **dpdl-lang** -> Dpdl programming language
-- **DpdlPacket** -> Dpdl database technology
+- **DpdlPacket** -> Dpdl Database technology
 - **DpdlAI** -> AI generative code within dpdl code
 - **DpdlAgent** -> Mobile Agent platform within dpdl code
 
 
 ## Dpdl is designed to:
 
-### * Develop ideas faster
+### * Facilitate development
 ### * On multiple platforms
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Re-use code
@@ -82,7 +82,7 @@ The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development
 
 ## <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-## Dpdl example:
+## dpdl-lang example:
 
 ```c
 import('http')
