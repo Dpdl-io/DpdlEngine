@@ -360,7 +360,7 @@ println("embedded groovy exit code: " + exit_code)
 
 The Dpdl code below illustrates the use of a dpdl class that implements a function to write data files efficiently by means of a java JRE class (i.e. [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) )
 
-```c++
+```python
 import("MyWriter.h")
 
 println("testing my buffered file writer...")
@@ -374,7 +374,7 @@ myw.writeData(3000, "data 3")
 
 This is the implementation of '**MyWriter**' class
 
-```c++
+```python
 class MyWriter {
 
 	object header = new("String", "some data init head str")
