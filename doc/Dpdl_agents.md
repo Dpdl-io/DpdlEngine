@@ -13,13 +13,14 @@ developed by
 
 ### DpdlAgent specification
 
-The *DpdlEngine* has built-in support for **Agent** technology that enables to implement Distributed Mobile Agents (*DpdlAgent*) execution flows.
+Dpdl has built-in support for **Agents** technology that enables to implement Distributed Mobile Agents execution flows.
 
-The '**DpdlAgent** component provides an agent development framework for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The '**DpdlAgent** component includes a complete agent development framework for building distributed and mobile multi-agent systems.
 
-The platform components supports agent mobility, allowing agents to be dynamically created, suspended, and migrated across heterogeneous hosts at runtime without OS dependency. System configuration and supervision can be handled programmatically or through a remote management GUI, enabling flexible and scalable deployment.
+It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination, including ACL messaging, interaction protocols, content languages, ontologies, and adaptive transport mechanisms. 
+Communication is asynchronous and queue-based, providing efficient, flexible message handling suited to dynamic and mobile agent environments.
 
-It implements the complete FIPA communication model, including ACL messaging, interaction protocols, content languages, ontologies, and adaptive transport mechanisms. Communication is asynchronous and queue-based, providing efficient, flexible message handling suited to dynamic and mobile agent environments.
+The agent platform components support also agent mobility, allowing agents to be dynamically created, suspended, and migrated across heterogeneous hosts at runtime without OS dependency. System configuration and supervision can be handled programmatically or through a remote management UI, enabling flexible and scalable deployment.
 
 
 ### Platform features
@@ -43,13 +44,14 @@ It implements the complete FIPA communication model, including ACL messaging, in
 - Extensible content languages, ontologies, and in-process API for external applications
 
 
-### Example
+### Examples
 
-Two 'agents' that communicate with a *Cyclic* behaviour.
+Two 'agents' that communicate via *FIPA* compliant protocols and ontologies.
 
-#### Implementation using **dpdl** code
 
-This is the implementation of the two agents by using <ins>**dpdl**</ins> code
+#### Example 'Agents' implementation using pure **dpdl** code
+
+This is a simple implementation of the two agents using pure <ins>**dpdl**</ins> code, that exchange asynchronous messages with a *Cyclic* behaviour.
 
 ```python
 
@@ -212,138 +214,208 @@ endwhile
 
 ```
 
-The same implementation as above, implemented using <ins>**java**</ins> language, here the example:
+The same implementation as above, but implemented using embedded <ins>**java**</ins> code can be found here: [agent/dpdlAgent.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/dpdlAgent.h) 
 
 
-### Implementation using embedded **java** code
+### Example 'Agents' implementation using embedded **java** code within dpdl
+
+This is a more articulated example, where two agents implemented with dpdl embedded java code, exchange serialized java objects. 
+Note that in this case the ACLMessage language is set to be 'JavaSerialization'
 
 ```python
 
-println("starting main agent management platform...")
+println("starting dpdl agent management platform to run two agents that exchange serialized java objects, using embedded java code...")
 
 object agent_mgt = new("DpdlAgentManagementPlatform")
 
+raise(agent_mgt, "Error in starting agent management platform...")
+
 println("version: " + agent_mgt.getVersion())
-
-raise(agent_mgt, "Error in starting dpdl agent management platform...")
-
-println("starting agent1...")
 
 dpdl_stack_push("dpdlstack:myagent_config", "dpdlagent:-code java -container -host localhost -port 1049")
 
->>agent(myagent1)
+println("starting object writer agent...")
+
+>>agent(writeragent)
+
+	public class Person implements java.io.Serializable {
+
+		String name;
+		String surname;
+		Date   birthdate;
+		int    age;
+
+		Person(String n, String s, Date d, int a) {
+			name = n;
+			surname = s;
+			birthdate = d;
+			age = a;
+		}
+
+		public String toString() {
+			return(name + " " + surname + " birthday: " + birthdate.toString() + " age = " + age);
+		}
+	}
 
 	protected void setup() {
-	
-		System.out.println("Agent #1  " + this.getLocalName() + " is ready");
 
-		        addBehaviour(new CyclicBehaviour(this) {
+		  AID reader = new AID();
+		  DFAgentDescription dfd = new DFAgentDescription();
+		  ServiceDescription sd = new ServiceDescription();
+		  sd.setType("Obj_Read_Agent");
+		  dfd.addServices(sd);
 
-		            public void action() {
-		                ACLMessage msg = receive();
-		                if (msg != null) {
-		                	System.out.println("message received: " + msg.getContent());
+		  try {
+			while (true) {
+			  System.out.println(getLocalName()+ " waiting for an Obj_Read_Agent to register via AP");
+			  SearchConstraints c = new SearchConstraints();
+			  c.setMaxDepth(new Long(3));
+			  DFAgentDescription[] result = DFService.search(this, dfd, c);
+			  if ((result != null) && (result.length > 0)) {
+				dfd = result[0];
+				reader = dfd.getName();
+				break;
+			  }
+			  Thread.sleep(10000);
+			}
+		  } catch (Exception fe) {
+			  fe.printStackTrace();
+			  System.err.println(getLocalName()+" search with AP resulted in exception: " + fe.getMessage());
+			  doDelete();
+		  }
 
-		                    ACLMessage reply = msg.createReply();
-		                    reply.addReceiver(new AID("myagent2", AID.ISLOCALNAME));
-		                    reply.setPerformative(ACLMessage.INFORM);
-		                    try {
-		                        String replyStr= "HELLO TEST from myagent1";
-		                        System.out.println("sending reply: " + replyStr);
-		                        reply.setContent(replyStr);
-		                    } catch (Exception e) {
-		                        throw new RuntimeException(e);
-		                    }
+		  System.out.println(getLocalName() + " agent sends ACLMessages with content as serialized Java Object");
 
-		                    send(reply);
+		   try {
+			  ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
 
-		                    try {
-		                        Thread.sleep(5000);
-		                    } catch (InterruptedException e) {
-		                        e.printStackTrace();
-		                    }
-		                } else {
-		                    block();
-		                }
-		            }
-		        });
+			  msg.addReceiver(reader);
+
+			  Person p = new Person("Armin", "Costa", new Date(), 1);
+			  msg.setContentObject(p);
+			  msg.setLanguage("JavaSerialization");
+			  send(msg);
+			  System.out.println(getLocalName()+" sent 1st msg "+msg);
+
+			  msg.setDefaultEnvelope();
+			  msg.getEnvelope().setAclRepresentation(FIPANames.ACLCodec.BITEFFICIENT);
+			  send(msg);
+			  System.out.println(getLocalName() + " sent 1st msg with bit-efficient aclCodec " + msg);
+
+			  msg.getEnvelope().setAclRepresentation(FIPANames.ACLCodec.XML);
+			  send(msg);
+			  System.out.println(getLocalName() + " sent 1st msg with xml aclCodec " + msg);
+
+			  p = new Person("Alexis", "Kunst", new Date(), 2);
+			  msg.setContent(p.toString());
+			  msg.setLanguage("JavaLanguage");
+			  msg.setDefaultEnvelope();
+			  send(msg);
+			  System.out.println(getLocalName() + " sent 2nd msg " + msg);
+
+			  msg.getEnvelope().setAclRepresentation(FIPANames.ACLCodec.BITEFFICIENT);
+			  send(msg);
+			  System.out.println(getLocalName( ) + " sent 2nd msg with bit-efficient aclCodec " + msg);
+
+			  msg.getEnvelope().setAclRepresentation(FIPANames.ACLCodec.XML);
+			  send(msg);
+			  System.out.println(getLocalName() + " sent 2nd msg with xml aclCodec " + msg);
+		  } catch (IOException e) {
+			  e.printStackTrace();
+		  }
+		  doDelete();
 	}
 
 <<
 
-object myagent1_obj = dpdl_agent_get("myagent1")
+object wagent = dpdl_agent_get("writeragent")
 
-println("Agent #1 GUID is: " + myagent1_obj.getName())
+raise(wagent, "Error in creating agent")
+
+#println("Writer Agent GUID is: " + wagent.getName())
 println("")
 
-println("ensure the agent is active...")
+println("starting object reader agent...")
 
-myagent1_obj.doActivate()
+>>agent(readeragent)
 
-println("starting agent2...")
+	public class Person implements java.io.Serializable {
 
-dpdl_stack_push("dpdlstack:myagent_config")
+		String name;
+		String surname;
+		Date   birthdate;
+		int    age;
 
->>agent(myagent2)
+		Person(String n, String s, Date d, int a) {
+			name = n;
+			surname = s;
+			birthdate = d;
+			age = a;
+		}
 
-	protected void setup() {
-	
-        System.out.println("Agent #2" + getLocalName() + " is ready");
-        addBehaviour(new CyclicBehaviour(this) {
-            String reply = "null";
-            public void action() {
-
-                ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
-                if(reply != null) {
-                    try {
-                        reply = "Hello MEGA TEST from myagent2";
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                    msg.setContent(reply);
-                    System.out.println("Agent #2 Sending reply: " + reply);
-                } else {
-                    try {
-                        msg.setContent("MEGA TEST :)");
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-
-                msg.addReceiver(new AID("myagent1", AID.ISLOCALNAME));
-
-                send(msg);
-
-                ACLMessage replyACL = receive();
-                System.out.println("Agent #2 received reply: " + replyACL);
-                if (replyACL != null) {
-                	  System.out.println("Agent #2 received reply: " + replyACL.getContent());
-                    reply = replyACL.getContent();
-                } else {
-                    block();
-                }
-
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+		public String toString() {
+			return(name + " " + surname + " birthday: " + birthdate.toString() + " age = " + age);
+		}
 	}
 
+	protected void setup() {
+
+	  DFAgentDescription dfd = new DFAgentDescription();
+	  ServiceDescription sd = new ServiceDescription();
+	  sd.setType("Obj_Read_Agent");
+	  sd.setName(getName());
+	  sd.setOwnership("ExampleAgents");
+	  dfd.addServices(sd);
+	  dfd.setName(getAID());
+	  dfd.addOntologies("Test_Example");
+
+	  try {
+		DFService.register(this,dfd);
+	  } catch (FIPAException e) {
+		System.err.println(getLocalName() + " registration with AP resulted in exception: " + e.getMessage());
+		doDelete();
+	  }
+
+	  System.out.println(getLocalName() + " successful with AP");
+
+	  while (true) {
+		try {
+		  System.out.println(getLocalName() + " is waiting for message");
+		  ACLMessage msg = blockingReceive();
+		  System.out.println(getLocalName() + " rx msg" + msg);
+
+		  if ("JavaSerialization".equals(msg.getLanguage())) {
+			  Person p = (Person)msg.getContentObject();
+			  System.out.println(getLocalName() + " read Java Object " + p.getClass().getName() + p.toString());
+		  }else{
+			  System.out.println(getLocalName() + " read Java String " + msg.getContent());
+		  }
+
+		} catch(UnreadableException e3){
+			  System.err.println(getLocalName()+ " catched exception " + e3.getMessage());
+		}
+	  }
+	}
+
+	public void takeDown() {
+		try {
+		  DFService.deregister(this);
+		}
+		catch (FIPAException e) {
+		  System.err.println(getLocalName()+" de-registration with AP resulted in exception: "+e.getMessage());
+		}
+	}
 <<
 
-object myagent2_obj = dpdl_agent_get("myagent2")
+object ragent = dpdl_agent_get("readeragent")
 
-println("Agent #2 GUID is: " + myagent2_obj.getName())
+raise(ragent, "Error in creating agent")
+
+println("Reader Agent GUID is: " + ragent.getName())
 println("")
 
-println("ensure the agent is active...")
-
-myagent2_obj.doActivate()
-
-println("both agents are now running and can be controlled individually and via the DpdlAgentManagementPlatform object functions")
+println("both agents are now running and can be controlled individually and via the DpdlAgentManagementPlatform object functions,")
+println("or controlled and inspected via dedicated Agent Platform UI")
 
 while(true)
 	print(".")
@@ -351,5 +423,7 @@ while(true)
 endwhile
 
 ```
+
+More examples will follow soon...
 
 

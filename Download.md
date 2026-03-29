@@ -44,7 +44,7 @@ Suggestion, feature wish list and contributions to enhance Dpdl are very welcome
 
 The 'DpdlEngine pro' release is tailored to specific customer requirements in terms of licensing model and release package.
 
-In particular also platform specific targets can be defined (e.g run on Java 1.4, JavaME etc..) to meet at best the customer requirements at full extend.
+In particular also platform specific targets can be defined (e.g optimized for a specific JVM version, JavaME etc..) to meet at best the customer requirements at full extend.
 
 The available Dpdl language plug-ins can also be requested along with its full source code disclosure for applying customizations or develop further extensions.
 
