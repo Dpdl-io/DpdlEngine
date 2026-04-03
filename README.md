@@ -40,7 +40,7 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
 
-Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages or any custom code syntax to be executed within Dpdl code by means of dedicated '*Dpdl language plug-ins*' included in the '*DpdlEngine*' release. 
+Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages or any custom code syntax to be executed within dpdl code by means of dedicated '*Dpdl language plug-ins*', distributed with the '*DpdlEngine*' release, or developed separately ad-hoc.
 
 <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
@@ -55,7 +55,7 @@ Dpdl includes a custom data container with built-in database technology referred
 The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
-## DpdlEngine consists of:
+## DpdlEngine provides:
 
 - **dpdl-lang** -> Dpdl programming language
 - **DpdlPacket** -> Dpdl Database technology

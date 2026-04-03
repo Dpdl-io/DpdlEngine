@@ -2885,12 +2885,6 @@ int main(int argc, char **argv){
 * [Table of Contents](#table-of-contents)
 
 
-### Current limitations
-
-- Currently recursion is currently not directly supported with pure Dpdl code. Work is progress.
-- Currently dpdl arrays only have one dimension. But creating an array of arrays is possible.
-
-
 ## Some considerations
 
 ### Dynamic function allocations
