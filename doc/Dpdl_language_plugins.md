@@ -1,5 +1,5 @@
 
-# Dpdl 'embedded code sections' (*Dpdl language plug-ins*)
+# dpdl 'embedded code sections' (*Dpdl language plug-ins*)
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl-io_blue.png" width="35%">
@@ -20,7 +20,7 @@ In this way <ins>**multiple programming languages** and **custom syntax interpre
  
 This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts executable inside dpdl code.
 
-The 'embedded code sections' are executed natively and run in an isolated memory region. The single 'Dpdl language plug-ins' can be activated or deactivated and are tamper-proof to avoid malicious code injections.
+The 'embedded code sections' are executed natively and run in an isolated memory region. The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
 
 
 ### Dpdl supports the embedding and execution of the following language code, available in from of 'Dpdl language plug-ins':
@@ -664,45 +664,61 @@ println("embedded ruby code exit code: " + exit_code)
 
 Java code blocks i.e a body of a method, can be embedded with the keyword **`>>java`**.
 
-**Example Dpdl code with embedded 'Java' code:**
+**Example dpdl code with embedded 'Java' code:**
 
 ```python
-println("testing embedding of java code...")
+println("dpdl example with an 'embedded code section' in java...")
 
-string str = "my test param"
-int x = 100
-float f = 0.3
-double d = 99.9d
+string str = "this is my str parameter"
+int i = 100
+float f = 0.2
+double d = 9999.9d
 
-dpdl_stack_push(str, x, f, d)
+dpdl_stack_push(str, "./Test/TestRead.txt", i, f, d)
 
->>java
-System.out.println("Parameters: ");
-System.out.println("	arg0: " + arg0);
-System.out.println("	arg1: " + arg1);
-System.out.println("	arg2: " + arg2);
-System.out.println("	arg3: " + arg3);
+>>java(my_code_obj)
 
-static void myMethod1(){
-	System.out.println("myMethod1: " + 1);
-}
+	System.out.println("Parameters: ");
+	System.out.println("	arg0: " + arg0);
+	System.out.println("	arg1: " + arg1);
+	System.out.println("	arg2: " + arg2);
+	System.out.println("	arg3: " + arg3);
+	System.out.println("	arg4: " + arg4);
 
-myMethod1();
-myMethod2();
+	println("call some methods...")
 
-static void myMethod2(){
-	System.out.println("method2: " + 2);
-}
+	myMethod1(arg2);
+	myMethod2(arg0, arg2);
 
-for(int x = 0; x < arg1; x++){
-	System.out.println("x: " + x);
-}
-return 1;
+	static void myMethod1(int c){
+		System.out.println("call myMethod1: " + c);
+		System.out.println("	arg1: " + arg1);
+		System.out.println("	arg3: " + arg3);
+
+	}
+
+	static void myMethod2(string val, int c){
+		System.out.println("call method2: " + val + " " + 2);
+		System.out.println("	arg3: " + arg3);
+		System.out.println("	arg4: " + arg4);
+	}
+
 <<
-
 int exit_code = dpdl_exit_code()
+
 println("embedded java exit code: " + exit_code)
+
+println("we can than also get the code obj and call directly the methods...")
+
+object my_code_obj = dpdl_code_obj_get("my_code_obj")
+
+my_code_obj.myMethod1(888)
+
+my_code_obj.myMethod2("this is my val", 23)
+
+println("finished")
 ```
+
 
 #### Plug-in documentation/Specification
 

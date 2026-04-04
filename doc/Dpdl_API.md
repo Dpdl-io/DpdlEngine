@@ -188,6 +188,7 @@ stack() return object Stack
 
 cast(object obj) return dpdl_object
 typeof(object o) return string type_str
+getclass(object o) return object cls
 convert(string type, object obj) return object converted_obj
 to_int(object val) return int value
 to_float(object val) return float value
