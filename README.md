@@ -154,11 +154,11 @@ println("finished!")
 
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
-[Dpdl Agents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
+[DpdlAgents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
 
 [DpdlVM](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlVM.md)
 
-[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+[DpdlAI](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
 
@@ -747,33 +747,33 @@ dpdl_stack_push(mystr, "./Test/TestRead.txt", x)
 
 >>java
 
-System.out.println("Parameters: ");
-System.out.println("	arg0: " + arg0);
-System.out.println("	arg1: " + arg1);
-System.out.println("	arg2: " + arg2);
-
-static void myMethod1(){
-	System.out.println("myMethod1: " + 1);
-}
-
-myMethod1();
-
-for(int x = 0; x < arg2; x++){
-	System.out.println("x: " + x);
-}
-
-try{
-	File myfile = new File(arg1);
+	System.out.println("Parameters: ");
+	System.out.println("	arg0: " + arg0);
+	System.out.println("	arg1: " + arg1);
+	System.out.println("	arg2: " + arg2);
 	
-	boolean b_writable = myfile.canWrite();
+	static void myMethod1(){
+		System.out.println("myMethod1: " + 1);
+	}
 	
-	System.out.println("file: " + myfile.getName() + " is writable: " + b_writable);
+	myMethod1();
 	
-}catch(IOException e){
-	System.out.println("Error in accessing file: " + e.getMessage());
-}
-
-return 1;
+	for(int x = 0; x < arg2; x++){
+		System.out.println("x: " + x);
+	}
+	
+	try{
+		File myfile = new File(arg1);
+		
+		boolean b_writable = myfile.canWrite();
+		
+		System.out.println("file: " + myfile.getName() + " is writable: " + b_writable);
+		
+	}catch(IOException e){
+		System.out.println("Error in accessing file: " + e.getMessage());
+	}
+	
+	return 1;
 <<
 int exit_code = dpdl_exit_code()
 println("embedded java exit code: " + exit_code)
@@ -847,20 +847,20 @@ Example below shows Dpdl code embedding 'C++' that makes use of the powerful Roo
 println("test embedded C++ that uses the Root framework...")
 
 >>cpp
-auto canvas = new TCanvas("c","Graph2D example",0,0,700,600);
-
-double x, y, z, P = 6.;
-int np = 200;
-auto dt = new TGraph2D();
-auto r = new TRandom();
-for (int N=0; N<np; N++) {
-	x = 2*P*(r->Rndm(N))-P;
-	y = 2*P*(r->Rndm(N))-P;
-	z = (sin(x)/x)*(sin(y)/y)+0.2;
-	dt->SetPoint(N,x,y,z);
-}
-dt->Draw("tri1 p0");
-canvas->Modified(); canvas->Update();
+	auto canvas = new TCanvas("c","Graph2D example",0,0,700,600);
+	
+	double x, y, z, P = 6.;
+	int np = 200;
+	auto dt = new TGraph2D();
+	auto r = new TRandom();
+	for (int N=0; N<np; N++) {
+		x = 2*P*(r->Rndm(N))-P;
+		y = 2*P*(r->Rndm(N))-P;
+		z = (sin(x)/x)*(sin(y)/y)+0.2;
+		dt->SetPoint(N,x,y,z);
+	}
+	dt->Draw("tri1 p0");
+	canvas->Modified(); canvas->Update();
 <<
 
 int exit_code = dpdl_exit_code()
@@ -892,18 +892,18 @@ string a = "test"
 dpdl_stack_push(n, x, a)
 
 >>c
-#include <stdio.h>
-
-int dpdl_main(int argc, char **argv){
-	printf("Hello C from Dpdl!\n");
-	printf("\n");
-	printf("num params: %d\n", argc);
-	int cnt;
-    for (cnt = 0; cnt < argc; cnt++){
-        printf("	param %d: %s\n", cnt, argv[cnt]);
-    }
-    return 0;
-}
+	#include <stdio.h>
+	
+	int dpdl_main(int argc, char **argv){
+		printf("Hello C from Dpdl!\n");
+		printf("\n");
+		printf("num params: %d\n", argc);
+		int cnt;
+	    for (cnt = 0; cnt < argc; cnt++){
+	        printf("	param %d: %s\n", cnt, argv[cnt]);
+	    }
+	    return 0;
+	}
 <<
 int exit_code = dpdl_exit_code()
 
@@ -1029,11 +1029,11 @@ The Dpdl platform and API documentation is available via the following links:
 
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
-[Dpdl Agents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
+[DpdlAgents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
 
 [DpdlVM](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlVM.md)
 
-[DpdlAINerd](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
+[DpdlAI](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
 
@@ -1081,10 +1081,10 @@ println("testing embedding python code")
 println("")
 
 >>python
-languages = ['Dpdl', 'C', 'Python', 'Clojure']
-
-for language in languages:
-	print(language)
+	languages = ['Dpdl', 'C', 'Python', 'Clojure']
+	
+	for language in languages:
+		print(language)
 <<
 println("")
 
@@ -1107,17 +1107,17 @@ Example Dpdl code embedding 'Julia' that generates a Plot and saves the result a
 println("Testing Plot data with Julia programming language...")
 
 >>julia
-using Plots
-
-x = range(0, 10, length=100)
-y1 = sin.(x)
-y2 = cos.(x)
-p = plot(x, [y1 y2])
-
-savefig(p, "./Test/myplot.pdf")
-
-dispose_status = @ccall dpdl_julia_dispose()::Int32
-return 1
+	using Plots
+	
+	x = range(0, 10, length=100)
+	y1 = sin.(x)
+	y2 = cos.(x)
+	p = plot(x, [y1 y2])
+	
+	savefig(p, "./Test/myplot.pdf")
+	
+	dispose_status = @ccall dpdl_julia_dispose()::Int32
+	return 1
 <<
 
 int exit_code = dpdl_exit_code()
@@ -1144,20 +1144,20 @@ println("testing embedded js...")
 
 dpdl_stack_push("my Hello Message!!!")
 >>js
-
-import { fib } from "./DpdlLibs/js/fib_module.js";
-
-var a_message = "null";
-
-console.log(scriptArgs)
-console.log('Dpdl sends a message with QuickJS');
-
-if(scriptArgs.length > 0){
-	a_message = scriptArgs[0];
-}
-std.printf("Message = %s %d", a_message, 23);
-console.log('');
-console.log("fib(10)=", fib(10));
+	
+	import { fib } from "./DpdlLibs/js/fib_module.js";
+	
+	var a_message = "null";
+	
+	console.log(scriptArgs)
+	console.log('Dpdl sends a message with QuickJS');
+	
+	if(scriptArgs.length > 0){
+		a_message = scriptArgs[0];
+	}
+	std.printf("Message = %s %d", a_message, 23);
+	console.log('');
+	console.log("fib(10)=", fib(10));
 <<
 
 int exit_code = dpdl_exit_code()
@@ -1182,44 +1182,44 @@ string buffer_key = "dpdlbuf_result"
 dpdl_stack_push(buffer_key, "name", "Alexis", "surname", "Kunst")
 
 >>lua
-function doSomeAlg()
-	local home_dir = os.getenv("HOME")
-	print("user home: ", home_dir)
-	
-	local x = os.clock()
-	    local s = 0
-	    for i=1,100 do 
-	    	s = s + i
-	    	io.write(".")
-	    end
-	    print("")
-	    print(string.format("elapsed time: %.2f\n", os.clock() - x))
-end
-
-function paramLen(T)
-  local count = 0
-  for _ in pairs(T) do count = count + 1 end
-  return count
-end
-
-function dpdl_main(params)
-	local num_params = paramLen(params)
-	io.write("dpdl_main call with number of params: ")
-	io.write(num_params)
-	print()
-	print("executing my embedded algorithm...")
-	print("")
-	doSomeAlg()
-	print()
-	print("returning param values in 'uppercase'")
-	local tab_out = {numfields=1}
-	for k,v in pairs(params) do
-		tab_out.numfields = tab_out.numfields + 1
-		tab_out[tostring(k)] = string.upper(tostring(v))
+	function doSomeAlg()
+		local home_dir = os.getenv("HOME")
+		print("user home: ", home_dir)
+		
+		local x = os.clock()
+		    local s = 0
+		    for i=1,100 do 
+		    	s = s + i
+		    	io.write(".")
+		    end
+		    print("")
+		    print(string.format("elapsed time: %.2f\n", os.clock() - x))
 	end
-	tab_out.numfields = tostring(tab_out.numfields)
-	return tab_out
-end
+	
+	function paramLen(T)
+	  local count = 0
+	  for _ in pairs(T) do count = count + 1 end
+	  return count
+	end
+	
+	function dpdl_main(params)
+		local num_params = paramLen(params)
+		io.write("dpdl_main call with number of params: ")
+		io.write(num_params)
+		print()
+		print("executing my embedded algorithm...")
+		print("")
+		doSomeAlg()
+		print()
+		print("returning param values in 'uppercase'")
+		local tab_out = {numfields=1}
+		for k,v in pairs(params) do
+			tab_out.numfields = tab_out.numfields + 1
+			tab_out[tostring(k)] = string.upper(tostring(v))
+		end
+		tab_out.numfields = tostring(tab_out.numfields)
+		return tab_out
+	end
 <<
 
 int exit_code = dpdl_exit_code()
@@ -1244,13 +1244,11 @@ dpdl_stack_var_put("db_url", "jdbc:postgresql://127.0.0.1:5432/mytestdb")
 dpdl_stack_var_put("db_user", "testuser")
 dpdl_stack_var_put("db_pass", "189923")
 
-dpdl_stack_push("dpdlbuf_res")
-
->>sql
+>>sql(my_sqlbuf)
 	SELECT id, name, surname, email from mytable
 <<
 
-object result = dpdl_stack_obj_get("dpdlbuf_res")
+object result = dpdl_stack_obj_get("my_sqlbuf")
 
 raise(result, "Error: dpdl stack buffer is null")
 

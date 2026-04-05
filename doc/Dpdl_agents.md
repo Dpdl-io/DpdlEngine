@@ -1,4 +1,4 @@
-## DpdlAgent
+## DpdlAgents
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl-io_blue.png" width="35%">
@@ -11,7 +11,7 @@ developed by
 &copy;	
 
 
-### DpdlAgent specification
+### DpdlAgents specification
 
 Dpdl has built-in support for **Agents** technology that enables to implement Distributed Mobile Agents execution flows.
 

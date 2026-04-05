@@ -12,7 +12,7 @@ developed by
 &copy;
 
 
-Dpdl introduces the concept of '*embedded code sections*' that can be executed right inside dpdl code via dedicated plug-ins available distributed with the *DpdlEngine* (see **Dpdl language plug-ins**).
+Dpdl introduces the concept of '*embedded code sections*' that can be executed right inside dpdl code via dedicated plug-ins available, that are distributed with the *DpdlEngine* (see **Dpdl language plug-ins**).
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
@@ -66,7 +66,7 @@ and also for some less known, but yet very powerful programming languages:
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
 
 
-NOTE: The available **Dpdl language plug-ins** listed above are implemented on top of the official reference implementation of each supported programming language as listed below (see 'Embedded language references' section) and include everything needed to run the code, <ins>No additional installation needed (except user libraries)</ins>.
+The available **Dpdl language plug-ins** listed above are implemented on top of the official implementation of each supported programming language (see 'Embedded language references' section below) and include everything needed to run the code, <ins>No additional installation needed, except user libraries</ins>.
 
 ## Table of Contents
 
