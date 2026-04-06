@@ -86,7 +86,31 @@ The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development
 
 ## <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-## dpdl-lang example:
+## dpdl-lang example: Fibonacci series
+
+```python
+
+func fib(int n) int
+	if(n <= 1)
+		return n
+	fi
+
+	return fib(n - 1) + fib(n - 2)
+end
+
+
+int N = 20
+
+int i
+for(i < N)
+	println("fib($i)=" + fib(i))
+	i=i+1
+endfor
+
+println("finished")
+```
+
+## dpdl-lang example: Download and decode data in json format via http
 
 ```c
 import('http')
