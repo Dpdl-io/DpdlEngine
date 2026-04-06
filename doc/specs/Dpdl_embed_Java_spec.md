@@ -70,12 +70,68 @@ string ret_buf = dpdl_stack_buf_get("dpdlbuf_test")
 println("result buffer: " + ret_buf)
 ```
 
+### Calling 'embedded code section' java methods
+
+For 'embedded code sections' in Java, it's possible to to call the contained java methods methods from dpdl by getting the related object from the stack:
+
+```python
+println("dpdl example with an 'embedded code section' in java...")
+
+string str = "this is my str parameter"
+int i = 100
+float f = 0.2
+double d = 9999.9d
+
+dpdl_stack_push(str, "./Test/TestRead.txt", i, f, d)
+
+>>java(my_code_obj)
+
+	System.out.println("Parameters: ");
+	System.out.println("	arg0: " + arg0);
+	System.out.println("	arg1: " + arg1);
+	System.out.println("	arg2: " + arg2);
+	System.out.println("	arg3: " + arg3);
+	System.out.println("	arg4: " + arg4);
+
+	println("call some methods...")
+
+	myMethod1(arg2);
+	myMethod2(arg0, arg2);
+
+	static void myMethod1(int c){
+		System.out.println("call myMethod1: " + c);
+		System.out.println("	arg1: " + arg1);
+		System.out.println("	arg3: " + arg3);
+
+	}
+
+	static void myMethod2(string val, int c){
+		System.out.println("call method2: " + val + " " + 2);
+		System.out.println("	arg3: " + arg3);
+		System.out.println("	arg4: " + arg4);
+	}
+
+<<
+int exit_code = dpdl_exit_code()
+
+println("embedded java exit code: " + exit_code)
+
+println("we can than also get the code obj and call directly the methods...")
+
+object my_code_obj = dpdl_stack_obj_get("my_code_obj")
+
+my_code_obj.myMethod1(888)
+
+my_code_obj.myMethod2("this is my val", 23)
+
+println("finished")
+```
 
 ### Requirements
 
 This Dpdl language plug-in is built upon the *Janino* library to compile code blocks.
 
-It requires java 1.7 or later.
+This plug-in requires java 1.7 or later.
 
 #### Compatibility matrix
 

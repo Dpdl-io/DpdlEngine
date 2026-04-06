@@ -710,7 +710,7 @@ println("embedded java exit code: " + exit_code)
 
 println("we can than also get the code obj and call directly the methods...")
 
-object my_code_obj = dpdl_code_obj_get("my_code_obj")
+object my_code_obj = dpdl_stack_obj_get("my_code_obj")
 
 my_code_obj.myMethod1(888)
 

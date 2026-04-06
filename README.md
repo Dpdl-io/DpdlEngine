@@ -103,7 +103,7 @@ int N = 20
 
 int i
 for(i < N)
-	println("fib($i)=" + fib(i))
+	println("fib($i) = " + fib(i))
 	i=i+1
 endfor
 
