@@ -217,7 +217,7 @@ endwhile
 The same implementation as above, but implemented using embedded <ins>**java**</ins> code can be found here: [agent/dpdlAgent.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/dpdlAgent.h) 
 
 
-### Example 'Agents' implementation using embedded **java** code within dpdl
+### Example 'Agents' implementation using embedded '**java**' code within dpdl
 
 This is a more articulated example, where two agents implemented with dpdl embedded java code, exchange serialized java objects. 
 Note that in this case the ACLMessage language is set to be 'JavaSerialization'

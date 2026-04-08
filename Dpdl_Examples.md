@@ -48,19 +48,23 @@ endwhile
 
 ### Basic
 
-* Example Dpdl Code with Array definition, population and access using an 'Iterator'
+* Example dpdl code that calculates the '**Fibonacci series**' via recursion
+
+	[simple/dpdlFibonacci.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/simple/dpdlFibonacci.h)
+
+* Example dpdl code with Array definition, population and access using an 'Iterator'
 	
 	[test/testArray.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testArray.h)
 	
-* Example Dpdl code that makes use of the type 'class'
+* Example dpdl code that makes use of the type 'class'
 
 	[test/testClass.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClass.h)
 	
-* Example Dpdl code that makes use of derived type 'class' (Inheritance and Polymorphism). Some functions make use of embedded code (java and C)
+* Example dpdl code that makes use of derived type 'class' (Inheritance and Polymorphism). Some functions make use of embedded code (java and C)
 
 	[test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h)
 
-* Example Dpdl code that makes use of the type 'struc
+* Example dpdl code that makes use of the type 'struc
 
 	[test/testStruct3.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct3.h)
 
@@ -68,43 +72,43 @@ endwhile
 	
 	[arraylistExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/arraylistExample.h)
 
-* Example Dpdl code that loads and accesses natively the 'libc' shared library functions
+* Example dpdl code that loads and accesses natively the 'libc' shared library functions
 
 	[native/dpdlTestNative.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h)
 	
-* Example Dpdl code that writes and reads a data buffer to a file using the native library functions in 'libc'
+* Example dpdl code that writes and reads a data buffer to a file using the native library functions in 'libc'
 
 	[native/dpdlNativeExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlNativeExample.h)
 	
-* Example Dpdl code that shows how exceptions can be raised and handled
+* Example dpdl code that shows how exceptions can be raised and handled
 
 	[testRaiseException.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/testRaiseException.h)
 	
-* Example Dpdl code that shows how to initialize a 'class' type with constructor, and without constructor
+* Example dpdl code that shows how to initialize a 'class' type with constructor, and without constructor
 
 	[test/testClassConstructor.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassConstructor.h)
 
-* Example Dpdl code that shows how to initialize 'struct' member variables upon declaration
+* Example dpdl code that shows how to initialize 'struct' member variables upon declaration
 
 	[test/testStructInit.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStructInit.h)
 
-* Example Dpdl code that makes use of the dpdl type 'union'
+* Example dpdl code that makes use of the dpdl type 'union'
 
 	[test/testUnion.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testUnion.h)
 	
-* Example Dpdl code that uses vec(...), map(...), list(...) and stack(...) data functions
+* Example dpdl code that uses vec(...), map(...), list(...) and stack(...) data functions
 
 	[test/testDataFuncTypes.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testDataFuncTypes.h)
 
-* Example Dpdl code that make use of the 'typedef' specifier
+* Example dpdl code that make use of the 'typedef' specifier
 
 	[test/testTypeDef.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testTypeDef.h)
 
-* Example Dpdl code that launches multiple threads
+* Example dpdl code that launches multiple threads
 
 	[concurrent/testConcurrency1.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/concurrent/testConcurrency1.h)
 	
-* Example Dpdl code that make use of the **`>>task`** keyword to execute embedded Dpdl code sections asynchronously 
+* Example dpdl code that make use of the **`>>task`** keyword to execute embedded dpdl code sections asynchronously 
 
 	[test/testTask.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testTask.h)
 
@@ -118,34 +122,34 @@ endwhile
 
 	[test/testCodeExec.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testCodeExec.h)
 	
-* Example Dpdl code that makes use of pointers and references
+* Example dpdl code that makes use of pointers and references
 
 	[dpdlPointers.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlPointers.h)
 	
-* Example Dpdl code that updates the fields of a struct type via a dedicated thread
+* Example dpdl code that updates the fields of a struct type via a dedicated thread
 
 	[test/testStructThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStructThread.h)
 
-* Inline execution of Dpdl code
+* Inline execution of dpdl code
 
 	[dpdlCodeExecExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlCodeExecExample.h)
 	
-* Example Dpdl code (dummy) that shows some functionalities of Dpdl
+* Example dpdl code (dummy) that shows some functionalities of Dpdl
 
 	[dpdl_overview.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdl_overview.h)
 	
-* Example Dpdl code that shows how <ins>C</ins> code and <ins>Java</ins> can be embedded and executed within Dpdl
+* Example dpdl code that shows how <ins>C</ins> code and <ins>Java</ins> can be embedded and executed within Dpdl
 
 	[app/simple/dpdlSimpleJavaAndC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/simple/dpdlSimpleJavaAndC.h)
 
-* Example Dpdl code that implements a dpdl class that provides a function to write buffered data efficiently to files by making use of a java JRE [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) object
+* Example dpdl code that implements a dpdl class that provides a function to write buffered data efficiently to files by making use of a java JRE [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) object
 
 	[jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
 
 ### Data
 
-* Example Dpdl code that parses an XML document with the xml pull parser
+* Example dpdl code that parses an XML document with the xml pull parser
 
 	[xml/dpdlXMLParser.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/xml/dpdlXMLParser.h)
 
@@ -157,27 +161,27 @@ endwhile
 
 	[json/dpdlDecodeJSON.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/json/dpdlDecodeJSON.h)
 	
-* Example Dpdl code that performs HTTP requests (GET, POST and PUT)
+* Example dpdl code that performs HTTP requests (GET, POST and PUT)
 
 	[http/dpdlHttpExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/http/dpdlHttpExample.h) 
 
-* Example Dpdl code that makes use of multi-line structured text resources
+* Example dpdl code that makes use of multi-line structured text resources
 
 	[test/testResource.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testResource.h)
 	
-* Example Dpdl code that makes use of a code resource that is than dynamically compiled and executed inside an embedded C code section
+* Example dpdl code that makes use of a code resource that is than dynamically compiled and executed inside an embedded C code section
 
 	[res/dpdlResCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/res/dpdlResCode.h)
 		
-* Example Dpdl code that compresses and de-compresses a string of data using the Java platform API
+* Example dpdl code that compresses and de-compresses a string of data using the Java platform API
 
 	[dataCompress.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dataCompress.h)
 	
-* Example Dpdl code that embeds and executed an SQL query on a defined database and retrieves and prints out the result 
+* Example dpdl code that embeds and executed an SQL query on a defined database and retrieves and prints out the result 
 
 	[sql/dpdlSqlExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExample.h) 
 	
-* Example Dpdl code that embeds and executed an SQL query on a defined database and retrieves and prints out the result (same as above), and
+* Example dpdl code that embeds and executed an SQL query on a defined database and retrieves and prints out the result (same as above), and
 			encodes the result set into a json string, than decodes the json string to an object that can be accessed
 
 	[sql/dpdlSqlExampleJson.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExampleJson.h)
@@ -195,7 +199,7 @@ endwhile
 	
 	[dpdlpacket/testDpdlDB2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlpacket/testDpdlDB2.h)
 	
-* Dpdl code that shows how to read and write data to a virtual record store filesystem
+* dpdl code that shows how to read and write data to a virtual record store filesystem
 
 	[fs/dpdlVirtualFS.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/fs/dpdlVirtualFS.h)
 
@@ -210,11 +214,11 @@ endwhile
 	
 	[dpdlFloatDoubleEmul.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFloatDoubleEmul.h)
 
-* Example Dpdl code that converts/compiles a 'struct' to a native java bytecode class object and accesses member variables and methods
+* Example dpdl code that converts/compiles a 'struct' to a native java bytecode class object and accesses member variables and methods
 
 	[test/testGenObjCode.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testGenObjCode.h)
 	
-* Example Dpdl code that converts a dpdl type 'union' to the corresponding native C/C++ 'union' type which can be passed to native library functions
+* Example dpdl code that converts a dpdl type 'union' to the corresponding native C/C++ 'union' type which can be passed to native library functions
 
 	[test/testUnion2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testUnion2.h)
 
@@ -222,25 +226,25 @@ endwhile
 
 	[embed_dpdl/test_dpdl_code_exec.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec.c)
 
-* Example program written in C that shows how to execute embedded Dpdl code within C code
+* Example program written in C that shows how to execute embedded dpdl code within C code
 
 	[embed_dpdl/test_dpdl_code_exec2.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec2.c)
 
 
 ### Some Algorithms implemented with Dpdl only
 
-* Dpdl code that implements a 'Double Linked List' data structure
+* dpdl code that implements a 'Double Linked List' data structure
 	
 	[alg/dpdlDoubleLinkedList.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/alg/dpdlDoubleLinkedList.h)
 	
-* Dpdl code that implements a SHA-1 hash algorithm
+* dpdl code that implements a SHA-1 hash algorithm
 	
 	[alg/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/alg/dpdlSHA-1impl.h)
 
 	
 ### Networking
 
-* Dpdl code that implements a simple client and server communication using the ZeroMQ library, with clients implemented using dpdl *embedded code sections* in java and C 
+* dpdl code that implements a simple client and server communication using the ZeroMQ library, with clients implemented using dpdl *embedded code sections* in java and C 
 	
 	server:
 	[networking/dpdlZeroMQServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/networking/dpdlZeroMQServer.h)
@@ -260,7 +264,7 @@ The following Dpdl examples show how to exploit capabilities of a GPU via embedd
 
 	[opencl/dpdlOpenCLTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/opencl/dpdlOpenCLTest.h)
 	
-* Example Dpdl code that make use of Wgsl (WebGPU shading language) to speed-up computations for a high-performing neural network activation function (GELU) directly on GPUs
+* Example dpdl code that make use of Wgsl (WebGPU shading language) to speed-up computations for a high-performing neural network activation function (GELU) directly on GPUs
 
 	[wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
 	
@@ -269,7 +273,7 @@ The following Dpdl examples show how to exploit capabilities of a GPU via embedd
 
 The following examples make use of the **Dpdl langage plugin** 'DpdlAINerd (DAN)' to <ins>automatically generate</ins> embedded code sections in various programming languages within Dpdl which can than be executed right away on the DpdlEngine.
 
-* Example Dpdl code that makes use of the **Dpdl language plugin** 'DpdlAINerd' (DAN) to <ins>automatically generate</ins> a simple <ins>**SNAKE Game**</ins> console application (written in C) via AI generative code using DeepSeek AI Models.
+* Example dpdl code that makes use of the **Dpdl language plugin** 'DpdlAINerd' (DAN) to <ins>automatically generate</ins> a simple <ins>**SNAKE Game**</ins> console application (written in C) via AI generative code using DeepSeek AI Models.
 	
 	[ai/dpdlAISnakeGame.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAISnakeGame.h)
 
@@ -277,21 +281,21 @@ The code is <ins>generated, compiled and executed in a single step</ins>
 	
 <img src="https://www.dpdl.io/images/platform/examples/dpdlcodegenai/dpdlcodegenai_game_snake.png" width="55%" height="55%">
 
-The code above 'ai/dpdlAISnakeGame.h' automatically generated the following Dpdl code with embedded C: [ai/dpdlAISnakeGame_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAISnakeGame_gen.h)
+The code above 'ai/dpdlAISnakeGame.h' automatically generated the following dpdl code with embedded C: [ai/dpdlAISnakeGame_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAISnakeGame_gen.h)
 
 The AI engine used in this case was the available 'DeepSeek' model. No adaptations were needed to successfully run the program right away.
 
-* Example Dpdl code that leverages generative AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate embedded code sections which can than be executed
+* Example dpdl code that leverages generative AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate embedded code sections which can than be executed
 
 	[ai/dpdlAICodeSort.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAICodeSort.h)
 	
-The code above automatically generated the following Dpdl code: [ai/dpdlAICodeSort_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAICodeSort_gen.h)
+The code above automatically generated the following dpdl code: [ai/dpdlAICodeSort_gen.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAICodeSort_gen.h)
  
-* Example Dpdl code that leverages AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate a json test dataset
+* Example dpdl code that leverages AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate a json test dataset
 
 	[ai/dpdlAITestData.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAITestData.h)
 	
-* Example Dpdl code that leverages AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate and execute embedded code right away
+* Example dpdl code that leverages AI using the 'DpdlAINerd' (DAN) Dpdl language plug-in to generate and execute embedded code right away
 
  	[ai/dpdlAITestExec.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ai/dpdlAITestExec.h) 
 
@@ -355,7 +359,7 @@ this is my sample json:
 	
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="75%" height="75%">
 
-* Example Dpdl code that uses the JavaFX java library to render UI (Graphical User Interface) elements via a FXML definition.
+* Example dpdl code that uses the JavaFX java library to render UI (Graphical User Interface) elements via a FXML definition.
 	
 	[ui/dpdlGUIJavaFX.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX.h)
 		
@@ -374,7 +378,7 @@ this is my sample json:
 
 ### Small Apps
 
-* Example Dpdl code that downloads json news data from a given URL and decodes it to a struct
+* Example dpdl code that downloads json news data from a given URL and decodes it to a struct
 
 	[app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
 
@@ -392,13 +396,13 @@ this is my sample json:
 	
 	[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
 
-* Example Dpdl code that executes an embedded 'clojure' code that creates a simple UI to convert values from Celsius to Fahrenheit
+* Example dpdl code that executes an embedded 'clojure' code that creates a simple UI to convert values from Celsius to Fahrenheit
 
 	[clj/dpdlCljCelsiusConverterGUI.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/clj/dpdlCljCelsiusConverterGUI.h)
 
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_example_Celsius_Fahrenheit_UI.png" width="33%" height="33%">
 	
-* Example Dpdl code that executes an embedded 'Julia' script to plot data using the 'Plots' package, and to save the chart as PDF
+* Example dpdl code that executes an embedded 'Julia' script to plot data using the 'Plots' package, and to save the chart as PDF
 
 	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)
 	
@@ -490,118 +494,118 @@ this is my sample json:
 	
 	[C/dpdlCcompile.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompile.h)
 		
-* Example Dpdl code that shows how <ins>C</ins> code and <ins>Python</ins> can be embedded and executed within Dpdl
+* Example dpdl code that shows how <ins>C</ins> code and <ins>Python</ins> can be embedded and executed within Dpdl
 
 	[dpdlFullExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlFullExample.h)
 	
-* Example Dpdl code that shows how <ins>MicroPython</ins> code can be embedded and executed within Dpdl. MicroPython is suitable for embedded systems.
+* Example dpdl code that shows how <ins>MicroPython</ins> code can be embedded and executed within Dpdl. MicroPython is suitable for embedded systems.
 
 	[micropython/dpdlMicroPythonTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/micropython/dpdlMicroPythonTest.h)
 
-* Example Dpdl code that makes use of an embedded Java code block to perform a dummy calculation on an array passed from Dpdl
+* Example dpdl code that makes use of an embedded Java code block to perform a dummy calculation on an array passed from Dpdl
 
 	[java/dpdlJavaExample2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/java/dpdlJavaExample2.h)
 
-* Embedded C code execution within Dpdl code
+* Embedded C code execution within dpdl code
 	
 	[dpdlSimpleC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlSimpleC.h)
 			
-* Embedded Python code execution within Dpdl code
+* Embedded Python code execution within dpdl code
 	
 	[python/dpdlEmbedPython.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/python/dpdlEmbedPython.h)
 	
-* Embedded Lua code execution within Dpdl code
+* Embedded Lua code execution within dpdl code
 	
 	[lua/dpdlLuaBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/lua/dpdlLuaBufRet.h)
 	
-* Embedded Ruby code execution within Dpdl code
+* Embedded Ruby code execution within dpdl code
 
 	[ruby/dpdlRubyExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ruby/dpdlRubyExample.h)
 	
-* Embedded V code execution within Dpdl code (fibonacci sequence)
+* Embedded V code execution within dpdl code (fibonacci sequence)
 
 	[v/dpdlVFibonacci.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/v/dpdlVFibonacci.h)
 	
-* Example Dpdl code that embeds C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
+* Example dpdl code that embeds C++ code and uses ROOT API libraries to solve a linear equations in 4 different ways
 
 	[root/dpdlRootSolver.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/root/dpdlRootSolver.h)
 	
-* Example Dpdl code that embeds javascript code (with  Mode2 using 'js') that loads an object implemented in a native C library (see point.c)
+* Example dpdl code that embeds javascript code (with  Mode2 using 'js') that loads an object implemented in a native C library (see point.c)
 
 	[js/dpdlQJsPoint.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlQJsPoint.h) 
 
-* Example Dpdl code that compiles a WebAssembly WAT code to WASM binary format and calls the exported functions from both, Dpdl and javascript
+* Example dpdl code that compiles a WebAssembly WAT code to WASM binary format and calls the exported functions from both, Dpdl and javascript
 
 	[wasm/dpdlWasmTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wasm/dpdlWasmTest.h) 
 
-* Dpdl code that compiles two WebAssembly modules (in WAT code), with 1st module that exports functions to the 2nd module, to WASM binary format. The function 'add_and_sub' exported by the 2nd module is than called from Dpdl
+* dpdl code that compiles two WebAssembly modules (in WAT code), with 1st module that exports functions to the 2nd module, to WASM binary format. The function 'add_and_sub' exported by the 2nd module is than called from Dpdl
 
 	[wasm/dpdlWasmModules.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wasm/dpdlWasmModules.h) 
 
-* Example Dpdl code with embedded ANSI C code that is compiled in memory and executed at runtime, the result is than intercepted
+* Example dpdl code with embedded ANSI C code that is compiled in memory and executed at runtime, the result is than intercepted
 
 	[C/dpdlCcompileBufRet.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompileBufRet.h)
 	
-* Example Dpdl code that executes an embedded 'Julia' script to download data via HTTP via url's contained in json data
+* Example dpdl code that executes an embedded 'Julia' script to download data via HTTP via url's contained in json data
 
 	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaHttp.h)
 		
-* Example Dpdl code that executes an embedded 'groovy' code (dummy)
+* Example dpdl code that executes an embedded 'groovy' code (dummy)
 
 	[groovy/dpdlGroovyExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/groovy/dpdlGroovyExample.h)
 	
-* Example Dpdl code embedding ANSI C code (ISO C99) that is dynamically compiled in memory at runtime (fast) and executed
+* Example dpdl code embedding ANSI C code (ISO C99) that is dynamically compiled in memory at runtime (fast) and executed
 
 	[C/dpdlCcompileExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompileExample.h)
 
-* Example Dpdl code that embeds JavaScript that intercepts some parameters that have been pushed on the dpdl stack
+* Example dpdl code that embeds JavaScript that intercepts some parameters that have been pushed on the dpdl stack
 
 	[js/dpdlJsExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsExample.h)
 	
-* Example Dpdl code that embeds Clojure code
+* Example dpdl code that embeds Clojure code
 
 	[clj/dpdlCljExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/clj/dpdlCljExample.h)
 
-* Example Dpdl code (embedded C code compiled at runtime) that launches threads (pThreads) to sum numbers
+* Example dpdl code (embedded C code compiled at runtime) that launches threads (pThreads) to sum numbers
 
 	[C/dpdlCThreadExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCThreadExample.h)
 	
-* Example Dpdl code that shows to to execute embedded C code accepting parameters pushed on the dpdl_stack, and writes some result back to a buffer variable. The execution time is measured.
+* Example dpdl code that shows to to execute embedded C code accepting parameters pushed on the dpdl_stack, and writes some result back to a buffer variable. The execution time is measured.
 
 	[bench/testC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bench/testC.h)
 	
-* Example Dpdl code that embeds 'Julia' code to execute a set of threads that call a native C Dpdl API function
+* Example dpdl code that embeds 'Julia' code to execute a set of threads that call a native C Dpdl API function
 
 	[julia/dpdlJuliaThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaThread.h)
  
-* Example Dpdl code that embeds 'PHP' code to read a CSV file, count the number of fields in each line and print the values
+* Example dpdl code that embeds 'PHP' code to read a CSV file, count the number of fields in each line and print the values
 
 	[php/dpdlPhpTest4.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/php/dpdlPhpTest4.h)
 
-* Example Dpdl code that makes use of embedded 'Modelica' code to simulate a bouncing ball physical model
+* Example dpdl code that makes use of embedded 'Modelica' code to simulate a bouncing ball physical model
 
 	[modelica/dpdlModelicaExample_simple.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/modelica/dpdlModelicaExample_simple.h)
 	
-* Example Dpdl code that makes use of embedded 'Modelica' code to simulate the physical model mechanics of a Second Order Rotational System
+* Example dpdl code that makes use of embedded 'Modelica' code to simulate the physical model mechanics of a Second Order Rotational System
 
 	[modelica/dpdlModelicaExample_mechanics.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/modelica/dpdlModelicaExample_mechanics.h)
 
-* Example Dpdl code that generates a Quantum Circuit via embedded python code using the Qiskit quantum computing libraries.
+* Example dpdl code that generates a Quantum Circuit via embedded python code using the Qiskit quantum computing libraries.
 
 	[quantum/dpdlQuantumExampleQiskit.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/quantum/dpdlQuantumExampleQiskit.h)
 
-* Example Dpdl code that generates a fractal in ascii form via embedded Umka code
+* Example dpdl code that generates a fractal in ascii form via embedded Umka code
 
 	[umka/dpdlUmkaExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/umka/dpdlUmkaExample.h)
 	
-* Example Dpdl code that implements a Chat-Server via embedded Janet code
+* Example dpdl code that implements a Chat-Server via embedded Janet code
 
 	[janet/dpdlJanetExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/janet/dpdlJanetExample.h)
 	
 
 ### Dpdl Agents
 
-* Example Dpdl code that implements two independent Agents that exchange messages in a cyclic way
+* Example dpdl code that implements two independent Agents that exchange messages in a cyclic way
 	
 	[agent/testAgent.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/testAgent.h)
 

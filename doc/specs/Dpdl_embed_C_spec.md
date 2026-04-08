@@ -13,11 +13,11 @@ developed by
 
 
 
-The dpdl embedded C code can be executed in 2 different modes, either 'interpreted' or 'compiled'.
+The dpdl embedded C code can be executed in 2 different modes, either **`interpreted`** or **`compiled`**.
 
-Each of the execution modes have some characteristics that may fit better in one case.
+Each of the execution modes have some characteristics that may fit better in one case or the other.
 
-The code is executed via a native Dpdl plug-in library that has a small footprint (278 Kb) and therefore is applicable also on small embedded systems.
+The code is executed via a native Dpdl plug-in library that has relatively small footprint (278 Kb) and therefore is applicable also on small embedded systems.
 
 ## Modes of execution
 
@@ -161,7 +161,7 @@ int dpdl_main(int argc, char **argv){
 
 	char *str_src = "MEGA source";
 	char str_dest[256];
-	//my_memcpy(str_dest, str_src, strlen(str_src));
+	//my_memcpy(&str_dest, str_src, strlen(str_src));
 	//printf("copied str: %s\n", str_dest);
 	dpdl_stack_buf_put(str_src);
 	return 0;

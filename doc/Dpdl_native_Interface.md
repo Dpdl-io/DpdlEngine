@@ -38,13 +38,14 @@ object clib = native.loadLib("c")
 clib.printf("This message comes from native printf function: %s %d", "Hello", 23)
 ```
 
-By loading the library 'c', the Dpdl runtime automatically selects the appropriate library, on Linux/Unix/MAC 'libc' and on Windows 'msvcrt'.
+By loading the library 'c' (libc) , the Dpdl runtime automatically selects the appropriate library, on Linux/Unix/MAC 'libc' and on Windows 'msvcrt'.
 
 On Windows systems it's possible also to access the system library 'kernel32' and it provides COM support for accessing a wide
 rage of windows components.
 
 
 **Example Dpdl code accessing the system library 'libc' functions:**
+
 ```python
 import('native')
 
@@ -152,6 +153,7 @@ println("done")
 Native memory can be allocated via the the 'libc' library function 'malloc', which returns a [Pointer](https://www.dpdl.io/doc/dpdl_jna/javadoc/com/sun/jna/Pointer.html) object.
 
 **Example in C using 'malloc':**
+
 ```c
 #import <stdio.h>
 
@@ -161,6 +163,7 @@ void *buffer = malloc(4096 * sizeof(char));
 ```
 
 **In Dpdl, the equivalent native memory can be allocated as follows:**
+
 ```python
 import('native')
 
@@ -168,14 +171,14 @@ object clib = native.loadLib("c")
 
 object buffer = clib.malloc(4096L)
 
-# optionally we can also zero the memory buffer
+# optionally we can also zero the memory buffer, this is equivalent of 'memset(...)' in C
 buffer.setMemory(0L, 4096L, 0x00B)
 ```
 
 ### Type mapping
 
 
-The following tables lists the type mapping between C and Dpdl:
+The following tables lists the type mapping between Dpdl and C:
 
 <table>
 <thead><td>Dpdl type</td><td>Native type</td><td>Size</td><td>on Windows OS</td></thead>
