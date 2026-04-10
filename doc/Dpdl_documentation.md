@@ -15,7 +15,7 @@ developed by
 
 Dpdl is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages directly within Dpdl code**</ins>, simultaneously, of multiple types and at native speed. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>).
+Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages, or any custom syntax, directly embedded within dpdl code**</ins>, simultaneously, of multiple types and at it's native speed. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>).
 
 ### Features:
 
@@ -31,14 +31,13 @@ Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enabl
 * Access to Native shared libraries
 * Virtual file system via Record Stores
 * Support for custom extensions
-* **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Clojure, Wgsl and OpenCL</em>. These **`programming languages code can be embedded and executed directly within Dpdl code`** (interpreted/compiled code).
+* **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Clojure, Wgsl and OpenCL</em>. These **`programming languages code can be embedded and executed directly within dpdl code`** (interpreted/compiled code).
 * Additional programming languages or syntax interpreters can be easily integrated via a defined plug-in interface and configuration (**Dpdl language plug-ins**)
-* ANSI C code embedded within Dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
+* ANSI C code embedded within dpdl code can be dynamically compiled in memory at runtime (see option 'dpdl:compile')
 * Multi-line structured text, data and code resources
 * Asynchronous Task execution
-* Static script execution: static code declarations (*.h_static)
 * Dpdl can be embedded and called within C code
-* Tools for converting Dpdl code to Java and C/C++ code (in development)
+* Tools for converting dpdl code to Java and C/C++ code stubs (in development)
 
 ### Dpdl quick language Tour
 
@@ -1613,14 +1612,17 @@ import('native')
 
 union myU {
 	int id = 23
-	string desc = "my description"
-	string data = "some data from myA"
+	string desc
+	string data
 	int x, y
 	double z
 }
 
 
 union myU u
+
+u.desc = "my description"
+u.data = "some data from myA"
 
 println("u: " + u)
 
@@ -2393,450 +2395,65 @@ Refer to the java JRE documentation for Dpdl objects loaded with **`new(..)`** a
 
 ### Embedded code sections: embedding other programming languages directly within Dpdl code
 
-A particular feature of Dpdl are *embedded code sections* that allows to embed and execute code of other programming languages directly within Dpdl code. The execution is driven by the Dpdl runtime via dedicated **Dpdl language plug-ins** that are avaiable as part of the DpdlEngine distributions.t
-This feature enables to use the appropriate language and libraries for particular implementation needs.
+A particular feature of Dpdl are '*embedded code sections*', that allow to embed and execute code of other programming languages directly within dpdl code. 
+
+The execution is driven by the Dpdl runtime via dedicated **Dpdl language plug-ins** that are avaiable as part of the DpdlEngine distributions.
 
 The code of other programming languages can be embedded by simply using the keyword **`>>`** along with the language specifier.
+
+
+**Example:**
+
+```python
+	println("a Dpdl program can contain 'embedded code section' in multiple programming languages...")
+
+	println("embed C code for Performance and Hardware access...")
+
+	>>c
+		int v = 1000;
+		for(int i = 0; i < v; i++){
+			printf("Processing: %d\n", i);
+		}
+	<<
+
+	println("embed Python for Data handling & ML...")
+
+	>>python
+		stories = ['Story 1', 'Story 2', 'Story 3']
+		for story in stories:
+			print(story)
+	<<
+
+	println("embed JavaScript for Web integration...")
+
+	>>js
+		fetch('https://api.dpdl.io/data')
+			.then(response => response.json())
+			.then(data => console.log(data));
+	<<
+
+	println("and of course also embed Java directly...")
+
+	>>java
+		Object val = null;
+		int v = 1000;
+		for(int i = 0; i < v; i++){
+			val = new Integer(i);
+			System.out.println("val: " + val);
+		}
+
+		return ((Integer)val).intValue();
+	<<
+
+	...
+```
 
 See [Dpdl_language_plugins.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md) for more details.
 
 
-**Example:**
-
-```python
-println("testing embedded C code in Dpdl")
-
-int n = 6
-double x = 10.0d
-string a = "test"
-
-dpdl_stack_obj_put("my_int_var", 10)
-dpdl_stack_var_put("my_name_var", "A.Costa is my name")
-
-dpdl_stack_push("dpdl:applyvars", "dpdlbuf_var1",n, x, a)
-
->>c
-	#include <stdio.h>
-	#include <dpdl.h>
-	
-	int dpdl_main(int argc, char **argv){
-		printf("Hello C from Dpdl!\n");
-		printf("\n");
-		int my_i = {{my_int_var}};
-		char *my_n = "{{my_name_var}}";
-		printf("\n");
-		printf("num params: %d\n", argc);
-		int cnt;
-	    for (cnt = 0; cnt < argc; cnt++){
-	        printf("	param %d: %s\n", cnt, argv[cnt]);
-	    }
-	    char *buf = "My result";
-		dpdl_stack_buf_put(buf);
-	    return 0;
-	}
-<<
-int exit_code = dpdl_exit_code()
-
-println("embedded C exit code: " + exit_code);
-string buf = dpdl_stack_buf_get("dpdlbuf_var1")
-println("response buffer: " + buf)
-```
-
-Data and variables can be exchanged with the embedded code via the dpdl stack by using Dpdl API functions:
-
-**`dpdl_stack_var_put(..)`**
-
-**`dpdl_stack_var_get(..)`**
-
-**`dpdl_stack_push(..)`**
-
-**`dpdl_stack_buf_put(..)`**
-
-**`dpdl_stack_buf_get(..)`**
-
-**`dpdl_stack_obj_put(..)`**
-
-**`dpdl_stack_obj_get(..)`**
-
-**`dpdl_stack_var_glob_put(..)`**
-
-**`dpdl_stack_var_glob_get(..)`**
-
-**`dpdl_stack_obj_glob_put(..)`**
-
-**`dpdl_stack_obj_glob_get(..)`**
-
-
-Variables pushed on the dpdl stack are passed as parameters to the embedded code, and can also be embedded directly in the code as placeholder, see **`{{var_name}}`**.
-In the latter case the variables are replaced with the actual values before code compilation and execution.
-
-
-### Dpdl embedded C code
-
-Dpdl allows the embedding and execution of ANSI C code (a minimal subset of C90, and full ISO C99 standard) directly within Dpdl code.
-
-The C interpreter and compiler is available as Dpdl language plug-in with a very compact footprint of only **`375 Kb`** on Raspberry Pi,
-with no extra dependencies required.
-
-To embed C code within Dpdl code use the keyword '**>>c**' to start the embedded code, and the keyword '**<<**' to end the embedded code.
-Note: The keyword has to be on a single line
-
-
-Embedded C code can be executed in 2 different Modes:
-
-1) **Interpreted** C code (<ins>minimal subset of C90</ins>) --> easy integration of custom extensions. No compile time overhead, minimal standard C library <ins>standard headers already included</ins> (**default mode**)
-
-2) **Compiled** (in memory at runtime) C code (full <ins>ANSI C99</ins>) --> fast compile time and FAST execution. Searches default locations for lib path and include path. Further paths to standard C headers and lib files may be set via 'dpdl:-I' and 'dpdl:-L' options. Some default include files are available under the foder './lib/native/$platform/include/' -> This mode can be enabled via the option '**dpdl:compile**'
-
-#### Mode 1 (interpreted)
-
-The C code is executed with Mode(1) includes only a minimal subset of the C library and is POSIX compliant (also on Windows OS).
-Custom libraries and functions can be implemented and added if needed via dpdl api functions.
-
-The default memory stack size for the C interpreter is kept small and is currently configured to be 128 Kb.
-
-The stack size can be customized by applying configurable settings.
-
-**Minimal embedded C library documentation:**
-[Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
-
-Example **Mode (1)**:
-
-```c
-println("testing embedded C code in Dpdl")
-
-int n = 6
-double x = 10.0d
-string a = "test"
-
-dpdl_stack_push("dpdlbuf_var1",n, x, a)
-
->>c
-	#include <stdio.h>
-	#include <dpdl.h>
-	
-	int dpdl_main(int argc, char **argv){
-		printf("Hello C from Dpdl!\n");
-		printf("\n");
-		printf("num params: %d\n", argc);
-		int cnt;
-	    for (cnt = 0; cnt < argc; cnt++){
-	        printf("	param %d: %s\n", cnt, argv[cnt]);
-	    }
-	    	char *buf = "My result";
-		dpdl_stack_buf_put(buf);
-	    return 0;
-	}
-<<
-int exit_code = dpdl_exit_code()
-
-println("embedded C exit code: " + exit_code);
-string buf = dpdl_stack_buf_get("dpdlbuf_var1")
-println("response buffer: " + buf)
-```
-
-#### Mode 2 (compiled in memory)
-
-The faster and more complete execution Mode(2) can be activated by pushing the option **`dpdl:compile`** on the dpdl stack (-> see 'dpdl_stack_push(..)').
-
-The built-in compiler searches the default library and include files on the OS. 
-A basic set of include headers are also available in the folder **`./lib/native/$platform/include`**.
-
-Additional include header files or library files can be provided with the options **`dpdl:-I`** and **`dpdl:-L`**
-
-see the following documentation for more info
-[doc/Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md) 
-
-Example **Mode (2)**:
-
-```c
-println("Benchmarking Dpdl embedded C with compile option...")
-
-dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C")
->>c
-	#include <stdio.h>
-	#include <time.h>
-	
-	extern void dpdl_stack_buf_put(char *buf);
-
-	int dpdl_main(int argc, char **argv){
-		printf("Dpdl C Bench\n");
-		printf("\n");
-		time_t start;
-		time_t end;
-	    time(&start);
-	    int c;
-		for(c = 0; c < 5000000; c++){
-			printf("iter %d \n", c);
-		}
-
-		time(&end);
-		printf("\n");
-		double exec_time = difftime(end, start);
-
-		char res[256];
-		sprintf(res, "my result Exec time: %lf \n", exec_time);
-
-		dpdl_stack_buf_put(res);
-	    return 0;
-	}
-<<
-int exit_code = dpdl_exit_code()
-println("embedded C exit code: " + exit_code)
-
-string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
-println("result: " + buf)
-```
-
-Parameters and data can be passed to the dpdl stack via the '**dpdl_stack_push(..)**' API function.
-Data can be written to and read from to the dpdl stack using the '**dpdl_stack_buf_put(..)**' and '**dpdl_stack_buf_get()**' API functions.
-
-Pushing a variable 'dpdlbuf_*" on the dpdl stack, allows to later retrieve in Dpdl the data buffer that has been written
-in the C code via the '**dpdl_stack_buf_put**' function, for example the result of a calculation.
-
-
-Note: For Mode(2), in order to use the function dpdl_stack_buf_put(..), instead of importing 'dpdl.h', it's required to declare 'extern void dpdl_stack_buf_put(char *buf);' 
-
-
-### Embedding of Python
-
-Python code can be embedded within Dpdl code by using the keyword '**>>python**'.
-
-Example Dpdl code with embedded 'Python' code:
-
-```python
-println("testing embedding python code")
-println("")
-
->>python
-languages = ['Dpdl', 'C', 'Python', 'OCaml']
-
-for language in languages:
-	print(language)
-<<
-println("")
-
-int exit_code = dpdl_exit_code()
-
-println("embedded python exit code: " + exit_code);
-```
-
-**Note:** The environment variable '**PYTHONHOME**' and '**PYTHONPATH**' need to be set correctly for finding the python libraries
-```
-export PYTHONHOME=/your_path/to/python/install_dir/
-export PYTHONPATH=/your_path/to/python/install_dir/
-``` 
-
-The indentation needs to be consistent with the Python language specification
-
-The Dpdl runtime considers the '**>>python**' tag (\t) as starting indentation point
-
-**example** (correct):
-
-```python
-println("start executing a python script...")
-
->>python
-print("Hello py\n")
-<<
-	
-println("finished")
-```
-
-**example** (Wrong -> gives IndentationError: unexpected indent):
-
-```python
-println("start executing a python script...")
-
->>python
-	print("Hello py\n")
-<<
-	
-println("finished")
-```
-
-#### Supported platforms (Python language plug-in)
-
-Currently the 'DpdlEngine lite' release includes the native Python library '**libdpdlpython**' for **MacOS (arm64)**, **Linux (x86_64)** and Raspberry PI 3 (armv7l)
-
-**Linux:** Python version 3.2m (gcc version 4.4.7)
-**MacOS:** Python version 3.12 (Apple clang version 14.0.3)
-**Raspberry PI 3**: Python version 3.2m (gcc version 4.4.11)
-Windows version will follow soon in the coming release
-
-
-Support for more platforms will be released soon. MicroPython will also be available as option.
-
-
-### Embedded OCaml code (experimental)
-
-Dpdl supports also the embedding of 'OCaml' code directly within Dpdl code through the **'>>ocaml'** keyword.
-
-The embedded OCaml code is executed by the Dpdl runtime through the 'ocamljava' library (http://www.ocamljava.org/) and
-requires the following jar library located in the lib folder './lib': 'ocamlrun-scripting.jar' 
-
-If the 'dpdl:compile' option has been set, the OCaml code is compiled at runtime to improve speed.
-The 'ocamljava.jar' in this case needs to be present in the 'lib' folder. 
-
-Example Dpdl code with embedded 'OCaml' code:
-
-```python
-println("testing Dpdl embedded OCaml..")
-
-#
-# parameter to instruct the Dpdl runtime to compile the embedded code (faster execution). Without this option the code is interpreted
-
-dpdl_stack_push("dpdl:compile")
-
-# we add a variable to the dpdl stack so that we can access it in the embedded OCaml
-dpdl_stack_var_put("var1", "Hello OCaml from Dpdl")
-dpdl_stack_var_put("nr_iter", "Dpdl")
->>ocaml
-external get_binding : string -> 'a = "script_get_binding";;
-
-let s : string = get_binding "var1";;
-let n = Int32.to_int (get_binding "nr_iter");;
-
-for i = 1 to n do print_endline s done;;
-<<
-
-int exit_code = dpdl_exit_code()
-
-println("embedded OCaml exit code: " + exit_code);
-
-```
-
-* [Table of Contents](#table-of-contents)
-
-
-### Dpdl Stack buffers
-
-To exchange data between native Dpdl code and the supported embedded languages, Dpdl provides a mechanism to exchange buffers of data.
-
-By pushing a string variable with the following definition: 'dpdlbuf_$varname' on the Dpdl stack via the function **`dpdl_stack_push(..)`**,
-the data written or returned by the embedded code (eg. C code) can be retrieved in the native Dpdl code via the function **`dpdl_stack_buf_get(..)`**
-
-**Example:**
-
-```c
-string buf_key = "dpdlbuf_var1"
-dpdl_stack_push(buf_key)
->>c
-	#include <stdio.h>
-	#include <dpdl.h>
-	
-	printf("writing to buf...\n");
-	char *buf = "This data comes from embedded C";
-	dpdl_stack_buf_put(buf);
-	
-<<
-string buf = dpdl_stack_buf_get(buf_key)
-println("response buffer: " + buf)
-```
-
-The method to write data to the buffer within the embedded language is language dependent, either it's written with the
-function **`dpdl_stack_buf_put(..)`** or in some cases returned by the embedded function itself, as in 'Lua' for example,
-where the a data 'table' is returned and written to the Dpdl stack buffer.
-
-**Example** with embedded 'Lua':
-
-```python
-println("testing embedding lua....")
-
-string buffer_key = "dpdlbuf_result"
-
-dpdl_stack_push(buffer_key, "name", "Alexis", "surname", "Kunst")
-
->>lua
-function doSomeAlg()
-	local home_dir = os.getenv("HOME")
-	print("user home: ", home_dir)
-	
-	local x = os.clock()
-	    local s = 0
-	    for i=1,100 do 
-	    	s = s + i
-	    	io.write(".")
-	    end
-	    print("")
-	    print(string.format("elapsed time: %.2f\n", os.clock() - x))
-end
-
-function paramLen(T)
-  local count = 0
-  for _ in pairs(T) do count = count + 1 end
-  return count
-end
-
-function dpdl_main(params)
-	local num_params = paramLen(params)
-	io.write("dpdl_main call with number of params: ")
-	io.write(num_params)
-	print()
-	print("executing my embedded algorithm...")
-	print("")
-	doSomeAlg()
-	print()
-	print("returning param values in 'uppercase'")
-	local tab_out = {numfields=1}
-	for k,v in pairs(params) do
-		tab_out.numfields = tab_out.numfields + 1
-		tab_out[tostring(k)] = string.upper(tostring(v))
-	end
-	tab_out.numfields = tostring(tab_out.numfields)
-	return tab_out
-end
-<<
-
-int exit_code = dpdl_exit_code()
-
-println("embedded lua exit code: " + exit_code)
-
-string resp_buf = dpdl_stack_buf_get(buffer_key)
-println("lua response buffer: ")
-println(resp_buf)
-```
-
-### Dpdl Runtime parameters
-
-Some Dpdl runtime behavior can be parameterized by pushing dedicated parameters on the dpdl stack by using the function
-**`dpdl_stack_push(..)`**
-
-Each Dpdl language plug-in can be parameterized in this way (see plug-in spec)
-
-**Example:**
-
-```
-dpdl_stack_push("dpdl:compile","dpdl:-I./DpdlLibs/C")
-```
-
-#### Compile options
-
-Embedded ANSI C code and OCaml code can be compiled on-the-fly in memory at runtime in order to speedup execution.
-
-**Compiles embedded code before execution:**
-
-```
-dpdl:compile
-```
-
-See this doc for more details: [Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
-
-
-#### Code substitution
-
-**Applies the variables to the embedded code:**
-
-```
-dpdl:applyvars
-```
-
-See this doc for more details: [Dpdl_compiler_documentation.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_compiler_documentation.md)
-
-
 ### Dpdl C API
 
-Dpdl code can be executed also embedded in a C program. 
+Dpdl code can be executed also from programs written in C. 
 
 **Example:** executing a Dpdl source file
 
@@ -2884,120 +2501,7 @@ int main(int argc, char **argv){
 
 * [Table of Contents](#table-of-contents)
 
-
-## Some considerations
-
-### Dynamic function allocations
-
-Due to the fact that Dpdl allows to dynamically implement custom function and variable extensions at runtime,
-a call to a non existing function currently does not necessarily throw an unrecoverable error due to the fact that in a subsequent call, 
-the the function may than be available.
-
-This feature is useful for dynamically generated code implementations and will be evaluated accordingly.
-
-A call to a non existent function will therefore not generate an unrecoverable exception, but will only return -1 if the function is not available.
-
-**Example:**
-
-```python
-int s = my_non_existing_func()
-
-println("s: " + s)
-```
-
-
-## Small 'dummy' Dpdl sample app
-
-[Small Dpdl sample app](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/app/dummy)
-
 	
-## Performance Benchmarks
-
-### Embedded C
-
-The embedded C code executed with mode (1) is interpreted at runtime, it's obviously a bit slower than compiled C code with mode (2). But interpreted code offers the advantage of easy and fast portability, reduces the complexity of compilation
-for different target platforms and hence speeds up the development process.
-
-This simple benchmark gives the following results:
-
-* **Dpdl script embedded C code**, mode (1), execution time: 8.0 seconds
-* **Dpdl script runtime compiled C code**, mode (2), execution time: 5.0 seconds
-* **Compiled C code** (gcc compiler), execution time: 5.0 seconds
-* **Compiled Java code**, execution time: 5.7 seconds
-
-C code used for benchmark:
-
-```c
-	#include <stdio.h>
-	#include <time.h>
-	
-	int main(int argc, char **argv){
-		printf("Dpdl C Bench\n");
-		printf("\n");
-	    time_t start;
-	    time_t end;
-	    time(&start);
-	    int c;
-		for(c = 0; c < 5000000; c++){
-			printf("iter %d \n", c);
-		}
-		time(&end);
-		printf("\n");
-		double exec_time = difftime(end, start);
-		printf("Exec time: %lf", exec_time);
-	    return 0;
-	}
-```
-
-Java code used for benchmark:
-
-```java
-public class testCBench {
-
-	public testCBench(){
-		System.out.println("testCBench()");
-	}
-
-	void run(){
-		long start = System.currentTimeMillis();
-		for(int c = 0; c < 5000000; c++){
-			System.out.println("iter " + c);
-		}
-		long end = System.currentTimeMillis();
-		System.out.println("Exec time: " + (end-start));
-	}
-
-	public static void main(String[] args){
-		new testCBench().run();		
-	}
-}
-```
-
-### DpdlPacket query and access
-
-The benchmark has been performed on a data set of 48877 entries (name, phone nr, e-mail), with the 'name' numbered
-sequentially i.e 'armin 1', 'armin 2', etc.
-po
-48877 queries with a random number has key constraint have been performed:
-	* With data packed in a DpdlPacket
-	* Data stored in a simple RecordStore
-	
-
-#### DpdlPacket queries
-
-Average execution time for 48877 random queries: 2 milliseconds
-
-
-#### Record Store data access (on JavaME Embedded Profile)
-
-Queries on a JavaME RecordStore are feasible only with via RecordFilter and RecordComparator classes) but which is not applicable 
-in terms of speed (too slow).
-
-Anyhow the average record store access time for 48877 entries is: 55 milliseconds
-
-* [Table of Contents](#table-of-contents)
-
-
 ## HowTo's
 
 Here you can find some HowTo's that may be useful

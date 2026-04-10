@@ -18,7 +18,7 @@ developed by
 
 **Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in Database and Agents technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at **Native Speed**</ins>. Dpdl enables polyglot programming.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>. Dpdl enables polyglot programming.
 
 The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
@@ -28,7 +28,7 @@ In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of 
 
 Everything comes already included with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
-The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact <ins>kilobyte range</ins> virtual machine.
+The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact <ins>kilobyte range</ins> code virtual machine.
 
 ### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
@@ -40,7 +40,7 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code.
 
-Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages or any custom code syntax to be executed within dpdl code by means of dedicated '*Dpdl language plug-ins*', distributed with the '*DpdlEngine*' release, or developed separately ad-hoc.
+Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages or any custom code syntax to be executed within dpdl code by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed separately ad-hoc.
 
 <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
@@ -52,7 +52,7 @@ A dedicated *Dpdl language plug-in* for **AI generative code** '*DpdlAINerd*' (*
 
 Dpdl includes a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package, handle and query data very efficiently on memory scarce devices**</ins>.
 
-The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development middleware for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development middleware based on open source for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
 ## DpdlEngine provides:
@@ -70,7 +70,7 @@ The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Re-use code
 ### * No need to install, compile and configure development environments
-### * Self-contained, No additional dependencies required (except user libraries)
+### * Self-contained, No additional dependencies required (except user libraries and included 'Dpdl language plug-ins')
 ### * Facilitate rapid prototyping for Hardware programming
 ### * Runs on constrained devices and also Microcontroller units (MCUs)
 ### * Customizable
@@ -222,7 +222,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **XML** with XPath parser
 * **JSON**
 * **Easy integration of custom libraries**
-* **Small footprint**, Only **`372 Kb`** for DpdlEngine, that can be stripped down to <ins>**`80 Kb`** for minimal setup</ins>
+* **Small footprint**, Only **`372 Kb`** for DpdlEngine (with all features). It can be stripped down to <ins>**`80 Kb`** or less for a minimal setup</ins>
 * **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), without dependencies
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'OpenCL' and 'Wgsl' (WebGPU shading language) Dpdl language plug-in**
@@ -234,7 +234,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **DpdlEngine** (<ins>**Full**</ins> configuration, with 'DpdlPacket' database support) **`372 Kb`**
 * **DpdlEngine** (<ins>**Full**</ins> configuration, with 'DpdlPacket' database support) including embedded C compiler/interpreter **`650 Kb`**
  
-The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`**</ins> for very compact setups.
+The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`**</ins> or less for very compact setups.
 
 
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.

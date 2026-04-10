@@ -112,6 +112,8 @@ func myCalc(long nr_iter)
 		
 		println("x + y is equal to ${ x + y }")
 		
+		println("square root of res is: ${ sqrt(res) } ")
+		
 		i=i+1
 	endfor
 	
