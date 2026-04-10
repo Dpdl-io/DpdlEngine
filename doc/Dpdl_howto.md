@@ -262,7 +262,7 @@ dpdl_stack_push("dpdl:applyvars", "dpdlbuf_var1",n, x, a)
 	#include <stdio.h>
 	#include <dpdl.h>
 	
-	int main(int argc, char **argv){
+	int dpdl_main(int argc, char **argv){
 		printf("Hello C from Dpdl!\n");
 		printf("\n");
 		int my_i = {{my_int_var}};
@@ -474,7 +474,7 @@ Dpdl can be conveniently embedded and executed also in C code.
 #include <stdio.h>
 #include "dpdl.h"
 
-int main(int argc, char **argv){
+int dpdl_main(int argc, char **argv){
 	printf("executing Dpdl from C...\n");
 
 	char *dpdl_src_file = "test/testString.h";
@@ -501,7 +501,7 @@ char *dpdl_src_code = ""
 			"	c=c+1\n	\n"
 			"endfor	\n";
 
-int main(int argc, char **argv){
+int dpdl_main(int argc, char **argv){
 	printf("executing Dpdl code from C...\n");
 
 	int ret = dpdl_exec_code(dpdl_src_code);

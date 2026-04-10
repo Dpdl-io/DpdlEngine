@@ -96,7 +96,7 @@ The meta instruction **`[bytecode]`** signalizes the beginning of Dpdl to byteco
 **Example:**
 
 ```python
-println("testing Dpdl java bytecode compilation at runtime...")
+println("testing Dpdl java bytecode generation ...")
 
 [bytecode]
 int arr_i[1000000]
