@@ -212,7 +212,16 @@ int s = DPDLAPI_execScript("test/hello_world.h")
 #### Executing dpdl code
 
 ```python
-int s = DPDLAPI_execCode("	int x, i	\n for(i < 23)	\n	x = i + 3 \n	println('Hello ' + x)	\n	i=i+1	\n endfor")
+string my_code = "'"
+			int x, i
+			for(i < 23)
+				x = i + 3
+				println('Hello ' + x)
+				i=i+1
+			endfor
+			"'"
+
+int s = DPDLAPI_execCode(my_code)
 
 println("status: " + s)
 ```
