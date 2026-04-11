@@ -237,7 +237,7 @@ The following options can be passed to the 'DpdlAINerd' plug-in, via the dpdl st
 
 * **`engine`** the AI engine to be used -> the naming is mapped in the 'DpdlPlugins.ini' configuration file where related parameters are defined (key, api url, default model etc.)
 
-** **`model`** The name of the model to be used
+* **`model`** The name of the model to be used
 
 * **`skill`** The name of the 'skill' definition file (located in folder ./DpdlAI/skills/ ) to be applied in the request
 
@@ -259,7 +259,22 @@ println("generative ai exit code: " + exit_code)
 
 ### Skills
 
-Custom
+Skill definitions serve the purpose to add knowledge to the AI engine prior executing a request.
+
+Custom SKILL definitions can be defined for various purposes, and simply placed into a sub-folder  (ex. './DpdlAI/skills/my_custom_skill/SKILL.md')
+
+When executing the 'DpdlAINerd' plug-in the skill can than be defined as follows:
+
+```python
+
+dpdl_stack_push("dpdlai:-skill my_custom_skill")
+
+>>ai
+
+<<
+
+...
+```
 
 ### How to execute
 
