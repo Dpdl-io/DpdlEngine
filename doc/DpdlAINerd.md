@@ -231,6 +231,35 @@ println("embedded C code exit code: " + exit_code)
 
 As you see Dpdl allows a very flexible way to dynamically generate and execute code via AI
 
+### Options
+
+The following options can be passed to the 'DpdlAINerd' plug-in, via the dpdl stack.
+
+* **`engine`** the AI engine to be used -> the naming is mapped in the 'DpdlPlugins.ini' configuration file where related parameters are defined (key, api url, default model etc.)
+
+** **`model`** The name of the model to be used
+
+* **`skill`** The name of the 'skill' definition file (located in folder ./DpdlAI/skills/ ) to be applied in the request
+
+**example:**
+
+```python
+println("generating some dpdl code...")
+
+dpdl_stack_push("dpdlai:-engine deepseek -model deepseek-coder-v2-lite-instruct -skill dpdllang")
+
+>>ai(my_code)
+	generate a dpdl program that implements the quicksort algorithm
+<<
+
+int exit_code = dpdl_exit_code()
+
+println("generative ai exit code: " + exit_code)
+```
+
+### Skills
+
+Custom
 
 ### How to execute
 
@@ -242,29 +271,16 @@ The DpdlEngine will generate a new file, in the same directory, with the '_gen' 
 
 **Example:**
 
-```
+````
 java -jar DpdlEngine_V1.0_release.jar -load ai/dpdlAITest.h @gen
+
 ```
-
-
-#### Generating content or data on-the-fly inside the code execution
-
-Content or data can also be generated on-the-fly with the DAN plug-in.
-
-When embedding a natural language description with the keyword **`>>ai`** the content generated is available on the dpdl stack and can be
-retrieved with the key **`dpdlainerd_buf`**
-
-NOTE: The 'DpdlEngine lite' shareware/demo release has a response buffer limit of 500 characters only, the content is trimmed when exceeded.
-A full registered version of Dpdl is required to have an unlimited buffer size.
-
-
 
 ### Current status
 
 DpdlAINerd is in active development with huge improvements and features foreseen in near future. 
 
 Stand-by for the coming innovation we're bringing to Dpdl with generative code.
-
 
 ### Next integrations
 

@@ -70,7 +70,7 @@ The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Re-use code
 ### * No need to install, compile and configure development environments
-### * Self-contained, No additional dependencies required (except user libraries and included 'Dpdl language plug-ins')
+### * Self-contained, No additional dependencies required (except user libraries)
 ### * Facilitate rapid prototyping for Hardware programming
 ### * Runs on constrained devices and also Microcontroller units (MCUs)
 ### * Customizable
