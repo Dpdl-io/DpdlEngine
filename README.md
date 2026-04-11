@@ -55,7 +55,7 @@ Dpdl includes a custom data container with built-in database technology referred
 The included Dpdl lanugage plug-in '**DpdlAgent**' provides an agent development middleware based on open source for building distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
-## DpdlEngine provides:
+## DpdlEngine components:
 
 - **dpdl-lang** -> Dpdl programming language
 - **DpdlPacket** -> Dpdl Database technology

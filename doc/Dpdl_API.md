@@ -19,19 +19,19 @@ This is the Dpdl API documentation for DpdlEngine V1.1
 
 The Dpdl API's are available as:
 
-- Native JVM API's
+- Native JRE and Java API's
 - Dpdl import Libraries
-- Native shared Libraries
-- Dpdl native functions
+- Native C/C++ shared Libraries
+- Dpdl API functions
 - Dpdl embedded C library
 
-### Native JVM APIs
+### Native JRE and Java APIs
 
-Dpdl allows to load and access java and JVM compatible classes and methods (JRE and external java libraries) via the dedicated Dpdl API functions **`new(..)`** and **`getObj(..)`**.
+Dpdl allows to load and access Java and JVM compatible classes and methods (JRE and external java libraries) via dedicated operators and functions (**`new(..)`** and **`getObj(..)`**).
 
-This allows Dpdl to access a broad set of API's and libraries.
+This allows to access a broad set of API's and libraries within Dpdl.
 
-By default 'DpdlEngine lite' includes the Java <ins>**JRE API**</ins>, the <ins>**JavaFX API**</ins> and the <ins>**Bluecove JRS-82 API**</ins>. Further libraries can be included by means of configuration:
+By default the 'DpdlEngine' includes the Java <ins>**JRE API**</ins>, the <ins>**JavaFX API**</ins> and the <ins>**Bluecove JRS-82 API**</ins>. Further libraries can be included by means of configuration:
 
 [Java JRE API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
@@ -42,18 +42,21 @@ By default 'DpdlEngine lite' includes the Java <ins>**JRE API**</ins>, the <ins>
 **Example:** using a java JRE class 'java.util.MashMap'
 
 ```python
-object myhashmap = new("HashMap")
+object mymap = new("HashMap")
 
-myhashmap.put("my key1", "my value 1")
+mymap.put("key1", "my value 1")
 
 ```
 
-The 'DpdlEngine pro' allows also to register dynamically external java libraries as described below.
+#### Adding new Java API's
+
+Further java API's can be added by means of configuration or by invoking a dedicated command in the DpdlClient console.
 
 
 #### Registering external java libraries at runtime
 
-External java libraries packed in '*.jar' files can be dynamically registered at runtime to make them available in Dpdl:
+External java libraries packed in '*.jar' files can also be dynamically registered at runtime to make them available in Dpdl (for 'DpdlEngine pro' only)
+
 
 
 **Example:**
@@ -78,10 +81,10 @@ object d = myobj.getMyData()
 
 ### Dpdl import Libraries
 
-Auxiliary API libraries can be imported and used via the **`import(..)`** statement.
+Auxiliary API libraries that are available can be imported and used via the **`import(..)`** statement.
 
-The import libraries are implemented either in Dpdl (with '*.h' extension located in './DpdlLibs/libs/' folder),
-OR are implemented in a native java library that can be configured to be accessed via Dpdl in a easy and straight forward way.
+The import libraries are implemented either as a java library that can be configured to be accessed via Dpdl in a easy and straight forward way,
+or can be implemented in dpdl (located in './DpdlLibs/libs/' folder).
 
 
 ```python
@@ -94,6 +97,7 @@ import('mylib.h')
 ```
 
 **`io`**
+
 ```python
 readStr(string file) return string data
 writeStr(string file, string data) return bool status
@@ -101,15 +105,17 @@ writeStr(string file, string data) return bool status
 
 **`http`**
 
-the library exposes the following methods and objects:
+the library exposes the following methods and objects documented here:
  
 [Http javalite](https://www.dpdl.io/doc/apidocs/org/javalite/http/Http.html)
+
+some auxiliary functions are also provided:
 
 ```python
 getraw(string url) return string response
 ```
 
-Example:
+**example:**
 
 https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/http/dpdlHttpExample.h
 
@@ -122,7 +128,7 @@ decode(string json, struct data) return struct data
 decode(string json, object data) return object data
 ```
 
-Example:
+**example:**
 
 https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/json/dpdlDecodeJSON.h
 
@@ -134,18 +140,17 @@ loadLib(string lib) return object lib
 mapLib(string lib, object class) return object lib
 ```
 
-Adding custom libraries is straight forward and can be done by simply adding the implementation to the classpath and 
-configure the library in the configuration file 'DpdlEngine.ini'
+Adding custom libraries is straight forward, it can be done by simply adding the libraries to the paths specified in the configuration file 'DpdlEngine.ini'
 
-Example:
+**example:**
 
 https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h
 
-### Native shared Libraries:
+### Native C/C++ shared Libraries:
 
-Dpdl allows to access natively loaded libraries (libc, msvcrt, etc..) on different operating systems (Linux, Windows, Android) throught a unified interface.
+Dpdl allows to access natively loaded C/C++ libraries (libc, msvcrt, etc..) on different Operating Systems (Linux, Windows, Android) through a unified interface.
 
-To load and access a native lib the Dpdl 'native' library module needs to be imported.
+To load and access a native library, the dpdl 'native' library module needs to be imported.
 
 Example:
 
@@ -165,7 +170,7 @@ For more details visit the doc:
 
 [Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
-### Dpdl native functions
+### Dpdl API functions
 
 The following API function are implemented directly in the DpdlEngine core:
 
