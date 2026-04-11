@@ -715,15 +715,15 @@ The Dpdl API allows to access all classes and methods of the <ins>underlying JVM
 ```python
 object map, s
 
-map=new("HashMap")
-map.put(1,"Dpdl")
-map.put(2,"Packet")
-map.put(3,"Definition")
-map.put(4,"Language")
+map = new("HashMap")
+map.put(1, "Dpdl")
+map.put(2, "Packet")
+map.put(3, "Definition")
+map.put(4, "Language")
 
-s=map.get(1)
+s = map.get(1)
 println(s)
-s=map.get(4)
+s = map.get(4)
 println(s)
 ```
 

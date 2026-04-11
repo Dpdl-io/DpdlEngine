@@ -14,7 +14,7 @@ developed by
 ## Dpdl language plug-in for AI generative code - DpdlAINerd (DAN)
 
 
-'**DpdlAINerd**' (**DAN**) is a dedicated **Dpdl language plug-in** for <ins>**AI generative code**</ins>.
+'**DpdlAINerd**' (**DAN**) is a dedicated *Dpdl language plug-in* for <ins>**AI generative code**</ins>.
 
 The provided plug-in allows to <ins>**automatically generate and execute** embedded code sections in various programming languages within Dpdl</ins> via a configurable **AI engines**.
 
@@ -47,21 +47,39 @@ find more examples here: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/t
 
 The 'DpdlAINerd' supports the following AI engine types:
 
-- local AI deployments -> provided as part of *DpdlEngine*), Open source, provides access to many open AI models and backends
-- public AI (eg. DeepSeek, ChatGPT, etc.)
+- Local AI engine -> (provided along with *DpdlEngine*), Open source, provides access to many open AI models and AI backends
+- Dedicated AI services available via subscription at dpdl.ai
+- Other public AI services (eg. DeepSeek, ChatGPT, etc.)
 
 
 #### Local AI engine
 
-As part of the *DpdlEngine* setup there is the possibility to request a local AI engine setup package (fully based OpenSource components), for deployment on a local PC, workstation, vitual machine or server.
+As part of the *DpdlEngine* setup there is the possibility to request a local AI engine setup instance (fully based OpenSource components), for deployment on a local PC, workstation, virtual machine or server.
 
-With the provided deployment you can autonomously choose from 781 AI models available, it supports a wide range of back-ends, and you can install the models locally with a simple click as needed. 
+With the provided deployment you can autonomously choose from more than 900 open AI models available, it supports a wide range of AI back-ends, and you can install the models locally with a simple click as needed. 
 
-The 'DpdlAINerd' than connects to this local instance and the requests run completely locally.
+The 'DpdlAINerd' plug-in in this case connects only to this local AI engine instance and <ins>all requests and inference run completely locally<ins>.
+
+#### AI Services at dpdl.ai
+
+In this case the 'DpdlAINerd' plug-in connects via RESTful API to the cloud services at www.dpdl.ai
+
+The user can access also a dedicated UI for installing and managing the AI models to be used within dpdl.
+
+<p align="center">
+	<img src="https://www.dpdl.io/images/platform/DpdlAI_1.png" width="60%">
+</p>
+
+More than 900 open AI models are available
+
+<p align="center">
+	<img src="https://www.dpdl.io/images/platform/DpdlAI_2.png" width="60%">
+</p>
+
 
 #### Public AI engines
 
-At current state the 'DpdlAINerd' Dpdl language plugin supports the following AI engines:
+At current state the 'DpdlAINerd' Dpdl language plug-in supports the following third party AI engines:
 
 - DeepSeek (deepseek)
 - OpenAI (openai)
@@ -74,7 +92,7 @@ The DAN language plug-in can be used in 2 different modes:
 
 ### 1) Generate a new Dpdl source file containing the generated code (Mode 1)
 
-By executing the Dpdl script with the '@gen' parameter (see below), a new Dpdl source file (with '*_gen' suffix) is created containing the automatically AI generated code sections.
+By executing the dpdl script with the '@gen' parameter (see below), a new Dpdl source file (with '*_gen' suffix) is created containing the automatically AI generated code sections.
 
 This mode allows to check and adapt the generated code before executing it.
 
@@ -138,14 +156,15 @@ This code generates a json file on-the fly for testing purposes:
 println("generating a json file with AI....")
 
 dpdl_stack_push("dpdlai:-engine deepseek -model deepseek-chat")
->>ai
-generate a sample json file which contains all fields for a personal identity document (ID)
+
+>>ai(my_data)
+	generate a sample json file which contains all fields for a personal identity document (ID)
 <<
 
 int exit_code = dpdl_exit_code()
 println("generative ai exit code: " + exit_code)
 
-string my_test_json = dpdl_stack_buf_get("dpdlainerd_buf")
+string my_test_json = dpdl_stack_buf_get("my_data")
 
 println("this is my sample json:")
 println(my_test_json)
@@ -186,13 +205,14 @@ println("testing generative AI code with Dpdl....")
 
 dpdl_stack_var_put("my_message", "Hello generative AI from Dpdl")
 
->>ai
+>>ai(my_code_c)
 	Write a console application in C that converts the following string to upper case: {{my_message}}
 <<
 int exit_code = dpdl_exit_code()
+
 println("generated ai code exit code: " + exit_code)
 
-string my_code = dpdl_stack_buf_get("dpdlainerd_buf")
+string my_code = dpdl_stack_buf_get("my_code_c")
 
 dpdl_stack_var_put("my_code", my_code)
 
@@ -223,10 +243,8 @@ The DpdlEngine will generate a new file, in the same directory, with the '_gen' 
 **Example:**
 
 ```
-java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED -jar DpdlEngine_V1.0_release.jar -load ai/dpdlAITest.h @gen
+java -jar DpdlEngine_V1.0_release.jar -load ai/dpdlAITest.h @gen
 ```
-
-NOTE: Currently, in the 'DpdlEngine lite' shareware/demo release the execution <ins>requires you to enter a password</ins> at each generation. A full registered version is required to disable the password prompt (password is **`123456`**)
 
 
 #### Generating content or data on-the-fly inside the code execution
@@ -243,11 +261,9 @@ A full registered version of Dpdl is required to have an unlimited buffer size.
 
 ### Current status
 
-DpdlAINerd is in a very first stage of development with huge improvements and features foreseen in near future. 
+DpdlAINerd is in active development with huge improvements and features foreseen in near future. 
 
 Stand-by for the coming innovation we're bringing to Dpdl with generative code.
-
-The plan is to release the 'DpdlAINerd' language plug-in as fully Open Source software.
 
 
 ### Next integrations
