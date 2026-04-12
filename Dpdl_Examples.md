@@ -605,11 +605,18 @@ this is my sample json:
 
 ### Dpdl Agents
 
-* Example dpdl code that implements two independent Agents that exchange messages in a cyclic way
+* Example dpdl code that implements two independent Agents (via dpdl code) that exchange messages in a cyclic way
+	
+	[agent/testAgentDpdl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/testAgentDpdl.h)
+	
+* Example dpdl code that implements two independent Agents (via embedded java code) that exchange messages in a cyclic way
 	
 	[agent/testAgent.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/testAgent.h)
 
+* Example dpdl code that implements two independent Agents (via embedded java code) that exchange serialized java objects
 	
+	[agent/dpdlAgentObjExchange.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/dpdlAgentObjExchange.h)
+
 ### Benchmark Tests
 
 * Simple benchmark to measure the execution speed of Dpdl function calls with access to JRE objects

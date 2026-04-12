@@ -12,7 +12,7 @@ developed by
 
 ## Dpdl
 
-Dpdl provides a mechanism to compile variables and code constructs in embedded code templates at runtime.
+Dpdl provides a mechanism to compile variables and code constructs in embedded code section templates at runtime.
 
 This enables an easy and straight forward way of complementing or setting variables or code sections inside the embedded code definitions.
 

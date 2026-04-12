@@ -182,7 +182,7 @@ new(string name, object params, ...) return object
 getObj(string name) return object
 refObj(string name) return object
 loadCode(string dpdl_script_ref, object args, ...) return object
-genObjCode(object dpdl_obj) return object obj
+genObjCode(object dpdl_obj) return object java_obj
 genObjCodeC(object dpdl_struct) return object native_C_struct_obj
 
 arr(object elem, ...) return object ArrayList
@@ -290,10 +290,19 @@ dpdl_thread_finalize(int t_id, object param...)
 [GPU]
 DPDLNATIVE_GPU_getVersion() return string vers
 DPDLNATIVE_GPU_createTensorInputS1x1(int idx_t, string type, long x, object Pointer) return int status
+DPDLNATIVE_GPU_createTensorInputS2x2(int idx_t, string type, long x, object Pointer) return int status
+DPDLNATIVE_GPU_createTensorInputS3x3(int idx_t, string type, long x, object Pointer) return int status
+DPDLNATIVE_GPU_createTensorInputS4x4(int idx_t, string type, long x, object Pointer) return int status
 DPDLNATIVE_GPU_createTensorOutputS1x1(int idx_t, string type, long x) return int status
+DPDLNATIVE_GPU_createTensorOutputS2x2(int idx_t, string type, long x) return int status
+DPDLNATIVE_GPU_createTensorOutputS3x3(int idx_t, string type, long x) return int status
+DPDLNATIVE_GPU_createTensorOutputS4x4(int idx_t, string type, long x) return int status
 DPDLNATIVE_GPU_createKernelS1x1(int idx_k, int idx_in, int idx_out, long x) return int status
+DPDLNATIVE_GPU_createKernelS2x1(int idx_k, int idx_in, int idx_in2, int idx_out, long x) return int status
+DPDLNATIVE_GPU_createKernelS3x1(int idx_k, int idx_in, int idx_in2, int idx_in3, int idx_out, long x) return int status
+DPDLNATIVE_GPU_createKernelS4x1(int idx_k, int idx_in, int idx_in2, int idx_in3, int idx_in4, int idx_out, long x) return int status
 DPDLNATIVE_GPU_dispatchKernel(int idx_k) return int status
-DPDLNATIVE_GPU_waitCopyCPU(int idx_k, int idx_out, object Pointer, int x) return int status
+DPDLNATIVE_GPU_waitCopyCPU(int idx_k, int idx_out, object Pointer, long x) return int status
 
 [ActionListenerInterface]
 actionPerformed(string event)

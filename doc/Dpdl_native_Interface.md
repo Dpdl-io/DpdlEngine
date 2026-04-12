@@ -15,9 +15,9 @@ developed by
 ## Dpdl native Interface
 
 
-Dpdl allows to <ins>access native library functions of any given loaded native shared library</ins> seamlessly, in the same way as ordinary dpdl functions.
+Dpdl allows to <ins>access native C/C++ library functions of any given loaded native shared library</ins>, seamlessly in the same way as ordinary dpdl functions.
 
-This features makes Dpdl a complete and powerful programming language to interact also with low level system components or native C/C++ libraries.
+This features makes Dpdl a complete and powerful programming language to interact also with low level system components and native libraries.
 
 **Dpdl library:**
 
@@ -223,13 +223,5 @@ Dpdl provides built-in support for memory protection useful to avoid segmentatio
 
 By default the protection is enabled, it can be disabled by setting the variable 'DPDL_NATIVE_CODE_PROTECTION' to 'false' in the
 configuration file 'DpdlEngine.ini'
-
-
-### Note
-
-The Dpdl native interface library is only available in the full registered version of 'DpdlEngine'.
-
-A demo version with the 'native' library enabled can be requested for evaluation purposes by writing to: info@dpdl.io
-
 
 

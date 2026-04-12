@@ -1,6 +1,6 @@
 # File: agent/testAgent.h
 #
-# Example: Dpdl code that implements two independent Agents that exchange messages in a cyclic way
+# Example: Dpdl code that implements two independent Agents that exchange messages in a cyclic way, via embedded 'java' code
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -20,6 +20,7 @@ println("starting agent1...")
 dpdl_stack_push("dpdlstack:myagent_config", "dpdlagent:-code java -container -host localhost -port 1049")
 
 >>agent(myagent1)
+
 	protected void setup() {
 		System.out.println("Agent #1  " + this.getLocalName() + " is ready");
 
@@ -67,6 +68,7 @@ println("starting agent2...")
 dpdl_stack_push("dpdlstack:myagent_config")
 
 >>agent(myagent2)
+
 	protected void setup() {
         System.out.println("Agent #2" + getLocalName() + " is ready");
         addBehaviour(new CyclicBehaviour(this) {

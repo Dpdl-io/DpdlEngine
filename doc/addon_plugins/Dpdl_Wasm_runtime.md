@@ -15,7 +15,7 @@ developed by
 ## Dpdl language plug-in 'Wasm' 
 
 
-Dpdl provides also a dedicated **Dpdl language plug-in** that enables to <ins>**compile, run** and **access** **WebAssembly (WASM)**</ins> code **directly from Dpdl** via a dedicated runtime.
+Dpdl provides also a dedicated *Dpdl language plug-in* that enables to <ins>**run** and **access** **WebAssembly (WASM)**</ins> code **directly from dpdl code** via dedicated runtime. The plug-in includes also a compiler to compile WAT code into WASM modules.
 
 Wasm is growing in popularity for being a cross platform binary instruction format for multiple application domains that range from Web-apps, Desktop and Cloud apps, serverless applications, Edge containers and others.
 
@@ -23,7 +23,7 @@ Many compiler toolchains nowadays can target also WASM (eg. for C/C++, Rust, Jav
 
 Also <ins>**Dpdl** supports loading and accessing exported Wasm module functions and constructs</ins>. This allows to re-use many libraries and functions compiled to wasm directly in Dpdl.
 
-**Example (compiling WAT and call wasm module functions from <ins>Dpdl</ins> and from <ins>JavaScript</ins>):**
+**example:** compiling WAT code and call wasm module functions from <ins>dpdl</ins> and from <ins>JavaScript</ins>
 
 ```python
 
@@ -84,7 +84,7 @@ println("embedded javascript wasm fib exit code: " + exit_code)
 println("finished")
 ```
 
-**Example:** (compile a WAT script with dependencies to an already compiled WASM file and make function calls from Dpdl
+**example:** compile WAT code with dependencies to an already compiled WASM module and make function calls from dpdl
 
 [wasm/dpdlWasmTest2.h](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/wasm/dpdlWasmTest2.h)
 
@@ -112,7 +112,7 @@ WasmEdge supports all standard WebAssembly features and many proposed extensions
 
 This runtime can be activated and used in Dpdl by pushing the configuration **`dpdlruntime:wasmedge`** on the dpdl runtime before executing dpdl embedded code sections.
 
-Example:
+**example:**
 
 ```python
 dpdl_runtime_push("dpdlruntime:wasmedge")
@@ -128,9 +128,9 @@ Wasmer is a Wasm Runtime that provides a secure and fast sandbox environment sup
 
 Particularly interesting is the integration of **WASIX**, which is an effort to <ins>extend the existing **WASI (Web Assembly System Interface)**</ins> with non-invasive system call extensions that provide support for Networking, Multi-threading, Asynchronous Runtimes, Filesystem, Sub-processes and forking of processes, TTY etc..
 
-This runtime can be activated and used in Dpdl by pushing the configuration **`dpdlruntime:wasmer`** on the dpdl runtime before executing dpdl embedded code sections.
+This runtime can be activated and used in dpdl by pushing the configuration **`dpdlruntime:wasmer`** on the dpdl runtime before executing dpdl embedded code sections.
 
-Example:
+**example**:
 
 ```python
 dpdl_runtime_push("dpdlruntime:wasmedge")
@@ -157,7 +157,7 @@ int exit_code = dpdl_exit_code()
 The 'Wasmer' ruby runtime bindings are available here: https://github.com/wasmerio/wasmer-ruby
 
 
-## Some Examples
+## Examples
 
 ### Modules
 
