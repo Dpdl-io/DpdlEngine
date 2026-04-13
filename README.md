@@ -246,6 +246,13 @@ Dpdl enables to combine the <ins>portability and vast API availability</ins> of 
 Dpdl enables the integration of different technologies to leverage fast prototyping and foster research and development.
 
 
+## Design principles taken into account for developing Dpdl
+
+* Dpdl has been designed and developed to be **Simple** and **Robust** -> Simple things, usually simply work in Software
+* Easy to **Extend** and **Customize** -> Adding or adapting features should have little burdens, technically and conceptually
+* Portability across different platforms and versions of JVM has been a primary focus since the very beginning -> Ensure Backward compatibility to the best possible extend
+* Compact code footprint for porting Dpdl to constrained devices
+
 ## Dpdl sample code
 
 ### Dpdl example that makes use of external java libraries

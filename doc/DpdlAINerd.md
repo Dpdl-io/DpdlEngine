@@ -276,6 +276,13 @@ dpdl_stack_push("dpdlai:-skill my_custom_skill")
 ...
 ```
 
+#### Skills shipped as default along with 'DpdlEngine'
+
+- **`dpdllang`** -> defines all knowledge for AI to generate valid **dpdl** code
+- **`dpdlapi`** -> extensive dpdl API knowledge for AI
+
+
+
 ### How to execute
 
 #### Generate a new file that contains generated code
@@ -286,7 +293,7 @@ The DpdlEngine will generate a new file, in the same directory, with the '_gen' 
 
 **Example:**
 
-````
+```
 java -jar DpdlEngine_V1.0_release.jar -load ai/dpdlAITest.h @gen
 
 ```
