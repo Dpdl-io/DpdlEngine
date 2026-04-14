@@ -39,7 +39,7 @@ update of OCaml libraries might be required.
 
 ### Features
 
-* Dpdl backend compiler based on LLVM for generating native machine code for most target platform architectures
+* Development of **Dpdl language plug-in** for 'R' statistical computing language
 * Development of a dedicated **Dpdl language plug-in** for enabling QUANTUM computing via OpenQASM 2.0 (circuit description language)
 
 

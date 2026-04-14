@@ -26,7 +26,7 @@ Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enabl
 * Pointers and references (eg. int *px = &x)
 * Inline string expressions
 * Native data function types to handle data structures **`arr(..)`**, **`vec(..)`**, **`map(..)`**, **`list(..)`** and **`stack(..)`**.
-* APIs: Dpdl API, JRE API, MIDP API, and enables to load and access third party java APIs and Native shared libraries
+* APIs: Dpdl API, JRE API, MIDP API
 * Access to the full underlying Java Platform API's or any external java libraries
 * Access to Native shared libraries
 * Virtual file system via Record Stores

@@ -46,6 +46,28 @@ while(iter.hasNext())
 endwhile
 ```
 
+<table>
+<tr><td width=33% valign=top>
+
+## Index
+
+* [Basic](#basic)
+* [Data](#data)
+* [Integration](#integration)
+* [Some Algorithms implemented with pure dpdl](#some-algorithms-implemented-with-pure-dpdl)
+* [Networking](#networking)
+* [GPU Compute](#gpu-compute)
+* [AI generative code using the dedicated Dpdl language plugin](#ai-generative-code-using-the-dedicated-dpdl-language-plug-in)
+* [Graphical User Interface (UI)](#graphical-user-interface-ui)
+* [Small Apps](#small-apps)
+* [Dpdl 'embedded code sections' - Dpdl language plug-ins](dpdl-embedded-code-sections-dpdl-language-plug-ins)
+* [Dpdl Agents](#dpdl-agents)
+* [Benchmark Tests](#benchmark-tests)
+* [More Tests](#more-tests)
+
+</tr>
+</table>
+
 ### Basic
 
 * Example dpdl code that calculates the '**Fibonacci series**' via recursion
@@ -147,6 +169,8 @@ endwhile
 	[jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
 
+* [Index](#index)
+
 ### Data
 
 * Example dpdl code that parses an XML document with the xml pull parser
@@ -204,6 +228,9 @@ endwhile
 	[fs/dpdlVirtualFS.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/fs/dpdlVirtualFS.h)
 
 
+* [Index](#index)
+
+
 ### Integration
 	
 * Execute a Dpdl script continuously in a dedicated Thread instance
@@ -231,7 +258,10 @@ endwhile
 	[embed_dpdl/test_dpdl_code_exec2.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec2.c)
 
 
-### Some Algorithms implemented with Dpdl only
+* [Index](#index)
+
+
+### Some Algorithms implemented with pure dpdl
 
 * dpdl code that implements a 'Double Linked List' data structure
 	
@@ -240,6 +270,9 @@ endwhile
 * dpdl code that implements a SHA-1 hash algorithm
 	
 	[alg/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/alg/dpdlSHA-1impl.h)
+
+
+* [Index](#index)
 
 	
 ### Networking
@@ -256,6 +289,9 @@ endwhile
 	[networking/dpdlZeroMQClient2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/networking/dpdlZeroMQClient2.h)	
 	
 
+* [Index](#index)
+
+
 ### GPU Compute
 
 The following Dpdl examples show how to exploit capabilities of a GPU via embedded 'Wgsl' and 'OCL' code sections
@@ -268,8 +304,11 @@ The following Dpdl examples show how to exploit capabilities of a GPU via embedd
 
 	[wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
 	
-	
-### AI generative code using the **Dpdl langage plugin** 'DpdlAINerd'
+
+* [Index](#index)
+
+
+### AI generative code using the dedicated **Dpdl language plug-in**
 
 The following examples make use of the **Dpdl langage plugin** 'DpdlAINerd (DAN)' to <ins>automatically generate</ins> embedded code sections in various programming languages within Dpdl which can than be executed right away on the DpdlEngine.
 
@@ -301,7 +340,7 @@ The code above automatically generated the following dpdl code: [ai/dpdlAICodeSo
 
 **this program Output:**
 
-```
+```json
 this is my sample json:
 {
   "documentType": "National ID",
@@ -351,6 +390,9 @@ this is my sample json:
 }
 ```
 
+* [Index](#index)
+
+
 ### Graphical User Interface (UI)
 
 * Example Dpdl app that uses the JavaFX java library to create a sample UI (Graphical User Interface) application via a FXML definition and used CSS to create the layout.
@@ -374,6 +416,9 @@ this is my sample json:
 	[ui/dpdlGUIExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample.h)
 	
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_dpdlGUIExample.png" width="30%" height="30%">
+
+
+* [Index](#index)
 
 
 ### Small Apps
@@ -484,7 +529,10 @@ this is my sample json:
 		3) start the 2nd client in a thread instance: CoAP/startClientThread.h
 	
 
-### Dpdl language plug-ins (embeddable code sections)
+* [Index](#index)
+
+
+### Dpdl 'embedded code sections' - Dpdl language plug-ins
 
 * Example with embedded C code execution within Dpdl (interpreted Mode 1)
 	
@@ -603,6 +651,9 @@ this is my sample json:
 	[janet/dpdlJanetExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/janet/dpdlJanetExample.h)
 	
 
+* [Index](#index)
+
+
 ### Dpdl Agents
 
 * Example dpdl code that implements two independent Agents (via dpdl code) that exchange messages in a cyclic way
@@ -616,6 +667,10 @@ this is my sample json:
 * Example dpdl code that implements two independent Agents (via embedded java code) that exchange serialized java objects
 	
 	[agent/dpdlAgentObjExchange.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/dpdlAgentObjExchange.h)
+
+
+* [Index](#index)
+
 
 ### Benchmark Tests
 
@@ -644,6 +699,9 @@ this is my sample json:
 	[benchmarks/dpdlBenchTest6.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/benchmarks/dpdlBenchTest6.h)
 	
 
+* [Index](#index)
+
+
 ### More Tests
 
 * Small 'dummy' sample application
@@ -664,6 +722,8 @@ this is my sample json:
 	
 	....
 	```
+
+* [Index](#index)
 
 
 ## Dpdl sample prototype applications

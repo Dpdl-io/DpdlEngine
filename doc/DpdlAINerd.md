@@ -67,13 +67,13 @@ In this case the 'DpdlAINerd' plug-in connects via RESTful API to the cloud serv
 The user can access also a dedicated UI for installing and managing the AI models to be used within dpdl.
 
 <p align="center">
-	<img src="https://www.dpdl.io/images/platform/DpdlAI_1.png" width="60%">
+	<img src="https://www.dpdl.io/images/platform/DpdlAI_11.png" width="60%">
 </p>
 
 More than 900 open AI models are available
 
 <p align="center">
-	<img src="https://www.dpdl.io/images/platform/DpdlAI_2.png" width="60%">
+	<img src="https://www.dpdl.io/images/platform/DpdlAI_22.png" width="60%">
 </p>
 
 
