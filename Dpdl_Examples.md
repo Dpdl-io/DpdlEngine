@@ -532,7 +532,7 @@ this is my sample json:
 [Index](#index)
 
 
-### Dpdl 'embedded code sections' - Dpdl language plug-ins
+### Dpdl embedded code sections - Dpdl language plug-ins
 
 * Example with embedded C code execution within Dpdl (interpreted Mode 1)
 	
