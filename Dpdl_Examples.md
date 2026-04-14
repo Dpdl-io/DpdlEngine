@@ -60,7 +60,7 @@ endwhile
 * [AI generative code using the dedicated Dpdl language plugin](#ai-generative-code-using-the-dedicated-dpdl-language-plug-in)
 * [Graphical User Interface (UI)](#graphical-user-interface-ui)
 * [Small Apps](#small-apps)
-* [Dpdl 'embedded code sections' Dpdl language plugins](dpdl-embedded-code-sections-dpdl-language-plugins)
+* [Dpdl embedded code sections Dpdl language plugins](dpdl-embedded-code-sections-dpdl-language-plugins)
 * [Dpdl Agents](#dpdl-agents)
 * [Benchmark Tests](#benchmark-tests)
 * [More Tests](#more-tests)
@@ -532,7 +532,7 @@ this is my sample json:
 [Index](#index)
 
 
-### Dpdl 'embedded code sections' Dpdl language plugins
+### Dpdl embedded code sections Dpdl language plugins
 
 * Example with embedded C code execution within Dpdl (interpreted Mode 1)
 	
