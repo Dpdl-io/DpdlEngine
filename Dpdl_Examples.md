@@ -60,7 +60,7 @@ endwhile
 * [AI generative code using the dedicated Dpdl language plugin](#ai-generative-code-using-the-dedicated-dpdl-language-plug-in)
 * [Graphical User Interface (UI)](#graphical-user-interface-ui)
 * [Small Apps](#small-apps)
-* [Dpdl 'embedded code sections' - Dpdl language plug-ins](dpdl-embedded-code-sections-dpdl-language-plug-ins)
+* [Dpdl embedded code sections - Dpdl language plug-ins](dpdl-embedded-code-sections-dpdl-language-plug-ins)
 * [Dpdl Agents](#dpdl-agents)
 * [Benchmark Tests](#benchmark-tests)
 * [More Tests](#more-tests)
