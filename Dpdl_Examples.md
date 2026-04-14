@@ -169,7 +169,7 @@ endwhile
 	[jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
 
-* [Index](#index)
+[Index](#index)
 
 ### Data
 
@@ -228,7 +228,7 @@ endwhile
 	[fs/dpdlVirtualFS.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/fs/dpdlVirtualFS.h)
 
 
-* [Index](#index)
+[Index](#index)
 
 
 ### Integration
@@ -258,7 +258,7 @@ endwhile
 	[embed_dpdl/test_dpdl_code_exec2.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec2.c)
 
 
-* [Index](#index)
+[Index](#index)
 
 
 ### Some Algorithms implemented with pure dpdl
@@ -272,7 +272,7 @@ endwhile
 	[alg/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/alg/dpdlSHA-1impl.h)
 
 
-* [Index](#index)
+[Index](#index)
 
 	
 ### Networking
@@ -289,7 +289,7 @@ endwhile
 	[networking/dpdlZeroMQClient2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/networking/dpdlZeroMQClient2.h)	
 	
 
-* [Index](#index)
+[Index](#index)
 
 
 ### GPU Compute
@@ -305,7 +305,7 @@ The following Dpdl examples show how to exploit capabilities of a GPU via embedd
 	[wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
 	
 
-* [Index](#index)
+[Index](#index)
 
 
 ### AI generative code using the dedicated **Dpdl language plug-in**
@@ -390,7 +390,7 @@ this is my sample json:
 }
 ```
 
-* [Index](#index)
+[Index](#index)
 
 
 ### Graphical User Interface (UI)
@@ -418,7 +418,7 @@ this is my sample json:
 	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_dpdlGUIExample.png" width="30%" height="30%">
 
 
-* [Index](#index)
+[Index](#index)
 
 
 ### Small Apps
@@ -529,7 +529,7 @@ this is my sample json:
 		3) start the 2nd client in a thread instance: CoAP/startClientThread.h
 	
 
-* [Index](#index)
+[Index](#index)
 
 
 ### Dpdl 'embedded code sections' - Dpdl language plug-ins
@@ -651,7 +651,7 @@ this is my sample json:
 	[janet/dpdlJanetExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/janet/dpdlJanetExample.h)
 	
 
-* [Index](#index)
+[Index](#index)
 
 
 ### Dpdl Agents
@@ -669,7 +669,7 @@ this is my sample json:
 	[agent/dpdlAgentObjExchange.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/dpdlAgentObjExchange.h)
 
 
-* [Index](#index)
+[Index](#index)
 
 
 ### Benchmark Tests
@@ -699,7 +699,7 @@ this is my sample json:
 	[benchmarks/dpdlBenchTest6.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/benchmarks/dpdlBenchTest6.h)
 	
 
-* [Index](#index)
+[Index](#index)
 
 
 ### More Tests
@@ -723,7 +723,7 @@ this is my sample json:
 	....
 	```
 
-* [Index](#index)
+[Index](#index)
 
 
 ## Dpdl sample prototype applications
