@@ -340,8 +340,9 @@ The code above automatically generated the following dpdl code: [ai/dpdlAICodeSo
 
 **this program Output:**
 
-```json
 this is my sample json:
+
+```json
 {
   "documentType": "National ID",
   "issuingCountry": "United States",
@@ -762,7 +763,7 @@ enter the Dpdl script name to execute:
 arraylistExample.h [@TEST1]
 ```
 
-### 3) Using the Dpdl API
+### 3) Using the Dpdl API or the Java APIs
 
 ```python
 println("executing dpdl script...")

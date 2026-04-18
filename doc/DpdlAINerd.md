@@ -90,7 +90,7 @@ The AI engine used can be specified in the file 'DpdlPlugins.ini' under the sect
 
 The DAN language plug-in can be used in 2 different modes:
 
-### 1) Generate a new Dpdl source file containing the generated code (Mode 1)
+### 1) Generate a new dpdl source file containing the generated code sections (Mode 1)
 
 By executing the dpdl script with the '@gen' parameter (see below), a new Dpdl source file (with '*_gen' suffix) is created containing the automatically AI generated code sections.
 
@@ -144,7 +144,7 @@ println("embedded ai generated exit code: " + exit_code)
 
 In this case the generagted code was ready to execute right away, with no adaptions required, giving No errors:
 
-### 2) Generate and access generated content or data directly (Mode 2)
+### 2) Generate and execute generated code and access content or data directly (Mode 2)
 
 The DAN Dpdl language plug-in can also be used to generate content or data used in the code execution, eg. a test file
 
@@ -172,7 +172,7 @@ println(my_test_json)
 
 when executed the code above generates the following output:
 
-```
+```json
 this is my sample json:
 {
    "id_number": "123456789",

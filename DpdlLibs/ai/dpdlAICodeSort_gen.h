@@ -13,9 +13,9 @@ println("Dpdl example that leverages generative AI for code execution...")
 
 println("generating code to sort a list of numbers...")
 
-dpdl_stack_push("dpdlbuf_result", "1 43 63 634 64 21 3 6 346 34 1000 23 55")
+dpdl_stack_push("1 43 63 634 64 21 3 6 346 34 1000 23 55")
 
->>clj
+>>clj(my_result_buf)
 (ns dpdl)
 
 (defn dpdl_main [nums]
@@ -27,9 +27,11 @@ dpdl_stack_push("dpdlbuf_result", "1 43 63 634 64 21 3 6 346 34 1000 23 55")
 <<
 
 int exit_code = dpdl_exit_code()
+
 println("embedded ai generated exit code: " + exit_code)
 
-string result = dpdl_stack_buf_get("dpdlbuf_result")
+string result = dpdl_stack_buf_get("my_result_buf")
+
 println("sorted numbers result: " + result)
 
 

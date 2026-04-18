@@ -9,7 +9,7 @@
 
 println("generating a json file with DpdlAINerd plug-in....")
 
->>ai
+>>ai(my_json_data)
 generate a sample json file which contains all fields for a personal identity document (ID)
 <<
 
@@ -17,7 +17,7 @@ int exit_code = dpdl_exit_code()
 
 println("generative ai exit code: " + exit_code)
 
-string my_test_json = dpdl_stack_buf_get("dpdlainerd_buf")
+string my_test_json = dpdl_stack_buf_get("my_json_data")
 
 println("this is my sample json:")
 

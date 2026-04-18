@@ -73,9 +73,9 @@ int n = 6
 double x = 10.0d
 string a = "test"
 
-dpdl_stack_push("dpdlbuf_var1",n, x, a)
+dpdl_stack_push(n, x, a)
 
->>c
+>>c(my_var1)
 	#include <stdio.h>
 	#include <stdlib.h>
 	#include <dpdl.h>
@@ -100,10 +100,12 @@ dpdl_stack_push("dpdlbuf_var1",n, x, a)
 	    return 0;
 	}
 <<
+
 exit_code = dpdl_exit_code()
 
-println("embedded C exit code: " + exit_code);
-string buf = dpdl_stack_buf_get("dpdlbuf_var1")
+println("embedded C exit code: " + exit_code)
+
+string buf = dpdl_stack_buf_get("my_var1")
 
 println("")
 

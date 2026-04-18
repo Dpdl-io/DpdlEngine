@@ -12,17 +12,18 @@ println("Testing generative AI code with Dpdl....")
 
 dpdl_stack_var_put("my_message", "Hello generative AI from Dpdl")
 
->>ai
+>>ai(my_generated_code)
 	Write a console program in C that print out the first command line parameter and append the string '{{my_message}}'
 <<
 int exit_code = dpdl_exit_code()
+
 println("generated ai code exit code: " + exit_code)
 
-string my_code = dpdl_stack_buf_get("dpdlainerd_buf")
-
-dpdl_stack_var_put("my_code", my_code)
+string my_code = dpdl_stack_buf_get("my_generated_code")
 
 println("executing generated code...")
+
+dpdl_stack_var_put("my_code", my_code)
 
 dpdl_stack_push("dpdl:applyvars", "dpdl:compile", "param0", "MESSAGE: ")
 

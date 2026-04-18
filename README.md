@@ -20,13 +20,13 @@ developed by
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
 
-Dpdl enables **Polyglot programming**, aiming to make use of embedded languages along with their specific runtime as it is (aka. Python, etc... in its is original form).
+Dpdl enables **Polyglot programming** in a form to use of embedded programming languages along with their specific runtime, as it is (aka. Python, Ruby, etc... in its original form).
 
-The Dpdl language constructs and syntax is simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
+The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
 **Dpdl** provides access to <ins>**JVM platform API's, Native shared libraries, WASM modules and GPU compute**</ins>.
 
-In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica and also others</em>, <ins>**directly embedded and within dpdl code**</ins>.
+In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica and also others</em>, <ins>**directly embedded within dpdl code**</ins>.
 
 Everything comes already included along with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
@@ -201,7 +201,7 @@ println("finished!")
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (any JVM platform 1.3+ and later Spec, JavaME). The core engine runs also on JVM 1.1 spec compliant VMs
+* **DpdlEngine is optimized to run on a wide range of platforms** (any JVM platform 1.3+ and later Spec, JavaME (CLDC, CDC)). The core engine runs also on JVM 1.1 spec compliant VMs
 * **Access to the underlying JVM platform API's and to external java libraries**
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
@@ -231,21 +231,61 @@ The speedup is x 25 times faster compared to a standard record store access
 * Open Source **Dpdl language plug-ins**
 
 
-### DpdlEngine memory footprint:
+## 'DpdlEngine' application footprint (size) and Profiles:
 
-* **DpdlEngine** (<ins>**Full**</ins> configuration, with 'DpdlPacket' database support) **`372 Kb`**
-* **DpdlEngine** (<ins>**Full**</ins> configuration, with 'DpdlPacket' database support) including embedded C compiler/interpreter **`650 Kb`**
- 
-The size of the DpdlEngine core <ins>can be stripped down to **`80 Kb`**</ins> or less for very compact setups.
+The *DpdlEngine* can be run in different configurations (Profiles) and Setups, depending on which is the target platform and which is the usage domain. This affects also the overall size (footprint) of the application.
+
+The *DpdlEngine* setup may also include some *Dpdl language plug-ins* to enable to execute '**embedded code sections**' in other programming languages.
+
+*Dpdl language plug-ins* are an **optional** component, they can be included or excluded, even on-the-fly, via a simple configuration.
+
+A typical setup of Dpdl might be the 'DpdlEngine' plus some of the available *Dpdl language plug-ins* to execute 'embedded code sections' like for example in: *C, Java, Python and JavaScript* etc..
+
+### 'DpdlEngine' application footprint (size)
+
+The size of 'DpdlEngine' can be somewhere between **`80 Kb`** and **`372 Kb`**, depending on which functions and modules are actually included.
+
+These are the main Profiles available:
+
+* **`Compact`** : **DpdlEngine** core (<ins>**Compact**/ins> profile) **`80 Kb`**</ins> or less for Compact setups
+* **`Full`** : **DpdlEngine** core (<ins>**Full**</ins> profile, includes 'DpdlPacket' database support) **`372 Kb`**
 
 
-Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
+### Profiles
 
-Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins>. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A *DpdlPacket* can also include Dpdl code for custom setups.
+The profiles mentioned below can of course be adjusted as needed to include more ore less functions and components. 
 
-Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, enabling developers to use thousands of existing high-quality software libraries. 
 
-Dpdl enables the integration of different technologies to leverage fast prototyping and foster research and development.
+#### Compact
+
+Contains a usage profile that enables to execute dpdl code. The functionalities to create and handle '**DpdlPacket**' are not included.
+
+The *Dpdl language plug-ins* included are lightweight targeted for embedded systems.
+
+**example**: setup including the *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: Total size **`686 Kb`**
+
+#### 'Compact' with lightweight version of *Dpdl language plug-ins*
+
+| Platform |Dpdl core Basic |C (interpreted/compiled)| MicroPython | Micro JavaScript (ES5) | TOTAL size |
+| ---  | --- | --- | --- | --- | --- |
+| Linux x86_64 | 80 Kb | 284 Kb | 170 Kb | 152 Kb | 686 Kb|
+
+
+#### 'Compact' with extended version of *Dpdl language plug-ins*
+
+| Platform |Dpdl core Basic |C (interpreted/compiled)| Python | JavaScript (ES2023)| TOTAL size |
+| ---  | --- | --- | --- | --- | --- |
+| Linux x86_64 | 80 Kb | 284 Kb | 2551 Kb | 1924 Kb | 4,8 Mb|
+
+
+#### DpdlEngine core 'Full'
+
+| Platform |Dpdl core Full |C (interpreted/compiled)| Python | JavaScript (ES2023) | TOTAL size |
+| ---  | --- | --- | --- | --- | --- |
+| Linux x86_64 | 372 Kb | 284 Kb | 2551 Kb |  1924 Kb | 5,1 MB|
+
+
+* **DpdlEngine** core (<ins>**Full**</ins> configuration, with 'DpdlPacket' database support) with support for *embedded code sections* for C including embedded C compiler/interpreter: **`650 Kb`**
 
 
 ## Design decisions considered for developing Dpdl
@@ -397,6 +437,8 @@ println("embedded groovy exit code: " + exit_code)
 
 ### Dpdl sample code that make use of java JRE classes
 
+#### Example: Implementation of of dpdl class to write data to a file
+
 The Dpdl code below illustrates the use of a dpdl class that implements a function to write data files efficiently by means of a java JRE class (i.e. [*BufferedWriter*](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/BufferedWriter.html) )
 
 ```python
@@ -456,12 +498,11 @@ class MyWriter {
 
 ```
 
-The example below, to show the flexibility of dpdl, implements the same logic as the example above, but with a derived dpdl class:
+#### Example: Implementation of a derived dpdl class to write data to a file
+
+The example below, to show the flexibility of dpdl, implements the same logic as the example above, but with a dpdl class derived from a JRE class:
 
 [jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
-
-
-**Below you can find a more complex example of how Dpdl can be used to accomplish even complex tasks, in this case via embedded WebGPU shading language (Wgsl)**:
 
 
 ## Dpdl example with 'embedded code sections' in different programming languages
@@ -698,21 +739,28 @@ Dpdl enables rapid development, fast prototyping, code reuse and allow a high de
 
 Dpdl has also built-in constructs that enable dynamic code generation for <ins>**generative AI code**</ins> and provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
 
-The **`DpdlPacket`** data container is a highly optimized way to store, query and access data on devices that have limited memory and storage capabilities.
-
 The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the prototyping and development process by leveraging generative AI code for embedded code and data generation within dpdl.
 
 The Dpdl language plug-in '**DpdlAgent**', with the contained agent development middleware, can be used to build solid *Distributed Mobile Agents* that communicate asynchronously following the FIPA (*Foundation for Intelligent Physical Agents*) specification. It enables also to develop agents that are able to migrate or copy themselves across multiple networks and hosts.
  
-**Dpdl can be used as:**
+Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
+
+Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins>. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A *DpdlPacket* can also include Dpdl code for custom setups.
+
+Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, enabling developers to use thousands of existing high-quality software libraries. 
+
+Dpdl enables the integration of different technologies to leverage fast prototyping and foster research and development.
+
+
+### Dpdl can be used as:
 
 * Rapid application development platform
-* Embedded scripting engine for applications
-* For development of Domain Specific Languages (DSL)
+* Embedded scripting engine in applications
+* For the development of Domain Specific Languages (DSL)
 * Data handling on memory constrained devices
 * AI generative code
 * Library module
-* Testing framework for heterogeneous code bases
+* Testing framework
 * Utility tool
 	
 
@@ -1209,14 +1257,13 @@ You can find examples in the folder [./DpdlLibs/js/](https://github.com/Dpdl-io/
 Lua code can be embedded within Dpdl code by using the keyword **`>>lua`**.
 
 Example Dpdl code with embedded 'Lua' code:
+
 ```python
 println("testing embedding Lua within Dpdl....")
 
-string buffer_key = "dpdlbuf_result"
+dpdl_stack_push("name", "Alexis", "surname", "Kunst")
 
-dpdl_stack_push(buffer_key, "name", "Alexis", "surname", "Kunst")
-
->>lua
+>>lua(my_buffer_key)
 	function doSomeAlg()
 		local home_dir = os.getenv("HOME")
 		print("user home: ", home_dir)
@@ -1261,7 +1308,8 @@ int exit_code = dpdl_exit_code()
 
 println("embedded lua exit code: " + exit_code)
 
-string resp_buf = dpdl_stack_buf_get(buffer_key)
+string resp_buf = dpdl_stack_buf_get("my_buffer_key")
+
 println("lua response buffer: ")
 println(resp_buf)
 ```
@@ -1272,6 +1320,7 @@ A dedicated Dpdl language plug-in allows to directly inject SQL statements and r
 directly by the plug-in
 
 Example Dpdl code with embedded 'SQL':
+
 ```python
 println("testing 'sql' queries with Dpdl...")
 
@@ -1325,14 +1374,14 @@ Further Dpdl examples can be found on this page:
 
 ## 'DpdlPacket' data container
 
-A DpdlPacket is a compact, highly compressed executable packet of data with built-in database technology that
-can be created based on a defined Dpdl code definition.
+A *DpdlPacket* is a compact, structured and highly compressed executable packet of data with built-in database technology that
+can be created based on a defined DpdlPacket code definition.
  
-A DpdlPacket can than be allocated and queried efficiently via API interfaces available for Java and for the built-in Dpdl language.
+A *DpdlPacket* can than be allocated and queried efficiently via API interfaces available for Java and Dpdl language.
 
-In particular Dpdl is very efficient on J2ME and JavaME platforms and has a high degree of backward compatibility.
+In particular Dpdl is very efficient on JavaME platforms and has a high degree of backward compatibility (also J2ME)
 
-A DpdlPacket contains 1 - n chunks of compressed data that can be allocated, queried and deallocated when data is not used anymore.
+A *DpdlPacket* may contain 1 - n chunks of compressed data that can be allocated, queried and deallocated when data is not used anymore.
 
 All kind of data can be packed into a DpdlPacket.
 
@@ -1349,7 +1398,8 @@ The 'DpdlEngine lite' release package includes an encoded DpdlPacket (dpdl_PHONE
 Refer to the [Dpdl_documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
 for how to allocate, execute and perform queries on a DpdlPacket.
 
-Example of DpdlPacket code definition (dpdl_PHONEBOOK.c)
+Example of DpdlPacket code definition (dpdl_PHONEBOOK.dpdlpkt)
+
 ```cpp
 call(dpdlInterpreter)
 ::module dpdl_PHONEBOOK
