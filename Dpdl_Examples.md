@@ -763,7 +763,7 @@ enter the Dpdl script name to execute:
 arraylistExample.h [@TEST1]
 ```
 
-### 3) Using the Dpdl API or the Java APIs
+### 3) Using the Dpdl API or the Java API
 
 ```python
 println("executing dpdl script...")

@@ -20,7 +20,7 @@ developed by
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
 
-Dpdl enables **Polyglot programming** in a form to use of embedded programming languages along with their specific runtime, as it is (aka. Python, Ruby, etc... in its original form).
+Dpdl enables **Polyglot programming**, in a form that allows the use of embedded programming languages along with their specific runtime as it is (aka. Python, Ruby, etc... in its original form).
 
 The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
