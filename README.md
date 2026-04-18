@@ -20,7 +20,7 @@ developed by
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
 
-Dpdl enables **Polyglot programming**, in a form that allows the use of embedded programming languages along with their specific runtime as it is, in its original form. (aka. Python, Ruby, etc... the original implementations).
+Dpdl enables **Polyglot programming**, in a form that allows the use of embedded programming languages along with their specific runtime as it is, in its original form. (aka. Python, Ruby, etc... the original implementations of it).
 
 The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
@@ -224,7 +224,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **XML** with XPath parser
 * **JSON**
 * **Easy integration of custom libraries**
-* **Small footprint**, Only **`372 Kb`** for DpdlEngine (with all features). It can be stripped down to <ins>**`80 Kb`** or less for a minimal setup</ins>
+* **Small footprint**, Only **`372 Kb`** for DpdlEngine (with all features). It can be stripped down to <ins>**`80 Kb`** or less for a compact setup</ins>
 * **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), without dependencies
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'OpenCL' and 'Wgsl' (WebGPU shading language) Dpdl language plug-in**
@@ -260,10 +260,10 @@ The profiles mentioned below can of course be adjusted as needed to include more
 
 Contains a usage profile that enables to execute dpdl code. The functionalities to create and handle '**DpdlPacket**' are not included.
 
-The *Dpdl language plug-ins* included are lightweight targeted for embedded systems.
-
 
 #### DpdlEngine core 'Compact' with lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: Total size **`686 Kb`**
+
+The *Dpdl language plug-ins* included in this type of setup are targeted for Embedded Systems.
 
 | Platform |Dpdl core Basic |C (interpreted/compiled)| MicroPython | Micro JavaScript (ES5) | TOTAL size |
 | ---  | --- | --- | --- | --- | --- |
@@ -279,7 +279,8 @@ The *Dpdl language plug-ins* included are lightweight targeted for embedded syst
 
 #### Full
 
-Contains a usage profile that enables to execute dpdl code including a feature rich sets of built-in function. 
+Contains a usage profile that enables to execute dpdl code including a feature rich sets of built-in functions. 
+
 This profile includes also all functionalities required to create, handle and query '**DpdlPacket**'.
 
 #### DpdlEngine core 'Full' with extended version of *Dpdl language plug-ins*
