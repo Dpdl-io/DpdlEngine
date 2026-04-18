@@ -172,8 +172,9 @@ println(my_test_json)
 
 when executed the code above generates the following output:
 
-```json
 this is my sample json:
+
+```json
 {
    "id_number": "123456789",
    "first_name": "John",

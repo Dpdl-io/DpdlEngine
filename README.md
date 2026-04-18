@@ -262,9 +262,8 @@ Contains a usage profile that enables to execute dpdl code. The functionalities 
 
 The *Dpdl language plug-ins* included are lightweight targeted for embedded systems.
 
-**example**: setup including the *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: Total size **`686 Kb`**
 
-#### DpdlEngine core 'Compact' with lightweight version of *Dpdl language plug-ins*
+#### DpdlEngine core 'Compact' with lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: Total size **`686 Kb`**
 
 | Platform |Dpdl core Basic |C (interpreted/compiled)| MicroPython | Micro JavaScript (ES5) | TOTAL size |
 | ---  | --- | --- | --- | --- | --- |
@@ -280,7 +279,7 @@ The *Dpdl language plug-ins* included are lightweight targeted for embedded syst
 
 #### Full
 
-Contains a usage profile that enables to execute dpdl code including a feature rich built-in function sets. 
+Contains a usage profile that enables to execute dpdl code including a feature rich sets of built-in function. 
 This profile includes also all functionalities required to create, handle and query '**DpdlPacket**'.
 
 #### DpdlEngine core 'Full' with extended version of *Dpdl language plug-ins*
