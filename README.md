@@ -9,9 +9,7 @@
 
 
 
-developed by
-**SEE Solutions**
-&copy;
+by **SEE Solutions** &copy;
 
 
 ## Dpdl - rapid development Programming Language and constrained Device platform
@@ -1437,12 +1435,6 @@ import virtual DATA none  {
 This is an example Dpdl sript that show how a 'DpdlPacket' can be allocated and queried:
 
 [dpdlpacket/testDpdlDB2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlpacket/testDpdlDB2.h)
-
-The database technology in Dpdl has been developed since year 2003 when the first applications where developed for mobile devices.
-
-It started with a BsC thesis by A.Costa:
-
-[Advanced database techniques in Dpdl : dynamic packet definition language ; a portable data protocol for small embedded systems](https://unibz.primo.exlibrisgroup.com/permalink/39UBZ_INST/hl3dt9/alma9928450240001241)
 
 
 ## 'DpdlClient' console application

@@ -213,3 +213,11 @@ on Windows
 		   For random vs. sequential queries comment or uncomment the following line of code in the script
 		   -> i #abs(search_rand_int) 
 		
+
+		
+The database technology included in Dpdl has been developed since year 2003, when the first java applications where developed for mobile devices.
+
+It started with a BsC thesis by A.C:
+
+[Advanced database techniques in Dpdl : dynamic packet definition language ; a portable data protocol for small embedded systems](https://unibz.primo.exlibrisgroup.com/permalink/39UBZ_INST/hl3dt9/alma9928450240001241)
+
