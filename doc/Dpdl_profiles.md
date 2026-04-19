@@ -26,7 +26,7 @@ Also the type and number of *Dpdl language plug-ins* included can vary.
 
 ### Profiles available
 
-* **`Compact`** : **DpdlEngine** <ins>**Compact**/ins> profile: **`80 Kb`**</ins> or less
+* **`Compact`** : **DpdlEngine** <ins>**Compact**</ins> profile: **`80 Kb`**</ins> or less
 
 * **`Full`** : **DpdlEngine** <ins>**Full**</ins> profile (includes 'DpdlPacket' database support): **`372 Kb`**
 
