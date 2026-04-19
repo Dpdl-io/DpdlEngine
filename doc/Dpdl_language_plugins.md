@@ -74,7 +74,7 @@ The available **Dpdl language plug-ins** listed above are implemented on top of 
 
 <tr><td width=33% valign=top>
 
-* [Dpdl embedded code](#dpdl-embedded-code)
+* [Dpdl embedded code sections](#dpdl-embedded-code-sections)
 * [Dpdl embedded code section API](#dpdl-embedded-code-section-api)
 * [Dpdl embedded programming languages compatibility Matrix](#dpdl-embedded-programming-languages-compatibility-matrix)
 * [Embedding 'C' code](#embedding-c-code)
@@ -97,7 +97,7 @@ The available **Dpdl language plug-ins** listed above are implemented on top of 
 </table>
 
 
-## Dpdl embedded code
+## Dpdl embedded code sections
 
 Dpdl enables the embedding and execution of arbitrary *embedded code sections* within Dpdl code, which can be other programming languages as well as custom syntaxes or even natural language descriptions that are than evaluated and processed by AI inference.
 
@@ -181,9 +181,9 @@ string a = "test"
 dpdl_stack_obj_put("my_int_var", 10)
 dpdl_stack_var_put("my_name_var", "A.Costa is my name")
 
-dpdl_stack_push("dpdl:applyvars", "dpdlbuf_var1",n, x, a)
+dpdl_stack_push("dpdl:applyvars",n, x, a)
 
->>c
+>>c(my_buf_var1)
 	#include <stdio.h>
 	#include <dpdl.h>
 	
@@ -205,8 +205,10 @@ dpdl_stack_push("dpdl:applyvars", "dpdlbuf_var1",n, x, a)
 <<
 int exit_code = dpdl_exit_code()
 
-println("embedded C exit code: " + exit_code);
-string buf = dpdl_stack_buf_get("dpdlbuf_var1")
+println("embedded C exit code: " + exit_code)
+
+string buf = dpdl_stack_buf_get("my_buf_var1")
+
 println("response buffer: " + buf)
 ```
 
@@ -289,9 +291,9 @@ int n = 6
 double x = 10.0d
 string a = "test"
 
-dpdl_stack_push("dpdlbuf_var1", n, x, a)
+dpdl_stack_push(n, x, a)
 
->>c
+>>c(my_buf_var1)
 	#include <stdio.h>
 	#include <dpdl.h>
 	
@@ -310,8 +312,10 @@ dpdl_stack_push("dpdlbuf_var1", n, x, a)
 <<
 int exit_code = dpdl_exit_code()
 
-println("embedded C exit code: " + exit_code);
-string buf = dpdl_stack_buf_get("dpdlbuf_var1")
+println("embedded C exit code: " + exit_code)
+
+string buf = dpdl_stack_buf_get("my_buf_var1")
+
 println("response buffer: " + buf)
 ```
 
@@ -392,23 +396,23 @@ MicroPython is an efficient implementation of the Python 3 programming language 
 println("testing embedded micropython code...")
 
 >>mpython
-for i in range(10000):
-	print('iter {:08}'.format(i))
-
-try:
-	1/0
-except Exception as er:
-	print('caught exception', repr(er))
-
-address_book = {'Costa A.':'2604 Crosswind Drive','Alexis B.':'1301 Hillview Drive','Billy I.':'3236 Goldleaf Lane'}
-
-print("'ACosta' address: " + address_book['Costa A.'])
-
-import gc
-print('run GC collect')
-gc.collect()
-
-print('finish')
+	for i in range(10000):
+		print('iter {:08}'.format(i))
+	
+	try:
+		1/0
+	except Exception as er:
+		print('caught exception', repr(er))
+	
+	address_book = {'Costa A.':'2604 Crosswind Drive','Alexis B.':'1301 Hillview Drive','Billy I.':'3236 Goldleaf Lane'}
+	
+	print("'ACosta' address: " + address_book['Costa A.'])
+	
+	import gc
+	print('run GC collect')
+	gc.collect()
+	
+	print('finish')
 
 <<
 int exit_code = dpdl_exit_code()
@@ -485,8 +489,9 @@ println("embedded julia code exit code: " + exit_code)
 ```python
 println("testing embedded js...")
 
-dpdl_stack_push("dpdlbuf_var1", 23)
->>js
+dpdl_stack_push(23)
+
+>>js(my_buf_var1)
 "use strict";
 
 function dpdl_main(args) {
@@ -512,9 +517,11 @@ if (typeof scriptArgs != "undefined") {
 dpdl_main(args);
 <<
 int exit_code = dpdl_exit_code()
+
 println("embedded js terminated with exit code: " + exit_code)
 
-string res_buf = dpdl_stack_buf_get("dpdlbuf_var1")
+string res_buf = dpdl_stack_buf_get("my_buf_var1")
+
 println("result: ")
 println(res_buf)
 ```
@@ -544,11 +551,9 @@ println(res_buf)
 ```python
 println("testing embedding lua....")
 
-string buffer_key = "dpdlbuf_result"
+dpdl_stack_push("name", "Alexis", "surname", "Kunst")
 
-dpdl_stack_push(buffer_key, "name", "Alexis", "surname", "Kunst")
-
->>lua
+>>lua(my_buf_var1)
 function doSomeAlg()
 	local home_dir = os.getenv("HOME")
 	print("user home: ", home_dir)
@@ -593,7 +598,7 @@ int exit_code = dpdl_exit_code()
 
 println("embedded lua exit code: " + exit_code)
 
-string resp_buf = dpdl_stack_buf_get(buffer_key)
+string resp_buf = dpdl_stack_buf_get("my_buf_var1")
 println("lua response buffer: ")
 println(resp_buf)
 ```
@@ -853,9 +858,9 @@ The Dpdl language plug-in is developed on top of PH7, an efficient compiler and 
 println("testing embedded php code execution...")
 println("")
 
-dpdl_stack_push("dpdlbuf_d1", "Test/stockdata.csv")
+dpdl_stack_push("Test/stockdata.csv")
 
->>php
+>>php(dpdlbuf_d1)
 	$row = 1;
 	$rec_nr = 0;
 	if( count($argv) > 0 ){

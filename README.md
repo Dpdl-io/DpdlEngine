@@ -20,7 +20,7 @@ developed by
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
 
-Dpdl enables **Polyglot programming**, in a form that allows the use of embedded programming languages along with their specific runtime as it is, in its original form. (aka. Python, Ruby, etc... the original implementations of it).
+Dpdl enables **Polyglot programming**.
 
 The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
 
@@ -30,7 +30,7 @@ In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of 
 
 Everything comes already included along with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
-The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact <ins>kilobyte range</ins> code virtual machine.
+The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact <ins>kilobyte range</ins> virtual machine.
 
 ### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
@@ -224,7 +224,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **XML** with XPath parser
 * **JSON**
 * **Easy integration of custom libraries**
-* **Small footprint**, Only **`372 Kb`** for DpdlEngine (with all features). It can be stripped down to <ins>**`80 Kb`** or less for a compact setup</ins>
+* **Small footprint**, Only **`372 Kb`** for DpdlEngine (with all features). It can be stripped down to <ins>**`80 Kb`** or less for compact setups</ins>
 * **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), without dependencies
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'OpenCL' and 'Wgsl' (WebGPU shading language) Dpdl language plug-in**
@@ -243,7 +243,7 @@ A typical setup of Dpdl might be the 'DpdlEngine' plus some of the available *Dp
 
 ### 'DpdlEngine' application footprint (size)
 
-The size of 'DpdlEngine' can be somewhere between **`80 Kb`** and **`372 Kb`**, depending on which functions and modules are actually included.
+The size of 'DpdlEngine' can be somewhere between **`80 Kb`** and **`372 Kb`**, depending on which functions and modules are actually included (Profiles).
 
 These are the main Profiles available:
 
@@ -253,15 +253,16 @@ These are the main Profiles available:
 
 ### Profiles
 
-The profiles mentioned below can of course be adjusted as needed to include more ore less functions and components. 
+The profiles listed below can of course be adjusted as needed to include more ore less functions and components. 
 
+Also the type and number of *Dpdl language plug-ins* included can vary.
 
 #### Compact
 
 Contains a usage profile that enables to execute dpdl code. The functionalities to create and handle '**DpdlPacket**' are not included.
 
 
-#### DpdlEngine core 'Compact' with lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: Total size **`686 Kb`**
+#### DpdlEngine core 'Compact' with lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: TOTAL size **`686 Kb`**
 
 The *Dpdl language plug-ins* included in this type of setup are targeted for Embedded Systems.
 
@@ -271,6 +272,8 @@ The *Dpdl language plug-ins* included in this type of setup are targeted for Emb
 
 
 #### DpdlEngine core 'Compact' with extended version of *Dpdl language plug-ins*
+
+The *Dpdl language plug-ins* included in this type of setup are based on the complete version.
 
 | Platform |Dpdl core Basic |C (interpreted/compiled)| Python | JavaScript (ES2023)| TOTAL size |
 | ---  | --- | --- | --- | --- | --- |
