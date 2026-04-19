@@ -190,6 +190,8 @@ println("finished!")
 
 [DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
+[Dpdl profiles](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_profiles.md)
+
 ### More...
 
 [Dpdl Examples](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
@@ -231,70 +233,31 @@ The speedup is x 25 times faster compared to a standard record store access
 * Open Source **Dpdl language plug-ins**
 
 
-## 'DpdlEngine' application footprint (size) and Profiles:
-
-The *DpdlEngine* can be run in different configurations (Profiles) and Setups, depending on which is the target platform and which is the usage domain. This affects also the overall size (footprint) of the application.
-
-The *DpdlEngine* setup may also include some *Dpdl language plug-ins* to enable to execute '**embedded code sections**' in other programming languages.
-
-*Dpdl language plug-ins* are an **optional** component, they can be included or excluded, even on-the-fly, via a simple configuration.
-
-A typical setup of Dpdl might be the 'DpdlEngine' plus some of the available *Dpdl language plug-ins* to execute 'embedded code sections' like for example in: *C, Java, Python and JavaScript* etc..
-
 ### 'DpdlEngine' application footprint (size)
 
-The size of 'DpdlEngine' can be somewhere between **`80 Kb`** and **`372 Kb`**, depending on which functions and modules are actually included (Profiles).
+The size of '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) and **`372 Kb`**, depending on which functions and modules are actually included (Profiles). The gap is given by number of built-in functions included.
 
-These are the main Profiles available:
+Profiles available:
 
 * **`Compact`** : **DpdlEngine** core (<ins>**Compact**/ins> profile) **`80 Kb`**</ins> or less for Compact setups
 * **`Full`** : **DpdlEngine** core (<ins>**Full**</ins> profile, includes 'DpdlPacket' database support) **`372 Kb`**
 
+The profiles can of course also be adjusted as needed to include more ore less function sets and components. 
 
-### Profiles
+**example:**
 
-The profiles listed below can of course be adjusted as needed to include more ore less functions and components. 
+a DpdlEngine instance running on a small embedded system may have the following profile and setup:
 
-Also the type and number of *Dpdl language plug-ins* included can vary.
+#### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: TOTAL size **`686 Kb`**
 
-#### Compact
-
-Contains a usage profile that enables to execute dpdl code. The functionalities to create and handle '**DpdlPacket**' are not included.
-
-
-#### DpdlEngine core 'Compact' with lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: TOTAL size **`686 Kb`**
-
-The *Dpdl language plug-ins* included in this type of setup are targeted for Embedded Systems.
+The *Dpdl language plug-ins* included in this type of setup are targeted specifically for Embedded Systems. Also other Dpdl language plug-ins can be added of course.
 
 | Platform |Dpdl core Basic |C (interpreted/compiled)| MicroPython | Micro JavaScript (ES5) | TOTAL size |
 | ---  | --- | --- | --- | --- | --- |
 | Linux x86_64 | 80 Kb | 284 Kb | 170 Kb | 152 Kb | 686 Kb|
 
 
-#### DpdlEngine core 'Compact' with extended version of *Dpdl language plug-ins*
-
-The *Dpdl language plug-ins* included in this type of setup are based on the complete version.
-
-| Platform |Dpdl core Basic |C (interpreted/compiled)| Python | JavaScript (ES2023)| TOTAL size |
-| ---  | --- | --- | --- | --- | --- |
-| Linux x86_64 | 80 Kb | 284 Kb | 2551 Kb | 1924 Kb | 4,8 Mb|
-
-
-#### Full
-
-Contains a usage profile that enables to execute dpdl code including a feature rich sets of built-in functions. 
-
-This profile includes also all functionalities required to create, handle and query '**DpdlPacket**'.
-
-#### DpdlEngine core 'Full' with extended version of *Dpdl language plug-ins*
-
-| Platform |Dpdl core Full |C (interpreted/compiled)| Python | JavaScript (ES2023) | TOTAL size |
-| ---  | --- | --- | --- | --- | --- |
-| Linux x86_64 | 372 Kb | 284 Kb | 2551 Kb |  1924 Kb | 5,1 MB|
-
-
-
-## Design decisions considered for developing Dpdl
+## Some Design decisions considered for developing Dpdl
 
 * Dpdl has been designed and implemented to be <ins>**Simple**</ins> and <ins>**Robust**</ins> -> Simple things, usually, simply work in Software systems
 * Easily <ins>**Extendible**</ins> and <ins>**Customizable**</ins> -> Adding or adapting features should have little burdens, conceptually and technically
@@ -1066,7 +1029,7 @@ DpdlEngine V1.0 has been tested on:
 		
 Note: The 'DpdlEngine lite' release needs to be re-packaged for running on Android, JavaME and J2ME
 
-### Embedded programming language plug-ins - compatibility matrix
+### *Dpdl lanugage plug-ins* (for 'embedded code sections') - compatibility matrix
 
 Currently the 'DpdlEngine' release supports and provides the following Dpdl language plug-ins compliant to the corresponding language implementation version.
 
@@ -1127,6 +1090,8 @@ The Dpdl platform and API documentation is available via the following links:
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
 
 [DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
+
+[Dpdl profiles](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_profiles.md)
 
 ### More...
 
