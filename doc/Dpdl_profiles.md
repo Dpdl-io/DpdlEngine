@@ -53,7 +53,7 @@ The *Dpdl language plug-ins* included in this type of setup are based on the com
 | Linux x86_64 | 80 Kb | 284 Kb | 2551 Kb | 1924 Kb | 4,8 Mb|
 
 
-#### Full
+### Full
 
 Contains a usage profile that enables to execute dpdl code including a feature rich sets of built-in functions. 
 
