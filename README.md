@@ -242,20 +242,19 @@ Profiles available:
 
 The profiles can of course also be adjusted as needed to include more ore less function sets and components. 
 
-**example:**
+**Example:**
 
 a DpdlEngine instance running on a small embedded system may have the following profile and setup:
 
 #### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: TOTAL size **`686 Kb`**
 
-The *Dpdl language plug-ins* included in this type of setup are targeted specifically for Embedded Systems.
-
-Also </ins>other Dpdl language plug-ins can be added</ins> of course.
+The *Dpdl language plug-ins* included in this type of setup are targeted specifically for <ins>Embedded Systems</ins>.
 
 | Platform |Dpdl core Basic |C (interpreted/compiled)| MicroPython | Micro JavaScript (ES5) | TOTAL size |
 | ---  | --- | --- | --- | --- | --- |
 | Linux x86_64 | 80 Kb | 284 Kb | 170 Kb | 152 Kb | 686 Kb|
 
+Note: Also </ins>other Dpdl language plug-ins can be added</ins> of course.
 
 ## Some Design decisions considered for developing Dpdl
 
