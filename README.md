@@ -237,7 +237,7 @@ The size of '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) a
 
 Profiles available:
 
-* **`Compact`** : **DpdlEngine** <ins>**Compact**/ins> profile: **`80 Kb`**</ins> or less
+* **`Compact`** : **DpdlEngine** <ins>**Compact**</ins> profile: **`80 Kb`**</ins> or less
 * **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes 'DpdlPacket' database support): **`372 Kb`**
 
 The profiles can of course also be adjusted as needed to include more ore less function sets and components. 
