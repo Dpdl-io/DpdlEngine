@@ -28,7 +28,7 @@ Also the type and number of *Dpdl language plug-ins* included can vary.
 
 * **`Compact`** : **DpdlEngine** <ins>**Compact**</ins> profile: **`80 Kb`**</ins> or less
 
-* **`Full`** : **DpdlEngine** <ins>**Full**</ins> profile (includes 'DpdlPacket' database support): **`372 Kb`**
+* **`Full`** : **DpdlEngine** <ins>**Full**</ins> profile (includes 'DpdlPacket' database support and rich set of built-in functions): **`372 Kb`**
 
 
 ### Compact
@@ -42,7 +42,7 @@ The *Dpdl language plug-ins* included in this type of setup are targeted for Emb
 
 Also <ins>other Dpdl language plug-ins can be added</ins> of course.
 
-| Platform |Dpdl core Basic |C (interpreted/compiled)| MicroPython | Micro JavaScript (ES5) | TOTAL size |
+| Platform |Dpdl core Basic |C (interpreted/compiled)| MicroPython | Micro JavaScript (*ES5*) | **TOTAL size** |
 | ---  | --- | --- | --- | --- | --- |
 | Linux x86_64 | 80 Kb | 284 Kb | 170 Kb | 152 Kb | 686 Kb|
 
@@ -53,7 +53,7 @@ The *Dpdl language plug-ins* included in this type of setup are based on the com
 
 Also <ins>other Dpdl language plug-ins can be added</ins> of course.
 
-| Platform |Dpdl core Basic |C (interpreted/compiled)| Python | JavaScript (ES2023)| TOTAL size |
+| Platform |Dpdl core Basic |C (interpreted/compiled)| Python | JavaScript (*ES2023*)| **TOTAL size** |
 | ---  | --- | --- | --- | --- | --- |
 | Linux x86_64 | 80 Kb | 284 Kb | 2551 Kb | 1924 Kb | 4,8 Mb|
 
@@ -66,7 +66,7 @@ This profile includes also all functionalities required to create, handle and qu
 
 #### DpdlEngine 'Full' with extended version of *Dpdl language plug-ins*
 
-| Platform |Dpdl core Full |C (interpreted/compiled)| Python | JavaScript (ES2023) | TOTAL size |
+| Platform |Dpdl core Full |C (interpreted/compiled)| Python | JavaScript (ES2023) | **TOTAL size** |
 | ---  | --- | --- | --- | --- | --- |
 | Linux x86_64 | 372 Kb | 284 Kb | 2551 Kb |  1924 Kb | 5,1 MB|
 

@@ -17,9 +17,19 @@ developed by
 
 Dpdl allows to <ins>access native C/C++ library functions of any given loaded native shared library</ins>, seamlessly in the same way as ordinary dpdl functions.
 
-This features makes Dpdl a complete and powerful programming language to interact also with low level system components and native libraries.
+This features makes the Dpdl language complete also to interact with low level system components and native libraries.
 
-**Dpdl library:**
+The Dpdl native interface can be used with two different Modes:
+
+* via Legacy Native support (when running on JVM Java **`1.4+`**)
+
+* via the Newer Java FFM (Foreign Function Memory) Native access introduced in JVM Java **`17+`**
+
+The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*', the Legacy Native mode is the default mode.
+
+The 
+
+**Dpdl import library:**
 
 **`native`**
 
@@ -211,17 +221,51 @@ Helper functions and platform specific features are available via the following 
 
 ### Configuration
 
+The related configurations that can be set in the file 'DpdlEngine.ini'
+
+#### DPDL_NATIVE_CODE_MODE
+
+This setting allows to change the Mode to access native libraries
+
+**Modes available:**
+
+* Legacy Native (JNI), available since Java **`1.4+`** : config -> **`legacy`**
+
+* New FFM (Foreign Function Memory) Native, available since Java **`+17`** : config -> **`ffm`**
+
+```
+[DpdlCode]
+...
+DPDL_NATIVE_CODE_MODE=ffm
+...
+```
+
 #### DPDL_NATIVE_LIB_PATH
 
 The native library to be loaded needs to be available on the default system path or it's path must be configured in the configuration file 'DpdlEngine.ini' via the 'DPDL_NATIVE_LIB_PATH' variable.
 
 The default configuration for 'DPDL_NATIVE_LIB_PATH' is set to './lib/addon'
 
+Further paths can be appended using ':' in Linux/Unix and ';' on Windows systems.
+
+```
+[DpdlPath]
+...
+DPDL_NATIVE_LIB_PATH=@CWD/lib/addon:/my/custom/path
+...
+```
+
+
 #### DPDL_NATIVE_CODE_PROTECTION
 
-Dpdl provides built-in support for memory protection useful to avoid segmentation faults and unexpected crashes.
+Dpdl provides built-in support for <ins>Memory protection</ins> useful to avoid segmentation faults and unexpected JVM crashes.
 
 By default the protection is enabled, it can be disabled by setting the variable 'DPDL_NATIVE_CODE_PROTECTION' to 'false' in the
 configuration file 'DpdlEngine.ini'
 
-
+```
+[DpdlCode]
+...
+DPDL_NATIVE_CODE_PROTECTION=true
+...
+```

@@ -15,26 +15,32 @@ developed by
 ## Description
 
 
-The 'DpdlVM' is a dedicated code virtual machine for executing Dpdl code on constrained systems where no JVM (OpenJDK, Oracle, or similar) is available. This is typically the case on very limited memory footprint systems like small Embedded platforms, System on Chip (SoC) and Microcontrollers (MCUs).
+The '**DpdlVM**' is a dedicated code virtual machine that enables to execute dpdl code on constrained systems where no JVM (OpenJDK, Oracle, or similar) is available.
 
-The DpdlVM can be very compact (between 60 Kb and 437 Kb), depending on the type of setup and configuration.
+This is typically the case on very limited memory footprint systems like small Embedded System platforms, System on Chip (SoC) and Microcontrollers (MCUs).
 
-The actual DpdlVM size depends also on the type of 'Dpdl language plug-ins' that are actually included, for eventually supporting 'embedded code sections' (optional) 
+The **DpdlVM** can be very compact (between 60 Kb and 437 Kb), depending on the type of configuration Profile and Setup.
 
-The 'Dpdl language plug-ins' may or may not be included, or just 1 of the available Dpdl language plug-ins may be included for example.
+The actual size of the DpdlVM executable depends also on the number and type of '*Dpdl language plug-ins*' that are actually included, for eventually executing 'embedded code sections' in other programming languages (optional).
 
-The typical setup for Dpdl running on constrained systems is a DpdlVM that includes one or more of the following 'Dpdl language plug-ins' that allow to execute the following 'embedded code sections'.
+The '*Dpdl language plug-ins*' may, or may not be included, or just 1 of the available Dpdl language plug-ins may be included for example.
 
-'**Dpdl language plug-ins**' currently available on the **DpdlVM**:
+The typical setup for Dpdl running on constrained systems, is a DpdlVM that includes one or more of the following '*Dpdl language plug-ins*' that allow to execute the following 'embedded code sections'.
 
-- C
+'**Dpdl language plug-ins**' currently available for the **DpdlVM**:
+
+- C (interpreted & compiled)
 - MicroPython
 - Micro JavaScript ( ES5 )
 
-As example, the size of the DpdlVM that includes the Dpdl langage plug-in for executing C 'embedded code sections' (interpreted & compiled) is only **`298 Kb`** in Total, packed in a single executable (also romizable)
+**example:**
+
+The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for executing C 'embedded code sections' (interpreted & compiled) is only **`298 Kb`** in Total, packed as a single executable (also romizable).
+
+When executing C code in <ins>interpreted<ins> mode (Mode 1), all libraries and include files listed in [Dpdl_embedded_C_libs.md])https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md) are already included in the DpdlVM executable.
 
 
-**Example:** dpdl code with an 'embedded code section' in C (compiled)
+**Example:** dpdl code with an 'embedded code section' in C (compiled Mode 2)
 
 ```python
 
@@ -57,8 +63,8 @@ dpdl_stack_push("dpdl:compile")
 		printf("\n");
 		time_t start;
 		time_t end;
-	    time(&start);
-	    int c;
+	   	time(&start);
+	   	int c;
 		for(c = 0; c < 100000; c++){
 			printf("iter %d \n", c);
 		}

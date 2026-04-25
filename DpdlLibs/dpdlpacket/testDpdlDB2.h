@@ -1,7 +1,7 @@
 # File: dpdlpacket/testDpdlDB2.h
 #
-# Example: Dpdl Script implementation that shows how to access and query data stored in a Dpdl-Packet (dpdl_PHONEBOOK.dpdl)
-#		   that has been encoded with dpdl_PHONEBOOK.c source
+# Example: Dpdl Script implementation that shows how to access and query data stored in a DpdlPacket (dpdl_PHONEBOOK.dpdl)
+#		   that has been encoded with dpdl_PHONEBOOK.dpdlpkt source
 #
 # 		   This implementation assumes that the provided Dpdl packet dpdl_PHONEBOOK has already been installed.
 #		   If the selected chunks are not yet allocated, allocation will be done at the first run. Data can be exported

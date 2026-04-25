@@ -747,8 +747,8 @@ adapt the code.
 Dpdl Julia Exception -> ArgumentError 
 ```
 
-Solution->
-Kmport the missing packages via the 'julia' package manager and make sure the symlink './dpdl_env_paths/JULIA_DEPOT_PATH' points to 
+**Solution->**
+ Import the missing packages via the 'julia' package manager and make sure the symlink './dpdl_env_paths/JULIA_DEPOT_PATH' points to 
 your current Julia package depot
 
 

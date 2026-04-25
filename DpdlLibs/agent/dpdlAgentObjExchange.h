@@ -74,7 +74,7 @@ println("starting Object writer agent...")
 
 			  msg.addReceiver(reader);
 
-			  Person p = new Person("Armin", "Costa", new Date(), 1);
+			  Person p = new Person("A.", "Costa", new Date(), 1);
 			  msg.setContentObject(p);
 			  msg.setLanguage("JavaSerialization");
 			  send(msg);
@@ -89,7 +89,7 @@ println("starting Object writer agent...")
 			  send(msg);
 			  System.out.println(getLocalName() + " sent 1st msg with xml aclCodec " + msg);
 
-			  p = new Person("Alexis", "Kunst", new Date(), 2);
+			  p = new Person("A.", "Kunst", new Date(), 2);
 			  msg.setContent(p.toString());
 			  msg.setLanguage("JavaLanguage");
 			  msg.setDefaultEnvelope();

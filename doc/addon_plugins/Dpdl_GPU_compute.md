@@ -15,7 +15,7 @@ developed by
 
 Dpdl enables to execute compute intensive algorithms directly on GPGPUs or GPUs.
 
-This can be performed via embedded code sections implemented directly in OCL (OpenCL) or Wgsl (Web GPU Shading Language) code.
+This can be performed via '*embedded code sections*' implemented directly in OCL (OpenCL) or Wgsl (Web GPU Shading Language) code.
 
 The following **Dpdl language plug-ins** that enable GPU compute are currently available:
 

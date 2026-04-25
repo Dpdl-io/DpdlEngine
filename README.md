@@ -16,11 +16,11 @@ by **SEE Solutions** &copy;
 
 **Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in Database and Agents technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*) with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*), JVM compatible, with an **extensible API interface** that enables to execute <ins>**Dpdl programming language** code</ins>, as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
 
 Dpdl enables **Polyglot programming**.
 
-The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring meta-programming techniques.
+The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>Meta-programming</ins> techniques.
 
 **Dpdl** provides access to <ins>**JVM platform API's, Native shared libraries, WASM modules and GPU compute**</ins>.
 
@@ -228,29 +228,29 @@ The speedup is x 25 times faster compared to a standard record store access
 * **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), without dependencies
 * Allows to **automatically generate and embed generative AI programming code within Dpdl** using the 'DpdlAINerd' (DAN) Dpdl language plug-in
 * Allows to **scale computations on GPUs using the 'OpenCL' and 'Wgsl' (WebGPU shading language) Dpdl language plug-in**
-* Open Source **Dpdl language plug-ins**
+* **Dpdl language plug-ins** based on Open Source
 
 
 ### 'DpdlEngine' application footprint (size)
 
-The size of '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) and **`372 Kb`**, depending on which functions and modules are actually included (Profiles). The gap is given by number of built-in functions included.
+The size of '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) and **`372 Kb`**, depending on which functions and modules are actually included (Profiles).
 
-Profiles available:
+**Profiles available:**
 
 * **`Compact`** : **DpdlEngine** <ins>**Compact**</ins> profile: **`80 Kb`**</ins> or less
 * **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes 'DpdlPacket' database support): **`372 Kb`**
 
 The profiles can of course also be adjusted as needed to include more ore less function sets and components. 
 
-**Example:**
+**Example setup:**
 
 a DpdlEngine instance running on a small embedded system may have the following profile and setup:
 
-#### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: TOTAL size **`686 Kb`**
+#### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins* for <ins>*C, MicroPython and Micro JavaScript*</ins>: TOTAL size **`686 Kb`**
 
-The *Dpdl language plug-ins* included in this type of setup for example are targeted specifically for <ins>Embedded Systems</ins>.
+The *Dpdl language plug-ins* included in this type of example setup are targeted specifically for <ins>Embedded Systems</ins>.
 
-| Platform |Dpdl core Basic |C (interpreted/compiled)| MicroPython | Micro JavaScript (ES5) | TOTAL size |
+| Platform |DpdlEngine core (Compact) |C (interpreted/compiled)| MicroPython | Micro JavaScript (*ES5*) | **TOTAL size** |
 | ---  | --- | --- | --- | --- | --- |
 | Linux x86_64 | 80 Kb | 284 Kb | 170 Kb | 152 Kb | 686 Kb|
 
@@ -1030,7 +1030,7 @@ Note: The 'DpdlEngine lite' release needs to be re-packaged for running on Andro
 
 ### *Dpdl lanugage plug-ins* (for 'embedded code sections') - compatibility matrix
 
-Currently the 'DpdlEngine' release supports and provides the following Dpdl language plug-ins compliant to the corresponding language implementation version.
+Currently the '**DpdlEngine**' release includes the following *Dpdl language plug-ins* compliant to the corresponding language implementation version.
 
 (X + version) **Supported**
 
@@ -1053,7 +1053,8 @@ Currently the 'DpdlEngine' release supports and provides the following Dpdl lang
 | Raspberry PI 3 (armv7)|*|X|*|*|X|
 | Windows64|*|X|*|*|X|
 
-	
+
+
 ## Documentation
 
 The Dpdl platform and API documentation is available via the following links:
@@ -1464,7 +1465,7 @@ Usage:
  -q  quit
 ```
 
-## Dpdl domains
+## other Dpdl internet domains
 
 Currently the following domains point to the same web-site:
 

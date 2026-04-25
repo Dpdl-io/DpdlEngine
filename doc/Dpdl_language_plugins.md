@@ -16,14 +16,14 @@ Dpdl introduces the concept of '*embedded code sections*' that can be executed r
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
-In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types and at <ins>**native speed**</ins>.
+In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types and at its <ins>**native speed**</ins>.
  
 This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts executable inside dpdl code.
 
-The 'embedded code sections' are executed natively and run in an isolated memory region. The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
+The '*embedded code sections*' are executed natively and run in an isolated memory region. The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
 
 
-### Dpdl supports the embedding and execution of the following language code, available in from of 'Dpdl language plug-ins':
+### Dpdl supports the embedding and execution of the following programmoing language code, available in from of 'Dpdl language plug-ins':
 
 At current state, the 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins**</ins> available for different platforms (see compatibility Matrix):
 
@@ -255,11 +255,11 @@ Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with th
 | Windows64|*|X|*|*|X|
 
 
-#### Size of 'Dpdl language plug-ins'
+#### Size of '*Dpdl language plug-ins*'
 
 The size of each individual Dpdl language plug-in varies depending on the language implementation.
 
-Here just some examples for the size (in kilobyte), for each 'Dpdl lanugage plug-in':
+Here just some examples for the size (in kilobyte), for each '*Dpdl lanugage plug-in*':
 
 | Platform | C | MicroPython |Python |Js |Lua |...|
 | ---  | --- | --- | --- | --- | --- | --- |

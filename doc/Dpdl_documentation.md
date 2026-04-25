@@ -386,9 +386,11 @@ In Dpdl functions are defined via the keyword `func` with the following definiti
 
 - Functions may or may not return a value
 
-- The functions may, or may not define a return type
+- The functions may, or may not, define a return type
 
 - In case a return type is specified, a type checking is performed on the receiving variable
+
+- Functions can be recursive
 
 
 ```go
