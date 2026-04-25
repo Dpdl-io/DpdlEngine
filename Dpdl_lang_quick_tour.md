@@ -58,7 +58,31 @@ end
 
 Dpdl syntax is simple and intuitive
 
-Example loading a json data string into a dpdl `struct` which can than be accessed as an object:
+#### Fibonacci series calculation
+
+```python
+
+func fib(int n) int
+	if(n <= 1)
+		return n
+	fi
+
+	return fib(n - 1) + fib(n - 2)
+end
+
+
+int N = 20
+
+int i
+for(i < N)
+	println("fib($i) = " + fib(i))
+	i=i+1
+endfor
+
+println("finished")
+```
+
+#### Decoding a JSON data string into a dpdl **`struct`** which can than be accessed as an object
 
 ```c
 import('json')
@@ -94,7 +118,7 @@ println("data.b_val: " + data.b_val)
 
 ```
 
-Support for string interpolation and string templates
+#### Support for string interpolation and string templates
 
 ```python
 func myCalc(long nr_iter)
@@ -229,7 +253,9 @@ mycls.mycreateSum()
 
 Dpdl allows to choose the optimal libraries for creating best performance critical applications.
 
-Here for example a Dpdl implementation of a 3D model visualization app for chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events:
+As example here a dpdl implementation of a 3D model visualization application for chemical molecules (in this case hydrogen) using the **JavaFX** library.
+
+The model can be rotated freely with mouse events, and some key events can be used to toggle the visualization:
 
 [graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
 
@@ -245,7 +271,7 @@ Here for example a Dpdl implementation of a 3D model visualization app for chemi
 
 ### Native library access
 
-Dpdl enables access to Native shared library functions seamlessly.
+Dpdl enables access to Native shared library functions seamlessly in the same way as ordinary dpdl functions.
 
 ```python
 import('native')
@@ -340,7 +366,7 @@ libc.close(fh)
 
 Dpdl ensures C compatibility for data structures.
 
-The dpdl type `struct` can be passed to C functions as an equivalent C 'struct' (see dpdl api function  `genObjCodeC(...)`)
+The dpdl type **`struct`** can be passed to C functions as an equivalent C '**struct**' (see dpdl api function  `genObjCodeC(...)`)
 
 For example assume we have a C library called 'my_native' ( libmy_native.so) with the following function definition:
 
@@ -355,7 +381,7 @@ int my_function(const struct myS *data, int value){
 }
 ```
 
-The native library C function can be called from Dpdl with an interoperable `struct` data structure and semantics
+The native library C function can be called from dpdl with an interoperable **`struct`** data structure and semantics
 
 ```c
 import('native')
@@ -393,7 +419,7 @@ println("returned value: " + ret)
 
 ### Multiple programming languages can be embedded and executed directly inside Dpdl code
 
-Dpdl enables the use multiple programming languages right inside Dpdl code, of multiple types, simultaneously and at native speed.
+Dpdl enables the execute '*embedded code sections*' in multiple programming languages right inside Dpdl code, of multiple types, simultaneously and at its native speed.
 
 **Example:**
 
@@ -680,7 +706,7 @@ println("finished")
 
 ### Dpdl can be executed very efficiently from C code
 
-Dpdl can be easily embedded in C/C++ libraries and applications:
+Dpdl code can be easily embedded and executed in C/C++ applications or libraries:
 
 - Either directly executing plain dpdl code
 
