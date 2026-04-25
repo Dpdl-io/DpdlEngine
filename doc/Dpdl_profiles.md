@@ -36,7 +36,7 @@ Also the type and number of *Dpdl language plug-ins* included can vary.
 Contains a usage profile that enables to execute dpdl code. The functionalities to create and handle '**DpdlPacket**' are included.
 
 
-#### DpdlEngine 'Compact' with included lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: TOTAL size **`686 Kb`**
+#### DpdlEngine 'Compact' with included lightweight version of *Dpdl language plug-ins* for <ins>*C, MicroPython and Micro JavaScript</ins>*: TOTAL size **`686 Kb`**
 
 The *Dpdl language plug-ins* included in this type of setup are targeted for Embedded Systems.
 
