@@ -36,7 +36,7 @@ Also the type and number of *Dpdl language plug-ins* included can vary.
 Contains a usage profile that enables to execute dpdl code. The functionalities to create and handle '**DpdlPacket**' are included.
 
 
-#### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: TOTAL size **`686 Kb`**
+#### DpdlEngine 'Compact' with included lightweight version of *Dpdl language plug-ins* for *C, MicroPython and Micro JavaScript*: TOTAL size **`686 Kb`**
 
 The *Dpdl language plug-ins* included in this type of setup are targeted for Embedded Systems.
 
@@ -47,7 +47,7 @@ Also <ins>other Dpdl language plug-ins can be added</ins> of course.
 | Linux x86_64 | 80 Kb | 284 Kb | 170 Kb | 152 Kb | 686 Kb|
 
 
-#### DpdlEngine 'Compact' with extended version of *Dpdl language plug-ins*
+#### DpdlEngine 'Compact' with included extended version of *Dpdl language plug-ins*
 
 The *Dpdl language plug-ins* included in this type of setup are based on the complete version.
 
@@ -64,9 +64,9 @@ Contains a usage profile that enables to execute dpdl code including a feature r
 
 This profile includes also all functionalities required to create, handle and query '**DpdlPacket**'.
 
-#### DpdlEngine 'Full' with extended version of *Dpdl language plug-ins*
+#### DpdlEngine 'Full' with included extended version of *Dpdl language plug-ins*
 
-| Platform |Dpdl core Full |C (interpreted/compiled)| Python | JavaScript (ES2023) | **TOTAL size** |
+| Platform |Dpdl core Full |C (interpreted/compiled)| Python | JavaScript (*ES2023*) | **TOTAL size** |
 | ---  | --- | --- | --- | --- | --- |
 | Linux x86_64 | 372 Kb | 284 Kb | 2551 Kb |  1924 Kb | 5,1 MB|
 
