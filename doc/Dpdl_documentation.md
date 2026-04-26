@@ -896,7 +896,7 @@ class B extends A {
 	...
 }
 
-# OR also in this form
+# OR also in the shorter form
 
 class C : B {
 	...

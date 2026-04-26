@@ -366,7 +366,7 @@ libc.close(fh)
 
 Dpdl ensures C compatibility for data structures.
 
-The dpdl type **`struct`** can be passed to C functions as an equivalent C '**struct**' (see dpdl api function  `genObjCodeC(...)`)
+The dpdl type **`struct`** and **`union`** can be passed to C library functions as an equivalent C '**struct**' and '**union**' (see dpdl api function  `genObjCodeC(...)`)
 
 For example assume we have a C library called 'my_native' ( libmy_native.so) with the following function definition:
 

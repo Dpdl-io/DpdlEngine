@@ -20,7 +20,10 @@ In this way <ins>**multiple programming languages** and **custom syntax interpre
  
 This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts executable inside dpdl code.
 
-The '*embedded code sections*' are executed natively and run in an isolated memory region. The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
+The '*embedded code sections*' that are executed natively, can optionally be run also in an isolated(**) memory region. 
+
+The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
+
 
 
 ### Dpdl supports the embedding and execution of the following programmoing language code, available in from of 'Dpdl language plug-ins':
@@ -1114,3 +1117,4 @@ println("model simulation exit code: " + exit_code)
 - wasm -> https://webassembly.org/
  
  
+ (**) [via Cali - Compiler Assisted Library Isolation](https://publications.cispa.de/articles/conference_contribution/Cali_Compiler_Assisted_Library_Isolation/24613602?file=43247913)
