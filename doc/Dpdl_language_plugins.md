@@ -20,7 +20,7 @@ In this way <ins>**multiple programming languages** and **custom syntax interpre
  
 This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts executable inside dpdl code.
 
-The '*embedded code sections*' that are executed natively, can optionally be run also in an isolated(**) memory region. 
+The '*embedded code sections*' that are executed natively, can optionally be run also in an isolated(**) memory region or in containers. 
 
 The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
 
