@@ -12,15 +12,17 @@ developed by
 &copy;
 
 
-Dpdl introduces the concept of '*embedded code sections*' that can be executed right inside dpdl code via dedicated plug-ins available, that are distributed with the *DpdlEngine* (see **Dpdl language plug-ins**).
+Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via dedicated plug-ins available, that are distributed with the *DpdlEngine* (see **Dpdl language plug-ins**).
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
+The dpdl runtime automatically selects the proper library for a given platform (from path: ./lib/native/$platform/)
+
 In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types and at its <ins>**native speed**</ins>.
  
-This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts executable inside dpdl code.
+This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts, and make them executable inside dpdl code.
 
-The '*embedded code sections*' that are executed natively, can optionally be run also in an isolated(**) memory region or in containers. 
+The '*embedded code sections*' that are executed natively, can optionally be run also in an [isolated memory][isolated-memory] regionm, or even in containers. 
 
 The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
 
@@ -1117,4 +1119,7 @@ println("model simulation exit code: " + exit_code)
 - wasm -> https://webassembly.org/
  
  
- (**) [via Cali - Compiler Assisted Library Isolation](https://publications.cispa.de/articles/conference_contribution/Cali_Compiler_Assisted_Library_Isolation/24613602?file=43247913)
+### Footnotes
+
+[isolated-memory]: https://publications.cispa.de/articles/conference_contribution/Cali_Compiler_Assisted_Library_Isolation/24613602?file=43247913 "Cali - Compiler Assisted Library Isolation"
+
