@@ -22,9 +22,9 @@ In this way <ins>**multiple programming languages** and **custom syntax interpre
  
 This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts, and make them executable inside dpdl code.
 
-The '*embedded code sections*' that are executed natively, can optionally be run also in an [isolated memory region](#isolated-memory-region) region, or even in containers. 
-
 The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
+
+'Dpdl language plug-ins' that require a stricter security fence, they can optionally be run also in an [isolated memory region](#isolated-memory-region) region, or even in containers if needed.
 
 
 
@@ -277,7 +277,15 @@ The 'Dpdl language plug-ins' for other available platforms have similar sizes, b
 
 ### Embedding 'C' code
 
-'C' code can be embedded and executed within Dpdl by using the keyword **`>>c`** and can be executed in '*compiled*' or '*interpreted*' form.
+'C' code can be embedded and executed within Dpdl by using the keyword **`>>c`**.
+
+It can be executed in '*interpreted*' or '*compiled*' form.
+
+When executed in '*interpreted*' mode, all *stdlib* C libraries and include files are already present in the dpdl runtime, they just can be used. 
+
+When executed in '*compiled*' mode, they can be included via dpdl stack configuration. Default system locations are also searched for available C libraries and include files. A very basic set is included with the DpdlEngine release (under './lib/native/$platform/include' )
+
+The '*compiled**' C code is per default executed with Memory Bounds Checks. Generated code with bounds checking is fully compatible with unchecked code.
 
 #### keyword **`>>c`**
 
