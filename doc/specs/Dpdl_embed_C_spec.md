@@ -132,23 +132,22 @@ dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C", "var1
 
 extern void dpdl_stack_buf_put(char *buf);
 	
-static inline void * my_memcpy(void * to, const void * from, size_t n)
-{
-// NOTE: inline assembly is avaiable only on i386 and X86_64 platforms, but compiles also on ARM
-int d0, d1, d2;
-__asm__ __volatile__(
-        "rep ; movsl\n\t"
-        "testb $2,%b4\n\t"
-        "je 1f\n\t"
-        "movsw\n"
-        "1:\ttestb $1,%b4\n\t"
-        "je 2f\n\t"
-        "movsb\n"
-        "2:"
-        : "=&c" (d0), "=&D" (d1), "=&S" (d2)
-        :"0" (n/4), "q" (n),"1" ((long) to),"2" ((long) from)
-        : "memory");
-		return (to);
+static inline void * my_memcpy(void * to, const void * from, size_t n){
+
+	int d0, d1, d2;
+	__asm__ __volatile__(
+	        "rep ; movsl\n\t"
+	        "testb $2,%b4\n\t"
+	        "je 1f\n\t"
+	        "movsw\n"
+	        "1:\ttestb $1,%b4\n\t"
+	        "je 2f\n\t"
+	        "movsb\n"
+	        "2:"
+	        : "=&c" (d0), "=&D" (d1), "=&S" (d2)
+	        :"0" (n/4), "q" (n),"1" ((long) to),"2" ((long) from)
+	        : "memory");
+			return (to);
 }
 
 int dpdl_main(int argc, char **argv){
@@ -174,9 +173,13 @@ string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
 println("result: " + buf)
 ```
 
+Note: inline assembly is avaiable only on i386 and X86_64 platforms only, but compiles also on ARM
+
 # Documentation
 
 ## C libraries included (interpreted Mode 1)
+
+When C code is executed in '*interpreted*' mode, all *stdlib* libraries and include files are already available in the dpdl runtime and can just be used.
 
 This is the documentation of the C library available when executing embedded C code with <ins>interpreted</ins> **Mode (1)** 
 
