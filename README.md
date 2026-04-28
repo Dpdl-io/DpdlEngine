@@ -217,7 +217,7 @@ println("finished!")
 * **Includes support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
 * Includes a full stack for building **Distributed Mobile Agents** (FIPA compliant)
-* **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to data in constrained devices**.
+* **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to relatively "big" data sets in constrained devices**.
 The speedup is x 25 times faster compared to a standard record store access
 * **Virtual record store filesystem**
 * **Double precision floating point emulation layer**
@@ -228,7 +228,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), without dependencies
 * Allows to **automatically generate and embed generative AI code within dpdl** by using the included 'DpdlAINerd' (DAN) *Dpdl language plug-in*
 * Access **GPU compute capabilities by using the 'OpenCL' and 'Wgsl' (WebGPU shading language)** *Dpdl language plug-ins*
-* **Dpdl language plug-ins** available on **`Dpdl-Hub`** (in development)
+* **Dpdl language plug-ins** available on **`Dpdl-Hub`** (soon in development)
 
 
 ### 'DpdlEngine' application footprint (size)
