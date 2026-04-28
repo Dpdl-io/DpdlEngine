@@ -1131,5 +1131,5 @@ println("model simulation exit code: " + exit_code)
 
 #### isolated-memory region
 
-[Cali - Compiler Assisted Library Isolation](https://publications.cispa.de/articles/conference_contribution/Cali_Compiler_Assisted_Library_Isolation/24613602?file=43247913) --> availalbe on Linux/Unix only
+[Cali - Compiler Assisted Library Isolation](https://publications.cispa.de/articles/conference_contribution/Cali_Compiler_Assisted_Library_Isolation/24613602?file=43247913) --> for Linux/Unix
 
