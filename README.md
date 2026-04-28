@@ -22,7 +22,7 @@ Dpdl enables **Polyglot programming**.
 
 The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>**Meta-programming**</ins> techniques.
 
-**Dpdl** provides access to <ins>**JVM platform API's, Native shared libraries, WASM modules and GPU compute**</ins>.
+**Dpdl** provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
 
 In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica and others will follow...</em>, <ins>**directly embedded within dpdl code**</ins>.
 
