@@ -19,22 +19,24 @@ JavaScript can be embedded and executed within Dpdl code by using the keyword **
 
 Currently the following types (Modes) are supported:
 
-1) Using the '*QuickJS*' javascript engine, ES2023 compliant (<ins>default mode</ins>)
+1) Using the '*QuickJS*' javascript engine, [ES2023 Spec](https://tc39.es/ecma262/2023/) compliant (<ins>default mode</ins>)
 2) Using the '*Nashorn*' javascript engine available on the Java platform -> available only on JRE version from 11 to 15
 3) Using the '*V8*' javascript engine (* *available soon*)
 
 
 ### Mode (1) (default mode)
 
-The 'Dpdl language plug-in' for executing JavaScript is built on the *QuickJS* JavaScript engine. It provides a powerful and complete API to interact with javascript at low level, supports most *ES2023 specification* (https://tc39.es/ecma262/2023/) including modules, asynchronous generators, proxies and BigInt.
+The '*Dpdl language plug-in*' for executing JavaScript is built on the *QuickJS* JavaScript engine. It provides a powerful and complete API to interact with javascript at low level, supports most *ES2023 specification* (https://tc39.es/ecma262/2023/) including modules, asynchronous generators, proxies and BigInt.
+
+It runs successfully all tests of the [ECMAScript Test Suite](https://github.com/tc39/test262).
+
 It supports also some features of the *ES2024 specification* (https://tc39.es/ecma262/2024)
 
 Custom native functions and objects can be implemented as shared libraries and accessed from javascript code.
 
+The libraries **`std`** and **`os`** are already imported and accessible with **`std.*`** and **`os.*`** respectively.
+
 You can find examples in the folder [./DpdlLibs/js/](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/js)
-
-The libraries **`std`** and **`os`** are already imported and accessible with `std.*` and `os.*` respectively.
-
 
 #### Example
 
@@ -69,7 +71,9 @@ See example: https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/js/dpdlJsC
 
 #### Options
 
-The following options can be passed to the 'Dpdl language plug-in for executing the *embedded code section*
+The following options can be passed to the 'Dpdl language plug-in for executing the *embedded code sections*
+
+All supported options can be passed. Here we list only some important ones:
 
 ##### Memory size
 
@@ -105,7 +109,7 @@ ex: **dpdl:-o./DpdlLibs/test/my_out.bin**
 **(*)** suffixes: `k` (Kb) , `m` (Mb) , `g`(Gb) 
 
 
-Refer to the official 'QuickJS' documentation for more info about the javascript engine used:
+#### official 'QuickJS' documentation with all options available:
 
 [official QuickJS doc](https://www.dpdl.io/doc/qjs/quickjs.html)
 
