@@ -12,7 +12,7 @@ developed by
 &copy;
 
 
-Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via dedicated plug-ins ( **Dpdl language plug-ins** ) available, that are distributed along with *DpdlEngine*.
+Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via dedicated plug-ins ( **Dpdl language plug-ins** ) available distributed along with the *DpdlEngine*.
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
