@@ -12,11 +12,9 @@ developed by
 &copy;
 
 
-Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via dedicated plug-ins available, that are distributed with the *DpdlEngine* (see **Dpdl language plug-ins**).
+Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via dedicated plug-ins (see **Dpdl language plug-ins**) available, that are distributed along with *DpdlEngine*.
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
-
-The dpdl runtime automatically selects the proper library for a given platform (from path: ./lib/native/$platform/)
 
 In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types and at its <ins>**native speed**</ins>.
  
@@ -24,7 +22,9 @@ This plug-in oriented approach allows also developers to develop and integrate c
 
 The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
 
-'Dpdl language plug-ins' that require a stricter security fence, they can optionally be run also in an [isolated memory region](#isolated-memory-region) region, or even in containers if needed.
+For native, platform dependent 'Dpdl language plug-ins', the dpdl runtime automatically selects the proper plug-in for a given platform (from path: './lib/native/$platform/').
+
+For 'Dpdl language plug-ins' that require a stricter security fence, they can optionally be run also in an [isolated memory region](#isolated-memory-region) region, or even in containers if needed.
 
 
 
@@ -1131,5 +1131,5 @@ println("model simulation exit code: " + exit_code)
 
 #### isolated-memory region
 
-[Cali - Compiler Assisted Library Isolation](https://publications.cispa.de/articles/conference_contribution/Cali_Compiler_Assisted_Library_Isolation/24613602?file=43247913)
+[Cali - Compiler Assisted Library Isolation](https://publications.cispa.de/articles/conference_contribution/Cali_Compiler_Assisted_Library_Isolation/24613602?file=43247913) --> availalbe on Linux/Unix only
 
