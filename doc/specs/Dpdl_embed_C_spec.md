@@ -23,28 +23,28 @@ The code is executed via a native Dpdl plug-in library that has relatively small
 
 C code can be executed in 2 different modes:
 
-* **`interpreted`** C code (**Mode **1) --> <ins>minimal subset of C90</ins>
+* **`interpreted`** C code (**Mode 1**) **-->** minimal subset of *C90*
 
-* **`compiled`** C code (**Mode 2**) --> compiled in memory at runtime, <ins>ANSI C99</ins>
+* **`compiled`** C code (**Mode 2**) **-->** compiled in memory at runtime, *ANSI C (C99)*
 
 
 ### Mode 1 (interpreted)
 
-When executing C code with **`interpreted** mode, the Dpdl runtime already <ins>includes a basic set of **C libraries** and **include header files**<ins> and language constructs to execute the code.
+When executing C code in **`interpreted`** mode, the Dpdl runtime already <ins>includes a basic set</ins> of **C libraries** and **include header** files.
 
-Custom libraries and functions can be integrated and linked via a straight forward implementation approach.
+Custom libraries and functions can be integrated and linked via a straightforward implementation.
 
 #### Features
 
-- No compile time overhead, although may be a bit slower than compiled code
+- No compile time overhead, but may be a bit slower than compiled code
 
-- minimal, but includes a basic set of C libraries and header files (*stdlib*), POSIX compliant
+- minimal, it includes a basic set of C libraries and header files (*stdlib*), POSIX compliant
 
 - Possibility to integrate custom functions
 
-- C code may or may not have an 
+- C code may, or may not have an entry function defined
 
-#### Minimal embedded C library (*stdlib*) documentation (for Mode 1)**
+#### Minimal embedded C library (*stdlib*) documentation (for Mode 1)
 
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
@@ -99,24 +99,26 @@ println("response buffer: " + buf)
 
 ### Mode 2 (compiled)
 
-When executing C code in **`compiled**` mode, the code is effectively compiled in memory at runtime (very FAST!!), enabling maximum execution performance gain.
+When executing C code in **`compiled`** mode, the code is effectively compiled in memory at runtime (very FAST!!),
+
+enabling maximum execution performance gain.
 
 This mode can be activated via the dpdl stack parameter **`dpdl:compile`**.
 
 
 #### Features
 
-This operation mode supports *ANSI C* (*ISO C99* standard) and many *GNUC extensions* including in-line assembly on x86 systems.
+- This operation mode supports *ANSI C* (*ISO C99* standard) and many *GNUC extensions* including in-line assembly on x86 systems
 
-The 'dpdl:compile' option is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**.
+- The 'dpdl:compile' option is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**
 
-The embedded C compiler included is self-relying and includes assembler and linker.
+- The embedded C compiler included is self-relying and includes assembler and linker
 
-The required header files and libraries are by default searched in predefined platform default paths (i.e. /usr/local ), but custom paths can also be supplied as option parameters.
+- The required header files and libraries are by default searched in predefined platform default paths (i.e. /usr/local ), but custom paths can also be supplied as option parameters
 
 The *DpdlEngine* distribution by default includes also a basic set of include headers files and libraries that are located in the platform specific folder './lib/native/$platform/include' on which the *DpdlEngine* is currently running. 
 
-Additional library dependencies can be added via the options settings 'dpdl:-I' and 'dpdl:-L'.
+Additional library dependencies and include file path can be added via the options settings 'dpdl:-I' and 'dpdl:-L'.
 
 * The embedded C code for mode (2) needs to contain a function entry point '**dpdl_main(..)**' which serves as entry point for the execution
 
