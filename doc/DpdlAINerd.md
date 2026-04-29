@@ -282,6 +282,8 @@ dpdl_stack_push("dpdlai:-skill my_custom_skill")
 - **`dpdllang`** -> defines all knowledge for AI to generate valid **dpdl** code
 - **`dpdlapi`** -> extensive dpdl API knowledge for AI
 
+- **`dpdlplugin-js`** -> extensive dpdl API knowledge for AI
+
 
 
 ### How to execute

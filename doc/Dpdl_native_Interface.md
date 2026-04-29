@@ -15,19 +15,18 @@ developed by
 ## Dpdl native Interface
 
 
-Dpdl allows to <ins>access native C/C++ library functions of any given loaded native shared library</ins>, seamlessly in the same way as ordinary dpdl functions.
+Dpdl allows to access native C/C++ library functions of any given loaded <ins>Native shared library</ins> seamlessly, in the same way as ordinary dpdl functions.
 
-This features makes the Dpdl language complete also to interact with low level system components and native libraries.
+This features makes the dpdl programming language complete also for interacting with low level system components and native libraries.
 
-The Dpdl native interface can be used with two different Modes:
+The Dpdl native interface can be used in two different Modes:
 
 * via Legacy Native support (when running on JVM Java **`1.4+`**)
 
 * via the Newer Java FFM (Foreign Function Memory) Native access introduced in JVM Java **`17+`**
 
-The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*', the Legacy Native mode is the default mode.
+The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*', the Legacy Native mode is currently the default mode to ensure a high degree of backward compatibility.
 
-The 
 
 **Dpdl import library:**
 
@@ -258,9 +257,9 @@ DPDL_NATIVE_LIB_PATH=@CWD/lib/addon:/my/custom/path
 
 #### DPDL_NATIVE_CODE_PROTECTION
 
-Dpdl provides built-in support for <ins>Memory protection</ins> useful to avoid segmentation faults and unexpected JVM crashes.
+When accessing native library functions via the mode 'Legacy Native' (JNI), a <ins>Memory protection</ins> can be enabled via configuration in order to avoid segmentation faults and unexpected JVM crashes.
 
-By default the protection is enabled, it can be disabled by setting the variable 'DPDL_NATIVE_CODE_PROTECTION' to 'false' in the
+By default the protection is '<ins>**enabled**</ins>', it can be explicitly disabled by setting the variable 'DPDL_NATIVE_CODE_PROTECTION' to 'false' in the
 configuration file 'DpdlEngine.ini'
 
 ```

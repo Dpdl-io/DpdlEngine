@@ -13,9 +13,9 @@ developed by
 
 
 
-The dpdl embedded C code can be executed in 2 different modes, either **`interpreted`** or **`compiled`**.
+The dpdl '*embedded code secitons*' in C code can be executed in 2 different modes, either **`interpreted`** or **`compiled`**.
 
-Each of the execution modes have some characteristics that may fit better in one case or the other.
+Both execution modes have some characteristics that may fit better in one case or the other.
 
 The code is executed via a native Dpdl plug-in library that has relatively small footprint (278 Kb) and therefore is applicable also on small embedded systems.
 
@@ -23,29 +23,35 @@ The code is executed via a native Dpdl plug-in library that has relatively small
 
 C code can be executed in 2 different modes:
 
-1) **interpreted** C code (Mode 1) --> <ins>minimal subset of C90</ins>
-2) **compiled** C code (Mode 2) --> compiled in memory at runtime, <ins>ANSI C99</ins>
+* **`interpreted`** C code (**Mode **1) --> <ins>minimal subset of C90</ins>
+
+* **`compiled`** C code (**Mode 2**) --> compiled in memory at runtime, <ins>ANSI C99</ins>
 
 
-## Mode 1 (interpreted)
+### Mode 1 (interpreted)
 
+When executing C code with **`interpreted** mode, the Dpdl runtime already <ins>includes a basic set of **C libraries** and **include header files**<ins> and language constructs to execute the code.
 
-When executing C code with this mode, the Dpdl runtime already **includes all basic C libraries and headers** and language constructs to execute the code, **no additional dependencies** needed.
+Custom libraries and functions can be integrated and linked via a straight forward implementation approach.
 
-Custom libraries and functions can be integrated and linked via a straight forward implementation configuration approach.
+#### Features
 
-**Features:**
+- No compile time overhead, although may be a bit slower than compiled code
 
-Easy integration of custom extensions. No compile time overhead, minimal, but includes all basic C libraries and headers, no dependencies, POSIX compliant.
+- minimal, but includes a basic set of C libraries and header files (*stdlib*), POSIX compliant
 
-**Minimal embedded C library documentation, for Mode (1):**
+- Possibility to integrate custom functions
+
+- C code may or may not have an 
+
+#### Minimal embedded C library (*stdlib*) documentation (for Mode 1)**
 
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
-* The embedded C code for mode (1) may, or may not include a 'main(..)' function. If the main function is defined, parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function are passed as parameters to the main function in the C code
+* The embedded C code for mode (1) may, or may not include a 'dpdl_main(..)' function. If the main function is defined, parameters that are pushed onto the dpdl stack via the 'dpdl_stack_push(..)' function are passed as parameters to the dpdl_main(...) entry function in the C code
 
 
-### Example execution Mode (1) (without main(..) function):
+#### Example execution Mode (1) without dpdl_main(..) function entry point
 
 ```python
 println("my Dpdl script embeds some C code")
@@ -58,130 +64,129 @@ printf("Hello C from Dpdl\n");
 ```
 
 
-### Example execution Mode (1) (with main(..) function) -> function accepting parameters, and writing a result to the Dpdl stack:
+#### Example execution Mode (1) with dpdl_main(..) function entry point
 
 ```python
 println("my Dpdl script embeds some C code")
 
-dpdl_stack_push("dpdlbuf_myresult", "param1", "param 2", 23)
->>c
-#include <stdio.h>
-#include <dpdl.h>
+dpdl_stack_push("param1", "param 2", 23)
 
-int dpdl_main(int argc, char **argv){
-	printf("Hello C from Dpdl!\n");
-	printf("\n");
-	printf("num params: %d\n", argc);
-	int cnt;
-    for (cnt = 0; cnt < argc; cnt++){
-        printf("	param %d: %s\n", cnt, argv[cnt]);
-    }
-    dpdl_stack_buf_put("my result from C");
-    return 0;
-}
+>>c(dpdlbuf_myresult)
+	#include <stdio.h>
+	#include <dpdl.h>
+	
+	int dpdl_main(int argc, char **argv){
+		printf("Hello C from Dpdl!\n");
+		printf("\n");
+		printf("num params: %d\n", argc);
+		int cnt;
+	    for (cnt = 0; cnt < argc; cnt++){
+	        printf("	param %d: %s\n", cnt, argv[cnt]);
+	    }
+	    dpdl_stack_buf_put("my result from C");
+	    return 0;
+	}
 <<
 int exit_code = dpdl_exit_code()
+
 println("finished executing embedded C code: " + exit_code)
 
 string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
+
 println("response buffer: " + buf)
 ```
 
 
-## Mode 2 (compiled)
+### Mode 2 (compiled)
 
-This mode can be activated via the dpdl stack option '**dpdl:compile**'.
+When executing C code in **`compiled**` mode, the code is effectively compiled in memory at runtime (very FAST!!), enabling maximum execution performance gain.
 
-This operation mode supports ANSI C (ISO C99 standard) and many GNUC extensions including inline assembly on x86 systems. Complex and imaginary numbers are currently not available.
+This mode can be activated via the dpdl stack parameter **`dpdl:compile`**.
+
+This operation mode supports *ANSI C* (*ISO C99* standard) and many *GNUC extensions* including in-line assembly on x86 systems.
 
 The 'dpdl:compile' option is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**.
 
 The embedded C compiler included is self-relying and includes assembler and linker.
 
-The required header files and libraries by default are searched in the default paths (i.e. /usr/local ) but alternative paths can be supplied as option parameters.
+The required header files and libraries are by default searched in predefined platform default paths (i.e. /usr/local ), but custom paths can also be supplied as option parameters.
 
-For this mode the DpdlEngine release by default includes just a basic set of include headers and libraries that are located in the folder './lib/native/$platform/include'. Additional dependencies can be added via the options 'dpdl:-I' and 'dpdl:-L' option settings.
+The *DpdlEngine* distribution by default includes also a basic set of include headers files and libraries that are located in the platform specific folder './lib/native/$platform/include' on which the *DpdlEngine* is currently running. 
 
-* The embedded C code for mode (2) must contain a '**dpdl_main(..)**' function which serves as entry point for the execution
+Additional library dependencies can be added via the options settings 'dpdl:-I' and 'dpdl:-L'.
 
-* parameters which are pushed to the Dpdl stack via the 'dpdl_stack_push(..)' function are passed as parameters to the main function in the C code
+* The embedded C code for mode (2) needs to contain a function entry point '**dpdl_main(..)**' which serves as entry point for the execution
+
+* parameters which are pushed onto the dpdl stack via the 'dpdl_stack_push(..)' function are than passed as parameters to the dpdl_main(...) entry function defined in the C code
 
 
-### Example execution Mode (2), compiled in memory at runtime
-
-For the dynamic on-the-fly compilation of the embedded C code (mode 2), the option '**dpdl:compile**' and eventually further compiler
-parameters needs to be pushed on the dpdl stack. The compilation is performed in memory and per default does not generate
-any output files. Output files may be generated by activating a specific option.
-
-Using this approach is useful for achieving optimal speed of the executing C code.
-This operation mode supports ANSI C (full ISO C99 standard) and many GNUC extensions including inline assembly (complex and imaginary numbers are currently excluded)
-
-The default location for include header files is './lib/native/$platform/include', and for library files (static and dynamic) in './lib/native/$platform'
-
-Custom include and library settings can be provided with the options 'dpdl:-I$INC_DIR' and 'dpdl:-L$LIB_DIR' pushed on the dpdl stack.
+#### Example execution Mode (2) with dpdl_main(..) function entry point
 
 ```python
 # main
 println("this Dpdl example shows how C code can be dynamically compiled (in memory at runtime) and executed on Dpdl")
 
 # we instuct the Dpdl runtime to compile the C code
-dpdl_stack_push("dpdlbuf_myresult", "dpdl:compile", "dpdl:-I./DpdlLibs/C", "var1")
+dpdl_stack_push("dpdl:compile", "dpdl:-I./DpdlLibs/C", "var1")
 
->>c
-#include <stdio.h>
-
-extern void dpdl_stack_buf_put(char *buf);
+>>c(dpdlbuf_myresult)
 	
-static inline void * my_memcpy(void * to, const void * from, size_t n){
-
-	int d0, d1, d2;
-	__asm__ __volatile__(
-	        "rep ; movsl\n\t"
-	        "testb $2,%b4\n\t"
-	        "je 1f\n\t"
-	        "movsw\n"
-	        "1:\ttestb $1,%b4\n\t"
-	        "je 2f\n\t"
-	        "movsb\n"
-	        "2:"
-	        : "=&c" (d0), "=&D" (d1), "=&S" (d2)
-	        :"0" (n/4), "q" (n),"1" ((long) to),"2" ((long) from)
-	        : "memory");
-			return (to);
-}
-
-int dpdl_main(int argc, char **argv){
-	printf("This code will be compiled before it's being executed...\n");
-	int i = 0;
-	while(i < 30000000){
-		printf("The Future is NOW ^ %d \n", i);
-		i++;
+	#include <stdio.h>
+	
+	extern void dpdl_stack_buf_put(char *buf);
+		
+	static inline void * my_memcpy(void * to, const void * from, size_t n){
+	
+		int d0, d1, d2;
+		__asm__ __volatile__(
+		        "rep ; movsl\n\t"
+		        "testb $2,%b4\n\t"
+		        "je 1f\n\t"
+		        "movsw\n"
+		        "1:\ttestb $1,%b4\n\t"
+		        "je 2f\n\t"
+		        "movsb\n"
+		        "2:"
+		        : "=&c" (d0), "=&D" (d1), "=&S" (d2)
+		        :"0" (n/4), "q" (n),"1" ((long) to),"2" ((long) from)
+		        : "memory");
+				return (to);
 	}
-
-	char *str_src = "MEGA source";
-	char str_dest[256];
-	//my_memcpy(&str_dest, str_src, strlen(str_src));
-	//printf("copied str: %s\n", str_dest);
-	dpdl_stack_buf_put(str_src);
-	return 0;
-}
+	
+	int dpdl_main(int argc, char **argv){
+		printf("This code will be compiled before it's being executed...\n");
+		int i = 0;
+		while(i < 30000000){
+			printf("The Future is NOW ^ %d \n", i);
+			i++;
+		}
+	
+		char *str_src = "MEGA source";
+		char str_dest[256];
+		//my_memcpy(&str_dest, str_src, strlen(str_src));
+		//printf("copied str: %s\n", str_dest);
+		dpdl_stack_buf_put(str_src);
+		return 0;
+	}
 <<
 int exit_code = dpdl_exit_code()
+
 println("embedded C compiled and run with exit code: " + exit_code)
 
 string buf = dpdl_stack_buf_get("dpdlbuf_myresult")
+
 println("result: " + buf)
 ```
 
-Note: inline assembly is avaiable only on i386 and X86_64 platforms only, but compiles also on ARM
+Note: in-line assembly is available only on i386 and X86_64 platforms, but it compiles also on others like Arm, etc..
 
 # Documentation
 
 ## C libraries included (interpreted Mode 1)
 
-When C code is executed in '*interpreted*' mode, all *stdlib* libraries and include files are already available in the dpdl runtime and can just be used.
+When C code is executed in **`interpreted`** mode, all *stdlib* libraries and include files are already available in the dpdl runtime and can just be used.
 
-This is the documentation of the C library available when executing embedded C code with <ins>interpreted</ins> **Mode (1)** 
+This is the documentation of the C library available when executing embedded C code with <ins>interpreted</ins> **Mode (1)**:
 
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
@@ -190,7 +195,7 @@ This is the documentation of the C library available when executing embedded C c
 
 ### Library and include paths
 
-Even though the embedded C compiler Dpdl language plug-in comes with a minimal set of header files located in '**./lib/native/$platform/include**', by default the Dpdl language plug-in searches for 'include' and 'lib' files in the following paths:
+Even though the embedded C compiler comes with a minimal set of header files located in '**./lib/native/$platform/include**', by default it searches for 'include' and 'lib' files in the following paths:
 
 **Linux/Unix:**
 
@@ -214,7 +219,7 @@ example:
 MinGW or equivalent installation 'include' and 'lib' folders
 ```
 
-Additional include and library paths can be set directly via a dpdl stack option setting (see below)
+Additional include and library paths can be set directly via dpdl stack option settings (see below)
 
 
 ### Configuration
@@ -281,53 +286,53 @@ println("this Dpdl demo shows how C code can be dynamically compiled (in memory 
 dpdl_stack_push("dpdl:compile", "dpdl:-Dtestvar=999", "dpdl:-DtestF(a)=a+23", "dpdl:-I./DpdlLibs/C", "dpdl:-I/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/include", "dpdl:-L/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/usr/lib")
 
 >>c
-#include<stdio.h>
-#include<pthread.h>
-
-pthread_t tids[3];
-int numbers[10] = {1,2,3,4,5,6,7,8,9,10};
-int num[2]={0,0};
-
-void* firstThread(void* arg){
-	int ans = 0;
-	for(int i=0;i<500;i++){
-		ans += numbers[i];
-		printf("1: %d\n", i);
-	}
-	printf("Result Thread 1: %d\n",ans);
-	num[0] = ans;
-}
-
-
-void* secondThread(void* arg){
-	int ans = 0;
-	for(int i=5;i<1000;i++){
-		ans+=numbers[i];
-		printf("2: %d\n", i);
-	}
-	printf("Result Thread 2: %d\n",ans);
-	num[1]=ans;
-}
-
-void* sum(void* arg){
-	pthread_join(tids[0],NULL);
-	pthread_join(tids[1],NULL);
-	int ans = num[0]+num[1];
-	printf("Result Final: %d\n",ans);
-}
-
-int dpdl_main(int param){
-
-	printf("Dpdl embedded C Test: %d %d\n", testvar, testF(0));
+	#include<stdio.h>
+	#include<pthread.h>
 	
-	pthread_create(&tids[0],NULL,firstThread,(void*)NULL);
-	pthread_create(&tids[1],NULL,secondThread,(void*)NULL);
-	pthread_create(&tids[2],NULL,sum,(void*)NULL);
-	pthread_join(tids[2],NULL);
-	printf("finished\n");
-
-	return 1;
-}
+	pthread_t tids[3];
+	int numbers[10] = {1,2,3,4,5,6,7,8,9,10};
+	int num[2]={0,0};
+	
+	void* firstThread(void* arg){
+		int ans = 0;
+		for(int i=0;i<500;i++){
+			ans += numbers[i];
+			printf("1: %d\n", i);
+		}
+		printf("Result Thread 1: %d\n",ans);
+		num[0] = ans;
+	}
+	
+	
+	void* secondThread(void* arg){
+		int ans = 0;
+		for(int i=5;i<1000;i++){
+			ans+=numbers[i];
+			printf("2: %d\n", i);
+		}
+		printf("Result Thread 2: %d\n",ans);
+		num[1]=ans;
+	}
+	
+	void* sum(void* arg){
+		pthread_join(tids[0],NULL);
+		pthread_join(tids[1],NULL);
+		int ans = num[0]+num[1];
+		printf("Result Final: %d\n",ans);
+	}
+	
+	int dpdl_main(int param){
+	
+		printf("Dpdl embedded C Test: %d %d\n", testvar, testF(0));
+		
+		pthread_create(&tids[0],NULL,firstThread,(void*)NULL);
+		pthread_create(&tids[1],NULL,secondThread,(void*)NULL);
+		pthread_create(&tids[2],NULL,sum,(void*)NULL);
+		pthread_join(tids[2],NULL);
+		printf("finished\n");
+	
+		return 1;
+	}
 <<
 int exit_code = dpdl_exit_code()
 

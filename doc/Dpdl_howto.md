@@ -13,18 +13,22 @@ developed by
 
 ## Code Execution
 
-### Execute a Dpdl script directly, without entering the Dpdl console
+### Execute a dpdl script directly from the command line
+
+```
+java -jar DpdlEngine_V1.0_release.jar -load test/testArray.h
+```
+
+On newer versions of JVM, in order to access specific java 'modules' within Dpdl, you may need to enable them with the option '--add-opens'
 
 ```
 java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED -jar DpdlEngine_V1.0_release.jar -load test/testArray.h
 ```
-Note: On newer versions of java (from Oracle), in order to access specific java 'modules' within Dpdl, you may need to enable them with the option '--add-opens'
 
+### Execute a dpdl script in iterative way
 
-### Execute a Dpdl script in iterative way
-
-In order to execute a given Dpdl script in an iterative way the script can be executed within a dedicated thread instance using
-the Dpdl API function **`DPDLAPI_createThread(..)`**.
+In order to execute a given dpdl script in an iterative way the script can be executed within a dedicated thread instance using
+the dpdl API function **`DPDLAPI_createThread(..)`**.
 
 The following script executes a given dpdl script (i.e a bluetooth discovery process) as a dedicated thread instance, with a given thread priority
 and at a given time interval, over and over.
@@ -52,16 +56,16 @@ runs the script in a dedicated interpreter execution environment, improving perf
 The above script can than be run also in the Dpdl console with the '-load' command.
 
 
-## Dpdl code
+## dpdl code
 
 
 ### Generating a native java bytecode object from a 'struct'
 
-The dpdl type **`struct`** can be used to represent data structures within a Dpdl program, almost like in the C programming language.
+The dpdl type **`struct`** can be used to represent data structures within a dpdl program, almost like in the C programming language.
 
 Dpdl 'struct' can conveniently also be <ins>**compiled into a pure native java bytecode object**</ins>, and accessed and handled in the same way as ordinary java objects (classes).
 
-The Dpdl API function **`genObjCode(...)`** accepts as input defined Dpdl objects, in this case a 'struct' and compiles it to native java
+The dpdl API function **`genObjCode(...)`** accepts as input defined dpdl objects, in this case a 'struct' and compiles it to native java
 bytecode object. The returned object can than be handled as accessed as an ordinary object and therefore also be used in native java code.
 
 When defining an embedded java code section via **`>>java`** keyword, the contained java <ins>methods are also compiled</ins> into bytecode. 
@@ -134,9 +138,9 @@ The native struct function 'myNativeJavaFunc' call in the example above executes
 Note: The embedded '>>java' code section that is forseen to be compiled into the needs to be defined <ins>before any other embedded code functions</ins>, and Only the first '>>java' section is compiled into bytecode in the resulting object.
 		
 
-### Loading a Dpdl script as an object
+### Loading a dpdl script as an object
 
-In some circumstances it may be convenient to load a given Dpdl script as an object. 
+In some circumstances it may be convenient to load a given dpdl script as an object. 
 This offers some advantages compared to the standard 'include(..)' function.
 In this case the script is executed within a dedicated interpreter instance and is therefore better for example in a multi-threaded scenario or in the case more DpdlExtensions are loaded and executed.
 
@@ -198,9 +202,9 @@ return 1
 Note: The dpdl script loaded must always return a status (int) in order to load successfully (1) or with error (-1)
 
 
-### Executing dpdl code within Dpdl
+### Executing dpdl code within dpdl
 
-Dpdl can be executed also separately within an isolated environment inside Dpdl code, either by specifying a dpdl script filename, or by executing raw dpdl code directly.
+Dpdl can be executed also separately within an isolated environment inside dpdl code, either by specifying a dpdl script filename, or by executing raw dpdl code directly.
 
 
 #### Executing a dpdl script
@@ -228,18 +232,18 @@ println("status: " + s)
 
 
 
-### Data exchange with embedded code via the Dpdl stack
+### Data exchange with embedded code via the dpdl stack
 
-The embedding of other programming languages within Dpdl is straight forward and requires only the appropriate keyword e.g. **`>>c`**
+The embedding of other programming languages within dpdl is straight forward and requires only the appropriate keyword e.g. **`>>c`**
 to initialize the embedding of code. Exchanging data with embedded code is a bit more tricky.
 
-Data can be exchanged with the embedded code via the Dpdl stack or simply by returning data from the functions called.
+Data can be exchanged with the embedded code via the dpdl stack or simply by returning data from the functions called.
 
-The Dpdl API functions **`dpdl_stack_push(..)`** etc... can be used to push variables or data onto the Dpdl Stack which are than forwarded to the embedded code
+The dpdl API functions **`dpdl_stack_push(..)`** etc... can be used to push variables or data onto the dpdl stack which are than forwarded to the embedded code
 as standard parameters in most cases, or alternatively replaced via variable placeholder (see {{varname}} )
 
-The embedded code can also write data to the Dpdl stack which can than be intercepted again in Dpdl code via a given keyword 'dpdlbuf_*' that
-is pushed as a string variable onto the Dpdl stack prior to the embedding of the code.
+The embedded code can also write data to the dpdl stack which can than be intercepted again in dpdl code via a given keyword 'dpdlbuf_*' that
+is pushed as a string variable onto the dpdl stack prior to the embedding of the code.
 
 Within the embedded C code the function **`dpdl_stack_buf_put(..)`** can be used to write data (a char* buffer) to the memory buffer mapped
 to the keyword specified. The maximum size of the memory buffer is currently fixed to 4096 bytes (but can be changed in the registered version of DpdlEngine)
@@ -309,7 +313,7 @@ the include path need to be always relative to the root dir (e.g include("inc1/m
 
 ### Generative AI code and execution with 'DpdlAINerd' (DAN)
 
-The Dpdl language plug-in 'DpdlAINerd' (DAN) allows to generate code and data or content via popular AI engines (currently OpenAI, more to come).
+The *Dpdl language plug-in* '**DpdlAINerd**' (DAN) allows to generate code and data or content via popular AI engines (currently OpenAI, more to come).
 
 This is a powerful tool for fast prototyping and experimenting with code.
 
@@ -464,11 +468,11 @@ println("status exec: " + status_exec)
 
 ```
 
-### Embedding Dpdl in C code
+### Embedding dpdl in C code
 
 Dpdl can be conveniently embedded and executed also in C code.
 
-**Example:** executing a Dpdl source file
+**Example:** executing a dpdl source file
 
 ```c
 #include <stdio.h>
@@ -488,7 +492,7 @@ int dpdl_main(int argc, char **argv){
 ```
 
 
-**Example:** executing plain Dpdl code
+**Example:** executing plain dpdl code
 
 ```c
 #include <stdio.h>
@@ -574,9 +578,9 @@ endwhile
 
 **`json.decode(..)`**
 
-This function can be used to map json data to a given Dpdl **`struct`** or **`object`**
+This function can be used to map json data to a given dpdl **`struct`** or **`object`**
 
-The tags and values of the json data are mapped to the corresponding variable names and types in Dpdl.
+The tags and values of the json data are mapped to the corresponding variable names and types in dpdl.
 
 Example:
 
@@ -605,16 +609,16 @@ In this case the java class just needs to implement the 'getter' and 'setter' me
 See example 'app/getnews/dpdlGetNews2.h'
 
 
-### Querying a Database via the Dpdl 'sql' language plug-in
+### Querying a Database via the *Dpdl language plug-in* for 'sql'
 
-A specific Dpdl language plug-in allows to execute queries on a specific database (JDBC compliant) and retrieve the results as form of vector.
-The queries can be embedded in Dpdl code via the keyword **`>>sql`**
+A specific *Dpdl language plug-in* allows to execute queries on a specific database (JDBC compliant) and retrieve the results as form of vector.
+The queries can be embedded in dpdl code via the keyword **`>>sql`**
 
-The plug-in will connect to the specified database connection string and credentials that have been pushed onto the Dpdl stack.
+The plug-in will connect to the specified database connection string and credentials that have been pushed onto the dpdl stack.
 
-Variables that are needed to construct the queries can be also pushed onto the Dpdl stack and referenced in the embedded query with: {{$my_variable}}
+Variables that are needed to construct the queries can be also pushed onto the dpdl stack and referenced in the embedded query with: {{$my_variable}}
 
-The result is retrieved from the Dpdl stack in form of a Vector, it can be a pure vector (default), or a vector of maps (see 'db_data_mode' parameter). The latter
+The result is retrieved from the dpdl stack in form of a Vector, it can be a pure vector (default), or a vector of maps (see 'db_data_mode' parameter). The latter
 enables to access the fields via a key/value approach.
 
 Example (in this case a vector of maps is retrieved)
