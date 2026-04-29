@@ -103,6 +103,9 @@ When executing C code in **`compiled**` mode, the code is effectively compiled i
 
 This mode can be activated via the dpdl stack parameter **`dpdl:compile`**.
 
+
+#### Features
+
 This operation mode supports *ANSI C* (*ISO C99* standard) and many *GNUC extensions* including in-line assembly on x86 systems.
 
 The 'dpdl:compile' option is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**.
