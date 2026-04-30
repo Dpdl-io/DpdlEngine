@@ -16,7 +16,7 @@ by **SEE Solutions** &copy;
 
 **Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in Database and Agents technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language** code</ins> (dpdl-lang), as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language** code</ins> (**dpdl-lang**), as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
 
 Dpdl enables **Polyglot programming**.
 
@@ -40,7 +40,7 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl cod to be compiled also to native code.
 
-Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages, or any custom code syntax, to be executed within dpdl code by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and shipped separately.
+Dpdl introduces the concept of '*embedded code sections*' that enables different programming languages, or any custom developed code syntax, to be executed within dpdl code by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and shipped separately.
 
 <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
@@ -50,7 +50,7 @@ Dpdl introduces the concept of '*embedded code sections*' that allows different 
 
 A dedicated *Dpdl language plug-in* for **AI generative code** '*DpdlAINerd*' (**DAN**), enables to <ins>**automatically generate**</ins> programming language code and content or data by means of natural language descriptions inside dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
 
-Dpdl includes a custom data container with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package</ins>, <ins>handle</ins> and <ins>query</ins> data very <ins>efficiently on memory scarce devices**</ins>.
+Dpdl allows to create custom data containers with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package</ins>, <ins>handle</ins> and <ins>query</ins> data very <ins>efficiently on memory scarce devices**</ins>.
 
 The included Dpdl lanugage plug-in '**DpdlAgent**' includes an agent development middleware based on open source for developing distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
@@ -199,6 +199,14 @@ println("finished!")
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
 
+## Some Design considerations taken into account when developing Dpdl
+
+* Dpdl has been designed and implemented to be <ins>**Simple**</ins> and <ins>**Robust**</ins> -> Simple things, usually simply work in Software systems
+* Easily <ins>**Extendible**</ins> and <ins>**Customizable**</ins> -> Adding or adapting features should be possible and straight forward, conceptually and technically
+* <ins>**Portable**</ins> across different platforms and versions of JVM -> Ensure Backward compatibility (JVM) to the best possible extent. This has been a primary focus since the very beginning 
+* <ins>**Compact**</ins> code footprint and no depencencies to facilitate porting Dpdl to constrained devices
+
+
 ## Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (any JVM platform 1.3+ and later Spec, JavaME (CLDC, CDC)). The core engine runs also on JVM 1.1 spec compliant VMs
@@ -238,19 +246,23 @@ The size of '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) a
 ### Dpdl profiles available
 
 * **`Compact`** : **DpdlEngine** <ins>**Compact**</ins> profile: **`80 Kb`**</ins> or less
-* **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes 'DpdlPacket' database support): **`372 Kb`**
+* **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes 'DpdlPacket' database & rich set of built-in functions): **`372 Kb`**
 
 The profiles can of course also be adjusted as needed to include more ore less function sets and components. 
 
-**Example setup:**
+#### Example setup:
 
-a DpdlEngine instance running on a small embedded system may have the following profile and setup:
+a DpdlEngine instance running on a small <ins>Embedded System</ins> may have the following profile and setup:
 
-#### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins*
+#### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins*:
 
 In this example, the *DpdlEngine* and the *Dpdl language plug-ins* included are specifically targeted for **small** <ins>*Embedded Systems*</ins>.
 
-Included are the *Dpdl language plug-ins* for executing '*embedded code sections*' in **<ins>C</ins>, <ins>MicroPython</ins> and <ins>Micro JavaScript(*ES5*)</ins>** : 
+Included are the *Dpdl language plug-ins* for executing '*embedded code sections*' in:
+
+* **<ins>C</ins>**
+* **<ins>MicroPython</ins>**
+* **<ins>Micro JavaScript</ins>** (*ES5*)
 
 TOTAL size: **`686 Kb`** 
 
@@ -260,19 +272,12 @@ TOTAL size: **`686 Kb`**
 
 Note: Also </ins>other *Dpdl language plug-ins* can be added</ins> as needed
 
-## Some Design considerations taken into account when developing Dpdl
-
-* Dpdl has been designed and implemented to be <ins>**Simple**</ins> and <ins>**Robust**</ins> -> Simple things, usually simply work in Software systems
-* Easily <ins>**Extendible**</ins> and <ins>**Customizable**</ins> -> Adding or adapting features should be possible and straight forward, conceptually and technically
-* <ins>**Portable**</ins> across different platforms and versions of JVM -> Ensure Backward compatibility (JVM) to the best possible extent. This has been a primary focus since the very beginning 
-* <ins>**Compact**</ins> code footprint and no depencencies to facilitate porting Dpdl to constrained devices
-
 
 ## Dpdl sample code
 
 ### Dpdl example that makes use of external java libraries
 
-This is a 3D model visualization of chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events and toggled via key events (ported to dpdl from javafx examples)
+This dpdl example implements a 3D model visualization of chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events and toggled via key events (ported to dpdl from javafx examples)
 
 [graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
 
@@ -376,9 +381,7 @@ println("1st entry: " + entry_di +  " is of type: " + typeof(entry_di))
 
 ```
 
-**Here is the link for the <ins>FULL dpdl code</ins> of the example that is summarized above**:
-
-[test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h)
+**Here is the link for the [FULL dpdl code](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h) of the example that is summarized above**:
 
 Note: some functions in the example above make also use of 'embedded code sections' in other programming languages
 
@@ -468,14 +471,14 @@ class MyWriter {
 
 ```
 
-#### Example 2: Implementation similar to the above Example 1, but using a derived dpdl class to write data to a file
+#### Example 2: Implementation similar to the above Example 1, but using a derived dpdl class to write buffered data to a file
 
 The example below, to show the flexibility of dpdl, implements the same logic as the example above, but with a dpdl class derived from a JRE class:
 
 [jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
 
-## Dpdl example with 'embedded code sections' in different programming languages
+## Dpdl example with 'embedded code sections' in different programming languages (C, JavaScript, Python)
 
 ```c
 println("with Dpdl you can embed and execute code sections in many different programming languages, simultaneously and of multiple types...")
@@ -542,7 +545,7 @@ println("")
 println("and more 'Dpdl lanuage plug-ins' will follow and you can also create your owns")
 ```
 
-### Dpdl sample code that makes use of embedded 'Wgsl' code to accelerate a GELU Neural Network activation function on GPUs:
+### Dpdl sample code that accelerates on GPUs a GELU Neural Network activation function via embedded 'Wgsl' code:
 
 ```python
 import('native')
@@ -694,7 +697,7 @@ You can find more Dpdl code snippet on the following page:
 [Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
 
 
-### Featured sample Applications (prototypes) developed with Dpdl
+### sample Prototype applications developed with Dpdl
 
 In this GitHub repository you can find full featured working prototype applications written with Dpdl:
 
@@ -703,19 +706,19 @@ In this GitHub repository you can find full featured working prototype applicati
 
 ## Why Dpdl?
 
-Dpdl is suitable for <ins>rapid application development</ins> in various domains, in particular also for development of applications on <ins>small memory footprint devices</ins>, and it is suitable also to be used as embedded scripting engine in applications.
+Dpdl is suitable for <ins>rapid application development</ins> and <ins>testing</ins> in various domains, in particular also for development of small applications on <ins>constrained devices</ins>, and it is suitable also to be used as embedded scripting engine in applications.
 
-Dpdl enables rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple, extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
+Dpdl facilitates rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple, extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
 
-Dpdl has also built-in constructs that enable dynamic code generation for <ins>**generative AI code**</ins> and provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
+Dpdl has also built-in constructs that allow dynamic code generation via <ins>**generative AI code**</ins> and ot provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
 
-The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the prototyping and development process by leveraging generative AI code for embedded code and data generation within dpdl.
+The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the prototyping, development and testing process by leveraging generative AI code for embedded code and data generation within dpdl.
 
-The Dpdl language plug-in '**DpdlAgent**', with the contained agent development middleware, can be used to build solid *Distributed Mobile Agents* that communicate asynchronously following the FIPA (*Foundation for Intelligent Physical Agents*) specification. It enables also to develop agents that are able to migrate or copy themselves across multiple networks and hosts.
+The Dpdl language plug-in '**DpdlAgent**', with the provided agent development middleware, can be used to build solid *Distributed Mobile Agents* that communicate asynchronously following the FIPA (*Foundation for Intelligent Physical Agents*) specification. It enables also to develop agents that are able to migrate or copy themselves across multiple networks and hosts.
  
 Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
 
-Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently also on small memory footprint devices**</ins>. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A *DpdlPacket* can also include Dpdl code for custom setups.
+Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently</ins> on small memory footprint devices**. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A *DpdlPacket* can also include and execute dpdl code definitions.
 
 Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, enabling developers to use thousands of existing high-quality software libraries. 
 
@@ -1016,8 +1019,8 @@ Dpdl runs on a wide range of platforms and supports also a small footprint kilob
 * Java versions 1.3+ and later
 * Java ME CLDC & GCF (JSR 360)
 * Java ME Embedded Profile (JSR 361)
-* Java 1.1 until 1.3 (with some limitations )
-* Platforms with ANSI C compiler where the included kilobyte range java virtual machine can be compiled
+* Java 1.1 until 1.3 (with some limitations)
+* Platforms with ANSI C compiler where the provided kilobyte range java virtual machine can be compiled
 
 DpdlEngine V1.0 has been tested on:
 
@@ -1027,9 +1030,8 @@ DpdlEngine V1.0 has been tested on:
 	* Windows 64-bit
 	* Android
 	* JavaME
-	* J2ME (MIDP 2.0)
-		
-Note: The 'DpdlEngine lite' release needs to be re-packaged for running on Android, JavaME and J2ME
+	* J2ME (MIDP 1.0/CLDC 1.0 & MIDP 2.0/CLDC 1.1)
+
 
 ### *Dpdl lanugage plug-ins* (for 'embedded code sections') - compatibility matrix
 
@@ -1095,6 +1097,7 @@ The Dpdl platform and API documentation is available via the following links:
 [DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 [Dpdl profiles](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_profiles.md)
+
 
 ### More...
 
