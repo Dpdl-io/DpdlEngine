@@ -435,10 +435,11 @@ More examples will follow soon...
 
 ### API
 
-## object classes
+### object classes
 
 * [Agent](#agent)
 * [Behaviour](#behaviour)
+* [Types of behaviours](#types-of-behaviours)
 
 
 #### Agent
@@ -570,6 +571,7 @@ write(object OutputStream)
 
 ```
 
+
 #### Behaviour
 
 ```python
@@ -609,7 +611,49 @@ setDataStore(object DataStore)
 
 ```
 
- 
+#### Types of behaviours
+
+
+##### ActionExecutor
+
+##### BaseInitiator
+
+##### CompositeBehaviour
+
+##### CyclicBehaviour
+
+##### DataStore
+
+##### FSMBehaviour
+
+##### LoadBehaviour
+
+##### OneShotBehaviour
+
+##### OntologyServer
+
+##### OutcomeManager
+
+##### ParallelBehaviour
+
+##### SequentialBehaviour
+
+##### SerialBehaviour
+
+##### SimpleBehaviour
+
+##### ThreadedBehaviourFactory
+
+##### TickerBehaviour
+
+##### WakerBehaviour
+
+##### WrapperBehaviour
+
+
+
+
+
  
 
 
