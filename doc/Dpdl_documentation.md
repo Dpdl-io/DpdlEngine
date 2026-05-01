@@ -15,7 +15,9 @@ by
 
 Dpdl is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
-Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages, or any custom syntax, directly embedded within dpdl code**</ins>, simultaneously, of multiple types and at it's native speed. Embedded programming language code within Dpdl is executed in form of custom **Dpdl language plug-ins** distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>).
+Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages**</ins>, or any custom syntax, <ins>**directly embedded within dpdl code**</ins>, simultaneously, of multiple types and <ins>at it's native speed<ins>.
+
+Embedded programming language code within dpdl is executed in form of *Dpdl language plug-ins* distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>). Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simple configuration.
 
 ### Features:
 
@@ -82,7 +84,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 </td><td width=33% valign=top>
 
 * [Asynchronous Task execution](#asynchronous-task-execution)
-* [DpdlObjects and access to JRE classes](#dpdlobjects-and-access-to-jre-classes)
+* [Dpdl Objects and access to JRE classes](#dpdlobjects-and-access-to-jre-classes)
 * [Multi-line structured text, data and code resources](#multi-line-structured-text-data-and-code-resources)
 * [`Embedded code sections: embedding other programming languages` directly within Dpdl code](#embedded-code-sections-embedding-other-programming-languages-directly-within-dpdl-code)
 
@@ -1862,23 +1864,13 @@ See **`GC_THREAD_EXEC`** parameter in 'DpdlEngine.ini'. The value '-1' invalidat
 
 * [Table of Contents](#table-of-contents)
 
-### DpdlObjects and access to JRE classes
+### Dpdl Objects and access to JRE classes
 
 Dpdl can access the underlying classes of a given java compliant JRE implementation or any other external java library.
 
-The classes are loaded and wrapped in a DpdlObject that is handled by the Dpdl runtime which make the java classes accessible to Dpdl.
-
 Static classes can be accessed via **`getObj(..)`** function, and instance classes can be created via **`new(..)`** function.
 
-The java class references are resolved via the class definition file which can be updated statically to resolve further classes, and can be also dynamically loaded and updated via the function call 'DPDLSYS_registerLib(...)'
-
-By default, the name of the java class to be loaded must be specified without the java package path, i.e 'String' and NOT 'java.lang.String'. But this can be adjusted, even with custom naming.
-For some java classes that have duplicate entries as base name, the corresponding path prefix has to be specified when loading
-an object.
-
-The java classes where a path prefix applies are listed here: [doc/Dpdl_class_resolve.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_class_resolve.md)
-
-Note: the <ins>deprecated function 'getClass'</ins> is still supported for some time for backwards compatibility. The function '**getObj**' should be used instead.
+The java class references are per default resolved via the class definition. It can be updated statically to resolve further classes, and can also be dynamically loaded and updated via the function call 'DPDLSYS_registerLib(...)'. This allows also to create aliases for class names.
 
 
 **Example:**
@@ -1899,8 +1891,7 @@ println(substr)
 
 #### Default configuration resolves the following API's:
 
-The set of classes accessible with Dpdl (default) is defined to be the following set.
-The methods of the classes that are accessible are referred to the current JRE instance on which Dpdl is running.
+The set of classes accessible with Dpdl (default) is defined to be the following set:
 
 [Java API](http://www.seesolutions.it/apidoc/Java_Platform_API_1_5.html)
 
@@ -1908,11 +1899,9 @@ The methods of the classes that are accessible are referred to the current JRE i
 
 [Bluetooth JSR-82 API](https://docs.oracle.com/javame/config/cldc/opt-pkgs/api/bluetooth/jsr082/index.html)
 
+The methods of the classes that are accessible are referred to the current JRE instance on which Dpdl is running.
 
 Additional API's and classes can be added to the class definition file as needed with the syntax: '$full_class_name $class_alias'.
-
-NOTE: Only the full registered version of Dpdl allows editing of the class definition file. The default 'DpdlEngine lite' configuration contains
-only the class references of Java Platform JRE 1.5, JAVAFX and Bluetooth JSR-82 API.
 
 
 #### Dynamic loading of java API's
@@ -1939,32 +1928,21 @@ println("my data: " + mydata)
 println("now you can access all classes, methods and fields of the java classes contained in the specified jar file")
 ```
 
-#### Notes:
-
-Referencing object variables currently support 1 level of indirection only ('date.toString().toUpparCase()' will not work currently, but is in development)
-
-This is the correct approach:
-
-```python
-object date = new("Date")
-object datestr = date.toString()
-println(datestr.toUpperCase())
-```
 
 * [Table of Contents](#table-of-contents)
 
 
-### Load Dpdl code as a DpdlObject
+### Load Dpdl code as a Dpdl Object
 
-Dpdl code can be loaded as an ordinary DpdlObjects with the function **`loadCode(..)`**.
+Dpdl code can be loaded as an ordinary Dpdl Objects with the function **`loadCode(..)`**.
 
-The object can be accessed like an other object except that the function calls currently must include also the name of the script loaded -> this will be changed in next releases so that the calls are the same as for other objects.
+The object can be accessed like an other object except that the function calls currently must include also the name of the script loaded.
 
 Loading a Dpdl script as an object has some advantages with respect to just include a given Dpdl script with via the 'include' statement:
 
 - The code runs in a dedicated execution instance -> convenient especially for multi-threading applications.
 - Variables have a dedicated scope
-- Performance improvements when using multiple extensions
+- Some performance improvements when using multiple extensions
 
 ```python
 println("test loadCode(..) with dpdl script LoadCodeFunc.h")
@@ -2321,6 +2299,19 @@ endfor
 object task_obj = dpdl_task_obj_get(task_id)
 
 task_obj.sleep(20000L)
+
+println("also a name can be assigned directly..")
+
+>>task(my_task_name)
+	int i
+	for(i < 10000)
+		println("task running: " + i)
+		i=i+1
+	endfor
+<<
+exit_code = dpdl_exit_code()
+
+object my_task_name_obj = dpdl_task_obj_get("my_task_name")
 
 println("finished")
 ```

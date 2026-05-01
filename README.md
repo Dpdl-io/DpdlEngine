@@ -209,7 +209,7 @@ println("finished!")
 
 ## Features
 
-* **DpdlEngine is optimized to run on a wide range of platforms** (any JVM platform 1.3+ and later Spec, JavaME (CLDC, CDC)). The core engine runs also on JVM 1.1 spec compliant VMs
+* **DpdlEngine is optimized to run on a wide range of platforms** (any JVM platform 1.3+ and later Spec, JavaME (CLDC, CDC). The core engine runs also on JVM 1.1 spec compliant VMs
 * **Access to the underlying JVM platform API's and to external java libraries**
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
@@ -478,7 +478,7 @@ The example below, to show the flexibility of dpdl, implements the same logic as
 [jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
 
-## Dpdl example with 'embedded code sections' in different programming languages (C, JavaScript, Python)
+## Dpdl example with 'embedded code sections' in different programming languages (*C, JavaScript and Python*)
 
 ```c
 println("with Dpdl you can embed and execute code sections in many different programming languages, simultaneously and of multiple types...")

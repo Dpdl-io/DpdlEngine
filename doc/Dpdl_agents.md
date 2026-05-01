@@ -44,6 +44,12 @@ The agent platform components support also agent mobility, allowing agents to be
 - Extensible content languages, ontologies, and in-process API for external applications
 
 
+## Index
+
+* [Examples](#examples)
+* [API](#api)
+
+
 ### Examples
 
 Two 'agents' that communicate via *FIPA* compliant protocols and ontologies.
@@ -425,5 +431,189 @@ endwhile
 ```
 
 More examples will follow soon...
+
+
+### API
+
+## object classes
+
+* [Agent](#agent)
+* [Behaviour](#behaviour)
+
+
+#### Agent
+
+```python
+addBehaviour(object Behaviour)
+
+doActivate()
+ 
+blockingReceive() return object ACLMessage
+
+blockingReceive(long milli_sec) return object ACLMessage
+
+blockingReceive(object MessageTemplate) return object ACLMessage
+
+blockingReceive(object MessageTemplate, long milli_sec) return object ACLMessage
+
+changeStateTo(object LifeCycle) void
+ 
+doClone(object Location, string new_name)
+
+doDelete()
+
+doMove(object Location)
+ 
+doSuspend()
+
+doWait()
+
+doWait(long millis)
+
+doWake()
+
+getAgentState() return object AgentState
+
+getAID() return object AID
+
+getAID(string name) return object AID
+ 
+getArguments() return object[]
+
+getExecutedBehavioursCnt() 
+
+getBootProperties() return object Properties
+
+getContentManager() return object ContentManager
+
+getCurQueueSize() return int size
+
+getDefaultDF() return object AID
+
+getExecutedBehavioursCnt()  return long count
+
+getLocalName() return string local_name
+
+getName() return string name
+
+getPostedMessagesCnt() return int count
+
+getProperty(string key, string aDefault) string prop
+
+getQueueSize() return int size
+
+getReceivedMessagesCnt() return long count
+
+getSentMessagesCnt() return long count
+
+here() return object Location
+
+isAlive() return bool status
+
+isRestarting() return bool status
+
+postMessage(object ACLMessage) void
+ 	
+putBack(object ACLMessage)
+
+putO2AObject(object obj, bool blocking)
+
+receive() return object ACLMessage
+
+receive(object MessageTemplate) return object ACLMessage
+
+receive(object MessageTemplate, int max) return object ACLMessage
+
+registerO2AInterface(object classInterface, T impl) void
+
+removeBehaviour(object Behaviour)
+
+restoreBufferedState()
+
+restoreFields(object InputStream)
+
+send(object ACLMessage)
+
+setEnabledO2ACommunication(bool enabled, int queue_size)
+
+setGenerateBehaviourEvents(bool b)
+
+setGenerateMessageEvents(bool b)
+
+setO2AManager(object Behaviour)
+
+setQueueSize(int new_size)
+
+setup()
+
+takeDown()
+
+write(object OutputStream)
+
+send(object ACLMessage)
+
+setEnabledO2ACommunication(bool enabled, int queue_size)
+
+setGenerateBehaviourEvents(bool b)
+
+setGenerateMessageEvents(bool b)
+
+setO2AManager(object Behaviour)
+
+setQueueSize(int new_size)
+
+setup()
+
+takeDown()
+
+write(object OutputStream)
+
+```
+
+#### Behaviour
+
+```python
+action()
+
+block()
+
+block(long milli_sec)
+
+done() return bool
+
+getAgent() return object Agent
+
+getBehaviourName() return string name
+
+getDataStore() return object DataStore
+
+getParent() return object CompositeBehaviour
+
+isRunnable() return bool status
+
+onEnd() void
+
+onStart() void
+
+reset() void
+
+restart() void
+
+root() return object Behaviour
+
+setAgent(object Agent) void
+
+setBehaviourName(string name) void
+
+setDataStore(object DataStore)
+
+```
+
+ 
+ 
+
+
+ 	
+ 
 
 
