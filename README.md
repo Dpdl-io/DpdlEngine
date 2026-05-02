@@ -52,7 +52,7 @@ A dedicated *Dpdl language plug-in* for **AI generative code** '*DpdlAINerd*' (*
 
 Dpdl allows to create custom data containers with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package</ins>, <ins>handle</ins> and <ins>query</ins> data very <ins>efficiently on memory scarce devices**</ins>.
 
-The included Dpdl lanugage plug-in '**DpdlAgent**' includes an agent development middleware based on open source for developing distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The included *Dpdl language plug-in* '**DpdlAgent**' provides an agent middle-ware based on open source for developing distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
 ## DpdlEngine components:

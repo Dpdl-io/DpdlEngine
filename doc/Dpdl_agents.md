@@ -15,7 +15,7 @@ developed by
 
 Dpdl has built-in support for **Agents** technology that enables to implement Distributed Mobile Agents execution flows.
 
-The '**DpdlAgent** component includes a complete agent development framework for building distributed and mobile multi-agent systems.
+The '**DpdlAgent** component includes a complete agent development framework based on jade for building distributed and mobile multi-agent systems.
 
 It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination, including ACL messaging, interaction protocols, content languages, ontologies, and adaptive transport mechanisms. 
 Communication is asynchronous and queue-based, providing efficient, flexible message handling suited to dynamic and mobile agent environments.
