@@ -1,5 +1,5 @@
 
-## Dpdl language plug-in documentation for 'JavaScript'
+## Dpdl language plug-in specification for 'JavaScript'
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl-io_blue.png" width="35%">
