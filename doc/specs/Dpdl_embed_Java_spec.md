@@ -1,5 +1,5 @@
 
-## Dpdl language plug-in documentation for 'Java'
+## Dpdl language plug-in specification for 'Java'
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl-io_blue.png" width="35%">
@@ -72,7 +72,7 @@ println("result buffer: " + ret_buf)
 
 ### Calling 'embedded code section' java methods
 
-For 'embedded code sections' in Java, it's possible to to call the contained java methods methods from dpdl by getting the related object from the stack:
+For '*embedded code section*s' in Java, it's possible to to call the contained java methods methods from dpdl by getting the related object from the stack:
 
 ```python
 println("dpdl example with an 'embedded code section' in java...")
@@ -129,9 +129,8 @@ println("finished")
 
 ### Requirements
 
-This Dpdl language plug-in is built upon the *Janino* library to compile code blocks.
+The *Dpdl language plug-in* by default uses the *Janino* library. It requires java 1.7+ or later to run.
 
-This plug-in requires java 1.7 or later.
 
 #### Compatibility matrix
 
@@ -163,6 +162,7 @@ Further default imports can be defined in the 'DpdlEngine.ini' configuration
 All the language features listed below are supported, even in case *DpdlEngine* itself runs in an older JRE version
 
 #### Java 1.4 language features:
+
 - **package** declaration, **import** declaration
 - **class** declaration
 - **interface** declaration
