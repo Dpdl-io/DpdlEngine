@@ -613,6 +613,7 @@ setDataStore(object DataStore)
 
 #### Types of behaviours
 
+All these classes inherit the functionalities of the base class **`Behaviour`**, as documented above:
 
 ##### ActionExecutor
 
