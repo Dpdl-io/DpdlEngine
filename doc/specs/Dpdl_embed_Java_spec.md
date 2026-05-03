@@ -34,6 +34,7 @@ dpdl_stack_push("dpdlbuf_test", myarr, myi)
 setStartTime()
 
 >>java
+
 	System.out.println("Parameters: ");
 	System.out.println("	arg0: " + arg0);
 	System.out.println("	arg1: " + arg1);
@@ -146,7 +147,7 @@ The *Dpdl language plug-in* by default uses the *Janino* library. It requires ja
 
 The embedded java code must return a value, either of type 'int', 'String' or any other 'Object'
 
-Parameters that are pushed onto the dpdl stack are accessible in the embedded java code via the variable names 'args0, args1, ....argsN'
+Parameters that are pushed onto the dpdl stack are accessible in the embedded java code via the variable names '**arg0**, **arg1**, ....**argN**'
 
 The following imports are predefined as default, so that embedded code can be access the classes directly:
 
@@ -154,6 +155,7 @@ The following imports are predefined as default, so that embedded code can be ac
 - java.util.*
 - java.time.*
 - java.sql.*
+- dpdl.dpdlLibs.rt.*
 
 Further default imports can be defined in the 'DpdlEngine.ini' configuration
 

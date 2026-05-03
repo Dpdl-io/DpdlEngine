@@ -15,9 +15,9 @@ developed by
 
 Dpdl has built-in support for **Agents** technology that enables to implement Distributed Mobile Agents execution flows.
 
-The '**DpdlAgent** component includes a complete agent development framework based on jade for building distributed and mobile multi-agent systems.
+The '**DpdlAgent** component includes a complete agent development framework based on jade for building distributed and Mobile multi-Agent systems.
 
-It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination, including ACL messaging, interaction protocols, content languages, ontologies, and adaptive transport mechanisms. 
+It fully adheres to **IEEE FIPA** (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, inter-operable agent communication and coordination, including ACL messaging, interaction protocols, content languages, ontologies, and adaptive transport mechanisms. 
 Communication is asynchronous and queue-based, providing efficient, flexible message handling suited to dynamic and mobile agent environments.
 
 The agent platform components support also agent mobility, allowing agents to be dynamically created, suspended, and migrated across heterogeneous hosts at runtime without OS dependency. System configuration and supervision can be handled programmatically or through a remote management UI, enabling flexible and scalable deployment.
@@ -25,23 +25,23 @@ The agent platform components support also agent mobility, allowing agents to be
 
 ### Platform features
 
-- Distributed, FIPA-compliant agent platform with built-in AMP (Agent Management Platform) and DF (Directory Facility) services
+- Distributed, FIPA-compliant agent platform with built-in AMP (**Agent Management Platform**) and DF (**Directory Facility**) services
 
-- Remote Management UI for managing agents and containers
+- Remote **Management UI** for managing agents and containers
 
-- Tools for debugging and developing multi-agent applications
+- Tools for debugging and developing multi-Agent applications
 
-- Support for agent mobility, including state and (when needed) code transfer
+- Support for <ins>agent mobility</ins>, including state and (when needed) code transfer
 
-- Parallel and concurrent agent behaviors with non-preemptive scheduling
+-  <ins>Parallel</ins> and <ins>concurrent</ins> agent behaviors with non-preemptive scheduling
 
 - Multiple, federated Directory Facilitators for multi-domain applications
 
 - Efficient ACL message transport (object-based internally, FIPA-compliant across platforms)
 
-- Built-in FIPA interaction protocols, naming service, and automatic agent registration
+- Built-in **FIPA interaction protocols**, naming service, and automatic agent registration
 
-- Extensible content languages, ontologies, and in-process API for external applications
+- Extensible content languages, <ins>ontologies</ins>, and <ins>in-process API for external applications</ins>
 
 
 ## Index
@@ -52,7 +52,7 @@ The agent platform components support also agent mobility, allowing agents to be
 
 ### Examples
 
-Two 'agents' that communicate via *FIPA* compliant protocols and ontologies.
+Two '**agents**' that communicate via *FIPA* compliant protocols and ontologies.
 
 
 #### Example 'Agents' implementation using pure **dpdl** code

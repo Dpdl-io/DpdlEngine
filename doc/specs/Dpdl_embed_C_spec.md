@@ -17,7 +17,7 @@ The dpdl '*embedded code secitons*' in C code can be executed in 2 different mod
 
 Both execution modes have some characteristics that may fit better in one case or the other.
 
-The code is executed via a native Dpdl plug-in library that has relatively small footprint (278 Kb) and therefore is applicable also on small embedded systems.
+The code is executed via a native Dpdl library that has relatively small footprint (278 Kb) and therefore is applicable also on small embedded systems. The library contains both, interpreter and compiler, and even a the *stdlib* library for interpreted C code.
 
 ## Modes of execution
 
@@ -38,9 +38,9 @@ Custom libraries and functions can be integrated and linked via a straightforwar
 
 - No compile time overhead, but may be a bit slower than compiled code
 
-- minimal, it includes a basic set of C libraries and header files (*stdlib*), POSIX compliant
+- minimal, it includes a basic set of C libraries and header files (*stdlib*), POSIX compliant (also on Windows OS)
 
-- Possibility to integrate custom functions
+- Possibility to integrate custom functions via simple integration
 
 - C code may, or may not have an entry function defined
 
@@ -99,7 +99,7 @@ println("response buffer: " + buf)
 
 ### Mode 2 (compiled)
 
-When executing C code in **`compiled`** mode, the code is effectively compiled in memory at runtime (very FAST!!),
+When executing C code in **`compiled`** mode, the code is effectively compiled in memory at runtime (<ins**>very FAST!!**</ins>),
 
 enabling maximum execution performance gain.
 
@@ -108,13 +108,15 @@ This mode can be activated via the dpdl stack parameter **`dpdl:compile`**.
 
 #### Features
 
-- This operation mode supports *ANSI C* (*ISO C99* standard) and many *GNUC extensions* including in-line assembly on x86 systems
+- Supports *ANSI C* (*ISO C99* standard) and many *GNUC extensions* including in-line assembly on i386 and x86 systems
 
-- The 'dpdl:compile' option is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows 64**
+- The 'dpdl:compile' option is available for the following platforms: **Linux (x86_64) MacOS (arm64), Raspberry (armv7l), Windows OS (32/64)**
 
-- The embedded C compiler included is self-relying and includes assembler and linker
+- C compiler is self-relying and includes assembler and linker
 
 - The required header files and libraries are by default searched in predefined platform default paths (i.e. /usr/local ), but custom paths can also be supplied as option parameters
+
+- Includes per default Memory and Bound checks. Generated code if fully compatible with unchecked code. The memory and bound checks can also be disabled via an option
 
 The *DpdlEngine* distribution by default includes also a basic set of include headers files and libraries that are located in the platform specific folder './lib/native/$platform/include' on which the *DpdlEngine* is currently running. 
 
@@ -168,8 +170,8 @@ dpdl_stack_push("dpdl:compile", "dpdl:-I./DpdlLibs/C", "var1")
 	
 		char *str_src = "MEGA source";
 		char str_dest[256];
-		//my_memcpy(&str_dest, str_src, strlen(str_src));
-		//printf("copied str: %s\n", str_dest);
+		my_memcpy(&str_dest, str_src, strlen(str_src));
+		printf("copied str: %s\n", str_dest);
 		dpdl_stack_buf_put(str_src);
 		return 0;
 	}
@@ -230,7 +232,7 @@ Additional include and library paths can be set directly via dpdl stack option s
 ### Configuration
 
 The Dpdl runtime can be parameterized by pushing the corresponding option settings onto the Dpdl stack via the 
-function **`dpdl_stack_push(..)`**. The options need to be prefixed with 'dpdl:'
+function **`dpdl_stack_push(..)`**. The options need to be prefixed with '**dpdl:**'
 
 
 For the embedding of C code the following option settings are available:
@@ -277,6 +279,18 @@ Adds the specified library for the linker
 Defines the preprocessor symbol '$sym' and optionally an associated value. If 'val' in not defined, it defaults to 1.
 
 Function like macros can also be defined, e.g **`dpdl:-DF(a)=a+1`**
+
+**`dpdl:-m$arch`**
+
+Allows to toggle 32-bit or 64-bit architectures (i386/x86_64). The default is the architecture where it's running.
+
+**example:** -m32
+
+**`dpdl:-nomemcheck`**
+
+Disable Memory and Bound checks
+
+
 
 **`dpdl:$option`**
 

@@ -58,7 +58,7 @@ The included *Dpdl language plug-in* '**DpdlAgent**' provides an agent middle-wa
 ## DpdlEngine components:
 
 - **dpdl-lang** -> Dpdl programming language
-- **DpdlPacket** -> Dpdl Database technology
+- **DpdlPacket** -> Dpdl Data container with Database technology
 - **DpdlAI** -> AI generative Code & Data within dpdl code
 - **DpdlAgent** -> Mobile Agent platform within dpdl code
 
@@ -236,7 +236,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), without dependencies
 * Allows to **automatically generate and embed generative AI code within dpdl** by using the included 'DpdlAINerd' (DAN) *Dpdl language plug-in*
 * Access **GPU compute capabilities by using the 'OpenCL' and 'Wgsl' (WebGPU shading language)** *Dpdl language plug-ins*
-* **Dpdl language plug-ins** available on **`Dpdl-Hub`** (soon in development)
+* **Dpdl language plug-ins** available on **`DpdlHub`** (www.dpdlhub.com will be soon in development)
 
 
 ### 'DpdlEngine' application footprint (size)

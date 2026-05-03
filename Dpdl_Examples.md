@@ -58,10 +58,10 @@ endwhile
 * [Networking](#networking)
 * [GPU Compute](#gpu-compute)
 * [AI generative code using the dedicated Dpdl language plugin](#ai-generative-code-using-the-dedicated-dpdl-language-plug-in)
-* [Graphical User Interface (UI)](#graphical-user-interface-ui)
-* [Small Apps](#small-apps)
 * [Dpdl embedded code sections](#dpdl-embedded-code-sections)
 * [Dpdl Agents](#dpdl-agents)
+* [Graphical User Interface (UI)](#graphical-user-interface-ui)
+* [Small Apps](#small-apps)
 * [Benchmark Tests](#benchmark-tests)
 * [More Tests](#more-tests)
 
@@ -394,145 +394,6 @@ this is my sample json:
 [Index](#index)
 
 
-### Graphical User Interface (UI)
-
-* Example Dpdl app that uses the JavaFX java library to create a sample UI (Graphical User Interface) application via a FXML definition and used CSS to create the layout.
-
-	[ui/dpdlGUIJavaFX_css.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX_css.h)
-	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="75%" height="75%">
-
-* Example dpdl code that uses the JavaFX java library to render UI (Graphical User Interface) elements via a FXML definition.
-	
-	[ui/dpdlGUIJavaFX.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX.h)
-		
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX.png" width="35%" height="35%">
-	
-* Drawing functions on a UI Canvas on J2ME devices
-	
-	[J2MEDrawDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/J2MEDrawDemo.h)
-
-* Creates a graphical user interface with some UI components (Button, Panel, Checkbox, List, draw Panel) using Java Swing classes. The list is updated, the button command is intercepted with the 'actionPerformed' function, the checkbox status is printed to stdout, and a text and rectangle is drawn at random location on the draw panel using a thread.
-	
-	[ui/dpdlGUIExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample.h)
-	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_dpdlGUIExample.png" width="30%" height="30%">
-
-
-[Index](#index)
-
-
-### Small Apps
-
-* Example dpdl code that downloads json news data from a given URL and decodes it to a struct
-
-	[app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
-
-
-* Implementation of SHA-1 hash algorithm entirely written in Dpdl
-
-	[app/dpdlSHA-1/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/dpdlSHA-1/dpdlSHA-1impl.h)
-
-
-* Example Dpdl app that uses the JavaFX library to render and animate a 3D model of a chemical molecule (hydrogen)
-
-	[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
-	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="65%" height="65%">
-	
-	[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
-
-* Example dpdl code that executes an embedded 'clojure' code that creates a simple UI to convert values from Celsius to Fahrenheit
-
-	[clj/dpdlCljCelsiusConverterGUI.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/clj/dpdlCljCelsiusConverterGUI.h)
-
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_example_Celsius_Fahrenheit_UI.png" width="33%" height="33%">
-	
-* Example dpdl code that executes an embedded 'Julia' script to plot data using the 'Plots' package, and to save the chart as PDF
-
-	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)
-	
-	**here the exported PDF:**
-	
-	<img src="https://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="33%" height="33%">
-
-* Example Dpdl app that uses the JavaFX java library to visualize a website within a WebView component
-
-	[ui/dpdlGUIJavaFX_web.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX_web.h)
-
-
-* Performs a discovery of bluetooth devices and saves the device addresses discovered in a record store
-  
-	[bluetoothDiscoverySave.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bluetoothDiscoverySave.h)
-  		
-
-* Downloads a html website from a URL and saves the content in a local file
-
-	[downloadWebURL.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/downloadWebURL.h)
-	
-
-* Accepts connections from a bluetooth server application and intercepts commands
-
-	[DpdlConsoleBT_client.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DpdlConsoleBT_client.h)
-	
-	[DpdlConsoleBT_client.h_static](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DpdlConsoleBT_client.h_static)
-
-
-* BTObexServer (client/server)
-
-  Sample application that implements sending of SMS via bluetooth to discovered devices. The messages to be sent are
-  read from a record store. An auxiliary script (ImportantMsgWriter.h) can be used to store messages to be delivered
-  in the record store
-  
-	[BTObexServer/BTObexServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/BTObexServer/BTObexServer.h)
-	
-	[BTObexServer/BTObexServer.h_static](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/BTObexServer/BTObexServer.h_static)
-	
-* HTTPServer:
-  
-  Simple client server application to send and receive broadcasted messages via HTTP protocol.
-	
-	[HTTPServer/HTTPServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/HTTPServer/HTTPServer.h)
-	
-	[HTTPClient/HTTPServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/HTTPServer/HTTPClient.h)
-	
-	How to run:
-	
-		1) start the server: HTTPServer/HTTPServer.h
-		
-		2) start the 1st client: HTTPServer/HTTPClient.h
-		
-		3) start the 2nd client, but first change the CLIENT_ID in the HTTPClient.h script
-	
-* CoAP (client/server):
-
-	Client server application that implements PUT, GET, OBSERVE requests via CoAP (Constrained Application Protocol).
-	The clients can create resources and perform PUT, GET or OBSERVE requests on the resources created.
-	
-	Once the dpdlCoAPServer.h is started, the observe client (dpdlCoAPClient.h) can be initialized in a 2nd console,
-	and a second client (dpdlCoAPClient2.h) that performs PUT requests can be initialized in a 3rd console by starting
-	it in a dedicated thread via the script 'startClientThread.h'
-	
-	[CoAP/dpdlCoAPServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/dpdlCoAPServer.h)
-	
-	[CoAP/dpdlCoAPClient.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/dpdlCoAPClient.h)
-	
-	[CoAP/dpdlCoAPClient2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/dpdlCoAPClient2.h)
-	
-	[CoAP/startClientThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/startClientThread.h)
-	
-	How to run:
-	
-		1) start the server: CoAP/dpdlCoAPServer.h
-		
-		2) start the 1st client: CoAP/dpdlCoAPClient.h
-		
-		3) start the 2nd client in a thread instance: CoAP/startClientThread.h
-	
-
-[Index](#index)
-
-
 ### Dpdl embedded code sections
 
 * Example with embedded C code execution within Dpdl (interpreted Mode 1)
@@ -651,6 +512,11 @@ this is my sample json:
 
 	[janet/dpdlJanetExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/janet/dpdlJanetExample.h)
 	
+* Example dpdl code that compiles an 'embedded code section' in C into a native shared library, in this case saved in a given folder. A subsequent 'embedded code section' in C code makes use of the newly generated native shared library functions
+
+	[C/dpdlLibCTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlLibCTest.h)
+	
+
 
 [Index](#index)
 
@@ -671,6 +537,145 @@ this is my sample json:
 
 
 [Index](#index)
+
+
+### Graphical User Interface (UI)
+
+* Example Dpdl app that uses the JavaFX java library to create a sample UI (Graphical User Interface) application via a FXML definition and used CSS to create the layout.
+
+	[ui/dpdlGUIJavaFX_css.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX_css.h)
+	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX_and_css.png" width="75%" height="75%">
+
+* Example dpdl code that uses the JavaFX java library to render UI (Graphical User Interface) elements via a FXML definition.
+	
+	[ui/dpdlGUIJavaFX.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX.h)
+		
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_Example_with_JavaFX.png" width="35%" height="35%">
+	
+* Drawing functions on a UI Canvas on J2ME devices
+	
+	[J2MEDrawDemo.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/J2MEDrawDemo.h)
+
+* Creates a graphical user interface with some UI components (Button, Panel, Checkbox, List, draw Panel) using Java Swing classes. The list is updated, the button command is intercepted with the 'actionPerformed' function, the checkbox status is printed to stdout, and a text and rectangle is drawn at random location on the draw panel using a thread.
+	
+	[ui/dpdlGUIExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIExample.h)
+	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_UI_dpdlGUIExample.png" width="30%" height="30%">
+
+
+[Index](#index)
+
+### Small Apps
+
+* Example dpdl code that downloads json news data from a given URL and decodes it to a struct
+
+	[app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
+
+
+* Implementation of SHA-1 hash algorithm entirely written in Dpdl
+
+	[app/dpdlSHA-1/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/dpdlSHA-1/dpdlSHA-1impl.h)
+
+
+* Example Dpdl app that uses the JavaFX library to render and animate a 3D model of a chemical molecule (hydrogen)
+
+	[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
+	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="65%" height="65%">
+	
+	[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
+
+* Example dpdl code that executes an embedded 'clojure' code that creates a simple UI to convert values from Celsius to Fahrenheit
+
+	[clj/dpdlCljCelsiusConverterGUI.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/clj/dpdlCljCelsiusConverterGUI.h)
+
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_example_Celsius_Fahrenheit_UI.png" width="33%" height="33%">
+	
+* Example dpdl code that executes an embedded 'Julia' script to plot data using the 'Plots' package, and to save the chart as PDF
+
+	[julia/dpdlJuliaPlot.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/julia/dpdlJuliaPlot.h)
+	
+	**here the exported PDF:**
+	
+	<img src="https://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="33%" height="33%">
+
+* Example Dpdl app that uses the JavaFX java library to visualize a website within a WebView component
+
+	[ui/dpdlGUIJavaFX_web.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ui/dpdlGUIJavaFX_web.h)
+
+
+* Performs a discovery of bluetooth devices and saves the device addresses discovered in a record store
+  
+	[bluetoothDiscoverySave.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bluetoothDiscoverySave.h)
+  		
+
+* Downloads a html website from a URL and saves the content in a local file
+
+	[downloadWebURL.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/downloadWebURL.h)
+	
+
+* Accepts connections from a bluetooth server application and intercepts commands
+
+	[DpdlConsoleBT_client.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DpdlConsoleBT_client.h)
+	
+	[DpdlConsoleBT_client.h_static](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/DpdlConsoleBT_client.h_static)
+
+
+* BTObexServer (client/server)
+
+  Sample application that implements sending of SMS via bluetooth to discovered devices. The messages to be sent are
+  read from a record store. An auxiliary script (ImportantMsgWriter.h) can be used to store messages to be delivered
+  in the record store
+  
+	[BTObexServer/BTObexServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/BTObexServer/BTObexServer.h)
+	
+	[BTObexServer/BTObexServer.h_static](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/BTObexServer/BTObexServer.h_static)
+	
+* HTTPServer:
+  
+  Simple client server application to send and receive broadcasted messages via HTTP protocol.
+	
+	[HTTPServer/HTTPServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/HTTPServer/HTTPServer.h)
+	
+	[HTTPClient/HTTPServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/HTTPServer/HTTPClient.h)
+	
+	How to run:
+	
+		1) start the server: HTTPServer/HTTPServer.h
+		
+		2) start the 1st client: HTTPServer/HTTPClient.h
+		
+		3) start the 2nd client, but first change the CLIENT_ID in the HTTPClient.h script
+	
+* CoAP (client/server):
+
+	Client server application that implements PUT, GET, OBSERVE requests via CoAP (Constrained Application Protocol).
+	The clients can create resources and perform PUT, GET or OBSERVE requests on the resources created.
+	
+	Once the dpdlCoAPServer.h is started, the observe client (dpdlCoAPClient.h) can be initialized in a 2nd console,
+	and a second client (dpdlCoAPClient2.h) that performs PUT requests can be initialized in a 3rd console by starting
+	it in a dedicated thread via the script 'startClientThread.h'
+	
+	[CoAP/dpdlCoAPServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/dpdlCoAPServer.h)
+	
+	[CoAP/dpdlCoAPClient.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/dpdlCoAPClient.h)
+	
+	[CoAP/dpdlCoAPClient2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/dpdlCoAPClient2.h)
+	
+	[CoAP/startClientThread.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/startClientThread.h)
+	
+	How to run:
+	
+		1) start the server: CoAP/dpdlCoAPServer.h
+		
+		2) start the 1st client: CoAP/dpdlCoAPClient.h
+		
+		3) start the 2nd client in a thread instance: CoAP/startClientThread.h
+	
+
+[Index](#index)
+
 
 
 ### Benchmark Tests
