@@ -75,8 +75,8 @@ The extended version of *Dpdl language plug-ins* are usually included in this ki
 
 In this example there are 3 *Dpdl language plug-ins* included, for:
 - **C** (*interpreted & compiled*)
-- **MicroPython**
-- **Micro JavaScript** (*ES5*)
+- **Python**
+- **JavaScript** (*ES2023*)
 
 | Platform |Dpdl core Full |C (interpreted/compiled)| Python | JavaScript (*ES2023*) | **TOTAL size** |
 | ---  | --- | --- | --- | --- | --- |
