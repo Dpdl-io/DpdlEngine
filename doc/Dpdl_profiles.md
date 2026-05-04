@@ -24,7 +24,7 @@ A typical setup of Dpdl might be the '*DpdlEngine*' plus some of the available *
 
 Also the type and number of *Dpdl language plug-ins* included can vary.
 
-### Profiles available
+### Profiles available:
 
 - **Compact**
 - **Full**
