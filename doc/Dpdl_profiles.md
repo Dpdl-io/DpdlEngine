@@ -14,13 +14,13 @@ developed by
 
 ## 'DpdlEngine' Profiles
 
-The *DpdlEngine* can be run in different configurations (Profiles) and Setups, depending on which is the target platform and which is the usage domain. This affects also the overall size (footprint) of the application.
+The *DpdlEngine* can be run in different configurations (**Profiles**) and Setups, depending on which is the target platform and which is the usage domain. This affects also the overall size (footprint) of the application.
 
-The *DpdlEngine* setup may also include some *Dpdl language plug-ins* to enable to execute '**embedded code sections**' in other programming languages.
+The *DpdlEngine* setup may also include some *Dpdl language plug-ins* to enable to execute '**embedded code sections**' for example in other programming languages.
 
 *Dpdl language plug-ins* are an **optional** component, they can be included or excluded, even on-the-fly, via a simple configuration.
 
-A typical setup of Dpdl might be the 'DpdlEngine' plus some of the available *Dpdl language plug-ins* to execute 'embedded code sections' like for example in: *C, Java, Python and JavaScript* etc..
+A typical setup of Dpdl might be the '*DpdlEngine*' plus some of the available *Dpdl language plug-ins* to execute '*embedded code sections*' like for example in: **C**, **Java**, **Python** and **JavaScript*** etc..
 
 Also the type and number of *Dpdl language plug-ins* included can vary.
 
@@ -29,24 +29,24 @@ Also the type and number of *Dpdl language plug-ins* included can vary.
 - **Compact**
 - **Full**
 
-#### Compact
+### Compact
 
 This profile is targeted specifically for <ins>small</ins> *Embedded Systems*.
 
 It contains a subset of built-in dpdl functions and modules.
 
-The functionalities for creation of DpdlPackets is not included here.
+The functionalities for <ins>creation of DpdlPackets</ins> are not included here.
 
-Also the *Dpdl language plug-ins* eventually included in this type of setup are specifically targeted for small *Embedded Systems*.
+Also the *Dpdl language plug-ins* eventually included in this type of setup are <ins>specifically targeted for small *Embedded Systems*</ins>.
 
-**Total size** of the '*DpdlEngine*' for this profile is: **`80 Kb`** or even less
+**Total size** of the '*DpdlEngine*' for this profile is: <ins>**`80 Kb`** or even less</ins>
 
 
-##### Example setup of DpdlEngine 'Compact' with included lightweight version of *Dpdl language plug-ins*
+#### Example setup of DpdlEngine 'Compact' with included lightweight version of *Dpdl language plug-ins*
 
-The *Dpdl language plug-ins* included in this type of setup are also specifically targeted for small *Embedded Systems*. 
+The *Dpdl language plug-ins* included in this type of setup are also <ins>specifically targeted for small *Embedded Systems*</ins>. 
 
-There are 3 *Dpdl language plug-ins* included here in this example, for:
+In this example there are 3 *Dpdl language plug-ins* included, for:
 - **C** (*interpreted & compiled*)
 - **MicroPython**
 - **Micro JavaScript** (*ES5*)
@@ -60,7 +60,7 @@ There are 3 *Dpdl language plug-ins* included here in this example, for:
 Note: also <ins>other Dpdl language plug-ins might be added</ins> if needed
 
 
-#### Full
+### Full
 
 This profile is targeted to medium size *Embedded Systems*, and everything above (desktop, server, etc..)
 
@@ -68,12 +68,12 @@ It contains the full set of built-in dpdl functions and modules. It includes als
 
 The extended version of *Dpdl language plug-ins* are usually included in this kind of profile. 
 
-**Total size** of the '*DpdlEngine*' for this profile is: **`372 Kb`**
+**Total size** of the '*DpdlEngine*' for this profile is: <ins>**`372 Kb`**</ins>
 
 
-##### Example setup of DpdlEngine 'Full' with included extended version of *Dpdl language plug-ins*
+#### Example setup of DpdlEngine 'Full' with included extended version of *Dpdl language plug-ins*
 
-There are 3 *Dpdl language plug-ins* included here in this example, for:
+In this example there are 3 *Dpdl language plug-ins* included, for:
 - **C** (*interpreted & compiled*)
 - **MicroPython**
 - **Micro JavaScript** (*ES5*)
