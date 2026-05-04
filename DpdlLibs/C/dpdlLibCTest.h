@@ -52,6 +52,7 @@ dpdl_stack_push("dpdlstack:mycode")
 	#include <stdio.h>
 	#include <time.h>
 	#include "dpdl.h"
+	#include "myalgorithm.h"
 
 	extern void dpdl_stack_buf_put(char *buf);
 
@@ -65,6 +66,8 @@ dpdl_stack_push("dpdlstack:mycode")
 		int i;
 		for(i = i; i < 5; i++){
 			printf("iter %d \n", i);
+			my_alg_calc1();
+			my_alg_calc2();
 		}
 
 		time(&end);

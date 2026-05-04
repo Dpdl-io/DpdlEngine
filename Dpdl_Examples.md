@@ -277,6 +277,13 @@ endwhile
 	
 ### Networking
 
+* dpdl code that implements a client/server using the built-in CoAP (Constrained Application Protocol) protocol
+
+	[CoAP/dpdlCoAPServer.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/dpdlCoAPServer.h)
+	
+	[CoAP/dpdlCoAPClient.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/CoAP/dpdlCoAPClient.h)
+
+	
 * dpdl code that implements a simple client and server communication using the ZeroMQ library, with clients implemented using dpdl *embedded code sections* in java and C 
 	
 	server:
@@ -756,9 +763,8 @@ The script path per default configuration need to be relative to the './DpdlLibs
 ### 1) At startup with the '-load' command
 
 ```
-java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED -jar DpdlEngine_V1.0_release.jar -load test/testArray.h
+java -jar DpdlEngine_V1.0_release.jar -load test/testArray.h
 ```
-Note: On newer versions of java (from Oracle), in order to access specific java 'modules' within Dpdl, you may need to enable them with the option '--add-opens'
 
 ### 2) **`DpdlClient`** console application
 
