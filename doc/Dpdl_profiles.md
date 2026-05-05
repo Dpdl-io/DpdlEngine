@@ -35,7 +35,7 @@ This profile is targeted specifically for <ins>small</ins> *Embedded Systems*.
 
 It contains a subset of built-in dpdl functions and modules.
 
-The functionalities for <ins>creation of DpdlPackets</ins> are not included here.
+The functionalities to <ins>create</ins> DpdlPackets are not included here.
 
 Also the *Dpdl language plug-ins* eventually included in this type of setup are <ins>specifically targeted for small *Embedded Systems*</ins>.
 
@@ -64,7 +64,7 @@ Note: also <ins>other Dpdl language plug-ins might be added</ins> if needed
 
 This profile is targeted to medium size *Embedded Systems*, and everything above (desktop, server, etc..)
 
-It contains the full set of built-in dpdl functions and modules. It includes also the full functionalities required to create, handle and query '**DpdlPacket**'
+It contains the full set of built-in dpdl functions and modules. It includes also the full functionalities to <ins>create</ins>, <ins>handle</ins> and <ins>query</ins> '**DpdlPackets**'
 
 The extended version of *Dpdl language plug-ins* are usually included in this kind of profile. 
 
