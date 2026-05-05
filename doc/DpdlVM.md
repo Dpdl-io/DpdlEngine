@@ -40,7 +40,7 @@ The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for execu
 When executing C code in *interpreted* mode (**Mode 1**), <ins>all libraries and include files listed here in</ins> [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md) are already included in the DpdlVM executable.
 
 
-**Example:** dpdl code with an 'embedded code section' in C (compiled Mode 2)
+**Example:** dpdl code with an 'embedded code section' in C (*compiled* **Mode 2**)
 
 ```python
 
