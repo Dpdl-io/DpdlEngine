@@ -6,7 +6,7 @@
 
 				www.dpdl.io
 
-developed by
+by
 **SEE Solutions**
 &copy;	
 
@@ -104,16 +104,23 @@ The following example shows how code can be generated from a natural language de
 println("Dpdl example with generative AI code...")
 
 string numbers_param = "1 43 63 634 64 21 3 6 346 34 1000 23 55"
-dpdl_stack_push("dpdlbuf_result", numbers_param)
 
->>ai
+dpdl_stack_push(numbers_param)
+
+>>ai(dpdlbuf_result)
 	>>clj
 	Write a functions with clojure programming language named 'dpdl_main', with namespace 'dpdl', accepts as parameter a java array
 	of objects, take the first string containing numbers, sorts the numbers and returns a string with the numbers sorted.
 <<
 
 int exit_code = dpdl_exit_code()
+
+raise(exit_code, "Error in generating code")
+
 println("embedded ai generated exit code: " + exit_code)
+
+string my_result = dpdl_stack_buf_get("dpdlbuf_result")
+
 ```
 
 #### Example result:
@@ -124,9 +131,10 @@ When executed, the Dpdl code above generates the following Dpdl source file.
 println("Dpdl example with generative AI code...")
 
 string numbers_param = "1 43 63 634 64 21 3 6 346 34 1000 23 55"
-dpdl_stack_push("dpdlbuf_result", numbers_param)
 
->>clj
+dpdl_stack_push(numbers_param)
+
+>>clj(dpdlbuf_result)
 (ns dpdl)
 
 (defn dpdl_main [^objects objs]
@@ -138,8 +146,13 @@ dpdl_stack_push("dpdlbuf_result", numbers_param)
          (clojure.string/join " "))))
 <<
 
+raise(exit_code, "Error in generating code")
+
 int exit_code = dpdl_exit_code()
+
 println("embedded ai generated exit code: " + exit_code)
+
+string my_result = dpdl_stack_buf_get("dpdlbuf_result")
 ```
 
 In this case the generagted code was ready to execute right away, with no adaptions required, giving No errors:

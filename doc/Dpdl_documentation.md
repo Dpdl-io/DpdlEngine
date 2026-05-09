@@ -160,9 +160,7 @@ byte arr_b_ini[] = {1B, 2B, 0x03B}
 char arr_c_ini[] = {'a', 'b', 'c'}
 var arr_v_ini[] = {"can contain all types", 23.0d, new(HashMap")}
 
-# dynamic arrays (can grow and shrink in size)
-
-my_arr_dyn[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
+my_arr_dynamic[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mydata"]
 ```
 
 #### Strings
@@ -409,6 +407,8 @@ The return type of a given function can be specified as follows, where '$type' i
 
 ```go
 func myname() $type
+
+end
 ```
 
 Specifying the return type of a function **<ins>is optional</ins>**, it enforces a further check on the execution and improves code readability

@@ -7,7 +7,7 @@
 				www.dpdl.io
 				
 
-developed by
+by
 **SEE Solutions**
 &copy;
 		
