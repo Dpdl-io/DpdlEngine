@@ -39,6 +39,7 @@ At current state, the 'DpdlEngine' release has the following <ins>**Dpdl languag
 * **`MicroPython`** (Python for embedded systems)
 * **`Julia`**
 * **`JavaScript`**
+* **`Micro JavaScript`**
 * **`OCaml`**
 * **`Lua`**
 * **`Ruby`**
