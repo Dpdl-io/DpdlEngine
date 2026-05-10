@@ -27,7 +27,7 @@ The Dpdl native interface can be used in two different Modes:
 
 The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*', the Legacy Native mode is currently the default mode to ensure a high degree of backward compatibility.
 
-Both Modes, the **legacy** as well as **ffm** mode, from the dpdl code point of view, have the exact same usage and dpdl API.
+Both Modes, the **legacy** as well as **ffm** mode, from the dpdl code point of view have the exact same usage and dpdl API. 
 
 
 ### Dpdl 'native' import library

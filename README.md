@@ -14,7 +14,7 @@ by **SEE Solutions** &copy;
 
 ## Dpdl - rapid development Programming Language and constrained Device platform
 
-**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in Database and Agents technology.
+**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology.
 
 Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language** code</ins> (**dpdl-lang**), as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
 
@@ -26,9 +26,9 @@ The Dpdl language constructs and syntax are simple and intuitive, yet powerful, 
 
 In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of **multiple programming languages** like <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica and others will follow...</em>, <ins>**directly embedded within dpdl code**</ins>.
 
-Everything comes already included along with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
+Everything comes already included out of the box along with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
-The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact <ins>kilobyte range</ins> virtual machine.
+The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact code <ins>kilobyte</ins> range virtual machine.
 
 ### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
@@ -50,7 +50,7 @@ Dpdl introduces the concept of '*embedded code sections*' that enables different
 
 A dedicated *Dpdl language plug-in* for **AI generative code** '*DpdlAINerd*' (**DAN**), enables to <ins>**automatically generate**</ins> programming language code and content or data by means of natural language descriptions inside dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
 
-Dpdl allows to create custom data containers with built-in database technology referred to as a '**DpdlPacket**'. It provides a convenient way to <ins>**package</ins>, <ins>handle</ins> and <ins>query</ins> data very <ins>efficiently on memory scarce devices**</ins>.
+Dpdl allows to create custom data containers with built-in database technology defined as '**DpdlPacket**'. It provides a convenient way to <ins>**package</ins>, <ins>handle</ins> and <ins>query</ins> data very <ins>efficiently on memory scarce devices**</ins>.
 
 The included *Dpdl language plug-in* '**DpdlAgent**' provides an agent middle-ware based on open source for developing distributed and mobile multi-agent systems. It fully adheres to IEEE FIPA (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
@@ -224,18 +224,18 @@ println("finished!")
 * **On the fly conversion/compilation of dpdl types 'class', 'union' and 'struct' into native JVM bytecode classes**
 * **Includes support for common IoT protocol stacks such as Bluetooth(tm)** (JSR-82) and
 **CoAP (Constrained Application Protocol)** (IETF standard RFC 7252)
-* Includes a full stack for building **Distributed Mobile Agents** (FIPA compliant)
+* **Includes a full stack for building Distributed Mobile Agents** (FIPA compliant)
 * **Packing data in a 'DpdlPacket' is a convenient way to optimize and speedup access to relatively "big" data sets in constrained devices**.
 The speedup is x 25 times faster compared to a standard record store access
 * **Virtual record store filesystem**
 * **Double precision floating point emulation layer**
-* **XML** with XPath expression parser
-* **JSON** parsing/decoding and encoding
+* **XML with XPath expression parser**
+* **JSON parsing, decoding and encoding**
 * **Easy integration of custom libraries**
-* **Small footprint**, Only **`372 Kb`** for *DpdlEngine* (with all features). It can be stripped down to <ins>**`80 Kb`** or less for compact setups</ins>
-* **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), without dependencies
-* Allows to **automatically generate and embed generative AI code within dpdl** by using the included 'DpdlAINerd' (DAN) *Dpdl language plug-in*
-* Access **GPU compute capabilities by using the 'OpenCL' and 'Wgsl' (WebGPU shading language)** *Dpdl language plug-ins*
+* **Compact footprint**, Only **`372 Kb`** for *DpdlEngine* (with all features). It can be stripped down to <ins>**`80 Kb`** or less for compact setups</ins>
+* **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), for systems where no JVM (OpenJDK, Oracle, etc..) is available
+* **Automatic generation and embedding of AI generative code within dpdl** via the included *Dpdl language plug-in* 'DpdlAINerd' (DAN) 
+* **Access GPU compute capabilities by using the 'OpenCL' and 'Wgsl' (WebGPU shading language)** *Dpdl language plug-ins*
 * **Dpdl language plug-ins** available on **`DpdlHub`** (www.dpdlhub.com will be soon in development)
 
 
@@ -857,6 +857,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`MicroPython`** (Python for embedded systems)
 * **`Julia`**
 * **`JavaScript`**
+* **`Micro JavaScript`** (*ES5*)
 * **`OCaml`**
 * **`Lua`**
 * **`Ruby`**

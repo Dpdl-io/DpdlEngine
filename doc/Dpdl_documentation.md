@@ -84,7 +84,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 </td><td width=33% valign=top>
 
 * [Asynchronous Task execution](#asynchronous-task-execution)
-* [Dpdl Objects and access to JRE classes](#dpdlobjects-and-access-to-jre-classes)
+* [Dpdl Objects and access to JRE classes](#dpdl-objects-and-access-to-jre-classes)
 * [Multi-line structured text, data and code resources](#multi-line-structured-text-data-and-code-resources)
 * [`Embedded code sections: embedding other programming languages` directly within Dpdl code](#embedded-code-sections-embedding-other-programming-languages-directly-within-dpdl-code)
 
@@ -92,7 +92,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 </td><td valign=top>
 
 * [`Import` and `Include` statements](#import-and-include-statements)
-* [Load Dpdl code as a DpdlObject](#load-dpdl-code-as-a-dpdlobject)
+* [Load Dpdl code as a Dpdl Object](#load-dpdl-code-as-a-dpdl-object)
 * [Dpdl API](#dpdl-api)
 * [Dpdl C API](#dpdl-c-api)
 

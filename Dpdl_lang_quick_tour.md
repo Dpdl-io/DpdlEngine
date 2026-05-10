@@ -162,6 +162,7 @@ Dpdl is intrinsically object oriented
 
 class Vehicle {
 	string type
+	object properties = new("HashMap")
 	
 	func Vehicle(string type_)
 		this.type = type_
@@ -173,6 +174,14 @@ class Vehicle {
 	
 	func setType(string type_)
 		type = type_
+	end
+	
+	func getBrand()
+		return "unknown"
+	end
+	
+	func setProp(object prop)
+		properties = prop
 	end
 }
 
