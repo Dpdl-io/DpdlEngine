@@ -145,7 +145,7 @@ mapLib(string lib, object class) return object lib
 
 ```python
 compileUnitJava(string class_name) return object java_class
-compileUnitJava(string class_name) return object java_class
+compileUnitJava(string class_name, int version) return object java_class
 ```
 
 
