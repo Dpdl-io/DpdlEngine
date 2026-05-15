@@ -45,7 +45,7 @@ Dpdl introduces the concept of '*embedded code sections*' that enables different
 <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages. For example also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins> directly inside Dpdl.
 
 <p align="left">
-	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png" width="80%">
+	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
 </p>
 
 A dedicated *Dpdl language plug-in* for **AI generative code** '*DpdlAINerd*' (**DAN**), enables to <ins>**automatically generate**</ins> programming language code and content or data by means of natural language descriptions inside dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
