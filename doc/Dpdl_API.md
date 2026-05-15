@@ -92,6 +92,7 @@ import('io')
 import('http')
 import('json')
 import('native')
+import ('compiler')
 
 import('mylib.h')
 ```
@@ -139,6 +140,14 @@ https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/json/dpdlDecodeJSON.h
 loadLib(string lib) return object lib
 mapLib(string lib, object class) return object lib
 ```
+
+**`compiler`**
+
+```python
+compileUnitJava(string class_name) return object java_class
+compileUnitJava(string class_name) return object java_class
+```
+
 
 Adding custom libraries is straight forward, it can be done by simply adding the libraries to the paths specified in the configuration file 'DpdlEngine.ini'
 

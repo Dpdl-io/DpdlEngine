@@ -13,9 +13,9 @@ by
 
 
 
-'Java' code can be embedded and executed within Dpdl by using the keyword **`>>java`**
+'Java' code can be embedded and executed within dpdl code by using the keyword **`>>java`**
 
-**example:**
+**Example:**
 
 ```python
 println("testing embedded java code block...")
@@ -29,11 +29,11 @@ for(c < 300000)
 	c=c+1
 endfor
 
-dpdl_stack_push("dpdlbuf_test", myarr, myi)
+dpdl_stack_push(myarr, myi)
 
 setStartTime()
 
->>java
+>>java(dpdlbuf_test)
 
 	System.out.println("Parameters: ");
 	System.out.println("	arg0: " + arg0);
@@ -135,15 +135,17 @@ The *Dpdl language plug-in* by default uses the *Janino* library. It requires ja
 
 #### Compatibility matrix
 
-|Java version |JRE version |Release Date |Status |
-| --- | --- | --- | --- |
-|7 |jdk1.7.0_21 (32 bit) |2011-07-28 |passed |
-|8 |adopt_openjdk-8.0.292.10-hotspot |? 	|passed |
-|11 |adopt_openjdk-11.0.11.9-hotspot |? |passed |
-|17 	|adopt_openjdk-17.0.1+12 |? 	|passed |
+The base JVM version is 1.7, but it includes also supports for features available in later Java releases (see Features below), even when running on the base version 1.7
+
+|Java version |JRE version |Status |
+| --- | --- | --- |
+|7 |jdk1.7.0_21 (32 bit)|passed |
+|8 |adopt_openjdk-8.0.292.10-hotspot | passed |
+|11 |adopt_openjdk-11.0.11.9-hotspot |passed |
+|17 	|adopt_openjdk-17.0.1+12|passed |
 
 
-###
+## Features
 
 The embedded java code must return a value, either of type 'int', 'String' or any other 'Object'
 

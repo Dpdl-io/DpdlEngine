@@ -21,6 +21,7 @@ The 'DpdlEngine' is available as a stand-alone software package/library in two d
 - **DpdlEngine lite**
 - **DpdlEngine pro**
 
+The package 'DpdlEngine' can be requested packaged for any specific JVM implementation, from 1.4+ onwards up to to the latest Java version.
 
 ## 'DpdlEngine lite'
 
