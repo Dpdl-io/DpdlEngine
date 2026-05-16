@@ -86,6 +86,8 @@ Auxiliary API libraries that are available can be imported and used via the **`i
 The import libraries are implemented either as a java library that can be configured to be accessed via Dpdl in a easy and straight forward way,
 or can be implemented in dpdl (located in './DpdlLibs/libs/' folder).
 
+Adding and enabling further libraries is straight forward, it can be done by simply adding the libraries to the paths specified in the configuration file 'DpdlEngine.ini'
+
 
 ```python
 import('io')
@@ -141,19 +143,44 @@ loadLib(string lib) return object lib
 mapLib(string lib, object class) return object lib
 ```
 
+**example:**
+
+https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h
+
+
 **`compiler`**
+
+This dpdl lib allows to compile external java source files (compilation units) into java bytecode objects class directly as a dpdl object
 
 ```python
 compileUnitJava(string class_name) return object java_class
 compileUnitJava(string class_name, int version) return object java_class
+
 ```
-
-
-Adding custom libraries is straight forward, it can be done by simply adding the libraries to the paths specified in the configuration file 'DpdlEngine.ini'
 
 **example:**
 
-https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/native/dpdlTestNative.h
+In this example there are 2 distinct java classes, in java source form: a *class* **`A`** that **extends** *class* **`B`**
+
+The two classes reside within two different packages, located within a given configurable folder (i.e './mypkga/A.jav' and './mypkgb/B.java'). see java files here: [./Test/MyCode_dir](https://github.com/Dpdl-io/DpdlEngine/tree/main/Test)
+
+The functions provided by the *compiler* lib allows to compile and load a given class as a dpdl object and call it's methods and access it's fields.
+
+```python
+println("testing the compiler lib...")
+
+object cls = compiler.compileUnitJava("mypkga.A")
+
+println("cls: " + cls + " is of type: " + typeof(cls))
+
+int val = cls.testIt(888, "MEGA")
+
+println("val: " + val)
+
+println("finished")
+```
+
+
 
 ### Native C/C++ shared Libraries:
 
@@ -161,7 +188,7 @@ Dpdl allows to access natively loaded C/C++ libraries (libc, msvcrt, etc..) on d
 
 To load and access a native library, the dpdl 'native' library module needs to be imported.
 
-Example:
+**Example:**
 
 ```python
 import('native')
@@ -175,13 +202,15 @@ For more details visit the doc:
 
 [Dpdl_native_Interface.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
 
+
 ### Dpdl embedded C library
 
 [Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
-### Dpdl API functions
 
-The following API function are implemented directly in the DpdlEngine core:
+### Dpdl built-in API functions
+
+The following API function are implemented directly in the 'DpdlEngine core':
 
 ```python
 include(string inc_path) return int

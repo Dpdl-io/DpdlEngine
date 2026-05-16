@@ -13,7 +13,7 @@ by
 
 
 
-'Java' code can be embedded and executed within dpdl code by using the keyword **`>>java`**
+Java code can be embedded and executed within dpdl code by using the keyword **`>>java`**
 
 **Example:**
 
@@ -73,7 +73,7 @@ println("result buffer: " + ret_buf)
 
 ### Calling 'embedded code section' java methods
 
-For '*embedded code section*s' in Java, it's possible to to call the contained java methods methods from dpdl by getting the related object from the stack:
+For '*embedded code section*s' in Java, it's possible to to call the contained java methods methods from dpdl by getting the related object from the dpdl stack:
 
 ```python
 println("dpdl example with an 'embedded code section' in java...")
@@ -130,12 +130,12 @@ println("finished")
 
 ### Requirements
 
-The *Dpdl language plug-in* by default uses the *Janino* library. It requires java 1.7+ or later to run.
+The *Dpdl language plug-in* by default uses the *janino* library. It requires java 7+ or later to run.
 
 
 #### Compatibility matrix
 
-The base JVM version is 1.7, but it includes also supports for features available in later Java releases (see Features below), even when running on the base version 1.7
+The base JVM version is Java 7, but it includes also supports for features available in later Java releases (see Features below), even when running the 'DpdlEngine' on a JRE  with base version Java 7
 
 |Java version |JRE version |Status |
 | --- | --- | --- |
