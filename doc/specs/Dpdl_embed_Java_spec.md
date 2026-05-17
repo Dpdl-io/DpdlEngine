@@ -132,6 +132,7 @@ println("finished")
 
 The *Dpdl language plug-in* by default uses the *janino* library. It requires java 7+ or later to run.
 
+An configuration setting allows to use also the JDK specific java compiler (see options below)
 
 #### Compatibility matrix
 
@@ -287,3 +288,9 @@ All the language features listed below are supported, even in case *DpdlEngine* 
 
 - Text blocks
 
+
+## Options
+
+* **`dpdlplugin:-usejdk`**
+
+By setting this option, the JDK java compiler available on the JVM is used instead

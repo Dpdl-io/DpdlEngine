@@ -257,6 +257,9 @@ endwhile
 
 	[embed_dpdl/test_dpdl_code_exec2.c](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/embed_dpdl/test_dpdl_code_exec2.c)
 
+* Example dpdl code that make use of the lib 'compiler' to compile an external java source unit and access it as a dpdl object
+
+	[compiler/dpdlCompilerTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/compiler/dpdlCompilerTest.h)
 
 [Index](#index)
 

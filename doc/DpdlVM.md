@@ -40,9 +40,56 @@ The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for execu
 When executing C code in *interpreted* mode (**Mode 1**), <ins>all libraries and include files listed here in</ins> [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md) are already included in the DpdlVM executable.
 
 
-**Example:** dpdl code with an 'embedded code section' in C (*compiled* **Mode 2**)
+**Example:** simple example dpdl code with an 'embedded code section' in C (*compiled* **Mode 2**), that runs on the DpdlVM
 
 ```python
+
+class A {
+	int id
+	string desc
+
+	func A(int id_, string desc_)
+		id = id_
+		desc = desc_
+	end
+
+	func getId() int
+		return id
+	end
+
+	func getDesc() string
+		return desc
+	end
+}
+
+class B : A {
+
+	object data = null
+
+	func B(int id_, string desc_, object data_)
+		super(id_, desc_)
+		data = data_
+	end
+
+	func getData()
+		return data
+	end
+}
+
+
+println("dpdl example..")
+
+object map = new("HashMap")
+
+map.put(1, "my data 1")
+map.put(2, "my data 2")
+map.put(3, "my data 3")
+
+class B ab(23, "a sample test description", map)
+
+println("ab: " + ab)
+
+println("id: " + ab.getId() + " desc: " + ab.getDesc() + " data: " + ab.getData())
 
 int i
 for(i < 10000)
@@ -65,7 +112,7 @@ dpdl_stack_push("dpdl:compile")
 		time_t end;
 	   	time(&start);
 	   	int c;
-		for(c = 0; c < 100000; c++){
+		for(c = 0; c < 1000000; c++){
 			printf("iter %d \n", c);
 		}
 
@@ -81,6 +128,7 @@ dpdl_stack_push("dpdl:compile")
 int exit_code = dpdl_exit_code()
 
 println("embedded C exit code: " + exit_code)
+
 ```
 
 

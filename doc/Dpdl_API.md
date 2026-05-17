@@ -162,7 +162,7 @@ compileUnitJava(string class_name, int version) return object java_class
 
 In this example there are 2 distinct java classes, in java source form: a *class* **`A`** that **extends** *class* **`B`**
 
-The two classes reside within two different packages, located within a given configurable folder (i.e './mypkga/A.jav' and './mypkgb/B.java'). see java files here: [./Test/MyCode_dir](https://github.com/Dpdl-io/DpdlEngine/tree/main/Test)
+The two classes reside within two different packages, located within a given configurable folder (i.e './mypkga/A.jav' and './mypkgb/B.java'). see java files here: [./Test/MyCode_dir](https://github.com/Dpdl-io/DpdlEngine/tree/main/Test/MyCode_dir)
 
 The functions provided by the *compiler* lib allows to compile and load a given class as a dpdl object and call it's methods and access it's fields.
 

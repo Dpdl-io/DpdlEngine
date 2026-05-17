@@ -21,13 +21,13 @@ This features makes the dpdl programming language complete also for interacting 
 
 The Dpdl native interface can be used in two different Modes:
 
-* via Legacy Native support (when running on JVM Java **`1.4+`**)
+* via Legacy Native support (*JNI*)--> when running on older JVM Java **`1.4+`**
 
-* via the Newer Java FFM (Foreign Function Memory) Native access introduced in JVM Java **`17+`**
+* via the Newer Java FFM (*Foreign Function Memory*) Native --> when running on newer Java (preview since Java **`17+`**)
 
-The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*', the Legacy Native mode is currently the default mode to ensure a high degree of backward compatibility.
+The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*'. The Legacy Native mode is currently the default mode to ensure a high degree of backwards compatibility.
 
-Both Modes, the **legacy** as well as **ffm** mode, from the dpdl code point of view have the exact same usage and dpdl API. 
+Both Modes, the **legacy** as well as **ffm** mode, from the dpdl code point of view have the exact same usage and API. 
 
 
 ### Dpdl 'native' import library
