@@ -101,9 +101,82 @@ import('mylib.h')
 
 **`io`**
 
+
 ```python
+
+# READ OPERATIONS
+
 readStr(string file) return string data
+
+readText(object Path) return string text
+readText(string path_str) return string text
+
+readLines(object Path) return object List
+readLines(string path_str) return object List
+
+readBytes(object Path) return byte[] data
+readBytes(string path_str) return byte[] data
+
+# WRITE OPERATIONS
+
 writeStr(string file, string data) return bool status
+
+writeText(object Path path, string content)
+writeText(string path_str, string content)
+
+writeLines(object Path, object List lines)
+writeLines(string path_str, object List lines)
+
+writeBytes(object Path, byte[] data)
+writeBytes(string path_str, byte[] data)
+
+appendText(object Path, string content)
+appendText(string path_str, string content)
+
+# FILE & DIRECTORY OPERATIONS
+
+copy(object Path source, object Path dest)
+copy(string source_path_str string dest_path_str)
+
+move(object Path source, object Path dest)
+move(string source_path_str, string dest_path_str)
+
+delete(object Path)
+delete(string path_str)
+
+createDirectories(object Path)
+createDirectories(string path_str)
+
+exists(object Path) return bool stauts
+exists(string path_str) return bool stauts
+
+list(object Path) return object List files
+list(string path_str) return object List files
+
+findFiles(object Path, string pattern) return object List files
+findFilesRecursive(object Path, string pattern) return object List files
+
+readFirstLine(object Path) return string line
+readFirstLine(string path_str) return string line
+
+readLastLine(object Path) return string line
+readLastLine(string path_str) return string line
+
+getFileSize(object Path) return long file_size
+getFileSize(string path_str) return long file_size
+
+isDirectory(object Path) return bool status
+isDirectory(string path_str) return bool status
+
+isFile(object Path) return bool status
+isFile(string path_str) return bool status
+
+getExtension(Path path) return string ext
+getExtension(string path_str) return string ext
+
+getFileName(object Path) return string file_name
+getFileName(string path_str) return string file_name
+
 ```
 
 **`http`**
@@ -180,6 +253,11 @@ println("val: " + val)
 println("finished")
 ```
 
+### Adding New Dpdl import Libraries
+
+Adding new library implementations that can be imported into dpdl code is straight forward and can be done by means of a simple configuration and also programmatically.
+
+It is also possible to leverage the **AI generative code** capabilities of the 'DpdlAINerd' plug-in to automatically generate library code by providing the dedicated SKILL definition that is available.
 
 
 ### Native C/C++ shared Libraries:
