@@ -16,7 +16,7 @@ println("testing embedding lua....")
 
 string buffer_key = "dpdlbuf_result"
 
-dpdl_stack_push(buffer_key, "name", "Alexis", "surname", "Kunst")
+dpdl_stack_push(buffer_key, "name", "Adrian", "surname", "Kanvas")
 
 >>lua
 function doSomeAlg()

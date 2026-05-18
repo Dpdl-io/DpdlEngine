@@ -28,9 +28,9 @@ println("-----------------------------------------")
 println("performing simple POST request...")
 
 object post = http.post("https://httpbin.org/post")
-post.param("name", "Alexis")
-post.param("surname", "Kunst")
-post.param("email", "alexis.kunst@seesolutions.it")
+post.param("name", "Adrian")
+post.param("surname", "Kanvas")
+post.param("email", "adrian.kanvas@seesolutions.it")
 
 println("response: " + post.text())
 

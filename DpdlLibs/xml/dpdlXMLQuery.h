@@ -23,6 +23,7 @@ println("nr results: " + nr_results)
 println("getting last entry ...")
 
 string entry = DPDLAPI_getXPathResult(nr_results - 1)
+
 println("entry: " + entry)
 
 

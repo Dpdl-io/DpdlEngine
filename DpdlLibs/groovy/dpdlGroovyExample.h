@@ -38,10 +38,10 @@ def dpdl_main(Object[] args, Object var_map){
    def cOne = new Child();
    def cTwo = new Child();
 
-   p.fName ="Armin"
+   p.fName ="Armando"
    p.lName ="Costa"
 
-   cOne.propertyOne = "Alexis"
+   cOne.propertyOne = "Adrian"
    cOne.propertyTwo = "b"
 
    cTwo.propertyOne = "Billy"

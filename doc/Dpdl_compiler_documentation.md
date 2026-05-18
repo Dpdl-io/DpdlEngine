@@ -1,4 +1,4 @@
-# Dpdl compiler documentation
+# Dpdl
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl-io_blue.png" width="35%">
@@ -10,7 +10,7 @@ by
 **SEE Solutions**
 &copy; 
 
-## Dpdl
+## Dpdl compiler documentation
 
 Dpdl provides a mechanism to compile variables and code constructs in embedded code section templates at runtime.
 

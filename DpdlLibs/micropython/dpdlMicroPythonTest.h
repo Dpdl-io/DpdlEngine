@@ -21,7 +21,7 @@ try:
 except Exception as er:
 	print('caught exception', repr(er))
 
-address_book = {'Costa A.':'2604 Crosswind Drive','Alexis B.':'1301 Hillview Drive','Billy I.':'3236 Goldleaf Lane'}
+address_book = {'Costa A.':'2604 Crosswind Drive','Adrian K.':'1301 Hillview Drive','Billy I.':'3236 Goldleaf Lane'}
 
 print("'ACosta' address: " + address_book['Costa A.'])
 

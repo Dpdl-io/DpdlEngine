@@ -13,7 +13,7 @@
 println("testing embedding lua....")
 
 
-dpdl_stack_push("name", "Alexis", "surname", "Kunst")
+dpdl_stack_push("name", "Adrian", "surname", "Kanvas")
 
 >>lua
 function doSomeAlg()

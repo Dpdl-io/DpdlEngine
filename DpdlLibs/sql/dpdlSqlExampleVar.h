@@ -17,9 +17,9 @@ dpdl_stack_var_put("db_pass", "189923")
 
 dpdl_stack_var_put("id", "888")
 
-dpdl_stack_push("dpdlbuf_res")
 
->>sql
+>>sql(dpdlbuf_res)
+
 	SELECT id, name, surname, email from mytable where id={{id}}
 <<
 

@@ -22,7 +22,7 @@ More generally, the Dpdl language plug-in <ins>allows also to **generate any kin
 
 This enables to write code faster in the prototyping phase and allows also to generate data on the fly needed for example for development or testing.
 
-The 'DpdlAINerd' (**DAN**) Dpdl language plug-in can be embedded and executed within Dpdl via the keyword **`>>ai`**
+The '*DpdlAINerd*' (**DAN**) Dpdl language plug-in can be embedded and executed within Dpdl via the keyword **`>>ai`**
 
 
 ```python
@@ -45,7 +45,7 @@ find more examples here: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/t
 
 ### supported AI engines
 
-The 'DpdlAINerd' supports the following AI engine types:
+The '*DpdlAINerd*' supports the following AI engine types:
 
 - Local AI engine -> (provided along with *DpdlEngine*), Open source, provides access to many open AI models and AI backends
 - Dedicated AI services available via subscription at dpdl.ai
@@ -58,11 +58,11 @@ As part of the *DpdlEngine* setup there is the possibility to request a local AI
 
 With the provided deployment you can autonomously choose from more than 900 open AI models available, it supports a wide range of AI back-ends, and you can install the models locally with a simple click as needed. 
 
-The 'DpdlAINerd' plug-in in this case connects only to this local AI engine instance and <ins>all requests and inference run completely locally<ins>.
+The '*DpdlAINerd*' plug-in in this case connects only to this local AI engine instance and <ins>all requests and inference run completely locally<ins>.
 
 #### AI Services at dpdl.ai
 
-In this case the 'DpdlAINerd' plug-in connects via RESTful API to the cloud services at www.dpdl.ai
+In this case the '*DpdlAINerd*' plug-in connects via RESTful API to the cloud services at www.dpdl.ai
 
 The user can access also a dedicated UI for installing and managing the AI models to be used within dpdl.
 
@@ -79,12 +79,12 @@ More than 900 open AI models are available
 
 #### Public AI engines
 
-At current state the 'DpdlAINerd' Dpdl language plug-in supports the following third party AI engines:
+At current state the '*DpdlAINerd*' Dpdl language plug-in supports the following third party AI engines:
 
 - DeepSeek (deepseek)
 - OpenAI (openai)
 
-The AI engine used can be specified in the file 'DpdlPlugins.ini' under the section 'DpdlAINerd'
+The AI engine used can be specified in the file 'DpdlPlugins.ini' under the section '*DpdlAINerd*'
 
 ### Modes of execution:
 
@@ -247,7 +247,7 @@ As you see Dpdl allows a very flexible way to dynamically generate and execute c
 
 ### Options
 
-The following options can be passed to the 'DpdlAINerd' plug-in, via the dpdl stack.
+The following options can be passed to the '*DpdlAINerd*' plug-in, via the dpdl stack.
 
 * **`engine`** the AI engine to be used -> the naming is mapped in the 'DpdlPlugins.ini' configuration file where related parameters are defined (key, api url, default model etc.)
 
@@ -277,7 +277,7 @@ Skill definitions serve the purpose to add knowledge to the AI engine prior exec
 
 Custom SKILL definitions can be defined for various purposes, and simply placed into a sub-folder  (ex. './DpdlAI/skills/my_custom_skill/SKILL.md')
 
-When executing the 'DpdlAINerd' plug-in the skill can than be defined as follows:
+When executing the '*DpdlAINerd*' plug-in the skill can than be defined as follows:
 
 ```python
 
@@ -292,16 +292,19 @@ dpdl_stack_push("dpdlai:-skill my_custom_skill")
 
 #### Skills shipped as default along with 'DpdlEngine'
 
-- **`dpdllang`** -> defines all knowledge for AI to generate valid **dpdl** code
-- **`dpdlapi`** -> extensive dpdl API knowledge for AI
+- **`dpdllang`** -> knowledge for generating valid **dpdl** code that can be executed
+- **`dpdlapi`** -> knowledge about Dpdl APIs and it's usage
+- **`dpdllibgen`** -> knowledge for generating Dpdl import libraries
 
-- **`dpdlplugin-js`** -> extensive dpdl API knowledge for AI
+- **`dpdlplugin-js`** -> knowledge about the usage of the 'Dpdl language plug-in' for JavaScript
 
 
 
-### How to execute
+### How to
 
 #### Generate a new file that contains generated code
+
+This applies whenever there is the need to generate a new file containing the generated '*embedded code sections*'.
 
 The code generation function can be activated by providing the '@gen' parameter to the code execution command.
 
@@ -316,7 +319,7 @@ java -jar DpdlEngine_V1.0_release.jar -load ai/dpdlAITest.h @gen
 
 ### Current status
 
-DpdlAINerd is in active development with huge improvements and features foreseen in near future. 
+The *Dpdl language plug-in* **DpdlAINerd** is in active development with huge improvements and features foreseen in near future. 
 
 Stand-by for the coming innovation we're bringing to Dpdl with generative code.
 

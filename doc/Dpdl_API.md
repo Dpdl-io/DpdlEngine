@@ -19,13 +19,24 @@ This is the Dpdl API documentation for DpdlEngine V1.1
 
 The Dpdl API's are available as:
 
-- Native JRE and Java API's
+- Java Platform and Java APIs
 - Dpdl import Libraries
-- Native C/C++ shared Libraries
-- Dpdl API functions
+- Native shared Libraries
 - Dpdl embedded C library
+- Dpdl built-in functions API
 
-### Native JRE and Java APIs
+
+## Index
+
+* [Java Platform and Java APIs](#java-platform-and-java-apis)
+* [Dpdl import Libraries](#dpdl-import-libraries)
+* [Native shared Libraries](#native-shared-libraries)
+* [Dpdl embedded C library](#dpdl-embedded-c-library)
+* [Dpdl built-in functions API](#dpdl-built-in-functions-api)
+
+
+
+### Java Platform and Java APIs
 
 Dpdl allows to load and access Java and JVM compatible classes and methods (JRE and external java libraries) via dedicated operators and functions (**`new(..)`** and **`getObj(..)`**).
 
@@ -79,6 +90,9 @@ object d = myobj.getMyData()
 
 ```
 
+[Index](#index)
+
+
 ### Dpdl import Libraries
 
 Auxiliary API libraries that are available can be imported and used via the **`import(..)`** statement.
@@ -94,7 +108,7 @@ import('io')
 import('http')
 import('json')
 import('native')
-import ('compiler')
+import('compiler')
 
 import('mylib.h')
 ```
@@ -255,12 +269,17 @@ println("finished")
 
 ### Adding New Dpdl import Libraries
 
-Adding new library implementations that can be imported into dpdl code is straight forward and can be done by means of a simple configuration and also programmatically.
+Adding new dpdl library implementations that can be imported into dpdl code is straight forward.
 
-It is also possible to leverage the **AI generative code** capabilities of the 'DpdlAINerd' plug-in to automatically generate library code by providing the dedicated SKILL definition that is available.
+It can be done by means of a simple configuration, but also programmatically if needed.
+
+It is also possible for example to leverage the capabilities of **AI generative code** through the *Dpdl language plug-in* 'DpdlAINerd' to automatically generate custom dpdl library code and make the library available for import.
 
 
-### Native C/C++ shared Libraries:
+[Index](#index)
+
+
+### Native shared Libraries
 
 Dpdl allows to access natively loaded C/C++ libraries (libc, msvcrt, etc..) on different Operating Systems (Linux, Windows, Android) through a unified interface.
 
@@ -281,12 +300,18 @@ For more details visit the doc:
 [Dpdl_native_Interface.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_native_Interface.md)
 
 
+[Index](#index)
+
+
 ### Dpdl embedded C library
 
 [Dpdl embedded minimal C library Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
 
-### Dpdl built-in API functions
+[Index](#index)
+
+
+### Dpdl built-in functions API
 
 The following API function are implemented directly in the 'DpdlEngine core':
 
@@ -559,3 +584,5 @@ MIDPLIB_getCalendarField(int field_name) return int value
 int ret = dpdl_exec_code(const char *code);
 int ret = dpdl_exec_script(const char *script)
 ```
+
+[Index](#index)

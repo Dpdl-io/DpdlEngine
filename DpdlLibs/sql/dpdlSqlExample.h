@@ -14,9 +14,9 @@ dpdl_stack_var_put("db_url", "jdbc:postgresql://127.0.0.1:5432/mytestdb")
 dpdl_stack_var_put("db_user", "testuser")
 dpdl_stack_var_put("db_pass", "189923")
 
-dpdl_stack_push("dpdlbuf_res")
 
->>sql
+>>sql(dpdlbuf_res)
+
 	SELECT id, name, surname, email from mytable
 <<
 
