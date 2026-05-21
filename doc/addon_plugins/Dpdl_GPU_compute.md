@@ -32,7 +32,7 @@ This dedicated Dpdl language plug-in for 'OpenCL' can execute OCL (**OpenCL Comp
 ```python
 import('native')
 
-# main
+
 println("testing simple OpenGl algorithm on GPU...")
 
 println("loading native libraries 'libc' and 'libdpdlopencl'...")
@@ -145,7 +145,7 @@ The 'Wgsl' dpdl language plug-in supports all major GPU platforms such as Nvidia
 ```python
 import('native')
 
-# main
+
 println("testing Wgsl algorithm on GPU...")
 
 println("loading native libraries 'c' and 'dpdlgpu'...")

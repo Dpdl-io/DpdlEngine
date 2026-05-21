@@ -13,7 +13,7 @@ by
 
 ## 'DpdlPacket'
 
-Dpdl allows to <ins>create executable compressed packets</ins> of data defined as **`DpdlPacket`** via a dedicated <ins>code definition</ins>.
+Dpdl allows to create <ins>executable compressed packets</ins> of data defined as **`DpdlPacket`** via a dedicated <ins>code definition</ins>.
 
 The data in a 'DpdlPacket' is organized in <ins>**chunks of highly compressed data**</ins>, along with <ins>database indexes and code definitions</ins>.
 
