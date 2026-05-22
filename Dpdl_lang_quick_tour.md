@@ -599,9 +599,10 @@ func myOptimizedMatrixCalculation(string mata, string matb, int m_size) int
 
 	dpdl_stack_obj_put("size_matrix", m_size)
 
-	dpdl_stack_push("dpdlbuf_myresult", "dpdl:applyvars", "dpdl:compile", "parameters can also be passed here for example...", 1, 2, 3.3)
+	dpdl_stack_push("dpdl:applyvars", "dpdl:compile", "parameters can also be passed here for example...", 1, 2, 3.3)
 
-	>>c
+	>>c(dpdlbuf_myresult)
+	
 	#include <stdio.h>
 
 	#define SIZE {{size_matrix}}

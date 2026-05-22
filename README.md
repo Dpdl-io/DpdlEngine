@@ -977,7 +977,7 @@ println("Dpdl contains C: " + b)
 
 ### Embedding other programming languages
 
-Other programming languages or natural language interpreters can be easily integrated in Dpdl via a dedicated plug-in interface and configuration (*Dpdl language plug-ins*). If you like, please feel free to suggest your wishes on the 'Discussion' section on the DpdlEngine GitHub repository
+Other programming languages or natural language interpreters can be easily integrated in Dpdl as '*embedded code sections*' via a dedicated plug-in interface and configuration (*Dpdl language plug-ins*). Feel free to suggest your wishes on the 'Discussion' section on the DpdlEngine GitHub repository
 
 
 ## AI generative code with '**DpdlAINerd**' (**DAN**) *Dpdl language plug-in*
