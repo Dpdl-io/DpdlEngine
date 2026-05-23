@@ -15,7 +15,7 @@ by
 ## Description
 
 
-The '**DpdlVM**' is a dedicated code virtual machine that enables to execute dpdl code on constrained systems where no JVM (OpenJDK, Oracle, or similar) is available.
+The '**DpdlVM**' is a dedicated compact code virtual machine that enables to execute dpdl code on constrained systems where no JVM (OpenJDK, Oracle, or similar) is available.
 
 This is typically the case on very limited memory footprint systems like small Embedded System platforms, System on Chip (SoC) and Microcontrollers (MCUs).
 
@@ -33,14 +33,14 @@ The typical setup for Dpdl running on constrained systems, is a DpdlVM that incl
 - MicroPython
 - Micro JavaScript ( ES5 )
 
-**example:**
+**Example:**
 
 The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for executing C 'embedded code sections' (interpreted & compiled) is only **`298 Kb`** in Total, packed as a single executable (also romizable).
 
 When executing C code in *interpreted* mode (**Mode 1**), <ins>all libraries and include files listed here in</ins> [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md) are already included in the DpdlVM executable.
 
 
-**Example:** simple example dpdl code with an 'embedded code section' in C (*compiled* **Mode 2**), that runs on the DpdlVM
+**example:** simple example dpdl code with an 'embedded code section' in C (*compiled* **Mode 2**), that runs on the DpdlVM
 
 ```python
 

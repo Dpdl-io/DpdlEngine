@@ -13,7 +13,7 @@ by
 
 ## Dpdl language specification
 
-Dpdl is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
+Dpdl is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in small parts dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
 Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages**</ins>, or any custom syntax, <ins>**directly embedded within dpdl code**</ins>, simultaneously, of multiple types and <ins>at it's native speed<ins>.
 
@@ -55,6 +55,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 * [Types](#types)
 * [Functions](#functions)
 * [Control flow](#control-flow)
+* [Loops](#loops)
 * [Operators](#operators)
 * [Data Function Types](#data-function-types)
 * [Arrays](#arrays)
@@ -448,13 +449,12 @@ else
 fi
 ```
 
-**`while`** statement
+* [Table of Contents](#table-of-contents)
 
-```python
-while(<expression>)
 
-endwhile
-```
+### Loops
+
+#### Simple loops
 
 **`for`** statement
 
@@ -464,7 +464,77 @@ for(<expression>)
 endfor
 ```
 
+**`while`** statement
+
+```python
+while(<expression>)
+
+endwhile
+```
+
+#### Set loops
+
+**`for...in`** statement
+
+##### iterating over a dynamic array
+
+```python
+for(i in [1, 2, 3])
+
+	println("i = $i")
+endfor
+```
+
+```python
+arr[] = [1, 23.0, 999.9d, "a", "b", "c", new("String", "my test JRE string")]
+
+for(e in arr)
+
+	println("e: " + e + " is of type: " + typeof(e))
+endfor
+```
+
+##### iterating over ranges
+
+```python
+for(x in range(1, 1000))
+
+	println("x = $x")
+endfor
+
+```
+
+##### iterating over **`list`** and **`map`**
+
+```python
+for(i in list(1, 2, 3, 4, 5))
+	println("i = $i")
+endfor
+```
+
+```python
+for(k, v in map(1::"A", 2::"B", 3::"C"))
+
+	println("key = " + k + " value: " + v)
+endfor
+```
+
+##### iterating over **`object`** types that implement the *List* interface
+
+```python
+object myhm = new("HashMap")
+
+myhm.put(1, "element_1")
+myhm.put(2, "element_2")
+myhm.put(3, "element_3")
+
+for(k, v in myhm)
+	println("key = " + k + " value: " + v)
+endfor
+```
+
 * [Table of Contents](#table-of-contents)
+
 
 ### Operators
 

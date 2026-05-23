@@ -15,15 +15,17 @@ by
 ## Dpdl native Interface
 
 
-Dpdl allows to access native C/C++ library functions of any given loaded <ins>Native shared library</ins> seamlessly, in the same way as ordinary dpdl functions.
+Dpdl allows to access C/C++ <ins>Native shared library</ins> functions seamlessly in the same way as ordinary dpdl functions.
 
 This features makes the dpdl programming language complete also for interacting with low level system components and native libraries.
 
 The Dpdl native interface can be used in two different Modes:
 
-* via Legacy Native support (*JNI*)--> when running on older JVM Java **`1.4+`**
+* a) via Legacy Native support (*JNI*)--> when running on older JVM Java **`1.4+`**
 
-* via the Newer Java FFM (*Foreign Function Memory*) Native --> when running on newer Java (preview since Java **`17+`**)
+* b) via the Newer Java FFM (*Foreign Function Memory*) Native --> when running on newer Java (preview since Java **`17+`**)
+
+The mode a) Legacy Native works on all JVM versions starting from version 1.4+, while the mode b) FFM is availalbe since Java 17+.
 
 The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*'. The Legacy Native mode is currently the default mode to ensure a high degree of backwards compatibility.
 

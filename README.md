@@ -28,7 +28,8 @@ In addition Dpdl enables also the <ins>**embedding** and **execution**</ins> of 
 
 Everything comes already included out of the box along with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
-The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** via a dedicated compact code <ins>kilobyte</ins> range virtual machine.
+The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** like MCUs and SoCs via a dedicated compact code <ins>kilobyte</ins> range virtual machine.
+
 
 ### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
@@ -38,7 +39,7 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 
 ### **Dpdl** = dpdl-lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + DB + AI = <ins>Powerful and Versatile</ins>
 
-Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in part dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl cod to be compiled also to native code.
+Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in small parts dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl cod to be compiled also to native code.
 
 Dpdl introduces the concept of '*embedded code sections*' that enables different programming languages, or any custom developed code syntax, to be executed within dpdl code by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and shipped separately.
 
