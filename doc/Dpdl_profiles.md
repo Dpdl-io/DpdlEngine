@@ -29,7 +29,7 @@ Also the type and number of *Dpdl language plug-ins* included can vary.
 - **Compact**
 - **Full**
 
-### Compact profile
+### 'Compact' profile
 
 This profile is targeted specifically for <ins>small</ins> *Embedded Systems*.
 
@@ -46,7 +46,8 @@ Also the *Dpdl language plug-ins* eventually included in this type of setup are 
 
 The *Dpdl language plug-ins* included in this type of setup are also <ins>specifically targeted for small *Embedded Systems*</ins>. 
 
-In this example there are 3 *Dpdl language plug-ins* included, for:
+In this example there are 3 <ins>*Dpdl language plug-ins* **included**</ins>, for:
+
 - **C** (*interpreted & compiled*)
 - **MicroPython**
 - **Micro JavaScript** (*ES5*)
@@ -64,7 +65,7 @@ In this example there are 3 *Dpdl language plug-ins* included, for:
 **Note:** also <ins>other Dpdl language plug-ins might be added</ins> if needed
 
 
-### Full profile
+### 'Full' profile
 
 This profile is targeted to medium size *Embedded Systems*, and everything above (desktop, server, etc..)
 
@@ -77,7 +78,8 @@ The extended version of *Dpdl language plug-ins* are usually included in this ki
 
 #### Example setup of DpdlEngine 'Full' with included Extended version of *Dpdl language plug-ins*
 
-In this example there are 3 *Dpdl language plug-ins* included, in its Extended form, for:
+In this example there are 3 <ins>*Dpdl language plug-ins* **included**</ins>, in its Extended form, for:
+
 - **C** (*interpreted & compiled*)
 - **Python**
 - **JavaScript** (*ES2023*)

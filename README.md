@@ -248,7 +248,7 @@ The size of '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) a
 ### Dpdl profiles available
 
 * **`Compact`** : **DpdlEngine** <ins>**Compact**</ins> profile: **`80 Kb`**</ins> or less
-* **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes 'DpdlPacket' database & rich set of built-in functions): **`372 Kb`**
+* **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes creation of 'DpdlPacket' database & rich set of built-in functions): **`372 Kb`**
 
 The profiles can of course also be adjusted as needed to include more ore less function sets and components. 
 
@@ -258,7 +258,7 @@ a DpdlEngine instance running on a small <ins>Embedded System</ins> may have the
 
 #### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins*:
 
-In this example, the *DpdlEngine* and the *Dpdl language plug-ins* included are specifically targeted for **small** <ins>*Embedded Systems*</ins>.
+In this example, the *DpdlEngine* and the <ins>*Dpdl language plug-ins* **included**</ins> are specifically targeted for **small** <ins>*Embedded Systems*</ins>.
 
 Included are the *Dpdl language plug-ins* for executing '*embedded code sections*' in:
 
