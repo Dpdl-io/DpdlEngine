@@ -266,7 +266,7 @@ Included are the *Dpdl language plug-ins* for executing '*embedded code sections
 * **<ins>MicroPython</ins>**
 * **<ins>Micro JavaScript</ins>** (*ES5*)
 
-TOTAL size (including *Dpdl language plug-ins*): **`686 Kb`** 
+**TOTAL size** (<ins>including</ins> *Dpdl language plug-ins*): **`686 Kb`** 
 
 | Platform | Component | Size |
 | ---  | --- | --- | 

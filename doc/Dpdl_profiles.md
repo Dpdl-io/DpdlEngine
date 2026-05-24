@@ -51,13 +51,17 @@ In this example there are 3 *Dpdl language plug-ins* included, for:
 - **MicroPython**
 - **Micro JavaScript** (*ES5*)
 
-**TOTAL size:** **`686 Kb`**
+**TOTAL size** (<ins>including</ins> *Dpdl language plug-ins*): **`686 Kb`** 
 
-| Platform |Dpdl core Basic |C (interpreted/compiled)| MicroPython | Micro JavaScript (*ES5*) | **TOTAL size** |
-| ---  | --- | --- | --- | --- | --- |
-| Linux x86_64 | 80 Kb | 284 Kb | 170 Kb | 152 Kb | 686 Kb|
+| Platform | Component | Size |
+| ---  | --- | --- | 
+|Linux x86_64 |	| Total size: 686 Kb |
+|	| **DpdlEngine core** (*Compact*) | 80 Kb |
+|	| *Dpdl language plug-in* for **C** (interpreted & compiled)  | 284 Kb |
+|	| *Dpdl language plug-in* for **MicroPython**  | 170 Kb |
+|	| *Dpdl language plug-in* for **Micro JavaScript** (*ES5*) | 152 Kb |
 
-Note: also <ins>other Dpdl language plug-ins might be added</ins> if needed
+**Note:** also <ins>other Dpdl language plug-ins might be added</ins> if needed
 
 
 ### Full
@@ -71,9 +75,9 @@ The extended version of *Dpdl language plug-ins* are usually included in this ki
 **Total size** of the '*DpdlEngine*' for this profile is: <ins>**`372 Kb`**</ins>
 
 
-#### Example setup of DpdlEngine 'Full' with included extended version of *Dpdl language plug-ins*
+#### Example setup of DpdlEngine 'Full' with included Extended version of *Dpdl language plug-ins*
 
-In this example there are 3 *Dpdl language plug-ins* included, for:
+In this example there are 3 *Dpdl language plug-ins* included, in its Extended form, for:
 - **C** (*interpreted & compiled*)
 - **Python**
 - **JavaScript** (*ES2023*)
@@ -82,4 +86,12 @@ In this example there are 3 *Dpdl language plug-ins* included, for:
 | ---  | --- | --- | --- | --- | --- |
 | Linux x86_64 | 372 Kb | 284 Kb | 2551 Kb |  1924 Kb | 5,1 MB|
 
-Note: also <ins>other Dpdl language plug-ins might be added</ins> if needed
+| Platform | Component | Size |
+| ---  | --- | --- | 
+|Linux x86_64 |	| Total size: 686 Kb |
+|	| **DpdlEngine core** (*Full*) | 372 Kb |
+|	| *Dpdl language plug-in* for **C** (interpreted & compiled)  | 284 Kb |
+|	| *Dpdl language plug-in* for **Python**  | 2551 Kb |
+|	| *Dpdl language plug-in* for **JavaScript** (*ES2023*) | 5,1 MB |
+
+**Note:** also <ins>other Dpdl language plug-ins might be added</ins> if needed
