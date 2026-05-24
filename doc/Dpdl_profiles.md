@@ -16,9 +16,7 @@ by
 
 The *DpdlEngine* can be run in different configurations (**Profiles**) and Setups, depending on which is the target platform and which is the usage domain. This affects also the overall size (footprint) of the application.
 
-The *DpdlEngine* setup may also include some *Dpdl language plug-ins* to enable to execute '**embedded code sections**' for example in other programming languages.
-
-*Dpdl language plug-ins* are an **optional** component, they can be included or excluded, even on-the-fly, via a simple configuration.
+The *DpdlEngine* setup may optionally also include some *Dpdl language plug-ins* to enable to execute '**embedded code sections**' for example in other programming languages. The *Dpdl language plug-ins* can be included or excluded, even on-the-fly, via a simple configuration.
 
 A typical setup of Dpdl might be the '*DpdlEngine*' plus some of the available *Dpdl language plug-ins* to execute '*embedded code sections*' like for example in: **C**, **Java**, **Python** and **JavaScript*** etc..
 
