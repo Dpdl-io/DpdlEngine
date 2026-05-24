@@ -82,9 +82,6 @@ In this example there are 3 *Dpdl language plug-ins* included, in its Extended f
 - **Python**
 - **JavaScript** (*ES2023*)
 
-| Platform |Dpdl core Full |C (interpreted/compiled)| Python | JavaScript (*ES2023*) | **TOTAL size** |
-| ---  | --- | --- | --- | --- | --- |
-| Linux x86_64 | 372 Kb | 284 Kb | 2551 Kb |  1924 Kb | 5,1 MB|
 
 | Platform | Component | Size |
 | ---  | --- | --- | 
