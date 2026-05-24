@@ -272,12 +272,12 @@ TOTAL size (including *Dpdl language plug-ins*): **`686 Kb`**
 | ---  | --- | --- | 
 |Linux x86_64 |	| Total size: 686 Kb |
 |	| **DpdlEngine core** (*Compact*) | 80 Kb |
-|	| *Dpdl language plug-in* for C (interpreted & compiled)  | 284 Kb |
-|	| *Dpdl language plug-in* for MicroPython  | 170 Kb |
-|	| *Dpdl language plug-in* for Micro JavaScript (*ES5*) | 152 Kb |
+|	| *Dpdl language plug-in* for **C** (interpreted & compiled)  | 284 Kb |
+|	| *Dpdl language plug-in* for **MicroPython**  | 170 Kb |
+|	| *Dpdl language plug-in* for **Micro JavaScript** (*ES5*) | 152 Kb |
 
 
-Note: Also </ins>other *Dpdl language plug-ins* can be added</ins> as needed
+**Note:** Also </ins>other *Dpdl language plug-ins* can be added</ins> as needed
 
 
 ## Dpdl sample code
