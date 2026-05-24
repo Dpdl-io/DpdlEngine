@@ -348,6 +348,9 @@ size() return int size
 getArrObj() return object arraylist
 array(object o) return [] array
 
+range(int from, int to) return [] array
+range(int from, int to, int step) return [] array
+
 println(string s)
 print(string s)
 currentTimeMillis() return long time

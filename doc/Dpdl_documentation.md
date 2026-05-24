@@ -129,7 +129,8 @@ Dpdl supports the following Types:
 int i = 1
 int ih = 0x67452301
 short s = 10s
-float f = 0.1
+float f1 = 0.1
+float f2 = 0.1f
 double d = 10000.0d
 long l = 1000L
 byte b = 1B
@@ -210,6 +211,7 @@ Strings may contain variable identifiers ( with **`$`** ) or even complete expre
 int x = 10
 int y = 20
 float z = 23.3333
+float z1 = 23.3333f
 object msg = new("String", "Hello test message")
 
 string s = "this is a test"
@@ -230,7 +232,7 @@ For some numbers, Dpdl makes use of suffixes for the representation to different
 ##### Suffixes:
 
 - **int** -> no suffix
-- **float** -> no suffix
+- **float** -> no suffix (default), or with suffix **`f`**
 - **double** -> **`d`**
 - **long** -> **`L`**
 - **short** -> **`s`**
@@ -479,14 +481,14 @@ endwhile
 ##### iterating over a dynamic array
 
 ```python
-for(i in [1, 2, 3])
+for(n in [1, 2, 3])
 
-	println("i = $i")
+	println("n = $n")
 endfor
 ```
 
 ```python
-arr[] = [1, 23.0, 999.9d, "a", "b", "c", new("String", "my test JRE string")]
+arr[] = [1, 23.0, 999.9d, 'a', 'b', 'c', "a test1", "a test2", "a test3", new("String", "my test JRE string")]
 
 for(e in arr)
 
