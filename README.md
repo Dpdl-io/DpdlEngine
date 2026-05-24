@@ -220,7 +220,7 @@ println("finished!")
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of 'Dpdl language plug-ins'**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded C code (ANSI C & ISO C99) <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
-* **Wasm runtime** Dpdl language plug-in included allows to access '**Wasm**' module functions from dpdl and from '*embedded code sections*' in JavaScript. Also WAT code can be directly compiled on-the-fly and executed
+* **Wasm runtime** *Dpdl language plug-in* included allows to access '**WASM**' (WebAssembly) module functions from dpdl and from '*embedded code sections*' in JavaScript and other languages. It supports also the WASI (WebAssemby System Interface) extension. Also WAT code can be directly compiled on-the-fly and directly executed
 * **Built-in support for custom extensions** -> allows to dynamically add language features, also at runtime
 * **Dpdl C API enables to execute Dpdl code embedded within programs written in C** 
 * **On the fly conversion/compilation of dpdl types 'class', 'union' and 'struct' into native JVM bytecode classes**
@@ -271,6 +271,16 @@ TOTAL size: **`686 Kb`**
 | Platform |DpdlEngine core (Compact) |C (interpreted/compiled)| MicroPython | Micro JavaScript (*ES5*) | **TOTAL size** |
 | ---  | --- | --- | --- | --- | --- |
 | Linux x86_64 | 80 Kb | 284 Kb | 170 Kb | 152 Kb | 686 Kb|
+
+
+| Platform | Component | Size |
+| ---  | --- | --- | 
+|Linux x86_64 |	| Total size: 686 Kb |
+|	| **DpdlEngine core** (*Compact*) | 80 Kb |
+|	| *Dpdl language plug-in* for C (interpreted & compiled)  | 284 Kb |
+|	| *Dpdl language plug-in* for MicroPython  | 170 Kb |
+|	| *Dpdl language plug-in* for Micro JavaScript (*ES5*) | 152 Kb |
+
 
 Note: Also </ins>other *Dpdl language plug-ins* can be added</ins> as needed
 
