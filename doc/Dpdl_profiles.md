@@ -29,7 +29,7 @@ Also the type and number of *Dpdl language plug-ins* included can vary.
 - **Compact**
 - **Full**
 
-### Compact
+### Compact profile
 
 This profile is targeted specifically for <ins>small</ins> *Embedded Systems*.
 
@@ -64,7 +64,7 @@ In this example there are 3 *Dpdl language plug-ins* included, for:
 **Note:** also <ins>other Dpdl language plug-ins might be added</ins> if needed
 
 
-### Full
+### Full profile
 
 This profile is targeted to medium size *Embedded Systems*, and everything above (desktop, server, etc..)
 
