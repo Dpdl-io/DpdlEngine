@@ -15,7 +15,7 @@ by
   
 * **NEW** *Dpdl language plug-in* for 'mruby' (Lightweight Ruby)  is <ins>Now available</ins>. It can be run also on MCUs
 
-* **NEW** The **Dpdl Native Interface** now supports both Modes for <ins>accessing Native shared Libraries</ins>, via **legacy JNI**, and via the **Newer FFM** (*Foreign Function Memory*) Interface
+* **NEW** The **Dpdl Native Interface** now supports both Modes for <ins>accessing Native shared Libraries</ins>, via **legacy JNI**, and via the **Newer FFM** (*Foreign Function Memory*) Interface. The two modes can be switched via a variable configuration in 'DpdlEngine.ini'
 
 ## Planned Features
 
