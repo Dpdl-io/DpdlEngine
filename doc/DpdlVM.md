@@ -41,7 +41,7 @@ The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for execu
 When executing C code in *interpreted* mode (**Mode 1**), <ins>all libraries and include files listed here in</ins> [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md) are already included in the DpdlVM executable.
 
 
-#### Example dpdl code with '*embedded code section*' in C
+### Example dpdl code with '*embedded code section*' in C
 
 Simple dpdl example code with an '*embedded code section*' in C (*compiled* **Mode 2**), that runs on the DpdlVM
 
@@ -134,7 +134,7 @@ println("embedded C exit code: " + exit_code)
 
 ```
 
-#### Example dpdl code with '*embedded code section*' in Ruby (mruby)
+### Example dpdl code with '*embedded code section*' in Ruby (mruby)
 
 Example dpdl code running on DpdlVM on a ESP32 MCU to blink a LED via an '*embedded code section*' in Ruby (mruby).
 
@@ -169,4 +169,5 @@ while(true)
 endwhile
 ```
 
-The mruby gem lib used here is: [mruby-esp32-gpio](https://github.com/mruby-esp32/mruby-esp32-gpio)
+The **mruby** *gem* lib used here within the ruby code is: [mruby-esp32-gpio](https://github.com/mruby-esp32/mruby-esp32-gpio)
+

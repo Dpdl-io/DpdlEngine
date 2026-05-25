@@ -15,7 +15,7 @@ by
   
 * **NEW** *Dpdl language plug-in* for 'mruby' (Lightweight Ruby)  is <ins>Now available</ins>. It can be run also on MCUs
 
-* **NEW** The Dpdl Native Interface new supports both modes for accessing Native shared Libraries, via legacy JNI, and via the Newer FFM (Foreign Function Memory) Interface
+* **NEW** The **Dpdl Native Interface** now supports both Modes for <ins>accessing Native shared Libraries</ins>, via **legacy JNI**, and via the **Newer FFM** (*Foreign Function Memory*) Interface
 
 ## Planned Features
 
@@ -25,7 +25,7 @@ by
 
 #### in Development
 
-* *Dpdl language plug-in* to enable '*embedded code sections*' of [Ring](https://ring-lang.github.io) programming language code -> keyword '**>>ring**'
+* *Dpdl language plug-in* to enable '*embedded code sections*' of [Ring](https://ring-lang.github.io) programming language code, via keyword '**>>ring**'
 
 * Development of **Dpdl language plug-in** for 'R' statistical computing language
 
@@ -33,11 +33,11 @@ by
 
 #### Planned
 
-* *Dpdl language plug-in* to enable '*embedded code sections*' of 'Dart' programming language code -> keyword '**>>dart**'
+* *Dpdl language plug-in* to enable '*embedded code sections*' of 'Dart' programming language code, via keyword '**>>dart**'
 
-* *Dpdl language plug-in* to enable '*embedded code sections*' of 'octave' programming language code -> keyword '**>>octave**'
+* *Dpdl language plug-in* to enable '*embedded code sections*' of 'octave' programming language code, via keyword '**>>octave**'
 
-* *Dpdl language plug-in* to enable '*embedded code sections*' of 'go' programming language code -> keyword '**>>go**'
+* *Dpdl language plug-in* to enable '*embedded code sections*' of 'go' programming language code, via keyword '**>>go**'
 
 
 ## Known Issues
