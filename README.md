@@ -216,7 +216,7 @@ println("finished!")
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
 * **Automatic code generation and execution of 'embedded code sections' at runtime** (*Dpdl language plug-ins*)
-* **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)
+* **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of 'Dpdl language plug-ins'**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded C code (ANSI C & ISO C99) <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
@@ -868,6 +868,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`OCaml`**
 * **`Lua`**
 * **`Ruby`**
+* **`mruby`** (Lightweight Ruby)
 * **`Java`**
 * **`PHP`**
 * **`Perl`**
@@ -1119,6 +1120,10 @@ The Dpdl platform and API documentation is available via the following links:
  Dpdl java API Documentation is available only for a registered version of DpdlEngine
 
 
+## News
+
+[New features and developments](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_News.md)
+
 ## Download
 
 See 'Download' page for more details:
@@ -1127,8 +1132,6 @@ See 'Download' page for more details:
 
 
 ## Roadmap
-
-Dpdl is currently developed by SEE Solutions and the following integrations are in development: 
 
 * Back-end compiler to **compile Dpdl code to native machine code** for most target architectures
 
@@ -1140,7 +1143,6 @@ Dpdl is currently developed by SEE Solutions and the following integrations are 
 ### Embedding of 'Python' code
 
 Python code can be embedded within Dpdl code by using the keyword **`>>python`**.
-MicroPython will also be supported as option in the coming release.
 
 Example Dpdl code with embedded 'Python' code:
 
@@ -1160,6 +1162,9 @@ int exit_code = dpdl_exit_code()
 
 println("embedded python exit code: " + exit_code);
 ```
+
+*MicroPython* is also available as a *Dpdl language plug-in* to execute '*embedded code sections*' in Python on very constrained devices (MCUs, SoCs, etc..)
+
 
 ### Embedding of 'Julia' code
 
@@ -1480,15 +1485,23 @@ Usage:
 
 ## other Dpdl internet domains
 
-The following domains are all registered by dpdl.io
+The following domains are All part of Dpdl-io (www.dpdl.io)
 
 Currently the domains point to the same web-site, but Stand by! There will be interesting developments
 
-https://www.dpdl-lang.org
+www.dpdl-lang.org
 
-https://www.dpdl.dev
+www.dpdl-lang.io
 
-https://www.dpdl.ai
+www.dpdl-lang.it
+
+www.dpdl.dev
+
+www.dpdl.ai
+
+www.dpdlhub.org 
+
+www.dpdlhub.com
 
 
 

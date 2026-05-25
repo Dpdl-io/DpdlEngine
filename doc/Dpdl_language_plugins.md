@@ -43,6 +43,7 @@ At current state, the 'DpdlEngine' release has the following <ins>**Dpdl languag
 * **`OCaml`**
 * **`Lua`**
 * **`Ruby`**
+* **`mruby`** (Lightweight Ruby)
 * **`Java`**
 * **`PHP`**
 * **`Perl`**
@@ -627,11 +628,11 @@ println(resp_buf)
 
 ### Embedding 'Ruby' code
 
-'Ruby' code can be embedded and executed within Dpdl by using the keyword **`>>ruby`**
+#### 'Ruby' code can be embedded and executed within dpdl by using the keyword **`>>ruby`**
 
-#### keyword **`>>ruby`**
+##### keyword **`>>ruby`**
 
-The 'Ruby' programming language code can be embedded within Dpdl using the keyword **`>>ruby`**
+The 'Ruby' programming language code can be embedded within dpdl using the keyword **`>>ruby`**
 
 **Example Dpdl code with embedded 'Ruby' code:**
 
@@ -670,6 +671,37 @@ println("Dpdl is embedding some ruby code...")
 int exit_code = dpdl_exit_code()
 println("embedded ruby code exit code: " + exit_code)
 
+```
+
+#### 'mruby' (Lightweight Ruby) code can be embedded and executed within dpdl by using the keyword **`>>mruby`**
+
+##### keyword **`>>mruby`**
+
+**Example dpdl code with embedded 'mruby' code:** blinking a LED on ESP32 MCU
+
+```ruby
+println("blinking a led on ESP32 MCU via 'mruby' ...")
+
+>>mruby(async)
+	led = ESP32::GPIO_NUM_2
+	ESP32::GPIO::pinMode(led, ESP32::GPIO::OUTPUT)
+
+	loop {
+	  ESP32::GPIO::digitalWrite(led, ESP32::GPIO::HIGH)
+	  ESP32::System.delay(1000)
+	  ESP32::GPIO::digitalWrite(led, ESP32::GPIO::LOW)
+	  ESP32::System.delay(1000)
+	}
+<<
+
+int exit_code = dpdl_exit_code()
+
+raise(exit_code, "Error in executing ESP32 led blinking code")
+
+while(true)
+	print(".")
+	sleep(3000)
+endwhile
 ```
 
 * [Table of Contents](#table-of-contents)
@@ -1112,6 +1144,7 @@ println("model simulation exit code: " + exit_code)
 - javascript -> QuickJS (default), ECMAScript (Nashorn), V8 (available soon) 
 - lua -> https://www.lua.org/
 - ruby -> https://www.ruby-lang.org
+- mruby (Lightweight Ruby )-> https://mruby.org
 - php -> https://ph7.symisc.net/features.html
 - groovy -> https://groovy-lang.org/
 - v -> https://vlang.io/

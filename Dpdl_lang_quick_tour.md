@@ -484,10 +484,10 @@ println("you can embed many other languages too...")
 println("we list them with via embedded python code:")
 
 >>python
-languages = ['C', 'C++', 'Python', 'JavaScript', 'Julia', 'Lua', 'Ruby', 'Java', 'PHP', 'Perl', 'Groovy', 'Clojure', 'Modelica']
-
-for language in languages:
-	print(language)
+	languages = ['C', 'C++', 'Python', 'MicroPython', 'JavaScript', 'Julia', 'Lua', 'Ruby', 'Java', 'PHP', 'Perl', 'Groovy', 'Clojure', 'Modelica']
+	
+	for language in languages:
+		print(language)
 <<
 
 exit_code = dpdl_exit_code()
@@ -658,8 +658,13 @@ func myOptimizedMatrixCalculation(string mata, string matb, int m_size) int
 		return 0;
 	}
 	<<
-
-	return dpdl_exit_code()
+	int exit_code = dpdl_exit_code()
+	
+	if(exit_code == 0)
+		return dpdl_stack_buf_get("dpdlbuf_myresult")
+	else
+		return null
+	fi
 
 end
 
@@ -674,15 +679,13 @@ string mat_a = "{{1, 2}, {3, 4}}"
 
 string mat_b = "{{1, 2}, {3, 4}}"
 
-int status = myOptimizedMatrixCalculation(mat_a, mat_b, mat_size)
+string result = myOptimizedMatrixCalculation(mat_a, mat_b, mat_size)
 
-raise(status, "Error in matrix calculation")
-
-string res_buf = dpdl_stack_buf_get("dpdlbuf_myresult")
+raise(result, "Error in matrix calculation")
 
 println("result: ")
 
-println(res_buf)
+println(result)
 
 ```
 

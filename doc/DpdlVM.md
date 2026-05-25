@@ -27,11 +27,12 @@ The '*Dpdl language plug-ins*' may, or may not be included, or just 1 of the ava
 
 The typical setup for Dpdl running on constrained systems, is a DpdlVM that includes one or more of the following '*Dpdl language plug-ins*' that allow to execute the following 'embedded code sections'.
 
-'**Dpdl language plug-ins**' currently available for the **DpdlVM**:
+### '**Dpdl language plug-ins**' currently available on the **DpdlVM**:
 
 - C (interpreted & compiled)
 - MicroPython
-- Micro JavaScript ( ES5 )
+- Micro JavaScript ( *ES5* )
+- Lightweight Ruby ( mruby )
 
 **Example:**
 
@@ -40,7 +41,9 @@ The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for execu
 When executing C code in *interpreted* mode (**Mode 1**), <ins>all libraries and include files listed here in</ins> [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md) are already included in the DpdlVM executable.
 
 
-**example:** simple example dpdl code with an 'embedded code section' in C (*compiled* **Mode 2**), that runs on the DpdlVM
+#### Example dpdl code with '*embedded code section*' in C
+
+Simple dpdl example code with an '*embedded code section*' in C (*compiled* **Mode 2**), that runs on the DpdlVM
 
 ```python
 
@@ -131,5 +134,39 @@ println("embedded C exit code: " + exit_code)
 
 ```
 
+#### Example dpdl code with '*embedded code section*' in Ruby (mruby)
 
+Example dpdl code running on DpdlVM on a ESP32 MCU to blink a LED via an '*embedded code section*' in Ruby (mruby).
 
+```ruby
+println("blinking a led on ESP32 MCU via 'mruby' ...")
+
+int i
+for(i < 1000)
+	println("iter $i")
+	i=i+1
+endfor
+
+>>mruby(async)
+	led = ESP32::GPIO_NUM_2
+	ESP32::GPIO::pinMode(led, ESP32::GPIO::OUTPUT)
+
+	loop {
+	  ESP32::GPIO::digitalWrite(led, ESP32::GPIO::HIGH)
+	  ESP32::System.delay(1000)
+	  ESP32::GPIO::digitalWrite(led, ESP32::GPIO::LOW)
+	  ESP32::System.delay(1000)
+	}
+<<
+
+int exit_code = dpdl_exit_code()
+
+raise(exit_code, "Error in executing ESP32 led blinking code")
+
+while(true)
+	print(".")
+	sleep(3000)
+endwhile
+```
+
+The mruby gem lib used here is: [mruby-esp32-gpio](https://github.com/mruby-esp32/mruby-esp32-gpio)

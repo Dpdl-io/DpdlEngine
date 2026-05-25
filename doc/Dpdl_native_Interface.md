@@ -21,15 +21,15 @@ This features makes the dpdl programming language complete also for interacting 
 
 The Dpdl native interface can be used in two different Modes:
 
-* a) via Legacy Native support (*JNI*)--> when running on older JVM Java **`1.4+`**
+* a) via **Legacy Native** support (*JNI*)--> when running on older JVMs, from Java **`1.4+`** onwards
 
-* b) via the Newer Java FFM (*Foreign Function Memory*) Native --> when running on newer Java (preview since Java **`17+`**)
+* b) via the Newer Java **FFM** (*Foreign Function Memory*) Native --> when running on newer JVMs, since Java **`17+`** onwards
 
-The mode a) Legacy Native works on all JVM versions starting from version 1.4+, while the mode b) FFM is availalbe since Java 17+.
+The mode **a) Legacy Native** works on all JVM versions starting from version 1.4+, while the mode **b) FFM** is availalbe since Java 17+.
 
 The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*'. The Legacy Native mode is currently the default mode to ensure a high degree of backwards compatibility.
 
-Both Modes, the **legacy** as well as **ffm** mode, from the dpdl code point of view have the exact same usage and API. 
+Both Modes, the **legacy** as well as **ffm** mode, from the dpdl code point of view have the same usage and API, except for some small enhancements.
 
 
 ### Dpdl 'native' import library
@@ -59,7 +59,7 @@ On Windows systems it's possible also to access the system library 'kernel32' an
 rage of windows components.
 
 
-**Example Dpdl code accessing the system library 'libc' functions:**
+**Example:** dpdl code that calls functions of the system library '*libc*'
 
 ```python
 import('native')
