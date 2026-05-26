@@ -133,7 +133,7 @@ println("finished")
 
 The latest version of this *Dpdl language plug-in* requires Java 7+ or later to run.
 
-A previews older version of the plug-in can run also on Java 1.2+ or 1.4+ if needed.
+An older version of the plug-in is available also to run it on Java 1.2+ or 1.4+ if needed.
 
 This plug-in <ins>**has No dependency**</ins> on the java JDK compiler, but a configuration setting allows to use also the JDK specific java compiler (see options below)
 
