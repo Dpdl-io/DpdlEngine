@@ -12,7 +12,7 @@ by
 &copy;
 
 
-Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via dedicated plug-ins ( **Dpdl language plug-ins** ) available distributed along with the *DpdlEngine*.
+Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via dedicated plug-ins ( **Dpdl language plug-ins** ) available distributed along with the *DpdlEngine* release.
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
@@ -20,23 +20,16 @@ In this way <ins>**multiple programming languages** and **custom syntax interpre
  
 This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts, and make them executable inside dpdl code.
 
-The single 'Dpdl language plug-ins' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
 
-For native, platform dependent 'Dpdl language plug-ins', the dpdl runtime automatically selects the proper plug-in for a given platform (from path: './lib/native/$platform/').
+### '*Dpdl language plug-ins*' currently available for executing '*embedded code sections*'
 
-For 'Dpdl language plug-ins' that require a stricter security fence, they can optionally be run also in an [isolated memory region](#isolated-memory-region) region, or even in containers if needed.
+At current state, the following <ins>**Dpdl language plug-ins**</ins> are available for different platforms (see compatibility Matrix below):
 
-
-
-### Dpdl supports the embedding and execution of the following programmoing language code, available in from of 'Dpdl language plug-ins':
-
-At current state, the 'DpdlEngine' release has the following <ins>**Dpdl language plug-ins**</ins> available for different platforms (see compatibility Matrix):
-
-* **`C`** (**interpreted**) --> minimal subset of C90 with standard C libs included and avaiable in the Dpdl runtime
-* **`C`** (**compiled**) code --> ANSI C & ISO C99 standard, compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
+* **`C`** (**interpreted**) --> minimal subset of *C90* with standard C libs (*stdlib*) included and already available in the Dpdl runtime
+* **`C`** (**compiled**) code --> *ANSI C* & ISO *C99* standard, compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
 * **`C++`**
 * **`Python`**
-* **`MicroPython`** (Python for embedded systems)
+* **`MicroPython`** (Python for Embedded Systems)
 * **`Julia`**
 * **`JavaScript`**
 * **`Micro JavaScript`**
@@ -74,6 +67,14 @@ and also for some less known, but yet very powerful programming languages:
 
 
 The available **Dpdl language plug-ins** listed above are implemented on top of the official implementation of each supported programming language (see 'Embedded language references' section below) and include everything needed to run the code, <ins>No additional installation needed, except user libraries</ins>.
+
+
+The individual '*Dpdl language plug-ins*' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
+
+For native, platform dependent '*Dpdl language plug-ins*', the dpdl runtime automatically selects the proper plug-in for a given platform (from path: './lib/native/$platform/').
+
+For '*Dpdl language plug-ins*' that execute natively and require a stricter security fence, there is the option to be run in an [isolated memory region](#isolated-memory-region) region or in containers.
+
 
 ## Table of Contents
 

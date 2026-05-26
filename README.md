@@ -780,7 +780,7 @@ endwhile
 
 In this way all java libraries defined in class definition configuration file can be loaded and accessed in Dpdl.
 
-The default configuration currently includes <ins>Java Platform API</ins>, the <ins>JavaFX</ins> API and <ins>bluecove Bluetooth JSR-82</ins>.
+The default configuration currently includes <ins>Java Platform API</ins>, the <ins>JavaFX</ins> API and <ins>bluecove Bluetooth JSR-82</ins> API.
 
 The default configuration <ins>can be easily extended or updated</ins> to resolve additional java APIs by editing the class definition configuration file, enabling also to use custom class specifiers.
 
@@ -845,7 +845,7 @@ println("embedded java exit code: " + exit_code)
 
 ## **Dpdl 'embedded code sections'** (*Dpdl language plug-ins*)
 
-The code of Multiple programming languages can be embedded and executed within a single **dpdl** source code by means of included **Dpdl language plug-ins**.
+The code of <ins>Multiple programming languages</ins> can be embedded and executed within a single **dpdl** source code by means of included **Dpdl language plug-ins**.
  
 The symbol to enable the embedding is uthe keyword **`>>`** (ex. >>python ).
 
@@ -897,6 +897,8 @@ See this doc for more details: [Dpdl_language_plugins.md](https://github.com/Dpd
 
 ### In development '*Dpdl language plug-ins*' (available soon in coming releases):
 
+* **`R`** --> for executing 'R' statistical computing language code
+* **`ring`** --> for executing 'Ring' programming language code
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
 
 
@@ -913,7 +915,7 @@ Example below shows dpdl code embedding 'C++' that makes use of the powerful Roo
 println("test embedded C++ that uses the Root framework...")
 
 >>cpp
-	auto canvas = new TCanvas("c","Graph2D example",0,0,700,600);
+	auto canvas = new TCanvas("c","Graph2D",0,0,700,600);
 	
 	double x, y, z, P = 6.;
 	int np = 200;
