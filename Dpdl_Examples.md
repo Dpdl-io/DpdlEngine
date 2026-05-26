@@ -555,7 +555,7 @@ this is my sample json:
 
 * Example dpdl code that make use of an 'embedded code section' in mruby (Lightweight Ruby) to simply blink a LED on a ESP32 MCU
 	
-	[mruby/dpdlMRubyExample_esp32_pgio.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/mruby/dpdlMRubyExample_esp32_pgio.h)
+	[mruby/dpdlMRubyExample_esp32_pgio.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/mruby/dpdlMRubyExample_esp32_gpio.h)
 	
 
 ### Graphical User Interface (UI)
