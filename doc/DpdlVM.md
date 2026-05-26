@@ -136,18 +136,21 @@ println("embedded C exit code: " + exit_code)
 
 ### Example dpdl code with '*embedded code section*' in Ruby (mruby)
 
-Example dpdl code running on DpdlVM on a ESP32 MCU to blink a LED via an '*embedded code section*' in Ruby (mruby).
+Example dpdl code running on DpdlVM on a ESP32 MCU to blink a LED via an '*embedded code section*' in Lightweight Ruby (mruby).
 
 ```ruby
-println("blinking a led on ESP32 MCU via 'mruby' ...")
+println("dpdl example that is running on a ESP32 MCU..")
 
 int i
-for(i < 1000)
+for(i < 10000)
 	println("iter $i")
 	i=i+1
 endfor
 
+println("blinking a LED via 'mruby' and a gem lib...")
+
 >>mruby(async)
+
 	led = ESP32::GPIO_NUM_2
 	ESP32::GPIO::pinMode(led, ESP32::GPIO::OUTPUT)
 
@@ -162,6 +165,8 @@ endfor
 int exit_code = dpdl_exit_code()
 
 raise(exit_code, "Error in executing ESP32 led blinking code")
+
+prinltn("the LED is blinking now...")
 
 while(true)
 	print(".")

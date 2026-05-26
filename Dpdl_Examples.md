@@ -60,6 +60,7 @@ endwhile
 * [AI generative code using the dedicated Dpdl language plugin](#ai-generative-code-using-the-dedicated-dpdl-language-plug-in)
 * [Dpdl embedded code sections](#dpdl-embedded-code-sections)
 * [Dpdl Agents](#dpdl-agents)
+* [Dpdl on MCUs](#dpdl-on-mcus)
 * [Graphical User Interface (UI)](#graphical-user-interface-ui)
 * [Small Apps](#small-apps)
 * [Benchmark Tests](#benchmark-tests)
@@ -548,6 +549,14 @@ this is my sample json:
 
 [Index](#index)
 
+
+
+### Dpdl on MCUs
+
+* Example dpdl code that make use of an 'embedded code section' in mruby (Lightweight Ruby) to simply blink a LED on a ESP32 MCU
+	
+	[mruby/dpdlMRubyExample_esp32_pgio.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/mruby/dpdlMRubyExample_esp32_pgio.h)
+	
 
 ### Graphical User Interface (UI)
 
