@@ -11,7 +11,7 @@ by
 &copy;	
 
 
-## Dpdl language plug-in for AI generative code - DpdlAINerd (DAN)
+## *Dpdl language plug-in* for AI generative code - **DpdlAINerd** (DAN)
 
 
 '**DpdlAINerd**' (**DAN**) is a dedicated *Dpdl language plug-in* for <ins>**AI generative code**</ins>.
@@ -83,6 +83,7 @@ At current state the '*DpdlAINerd*' Dpdl language plug-in supports the following
 
 - DeepSeek (deepseek)
 - OpenAI (openai)
+- other OpenAI API compatible engines
 
 The AI engine used can be specified in the file 'DpdlPlugins.ini' under the section '*DpdlAINerd*'
 
@@ -271,7 +272,7 @@ int exit_code = dpdl_exit_code()
 println("generative ai exit code: " + exit_code)
 ```
 
-### Skills
+### SKILL definitions
 
 Skill definitions serve the purpose to add knowledge to the AI engine prior executing a request.
 
@@ -295,9 +296,9 @@ dpdl_stack_push("dpdlai:-skill my_custom_skill")
 - **`dpdllang`** -> knowledge for generating valid **dpdl** code that can be executed
 - **`dpdlapi`** -> knowledge about Dpdl APIs and it's usage
 - **`dpdllibgen`** -> knowledge for generating Dpdl import libraries
+- **`dpdlagent`** --> knowledge for generating 'Agent' code (dpdl and java)
 
 - **`dpdlplugin-js`** -> knowledge about the usage of the 'Dpdl language plug-in' for JavaScript
-
 
 
 ### How to

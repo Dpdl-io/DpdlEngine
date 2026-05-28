@@ -35,7 +35,7 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 
 ### **Dpdl** = dpdl-lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + DB + AI = <ins>Powerful and Versatile</ins>
 
-Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in small parts dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl cod to be compiled also to native code.
+Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in parts dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code.
 
 Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages, or any custom developed code syntax, to be embedded and executed directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and shipped separately.
 
@@ -43,7 +43,7 @@ At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of
 
 Everything comes already included out of the box along with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
-<ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages and different platforms. Also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>*Quantum Computing*</ins>.
+<ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages and different platforms. Also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>**Quantum Computing**</ins>.
 
 <p float="left">
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
@@ -270,7 +270,7 @@ Included are the *Dpdl language plug-ins* for executing '*embedded code sections
 
 | Platform | Component | Size |
 | ---  | --- | --- | 
-|Linux x86_64 |	| Total size: 686 Kb |
+|Linux x86_64 |	| **Total size:** **`686 Kb`** |
 |	| **DpdlEngine core** (*Compact*) | 80 Kb |
 |	| *Dpdl language plug-in* for **C** (interpreted & compiled)  | 284 Kb |
 |	| *Dpdl language plug-in* for **MicroPython**  | 170 Kb |

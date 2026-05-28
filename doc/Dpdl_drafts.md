@@ -84,14 +84,14 @@ myb.bar()
 println("myb->" + myb.foo_bar())
 ```
 
-## Compile Dpdl code sections to java bytecode
+## JIT Compile dpdl code sections
 
 
-This is a proposal draft for enabling Dpdl code sections to be compiled to java bytecode at runtime.
+This is a proposal draft for enabling dpdl code sections to be JIT compiled runtime <ins>before execution</ins>.
 
 The purpose of this feature is to improve performance critical code sections
 
-The meta instruction **`[bytecode]`** signalizes the beginning of Dpdl to bytecode compilation, until the first empty code line is found.
+The meta instruction **`[jit]`** signalizes the beginning of dpdl which should be JIT compiled before execution, until the first empty code line is found.
 
 **Example:**
 

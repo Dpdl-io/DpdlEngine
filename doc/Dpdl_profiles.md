@@ -50,11 +50,11 @@ In this example there are 3 <ins>*Dpdl language plug-ins* **included**</ins>, fo
 - **MicroPython**
 - **Micro JavaScript** (*ES5*)
 
-**TOTAL size** (<ins>including</ins> *Dpdl language plug-ins*): **`686 Kb`** 
+**TOTAL size** of this profile, '*DpdlEngine*' <ins>including</ins> *Dpdl language plug-ins*: **`686 Kb`** 
 
 | Platform | Component | Size |
 | ---  | --- | --- | 
-|Linux x86_64 |	| Total size: 686 Kb |
+|Linux x86_64 |	| **Total size:** **`686 Kb`** |
 |	| **DpdlEngine core** (*Compact*) | 80 Kb |
 |	| *Dpdl language plug-in* for **C** (interpreted & compiled)  | 284 Kb |
 |	| *Dpdl language plug-in* for **MicroPython**  | 170 Kb |
@@ -76,7 +76,7 @@ The extended version of *Dpdl language plug-ins* are usually included in this ki
 
 #### Example setup of DpdlEngine 'Full' with included Extended version of *Dpdl language plug-ins*
 
-In this example there are 3 <ins>*Dpdl language plug-ins* **included**</ins>, in its Extended form, for:
+In this example there are 3 <ins>*Dpdl language plug-ins* **included**</ins>, in its <ins>Extended version</ins>, for:
 
 - **C** (*interpreted & compiled*)
 - **Python**
@@ -85,10 +85,12 @@ In this example there are 3 <ins>*Dpdl language plug-ins* **included**</ins>, in
 
 | Platform | Component | Size |
 | ---  | --- | --- | 
-|Linux x86_64 |	| Total size: 686 Kb |
+|Linux x86_64 |	| **Total size:** 5,1 Mb |
 |	| **DpdlEngine core** (*Full*) | 372 Kb |
 |	| *Dpdl language plug-in* for **C** (interpreted & compiled)  | 284 Kb |
 |	| *Dpdl language plug-in* for **Python**  | 2551 Kb |
-|	| *Dpdl language plug-in* for **JavaScript** (*ES2023*) | 5,1 MB |
+|	| *Dpdl language plug-in* for **JavaScript** (*ES2023*) | 1924 Kb |
 
 **Note:** also <ins>other Dpdl language plug-ins might be added</ins> if needed
+
+
