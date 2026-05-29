@@ -259,7 +259,7 @@ println("finished")
 
 This dedicated *Dpdl language plug-in* for 'Triton' allows to execute DNN compute kernels on GPU hardware.
 
-*Triton* is a Python-based domain specific language (https://triton-lang.or) that lowers the compute kernel definition to LLVM-IR dialects and PTX formats that run directly on GPUs. It provides a abstractions and simplifies the development of compute kernels.
+*Triton* is a Python-based domain specific language (https://triton-lang.org) that lowers the compute kernel definition to LLVM-IR dialects and PTX formats that run directly on GPUs. It provides a abstractions and simplifies the development of compute kernels.
 
 The plug-in can execute 'Triton' code as it is, or it can convert and compile it to be JVM compatible using the Java toolkit HAT ( Heterogeneous Accelerator Toolkit). Both approaches perform the lowering to the appropriate LLVM dialect for the GPU.
 
