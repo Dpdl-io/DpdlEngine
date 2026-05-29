@@ -23,7 +23,15 @@ The following **Dpdl language plug-ins** that enable GPU compute are currently a
 - **Dpdl language plug-in** **`wgsl`**
 
 
-## Dpdl language plug-in **`opencl`**
+
+## Index
+
+* [OpenCL](#opencl)
+* [WGSL - WebGPU Shading Language](#wgsl-webgpu-shading-language)
+* [Triton](#triton)
+
+
+## OpenCL
 
 This dedicated Dpdl language plug-in for 'OpenCL' can execute OCL (**OpenCL Compute Language**) compute code, which can be executed directly on GPGPUs, GPU's and even on multiple ordinary CPUs.
 
@@ -131,7 +139,7 @@ println("finished")
 
 ```
 
-## Dpdl language plug-in **`Wgsl`**
+## WGSL - WebGPU Shading Language
 
 This dedicated dpdl language plug-in for 'Wgsl' can execute WGSL (**WebGPU Shading Language**) compute code, which is executed on GPUs and complies to the [WebGPU](https://www.w3.org/TR/webgpu/) specification, directly embedded within Dpdl code.
 
@@ -245,5 +253,19 @@ endfor
 println("finished")
 
 ```
+
+
+## Triton
+
+This dedicated *Dpdl language plug-in* for 'Triton' allows to execute DNN compute kernels on GPU hardware.
+
+*Triton* is a Python-based domain specific language (https://triton-lang.or) that lowers the compute kernel definition to LLVM-IR dialects and PTX formats that run directly on GPUs. It provides a abstractions and simplifies the development of compute kernels.
+
+The plug-in can execute 'Triton' code as it is, or it can convert and compile it to be JVM compatible using the Java toolkit HAT ( Heterogeneous Accelerator Toolkit). Both approaches perform the lowering to the appropriate LLVM dialect for the GPU.
+
+Example will follow soon...
+
+
+
 
 

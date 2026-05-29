@@ -25,9 +25,9 @@ by
 
 #### in Development
 
-* *Dpdl language plug-in* to enable '*embedded code sections*' of [Ring](https://ring-lang.github.io) programming language code, via keyword '**>>ring**'
-
 * Development of **Dpdl language plug-in** for 'R' statistical computing language
+
+* *Dpdl language plug-in* to enable '*embedded code sections*' of [Ring](https://ring-lang.github.io) programming language code, via keyword '**>>ring**'
 
 * Development of a dedicated **Dpdl language plug-in** for enabling QUANTUM computing via OpenQASM 2.0 (circuit description language)
 

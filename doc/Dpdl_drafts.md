@@ -84,12 +84,14 @@ myb.bar()
 println("myb->" + myb.foo_bar())
 ```
 
-## JIT Compile dpdl code sections
+## JIT compiled dpdl code sections
 
+Although some JVM implementation like Oracle, OpenJDK, etc.. have effective Just-in-Time (JIT) compilation technology in place, this is not available on many other
+JVM implementations.
 
-This is a proposal draft for enabling dpdl code sections to be JIT compiled runtime <ins>before execution</ins>.
+This is a proposal draft for enabling dpdl code sections to be JIT compiled at runtime <ins>before execution</ins>.
 
-The purpose of this feature is to improve performance critical code sections
+The purpose of this feature is only to improve performance of critical code sections that perform calculations, it is not intended to be used on a wider scale.
 
 The meta instruction **`[jit]`** signalizes the beginning of dpdl which should be JIT compiled before execution, until the first empty code line is found.
 
@@ -98,7 +100,7 @@ The meta instruction **`[jit]`** signalizes the beginning of dpdl which should b
 ```python
 println("testing Dpdl java bytecode generation ...")
 
-[bytecode]
+[jit]
 int arr_i[1000000]
 int i
 for(i < 1000000)
