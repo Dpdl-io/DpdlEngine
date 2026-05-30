@@ -20,7 +20,9 @@ The provided plug-in allows to <ins>**automatically generate and execute** embed
 
 More generally, the Dpdl language plug-in <ins>allows also to **generate any kind of content or data**</ins> used during the code execution for example.
 
-This enables to write code faster in the prototyping phase and allows also to generate data on the fly needed for example for development or testing.
+It includes also a set of knowledge Skills that can be used for generating specific code, for example to generate valid and correct dpdl code. 
+
+This enables to write code faster in the prototyping phase and allows also to generate data on the fly needed for example for development or testing
 
 The '*DpdlAINerd*' (**DAN**) Dpdl language plug-in can be embedded and executed within Dpdl via the keyword **`>>ai`**
 
@@ -41,14 +43,22 @@ println("exit code: " + exit_code)
 println("finished")
 ```
 
-find more examples here: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/ai)
+## Index
 
-### supported AI engines
+* [AI engines](#ai-engines)
+* [Modes of execution](#modes-of-execution)
+* [Options](#options)
+* [Knowledge SKILL definitions](#knowledge-skill-definitions)
+* [How to](#how-to)
+* [Future Integrations](#future-integrations)
+
+
+### AI engines
 
 The '*DpdlAINerd*' supports the following AI engine types:
 
 - Local AI engine -> (provided along with *DpdlEngine*), Open source, provides access to many open AI models and AI backends
-- Dedicated AI services available via subscription at dpdl.ai
+- Dedicated AI services available via subscription at www.dpdl.ai
 - Other public AI services (eg. DeepSeek, ChatGPT, etc.)
 
 
@@ -87,7 +97,11 @@ At current state the '*DpdlAINerd*' Dpdl language plug-in supports the following
 
 The AI engine used can be specified in the file 'DpdlPlugins.ini' under the section '*DpdlAINerd*'
 
-### Modes of execution:
+
+[Index](#index)
+
+
+### Modes of execution
 
 The DAN language plug-in can be used in 2 different modes:
 
@@ -209,7 +223,7 @@ this is my sample json:
 }
 ```
 
-#### Example for alternative code generation
+#### Example for alternative code generation:
 
 The following example shows how code can be generated and than executed in a later point in the program.
 
@@ -244,7 +258,11 @@ println("embedded C code exit code: " + exit_code)
 
 ```
 
-As you see Dpdl allows a very flexible way to dynamically generate and execute code via AI
+find more examples here: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/ai)
+
+
+[Index](#index)
+
 
 ### Options
 
@@ -272,9 +290,12 @@ int exit_code = dpdl_exit_code()
 println("generative ai exit code: " + exit_code)
 ```
 
-### SKILL definitions
+[Index](#index)
 
-Skill definitions serve the purpose to add knowledge to the AI engine prior executing a request.
+
+### Knowledge SKILL definitions
+
+Knowledge Skill definitions serve the purpose to add knowledge to the AI engine prior executing a request.
 
 Custom SKILL definitions can be defined for various purposes, and simply placed into a sub-folder  (ex. './DpdlAI/skills/my_custom_skill/SKILL.md')
 
@@ -301,6 +322,9 @@ dpdl_stack_push("dpdlai:-skill my_custom_skill")
 - **`dpdlplugin-js`** -> knowledge about the usage of the 'Dpdl language plug-in' for JavaScript
 
 
+[Index](#index)
+
+
 ### How to
 
 #### Generate a new file that contains generated code
@@ -318,18 +342,22 @@ java -jar DpdlEngine_V1.0_release.jar -load ai/dpdlAITest.h @gen
 
 ```
 
-### Current status
+[Index](#index)
+
+
+### Future Integrations
 
 The *Dpdl language plug-in* **DpdlAINerd** is in active development with huge improvements and features foreseen in near future. 
 
 Stand-by for the coming innovation we're bringing to Dpdl with generative code.
 
-### Next integrations
+#### some...
 
 - Image generation for test data
 - Speech to Code generation 
 - Visual diagram/schema to code generation
 
- 
+
+[Index](#index) 
 
 

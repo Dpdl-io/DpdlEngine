@@ -27,7 +27,7 @@ The following **Dpdl language plug-ins** that enable GPU compute are currently a
 ## Index
 
 * [OpenCL](#opencl)
-* [WGSL - WebGPU Shading Language](#wgsl-webgpu-shading-language)
+* [WGSL WebGPU Shading Language](#wgsl-webgpu-shading-language)
 * [Triton](#triton)
 
 
@@ -139,7 +139,7 @@ println("finished")
 
 ```
 
-## WGSL - WebGPU Shading Language
+## WGSL WebGPU Shading Language
 
 This dedicated dpdl language plug-in for 'Wgsl' can execute WGSL (**WebGPU Shading Language**) compute code, which is executed on GPUs and complies to the [WebGPU](https://www.w3.org/TR/webgpu/) specification, directly embedded within Dpdl code.
 

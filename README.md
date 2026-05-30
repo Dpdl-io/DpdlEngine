@@ -35,13 +35,13 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 
 ### **Dpdl** = dpdl-lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + DB + AI = <ins>Powerful and Versatile</ins>
 
-Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in parts dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code.
+Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in small parts dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code.
 
 Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages, or any custom developed code syntax, to be embedded and executed directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and shipped separately.
 
-At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages**: <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica and others will follow...</em>, <ins>**directly embedded within dpdl code**</ins>.
+At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages**: <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica</em> and others will follow..., <ins>**directly embedded within dpdl code**</ins>.
 
-Everything comes already included out of the box along with the *DpdlEngine*, **<ins>No additional installations required</ins>**.
+Everything comes already included as part of the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
 <ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages and different platforms. Also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>**Quantum Computing**</ins>.
 
@@ -297,100 +297,68 @@ This dpdl example implements a 3D model visualization of chemical molecules (in 
 
 ### Dpdl example that make use of dpdl **`class`** type Inheritance and Polymorphism
 
+```python
 
-```c++
-
-struct property {
-	int max_weight_gr
-	float max_height_m
-	string desc = null
-}
-
-class Animal {
-	int id
-	string name
-	struct property info = {100000, 2.5,.}
-
-	func Animal(int id_)
-		id = id_
-		name = "No name"
-
-		println("new Animal() with id: " + id + " info: " + info)
+class Vehicle {
+	string type
+	object properties = new("HashMap")
+	
+	func Vehicle(string type_)
+		this.type = type_
 	end
-
-	func Animal(int id_, string name_)
-		id = id_
-		name = name_
-
-		println("new Animal() with id: " + id + " and name: " + name + " - info: " + info)
+	
+	func getType() string
+		return type
 	end
-
-	func print()
-		println("This is an Animal")
+	
+	func setType(string type_)
+		type = type_
 	end
-
-	func makeSound()
-		println("kind of animal is not defined")
+	
+	func getBrand()
+		return "unknown"
 	end
-
-	func getHashMap()
-		object h_map = new("HashMap")
-
-		info_arr[] = array(info)
-		int i = 0
-		for(i < info_arr.size())
-			h_map.put(i, info_arr[i])
-			i=i+1
-		endfor
-
-		return h_map
+	
+	func setProp(object prop)
+		properties = prop
+	end
+	
+	func getProp() object
+		return properties
 	end
 }
 
-class Dog : Animal {
+class Car : Vehicle {
 
-	func Dog(int id_, string name_)
-		super(id_, name_)
-
-		info.max_weight_gr = 8000
-		info.max_height_m = 0.5
-		info.desc = "this breed is Shitzu"
-
-		println("new Dog() with id: " + id + " and name: " + name + " - info: " + info)
+	string brand = null
+	
+	func Car(string type)
+		super(type)
+		this.brand = "unknown"
 	end
-
-	func print()
-		println("This is a Dog with name: " + name)
+	
+	func Car(string type, string brand)
+		super(type)
+		this.brand = brand
 	end
+	
+	func getBrand()
+		return brand
+	end
+}
 
-	func makeSound()
-		...
-		// check link above for complete implementation of this example
-		
-		
-// now we can use the class
+class Car mycar("Jeep", "Mercedes")
 
-class Dog mydog(2, "Rosa")
+println("The type of my car is: " + mycar.getType() + " and the brand is: " + mycar.getBrand())
 
-mydog.print()
-mydog.makeSound()
-int sd = mydog.makeSound(10)
+class Car yourcar("Suv")
 
-object map_dog = mydog.getHashMap()
-println("map dog: " + map_dog)
+yourcar.setType("Porsche")
 
-var entry_di = map_dog.get(0)
-println("1st entry: " + entry_di +  " is of type: " + typeof(entry_di))
-
-...
-
-// see link below for the full dpdl source code of this example
-
+println("The type of your car is: " + yourcar.getType() + " and the brand is: " + yourcar.getBrand())
 ```
 
-**Here is the link for the [FULL dpdl code](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h) of the example that is summarized above**:
-
-Note: some functions in the example above make also use of 'embedded code sections' in other programming languages
+Here you can find a more articulated example: [test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h) of the example
 
 
 ### Sample Dpdl code that makes use of embedded 'Groovy' code to read a file line by line and print it to the console
@@ -552,7 +520,7 @@ println("")
 println("and more 'Dpdl lanuage plug-ins' will follow and you can also create your owns")
 ```
 
-### Dpdl sample code that accelerates on GPUs a GELU Neural Network activation function via embedded 'Wgsl' code:
+## Dpdl sample code that accelerates on GPUs a GELU Neural Network activation function via embedded 'Wgsl' code:
 
 ```python
 import('native')
@@ -713,7 +681,7 @@ In this GitHub repository you can find full featured working prototype applicati
 
 ## Why Dpdl?
 
-Dpdl is suitable for <ins>rapid application development</ins> and <ins>testing</ins> in various domains, in particular also for development of small applications on <ins>constrained devices</ins>, and it is suitable also to be used as embedded scripting engine in applications.
+Dpdl is suitable for <ins>rapid application development</ins> and <ins>testing</ins> in various domains, in particular also for development of small applications on <ins>constrained devices</ins>. It is also very effective to be used as embedded scripting engine within applications.
 
 Dpdl facilitates rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple, extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
 
@@ -1357,7 +1325,7 @@ println("finished")
 ```
 
 
-## Dpdl Examples
+## more Dpdl Examples
 
 Further Dpdl examples can be found on this page:
 
@@ -1491,9 +1459,9 @@ The following domains are All part of Dpdl-io (www.dpdl.io)
 
 Currently the domains point to the same web-site, but Stand by! There will be interesting developments
 
-www.dpdl-lang.org
-
 www.dpdl-lang.io
+
+www.dpdl-lang.org
 
 www.dpdl-lang.it
 

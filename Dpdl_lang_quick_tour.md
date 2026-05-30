@@ -47,6 +47,20 @@ println("Hello World")
 
 in case parameters are passed as command line arguments:
 
+**with an array:**
+
+```python
+func dpdl_main(args[])
+	println("Hello World with arguments: " + args)
+	if(args.size() > 0)
+		println("	arg[0]: " + arg[0])
+		println("	arg[1]: " + arg[1])
+		println("	arg[2]: " + arg[2])
+	fi
+end
+
+**with an object:**
+
 ```python
 func dpdl_main(object args)
 	println("Hello World with arguments: " + args " with the type: " + typeof(args))
@@ -156,7 +170,7 @@ println("result: " + res)
 
 ### Object oriented
 
-Dpdl is intrinsically object oriented
+Dpdl is Object oriented and supports Inheritance and Polymorphism 
 
 ```python
 
@@ -183,11 +197,15 @@ class Vehicle {
 	func setProp(object prop)
 		properties = prop
 	end
+	
+	func getProp() object
+		return properties
+	end
 }
 
-class Car extends Vehicle {
+class Car : Vehicle {
 
-	string brand
+	string brand = null
 	
 	func Car(string type)
 		super(type)
@@ -221,9 +239,9 @@ println("The type of your car is: " + yourcar.getType() + " and the brand is: " 
 
 ### Interoperable with JVM classes
 
-Dpdl can access classes of any underlying JVM platform and of any external Java, Kotlin, Scala, Groovy and Clojure library.
+Dpdl can access classes of the underlying JVM platform and of any external Java, Kotlin, Scala, Groovy and Clojure library.
 
-The following dpdl code for example makes use of a '**java.util.HashMap**', enabling access to all methods of the underlying jre classes:
+The following dpdl code for example makes use of a '**java.util.HashMap**', enabling access to all methods of the underlying JRE classes:
 
 ```python
 object mymap = new("HashMap")

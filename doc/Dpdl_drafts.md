@@ -91,7 +91,7 @@ JVM implementations.
 
 This is a proposal draft for enabling dpdl code sections to be JIT compiled at runtime <ins>before execution</ins>.
 
-The purpose of this feature is only to improve performance of critical code sections that perform calculations, it is not intended to be used on a wider scale.
+The purpose of this feature is only to improve performance of critical code sections that for example perform calculations, it is not intended to be used on a wider scale.
 
 The meta instruction **`[jit]`** signalizes the beginning of dpdl which should be JIT compiled before execution, until the first empty code line is found.
 
