@@ -50,6 +50,7 @@ in case parameters are passed as command line arguments:
 **with an array:**
 
 ```python
+
 func dpdl_main(args[])
 	println("Hello World with arguments: " + args)
 	if(args.size() > 0)
@@ -59,12 +60,15 @@ func dpdl_main(args[])
 	fi
 end
 
+```
 **with an object:**
 
 ```python
+
 func dpdl_main(object args)
 	println("Hello World with arguments: " + args " with the type: " + typeof(args))
 end
+
 ```
 
 
