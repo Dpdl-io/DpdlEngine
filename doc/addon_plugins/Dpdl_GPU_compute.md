@@ -139,6 +139,9 @@ println("finished")
 
 ```
 
+[Index](#index)
+
+
 ## WGSL WebGPU Shading Language
 
 This dedicated dpdl language plug-in for 'Wgsl' can execute WGSL (**WebGPU Shading Language**) compute code, which is executed on GPUs and complies to the [WebGPU](https://www.w3.org/TR/webgpu/) specification, directly embedded within Dpdl code.
@@ -254,6 +257,8 @@ println("finished")
 
 ```
 
+[Index](#index)
+
 
 ## Triton
 
@@ -265,6 +270,8 @@ The plug-in can execute 'Triton' code as it is, or it can convert and compile it
 
 Example will follow soon...
 
+
+[Index](#index)
 
 
 
