@@ -315,6 +315,10 @@ The following Dpdl examples show how to exploit capabilities of a GPU via embedd
 
 	[wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
 	
+* Dpdl sample code that makes use of the Dpdl language plug-in 'triton' to execute a Triton python-based compute kernel on GPU
+
+	[gpu/dpdlTritonExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/gpu/dpdlTritonExample.h)
+	
 
 [Index](#index)
 
