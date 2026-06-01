@@ -33,13 +33,13 @@ The core *DpdlEngine* has the <ins>**capability to run also on very limited memo
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
 </p>
 
-### **Dpdl** = dpdl-lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + DB + AI = <ins>Powerful and Versatile</ins>
+### **Dpdl** = dpdl-lang + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) + DB + AI = <ins>Powerful and Versatile</ins>
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in small parts dynamically <ins>**JVM bytecode compiled**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code.
 
 Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages, or any custom developed code syntax, to be embedded and executed directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and shipped separately.
 
-At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages**: <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica</em> and others will follow..., <ins>**directly embedded within dpdl code**</ins>.
+At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages**: <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica</em> and others will follow..., <ins>**directly embedded within dpdl code**</ins>.
 
 Everything comes already included as part of the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
@@ -216,7 +216,7 @@ println("finished!")
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
 * **Automatic code generation and execution of 'embedded code sections' at runtime** (*Dpdl language plug-ins*)
-* **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)
+* **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of 'Dpdl language plug-ins'**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded C code (ANSI C & ISO C99) <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
@@ -850,6 +850,7 @@ and also for some less known, but yet very powerful programming languages:
 
 * **`Umka`**
 * **`Janet`**
+* **`Ring`**
 
 **available Add-on 'Dpdl language plug-ins':**
 

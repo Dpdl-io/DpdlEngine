@@ -29,7 +29,7 @@ dpdl_stack_push(tns_size, tns_x, tns_y)
 	DEVICE = triton.runtime.driver.active.get_active_torch_device()
 
 	@triton.jit
-	def add_kernel(x_ptr, y_ptr, output_ptr, n_elements, BLOCK_SIZE: tl.constexpr):
+	def add(x_ptr, y_ptr, output_ptr, n_elements, BLOCK_SIZE: tl.constexpr):
 
 		pid = tl.program_id(axis=0)
 
@@ -56,7 +56,7 @@ dpdl_stack_push(tns_size, tns_x, tns_y)
 
 	    grid = lambda meta: (triton.cdiv(n_elements, meta['BLOCK_SIZE']), )
 
-	    add_kernel[grid](x, y, output, n_elements, BLOCK_SIZE=1024)
+	    add[grid](x, y, output, n_elements, BLOCK_SIZE=1024)
 
 	    return output
 
@@ -66,7 +66,7 @@ int exit_code = dpdl_exit_code()
 
 println("exit_code: " + exit_code)
 
-raise(exit_code, "Error in executing triton kernel")
+raise(exit_code, "Error in executing Triton kernel")
 
 object output = dpdl_stack_obj_get(my_compute)
 

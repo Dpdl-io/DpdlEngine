@@ -13,11 +13,11 @@ by
 		
  
 
-Dpdl enables to execute compute intensive algorithms directly on GPGPUs or GPUs.
+Dpdl enables to execute compute intensive operations and algorithms directly on GPGPUs or GPUs.
 
-This can be performed via '*embedded code sections*' implemented directly in OCL (OpenCL) or Wgsl (Web GPU Shading Language) code.
+This can be performed via '*embedded code sections*' implemented directly in OCL (OpenCL) or Wgsl (Web GPU Shading Language) code, or by other foreign programming models available.
 
-The following **Dpdl language plug-ins** that enable GPU compute are currently available:
+The following **Dpdl language plug-ins** that enable to perform GPU compute are currently available:
 
 - **Dpdl language plug-in** **`opencl`**
 - **Dpdl language plug-in** **`wgsl`**
@@ -262,11 +262,13 @@ println("finished")
 
 ## Triton
 
-This dedicated *Dpdl language plug-in* for 'Triton' allows to execute DNN compute kernels on GPU hardware.
+This dedicated *Dpdl language plug-in* for 'Triton' language allows to execute DNN compute kernels for AI on GPU hardware.
 
-*Triton* is a Python-based domain specific language (https://triton-lang.org) that lowers the compute kernel definition to LLVM-IR dialects and PTX formats that run directly on GPUs. It provides a abstractions and simplifies the development of compute kernels.
+*Triton* is a python-based domain specific language (https://triton-lang.org) that provides useful abstractions and simplifies the development of compute kernels. It lowers the compute kernel definition to LLVM-IR dialects (MLIR) and PTX formats that run directly on GPUs.
 
-The plug-in can execute 'Triton' code as it is in Python, but via a dedicated option it can convert the python code to JVM compatible code via the Java toolkit HAT ( Heterogeneous Accelerator Toolkit), then compile and run it. Both approaches perform the lowering to the appropriate LLVM dialect for the GPU.
+The plug-in can execute *Triton* code as it is, namely in Python code, but it has also the capability to convert the same python code to JVM compatible code that makes use of the Java toolkit HAT (Heterogeneous Accelerator Toolkit), which is then compiled and executed on GPU hardware.
+
+Both approaches perform the same lowering to the appropriate LLVM dialect for the GPUs where it's running.
 
 **Example:** simple example of an addition of two tensors 
 
@@ -293,7 +295,7 @@ dpdl_stack_push(tns_size, tns_x, tns_y)
 	DEVICE = triton.runtime.driver.active.get_active_torch_device()
 
 	@triton.jit
-	def add_kernel(x_ptr, y_ptr, output_ptr, n_elements, BLOCK_SIZE: tl.constexpr):
+	def add(x_ptr, y_ptr, output_ptr, n_elements, BLOCK_SIZE: tl.constexpr):
 
 		pid = tl.program_id(axis=0)
 
@@ -320,7 +322,7 @@ dpdl_stack_push(tns_size, tns_x, tns_y)
 
 	    grid = lambda meta: (triton.cdiv(n_elements, meta['BLOCK_SIZE']), )
 
-	    add_kernel[grid](x, y, output, n_elements, BLOCK_SIZE=1024)
+	    add[grid](x, y, output, n_elements, BLOCK_SIZE=1024)
 
 	    return output
 
@@ -337,6 +339,87 @@ object output = dpdl_stack_obj_get(my_compute)
 println("output: ")
 
 println(output)
+
+```
+
+### Triton on JVM
+
+The *Triton* DNN compute kernel based on python can also be converted to JVM compatible code that makes use of the HAT (Heterogeneous Accelerator Toolkit) toolkit (jdk.incubator.code). This is achieved through a novel reflection methoand code model lowering. The converted java code is than compiled and executed.
+
+#### Options
+
+The dpdl plug-in option to active this is 
+
+**`dpdlplugin:-convert HAT`**
+
+```python
+println("executing a compute kernel with Triton on GPU...")
+
+object tensors = getObj("Tensors")
+
+int tns_size = 98432
+
+object tns_x = tensors.random(tns_size, 1)
+
+object tns_y = tensors.random(tns_size, 1)
+
+dpdl_stack_push("dpdlplugin:-convert HAT", tns_size, tns_x, tns_y)
+
+>>triton(my_compute)
+	import torch
+
+	import triton
+	import triton.language as tl
+
+
+	DEVICE = triton.runtime.driver.active.get_active_torch_device()
+
+	@triton.jit
+	def add(x_ptr, y_ptr, output_ptr, n_elements, BLOCK_SIZE: tl.constexpr):
+
+		pid = tl.program_id(axis=0)
+
+		block_start = pid * BLOCK_SIZE
+		offsets = block_start + tl.arange(0, BLOCK_SIZE)
+
+		mask = offsets < n_elements
+
+		x = tl.load(x_ptr + offsets, mask=mask)
+		y = tl.load(y_ptr + offsets, mask=mask)
+
+		output = x + y
+
+		tl.store(output_ptr + offsets, output, mask=mask)
+
+
+	def dpdl_kernel(size, x: torch.Tensor, y: torch.Tensor):
+
+	    output = torch.empty_like(x)
+
+	    assert x.device == DEVICE and y.device == DEVICE and output.device == DEVICE
+
+	    n_elements = output.numel()
+
+	    grid = lambda meta: (triton.cdiv(n_elements, meta['BLOCK_SIZE']), )
+
+	    add[grid](x, y, output, n_elements, BLOCK_SIZE=1024)
+
+	    return output
+
+
+<<
+int exit_code = dpdl_exit_code()
+
+println("exit_code: " + exit_code)
+
+raise(exit_code, "Error in executing Triton kernel")
+
+object output = dpdl_stack_obj_get(my_compute)
+
+println("output: ")
+
+println(output)
+
 ```
 
 
