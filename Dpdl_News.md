@@ -13,6 +13,8 @@ by
 
 ## New Features
   
+* *Dpdl language plug-in* for [Ring](https://ring-lang.github.io) programming language code is now available
+  
 * **NEW** *Dpdl language plug-in* for 'mruby' (Lightweight Ruby)  is <ins>Now available</ins>. It can be run also on MCUs
 
 * **NEW** The **Dpdl Native Interface** now supports both Modes for <ins>accessing Native shared Libraries</ins>, via **legacy JNI**, and via the **Newer FFM** (*Foreign Function Memory*) Interface. The two modes can be switched via a variable configuration in 'DpdlEngine.ini'
@@ -26,8 +28,6 @@ by
 #### in Development
 
 * Development of **Dpdl language plug-in** for 'R' statistical computing language
-
-* *Dpdl language plug-in* to enable '*embedded code sections*' of [Ring](https://ring-lang.github.io) programming language code, via keyword '**>>ring**'
 
 * Development of a dedicated **Dpdl language plug-in** for enabling QUANTUM computing via OpenQASM 2.0 (circuit description language)
 
