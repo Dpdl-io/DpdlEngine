@@ -13,7 +13,7 @@ by
 
 ## New Features
   
-* *Dpdl language plug-in* for [Ring](https://ring-lang.github.io) programming language code is now available
+* **NEW** *Dpdl language plug-in* for [Ring](https://ring-lang.github.io) programming language code is now available
   
 * **NEW** *Dpdl language plug-in* for 'mruby' (Lightweight Ruby)  is <ins>Now available</ins>. It can be run also on MCUs
 

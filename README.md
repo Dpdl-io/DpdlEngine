@@ -298,6 +298,21 @@ This dpdl example implements a 3D model visualization of chemical molecules (in 
 ### Dpdl example that make use of dpdl **`class`** type Inheritance and Polymorphism
 
 ```python
+class Car mycar("Jeep", "Mercedes")
+
+println("The type of my car is: " + mycar.getType() + " and the brand is: " + mycar.getBrand())
+
+class Car yourcar("Suv")
+
+yourcar.setType("Porsche")
+
+println("The type of your car is: " + yourcar.getType() + " and the brand is: " + yourcar.getBrand())
+
+```
+
+This is the implementation of the above dpdl **`class`** :
+
+```python
 
 class Vehicle {
 	string type
@@ -347,15 +362,6 @@ class Car : Vehicle {
 	end
 }
 
-class Car mycar("Jeep", "Mercedes")
-
-println("The type of my car is: " + mycar.getType() + " and the brand is: " + mycar.getBrand())
-
-class Car yourcar("Suv")
-
-yourcar.setType("Porsche")
-
-println("The type of your car is: " + yourcar.getType() + " and the brand is: " + yourcar.getBrand())
 ```
 
 Here you can find a more articulated example: [test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h) of the example

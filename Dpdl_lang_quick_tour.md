@@ -189,7 +189,7 @@ println("The type of your car is: " + yourcar.getType() + " and the brand is: " 
 
 ```
 
-This is the implementation of the dpdl **`class`** :
+This is the implementation of the above dpdl **`class`** :
 
 ```python
 
