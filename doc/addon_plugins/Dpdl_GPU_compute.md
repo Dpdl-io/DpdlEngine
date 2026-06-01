@@ -21,7 +21,7 @@ The following **Dpdl language plug-ins** that enable GPU compute are currently a
 
 - **Dpdl language plug-in** **`opencl`**
 - **Dpdl language plug-in** **`wgsl`**
-
+- **Dpdl language plug-in** **`triton`**
 
 
 ## Index
