@@ -346,11 +346,11 @@ println(output)
 
 The *Triton* DNN compute kernel based on python can also be converted to JVM compatible code that makes use of the HAT (Heterogeneous Accelerator Toolkit) toolkit (jdk.incubator.code). This is achieved through a novel reflection methoand code model lowering. The converted java code is than compiled and executed.
 
-#### Options
 
-The dpdl plug-in option to active this is 
+The dpdl plug-in option to active this is option: **`dpdlplugin:-convert HAT`**
 
-**`dpdlplugin:-convert HAT`**
+
+#### Example
 
 ```python
 println("executing a compute kernel with Triton on GPU...")

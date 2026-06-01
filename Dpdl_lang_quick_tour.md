@@ -47,21 +47,21 @@ println("Hello World")
 
 in case parameters are passed as command line arguments:
 
-**with an array:**
+**params as an array:**
 
 ```python
 
 func dpdl_main(args[])
 	println("Hello World with arguments: " + args)
-	if(args.size() > 0)
-		println("	arg[0]: " + arg[0])
-		println("	arg[1]: " + arg[1])
-		println("	arg[2]: " + arg[2])
+	if(args.size() == 3)
+		println("	args[0]: " + args[0])
+		println("	args[1]: " + args[1])
+		println("	args[2]: " + args[2])
 	fi
 end
 
 ```
-**with an object:**
+**params as an object:**
 
 ```python
 
@@ -177,6 +177,21 @@ println("result: " + res)
 Dpdl is Object oriented and supports Inheritance and Polymorphism 
 
 ```python
+class Car mycar("Jeep", "Mercedes")
+
+println("The type of my car is: " + mycar.getType() + " and the brand is: " + mycar.getBrand())
+
+class Car yourcar("Suv")
+
+yourcar.setType("Porsche")
+
+println("The type of your car is: " + yourcar.getType() + " and the brand is: " + yourcar.getBrand())
+
+```
+
+This is the implementation of the dpdl **`class`** :
+
+```python
 
 class Vehicle {
 	string type
@@ -225,16 +240,6 @@ class Car : Vehicle {
 		return brand
 	end
 }
-
-class Car mycar("Jeep", "Mercedes")
-
-println("The type of my car is: " + mycar.getType() + " and the brand is: " + mycar.getBrand())
-
-class Car yourcar("Suv")
-
-yourcar.setType("Porsche")
-
-println("The type of your car is: " + yourcar.getType() + " and the brand is: " + yourcar.getBrand())
 
 ```
 
