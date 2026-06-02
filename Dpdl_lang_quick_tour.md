@@ -15,7 +15,7 @@ by
 ## Dpdl language quick Tour
 
 
-### Contents
+### Index
 
 <table>
 <tr><td width=33% valign=top>
@@ -168,7 +168,7 @@ println("result: " + res)
 
 ```
 
-* [Contents](#contents)
+* [Index](#index)
 
 ### Object oriented
 
@@ -241,7 +241,7 @@ class Car : Vehicle {
 
 ```
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 ### Interoperable with JVM classes
@@ -280,7 +280,7 @@ mycls.mycreateSum()
 
 ```
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 ### Native library access
@@ -373,7 +373,7 @@ libc.close(fh)
 
 ```
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 ### C compatibility for data structures
@@ -428,7 +428,7 @@ println("returned value: " + ret)
 
 ```
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 ### Multiple programming languages can be embedded and executed directly inside Dpdl code
@@ -505,7 +505,7 @@ println("")
 See ['Dpdl language plug-ins'](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_language_plugins.md) for more info
 
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 ### Dpdl to native jvm bytecode generation at runtime
@@ -588,7 +588,7 @@ println("finished in " + ms + " milliseconds (ms)")
 
 ```
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 ### AI generative code inside Dpdl
@@ -613,7 +613,7 @@ println("exit code: " + exit_code)
 println("finished")
 ```
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 ### Dpdl can be executed very efficiently from C code
@@ -664,7 +664,7 @@ int main(int argc, char **argv){
 }
 ```
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 ### Performance and Optimizations
@@ -684,7 +684,7 @@ The model can be rotated freely with mouse events, and some key events can be us
 [VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
 
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 #### Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed.
@@ -788,7 +788,7 @@ println(result)
 
 ```
 
-* [Contents](#contents)
+* [Index](#index)
 
 
 
