@@ -962,17 +962,18 @@ Dpdl class type can be derived from a base class (superclass), inheriting all fu
 The dpdl keyword to subclass a given class from a base-class can either be **`extends`**, or can also be the shorter form **`:`**
 
 ```python
+
 class A {
 	...
 }
 
-class B extends A {
+class C : B {
 	...
 }
 
-# OR also in the shorter form
+# OR alternatively also with the extended form
 
-class C : B {
+class B extends A {
 	...
 }
 
