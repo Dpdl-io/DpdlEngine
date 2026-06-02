@@ -266,9 +266,9 @@ This dedicated *Dpdl language plug-in* for 'Triton' language allows to execute D
 
 *Triton* is a python-based domain specific language (https://triton-lang.org) that provides useful abstractions and simplifies the development of compute kernels. It lowers the compute kernel definition to LLVM-IR dialects (MLIR) and PTX formats that run directly on GPUs.
 
-The plug-in can execute *Triton* code as it is, namely in Python code, but it has also the capability to convert the same python code to JVM compatible code that makes use of the Java toolkit HAT (Heterogeneous Accelerator Toolkit), which is then compiled and executed on GPU hardware.
+The plug-in can execute *Triton* code as it is, namely in Python code, but it has also the capability to convert the same python code to JVM compatible code that makes use of the Java toolkit HAT (Heterogeneous Accelerator Toolkit), which is then compiled and executed on GPU hardware via CUDA or OpenCL backends.
 
-Both approaches perform the same lowering to the appropriate LLVM dialect for the GPUs where it's running.
+Both approaches perform the lowering to the appropriate LLVM dialect for the GPUs where it's running
 
 **Example:** simple example of an addition of two tensors 
 
