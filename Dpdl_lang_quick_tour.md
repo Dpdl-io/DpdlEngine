@@ -669,7 +669,7 @@ int main(int argc, char **argv){
 
 ### Performance and Optimizations
 
-- Dpdl allows to choose the optimal libraries for creating best performance critical applications.
+#### Dpdl allows to choose the optimal libraries for creating best performance critical applications.
 
 As example here a dpdl implementation of a 3D model visualization application for chemical molecules (in this case hydrogen) using the **JavaFX** library.
 
@@ -687,7 +687,7 @@ The model can be rotated freely with mouse events, and some key events can be us
 * [Contents](#contents)
 
 
-- Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed.
+#### Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed.
 
 ```c
 
@@ -789,6 +789,7 @@ println(result)
 ```
 
 * [Contents](#contents)
+
 
 
 ### Check the full Documentation for a deeper insight
