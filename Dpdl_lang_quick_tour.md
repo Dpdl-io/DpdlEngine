@@ -24,15 +24,14 @@ by
 * [Simple](#simple)
 * [Object oriented](#object-oriented)
 * [Interoperable with JVM classes](#interoperable-with-jvm-classes)
-* [Performance](#performance)
 * [Native library access](#native-library-access)
 * [C compatibility for data structures](#c-compatibility-for-data-structures)
 * [Multiple programming languages can be embedded and executed directly inside Dpdl code](#multiple-programming-languages-can-be-embedded-and-executed-directly-inside-dpdl-code)
 * [Dpdl to native jvm bytecode generation at runtime](#dpdl-to-native-jvm-bytecode-generation-at-runtime)
-* [Optimizations via native C code 'embedded code sections'](#optimizations-via-native-c-code-embedded-code-sections)
 * [AI generative code inside Dpdl](#ai-generative-code-inside-dpdl)
 * [Dpdl can be executed very efficiently from C code](#dpdl-can-be-executed-very-efficiently-from-c-code)
-
+* [Performance and Optimizations](#performance)
+* [Optimizations via native C code 'embedded code sections'](#optimizations-via-native-c-code-embedded-code-sections)
 
 </td></tr>
 </table>
@@ -281,26 +280,6 @@ object mycls = new("test.MyTestCalc", 1, 2, 3, 23.0)
 mycls.mycreateSum()
 
 ```
-
-* [Contents](#contents)
-
-
-### Performance
-
-Dpdl allows to choose the optimal libraries for creating best performance critical applications.
-
-As example here a dpdl implementation of a 3D model visualization application for chemical molecules (in this case hydrogen) using the **JavaFX** library.
-
-The model can be rotated freely with mouse events, and some key events can be used to toggle the visualization:
-
-[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
-
-<p align="center">	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="85%" height="85%">
-</p>
-
-[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
-
 
 * [Contents](#contents)
 
@@ -613,9 +592,103 @@ println("finished in " + ms + " milliseconds (ms)")
 * [Contents](#contents)
 
 
-### Optimizations via native C code 'embedded code sections'
+### AI generative code inside Dpdl
 
-Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed.
+Dpdl supports AI assisted coding with help of the **Dpdl language plug-in** '`DpdlAINerd`'
+
+The example below generates, compiles and executes AI generated code (via DeepSeek, OpenAI, etc..) right away
+
+```python
+println("testing the Dpdl language plug-in 'DpdlAINerd' to automatically generate and execute code...")
+
+>>ai
+	>>c
+	write a console program in C that implements the famous SNAKE game, with colorful graphics using ncurses colors
+<<
+int exit_code = dpdl_exit_code()
+
+raise(exit_code, "Error in generating code from natural language description")
+
+println("exit code: " + exit_code)
+
+println("finished")
+```
+
+* [Contents](#contents)
+
+
+### Dpdl can be executed very efficiently from C code
+
+Dpdl code can be easily embedded and executed in C/C++ applications or libraries:
+
+- Either directly executing plain dpdl code
+
+```c
+#include <stdio.h>
+#include "dpdl.h"
+
+char *dpdl_src_code =   ""
+			"println('Dpdl Hello World from C code')"
+			"int c = 0	\n"
+		  	"for(c < 1000)	\n"
+			"	println('This is Dpdl iteration #' + c)	\n"
+			"	c=c+1\n	\n"
+			"endfor	\n";
+
+int main(int argc, char **argv){
+	printf("executing Dpdl code from C...\n");
+
+	int ret = dpdl_exec_code(dpdl_src_code);
+
+	printf("ret: %d\n", ret);
+
+	return 0;
+}
+```
+
+- Or by loading an external dpdl source code file ( *.dpdl or *.h )
+
+```c
+#include <stdio.h>
+#include "dpdl.h"
+
+int main(int argc, char **argv){
+	printf("executing Dpdl from C...\n");
+
+	char *dpdl_src_file = "test/testString.dpdl";
+
+	int ret = dpdl_exec_script(dpdl_src_file);
+	
+	printf("ret: %d\n", ret);
+
+	return 0;
+}
+```
+
+* [Contents](#contents)
+
+
+### Performance and Optimizations
+
+- Dpdl allows to choose the optimal libraries for creating best performance critical applications.
+
+As example here a dpdl implementation of a 3D model visualization application for chemical molecules (in this case hydrogen) using the **JavaFX** library.
+
+The model can be rotated freely with mouse events, and some key events can be used to toggle the visualization:
+
+[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
+
+<p align="center">	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="85%" height="85%">
+</p>
+
+[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
+
+
+* [Contents](#contents)
+
+
+- Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed.
 
 ```c
 
@@ -714,82 +787,6 @@ println("result: ")
 
 println(result)
 
-```
-
-* [Contents](#contents)
-
-
-### AI generative code inside Dpdl
-
-Dpdl supports AI assisted coding with help of the **Dpdl language plug-in** '`DpdlAINerd`'
-
-The example below generates, compiles and executes AI generated code (via DeepSeek, OpenAI, etc..) right away
-
-```python
-println("testing the Dpdl language plug-in 'DpdlAINerd' to automatically generate and execute code...")
-
->>ai
-	>>c
-	write a console program in C that implements the famous SNAKE game, with colorful graphics using ncurses colors
-<<
-int exit_code = dpdl_exit_code()
-
-raise(exit_code, "Error in generating code from natural language description")
-
-println("exit code: " + exit_code)
-
-println("finished")
-```
-
-* [Contents](#contents)
-
-
-### Dpdl can be executed very efficiently from C code
-
-Dpdl code can be easily embedded and executed in C/C++ applications or libraries:
-
-- Either directly executing plain dpdl code
-
-```c
-#include <stdio.h>
-#include "dpdl.h"
-
-char *dpdl_src_code =   ""
-			"println('Dpdl Hello World from C code')"
-			"int c = 0	\n"
-		  	"for(c < 1000)	\n"
-			"	println('This is Dpdl iteration #' + c)	\n"
-			"	c=c+1\n	\n"
-			"endfor	\n";
-
-int main(int argc, char **argv){
-	printf("executing Dpdl code from C...\n");
-
-	int ret = dpdl_exec_code(dpdl_src_code);
-
-	printf("ret: %d\n", ret);
-
-	return 0;
-}
-```
-
-- Or by loading an external dpdl source code file ( *.dpdl or *.h )
-
-```c
-#include <stdio.h>
-#include "dpdl.h"
-
-int main(int argc, char **argv){
-	printf("executing Dpdl from C...\n");
-
-	char *dpdl_src_file = "test/testString.dpdl";
-
-	int ret = dpdl_exec_script(dpdl_src_file);
-	
-	printf("ret: %d\n", ret);
-
-	return 0;
-}
 ```
 
 * [Contents](#contents)
