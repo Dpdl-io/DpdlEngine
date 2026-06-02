@@ -30,8 +30,7 @@ by
 * [Dpdl to native jvm bytecode generation at runtime](#dpdl-to-native-jvm-bytecode-generation-at-runtime)
 * [AI generative code inside Dpdl](#ai-generative-code-inside-dpdl)
 * [Dpdl can be executed very efficiently from C code](#dpdl-can-be-executed-very-efficiently-from-c-code)
-* [Performance and Optimizations](#performance)
-* [Optimizations via native C code 'embedded code sections'](#optimizations-via-native-c-code-embedded-code-sections)
+* [Performance and Optimizations](#performance-and-optimizations)
 
 </td></tr>
 </table>
