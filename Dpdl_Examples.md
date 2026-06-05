@@ -527,6 +527,10 @@ this is my sample json:
 
 	[janet/dpdlJanetExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/janet/dpdlJanetExample.h)
 	
+* Example dpdl code with an asynchronous 'embedded code section' in Ring lang that implements a simple HTTP server that serves two end-points, '/time' && '/stop'
+	
+	[ring/dpdlRingExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ring/dpdlRingExample.h)
+	
 * Example dpdl code that compiles an 'embedded code section' in C into a native shared library, in this case saved in a given folder. A subsequent 'embedded code section' in C code makes use of the newly generated native shared library functions
 
 	[C/dpdlLibCTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlLibCTest.h)
@@ -550,10 +554,6 @@ this is my sample json:
 	
 	[agent/dpdlAgentObjExchange.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/dpdlAgentObjExchange.h)
 
-
-* Example dpdl code with an asynchronous 'embedded code section' in Ring lang that implements a simple HTTP server that serves two end-points, '/time' && '/stop'
-	
-	[ring/dpdlRingExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ring/dpdlRingExample.h)
 
 
 [Index](#index)
