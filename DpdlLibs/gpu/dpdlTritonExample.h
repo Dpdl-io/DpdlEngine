@@ -7,7 +7,10 @@
 # e-mail: ac@dpdl.io
 #
 
+
+
 println("executing a compute kernel with Triton on GPU...")
+
 
 object tensors = getObj("Tensors")
 
@@ -20,6 +23,7 @@ object tns_y = tensors.random(tns_size, 1)
 dpdl_stack_push(tns_size, tns_x, tns_y)
 
 >>triton(my_compute)
+
 	import torch
 
 	import triton
@@ -68,10 +72,12 @@ println("exit_code: " + exit_code)
 
 raise(exit_code, "Error in executing Triton kernel")
 
-object output = dpdl_stack_obj_get(my_compute)
+object output = dpdl_stack_obj_get("my_compute")
 
 println("output: ")
 
 println(output)
+
+println("finished")
 
 

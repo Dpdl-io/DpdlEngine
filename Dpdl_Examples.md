@@ -551,6 +551,11 @@ this is my sample json:
 	[agent/dpdlAgentObjExchange.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/agent/dpdlAgentObjExchange.h)
 
 
+* Example dpdl code with an asynchronous 'embedded code section' in Ring lang that implements a simple HTTP server that serves two end-points, '/time' && '/stop'
+	
+	[ring/dpdlRingExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/ring/dpdlRingExample.h)
+
+
 [Index](#index)
 
 
