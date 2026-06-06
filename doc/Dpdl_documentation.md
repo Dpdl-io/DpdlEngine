@@ -1372,9 +1372,7 @@ typedef struct B {
 	float z
 } Point;
 
-Point point = {100, 200, 33.3f}
-
-println("point: " + point)
+...
 
 ```
 
