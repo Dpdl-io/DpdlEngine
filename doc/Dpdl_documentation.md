@@ -1047,6 +1047,7 @@ Dpdl Class objects that are compiled into java bytecode via the **`genObjCode(..
 **Example:**
 
 ```python
+
 class A {
 
 	int id
@@ -1137,6 +1138,7 @@ The methods of the java object super-class <ins>can also be overloaded</ins> by 
 **Example:** A dpdl `class` a that is derived from a '**java.lang.String**' java class object
 
 ```python
+
 class Msg : refObj("String") {
 
 	func Msg(string str)
@@ -1315,6 +1317,65 @@ struct A {
 }
 
 struct A mya = {3,.,9}
+```
+
+#### typedef struct
+
+
+The dpdl type **`struct`** can also be used in conjunction with the **`typedef`** specifier to create a type that can be instantiated via the *`new(..)`* keyword or directly via an *Alias*
+
+The concept is similar to that found in *C/C++*
+
+
+##### typedef struct instance like an object
+
+```python
+
+typedef struct A {
+	char id[256]
+	int a
+	int b
+	int c
+}
+
+char myid[] = {'D', 'P', 'D', 'L'}
+
+object myaobj = new(A, myid, 1, 2, 3)
+
+println("myaobj: " + myaobj)
+```
+
+##### typedef struct instance via an *Alias*
+
+```python
+
+typedef struct B {
+	int x
+	int y
+	float z
+} Point
+
+
+Point point = {100, 200, 33.3f}
+
+println("point: " + point)
+
+```
+
+in order to make the syntax compliant also to C, a semicolon ( ; ) may be optionally appended to the *Alias* (Point)
+
+```python
+
+typedef struct B {
+	int x
+	int y
+	float z
+} Point;
+
+Point point = {100, 200, 33.3f}
+
+println("point: " + point)
+
 ```
 
 #### struct inheritance

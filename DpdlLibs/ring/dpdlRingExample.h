@@ -53,9 +53,12 @@ while(cnt < 100)
 	println("resp -> " + resp.text())
 
 	print(".")
+
 	sleep(3000)
 	cnt=cnt+1
 endwhile
+
+println("")
 
 println("stopping server...")
 
