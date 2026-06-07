@@ -441,14 +441,22 @@ end
 
 #### Function return with Multiple values
 
-Dpdl allows Functions to return *multi-value* variables, having the types **`var`** or **`object`** as receiving types. 
+Dpdl allows Functions to return *multi-value* variables, having the types **`var`** or **`object`** as receiving types.
+
+If specified (*optional*), the function return type for multi-value tuples is: **`multi`**
+
 
 ```go
-func myF() multi
+
+func myF1()
 	return (1, "a", "b", c")
 end
 
-var mv = mvF()
+func myF2() multi
+	return (1, "a", "b", c")
+end
+
+var mv = mvF1()
 
 println("mv: " + mv + " is of type: " + typeof(mv))
 
