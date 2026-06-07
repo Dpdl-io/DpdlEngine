@@ -13,7 +13,7 @@ by
 
 ## Dpdl language specification
 
-Dpdl is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in part employs dynamic <ins>**JVM bytecode**</ins> compilation and manipulation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
+Dpdl **dpdl-lang** is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in part employs dynamic <ins>**JVM bytecode**</ins> compilation and manipulation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
 
 Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages**</ins>, or any custom syntax, <ins>**directly embedded within dpdl code**</ins>, simultaneously, of multiple types and <ins>at it's native speed<ins>.
 
@@ -53,9 +53,15 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 <tr><td width=33% valign=top>
 
 * [Types](#types)
+	* [Strings](#strings)
+	* [Numbers](#numbers)
 * [Functions](#functions)
+	* [Function return type](#function-return-type)
+	* [Function return with Multiple values](#function-return-with-multiple-values)
 * [Control flow](#control-flow)
 * [Loops](#loops)
+	* [Simple loops](#simple-loops)
+	* [Set loops](#set-loops)
 * [Operators](#operators)
 * [Data Function Types](#data-function-types)
 * [Arrays](#arrays)
@@ -76,7 +82,6 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 	* [`union` inheritance](#union-inheritance)
 	* [`union` passed to a native library function](#union-passed-to-a-native-library-function)
 * [Pointers](#pointers)
-* [Function return type](#function-return-type)
 * [Dpdl `Threads`](#dpdl-threads)
 * [Exception handling](#exception-handling)
 * [Type handling](#type-handling)
@@ -120,6 +125,7 @@ Dpdl supports the following Types:
 - **`struct`**
 - **`union`**
 - **`enum`**
+- **`(tuples...)`**
 
 
 
@@ -145,6 +151,7 @@ object myobj_static = getObj(...)
 struct myStruct a = {1, "a test", ., 23.3}
 union myUnnion u = {0}
 enum myenum e
+var mytuble = (1, 'b', 0x63B, "test")
 
 # primitive arrays
 int arr_i[10]
@@ -393,6 +400,8 @@ In Dpdl functions are defined via the keyword `func` with the following definiti
 
 - In case a return type is specified, a type checking is performed on the receiving variable
 
+- Functions can return multiple values in form of **`tuples`** for example: **`(val1, val2, val3)`**
+
 - Functions can be recursive
 
 
@@ -422,6 +431,25 @@ Specifying the return type of a function **<ins>is optional</ins>**, it enforces
 func myFunction(object param....) int
 	return 23
 end
+```
+
+#### Function return with Multiple values
+
+Dpdl allows Functions to return *multi-value* variables, having the types **`var`** or **`object`** as receiving types. 
+
+```go
+func myF() multi
+	return (1, "a", "b", c")
+end
+
+var mv = mvF()
+
+println("mv: " + mv + " is of type: " + typeof(mv))
+
+var ret1 = mv.0
+var ret2 = mv.1
+var ret3 = mv.2
+
 ```
 
 
@@ -959,7 +987,7 @@ a2.testIt()
 
 Dpdl class type can be derived from a base class (superclass), inheriting all functions and member variables.
 
-The dpdl keyword to subclass a given class from a base-class can either be **`extends`**, or can also be the shorter form **`:`**
+The dpdl keyword to subclass a given class from a base-class is **`:`**  (also **`extends`** can be used alternatively if wanted, both are supported)
 
 ```python
 
@@ -1567,8 +1595,6 @@ println("init status: " + status.RUNNING)
 println("done status: " + status.DONE)
 println("enum values can also be accessed directly as in C: " + DONE)
 ```
-
-Note: Currently the comma separated tags and values need to be defined on different lines than the starting 'enum myvar {' definition (this will be fixed in the next release)
 
 * [Table of Contents](#table-of-contents)
 
