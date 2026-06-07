@@ -228,6 +228,7 @@ println("the values are: $x $y $z and the message is: $msg")
 println("the expression x + y is equal to: ${x + y} ")
 ```
 
+* [Table of Contents](#table-of-contents)
 
 
 #### Numbers
@@ -293,9 +294,12 @@ byte b = 0x01B
 long l = 0x14269cae3c1ae6243L
 ```
 
+* [Table of Contents](#table-of-contents)
+
+
 #### 'null' values
 
-The value **`null`** can be assigned to any type
+The value **`null`** can be assigned to any type.
 
 **example:**
 
@@ -384,6 +388,8 @@ string mys_new = mys_mod
 
  
 ```
+
+* [Table of Contents](#table-of-contents)
 
 
 ### Functions
