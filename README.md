@@ -1422,7 +1422,8 @@ www.dpdlhub.com
 
 ## Certifications
 
+* Safe to Install by UpdateStar
 
-[![updatestare.com](https://client.updatestar.com/images/uploads/safetoinstallaward.png)](https://www.updatestar.com/)
+[![Safe to Install by UpdateStar](https://client.updatestar.com/images/uploads/safetoinstallaward.png)](https://www.updatestar.com/)
 
 
