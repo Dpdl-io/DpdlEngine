@@ -1424,6 +1424,6 @@ www.dpdlhub.com
 
 * Safe to Install by UpdateStar
 
-[![Safe to Install by UpdateStar](https://client.updatestar.com/images/uploads/safetoinstallaward.png)](https://www.updatestar.com/)
+[![Safe to Install by UpdateStar](https://client.updatestar.com/images/uploads/safetoinstallaward.png)](https://dpdlengine-lite.updatestar.com/)
 
 
