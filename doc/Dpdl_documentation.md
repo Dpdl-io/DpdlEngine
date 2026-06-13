@@ -1229,7 +1229,7 @@ endfor
 
 ### Struct type
 
-````c
+```c
 struct MyStruct {
 	...
 }
