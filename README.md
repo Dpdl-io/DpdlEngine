@@ -531,7 +531,7 @@ println("and more 'Dpdl lanuage plug-ins' will follow and you can also create yo
 ```python
 import('native')
 
-# main
+
 println("testing Wgsl algorithm on GPU...")
 
 println("loading native libraries 'c' and 'dpdlgpu'...")
@@ -886,7 +886,7 @@ Example below shows dpdl code embedding 'C++' that makes use of the powerful Roo
 <img src="http://www.dpdl.io/images/platform/Dpdl_ROOT_example.png" width="60%" height="60%">
 
 ```python
-# main
+
 println("test embedded C++ that uses the Root framework...")
 
 >>cpp
@@ -923,7 +923,7 @@ Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly w
 **Example Dpdl code with '*embedded code section*' in C code** (Mode 1 - interpreted):
 
 ```c
-# main
+
 # starting with Dpdl, pushing parameters on the stack and embedding C code
 
 println("testing embedded C code in Dpdl")
@@ -1419,5 +1419,10 @@ www.dpdlhub.org
 
 www.dpdlhub.com
 
+
+## Certifications
+
+
+[![updatestare.com](https://client.updatestar.com/images/uploads/safetoinstallaward.png)](https://www.updatestar.com/)
 
 
