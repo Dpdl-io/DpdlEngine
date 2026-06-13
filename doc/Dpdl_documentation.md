@@ -13,11 +13,13 @@ by
 
 ## Dpdl language specification
 
-Dpdl **dpdl-lang** is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in part employs dynamic <ins>**JVM bytecode**</ins> compilation and manipulation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl code to be compiled also to native code for multiple target platforms.
+Dpdl **dpdl-lang** is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in some specific parts employs dynamic <ins>**JVM bytecode**</ins> compilation and manipulation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple target platforms.
 
 Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages**</ins>, or any custom syntax, <ins>**directly embedded within dpdl code**</ins>, simultaneously, of multiple types and <ins>at it's native speed<ins>.
 
-Embedded programming language code within dpdl is executed in form of *Dpdl language plug-ins* distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>). Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simple configuration.
+Embedded programming language code within dpdl is executed in form of *Dpdl language plug-ins* distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>).
+
+Custom *Dpdl language plug-ins* can be developed ad-hoc, distributed also separately and integrated via simple configuration. For native code based *Dpdl language -plug-ins* that are eventually available for multiple platforms, the dpdl runtime automatically selects the appropriate one on which it's running.
 
 ### Features:
 
@@ -1227,6 +1229,16 @@ endfor
 
 ### Struct type
 
+````c
+struct MyStruct {
+	...
+}
+
+struct MyStruct st
+
+```
+
+
 Dpdl supports the type **`struct`**, with the following definitions:
 
 * Structs may contain member variables of all type (except classes), including 'struct' variable declarations (but not 'struct' definitions)
@@ -1398,13 +1410,30 @@ typedef struct B {
 } Point
 
 
-Point point = {100, 200, 33.3f}
+object point = new Point(100, 200, 33.3f)
 
 println("point: " + point)
 
 ```
 
-in order to make the syntax compliant also to C, a semicolon ( ; ) may be optionally appended to the *Alias* (Point)
+Or also
+
+```python
+
+typedef struct B {
+	int x
+	int y
+	float z
+} Point
+
+
+Point point = new Point(100, 200, 33.3f)
+
+println("point: " + point)
+
+```
+
+in order to make the syntax compliant also to C/C++, a semicolon ( ; ) may be optionally appended to the *Alias* (i.e Point)
 
 ```python
 
@@ -1614,6 +1643,14 @@ println("enum values can also be accessed directly as in C: " + DONE)
 
 
 ### Union type
+
+```c
+union MyUnion {
+	...
+}
+
+union MyUnion mu
+```
 
 Dpdl supports the type **`union`**, with the following definitions:
 

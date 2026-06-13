@@ -12,13 +12,15 @@ by
 &copy;
 
 
-Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via dedicated plug-ins ( **Dpdl language plug-ins** ) available distributed along with the *DpdlEngine* release.
+Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via available dedicated plug-ins ( **Dpdl language plug-ins** ) distributed along with the *DpdlEngine* release, or distributed separately.
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
 In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types and at its <ins>**native speed**</ins>.
  
 This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts, and make them executable inside dpdl code.
+
+Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simple configuration. For native code based *Dpdl language -plug-ins* that are eventually available for multiple platforms, the dpdl runtime automatically selects the appropriate one on which it's running.
 
 
 ### '*Dpdl language plug-ins*' currently available for executing '*embedded code sections*'
