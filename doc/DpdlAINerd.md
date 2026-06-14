@@ -14,17 +14,17 @@ by
 ## *Dpdl language plug-in* for AI generative code - **DpdlAINerd** (DAN)
 
 
-'**DpdlAINerd**' (**DAN**) is a dedicated *Dpdl language plug-in* for <ins>**AI generative code**</ins>.
+'**DpdlAINerd**' (**DAN**) is a dedicated *Dpdl language plug-in* for <ins>**AI generative code**</ins> and <ins>**data**</ins>.
 
-The provided plug-in allows to <ins>**automatically generate and execute** embedded code sections in various programming languages within Dpdl</ins> via a configurable **AI engines**.
+The provided *Dpdl language plug-in* allows to <ins>**automatically generate and execute**</ins> *embedded code sections* in <ins>various programming languages within Dpdl</ins> via a configurable **AI engines**, available either locally or via dedicated public services.
 
-More generally, the Dpdl language plug-in <ins>allows also to **generate any kind of content or data**</ins> used during the code execution for example.
+More generally, the *Dpdl language plug-in* allows for example also to <ins>**generate any kind of content or data**</ins> used during the code execution.
 
-It includes also a set of knowledge Skills that can be used for generating specific code, for example to generate valid and correct dpdl code. 
+It includes a set of *knowledge* **Skills** that can be used for generating specific code, for example to generate valid and correct dpdl code. 
 
-This enables to write code faster in the prototyping phase and allows also to generate data on the fly needed for example for development or testing
+This enables to write code faster in the prototyping phase and it allows also to generate data on the fly needed for development or testing purposes.
 
-The '*DpdlAINerd*' (**DAN**) Dpdl language plug-in can be embedded and executed within Dpdl via the keyword **`>>ai`**
+The '*DpdlAINerd*' (**DAN**) Dpdl language plug-in can be embedded and executed within dpdl code via the keyword **`>>ai`**
 
 
 ```python
@@ -55,26 +55,33 @@ println("finished")
 
 ### AI engines
 
-The '*DpdlAINerd*' supports the following AI engine types:
+The '*DpdlAINerd*' can provide access to available AI engines via:
 
-- Local AI engine -> (provided along with *DpdlEngine*), Open source, provides access to many open AI models and AI backends
-- Dedicated AI services available via subscription at www.dpdl.ai
-- Other public AI services (eg. DeepSeek, ChatGPT, etc.)
+- Local AI engine
+- Dedicated AI services at www.dpdl.ai
+- Third party AI engine services
 
 
 #### Local AI engine
 
-As part of the *DpdlEngine* setup there is the possibility to request a local AI engine setup instance (fully based OpenSource components), for deployment on a local PC, workstation, virtual machine or server.
+As part of the *DpdlEngine* setup there is the possibility to request a local AI engine setup instance (based OpenSource components), for deployment on a local PC, workstation, virtual machine or server.
 
 With the provided deployment you can autonomously choose from more than 900 open AI models available, it supports a wide range of AI back-ends, and you can install the models locally with a simple click as needed. 
 
 The '*DpdlAINerd*' plug-in in this case connects only to this local AI engine instance and <ins>all requests and inference run completely locally<ins>.
 
-#### AI Services at dpdl.ai
+- All requests are completely processed locally
+- Provides access to many open source AI models and AI back-ends
+- Management UI for installing and managing models and back-end processes
+- comes as option with the *DpdlEngine* distribution
+
+#### Dedicated AI services at www.dpdl.ai
 
 In this case the '*DpdlAINerd*' plug-in connects via RESTful API to the cloud services at www.dpdl.ai
 
 The user can access also a dedicated UI for installing and managing the AI models to be used within dpdl.
+
+The use of this service requires a valid Dpdl Subscription.
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/DpdlAI_11.png" width="60%">
@@ -87,7 +94,7 @@ More than 900 open AI models are available
 </p>
 
 
-#### Public AI engines
+#### Third party AI engine services
 
 At current state the '*DpdlAINerd*' Dpdl language plug-in supports the following third party AI engines:
 
@@ -95,7 +102,7 @@ At current state the '*DpdlAINerd*' Dpdl language plug-in supports the following
 - OpenAI (openai)
 - other OpenAI API compatible engines
 
-The AI engine used can be specified in the file 'DpdlPlugins.ini' under the section '*DpdlAINerd*'
+The AI engine used can be specified and configured in the file 'DpdlPlugins.ini' under the section '*DpdlAINerd*'
 
 
 [Index](#index)
@@ -258,6 +265,8 @@ println("embedded C code exit code: " + exit_code)
 
 ```
 
+### more Examples
+
 find more examples here: [./DpdlLibs/ai](https://github.com/Dpdl-io/DpdlEngine/tree/main/DpdlLibs/ai)
 
 
@@ -303,7 +312,7 @@ When executing the '*DpdlAINerd*' plug-in the skill can than be defined as follo
 
 ```python
 
-dpdl_stack_push("dpdlai:-skill my_custom_skill")
+dpdl_stack_push("dpdlai:-skill dpdl-api")
 
 >>ai
 
@@ -312,14 +321,16 @@ dpdl_stack_push("dpdlai:-skill my_custom_skill")
 ...
 ```
 
+
 #### Skills shipped as default along with 'DpdlEngine'
 
-- **`dpdllang`** -> knowledge for generating valid **dpdl** code that can be executed
-- **`dpdlapi`** -> knowledge about Dpdl APIs and it's usage
-- **`dpdllibgen`** -> knowledge for generating Dpdl import libraries
-- **`dpdlagent`** --> knowledge for generating 'Agent' code (dpdl and java)
+- **`dpdl-lang`** -> knowledge for generating valid **dpdl** code that can be executed
+- **`dpdl-api`** -> knowledge about Dpdl APIs and it's usage
+- **`dpdl-libgen`** -> knowledge for generating Dpdl import libraries (dpdl and java)
+- **`dpdl-lang-plugins`** -> knowledge about the interfaces for generating code for creating '*Dpdl language plug-ins*'
+- **`dpdl-agent`** --> knowledge for generating 'Agent' code (dpdl and java)
 
-- **`dpdlplugin-js`** -> knowledge about the usage of the 'Dpdl language plug-in' for JavaScript
+- **`dpdl-plugin-js`** -> knowledge about the usage of the 'Dpdl language plug-in' for JavaScript
 
 
 [Index](#index)
