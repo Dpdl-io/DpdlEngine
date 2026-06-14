@@ -231,6 +231,10 @@ string s = "this is a test"
 println("the values are: $x $y $z and the message is: $msg")
 
 println("the expression x + y is equal to: ${x + y} ")
+
+float v = 9.0f
+
+println("square root of $v is ${ sqrt(v) }")
 ```
 
 * [Table of Contents](#table-of-contents)
@@ -362,7 +366,7 @@ The types **`string`**, **`var`** and **`object`**, in case of a variable declar
 
 **example:**
 
-```python
+```javascript
 string tmps
 var tmpv
 object tmpo
