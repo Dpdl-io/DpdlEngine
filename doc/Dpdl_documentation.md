@@ -23,7 +23,7 @@ Custom *Dpdl language plug-ins* can be developed ad-hoc, distributed also separa
 
 ### Features:
 
-* Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`class`** **`object`** **`struct`** **`union`** **`enum`**
+* Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`const`** **`class`** **`object`** **`struct`** **`union`** **`enum`**
 * Primitive arrays and dynamic arrays
 * Inheritance and Polymorphism for type **`class`**, **`struct`** and **`union`**
 * Multiple native Threads within same module
@@ -146,7 +146,8 @@ byte b = 0x01B
 string s = "mystr"
 char c = 'a'
 bool t = true
-var v = "some variable type which is dispatched at runtime"
+var v = "some variable type which is infered at runtime"
+const t = "some immutable 'var' variable"
 class myClass cl
 object myobj = new(...)
 object myobj_static = getObj(...)
@@ -299,6 +300,29 @@ long l = 0x14269cae3c1ae6243L
 * [Table of Contents](#table-of-contents)
 
 
+#### Inferred types
+
+The types **`var`** and **`const`** are both inferred types.
+
+The  **`var`** variables are <ins>mutable</ins>, while the **`const`** variables are <ins>immutable</ins>.
+
+The actual type of the variable is inferred at runtime upon assignment.
+
+They can accept any type from a given declaration or function.
+
+
+```python
+var i = 10	# is an int
+i = "10"		# is now a string
+
+var s = "Test"
+s = 10
+
+const ii = 100
+ii = 999		# this will throw an error
+```
+
+
 #### 'null' values
 
 The value **`null`** can be assigned to any type.
@@ -364,7 +388,7 @@ In Dpdl the type **`object`** is a baseline type.
 
 Whether it's a dpdl **`class`** or a **`struct`**, a primitive type, a whole dpdl module, or even a java JRE class, all of these types can be stored, referenced and handled via this type.
 
-**Example:** instantiation of a JVM java class
+**Example:** instantiation of a Java class
 
 ```python
 object myc = new("test.MyTestClass", 1, 2, 3)

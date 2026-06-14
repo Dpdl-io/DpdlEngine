@@ -160,6 +160,57 @@ endfor
 println("finished!")
 ```
 
+## dpdl-lang example: Use of 'embedded code sections' in multiple programming languages
+
+```python
+
+println("a Dpdl program can also contain 'embedded code sections' in multiple programming languages...")
+
+println("for example:")
+
+println("embedded C code for Performance and Hardware access...")
+
+>>c
+	int v = 1000;
+	for(int i = 0; i < v; i++){
+		printf("Processing: %d\n", i);
+	}
+<<
+
+println("embedded Python for Data handling & LLMs...")
+
+>>python
+	stories = ['Story 1', 'Story 2', 'Story 3']
+	for story in stories:
+		print(story)
+<<
+
+println("embedded JavaScript for Web and server-less integration...")
+
+>>js
+	fetch('https://api.dpdl.io/data')
+		.then(response => response.json())
+		.then(data => console.log(data));
+<<
+
+println("and of course also embed Java directly...")
+
+>>java
+	Object val = null;
+	int v = 1000;
+	for(int i = 0; i < v; i++){
+		val = new Integer(i);
+		System.out.println("val: " + val);
+	}
+
+	return ((Integer)val).intValue();
+<<
+
+...
+
+```
+
+
 ## Docs
 
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
