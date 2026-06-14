@@ -257,7 +257,7 @@ println("executing generated code...")
 dpdl_stack_push("dpdl:applyvars", "dpdl:compile")
 
 >>c
-{{my_code}}
+	{{my_code}}
 <<
 
 exit_code = dpdl_exit_code()
@@ -288,7 +288,7 @@ The following options can be passed to the '*DpdlAINerd*' plug-in, via the dpdl 
 ```python
 println("generating some dpdl code...")
 
-dpdl_stack_push("dpdlai:-engine deepseek -model deepseek-coder-v2-lite-instruct -skill dpdllang")
+dpdl_stack_push("dpdlai:-engine deepseek -model deepseek-coder-v2-lite-instruct -skill dpdl-lang")
 
 >>ai(my_code)
 	generate a dpdl program that implements the quicksort algorithm
