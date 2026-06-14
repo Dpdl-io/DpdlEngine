@@ -313,17 +313,29 @@ The actual type of the variable is inferred at runtime upon assignment.
 They can accept any type from a given declaration or function.
 
 
-```python
+- **`var`** 
+
+This type can hold values or objects of all types
+
+```javascript
 var i = 10	# is an int
-i = "10"		# is now a string
+i = "10"	# is now a string
 
 var s = "Test"
 s = 10
 
+```
+
+- **`const`** 
+
+This type can hold values or objects of all types, but is inherently <ins>Immutable</ins>.
+
+When re-assigning a value or object to an initialized variable of this type throws an error.
+
+```c
 const ii = 100
 ii = 999		# this will throw an error
 ```
-
 
 #### 'null' values
 
