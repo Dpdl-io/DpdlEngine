@@ -334,7 +334,7 @@ When re-assigning a value or object to an initialized variable of this type, wil
 
 ```c
 const ii = 100
-ii = 999
+ii = 999 # will throw an Error
 ```
 
 The '*const*' keyword is also foreseen to be used in conjunction with all other type definitions (available soon)
