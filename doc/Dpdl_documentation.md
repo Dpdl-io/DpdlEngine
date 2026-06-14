@@ -313,7 +313,7 @@ The actual type of the variable is inferred at runtime upon assignment.
 They can accept any type from a given declaration or function.
 
 
-- **`var`** 
+- Type **`var`** 
 
 This type can hold values or objects of all types
 
@@ -326,7 +326,7 @@ s = 10
 
 ```
 
-- **`const`** 
+- Type **`const`** 
 
 This type can hold values or objects of all types, but is inherently <ins>Immutable</ins>.
 
@@ -335,6 +335,16 @@ When re-assigning a value or object to an initialized variable of this type thro
 ```c
 const ii = 100
 ii = 999		# this will throw an error
+```
+
+The '*const*' keyword is also foreseen to be used in conjunction with all other type definitions (available soon)
+
+```c
+const int x = 20
+const float p = 23.3f
+
+const string s = "this is a test"
+...
 ```
 
 #### 'null' values
