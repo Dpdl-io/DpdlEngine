@@ -64,16 +64,16 @@ The '*DpdlAINerd*' can provide access to available AI engines via:
 
 #### Local AI engine
 
+- All requests are completely processed locally
+- Provides access to many open source AI models and AI back-ends
+- Management UI for installing and managing models and back-end processes
+- comes as option with the *DpdlEngine* distribution
+
 As part of the *DpdlEngine* setup there is the possibility to request a local AI engine setup instance (based OpenSource components), for deployment on a local PC, workstation, virtual machine or server.
 
 With the provided deployment you can autonomously choose from more than 900 open AI models available, it supports a wide range of AI back-ends, and you can install the models locally with a simple click as needed. 
 
 The '*DpdlAINerd*' plug-in in this case connects only to this local AI engine instance and <ins>all requests and inference run completely locally<ins>.
-
-- All requests are completely processed locally
-- Provides access to many open source AI models and AI back-ends
-- Management UI for installing and managing models and back-end processes
-- comes as option with the *DpdlEngine* distribution
 
 #### Dedicated AI services at www.dpdl.ai
 
