@@ -49,6 +49,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
 
+
 ## Table of Contents
 
 <table>
@@ -57,6 +58,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 * [Types](#types)
 	* [Strings](#strings)
 	* [Numbers](#numbers)
+	* [Inferred types](#inferred-types)
 * [Functions](#functions)
 	* [Function return type](#function-return-type)
 	* [Function return with Multiple values](#function-return-with-multiple-values)
