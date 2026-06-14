@@ -94,7 +94,7 @@ More than 900 open AI models are available
 </p>
 
 
-#### c) Third party AI engine services
+#### C) Third party AI engine services
 
 At current state the '*DpdlAINerd*' Dpdl language plug-in supports the following third party AI engines:
 
