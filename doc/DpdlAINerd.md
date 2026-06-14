@@ -55,14 +55,14 @@ println("finished")
 
 ### AI engines
 
-The '*DpdlAINerd*' can provide access to available AI engines via:
+The '*DpdlAINerd*' provides different options to access available AI engines:
 
-- Local AI engine
-- Dedicated AI services at www.dpdl.ai
-- Third party AI engine services
+- A) Local AI engine
+- B) Dedicated AI services at www.dpdl.ai
+- C) Third party AI engine services
 
 
-#### Local AI engine
+#### A) Local AI engine
 
 - All requests are completely processed locally
 - Provides access to many open source AI models and AI back-ends
@@ -75,7 +75,7 @@ With the provided deployment you can autonomously choose from more than 900 open
 
 The '*DpdlAINerd*' plug-in in this case connects only to this local AI engine instance and <ins>all requests and inference run completely locally<ins>.
 
-#### Dedicated AI services at www.dpdl.ai
+#### B) Dedicated AI services at www.dpdl.ai
 
 In this case the '*DpdlAINerd*' plug-in connects via RESTful API to the cloud services at www.dpdl.ai
 
@@ -94,7 +94,7 @@ More than 900 open AI models are available
 </p>
 
 
-#### Third party AI engine services
+#### c) Third party AI engine services
 
 At current state the '*DpdlAINerd*' Dpdl language plug-in supports the following third party AI engines:
 
