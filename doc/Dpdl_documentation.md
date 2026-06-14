@@ -23,7 +23,7 @@ Custom *Dpdl language plug-ins* can be developed ad-hoc, distributed also separa
 
 ### Features:
 
-* Types supported: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`const`** **`class`** **`object`** **`struct`** **`union`** **`enum`**
+* Types available: **`int`** **`byte`** **`short`** **`float`** **`double`** **`long`** **`string`** **`char`** **`bool`** **`array[]`** **`var`** **`const`** **`class`** **`object`** **`struct`** **`union`** **`enum`**
 * Primitive arrays and dynamic arrays
 * Inheritance and Polymorphism for type **`class`**, **`struct`** and **`union`**
 * Multiple native Threads within same module
@@ -57,7 +57,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 
 * [Types](#types)
 	* [Strings](#strings)
-	* [Numbers](#numbers)
+	* [Values](#values)
 	* [Inferred types](#inferred-types)
 * [Functions](#functions)
 	* [Function return type](#function-return-type)
@@ -236,11 +236,11 @@ println("the expression x + y is equal to: ${x + y} ")
 * [Table of Contents](#table-of-contents)
 
 
-#### Numbers
+#### Values
 
-Dpdl supports the number types **`int`** **`foat`** **`double`** **`long`** **`short`** **`byte`**
+Dpdl supports the following types for representing values: **`int`** **`foat`** **`double`** **`long`** **`short`** **`byte`** 
   
-For some numbers, Dpdl makes use of suffixes for the representation to differentiate the type of number.
+For some values types Dpdl makes use of suffixes for the representation to differentiate the type of values.
 
 ##### Suffixes:
 
