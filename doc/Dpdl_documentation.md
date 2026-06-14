@@ -13,7 +13,7 @@ by
 
 ## Dpdl language specification
 
-Dpdl **dpdl-lang** is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in some specific parts employs dynamic <ins>**JVM bytecode**</ins> compilation and manipulation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple target platforms.
+Dpdl **dpdl-lang** is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in some specifics employs dynamic <ins>**JVM bytecode**</ins> compilation and manipulation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple target platforms.
 
 Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages**</ins>, or any custom syntax, <ins>**directly embedded within dpdl code**</ins>, simultaneously, of multiple types and <ins>at it's native speed<ins>.
 
@@ -375,7 +375,7 @@ object tmpo
 
 #### **`typedef`** specifier
 
-The 'typedef' specifier allows to create aliases for given types (ex. int, float, class, etc..), similar as in C/C++, where the defined alias can than be used instead.
+The **`typedef`** specifier allows to create aliases for given types (ex. int, float, class, etc..), similar as in C/C++, where the defined alias can than be used instead.
 
 This may come handy for example for porting code, it might improve code readability and facilitate faster code writing.
 
@@ -424,10 +424,10 @@ object myc = new("test.MyTestClass", 1, 2, 3)
 myc.printValues()
 ```
 
-The **`object`** type has also some intrinsic transformation capabilities that allows for example a primitive type, for example **`int`** or **`string`**, to be boxed to the corresponding JVM type class (i.e. **`java.lang.Integer`** or **`java.lang.String`**) so that all class methods and fields of the underlying JVM platform can be accessed.
+The **`object`** type has also some intrinsic transformation capabilities that allows a primitive type like for example **`int`** or **`string`**, to be boxed to the corresponding Java type class (i.e. **`java.lang.Integer`** or **`java.lang.String`**) so that all class methods and fields of the underlying JVM platform can be accessed.
 
 
-**Example:** instantiation of a JVM java class
+**Example:** instantiation of a JRE Java class
 
 ```python
 string mys = "This is a Test"
@@ -448,7 +448,7 @@ string mys_new = mys_mod
 
 ### Functions
 
-In Dpdl functions are defined via the keyword `func` with the following definitions:
+In Dpdl functions are defined via the keyword **`func`** with the following definitions:
 
 - Functions can be defined anywhere within a dpdl module (dpdl source file), in `class` types and in `struct ` types
 
