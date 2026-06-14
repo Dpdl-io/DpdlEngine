@@ -318,8 +318,8 @@ They can accept any type from a given declaration or function.
 This type can hold values or objects of all types
 
 ```javascript
-var i = 10	# is an int
-i = "10"	# is now a string
+var i = 10
+i = "10"
 
 var s = "Test"
 s = 10
@@ -330,11 +330,11 @@ s = 10
 
 This type can hold values or objects of all types, but is inherently <ins>Immutable</ins>.
 
-When re-assigning a value or object to an initialized variable of this type throws an error.
+When re-assigning a value or object to an initialized variable of this type, will throw an error:
 
 ```c
 const ii = 100
-ii = 999		# this will throw an error
+ii = 999
 ```
 
 The '*const*' keyword is also foreseen to be used in conjunction with all other type definitions (available soon)
