@@ -162,6 +162,8 @@ println("finished!")
 
 ## dpdl-lang example: Use of 'embedded code sections' in multiple programming languages
 
+The following dpdl example contains some '*embedded code sections*' in *C*, *Python*, *JavaScript* and *Java*, which are executed with almost zero overhead.
+
 ```python
 
 println("a Dpdl program can also contain 'embedded code sections' in multiple programming languages...")
@@ -299,7 +301,7 @@ The size of '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) a
 ### Dpdl profiles available
 
 * **`Compact`** : **DpdlEngine** <ins>**Compact**</ins> profile: **`80 Kb`**</ins> or less
-* **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes creation of 'DpdlPacket' database & rich set of built-in functions): **`372 Kb`**
+* **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes support for creating 'DpdlPacket' & rich set of built-in functions): **`372 Kb`**
 
 The profiles can of course also be adjusted as needed to include more ore less function sets and components. 
 
@@ -742,7 +744,7 @@ Dpdl is suitable for <ins>rapid application development</ins> and <ins>testing</
 
 Dpdl facilitates rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple, extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
 
-Dpdl has also built-in constructs that allow dynamic code generation via <ins>**generative AI code**</ins> and ot provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
+Dpdl has also built-in constructs that allow dynamic code generation via <ins>**generative AI code**</ins> and it provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
 
 The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the prototyping, development and testing process by leveraging generative AI code for embedded code and data generation within dpdl.
 

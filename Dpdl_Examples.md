@@ -81,7 +81,7 @@ endwhile
 	
 * Example dpdl code that makes use of the type 'class'
 
-	[test/testClass.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClass.h)
+	[test/testClass2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClass2.h)
 	
 * Example dpdl code that makes use of derived type 'class' (Inheritance and Polymorphism). Some functions make use of embedded code (java and C)
 
