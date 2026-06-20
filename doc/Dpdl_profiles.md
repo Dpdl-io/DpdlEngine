@@ -40,7 +40,7 @@ Also the *Dpdl language plug-ins* eventually included in this type of setup are 
 **Total size** of the '*DpdlEngine*' for this profile is: <ins>**`80 Kb`** or even less</ins>
 
 
-#### Example setup of DpdlEngine 'Compact' with included lightweight version of *Dpdl language plug-ins*
+#### Example setup of DpdlEngine 'Compact' with included <ins>lightweight</ins> version of *Dpdl language plug-ins*
 
 The *Dpdl language plug-ins* included in this type of setup are also <ins>specifically targeted for small *Embedded Systems*</ins>. 
 
@@ -74,7 +74,7 @@ The extended version of *Dpdl language plug-ins* are usually included in this ki
 **Total size** of the '*DpdlEngine*' for this profile is: <ins>**`372 Kb`**</ins>
 
 
-#### Example setup of DpdlEngine 'Full' with included Extended version of *Dpdl language plug-ins*
+#### Example setup of DpdlEngine 'Full' with included <ins>extended</ins> version of *Dpdl language plug-ins*
 
 In this example there are 3 <ins>*Dpdl language plug-ins* **included**</ins>, in its <ins>Extended version</ins>, for:
 
