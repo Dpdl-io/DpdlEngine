@@ -58,7 +58,8 @@ class A {
 
 }
 
-class B extends A {
+
+class B : A {
 
 	int uuid
 
