@@ -1,6 +1,6 @@
 # File: test/testStruct4.h
 #
-# Example: Test dpdl code with 'struct' that make use of inheritance and a type definition
+# Example: Test dpdl code with 'struct' type that make use of inheritance and a type definition
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -31,7 +31,7 @@ point.z = -23.3f
 println("my Point: " + point)
 
 
-println("obviously also in the simpler way...")
+println("and still also in this way...)
 
 struct MyStruct myst = {"myID", "some data", ., ., .}
 
