@@ -11,21 +11,6 @@
 #
 #
 
-# call back function for DpdlCoAPResponseHandler
-func onRequestFailure(string message)
-	println("Failure: " + message)
-end
-
-# call back function for DpdlCoAPResponseHandler
-func onResponse(string response)
-	println("Response: " + response)
-	response_counter = response_counter + 1
-	println("counter: " + response_counter)
-	println("")
-end
-
-
-# main
 string coap_uri = "coap://127.0.0.1/Dpdl"
 
 int port = -1 #  use dynamic port
@@ -35,9 +20,28 @@ int verbose = 0
 int response_counter = 0
 string original_msg = null
 
+
+func onRequestFailure(string message)
+	println("Failure: " + message)
+end
+
+func onResponse(string response)
+	println("Response: " + response)
+
+	response_counter = response_counter + 1
+	println("counter: " + response_counter)
+	println("")
+end
+
+
 println("allocating DpdlCoAPClient..")
+
 object dpdl_coap = new("DpdlCoAPClient", coap_uri, port, max_block_size, verbose)
+
+raise(dpdl_coap, "Error in initializing DpdlCoAPClient")
+
 println("done")
+
 object client
 object response_handler
 
@@ -47,19 +51,23 @@ int random_nr = 0
 
 if(dpdl_coap != null)
 	client = dpdl_coap.getClient()
-	client = cast(client) # we make sure it's a DpdlObject
+	client = cast(client)
 	
 	println("registering response handler...")
+
 	response_handler = new("DpdlCoAPResponseHandler", client)
 	
 	random_nr = randInt(16, 1000)
 	random_nr = abs(random_nr)
+
 	msg = msg_header + " " + random_nr
+
 	println("sending PUT request: " + msg)
+
 	dpdl_coap.request(coap_uri, "PUT", "TEXT", msg, response_handler)
 	
 	println("done")
-	# we call the garbage collector at each iteration
+
 	gc()
 else
 	println("Client initialization failed")

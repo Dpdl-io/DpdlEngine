@@ -87,10 +87,14 @@ endwhile
 
 	[test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h)
 
-* Example dpdl code that makes use of the type 'struc
+* Example dpdl code that makes use of the type 'struct'
 
 	[test/testStruct3.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct3.h)
 
+* Example dpdl code that makes use of the type 'struct' and a new type definition
+
+	[test/testStruct4.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testStruct4.h)
+	
 * Dynamic Array definition, population and access
 	
 	[arraylistExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/arraylistExample.h)

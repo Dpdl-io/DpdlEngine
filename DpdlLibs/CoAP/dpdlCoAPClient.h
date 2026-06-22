@@ -10,21 +10,7 @@
 #
 #
 
-# call back function for DpdlCoAPResponseHandler
-func onRequestFailure(string message)
-	println("Failure: " + message)
-end
 
-# call back function for DpdlCoAPResponseHandler
-func onResponse(string response)
-	println("Response: " + response)
-	response_counter = response_counter + 1
-	println("counter: " + response_counter)
-	println("")
-end
-
-
-# main
 string coap_uri = "coap://127.0.0.1/Dpdl"
 
 int port = -1 #  use dynamic port
@@ -32,34 +18,59 @@ int max_block_size = 0
 int verbose = 0
 
 int response_counter = 0
-string original_msg = "null"
 
-println("allocating DpdlCoAPClient..")
+
+func onRequestFailure(string message)
+	println("Failure: " + message)
+end
+
+func onResponse(string response)
+	println("Response: " + response)
+
+	response_counter = response_counter + 1
+	println("counter: " + response_counter)
+	println("")
+end
+
+
+println("starting DpdlCoAPClient..")
+
 object dpdl_coap = new("DpdlCoAPClient", coap_uri, port, max_block_size, verbose)
+
+raise(dpdl_coap, "Error in initializing DpdlCoAPClient")
+
 println("done")
+
 object client
 object response_handler
+
 if(dpdl_coap != null)
 	client = dpdl_coap.getClient()
-	client = cast(client) # we make sure it's a DpdlObject
-	
+
+	client = cast(client)
+
+	raise(client, "Error: client not initialized correctly")
+
 	println("registering response handler...")
+	
 	response_handler = new("DpdlCoAPResponseHandler", client)
 
 	println("sending GET request..")
+
 	dpdl_coap.request(coap_uri, "GET", null, null, response_handler)
-	
-	println("orig: " + original_msg)
-	
+
 	println("sending PUT request..")
-	dpdl_coap.request(coap_uri, "PUT", "TEXT", "DpdlCoAPWorks from client (1)", response_handler)
+	
+	dpdl_coap.request(coap_uri, "PUT", "TEXT", "Dpdl hello CoAP from client (2)", response_handler)
 	
 	println("sending GET request..")
+	
 	dpdl_coap.request(coap_uri, "GET", null, null, response_handler)
 	
 	#sleep(6000)
 		
 	println("sending OBSERVE request..")
+
 	dpdl_coap.request(coap_uri, "OBSERVE", null, null, response_handler)
 	
 	println("done")

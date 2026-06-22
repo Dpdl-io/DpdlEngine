@@ -1,6 +1,6 @@
 # File: test/testStruct3.h
 #
-# Example: Test Dpdl script with structs that make use of inheritance
+# Example: Test dpdl code with 'struct' type that make use of inheritance
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -39,6 +39,7 @@ println("")
 struct myB b
 
 println("b: " + b)
+
 b.printBase()
 b.printIt()
 
