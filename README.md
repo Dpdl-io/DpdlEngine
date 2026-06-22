@@ -233,6 +233,8 @@ println("and of course also embed Java directly...")
 
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
+[Dpdl protocols](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_protocols.md)
+
 [DpdlAgents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
 
 [DpdlVM](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlVM.md)
@@ -1124,6 +1126,8 @@ The Dpdl platform and API documentation is available via the following links:
 [Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
 [Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
+
+[Dpdl protocols](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_protocols.md)
 
 [DpdlAgents](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_agents.md)
 

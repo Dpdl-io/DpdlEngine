@@ -36,7 +36,7 @@ func showDevicesFound()
           if(dev != "null")
               println("dev visible: " + dev)
               saveData(dev)
-			  dev_found = dev_found + 1
+			  dev_found = dev_found+1
           fi
      endwhile
 end
@@ -49,17 +49,33 @@ func saveData(string data)
      fi
 end
 
-#main
-println("BT device discovery inited")
-int x = DPDLAPI_createObexServer(BT_GIAC_MODE)
-println("opening record store 'BluetoohDevices'...")
-int BT_DEV_RS = createRS("BluetoohDevices", AUTHMODE_ANY, dpdlTrue, dpdlTrue)
-enumRecords(BT_DEV_RS, dpdlTrue)
-println("discovering BT devices...")
-runDiscovery()
-showDevicesFound()
-int total_btdevices  =  getNrRecords(BT_DEV_RS)
-println("Total Bluetooth devices discovered: " + total_btdevices)
-println("closing record store")
-closeRS(BT_DEV_RS)
-println("done")
+
+println("starting BT device discovery...")
+
+int status = DPDLAPI_createObexServer(BT_GIAC_MODE)
+
+if(status)
+
+	println("opening record store 'BluetoohDevices'...")
+
+	int BT_DEV_RS = createRS("BluetoohDevices", AUTHMODE_ANY, dpdlTrue, dpdlTrue)
+
+	enumRecords(BT_DEV_RS, dpdlTrue)
+
+	println("discovering BT devices...")
+
+	runDiscovery()
+	showDevicesFound()
+
+	int total_btdevices = getNrRecords(BT_DEV_RS)
+
+	println("Total Bluetooth devices discovered: " + total_btdevices)
+
+	println("closing record store")
+
+	closeRS(BT_DEV_RS)
+
+	println("done")
+else
+	println("Error: unable to initialize bluetooth discovery")
+fi

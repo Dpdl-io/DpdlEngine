@@ -1,4 +1,4 @@
-# Dpdl IoT protocols
+# Dpdl protocols
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl-io_blue.png" width="35%">
@@ -10,34 +10,88 @@ by
 **SEE Solutions**
 &copy;
 
-IoT is one of the application domains where Dpdl can be used
 
-Dpdl implements various protocols that can be accessed natively or via a higher level Dpdl API.
+Dpdl includes support for some IoT based connection protocols that can be accessed either natively or via a higher level Dpdl APIs.
 
-Currenlty the following protocols are already included and available in Dpdl:
+Currently the following protocols are per default included and usable within dpdl code:
 
 * **Bluetooth** (JSR-82 implementation)
 * **CoAP** (Constrained Application Protocol) (IETF standard RFC 7252)
+* others will follow...
 
 
-## Bluetooth
 
-Dpdl supports and implements a Bluetooth API via a JSR-82 implementation that can be accessed natively (bluecove) or via the higher level Dpdl API.
+## Bluetooth protocol
+
+Dpdl supports and implements a Bluetooth API, compliant to JSR-82 specification, that can be accessed either directly, or via a higher level Dpdl BT API.
 
 The bluetooth api requires a compatible bluetooth stack available on the guest OS.
 
-Currently it works on the following platforms:
+Currently the following platforms are supported:
 
 * Windows
 * Linux (x86_64)
 * Raspberry (armV7l)
 
+### Example bluetooth device discovery
 
-[Bluetooth Example](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bluetoothDiscoverySave.h)
+The following example implements a device discovery that is performed using the higher level Dpdl BT API
+
+```pyhton
+include("dpdllib.h")
+include("dpdlBT.h")
+
+func runDiscovery()
+     int s1 = searchServerDevices()
+     int status_discovery = 0
+     int service_discovery = 0
+     int counter = 0
+     if(s1 == dpdlTrue)
+	     while (status_discovery != 1) && (service_discovery != 1)
+	         status_discovery = discoveryFinished(BT_SERVER_MODE)
+	         service_discovery = serviceDiscoveryFinished(BT_SERVER_MODE)
+	         print(".")
+	         counter = counter+1
+	         sleep(3000)
+	     endwhile
+     else
+     	println("No working Bluetooth stack found")
+     fi
+end
+
+func showDevicesFound()
+	 string dev = "n"
+	 int dev_found = 0
+     while(dev != "null")
+          dev = DPDLAPI_getServerVisibleBTAddr()
+          if(dev != "null")
+              println("dev visible: " + dev)
+			  dev_found = dev_found+1
+          fi
+     endwhile
+end
 
 
+println("starting BT device discovery...")
 
-## CoAP
+int status = DPDLAPI_createObexServer(BT_GIAC_MODE)
+
+if(status)
+	println("discovering BT devices...")
+
+	runDiscovery()
+
+	showDevicesFound()
+
+	println("done")
+else
+	println("Error: unable to initialize bluetooth discovery")
+fi
+```
+
+As show case, here the same implementation of bluetooth device discovery that saves the devices found also in a persistent record store: [DpdlLibs/bluetoothDiscoverySave.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/bluetoothDiscoverySave.h)
+
+## CoAP protocol
 
 Dpdl supports and implements a lightweight CoAP protocol that can be accessed natively (mjCoAP) or via a higher level Dpdl API. 
 
@@ -81,7 +135,7 @@ fi
 
 ```
 
-### **Example:** CoAP client
+### Example CoAP client
 
 ```python
 
@@ -141,7 +195,7 @@ if(dpdl_coap != null)
 	
 	dpdl_coap.request(coap_uri, "GET", null, null, response_handler)
 	
-	#sleep(6000)
+	sleep(1000)
 		
 	println("sending OBSERVE request..")
 
