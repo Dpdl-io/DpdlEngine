@@ -37,7 +37,7 @@ Currently the following platforms are supported:
 
 The following example implements a device discovery that is performed using the higher level Dpdl BT API
 
-```pyhton
+```python
 include("dpdllib.h")
 include("dpdlBT.h")
 
