@@ -11,7 +11,7 @@ by
 &copy;
 
 
-Dpdl includes support for some IoT based connection protocols that can be accessed either natively or via a higher level Dpdl APIs.
+Dpdl includes support for some connection protocols that can be accessed either natively or via a higher level Dpdl APIs.
 
 Currently the following protocols are per default included and usable within dpdl code:
 
@@ -25,7 +25,7 @@ Currently the following protocols are per default included and usable within dpd
 
 Dpdl supports and implements a Bluetooth API, compliant to JSR-82 specification, that can be accessed either directly, or via a higher level Dpdl BT API.
 
-The bluetooth api requires a compatible bluetooth stack available on the guest OS.
+The bluetooth functionality requires a compatible bluetooth stack available on the guest OS.
 
 Currently the following platforms are supported:
 
@@ -93,7 +93,7 @@ As show case, here the same implementation of bluetooth device discovery that sa
 
 ## CoAP protocol
 
-Dpdl supports and implements a lightweight CoAP protocol that can be accessed natively (mjCoAP) or via a higher level Dpdl API. 
+Dpdl supports and implements a lightweight CoAP protocol that can be accessed either directly, or via a higher level Dpdl API. 
 
 ### Example CoAP server
 
