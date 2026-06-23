@@ -47,7 +47,7 @@ func runDiscovery()
      int service_discovery = 0
      int counter = 0
      if(s1 == dpdlTrue)
-	     while (status_discovery != 1) && (service_discovery != 1)
+	     while(status_discovery != 1) && (service_discovery != 1)
 	         status_discovery = discoveryFinished(BT_SERVER_MODE)
 	         service_discovery = serviceDiscoveryFinished(BT_SERVER_MODE)
 	         print(".")
