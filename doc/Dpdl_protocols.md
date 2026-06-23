@@ -95,7 +95,7 @@ As show case, here the same implementation of bluetooth device discovery that sa
 
 Dpdl supports and implements a lightweight CoAP protocol that can be accessed either directly, or via a higher level Dpdl API. 
 
-### Example CoAP server
+### Example: CoAP server
 
 ```python
 
@@ -135,7 +135,7 @@ fi
 
 ```
 
-### Example CoAP client
+### Example: CoAP client
 
 ```python
 
