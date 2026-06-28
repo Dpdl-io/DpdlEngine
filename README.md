@@ -150,9 +150,9 @@ for(c < 10)
 
 	storyobj = json.decode(resp, storyobj)
 
-	println("id: " + storyobj.id)
-	println("title: " + storyobj.title)
-	println("url: " + storyobj.url)
+	println("id: " + storyobj.id + " is of type: " + typeof(storyobj.id))
+	println("title: " + storyobj.title + " is of type: " + typeof(storyobj.title))
+	println("url: " + storyobj.url + " is of type: " + typeof(storyobj.url))
 
 	c = c+1
 endfor

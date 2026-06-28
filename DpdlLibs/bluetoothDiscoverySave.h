@@ -65,6 +65,7 @@ if(status)
 	println("discovering BT devices...")
 
 	runDiscovery()
+
 	showDevicesFound()
 
 	int total_btdevices = getNrRecords(BT_DEV_RS)

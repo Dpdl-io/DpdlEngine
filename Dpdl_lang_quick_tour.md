@@ -126,11 +126,11 @@ struct myJsonData data
 
 data = json.decode(myjson_str, data)
 
-println("data.mystr: " + data.mystr)
-println("data.i_num: " + data.i_num)
-println("data.f_num: " + data.f_num)
-println("data.d_num: " + data.d_num)
-println("data.b_val: " + data.b_val)
+println("data.mystr: " + data.mystr + " is of type: " + typeof(data.mystr))
+println("data.i_num: " + data.i_num + " is of type: " + typeof(data.i_num))
+println("data.f_num: " + data.f_num + " is of type: " + typeof(data.f_num))
+println("data.d_num: " + data.d_num + " is of type: " + typeof(data.d_num))
+println("data.b_val: " + data.b_val + " is of type: " + typeof(data.b_val))
 
 ```
 

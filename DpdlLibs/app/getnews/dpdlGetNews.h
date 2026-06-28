@@ -32,22 +32,23 @@ ids[] = array(jsonobj)
 string story_url
 struct Story storyobj
 
-int c = 0
-for(c < 10)
+int i = 0
+for(i < 10)
 	println("---------------------------------------------------------------------")
 
-	story_url = item_base_url + ids[c] + ".json"
+	story_url = item_base_url + ids[i] + ".json"
 	resp = http.getraw(story_url)
 
 	raise(resp, "Error in downloading story")
 
 	storyobj = json.decode(resp, storyobj)
 
-	println("id: " + storyobj.id)
-	println("title: " + storyobj.title)
-	println("url: " + storyobj.url)
+	println("id: " + storyobj.id + " is of type: " + typeof(storyobj.id))
+	println("title: " + storyobj.title + " is of type: " + typeof(storyobj.title))
+	println("url: " + storyobj.url + " is of type: " + typeof(storyobj.url))
 
-	c = c+1
+	i=i+1
 endfor
 
 println("finished!")
+
