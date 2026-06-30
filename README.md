@@ -24,7 +24,7 @@ The Dpdl language constructs and syntax are simple and intuitive, yet powerful, 
 
 **Dpdl** provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
 
-The core *DpdlEngine* has the <ins>**capability to run also on very limited memory constrained devices and platforms</ins>** like MCUs and SoCs via a dedicated compact code <ins>kilobyte</ins> range virtual machine.
+The core *DpdlEngine* has the capability to run also on <ins>**limited memory constrained devices and platforms</ins>** like MCUs and SoCs via a dedicated compact code <ins>kilobyte</ins> range virtual machine.
 
 
 ### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
@@ -139,11 +139,11 @@ ids[] = array(jsonobj)
 string story_url
 struct Story storyobj
 
-int c = 0
-for(c < 10)
+int i = 0
+for(i < 10)
 	println("---------------------------------------------------------------------")
 
-	story_url = item_base_url + ids[c] + ".json"
+	story_url = item_base_url + ids[i] + ".json"
 	resp = http.getraw(story_url)
 
 	raise(resp, "Error in downloading story")
@@ -154,7 +154,7 @@ for(c < 10)
 	println("title: " + storyobj.title + " is of type: " + typeof(storyobj.title))
 	println("url: " + storyobj.url + " is of type: " + typeof(storyobj.url))
 
-	c = c+1
+	i=i+1
 endfor
 
 println("finished!")
@@ -256,14 +256,6 @@ println("and of course also embed Java directly...")
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
 
-## Some Design considerations taken into account when developing Dpdl
-
-* Dpdl has been designed and implemented to be <ins>**Simple**</ins> and <ins>**Robust**</ins> -> Simple things, usually simply work in Software systems
-* Easily <ins>**Extendible**</ins> and <ins>**Customizable**</ins> -> Adding or adapting features should be possible and straight forward, conceptually and technically
-* <ins>**Portable**</ins> across different platforms and versions of JVM -> Ensure Backward compatibility (JVM) to the best possible extent. This has been a primary focus since the very beginning 
-* <ins>**Compact**</ins> code footprint and no depencencies to facilitate porting Dpdl to constrained devices
-
-
 ## Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (any JVM platform 1.3+ and later Spec, JavaME (CLDC, CDC). The core engine runs also on JVM 1.1 spec compliant VMs
@@ -296,7 +288,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **Dpdl language plug-ins** available on **`DpdlHub`** (www.dpdlhub.com will be soon in development)
 
 
-### 'DpdlEngine' application footprint (size)
+## 'DpdlEngine' application footprint (size)
 
 The size of '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) and **`372 Kb`**, depending on which functions and modules are actually included (Dpdl profiles).
 
@@ -333,6 +325,14 @@ Included are the *Dpdl language plug-ins* for executing '*embedded code sections
 
 
 **Note:** Also </ins>other *Dpdl language plug-ins* can be added</ins> as needed
+
+
+## Some Design considerations taken into account when developing Dpdl
+
+* Dpdl has been designed and implemented to be <ins>**Simple**</ins> and <ins>**Robust**</ins> -> Simple things, usually simply work in Software systems
+* Easily <ins>**Extendible**</ins> and <ins>**Customizable**</ins> -> Adding or adapting features should be possible and straight forward, conceptually and technically
+* <ins>**Portable**</ins> across different platforms and versions of JVM -> Ensure Backward compatibility (JVM) to the best possible extent. This has been a primary focus since the very beginning 
+* <ins>**Compact**</ins> code footprint and no depencencies to facilitate porting Dpdl to constrained devices
 
 
 ## Dpdl sample code
@@ -644,21 +644,21 @@ dpdl_stack_var_put("workgroup_size", "256, 1, 1")
 dpdl_stack_push("dpdl:applyvars")
 
 >>wgsl
-const SCALE_FACTOR: f32 = 0.7978845608028654; // sqrt(2.0 / Math.PI)
-
-@group(0) @binding(0) var<storage, read_write> inp: array<{{precision}}>;
-@group(0) @binding(1) var<storage, read_write> out: array<{{precision}}>;
-
-@compute @workgroup_size({{workgroup_size}})
-fn main(
-    @builtin(global_invocation_id) GlobalInvocationID: vec3<u32>) {
-    let i: u32 = GlobalInvocationID.x;
-    if (i < arrayLength(&inp)) {
-        let x: f32 = inp[i];
-        out[i] = select(0.5 * x * (1.0 + tanh(SCALE_FACTOR
-                 * (x + .044715 * x * x * x))), x, x > 10.0);
-    }
-}
+	const SCALE_FACTOR: f32 = 0.7978845608028654; // sqrt(2.0 / Math.PI)
+	
+	@group(0) @binding(0) var<storage, read_write> inp: array<{{precision}}>;
+	@group(0) @binding(1) var<storage, read_write> out: array<{{precision}}>;
+	
+	@compute @workgroup_size({{workgroup_size}})
+	fn main(
+	    @builtin(global_invocation_id) GlobalInvocationID: vec3<u32>) {
+	    let i: u32 = GlobalInvocationID.x;
+	    if (i < arrayLength(&inp)) {
+	        let x: f32 = inp[i];
+	        out[i] = select(0.5 * x * (1.0 + tanh(SCALE_FACTOR
+	                 * (x + .044715 * x * x * x))), x, x > 10.0);
+	    }
+	}
 <<
 int exit_code = dpdl_exit_code()
 
