@@ -69,7 +69,7 @@ and also for some less known, but yet very powerful programming languages:
 
 * **`Umka`**
 * **`Janet`**
-* **`Ring`**
+
 
 * **` others will follow...`**
 
