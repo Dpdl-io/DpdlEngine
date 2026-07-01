@@ -16,15 +16,15 @@ by **SEE Solutions** &copy;
 
 **Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language** code</ins> (**dpdl-lang**), as well as <ins>**code in different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded** within the same dpdl source code</ins>, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
+Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
 
 Dpdl enables **Polyglot programming**.
 
-The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (OOP) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>**Meta-programming**</ins> techniques.
+The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (**OOP**) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>**Meta-programming**</ins> techniques.
 
 **Dpdl** provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
 
-The core *DpdlEngine* has the capability to run also on <ins>**limited memory constrained devices and platforms</ins>** like MCUs and SoCs via a dedicated compact code <ins>kilobyte</ins> range virtual machine.
+The core *DpdlEngine* has the capability to run also on <ins>**constrained devices**</ins> and <ins>**limited memory platforms**</ins> like MCUs and SoCs via a dedicated compact code <ins>kilobyte</ins> range virtual machine.
 
 
 ### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
@@ -39,11 +39,43 @@ Dpdl itself is a general-purpose programming language, <ins>**self-contained**</
 
 Dpdl introduces the concept of '*embedded code sections*' that allows different programming languages, or any custom developed code syntax, to be embedded and executed directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and shipped separately.
 
-At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages**: <em>C, C++, Python & MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Modelica</em> and others will follow..., <ins>**directly embedded within dpdl code**</ins>.
+At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages** <ins>**directly embedded**</ins> within dpdl code: 
+
+* **`C`** (**interpreted && compiled**)
+* **`C++`**
+* **`Python`**
+* **`MicroPython`** (Python for Embedded Systems)
+* **`Julia`**
+* **`JavaScript`**
+* **`Micro JavaScript`**
+* **`OCaml`**
+* **`Lua`**
+* **`Ruby`**
+* **`mruby`** (Lightweight Ruby)
+* **`Java`**
+* **`PHP`**
+* **`Perl`**
+* **`Groovy`**
+* **`Ring`**
+* **`V`**
+* **`Scheme`** (ChezScheme)
+* **`Clojure`**
+* **`WAT/WASM`**
+* **`Wgsl`** (WebGPU)
+* **`OCL`** (OpenCL)
+* **`Modelica`**
+
+and also for some less known, but yet very powerful programming languages:
+
+* **`Umka`**
+* **`Janet`**
+* **`Ring`**
+
+* **` others will follow...`**
 
 Everything comes already included as part of the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
-<ins>Multiple</ins> '*Dpdl language plug-ins*' <ins>are currently available</ins> for various programming languages and different platforms. Also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>**Quantum Computing**</ins>.
+<ins>Multiple</ins> '*Dpdl language plug-ins*' are currently available for various programming languages and different platforms. Also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in active development, for example to enable also <ins>**Quantum Computing**</ins>.
 
 <p float="left">
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
