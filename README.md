@@ -16,7 +16,7 @@ by **SEE Solutions** &copy;
 
 **Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology.
 
-Dpdl comes as a very <ins>**compact and portable execution engine**</ins> (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
+Dpdl comes as a very <ins>**compact**</ins> and <ins>**portable**</ins> execution engine (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and <ins>at it's **native Speed**</ins>.
 
 Dpdl enables **Polyglot programming**.
 
@@ -60,7 +60,8 @@ At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of
 * **`V`**
 * **`Scheme`** (ChezScheme)
 * **`Clojure`**
-* **`WAT/WASM`**
+* **`SQL`**
+* **`WAT`** (WASM)
 * **`Wgsl`** (WebGPU)
 * **`OCL`** (OpenCL)
 * **`Modelica`**
@@ -99,7 +100,7 @@ The included *Dpdl language plug-in* '**DpdlAgent**' provides an agent middle-wa
 
 ## Dpdl is designed to:
 
-### * Facilitate development
+### * Facilitate development & testing
 ### * On multiple platforms
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Re-use code
@@ -192,7 +193,7 @@ endfor
 println("finished!")
 ```
 
-## dpdl-lang example: Use of 'embedded code sections' in multiple programming languages
+## dpdl-lang example: dpdl code with use of 'embedded code sections' in multiple programming languages
 
 The following dpdl example contains some '*embedded code sections*' in *C*, *Python*, *JavaScript* and *Java*, which are executed with almost zero overhead.
 
@@ -801,7 +802,7 @@ Dpdl enables the integration of different technologies to leverage fast prototyp
 * Data handling on memory constrained devices
 * AI generative code
 * Library module
-* Testing framework
+* Testing Tool
 * Utility tool
 	
 
