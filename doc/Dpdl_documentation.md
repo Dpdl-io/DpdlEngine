@@ -1453,7 +1453,7 @@ println("myaobj: " + myaobj)
 
 ##### typedef struct instance via an *Alias*
 
-```python
+```c++
 
 typedef struct B {
 	int x
@@ -1470,7 +1470,7 @@ println("point: " + point)
 
 Or also
 
-```python
+```c++
 
 typedef struct B {
 	int x
@@ -1487,7 +1487,7 @@ println("point: " + point)
 
 in order to make the syntax compliant also to C/C++, a semicolon ( ; ) may be optionally appended to the *Alias* (i.e Point)
 
-```python
+```c++
 
 typedef struct B {
 	int x

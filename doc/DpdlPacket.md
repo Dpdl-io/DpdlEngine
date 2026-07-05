@@ -13,13 +13,13 @@ by
 
 ## 'DpdlPacket'
 
-Dpdl allows to create <ins>executable compressed packets</ins> of data defined as **`DpdlPacket`** via a dedicated <ins>code definition</ins>.
+Dpdl allows to create <ins>compressed packets</ins> of data defined as **`DpdlPacket`** via a dedicated code definition.
 
-The data in a 'DpdlPacket' is organized in <ins>**chunks of highly compressed data**</ins>, along with <ins>database indexes and code definitions</ins>.
+The data in a 'DpdlPacket' is organized in chunks of <ins>**highly compressed data**</ins>, along with <ins>database indexes</ins> and code definitions.
 
-Chunks of data contained in a 'DpdlPacket' can be <ins>allocated</ins>, <ins>queried</ins> and <ins>deallocated</ins> when data is not needed anymore.
+Chunks of data contained in a 'DpdlPacket' can be <ins>allocated</ins>, <ins>executed</ins>, <ins>queried</ins> and <ins>deallocated</ins> when data is not needed anymore.
 
-This approach enables to handle efficiently big amounts of data on memory scarce devices.
+This approach enables to handle very efficiently relatively "big" amounts of data on memory scarce devices.
 
 The performance of query execution when querying a DpdlPacket is <ins>**x25 times faster**</ins> compared to the standard record store access.
 
@@ -30,7 +30,7 @@ The performance of query execution when querying a DpdlPacket is <ins>**x25 time
 		---------------------------
 		| Dpdl header & code       |
 		----------------------------
-		| Chunk #1                 |----> allocate (de-compress, decode, execute)
+		| Chunk #1                 |----> allocate (de-compress, decode, execute) --> query --> deallocate
 		|__________________________|          |
 		| Chunk #2                 |          |
 		|__________________________|     #######################
@@ -41,13 +41,15 @@ The performance of query execution when querying a DpdlPacket is <ins>**x25 time
 		| Chunk #N                 |
 		|__________________________|	
 														
-```											
-This allows a very efficient method of accessing and searching big amounts of data in memory constrained devices.
+```	
+										
+This allows a very efficient method of accessing and searching relatively "big" amounts of data in memory scarce devices.
 
 Dpdl code can be embedded in the DpdlPacket code definition and allows to trigger its execution on predefined callbacks.
 This makes a DpdlPacket an executable packet of data.
 
 This is an example DpdlPacket code definition (a phonebook database), which is compiled to a DpdlPacket containing all definitions and all chunks of data in a highly compressed format:
+
 ```c++
 call(dpdlInterpreter)
 ::module dpdl_PHONEBOOK_BZ
@@ -113,10 +115,42 @@ import virtual DATA none  {
 The DpdlPacket as defined above, can be allocated and queried via Dpdl API or via the equivalent Java API
 
 ```python
+println("swapping data chunk..."
+
 int status = DPDLAPI_swapDpdlChunk("dpdl_PHONEBOOK_BZ", "BolzanoPhone")
+
 if(status == dpdlTrue)
-	status = DPDLAPI_selectDpdlService("dpdl_PHONEBOOK_BZ",, "BolzanoPhone", "armin 369")
+	println("performing query ...")
+	
+	status = DPDLAPI_selectDpdlService("dpdl_PHONEBOOK_BZ", "BolzanoPhone", "armin 3692323")
+	
+	if(status)
+	string name
+     string phoneNR
+     string email
+     int nr_res = DPDLAPI_getNrResults()
+     int c = 0
+     println("Results: " + nr_res + " ---->");
+     if(nr_res > 0)
+         while(c < nr_res)
+              name = DPDLAPI_getResultSet(c, "name")
+              phoneNR = DPDLAPI_getResultSet(c, "phoneNR")
+              email = DPDLAPI_getResultSet(c, "e-mail")
+              println("                       name: " + name)
+              println("                       phone nr.: " + phoneNR)
+              println("                       e-mail: " + email)
+              println("-----------------------------------------")
+              c=c+1
+         endwhile
+         println("#######################")
+     else
+         println("no results found")
+     fi
+	else
+		println("Error in query")
+	fi
 fi
+
 ```
 
 The first time a DpdlPacket is allocated (swapped), data is decompressed in a temporary storage. This process takes some time for the 1st allocation,
@@ -215,7 +249,7 @@ on Windows
 		
 
 		
-The database technology included in Dpdl has been developed since year 2003, when the first java applications where developed for mobile devices.
+The 'DpdlPacket' database technology in Dpdl has been developed since year 2003, when the first java applications where developed for mobile devices.
 
 It started with a BsC thesis by A.C:
 
