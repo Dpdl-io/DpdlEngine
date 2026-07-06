@@ -422,6 +422,9 @@ dpdl_exit_code() return int exit_code
 raise(object condition) return int status
 raise(object condition, string msg) return int status
 raise(object condition, string msg, bool exit) return int status
+assert(object condition) return int status
+assert(object condition, string msg) return int status
+assert(object condition, string msg, bool exit) return int status
 dpdl_print_exception_table()
 
 [thread]
