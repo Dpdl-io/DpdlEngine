@@ -8,7 +8,7 @@ by
 &copy;
 
 
-# Dpdl News
+# Dpdl updates
 
 
 ## New Features

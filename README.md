@@ -1144,7 +1144,7 @@ The Dpdl platform and API documentation is available via the following links:
 
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
 
-[Dpdl language Specification]](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+[Dpdl language Specification](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
