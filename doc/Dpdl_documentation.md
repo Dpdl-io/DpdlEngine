@@ -150,6 +150,7 @@ char c = 'a'
 bool t = true
 var v = "some variable type which is infered at runtime"
 const t = "some immutable 'var' variable"
+const int x = 10
 class myClass cl
 object myobj = new(...)
 object myobj_static = getObj(...)
@@ -341,7 +342,7 @@ const ii = 100
 ii = 999 # will throw an Error
 ```
 
-The '*const*' keyword is also foreseen to be used in conjunction with all other type definitions (available soon)
+The '*const*' keyword can also to be used in conjunction with all other type definitions. Also in this case, on re-assignment it will throw an error.
 
 ```c
 const int x = 20
