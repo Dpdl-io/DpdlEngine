@@ -12,18 +12,14 @@ by
 &copy;
 
 
-Dpdl introduces the concept of '**`embedded code sections`**', which in general constists of some sort of code in different programming languages. or even some type of custom syntax, that can be embedded and executed right inside dpdl code. 
+Dpdl introduces the concept of '**`embedded code sections`**', which in general constists of some sort of <ins>code in different programming languages</ins>, or even some type of custom syntax, that can be embedded and executed right inside dpdl code. 
 
-These '*embedded code sections* are executed in form of dedicated plug-ins ( **Dpdl language plug-ins** ), which are are distributed along with the *DpdlEngine* release, but which can also be developed ad-hoc and distributed separately.
+These '*embedded code sections*' are executed in form of dedicated plug-ins ( **Dpdl language plug-ins** ), which are are distributed along with the *DpdlEngine* release, but which can also be developed ad-hoc and distributed separately.
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
 In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types and at its <ins>**native speed**</ins>.
  
-This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters of all sorts, and make them executable inside dpdl code.
-
-Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simple configuration. For native code based *Dpdl language -plug-ins* that are eventually available for multiple platforms, the dpdl runtime automatically selects the appropriate one on which it's running.
-
 
 ### '*Dpdl language plug-ins*' currently available for executing '*embedded code sections*'
 
@@ -71,14 +67,18 @@ and also for some less known, but yet very powerful programming languages:
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
 
 
+This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters of all sorts, and make them executable inside dpdl code.
+
+Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simple configuration.
+
 The available **Dpdl language plug-ins** listed above are implemented on top of the official implementation of each supported programming language (see 'Embedded language references' section below) and include everything needed to run the code, <ins>No additional installation needed, except user libraries</ins>.
 
 
-The individual '*Dpdl language plug-ins*' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
+- The individual '*Dpdl language plug-ins*' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
 
-For native, platform dependent '*Dpdl language plug-ins*', the dpdl runtime automatically selects the proper plug-in for a given platform (from path: './lib/native/$platform/').
+- For native code based, platform dependent *Dpdl language -plug-ins* that are eventually also available for multiple platforms, the dpdl runtime automatically selects the proper plug-in for the platform on which it's actually running  (lib path: './lib/native/$platform/')
 
-For '*Dpdl language plug-ins*' that execute natively and require a stricter security fence, there is the option to be run in an [isolated memory region](#isolated-memory-region) region or in containers.
+- For '*Dpdl language plug-ins*' that execute natively and require a stricter security fence, there is the option to be run in an [isolated memory region](#isolated-memory-region) region or in containers.
 
 
 ## Table of Contents
