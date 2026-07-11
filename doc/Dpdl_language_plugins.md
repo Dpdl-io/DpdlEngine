@@ -12,7 +12,7 @@ by
 &copy;
 
 
-Dpdl introduces the concept of '*embedded code sections*', which in general constists of some sort of code in different programming languages. or even some type of custom syntax, that can be embedded and executed right inside dpdl code. 
+Dpdl introduces the concept of '**`embedded code sections`**', which in general constists of some sort of code in different programming languages. or even some type of custom syntax, that can be embedded and executed right inside dpdl code. 
 
 These '*embedded code sections* are executed in form of dedicated plug-ins ( **Dpdl language plug-ins** ), which are are distributed along with the *DpdlEngine* release, but which can also be developed ad-hoc and distributed separately.
 
