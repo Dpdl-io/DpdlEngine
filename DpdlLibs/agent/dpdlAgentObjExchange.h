@@ -89,7 +89,7 @@ println("starting Object writer agent...")
 			  send(msg);
 			  System.out.println(getLocalName() + " sent 1st msg with xml aclCodec " + msg);
 
-			  p = new Person("A.", "Kunst", new Date(), 2);
+			  p = new Person("A.", "Constantin", new Date(), 2);
 			  msg.setContent(p.toString());
 			  msg.setLanguage("JavaLanguage");
 			  msg.setDefaultEnvelope();

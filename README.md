@@ -462,15 +462,14 @@ println("reading a file line by line using embedded 'Groovy' code...")
 
 dpdl_stack_push("./Test/see_solutions.html")
 >>groovy
-
-def dpdl_main(Object[] param, Object var_map){
-	String myfile = (String)param[0];
-	new File(myfile).eachLine { line ->
-	  println line
+	
+	def dpdl_main(Object[] param, Object var_map){
+		String myfile = (String)param[0];
+		new File(myfile).eachLine { line ->
+		  println line
+		}
+		return 1;
 	}
-	return 1;
-}
-
 <<
 int exit_code = dpdl_exit_code()
 
@@ -777,32 +776,32 @@ In this GitHub repository you can find full featured working prototype applicati
 
 Dpdl is suitable for <ins>rapid application development</ins> and <ins>testing</ins> in various domains, in particular also for development of small applications on <ins>constrained devices</ins>. It is also very effective to be used as embedded scripting engine within applications.
 
-Dpdl facilitates rapid development, fast prototyping, code reuse and allow a high degree of portability while being simple, extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
+Dpdl facilitates rapid development, testing, fast prototyping, code reuse and allow a high degree of portability while being simple, extensible and compact. Further, developers can benefit from the possibility to use multiple programming languages and consequently have a vaster set of APIs are available for development on a given platform.
 
 Dpdl has also built-in constructs that allow dynamic code generation via <ins>**generative AI code**</ins> and it provides a dedicated plug-in interface for developing and embedding custom language interpreter plug-ins of all sorts.
 
 The AI Dpdl language plug-in '**DpdlAINerd**' (**DAN**) can be used to speed-up the prototyping, development and testing process by leveraging generative AI code for embedded code and data generation within dpdl.
 
-The Dpdl language plug-in '**DpdlAgent**', with the provided agent development middleware, can be used to build solid *Distributed Mobile Agents* that communicate asynchronously following the FIPA (*Foundation for Intelligent Physical Agents*) specification. It enables also to develop agents that are able to migrate or copy themselves across multiple networks and hosts.
+The Dpdl language plug-in '**DpdlAgent**' provides an agent development middle-ware that allows to build solid *Distributed Mobile Agents* that communicate asynchronously following the FIPA (*Foundation for Intelligent Physical Agents*) specification. It enables also to develop agents that are able to migrate or copy themselves across multiple networks and hosts.
  
-Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party libraries and protocols can be added as extensions.
+Common IoT protocol stacks such as **Bluetooth(tm)** and **CoAP** (*Constrained Application Protocol*) are integrated by default and third party protocols and libraries can be added as extensions.
 
-Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data efficiently</ins> on small memory footprint devices**. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A *DpdlPacket* can also include and execute dpdl code definitions.
+Further, the custom data container '**DpdlPacket**' can be used to <ins>**encode, store, control and query data</ins>  efficiently on limited memory devices**. A DpdlPacket is a structured, highly compressed packet of data which can be managed and queried very efficiently on memory scarce devices. A *DpdlPacket* can also include and execute dpdl code definitions.
 
 Dpdl enables to combine the <ins>portability and vast API availability</ins> of Java and Python, the <ins>computational power</ins> of Julia, the <ins>expressiveness</ins> of Lua and Clojure, the simplicity of Ruby and Groovy, the <ins>web-enablement</ins> of JavaScript and WebAssembly (Wasm), the effective <ins>cyber-physical modeling</ins> with Modelica and the <ins>power</ins> of C/C++ programming language within the same Dpdl source code, enabling developers to use thousands of existing high-quality software libraries. 
 
 Dpdl enables the integration of different technologies to leverage fast prototyping and foster research and development.
 
 
-### Dpdl can be used as:
+### Dpdl can be used for:
 
-* Rapid application development platform
+* Rapid application development
+* Testing
 * Embedded scripting engine in applications
-* For the development of Domain Specific Languages (DSL)
+* Development of Domain Specific Languages (DSL)
 * Data handling on memory constrained devices
 * AI generative code
 * Library module
-* Testing Tool
 * Utility tool
 	
 
@@ -824,6 +823,7 @@ map.put(4, "Language")
 
 s = map.get(1)
 println(s)
+
 s = map.get(4)
 println(s)
 ```
@@ -961,7 +961,6 @@ See this doc for more details: [Dpdl_language_plugins.md](https://github.com/Dpd
 ### In development '*Dpdl language plug-ins*' (available soon in coming releases):
 
 * **`R`** --> for executing 'R' statistical computing language code
-* **`ring`** --> for executing 'Ring' programming language code
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
 
 
@@ -1012,8 +1011,6 @@ Dpdl allows the embedding and on-the-fly execution of **ANSI C code** directly w
 
 ```c
 
-# starting with Dpdl, pushing parameters on the stack and embedding C code
-
 println("testing embedded C code in Dpdl")
 
 int n = 6
@@ -1040,16 +1037,15 @@ int exit_code = dpdl_exit_code()
 
 println("embedded C exit code: " + exit_code);
 
-# again Dpdl code...
-
 object str = new("String", "Dpdl embedded C")
 bool b = str.contains("C")
+
 println("Dpdl contains C: " + b)
 ```
 
 ### Embedding other programming languages
 
-Other programming languages or natural language interpreters can be easily integrated in Dpdl as '*embedded code sections*' via a dedicated plug-in interface and configuration (*Dpdl language plug-ins*). Feel free to suggest your wishes on the 'Discussion' section on the DpdlEngine GitHub repository
+Other programming languages or natural language interpreters can be easily integrated in Dpdl as '*embedded code sections*' via a dedicated plug-in interface and configuration (*Dpdl language plug-ins*).
 
 
 ## AI generative code with '**DpdlAINerd**' (**DAN**) *Dpdl language plug-in*
@@ -1200,8 +1196,6 @@ See 'Download' page for more details:
 
 ## Roadmap
 
-* Back-end compiler to **compile Dpdl code to native machine code** for most target architectures
-
 * Dpdl-IDE with plug-ins for popular IDEs (IntelliJ, eclipse, VS Code)
 
 * Development of a dedicated **'Dpdl language plug-in'** for enabling <ins>**Quantum Computing**</ins> via embedded OpenQASM 2.0 (Circuit description language) code within Dpdl
@@ -1243,7 +1237,7 @@ Example Dpdl code embedding 'Julia' that generates a Plot and saves the result a
 <img src="http://www.dpdl.io/images/platform/Dpdl_Julia_example.png" width="60%" height="60%">
 
 ```python
-#main
+
 println("Testing Plot data with Julia programming language...")
 
 >>julia
@@ -1386,7 +1380,7 @@ All kind of data can be packed into a DpdlPacket.
 
 **Example DpdlPacket definition source file:**
 
-[dpdl_PHONEBOOK.dpdlpkt](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlPackets/dpdl_PHONEBOOK_BZ.dpdlpkt) 
+[dpdl_PHONEBOOK.dpdlpkt](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlPackets/dpdl_PHONEBOOK_BZ.h) 
 
 The 'DpdlEngine lite' release package includes an encoded DpdlPacket (dpdl_PHONEBOOK.dpdl) and the corresponding Dpdl code definition file used to encode the DpdlPacket.
 
@@ -1489,11 +1483,11 @@ Usage:
  -q  quit
 ```
 
-## other Dpdl internet domains
+## related Dpdl internet domains
 
 The following domains are All part of Dpdl-io (www.dpdl.io)
 
-Currently the domains point to the same web-site, but Stand by! There will be interesting developments
+Currently most of these domains point to the same web-site, but Stand by! There will be interesting developments
 
 www.dpdl-lang.io
 

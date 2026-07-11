@@ -17,7 +17,7 @@ The dpdl '*embedded code secitons*' in C code can be executed in 2 different mod
 
 Both execution modes have some characteristics that may fit better in one case or the other.
 
-The code is executed via a native Dpdl library that has relatively small footprint (278 Kb) and therefore is applicable also on small embedded systems. The library contains both, interpreter and compiler, and even a the *stdlib* library for interpreted C code.
+The code is executed via a native Dpdl library that has relatively small footprint (278 Kb) and therefore is applicable also on small embedded systems. The library contains both, interpreter and compiler, and even a the subset standard C libraries for interpreted C code.
 
 ## Modes of execution
 
@@ -38,13 +38,13 @@ Custom libraries and functions can be integrated and linked via a straightforwar
 
 - No compile time overhead, but may be a bit slower than compiled code
 
-- minimal, it includes a basic set of C libraries and header files (*stdlib*), POSIX compliant (also on Windows OS)
+- minimal, it includes a basic set of standard C libraries and header files, POSIX compliant (also on Windows OS)
 
 - Possibility to integrate custom functions via simple integration
 
 - C code may, or may not have an entry function defined
 
-#### Minimal embedded C library (*stdlib*) documentation (for Mode 1)
+#### Minimal embedded standard C library documentation (for Mode 1)
 
 [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md)
 
@@ -191,7 +191,7 @@ Note: in-line assembly is available only on i386 and X86_64 platforms, but it co
 
 ## C libraries included (interpreted Mode 1)
 
-When C code is executed in **`interpreted`** mode, all *stdlib* libraries and include files are already available in the dpdl runtime and can just be used.
+When C code is executed in **`interpreted`** mode, all subset standard C libraries and include files are already available in the dpdl runtime and can just be used.
 
 This is the documentation of the C library available when executing embedded C code with <ins>interpreted</ins> **Mode (1)**:
 

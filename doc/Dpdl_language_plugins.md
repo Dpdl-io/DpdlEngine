@@ -12,13 +12,15 @@ by
 &copy;
 
 
-Dpdl introduces the concept of '*embedded code sections*' that can be embedded and executed right inside dpdl code via available dedicated plug-ins ( **Dpdl language plug-ins** ) distributed along with the *DpdlEngine* release, or distributed separately.
+Dpdl introduces the concept of '*embedded code sections*', which in general constists of some sort of code in different programming languages. or even some type of custom syntax, that can be embedded and executed right inside dpdl code. 
+
+These '*embedded code sections* are executed in form of dedicated plug-ins ( **Dpdl language plug-ins** ), which are are distributed along with the *DpdlEngine* release, but which can also be developed ad-hoc and distributed separately.
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
 In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types and at its <ins>**native speed**</ins>.
  
-This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters or all sorts, and make them executable inside dpdl code.
+This plug-in oriented approach allows also developers to develop and integrate custom syntax or natural language interpreters of all sorts, and make them executable inside dpdl code.
 
 Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simple configuration. For native code based *Dpdl language -plug-ins* that are eventually available for multiple platforms, the dpdl runtime automatically selects the appropriate one on which it's running.
 
@@ -110,7 +112,7 @@ For '*Dpdl language plug-ins*' that execute natively and require a stricter secu
 
 ## Dpdl embedded code sections
 
-Dpdl enables the embedding and execution of arbitrary *embedded code sections* within Dpdl code, which can be other programming languages as well as custom syntaxes or even natural language descriptions that are than evaluated and processed by AI inference.
+Dpdl enables the embedding and execution of arbitrary *embedded code sections* within dpdl code, which can be other programming languages as well as custom syntaxes or even natural language descriptions that are than evaluated and processed by AI inference.
 
 ### embedding code within Dpdl
 
@@ -285,13 +287,10 @@ The 'Dpdl language plug-ins' for other available platforms have similar sizes, b
 
 'C' code can be embedded and executed within Dpdl by using the keyword **`>>c`**.
 
-It can be executed in '*interpreted*' or '*compiled*' form.
+The embedded C code can be executed in two different Modes: 
 
-When executed in '*interpreted*' mode, all *stdlib* C libraries and include files are already present in the dpdl runtime, they just can be used. 
-
-When executed in '*compiled*' mode, they can be included via dpdl stack configuration. Default system locations are also searched for available C libraries and include files. A very basic set is included with the DpdlEngine release (under './lib/native/$platform/include' )
-
-The '*compiled**' C code is per default executed with Memory Bounds Checks. Generated code with bounds checking is fully compatible with unchecked code.
+- **`interpreted`**
+- **`compiled`**
 
 #### keyword **`>>c`**
 
@@ -301,7 +300,7 @@ The '*compiled**' C code is per default executed with Memory Bounds Checks. Gene
 <<
 ```
 
-**Example Dpdl code with embedded 'C' code:**
+**Example dpdl code with embedded 'C' code:**
 
 ```python
 println("testing embedded C code in Dpdl")
@@ -343,9 +342,26 @@ println("response buffer: " + buf)
 
 C code can be executed in 2 different modes:
 
-1) Interpreted C code (Mode 1) --> <ins>minimal subset of C90</ins>)
-2) Compiled C code (Mode 2) --> compiled in memory at runtime, supports <ins>ANSI C & ISO C99</ins>
+- **`interpreted`** C code (Mode 1)
 
+This mode supports a subset of C90.
+
+When executed in '*interpreted*' mode, a subset of all standard C libraries and include files are already present in the dpdl runtime, they just can be used. 
+
+
+2) **`compiled`** C code (Mode 2)
+
+With this mode the C code is compiled in memory at runtime. It supports <ins>ANSI C & ISO C99</ins> standards.
+ 
+When executed in '*compiled*' mode, libraries and include paths be included via dpdl stack configuration.
+
+Default system locations are also searched for available C libraries and include files.
+
+A very basic set is included with the DpdlEngine release (under './lib/native/$platform/include' )
+
+The '*compiled**' C code is per default executed with Memory Bounds Checks. 
+
+Generated code with bounds checking is fully compatible with unchecked code.
 
 #### Plug-in documentation/Specification
 
@@ -362,7 +378,7 @@ C code can be executed in 2 different modes:
 
 #### keyword **`>>python`**
 
-**Example Dpdl code with embedded 'Python' code:**
+**Example dpdl code with embedded 'Python' code:**
 
 ```python
 println("testing embedding python code")
@@ -409,7 +425,7 @@ MicroPython is an efficient implementation of the Python 3 programming language 
 
 #### keyword **`>>mpython`**
 
-**Example Dpdl code with embedded 'MicroPython' code:**
+**Example dpdl code with embedded 'MicroPython' code:**
 
 ```python
 println("testing embedded micropython code...")
@@ -464,7 +480,7 @@ Julia is a powerful high performance computing programming language with many sc
 
 #### keyword **`>>julia`**
 
-**Example Dpdl code with embedded 'Julia' code:**
+**Example dpdl code with embedded 'Julia' code:**
 
 ```python
 println("testing embedding of 'julia' code...")
@@ -503,7 +519,7 @@ println("embedded julia code exit code: " + exit_code)
 'JavaScript' code can be embedded and executed within Dpdl via the keyword **`>>js`**
 
 
-**Example Dpdl code with embedded 'JavaScript' code:**
+**Example dpdl code with embedded 'JavaScript' code:**
 
 ```python
 println("testing embedded js...")
@@ -565,7 +581,7 @@ println(res_buf)
 <<
 ```
 
-**Example Dpdl code with embedded 'Lua' code:**
+**Example dpdl code with embedded 'Lua' code:**
 
 ```python
 println("testing embedding lua....")
@@ -638,7 +654,7 @@ println(resp_buf)
 
 The 'Ruby' programming language code can be embedded within dpdl using the keyword **`>>ruby`**
 
-**Example Dpdl code with embedded 'Ruby' code:**
+**Example dpdl code with embedded 'Ruby' code:**
 
 ```ruby
 println("Dpdl is embedding some ruby code...")
@@ -790,7 +806,7 @@ println("finished")
 
 The execution entry point is the a groovy method 'dpdl_main(Object[] param, Object var_map)' which receives as parameters all the parameters and variables from the current Dpdl stack.
 
-**Example Dpdl code with embedded 'Groovy' code:**
+**Example dpdl code with embedded 'Groovy' code:**
 
 ```python
 println("reading a file line by line with 'Groovy'")
@@ -824,11 +840,11 @@ The 'dpdl_main' method needs to return an object, either of type Integer or an O
 
 'C++' code can be embedded within Dpdl with the keyword '**>>cpp**'
 
-https://root.cern/gallery/
+
 
 #### keyword **`>>cpp`**
 
-**Example Dpdl code with embedded 'C++' code that rewrites an image format using of the ROOT framework libraries:**
+**Example dpdl code with an embedded 'C++' code that rewrites an image format using of the ROOT framework libraries:**
 
 The ROOT toolkit from Cern provides full featured APIs for Data visualization, modeling, statistics and many other
 
@@ -863,7 +879,7 @@ The functional programming language 'Clojure' can be embedded within Dpdl via th
 
 The embedded 'Clojure' code is compiled before execution. The function 'dpdl_main' is the entry point
 
-**Example Dpdl code with embedded 'Clojure' code:**
+**Example dpdl code with embedded 'Clojure' code:**
 
 ```python
 println("testing embedded Clojure...")
@@ -898,7 +914,7 @@ println("embedded Clojure exit code: " + exit_code)
 
 #### keyword **`>>php`**
 
-The web scripting language PHP can be embedded within Dpdl code using the keyword **`php`**
+The web scripting language PHP can be embedded within dpdl code using the keyword **`php`**
 
 The Dpdl language plug-in is developed on top of PH7, an efficient compiler and interpreter for PHP (v5.3) 
 
@@ -966,7 +982,7 @@ The connection parameters **`db_url`** **`db_user`** **`db_pass`** need to be pu
 Variables that are needed to construct the embedded query can also be pushed onto the Dpdl stack and referenced within double curly brackets eg. **`{{my_var}}`**
 
 
-**Example Dpdl code with embedded 'SQL' query:**
+**Example dpdl code with embedded 'SQL' query:**
 
 ```python
 println("testing 'sql' queries with Dpdl...")
