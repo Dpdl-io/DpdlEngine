@@ -1394,7 +1394,29 @@ struct A mya = {23, 0.3, 0.6, "Test", d}
 println("mya: " + mya)
 ```
 
-is equivalent to
+also designated initializers can be used. In this case ordering does not matter
+
+```c
+struct A {
+	int id
+	float x, y
+	string str
+	object data
+}
+
+object d = new("String", "some test data")
+
+struct A mya1 = {id: 23, x: 0.3, y: 0.6, str: "Test", data: d}
+
+println("mya1: " + mya1)
+
+struct A mya2 = {data: d, str: "Test", y: 0.6, x: 0.3, id: 23}
+
+println("mya2: " + mya2)
+```
+
+
+'struct' member variables can also be initialized in subsequent steps.
 
 ```c
 struct A {
