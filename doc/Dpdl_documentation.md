@@ -1364,7 +1364,7 @@ my_arr[] = array(a)
 println("my_arr: " + my_arr)
 ```
 
-#### struct initialization
+#### **`struct`** initialization
 
 Struct member variables can be statically initialized but can also be re-assigned explicitly upon 'struct' variable declaration, in a similar way like in C.
 
@@ -1426,15 +1426,13 @@ struct A {
 struct A mya = {3,.,9}
 ```
 
-#### typedef struct
+#### **`typedef struct`**
 
 
-The dpdl type **`struct`** can also be used in conjunction with the **`typedef`** specifier to create a type that can be instantiated via the *`new(..)`* keyword or directly via an *Alias*
-
-The concept is similar to that found in *C/C++*
+The dpdl type **`struct`** can also be used in conjunction with the **`typedef`** specifier to create a type that can than be instantiated via the *`new`* keyword.
 
 
-##### typedef struct instance like an object
+##### **`typedef struct`** instance
 
 ```python
 
@@ -1447,12 +1445,13 @@ typedef struct A {
 
 char myid[] = {'D', 'P', 'D', 'L'}
 
-object myaobj = new(A, myid, 1, 2, 3)
+object myaobj = new A{myid, 1, 2, 3}
 
 println("myaobj: " + myaobj)
 ```
 
-##### typedef struct instance via an *Alias*
+
+##### **`typedef struct`** instance via a *Alias*
 
 ```c++
 
@@ -1463,7 +1462,7 @@ typedef struct B {
 } Point
 
 
-object point = new Point(100, 200, 33.3f)
+object point = new Point{100, 200, 33.3f}
 
 println("point: " + point)
 
@@ -1480,13 +1479,13 @@ typedef struct B {
 } Point
 
 
-Point point = new Point(100, 200, 33.3f)
+Point point = new Point{100, 200, 33.3f}
 
 println("point: " + point)
 
 ```
 
-in order to make the syntax compliant also to C/C++, a semicolon ( ; ) may be optionally appended to the *Alias* (i.e Point)
+in order to make the syntax also compliant  to C/C++, a semicolon ( ; ) may be optionally appended to the *Alias* (i.e Point)
 
 ```c++
 
@@ -1500,7 +1499,28 @@ typedef struct B {
 
 ```
 
-#### struct inheritance
+##### **`typedef struct`** instance like an object
+
+When declaring a 'struct' definition with **`typedef struct`**, the resulting 'struct' can also be initialized like an object as follows:
+
+```python
+
+typedef struct A {
+	char id[256]
+	int a
+	int b
+	int c
+}
+
+char myid[] = {'D', 'P', 'D', 'L'}
+
+object myaobj = new("A", myid, 1, 2, 3}
+
+println("myaobj: " + myaobj)
+```
+
+
+#### **`struct`** inheritance
 
 The type 'struct' can also be derived from a base 'struct', as a sub-struct, inheriting all member variables and functions from the base struct.
 
@@ -1539,7 +1559,7 @@ struct myB ab = {369, 963}
 ```
 
 
-#### struct compiled to java bytecode
+#### **`struct`** compiled to java bytecode
 
 
 The type 'struct' can also be conveniently compiled at runtime into a java bytecode object (java Class) by using the **`genObjCode(...)`** dpdl api function.
