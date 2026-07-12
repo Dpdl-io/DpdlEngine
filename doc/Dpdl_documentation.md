@@ -1434,7 +1434,7 @@ The dpdl type **`struct`** can also be used in conjunction with the **`typedef`*
 
 ##### **`typedef struct`** instance
 
-```python
+```c++
 
 typedef struct A {
 	char id[256]
