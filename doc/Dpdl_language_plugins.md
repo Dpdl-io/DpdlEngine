@@ -12,13 +12,13 @@ by
 &copy;
 
 
-Dpdl introduces the concept of '**`embedded code sections`**', which in general constists of some sort of <ins>code in different programming languages</ins>, or even some type of custom syntax, that can be embedded and executed right inside dpdl code. 
+Dpdl introduces the concept of '**`embedded code sections`**', which consists of some sort of code in <ins>different programming languages</ins>, or even some type of custom syntax, that can be embedded and executed right inside dpdl code. 
 
-These '*embedded code sections*' are executed in form of dedicated plug-ins ( **Dpdl language plug-ins** ), which are are distributed along with the *DpdlEngine* release, but which can also be developed ad-hoc and distributed separately.
+These '*embedded code sections*' are executed by dedicated plug-ins ( **Dpdl language plug-ins** ), distributed along with the *DpdlEngine* release, but which can also be developed ad-hoc and integrated separately.
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
-In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types and at its <ins>**native speed**</ins>.
+In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types, and at its <ins>**native speed**</ins>.
  
 
 ### '*Dpdl language plug-ins*' currently available for executing '*embedded code sections*'
@@ -71,9 +71,6 @@ This plug-in oriented approach allows also developers to develop and integrate c
 
 Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simple configuration.
 
-The available **Dpdl language plug-ins** listed above are implemented on top of the official implementation of each supported programming language (see 'Embedded language references' section below) and include everything needed to run the code, <ins>No additional installation needed, except user libraries</ins>.
-
-
 - The individual '*Dpdl language plug-ins*' can be activated or deactivated as needed, and there is a mechanism that ensures that the plug-ins are tamper-proof in order to avoid malicious code injections.
 
 - For native code based, platform dependent *Dpdl language -plug-ins* that are eventually also available for multiple platforms, the dpdl runtime automatically selects the proper plug-in for the platform on which it's actually running  (lib path: './lib/native/$platform/')
@@ -109,6 +106,7 @@ The available **Dpdl language plug-ins** listed above are implemented on top of 
 </td></tr>
 </table>
 
+The available **Dpdl language plug-ins** listed above are mostly implemented on top of the official implementation of each supported programming language (see 'Embedded language references' section below) and include everything needed to run the code, <ins>No additional installation needed, except user libraries</ins>.
 
 ## Dpdl embedded code sections
 
