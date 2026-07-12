@@ -19,18 +19,16 @@ JavaScript can be embedded and executed within Dpdl code by using the keyword **
 
 Currently the following types (Modes) are supported:
 
-1) Using the '*QuickJS*' javascript engine, [ES2023 Spec](https://tc39.es/ecma262/2023/) compliant (<ins>default mode</ins>)
+1) Using the '*QuickJS*' javascript engine, [ES2025 Spec](https://tc39.es/ecma262/2025/) compliant (<ins>default mode</ins>)
 2) Using the '*Nashorn*' javascript engine available on the Java platform -> available only on JRE version from 11 to 15
 3) Using the '*V8*' javascript engine (* *available soon*)
 
 
 ### Mode (1) (default mode)
 
-The '*Dpdl language plug-in*' for executing JavaScript is built on the *QuickJS* JavaScript engine. It provides a powerful and complete API to interact with javascript at low level, supports most *ES2023 specification* (https://tc39.es/ecma262/2023/) including modules, asynchronous generators, proxies and BigInt.
+The '*Dpdl language plug-in*' for executing JavaScript is built on the *QuickJS* JavaScript engine. It provides a powerful and complete API to interact with javascript at low level, supports most *ES2025 specification* (https://tc39.es/ecma262/2025/) including modules, asynchronous generators, proxies and BigInt.
 
 It runs successfully all tests of the [ECMAScript Test Suite](https://github.com/tc39/test262).
-
-It supports also some features of the *ES2024 specification* (https://tc39.es/ecma262/2024)
 
 Custom native functions and objects can be implemented as shared libraries and accessed from javascript code.
 

@@ -1068,7 +1068,12 @@ class C : B {
 	...
 }
 
-# OR alternatively also with the extended form
+
+```
+
+Alternatively, the keyword '*extends*' is also accepted. It is equivalent to the the **`:`** above
+
+```python
 
 class B extends A {
 	...

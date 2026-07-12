@@ -37,7 +37,7 @@ The core *DpdlEngine* has the capability to run also on <ins>**constrained devic
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in some specifics employs dynamic JVM bytecode compilation and manipulation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
 
-Dpdl introduces the concept of '*embedded code sections*' that allows different programming language or any custom developed code syntax, to be embedded and executed directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
+Dpdl introduces the concept of '*embedded code sections*' that allows code of different programming languages, or any custom developed code syntax, to be embedded and executed directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
 
 At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages** <ins>**directly embedded**</ins> within dpdl code: 
 

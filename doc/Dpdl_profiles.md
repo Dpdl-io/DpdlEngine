@@ -80,7 +80,7 @@ In this example there are 3 <ins>*Dpdl language plug-ins* **included**</ins>, in
 
 - **C** (*interpreted & compiled*)
 - **Python**
-- **JavaScript** (*ES2023*)
+- **JavaScript** (*ES2025*)
 
 
 | Platform | Component | Size |
@@ -89,7 +89,7 @@ In this example there are 3 <ins>*Dpdl language plug-ins* **included**</ins>, in
 |	| **DpdlEngine core** (*Full*) | 372 Kb |
 |	| *Dpdl language plug-in* for **C** (interpreted & compiled)  | 284 Kb |
 |	| *Dpdl language plug-in* for **Python**  | 2551 Kb |
-|	| *Dpdl language plug-in* for **JavaScript** (*ES2023*) | 1924 Kb |
+|	| *Dpdl language plug-in* for **JavaScript** (*ES2025*) | 1924 Kb |
 
 **Note:** also <ins>other Dpdl language plug-ins might be added</ins> if needed
 
