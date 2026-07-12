@@ -1503,7 +1503,7 @@ typedef struct B {
 
 When declaring a 'struct' definition with **`typedef struct`**, the resulting 'struct' can also be initialized like an object as follows:
 
-```python
+```c++
 
 typedef struct A {
 	char id[256]
