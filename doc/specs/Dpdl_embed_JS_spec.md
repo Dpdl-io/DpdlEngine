@@ -43,23 +43,24 @@ println("testing embedded js...")
 
 dpdl_stack_push("my Hello Message!!!")
 >>js
-
-import { fib } from "./DpdlLibs/js/fib_module.js";
-
-var a_message = "null";
-
-console.log(scriptArgs)
-console.log('Dpdl sends a message with QuickJS');
-
-if(scriptArgs.length > 0){
-	a_message = scriptArgs[0];
-}
-std.printf("Message = %s %d", a_message, 23);
-console.log('');
-console.log("fib(10)=", fib(10));
+	
+	import { fib } from "./DpdlLibs/js/fib_module.js";
+	
+	var a_message = "null";
+	
+	console.log(scriptArgs)
+	console.log('Dpdl sends a message with QuickJS');
+	
+	if(scriptArgs.length > 0){
+		a_message = scriptArgs[0];
+	}
+	std.printf("Message = %s %d", a_message, 23);
+	console.log('');
+	console.log("fib(10)=", fib(10));
 <<
 
 int exit_code = dpdl_exit_code()
+
 println("embedded js exited with exit code: " + exit_code)
 ```
 
@@ -122,8 +123,8 @@ dpdl_stack_push("dpdlplugin:nashorn")
 dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
 dpdl_stack_var_put("var1", "This variable comes from Dpdl (var1)")
 >>js
-your javascript code 
-print(var1)....
+	your javascript code 
+	print(var1)....
 <<
 ```
 
@@ -159,5 +160,6 @@ dpdl_stack_push(val, arr)
 	}
 <<
 int exit_code = dpdl_exit_code()
+
 println("Dpdl js exited with exit code: " + exit_code)
 ```
