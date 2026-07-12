@@ -11,9 +11,9 @@ by
 &copy;	
 
 
-### DpdlAgents specification
+### DpdlAgents documentation
 
-Dpdl has built-in support for **Agents** technology that enables to implement Distributed Mobile Agents execution flows.
+Dpdl has built-in support for **Agents** technology that enables to implement <ins>**Distributed Mobile Agents**</ins> execution flows.
 
 The '**DpdlAgent** component includes a complete agent development framework based on jade for building distributed and Mobile multi-Agent systems.
 
