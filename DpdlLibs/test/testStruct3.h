@@ -1,6 +1,6 @@
 # File: test/testStruct3.h
 #
-# Example: Test dpdl code with 'struct' type that make use of inheritance
+# Example: Test dpdl code with 'struct' that make use of inheritance
 #
 # Author: A.Costa
 # e-mail: ac@dpdl.io
@@ -31,15 +31,12 @@ struct myB : myA {
 }
 
 
-# main
-
 println("testing struct type with inheritance...")
 println("")
 
 struct myB b
 
 println("b: " + b)
-
 b.printBase()
 b.printIt()
 
@@ -63,3 +60,27 @@ struct myB b2 = {.,6,.}
 
 println("b1: " + b1)
 println("b2: " + b2)
+
+println("the type 'struct' can also be defined with 'typedef' as a type and initialized with new...")
+
+typedef struct Geo {
+	double lat
+	double lon
+}
+
+object mygeo = new Geo{40.526048d, -78.994700d}
+
+println("mygeo: " + mygeo)
+
+
+typedef struct Coords {
+	float x
+	float y
+	float z
+} Point
+
+object mypoint = new Point{100.0f, 200.0f, -90.0f}
+
+println("mypoint: " + mypoint)
+
+

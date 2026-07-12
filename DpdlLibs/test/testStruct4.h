@@ -22,7 +22,7 @@ typedef struct MyStruct : Coords {
 } Point;
 
 
-object point = new Point("someID", "some Data")
+object point = new Point{"someID", "some Data"}
 
 point.x = 100
 point.y = 200
