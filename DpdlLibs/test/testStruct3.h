@@ -37,6 +37,7 @@ println("")
 struct myB b
 
 println("b: " + b)
+
 b.printBase()
 b.printIt()
 
@@ -79,7 +80,7 @@ typedef struct Coords {
 	float z
 } Point
 
-object mypoint = new Point{100.0f, 200.0f, -90.0f}
+object mypoint = new Point(100.0f, 200.0f, -90.0f)
 
 println("mypoint: " + mypoint)
 

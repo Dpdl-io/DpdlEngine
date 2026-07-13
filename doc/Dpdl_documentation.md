@@ -1489,7 +1489,7 @@ typedef struct B {
 } Point
 
 
-object point = new Point{100, 200, 33.3f}
+object point = new Point(100, 200, 33.3f)
 
 println("point: " + point)
 
@@ -1506,7 +1506,7 @@ typedef struct B {
 } Point
 
 
-Point point = new Point{100, 200, 33.3f}
+Point point = new Point(100, 200, 33.3f)
 
 println("point: " + point)
 
@@ -1541,7 +1541,7 @@ typedef struct A {
 
 char myid[] = {'D', 'P', 'D', 'L'}
 
-object myaobj = new("A", myid, 1, 2, 3}
+object myaobj = new(A, myid, 1, 2, 3}
 
 println("myaobj: " + myaobj)
 ```
