@@ -125,27 +125,27 @@ if(status == dpdlTrue)
 	status = DPDLAPI_selectDpdlService("dpdl_PHONEBOOK_BZ", "BolzanoPhone", "armin 3692323")
 	
 	if(status)
-	string name
-     string phoneNR
-     string email
-     int nr_res = DPDLAPI_getNrResults()
-     int c = 0
-     println("Results: " + nr_res + " ---->");
-     if(nr_res > 0)
-         while(c < nr_res)
-              name = DPDLAPI_getResultSet(c, "name")
-              phoneNR = DPDLAPI_getResultSet(c, "phoneNR")
-              email = DPDLAPI_getResultSet(c, "e-mail")
-              println("                       name: " + name)
-              println("                       phone nr.: " + phoneNR)
-              println("                       e-mail: " + email)
-              println("-----------------------------------------")
-              c=c+1
-         endwhile
-         println("#######################")
-     else
-         println("no results found")
-     fi
+		string name
+		string phoneNR
+		string email
+	     int nr_res = DPDLAPI_getNrResults()
+	     int c = 0
+	     println("Results: " + nr_res + " ---->");
+	     if(nr_res > 0)
+	         while(c < nr_res)
+	              name = DPDLAPI_getResultSet(c, "name")
+	              phoneNR = DPDLAPI_getResultSet(c, "phoneNR")
+	              email = DPDLAPI_getResultSet(c, "e-mail")
+	              println("                       name: " + name)
+	              println("                       phone nr.: " + phoneNR)
+	              println("                       e-mail: " + email)
+	              println("-----------------------------------------")
+	              c=c+1
+	         endwhile
+	         println("#######################")
+	     else
+	         println("no results found")
+	     fi
 	else
 		println("Error in query")
 	fi

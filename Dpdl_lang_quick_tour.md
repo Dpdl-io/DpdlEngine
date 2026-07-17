@@ -387,7 +387,10 @@ For example assume we have a C library called 'my_native' ( libmy_native.so) wit
 ```c
 struct myS {
 	int id;
-	....
+	char *desc;
+	char *data;
+	int x;
+	int y;
 };
 
 int my_function(const struct myS *data, int value){

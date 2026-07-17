@@ -18,15 +18,15 @@ These '*embedded code sections*' are executed by dedicated plug-ins ( **Dpdl lan
 
 The execution of embedded code is driven by the dpdl runtime through a configurable dedicated native interface with plug-in configurable option settings.
 
-In this way <ins>**multiple programming languages** and **custom syntax interpreters**</ins> can be <ins>**embedded and executed** directly within dpdl code</ins>, simultaneously and of multiple types, and at its <ins>**native speed**</ins>.
+In this way code in multiple **programming languages** and **custom syntaxes** can be <ins>**embedded and executed**</ins> directly within dpdl code, simultaneously and of multiple types, and at its <ins>**native speed**</ins>.
  
 
 ### '*Dpdl language plug-ins*' currently available for executing '*embedded code sections*'
 
-At current state, the following <ins>**Dpdl language plug-ins**</ins> are available for different platforms (see compatibility Matrix below):
+At current state, the following <ins>**Dpdl language plug-ins**</ins> are available for different platforms (see availability Matrix below):
 
-* **`C`** (**interpreted**) --> minimal subset of *C90* with standard C libs (*stdlib*) included and already available in the Dpdl runtime
-* **`C`** (**compiled**) code --> *ANSI C* & ISO *C99* standard, compiled in memory and dynamically executed at runtime (see 'dpdl:compile')
+* **`C`** (**interpreted**)
+* **`C`** (**compiled**)
 * **`C++`**
 * **`Python`**
 * **`MicroPython`** (Python for Embedded Systems)
@@ -62,7 +62,7 @@ and also for some less known, but yet very powerful programming languages:
 * **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
-#### In development 'Dpdl language plug-ins' (available soon in coming releases):
+#### In development 'Dpdl language plug-ins':
 
 * **`quantum`** -> *OpenQWASM* compiler and executor to leverage Quantum Computing capabilities
 
@@ -86,7 +86,7 @@ Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simpl
 
 * [Dpdl embedded code sections](#dpdl-embedded-code-sections)
 * [Dpdl embedded code section API](#dpdl-embedded-code-section-api)
-* [Dpdl embedded programming languages compatibility Matrix](#dpdl-embedded-programming-languages-compatibility-matrix)
+* [Dpdl embedded programming languages availability Matrix](#dpdl-embedded-programming-languages-availability-matrix)
 * [Embedding 'C' code](#embedding-c-code)
 * [Embedding 'Python' code](#embedding-python-code)
 * [Embedding 'MicroPython' code](#embedding-micropython-code)
@@ -106,16 +106,17 @@ Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simpl
 </td></tr>
 </table>
 
-The available **Dpdl language plug-ins** listed above are mostly implemented on top of the official implementation of each supported programming language (see 'Embedded language references' section below) and include everything needed to run the code, <ins>No additional installation needed, except user libraries</ins>.
+The available **Dpdl language plug-ins** listed above are implemented on top of the implementation of each supported programming language (see 'Embedded language references' section below).
+
+The **Dpdl language plug-ins** contain everything needed to run the code, <ins>No additional installation needed</ins>, except user libraries that are eventually used within embedded code sections.
 
 ## Dpdl embedded code sections
 
 Dpdl enables the embedding and execution of arbitrary *embedded code sections* within dpdl code, which can be other programming languages as well as custom syntaxes or even natural language descriptions that are than evaluated and processed by AI inference.
 
-### embedding code within Dpdl
+### embedding code within dpdl
 
-Code of other than Dpdl can be embedded and executed inside Dpdl by using the *embedding keyword* **`>>`** (ex. >>python )
-
+Code other than dpdl, can be embedded and executed inside dpdl by using the *embedding keyword* **`>>`** (ex. >>python )
 
 **Example:** dpdl code with an embedded C code section
 
@@ -123,21 +124,21 @@ Code of other than Dpdl can be embedded and executed inside Dpdl by using the *e
 println("executing some C code...."
 
 >>c
-#include <stdio.h>
-#include <dpdl.h>
-
-int dpdl_main(int argc, char **argv){
-	printf("Hello C from Dpdl!\n");
-	printf("\n");
-	printf("num params: %d\n", argc);
-	int cnt;
-	for (cnt = 0; cnt < argc; cnt++){
-		printf("	param %d: %s\n", cnt, argv[cnt]);
+	#include <stdio.h>
+	#include <dpdl.h>
+	
+	int dpdl_main(int argc, char **argv){
+		printf("Hello C from Dpdl!\n");
+		printf("\n");
+		printf("num params: %d\n", argc);
+		int cnt;
+		for (cnt = 0; cnt < argc; cnt++){
+			printf("	param %d: %s\n", cnt, argv[cnt]);
+		}
+		char *buf = "My result";
+		dpdl_stack_buf_put(buf);
+		return 0;
 	}
-	char *buf = "My result";
-	dpdl_stack_buf_put(buf);
-	return 0;
-}
 <<
 
 int exit_code = dpdl_exit_code()
@@ -175,9 +176,9 @@ Data and variables can be exchanged with the embedded code via the dpdl runtime 
 
 **`dpdl_stack_obj_get(..)`**
 
-Variables that are pushed on the dpdl stack are passed as parameters to the embedded code.
+Dpdl variables that are pushed on the dpdl stack are passed as parameters to the embedded code.
 
-Variables can also be embedded directly in the code as placeholder, see **`{{var_name}}`**. In the latter case the variables are compiled with the actual values before code compilation and execution.
+Dpdl variables can also be embedded directly in the code as placeholder, see **`{{var_name}}`**. In the latter case the variables are compiled with the actual values before code compilation and execution.
 
 
 **Example:**
@@ -240,7 +241,8 @@ dpdl_stack_push("dpdlstack:myconfig")
 
 * [Table of Contents](#table-of-contents)
 
-### Dpdl embedded programming languages - compatibility Matrix
+
+### Dpdl embedded programming languages - availability Matrix
 
 (X + version) **Available**
 
@@ -256,7 +258,7 @@ dpdl_stack_push("dpdlstack:myconfig")
 
 Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
  
-#### Add-on Dpdl language plug-ins - compatibility Matrix
+#### Add-on Dpdl language plug-ins - availability Matrix
 
 | Platform |Wasm |Sql |Wsgl |OCL (OpenCL) |AI |
 | ---  | --- | --- | --- | --- | --- |
@@ -344,12 +346,12 @@ C code can be executed in 2 different modes:
 
 This mode supports a subset of C90.
 
-When executed in '*interpreted*' mode, a subset of all standard C libraries and include files are already present in the dpdl runtime, they just can be used. 
+When executed in '*interpreted*' mode, a subset of all standard C libraries and include files are already present in the dpdl runtime, they just can be imported and used. 
 
 
 2) **`compiled`** C code (Mode 2)
 
-With this mode the C code is compiled in memory at runtime. It supports <ins>ANSI C & ISO C99</ins> standards.
+With this mode the C code is compiled in memory at runtime and dynamically executed. It supports <ins>ANSI C & ISO C99</ins> standards.
  
 When executed in '*compiled*' mode, libraries and include paths be included via dpdl stack configuration.
 
@@ -357,9 +359,11 @@ Default system locations are also searched for available C libraries and include
 
 A very basic set is included with the DpdlEngine release (under './lib/native/$platform/include' )
 
-The '*compiled**' C code is per default executed with Memory Bounds Checks. 
+The '*compiled**' C code is per default executed with Memory Bounds Checks, but which can also be deactivated via a flag.
 
 Generated code with bounds checking is fully compatible with unchecked code.
+
+To activate this mode, see **`dpdl:compile`** option.
 
 #### Plug-in documentation/Specification
 
@@ -383,10 +387,10 @@ println("testing embedding python code")
 println("")
 
 >>python
-languages = ['Dpdl', 'C', 'Python', 'OCaml']
-
-for language in languages:
-	print(language)
+	languages = ['Dpdl', 'C', 'Python', 'OCaml']
+	
+	for language in languages:
+		print(language)
 <<
 int exit_code = dpdl_exit_code()
 
@@ -486,21 +490,21 @@ println("testing embedding of 'julia' code...")
 dpdl_stack_push("dpdlbuf_var1")
 
 >>julia
-println("applying muladd(A, B, z) ->")
-println("")
-
-A=[1.0 2.0; 3.0 4.0]
-B=[1.0 1.0; 1.0 1.0]
-z=[0, 100]
-
-result = muladd(A, B, z)
-
-result_str = string(result)
-
-myresult_return = "matrix muladd(A, B, z): " * result_str
-
-write_buf = @ccall dpdl_stack_buf_put(myresult_return::Ptr{UInt8})::Int32
-return 1
+	println("applying muladd(A, B, z) ->")
+	println("")
+	
+	A=[1.0 2.0; 3.0 4.0]
+	B=[1.0 1.0; 1.0 1.0]
+	z=[0, 100]
+	
+	result = muladd(A, B, z)
+	
+	result_str = string(result)
+	
+	myresult_return = "matrix muladd(A, B, z): " * result_str
+	
+	write_buf = @ccall dpdl_stack_buf_put(myresult_return::Ptr{UInt8})::Int32
+	return 1
 <<
 
 int exit_code = dpdl_exit_code()
@@ -525,29 +529,29 @@ println("testing embedded js...")
 dpdl_stack_push(23)
 
 >>js(my_buf_var1)
-"use strict";
-
-function dpdl_main(args) {
-	console.log('embedded javascript...');
-	var result = "This is my Result=";
-	if(scriptArgs > 0){
-		std.printf("parameter: %d\n", scriptArgs[0]);
-		result = result + scriptArgs[0];
+	"use strict";
+	
+	function dpdl_main(args) {
+		console.log('embedded javascript...');
+		var result = "This is my Result=";
+		if(scriptArgs > 0){
+			std.printf("parameter: %d\n", scriptArgs[0]);
+			result = result + scriptArgs[0];
+		}
+	
+	    dpdl_stack_buf_put(result);
 	}
-
-    dpdl_stack_buf_put(result);
-}
-
-var args;
-if (typeof scriptArgs != "undefined") {
-    args = scriptArgs;
-} else if (typeof arguments != "undefined") {
-    args = arguments;
-} else {
-    args=[1000];
-}
-
-dpdl_main(args);
+	
+	var args;
+	if (typeof scriptArgs != "undefined") {
+	    args = scriptArgs;
+	} else if (typeof arguments != "undefined") {
+	    args = arguments;
+	} else {
+	    args=[1000];
+	}
+	
+	dpdl_main(args);
 <<
 int exit_code = dpdl_exit_code()
 
@@ -584,47 +588,48 @@ println(res_buf)
 ```python
 println("testing embedding lua....")
 
-dpdl_stack_push("name", "Alexis", "surname", "Kunst")
+dpdl_stack_push("name", "Andy", "surname", "Costantin")
 
 >>lua(my_buf_var1)
-function doSomeAlg()
-	local home_dir = os.getenv("HOME")
-	print("user home: ", home_dir)
-	
-	local x = os.clock()
-	    local s = 0
-	    for i=1,100 do 
-	    	s = s + i
-	    	io.write(".")
-	    end
-	    print("")
-	    print(string.format("elapsed time: %.2f\n", os.clock() - x))
-end
 
-function paramLen(T)
-  local count = 0
-  for _ in pairs(T) do count = count + 1 end
-  return count
-end
-
-function dpdl_main(params)
-	local num_params = paramLen(params)
-	io.write("dpdl_main call with number of params: ")
-	io.write(num_params)
-	print()
-	print("executing my embedded algorithm...")
-	print("")
-	doSomeAlg()
-	print()
-	print("returning param values in 'uppercase'")
-	local tab_out = {numfields=1}
-	for k,v in pairs(params) do
-		tab_out.numfields = tab_out.numfields + 1
-		tab_out[tostring(k)] = string.upper(tostring(v))
+	function doSomeAlg()
+		local home_dir = os.getenv("HOME")
+		print("user home: ", home_dir)
+		
+		local x = os.clock()
+		    local s = 0
+		    for i=1,100 do 
+		    	s = s + i
+		    	io.write(".")
+		    end
+		    print("")
+		    print(string.format("elapsed time: %.2f\n", os.clock() - x))
 	end
-	tab_out.numfields = tostring(tab_out.numfields)
-	return tab_out
-end
+	
+	function paramLen(T)
+	  local count = 0
+	  for _ in pairs(T) do count = count + 1 end
+	  return count
+	end
+	
+	function dpdl_main(params)
+		local num_params = paramLen(params)
+		io.write("dpdl_main call with number of params: ")
+		io.write(num_params)
+		print()
+		print("executing my embedded algorithm...")
+		print("")
+		doSomeAlg()
+		print()
+		print("returning param values in 'uppercase'")
+		local tab_out = {numfields=1}
+		for k,v in pairs(params) do
+			tab_out.numfields = tab_out.numfields + 1
+			tab_out[tostring(k)] = string.upper(tostring(v))
+		end
+		tab_out.numfields = tostring(tab_out.numfields)
+		return tab_out
+	end
 <<
 
 int exit_code = dpdl_exit_code()
@@ -811,14 +816,14 @@ println("reading a file line by line with 'Groovy'")
 
 dpdl_stack_push("./Test/see_solutions.html")
 >>groovy
-
-def dpdl_main(Object[] param, Object var_map){
-	String myfile = (String)param[0];
-	new File(myfile).eachLine { line ->
-	  println line
+	
+	def dpdl_main(Object[] param, Object var_map){
+		String myfile = (String)param[0];
+		new File(myfile).eachLine { line ->
+		  println line
+		}
+		return 1;
 	}
-	return 1;
-}
 
 <<
 int exit_code = dpdl_exit_code()
@@ -1117,32 +1122,32 @@ dpdl_stack_obj_put("gA", initial_height)
 dpdl_stack_push("dpdl:applyvars")
 
 >>modelica
-
-model BouncingBall
-  parameter Real e={{cR}} "coefficient of restitution";
-  parameter Real g={{gA}} "gravity acceleration";
-  Real h(fixed=true, start=1) "height of ball";
-  Real v(fixed=true) "velocity of ball";
-  Boolean flying(fixed=true, start=true) "true, if ball is flying";
-  Boolean impact;
-  Real v_new(fixed=true);
-  Integer foo;
-
-equation
-  impact = h <= 0.0;
-  foo = if impact then 1 else 2;
-  der(v) = if flying then -g else 0;
-  der(h) = v;
-
-  when {h <= 0.0 and v <= 0.0,impact} then
-    v_new = if edge(impact) then -e*pre(v) else 0;
-    flying = v_new > 0;
-    reinit(v, v_new);
-  end when;
-
-end BouncingBall;
-
-simulate(BouncingBall, outputFormat="csv");
+	
+	model BouncingBall
+	  parameter Real e={{cR}} "coefficient of restitution";
+	  parameter Real g={{gA}} "gravity acceleration";
+	  Real h(fixed=true, start=1) "height of ball";
+	  Real v(fixed=true) "velocity of ball";
+	  Boolean flying(fixed=true, start=true) "true, if ball is flying";
+	  Boolean impact;
+	  Real v_new(fixed=true);
+	  Integer foo;
+	
+	equation
+	  impact = h <= 0.0;
+	  foo = if impact then 1 else 2;
+	  der(v) = if flying then -g else 0;
+	  der(h) = v;
+	
+	  when {h <= 0.0 and v <= 0.0,impact} then
+	    v_new = if edge(impact) then -e*pre(v) else 0;
+	    flying = v_new > 0;
+	    reinit(v, v_new);
+	  end when;
+	
+	end BouncingBall;
+	
+	simulate(BouncingBall, outputFormat="csv");
 
 <<
 

@@ -39,7 +39,7 @@ Dpdl itself is a general-purpose programming language, <ins>**self-contained**</
 
 Dpdl introduces the concept of '*embedded code sections*' that allows code of different programming languages, or any custom developed code syntax, to be embedded and executed directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
 
-At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages** <ins>**directly embedded**</ins> within dpdl code: 
+At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages**, <ins>**directly embedded**</ins> within dpdl code: 
 
 * **`C`** (**interpreted && compiled**)
 * **`C++`**

@@ -17,9 +17,8 @@ Dpdl **dpdl-lang** is a general-purpose <ins>**programming language**</ins>, **s
 
 Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages**</ins>, or any custom syntax, <ins>**directly embedded within dpdl code**</ins>, simultaneously, of multiple types and <ins>at it's native speed<ins>.
 
-Embedded programming language code within dpdl is executed in form of *Dpdl language plug-ins* distributed along with the DpdlEngine release package (everything is already included, <ins>**No further installations required**</ins>).
+Embedded programming language code within dpdl is executed by dedicated *Dpdl language plug-ins* distributed along with the DpdlEngine release package. Everything is already included, <ins>**No further installations required**</ins>.
 
-Custom *Dpdl language plug-ins* can be developed ad-hoc, distributed also separately and integrated via simple configuration. For native code based *Dpdl language -plug-ins* that are eventually available for multiple platforms, the dpdl runtime automatically selects the appropriate one on which it's running.
 
 ### Features:
 
@@ -32,7 +31,7 @@ Custom *Dpdl language plug-ins* can be developed ad-hoc, distributed also separa
 * Native data function types to handle data structures **`arr(..)`**, **`vec(..)`**, **`map(..)`**, **`list(..)`** and **`stack(..)`**.
 * APIs: Dpdl API, JRE API, MIDP API
 * Access to the full underlying Java Platform API's or any external java libraries
-* Access to Native shared libraries
+* Access to Native shared C/C++ Libraries
 * Virtual file system via Record Stores
 * Support for custom extensions
 * **Dpdl language plug-ins ->** **Multiple embeddable programming languages supported:** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua, Ruby, Java, PHP, Perl, Groovy, V, Clojure, Wgsl and OpenCL</em>. These **`programming languages code can be embedded and executed directly within dpdl code`** (interpreted/compiled code).
@@ -1171,6 +1170,11 @@ class A {
 	>>java
 	public int myNativeJavaMethod(int val){
 		System.out.println("myNativeJavaMethod()");
+		
+		System.out.println("contained variables:");
+		System.out.println("id: " + id);
+		System.out.println("str: " + str);
+		System.out.println("obj: " + obj;
 
 		int myi = 0;
 		for(int i = 0; i < 1000000; i++){
@@ -2071,11 +2075,11 @@ println("testing access to embedded multi-line resources...")
 
 dpdl_stack_var_put("msg", "Hello World")
 >>res(my_html)
-<html>
-<body>
-<p>{{msg}} from Dpdl</p>
-</body>
-</html>
+	<html>
+	<body>
+	<p>{{msg}} from Dpdl</p>
+	</body>
+	</html>
 <<
 
 object resid = dpdl_res_pop_id()
@@ -2701,7 +2705,9 @@ A particular feature of Dpdl are '*embedded code sections*', that allow to embed
 
 The execution is driven by the Dpdl runtime via dedicated **Dpdl language plug-ins** that are avaiable as part of the DpdlEngine distributions.
 
-The code of other programming languages can be embedded by simply using the keyword **`>>`** along with the language specifier.
+Custom *Dpdl language plug-ins* can be developed ad-hoc, distributed also separately and integrated via simple configuration. For native code based *Dpdl language -plug-ins* that are eventually available for multiple platforms, the dpdl runtime automatically selects the appropriate one on which it's running.
+
+The code of other programming languages can be embedded by using the keyword **`>>`** along with the language specifier.
 
 
 **Example:**

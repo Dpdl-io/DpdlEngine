@@ -15,9 +15,11 @@ by
 ## Dpdl language plug-in 'Wasm' 
 
 
-Dpdl provides also a dedicated *Dpdl language plug-in* that enables to <ins>**run** and **access** **WebAssembly (WASM)**</ins> code **directly from dpdl code** via dedicated runtime. The plug-in includes also a compiler to compile WAT code into WASM modules.
+Dpdl provides also a dedicated *Dpdl language plug-in* that enables to **execute** and **access** <ins>**WebAssembly (WASM)**</ins> function code </ins>directly from dpdl code</ins> via dedicated runtime.
 
-Wasm is growing in popularity for being a cross platform binary instruction format for multiple application domains that range from Web-apps, Desktop and Cloud apps, serverless applications, Edge containers and others.
+The plug-in includes also a compiler to compile WAT code into WASM modules right away.
+
+WASM is growing in popularity for being a cross platform binary instruction format for multiple application domains that range from Web-apps, Desktop and Cloud apps, serverless applications, Edge containers and others.
 
 Many compiler toolchains nowadays can target also WASM (eg. for C/C++, Rust, JavaScript, etc..). Wasm can than be executed via a dedicated runtime in browsers, embedded nodes or Desktops. 
 
@@ -31,27 +33,27 @@ Also <ins>**Dpdl** supports loading and accessing exported Wasm module functions
 println("testing embedded WAT compiler and WASM runtime...")
 
 >>wasmc(fibonacci)
-(module
-  (func $fib (export "fib") (param $n i32) (result i32)
-    local.get $n
-    i32.const 2
-    i32.lt_s
-    if
-      i32.const 1
-      return
-    end
-    local.get $n
-    i32.const 2
-    i32.sub
-    call $fib
-    local.get $n
-    i32.const 1
-    i32.sub
-    call $fib
-    i32.add
-    return
-  )
-)
+	(module
+	  (func $fib (export "fib") (param $n i32) (result i32)
+	    local.get $n
+	    i32.const 2
+	    i32.lt_s
+	    if
+	      i32.const 1
+	      return
+	    end
+	    local.get $n
+	    i32.const 2
+	    i32.sub
+	    call $fib
+	    local.get $n
+	    i32.const 1
+	    i32.sub
+	    call $fib
+	    i32.add
+	    return
+	  )
+	)
 <<
 int status_compile = dpdl_exit_code()
 
@@ -70,12 +72,12 @@ println("fibonacci of 10 is: " + res_fib)
 println("2) we can also access the wasm module function with javascript:")
 
 >>js
-const wasmMod = new Dpdl.dpdl_wasm_obj_get("fibonacci")
-const wasmInst = new WebAssembly.Instance(wasmMod, {});
-const { fib } = wasmInst.exports;
-for (let i = 0; i < 10; i++) {
-  console.log(fib(i));
-}
+	const wasmMod = new Dpdl.dpdl_wasm_obj_get("fibonacci")
+	const wasmInst = new WebAssembly.Instance(wasmMod, {});
+	const { fib } = wasmInst.exports;
+	for (let i = 0; i < 10; i++) {
+	  console.log(fib(i));
+	}
 <<
 int exit_code = dpdl_exit_code()
 
@@ -117,7 +119,7 @@ This runtime can be activated and used in Dpdl by pushing the configuration **`d
 ```python
 dpdl_runtime_push("dpdlruntime:wasmedge")
 >>js
-here your javascript
+	here your javascript
 <<
 int exit_code = dpdl_exit_code()
 ```
@@ -135,20 +137,20 @@ This runtime can be activated and used in dpdl by pushing the configuration **`d
 ```python
 dpdl_runtime_push("dpdlruntime:wasmedge")
 >>ruby
-require "wasmer"
-require "dpdl"
-
-wasm_bytes = Dpdl::dpdl_wasm_obj_get("fibonacci")
-
-store = Wasmer::Store.new
-
-module_ = Wasmer::Module.new store, wasm_bytes
-
-instance = Wasmer::Instance.new module_, nil
-
-# The Wasm module exports a function called `fib`.
-sum = instance.exports.fib
-results = fib.(10)
+	require "wasmer"
+	require "dpdl"
+	
+	wasm_bytes = Dpdl::dpdl_wasm_obj_get("fibonacci")
+	
+	store = Wasmer::Store.new
+	
+	module_ = Wasmer::Module.new store, wasm_bytes
+	
+	instance = Wasmer::Instance.new module_, nil
+	
+	# The Wasm module exports a function called `fib`.
+	sum = instance.exports.fib
+	results = fib.(10)
 
 <<
 int exit_code = dpdl_exit_code()
@@ -170,14 +172,14 @@ println("testing embedded WAT compiler and WASM runtime...")
 
 
 >>wasmc(module:math)
-(module
-  (func (export "add") (param i32 i32) (result i32)
-    (i32.add (local.get 0) (local.get 1))
-  )
-  (func (export "sub") (param i32 i32) (result i32)
-    (i32.sub (local.get 0) (local.get 1))
-  )
-)
+	(module
+	  (func (export "add") (param i32 i32) (result i32)
+	    (i32.add (local.get 0) (local.get 1))
+	  )
+	  (func (export "sub") (param i32 i32) (result i32)
+	    (i32.sub (local.get 0) (local.get 1))
+	  )
+	)
 <<
 int status_module1 = dpdl_exit_code()
 
@@ -185,17 +187,17 @@ raise(status_module1, "Error in compiling module 'math'")
 
 dpdl_runtime_push(module:math)
 >>wasmc(mycalc)
-(module
-  (type $type0 (func (param i32 i32)(result i32)))
-  (import "math" "add" (func $math-add (type $type0)))
-  (import "math" "sub" (func $math-sub (type $type0)))
-  (func (export "add_and_sub") (param i32 i32) (result i32)
-    (call $math-add
-      (call $math-sub (local.get 0) (i32.const 23))
-      (call $math-sub (local.get 1) (i32.const 23))
-    )
-  )
-)
+	(module
+	  (type $type0 (func (param i32 i32)(result i32)))
+	  (import "math" "add" (func $math-add (type $type0)))
+	  (import "math" "sub" (func $math-sub (type $type0)))
+	  (func (export "add_and_sub") (param i32 i32) (result i32)
+	    (call $math-add
+	      (call $math-sub (local.get 0) (i32.const 23))
+	      (call $math-sub (local.get 1) (i32.const 23))
+	    )
+	  )
+	)
 <<
 
 int status_compile = dpdl_exit_code()
