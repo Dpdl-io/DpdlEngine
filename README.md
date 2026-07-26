@@ -43,7 +43,7 @@ Dpdl introduces the concept of '*embedded code sections*' that allows code of di
 
 Everything comes already included as part of the *DpdlEngine*, **<ins>No additional installations required</ins>**.
 
-At current stage, Dpdl enables the <ins>**embedding** and **execution**</ins> of the following **programming languages**, <ins>**directly embedded**</ins> within dpdl code: 
+At current stage, Dpdl supports the <ins>**embedding** and **execution**</ins> of the following **programming language** code, <ins>**directly embedded**</ins> within dpdl code: 
 
 * **`C`** (**interpreted & compiled**)
 * **`C++`**
