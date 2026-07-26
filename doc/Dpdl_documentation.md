@@ -1398,7 +1398,7 @@ struct A mya = {23, 0.3, 0.6, "Test", d}
 println("mya: " + mya)
 ```
 
-also designated initializers can be used. In this case ordering does not matter
+also <ins>**designated initializers**</ins> can be used instead. In this case ordering does not matter. Also part of the variables can be set.
 
 ```c
 struct A {
@@ -1417,6 +1417,13 @@ println("mya1: " + mya1)
 struct A mya2 = {data: d, str: "Test", y: 0.6, x: 0.3, id: 23}
 
 println("mya2: " + mya2)
+
+println("OR also just part of the parameters.."
+
+struct A mya3 = {id: 23, data: d}
+
+println("mya3: " + mya3)
+
 ```
 
 
