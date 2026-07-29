@@ -259,7 +259,7 @@ In case both modes are activated, they can be used via a differentiated import d
 import('native')
 import('native_ffm')
 
-object lib_mytest = native_ffm.loadLib("mytest")
+object lib_mytest = native.loadLib("mytest")
 
 object lib_mytestffm = native_ffm.loadLib("mytestffm")
 
