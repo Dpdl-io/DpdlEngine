@@ -25,9 +25,15 @@ The Dpdl native interface can be used in two different Modes:
 
 * b) via the Newer Java **FFM** (*Foreign Function Memory*) Native --> when running on newer JVMs, since Java **`17+`** onwards
 
-The mode **a) Legacy Native** works on all JVM versions starting from version 1.4+, while the mode **b) FFM** is availalbe since Java 17+.
+The mode **a) Legacy Native** works on all JVM versions starting from version 1.4+
 
-The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*'. The Legacy Native mode is currently the default mode to ensure a high degree of backwards compatibility.
+The mode **b) FFM** is availalbe since Java 17+.
+
+If required, also both modes (*legacy* & *ffm*) can be activated simultaneously.
+
+The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*' --> see [Configuration](#configuration)
+
+The Legacy Native mode is currently the default mode to ensure a high degree of backwards compatibility.
 
 Both Modes, the **legacy** as well as **ffm** mode, from the dpdl code point of view have the same usage and API, except for some small enhancements.
 
@@ -234,14 +240,29 @@ This setting allows to change the Mode to access native libraries
 
 **Modes available:**
 
-* Legacy Native (JNI), available since Java **`1.4+`** : config -> **`legacy`**
+* a) **`legacy`** --> Legacy Native (JNI), available since Java **`1.4+`**
 
-* New FFM (Foreign Function Memory) Native, available since Java **`+17`** : config -> **`ffm`**
+* b) **`ffm`** --> New FFM (Foreign Function Memory) Native, available since Java **`+17`**
+
+* **`all`**  --> Both modes are active, via a different import directive:  import('**native**')	vs.	import('**native_ffm**')
 
 ```
 [DpdlCode]
 ...
 DPDL_NATIVE_CODE_MODE=ffm
+...
+```
+
+In case both modes are activated, they can be used via a differentiated import directives:
+
+```python
+import('native')
+import('native_ffm')
+
+object lib_mytest = native_ffm.loadLib("mytest")
+
+object lib_mytestffm = native_ffm.loadLib("mytestffm")
+
 ...
 ```
 
