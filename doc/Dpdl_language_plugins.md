@@ -244,9 +244,6 @@ dpdl_stack_push("dpdlstack:myconfig")
 
 ### Dpdl embedded programming languages - availability Matrix
 
-(X + version) **Available**
-
-(*) **coming soon**
 
 | Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | Scheme | OCaml |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -254,6 +251,7 @@ dpdl_stack_push("dpdlstack:myconfig")
 | Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
 | Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |*|X v4.01|
+| RISC-V | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
 
 
 Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
@@ -266,6 +264,12 @@ Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with th
 | Mac OS X (aarch64) |X|X|X|X|X|
 | Raspberry PI 3 (armv7)|*|X|*|*|X|
 | Windows64|*|X|*|*|X|
+| RISC-V |*|X|*|*|X|
+
+
+(X + version) **Supported**
+
+(*) **available on request**
 
 
 #### Size of '*Dpdl language plug-ins*'

@@ -285,7 +285,7 @@ mycls.mycreateSum()
 
 ### Native library access
 
-Dpdl enables access to Native shared library functions seamlessly in the same way as ordinary dpdl functions.
+Dpdl enables access to Native shared C/C++ library functions seamlessly in the same way as ordinary dpdl functions.
 
 ```python
 import('native')
@@ -404,14 +404,14 @@ The native library C function can be called from dpdl with an interoperable **`s
 import('native')
 
 struct myS {
-	int id = 23
-	string desc = "my description"
-	string data = "some data from myA"
+	int id
+	string desc
+	string data
 	int x
 	int y
 }
 
-struct myS s
+struct myS s = {23, "my description", "some data...", 100, 200}
 
 println("s: " + s)
 

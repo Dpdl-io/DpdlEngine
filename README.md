@@ -14,11 +14,11 @@ by **SEE Solutions** &copy;
 
 ## Dpdl - rapid development Programming Language and constrained Device platform
 
-**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology with powerful AI generative code capabilities.
+**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology with powerful generative code capabilities.
 
 Dpdl comes as a very <ins>**compact**</ins> and <ins>**portable**</ins> execution engine (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and at it's <ins>**native Speed**</ins>.
 
-Dpdl enables **Polyglot programming**.
+Dpdl enables **Polyglot programming** on multiple platforms simultaneously.
 
 The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (**OOP**) **interoperable with JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>**Meta-programming**</ins> techniques.
 
@@ -302,7 +302,7 @@ println("and of course also embed Java directly...")
 * **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of 'Dpdl language plug-ins'**
-* **Includes embedded C compiler:** On-the-fly compilation of embedded C code (ANSI C & ISO C99) <ins>in memory at runtime</ins> -> <ins>very Fast compile time!!!</ins>
+* **Includes embedded C compiler:** On-the-fly compilation of embedded C code (ANSI C & ISO C99) for multiple platforms (i386, x86_64, ARM-32, ARM-64, RISC-V), compiles in memory at runtime -> <ins>very Fast compile time!!!</ins>
 * **Wasm runtime** *Dpdl language plug-in* included allows to access '**WASM**' (WebAssembly) module functions from dpdl and from '*embedded code sections*' in JavaScript and other languages. It supports also the WASI (WebAssemby System Interface) extension. Also WAT code can be directly compiled on-the-fly and directly executed
 * **Built-in support for custom extensions** -> allows to dynamically add language features, also at runtime
 * **Dpdl C API enables to execute Dpdl code embedded within programs written in C** 
@@ -1108,11 +1108,8 @@ DpdlEngine V1.0 has been tested on:
 
 ### *Dpdl lanugage plug-ins* (for 'embedded code sections') - compatibility matrix
 
-Currently the '**DpdlEngine**' release includes the following *Dpdl language plug-ins*, compliant to the corresponding language implementation version.
+At current state, the '**DpdlEngine**' release can include the following *Dpdl language plug-ins*, compliant to the corresponding language implementation version.
 
-(X + version) **Supported**
-
-(*) **available soon**
 
 | Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | Scheme | OCaml |
 | ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1120,6 +1117,7 @@ Currently the '**DpdlEngine**' release includes the following *Dpdl language plu
 | Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
 | Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
 | Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |*|X v4.01|
+| RISC-V | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
 
 
 ### Add-on Dpdl language plug-ins - compatibility matrix
@@ -1130,7 +1128,12 @@ Currently the '**DpdlEngine**' release includes the following *Dpdl language plu
 | Mac OS X (aarch64) |X|X|X|X|X|
 | Raspberry PI 3 (armv7)|*|X|*|*|X|
 | Windows64|*|X|*|*|X|
+| RISC-V |*|X|*|*|X|
 
+
+(X + version) **Supported**
+
+(*) **available on request**
 
 
 ## Documentation

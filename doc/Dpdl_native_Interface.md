@@ -253,7 +253,18 @@ DPDL_NATIVE_CODE_MODE=ffm
 ...
 ```
 
-In case both modes are activated, they can be used via a differentiated import directives:
+In case <ins>both modes</ins> are activated, they can be used via differentiated <ins>import directives</ins>:
+
+**Configuration**:
+
+```
+[DpdlCode]
+...
+DPDL_NATIVE_CODE_MODE=all
+...
+```
+
+**Code:**
 
 ```python
 import('native')
