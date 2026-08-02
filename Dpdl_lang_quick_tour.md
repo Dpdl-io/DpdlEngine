@@ -49,7 +49,7 @@ in case parameters are passed as command line arguments:
 
 ```python
 
-func dpdl_main(args[])
+func main(args[])
 	println("Hello World with arguments: " + args)
 	if(args.size() == 3)
 		println("	args[0]: " + args[0])
@@ -63,7 +63,7 @@ end
 
 ```python
 
-func dpdl_main(object args)
+func main(object args)
 	println("Hello World with arguments: " + args " with the type: " + typeof(args))
 end
 
