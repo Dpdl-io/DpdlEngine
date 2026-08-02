@@ -16,29 +16,16 @@ by
 
 Dpdl is a proprietary software developed by SEE Solutions.
 
-The 'DpdlEngine' is available as a stand-alone software package/library in two distinct release distributions:
+The '*DpdlEngine*' software is available as a stand-alone package/library in two distinct distributions:
 
-- **DpdlEngine lite**
-- **DpdlEngine pro**
+- **`DpdlEngine lite`**
+- **`DpdlEngine pro`**
 
-The package 'DpdlEngine' can be requested packaged for any specific JVM implementation, from 1.4+ onwards up to to the latest Java version.
+The package '*DpdlEngine*' can be requested packaged for any specific JVM implementation, starting from 1.4+ onwards up to to the latest JVM version.
 
 ## 'DpdlEngine lite'
 
-The demo release of 'DpdlEngine lite' is available for evaluation with some limitations/restrictions and requires a valid License Key.
-
-
-### Evaluation 'DpdlEngine lite'
-
-The 'DpdlEngine lite' Demo release (v1.0) can be requested, with some limitations/restrictions, via the www.dpdl.io evaluation request form:
-
-[EVALUATION request](https://www.dpdl.io/download_request.htm)
-
-Documentation and Updates are regularly available on the official DpdlEngine GitHub repository:
-[DpdlEngine GitHub](https://github.com/Dpdl-io/DpdlEngine)
-
-Suggestion, feature wish list and contributions to enhance Dpdl are very welcome and can be submitted on the discussion section on GitHub:
-[Dpdl discussion](https://github.com/Dpdl-io/DpdlEngine/discussions)
+A demo release of '*DpdlEngine lite*' can be available for evaluation under certain circumstances, with some limitations/restrictions, and requires a valid License Key.
 
 
 ## 'DpdlEngine pro'
@@ -47,18 +34,26 @@ The 'DpdlEngine pro' release is tailored to specific customer requirements in te
 
 In particular also platform specific targets can be defined (e.g optimized for a specific JVM version, JavaME etc..) to meet at best the customer requirements at full extend.
 
-The available Dpdl language plug-ins can also be requested along with its full source code disclosure for applying customizations or develop further extensions.
+Most available *Dpdl language plug-ins* can also be requested along with its full source code disclosure for applying customizations or develop further extensions.
 
 We strongly believe that requirements and business strategies can be worked out together with our clients.
 
-The <ins>'DpdlEngine pro'</ins> software is licensed on custom licensing models depending on the type of use and application domain.
+The <ins>'*DpdlEngine pro*/ins> software is licensed on custom licensing models depending on the type of use and application domain.
 
 Feel free to get a non binding quotation by writing to info@dpdl.io
 
 
+### Request
+
+If you're interested in Dpdl, please submit your request via the following form:
+
+[Dpdl Request Form](https://www.dpdl.io/download_request.htm)
+
+
+
 ## Pricing
 
-Contact us to get personalized quotation:
+Contact us to get personalized quotation at:
 
 info@dpdl.io
 

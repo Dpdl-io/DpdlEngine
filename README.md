@@ -722,6 +722,82 @@ println("finished")
 
 ```
 
+## Dpdl example code that implements a simple **CoAP** (*Constrained Application Protocol*) client using high a level Dpdl API
+
+```python
+
+string coap_uri = "coap://127.0.0.1/Dpdl"
+
+int port = -1 #  use dynamic port
+int max_block_size = 0
+int verbose = 0
+
+int response_counter = 0
+
+
+func onRequestFailure(string message)
+	println("Failure: " + message)
+end
+
+func onResponse(string response)
+	println("Response: " + response)
+
+	response_counter = response_counter + 1
+	println("counter: " + response_counter)
+	println("")
+end
+
+
+println("starting DpdlCoAPClient..")
+
+object dpdl_coap = new("DpdlCoAPClient", coap_uri, port, max_block_size, verbose)
+
+raise(dpdl_coap, "Error in initializing DpdlCoAPClient")
+
+println("done")
+
+object client
+object response_handler
+
+if(dpdl_coap != null)
+	client = dpdl_coap.getClient()
+
+	client = cast(client)
+
+	raise(client, "Error: client not initialized correctly")
+
+	println("registering response handler...")
+	
+	response_handler = new("DpdlCoAPResponseHandler", client)
+
+	println("sending GET request..")
+
+	dpdl_coap.request(coap_uri, "GET", null, null, response_handler)
+
+	println("sending PUT request..")
+	
+	dpdl_coap.request(coap_uri, "PUT", "TEXT", "Dpdl hello CoAP from client (2)", response_handler)
+	
+	println("sending GET request..")
+	
+	dpdl_coap.request(coap_uri, "GET", null, null, response_handler)
+	
+	#sleep(6000)
+		
+	println("sending OBSERVE request..")
+
+	dpdl_coap.request(coap_uri, "OBSERVE", null, null, response_handler)
+	
+	println("done")
+else
+	println("Client initialization failed")
+fi
+
+```
+
+Note: The underlying low level CoAP API can also be accessed directly for more specific implementations
+
+
 ### Dpdl example to Get and decode News via http in JSON format 
 
 This is a small sample app written with Dpdl that gets the top 10 news stories via http in 'json' format:
