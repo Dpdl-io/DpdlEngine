@@ -756,8 +756,8 @@ raise(dpdl_coap, "Error in initializing DpdlCoAPClient")
 
 println("done")
 
-object client
-object response_handler
+object client = null
+object response_handler = null
 
 if(dpdl_coap != null)
 	client = dpdl_coap.getClient()
