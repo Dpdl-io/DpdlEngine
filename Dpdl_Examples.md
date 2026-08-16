@@ -57,6 +57,7 @@ endwhile
 * [Some Algorithms implemented with pure dpdl](#some-algorithms-implemented-with-pure-dpdl)
 * [Networking](#networking)
 * [GPU Compute](#gpu-compute)
+* [Realtime](#realtime)
 * [AI generative code using the dedicated Dpdl language plugin](#ai-generative-code-using-the-dedicated-dpdl-language-plug-in)
 * [Dpdl embedded code sections](#dpdl-embedded-code-sections)
 * [Dpdl Agents](#dpdl-agents)
@@ -309,7 +310,7 @@ endwhile
 
 ### GPU Compute
 
-The following Dpdl examples show how to exploit capabilities of a GPU via embedded 'Wgsl' and 'OCL' code sections
+The following Dpdl examples show how to exploit GPU capabilities via embedded 'Wgsl' and 'OCL' code sections
 
 * Dpdl sample code that makes use of the Dpdl language plug-in 'dpdlopencl' to execute embedded OCL code (OpenCL)
 
@@ -326,6 +327,17 @@ The following Dpdl examples show how to exploit capabilities of a GPU via embedd
 
 [Index](#index)
 
+
+### Realtime
+
+The following Dpdl examples show how to use <ins>Realtime</ins> capabilities via the RTSJ specification (JSR 282) on systems that are realtime.
+
+* Dpdl example that launches a realtime worker thread via the RTSJ spec API. The main worker thread function in this case makes use of an '*embedded code section*' in java to perform the actual task
+
+	[realtime/dpdlRTSJExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlRTSJExample.h)
+
+
+[Index](#index)
 
 ### AI generative code using the dedicated **Dpdl language plug-in**
 

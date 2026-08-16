@@ -13,7 +13,7 @@ by
 
 ## Dpdl language specification
 
-Dpdl **dpdl-lang** is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in some specifics employs dynamic <ins>**JVM bytecode**</ins> compilation and manipulation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple target platforms.
+Dpdl **dpdl-lang** is a general-purpose <ins>**programming language**</ins>, **self-contained** ,<ins>**interpreted**</ins> and in some specifics employs dynamic <ins>**JVM bytecode**</ins> compilation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple target platforms.
 
 Dpdl introduces also the concept of '*embedded code sections*' that <ins>**enables to embed and execute code of other programming languages**</ins>, or any custom syntax, <ins>**directly embedded within dpdl code**</ins>, simultaneously, of multiple types and <ins>at it's native speed<ins>.
 
@@ -58,6 +58,9 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 	* [Strings](#strings)
 	* [Values](#values)
 	* [Inferred types](#inferred-types)
+* [Arrays](#arrays)
+	* [Primitive arrays](#primitive-arrays)
+	* [Dynamic arrays](#dynamic-arrays)
 * [Functions](#functions)
 	* [Function return type](#function-return-type)
 	* [Function return with Multiple values](#function-return-with-multiple-values)
@@ -67,9 +70,6 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 	* [Set loops](#set-loops)
 * [Operators](#operators)
 * [Data Function Types](#data-function-types)
-* [Arrays](#arrays)
-	* [Primitive arrays](#primitive-arrays)
-	* [Dynamic arrays](#dynamic-arrays)
 * [`Class` type](#class-type)
 	* [`class` initialization](#class-initialization)
 	* [Inheritance and Polymorphism](#inheritance-and-polymorphism)
@@ -85,7 +85,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 	* [`union` inheritance](#union-inheritance)
 	* [`union` passed to a native library function](#union-passed-to-a-native-library-function)
 * [Pointers](#pointers)
-* [Dpdl `Threads`](#dpdl-threads)
+* [Threads](#threads)
 * [Exception handling](#exception-handling)
 * [Type handling](#type-handling)
 * [In-line string expressions](#in-line-string-expressions)
@@ -446,6 +446,161 @@ string mys_new = mys_mod
 * [Table of Contents](#table-of-contents)
 
 
+### Arrays
+
+Dpdl has two kind of array types:
+- Primitive arrays
+- Dynamic arrays
+
+#### Primitive arrays
+
+Primitive arrays can be allocated for the following types:
+
+- **`int`**
+- **`float`**
+- **`double`**
+- **`short`**
+- **`byte`**
+- **`char`**
+- **`var`** 
+
+The size of the array is specified at declaration, and is fixed.
+
+This type can be passed also to java methods.
+
+**Example:** (array allocation)
+
+```c++
+int myiarr[32]
+
+myiarr[0] = 23
+myiarr[1] = 369
+```
+
+Primitive arrays can also be allocated and initialized right away.
+
+**Example:** (array type 'int' allocation and initialization)
+
+```c++
+int myiarr[] = {23, 369}
+```
+
+**Example:** (array type 'var' allocation and initialization)
+
+The 'var' type array can contain all types available
+
+```python
+object so = new("String", "a test str2")
+
+var myvarr[] = {1, "a test str1", so}
+```
+
+##### Passing Primitive arrays to functions
+
+While dynamic arrays can be defined as type in a function signature (eg. func myF(arr[], object val, ...) ), primitive arrays can simply be defined as 'var' type in function signatures.
+
+This approach might also have some practical advantages compared to a static type definition.
+
+**Example:**
+
+```python
+func printValues(var data_arr)
+	int c
+	for(c <= 4)
+		println("data_arr[" + c + "]=" + data_arr[c])
+		c=c+1
+	endfor
+end
+
+int myarr[] = {10, 20, 30, 40, 50}
+
+printValues(myarr)
+
+```
+
+
+#### Dynamic arrays
+
+Dynamic arrays are defined with **`somevar[ ]`**
+
+Dynamic arrays can grow or shrink in size dynamically and its elements can have multiple mixed types.
+
+Dynamic arrays can also be accessed as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`myarray.getArrObj()`** )
+
+Array can be initialized directly, via a **`string`** and also with a **`struct`**
+
+**Example:**
+
+```python
+myarrmix[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
+
+myarray[] = "1 1.0 0x01B test Dpdl Dynamic Packet Definition Language"
+
+# this returns an arraylist
+myarray2[0]  = myarray.getArrObj()
+
+object myarrayobj = myarray2[0]
+
+bool b = myarrayobj.contains("Dpdl")
+
+println("array contains Dpdl: " + b) 
+```
+
+The array elements be pure or embedded in a string and can be separated with blank space ' ', with comma ' , ' or with semicolon ' ; '. All are valid.
+
+```python
+myemptyarr[] = []
+myarr1[] = [1 2 3 4 5]
+myarr2[] = [1, 2, 3, 4, 5]
+myarr3[] = [1; 2; 3; 4; 5]
+arr0[] = ""
+arr1[] = "1 2 3 4 5"
+arr2[] = "1,2,3,4,5"
+arr3[] = "1;2;3;4;5"
+arr4[] = "[1,2,3,4,5]"
+```
+
+Initializing an array with a **`struct`**:
+
+```c
+struct myStruct a
+arr[] = array(a)
+```
+
+Multidimensional arrays will be supported in the coming release
+
+#### Looping through arrays
+
+1) looping through an array with  **`for`**  or  **`while`**  statements:
+
+```python
+myarr[] = [1, 2, 3, 4, 5]
+int c = 0
+for(c < myarr.size())
+	println("myarr[" + c + "]=" + myarr[c])
+	c=c+1
+endfor
+```
+
+2) looping through an an array with a java **`iterator`**
+
+All methods of the java class 'ArrayList' can be accessed
+
+```python
+myarr[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
+println("myarr: " + myarr)
+
+object myarrobj = myarr.getArrObj()
+
+object iter = myarrobj.iterator()
+
+while(iter.hasNext())
+	println("myarr element: " + iter.next())
+endwhile
+```
+
+* [Table of Contents](#table-of-contents)
+
 ### Functions
 
 In Dpdl functions are defined via the keyword **`func`** with the following definitions:
@@ -776,160 +931,6 @@ Note: Currently only one in-line expression definition '${ ... }' is allowed ins
 
 * [Table of Contents](#table-of-contents)
 
-### Arrays
-
-Dpdl has two kind of array types:
-- Primitive arrays
-- Dynamic arrays
-
-#### Primitive arrays
-
-Primitive arrays can be allocated for the following types:
-
-- **`int`**
-- **`float`**
-- **`double`**
-- **`short`**
-- **`byte`**
-- **`char`**
-- **`var`** 
-
-The size of the array is specified at declaration, and is fixed.
-
-This type can be passed also to java methods.
-
-**Example:** (array allocation)
-
-```c++
-int myiarr[32]
-
-myiarr[0] = 23
-myiarr[1] = 369
-```
-
-Primitive arrays can also be allocated and initialized right away.
-
-**Example:** (array type 'int' allocation and initialization)
-
-```c++
-int myiarr[] = {23, 369}
-```
-
-**Example:** (array type 'var' allocation and initialization)
-
-The 'var' type array can contain all types available
-
-```python
-object so = new("String", "a test str2")
-
-var myvarr[] = {1, "a test str1", so}
-```
-
-##### Passing Primitive arrays to functions
-
-While dynamic arrays can be defined as type in a function signature (eg. func myF(arr[], object val, ...) ), primitive arrays can simply be defined as 'var' type in function signatures.
-
-This approach might also have some practical advantages compared to a static type definition.
-
-**Example:**
-
-```python
-func printValues(var data_arr)
-	int c
-	for(c <= 4)
-		println("data_arr[" + c + "]=" + data_arr[c])
-		c=c+1
-	endfor
-end
-
-int myarr[] = {10, 20, 30, 40, 50}
-
-printValues(myarr)
-
-```
-
-
-#### Dynamic arrays
-
-Dynamic arrays are defined with **`somevar[ ]`**
-
-Dynamic arrays can grow or shrink in size dynamically and its elements can have multiple mixed types.
-
-Dynamic arrays can also be accessed as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`myarray.getArrObj()`** )
-
-Array can be initialized directly, via a **`string`** and also with a **`struct`**
-
-**Example:**
-
-```python
-myarrmix[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
-
-myarray[] = "1 1.0 0x01B test Dpdl Dynamic Packet Definition Language"
-
-# this returns an arraylist
-myarray2[0]  = myarray.getArrObj()
-
-object myarrayobj = myarray2[0]
-
-bool b = myarrayobj.contains("Dpdl")
-
-println("array contains Dpdl: " + b) 
-```
-
-The array elements be pure or embedded in a string and can be separated with blank space ' ', with comma ' , ' or with semicolon ' ; '. All are valid.
-
-```python
-myemptyarr[] = []
-myarr1[] = [1 2 3 4 5]
-myarr2[] = [1, 2, 3, 4, 5]
-myarr3[] = [1; 2; 3; 4; 5]
-arr0[] = ""
-arr1[] = "1 2 3 4 5"
-arr2[] = "1,2,3,4,5"
-arr3[] = "1;2;3;4;5"
-arr4[] = "[1,2,3,4,5]"
-```
-
-Initializing an array with a **`struct`**:
-
-```c
-struct myStruct a
-arr[] = array(a)
-```
-
-Multidimensional arrays will be supported in the coming release
-
-#### Looping through arrays
-
-1) looping through an array with  **`for`**  or  **`while`**  statements:
-
-```python
-myarr[] = [1, 2, 3, 4, 5]
-int c = 0
-for(c < myarr.size())
-	println("myarr[" + c + "]=" + myarr[c])
-	c=c+1
-endfor
-```
-
-2) looping through an an array with a java **`iterator`**
-
-All methods of the java class 'ArrayList' can be accessed
-
-```python
-myarr[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
-println("myarr: " + myarr)
-
-object myarrobj = myarr.getArrObj()
-
-object iter = myarrobj.iterator()
-
-while(iter.hasNext())
-	println("myarr element: " + iter.next())
-endwhile
-```
-
-* [Table of Contents](#table-of-contents)
 
 ### Class type
 
@@ -2116,7 +2117,7 @@ println(myhtml3)
 * [Table of Contents](#table-of-contents)
 
 
-### Dpdl Threads
+### Threads
 
 Threads can be created inside Dpdl with the **`Thread(..)`** api function.
 
@@ -2130,19 +2131,19 @@ Further parameters passed to the 'Thread(..)' function are than passed also to t
 Example Thread(..) with default iteration interval of 1000 ms:
 
 ```python
-int thread_id = Tread("myFunc")
+int thread_id = Thread("myFunc")
 ```
 
 Example Thread(..) with iteration interval of 3000 ms:
 
 ```python
-int thread_id = Tread("myFunc", 3000)
+int thread_id = Thread("myFunc", 3000)
 ```
 
 Example Thread(..) with iteration interval of 3000 ms, and 23 iterations:
 
 ```python
-int thread_id = Tread("myFunc", 3000, 23)
+int thread_id = Thread("myFunc", 3000, 23)
 ```
 
 Example starting 2 threads
