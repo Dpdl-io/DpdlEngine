@@ -154,6 +154,9 @@ func main(args[])
 end
 ```
 
+* [Table of Contents](#table-of-contents)
+
+
 ### Types
 
 Dpdl supports the following Types:
