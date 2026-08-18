@@ -53,7 +53,7 @@ class Worker : refObj("RealtimeThread") {
 			}
 			System.out.println("Worker task completed");
 			return 1;
-	    <<
+		<<
 		int exit_code = dpdl_exit_code()
 
 		println("task exit code: " + exit_code)

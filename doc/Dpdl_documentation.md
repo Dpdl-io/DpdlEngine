@@ -27,7 +27,7 @@ Embedded programming language code within dpdl is executed by dedicated *Dpdl la
 * Inheritance and Polymorphism for type **`class`**, **`struct`** and **`union`**
 * Multiple native Threads within same module
 * Pointers and references (eg. int *px = &x)
-* Inline string expressions
+* In-line string expressions
 * Native data function types to handle data structures **`arr(..)`**, **`vec(..)`**, **`map(..)`**, **`list(..)`** and **`stack(..)`**.
 * APIs: Dpdl API, JRE API, MIDP API
 * Access to the full underlying Java Platform API's or any external java libraries
@@ -112,11 +112,11 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 
 ### Code
 
-Dpdl code can be executed as plain text scripts in the following way:
+Dpdl code can be executed as plain text scripts, in form of strings or text file, via the following interfaces:
 
-- via command line using the *DpdlEngine* client
-- programmatically via Dpdl Java API
-- programmatically via Dpdl C API
+- Command line via the *DpdlEngine* client
+- Programmatically via Dpdl Java API
+- Programmatically via Dpdl C API
 
 #### Dpdl program entry point
 
@@ -573,7 +573,7 @@ Dynamic arrays are defined with **`somevar[ ]`**
 
 Dynamic arrays can grow or shrink in size dynamically and its elements can have multiple mixed types.
 
-Dynamic arrays can also be accessed as a java [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) object (see **`myarray.getArrObj()`** )
+On Dynamic arrays the same set of functions as the methods found in the java counterpart [ArrayList](https://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) can be called.
 
 Array can be initialized directly, via a **`string`** and also with a **`struct`**
 
@@ -583,9 +583,6 @@ Array can be initialized directly, via a **`string`** and also with a **`struct`
 myarrmix[] = [1, 0.3, 23.0d, 1000L, 0x09B, "mega"]
 
 myarray[] = "1 1.0 0x01B test Dpdl Dynamic Packet Definition Language"
-
-# this returns an arraylist
-myarray2[0]  = myarray.getArrObj()
 
 object myarrayobj = myarray2[0]
 
@@ -598,10 +595,8 @@ The array elements be pure or embedded in a string and can be separated with bla
 
 ```python
 myemptyarr[] = []
-myarr1[] = [1 2 3 4 5]
-myarr2[] = [1, 2, 3, 4, 5]
-myarr3[] = [1; 2; 3; 4; 5]
-arr0[] = ""
+myarr1[] = [1, 2, 3, 4, 5]
+arr[] = ""
 arr1[] = "1 2 3 4 5"
 arr2[] = "1,2,3,4,5"
 arr3[] = "1;2;3;4;5"
