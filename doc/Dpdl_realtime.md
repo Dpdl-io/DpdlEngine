@@ -111,7 +111,7 @@ dpdl example using the 'RealtimeManager' abstraction interface available with th
  
  ```python
  
- import('realtime')
+import('realtime')
 
 
 class MyTask : refObj("DpdlRunnable"){
@@ -120,7 +120,6 @@ class MyTask : refObj("DpdlRunnable"){
 		println("some heartbeat at: " + sys.currentTimeMillis())
 	end
 }
-
 
 class MySense : refObj("DpdlRunnable"){
 
@@ -164,6 +163,7 @@ object sys = getObj("System")
 
 object rtmgr = realtime.getRealtimeManager()
 
+object prio_level = rtmgr.PriorityLevel
 
 println("1) executing a scheduled task...")
 
@@ -178,27 +178,37 @@ println("timer task started with id: " + mytask_id)
 
 println("2) creating a RealtimeThread ...")
 
-class MySense sensor()
+class MySense sensor1()
 
-object prio_level = rtmgr.PriorityLevel
+object mythread1 = rtmgr.createRealtimeThread("SensorReader", rtmgr.getPriorityValue(prio_level.HIGH), sensor1)
 
-object mythread = rtmgr.createRealtimeThread("SensorReader", rtmgr.getPriorityValue(prio_level.HIGH), sensor)
+string mythread1_id = rtmgr.getThreadId(mythread1)
 
-string mythread_id = rtmgr.getThreadId(mythread)
-
-println("RT thread created with id: " + mythread_id)
+println("RT thread created with id: " + mythread1_id)
 
 
-println("3) executing some computation in scoped memory")
+println("3) creating a RealtimeThread with No Heap access...")
+
+class MySense sensor2()
+
+object mythread2 = rtmgr.createNoHeapRealtimeThread("SensorReader", rtmgr.getPriorityValue(prio_level.HIGH), sensor2)
+
+string mythread2_id = rtmgr.getThreadId(mythread2)
+
+println("RT thread created with id: " + mythread2_id)
+
+
+println("4) executing some computation in scoped memory")
 
 class MyExec mycalc()
 
-object result = rtm.executeInLTMemory(1024 * 1024, mycalc)
+object result = rtmgr.executeInLTMemory(1024 * 1024, mycalc)
 
 println("result: " + result)
 
+println("completed")
 
-# stop Threads, Timers and clear Memory
+println("shutting down and cleaning up...")
 
 rtmgr.shutdown()
 
