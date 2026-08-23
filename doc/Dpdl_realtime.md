@@ -111,7 +111,7 @@ dpdl example using the 'RealtimeManager' abstraction interface available with th
  
  ```python
  
-import('realtime')
+ import('realtime')
 
 
 class MyTask : refObj("DpdlRunnable"){
@@ -180,22 +180,30 @@ println("2) creating a RealtimeThread ...")
 
 class MySense sensor1()
 
-object mythread1 = rtmgr.createRealtimeThread("SensorReader", rtmgr.getPriorityValue(prio_level.HIGH), sensor1)
+object mythread1 = rtmgr.createRealtimeThread("SensorReader1", rtmgr.getPriorityValue(prio_level.MEDIUM), sensor1)
 
 string mythread1_id = rtmgr.getThreadId(mythread1)
 
 println("RT thread created with id: " + mythread1_id)
 
 
+
 println("3) creating a RealtimeThread with No Heap access...")
 
 class MySense sensor2()
 
-object mythread2 = rtmgr.createNoHeapRealtimeThread("SensorReader", rtmgr.getPriorityValue(prio_level.HIGH), sensor2)
+object mythread2 = rtmgr.createNoHeapRealtimeThread("SensorReader2", rtmgr.getPriorityValue(prio_level.HIGH), sensor2)
 
 string mythread2_id = rtmgr.getThreadId(mythread2)
 
 println("RT thread created with id: " + mythread2_id)
+
+
+println("changing priority of SensorReader1...")
+
+int curr_prio = rtmgr.getThreadPriority(mythread1_id)
+
+rtmgr.setThreadPriority(mythread1_id, curr_prio+3)
 
 
 println("4) executing some computation in scoped memory")
@@ -208,11 +216,13 @@ println("result: " + result)
 
 println("completed")
 
+
 println("shutting down and cleaning up...")
 
 rtmgr.shutdown()
 
 println("finished")
+
  
  ```
  
