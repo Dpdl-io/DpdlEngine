@@ -202,7 +202,7 @@ println("4) executing some computation in scoped memory")
 
 class MyExec mycalc()
 
-object result = rtmgr.executeInLTMemory(1024 * 1024, mycalc)
+object result = rtmgr.executeInLTMemory(1024L * 1024L, mycalc)
 
 println("result: " + result)
 
