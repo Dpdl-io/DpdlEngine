@@ -105,7 +105,7 @@ println("finished")
  
  ```
  
- ### dpdl example using the dpdl 'realtime' abstraction
+ ### dpdl example using the dpdl 'realtime' package abstraction based on RTSJ
  
 dpdl example using the 'RealtimeManager' abstraction interface available with the dpdl package '**`realtime`**' for accessing realtime Threads, Timers and Memory.
  
