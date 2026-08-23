@@ -17,12 +17,17 @@ by
 
 For realtime applications Dpdl integrates also constructs and semantics to interact with APIs based on the RTSJ (*Real-Time Specification for Java*) specification to handle realtime threading on systems and platforms with real-time capabilities.
 
-The RTSJ provides an API to create realtime threads and event handlers, for interacting with devices and native memory, enforcing resource limits and handle POSIX signals.
+The RTSJ (*Real-Time Specification for Java*) provides an API to create realtime threads and event handlers, for interacting with devices and native memory, to enforce resource limits and to handle POSIX signals.
 
-When running Dpdl on a realtime system, the main interal DpdlEngine threads are also based on the RealtimeThread class and can be controlled programmatically.
+When running Dpdl on a realtime system, the main internal DpdlEngine threads are also based on the RealtimeThread class and can be controlled programmatically.
+
+The realtime functions can be accessed:
+ 
+- either directly using the RTSJ spec API
+- or accessed via an abstraction layer available within the Dpdl package '**`realtime`**'. It enables to handle multiple realtime thread and timer resources thought a unified interface based on RTSJ spec
 
 
-**Example:**
+### dpdl example using RTSJ API directly
 
 dpdl example that makes use of RTSJ API to launch a real-time worker thread to perform a task that executes and '*embedded code section*' in java
 
@@ -99,3 +104,106 @@ test_prio.join()
 println("finished")
  
  ```
+ 
+ ### dpdl example using the dpdl 'realtime' abstraction
+ 
+dpdl example using the 'RealtimeManager' abstraction interface available with the dpdl package '**`realtime`**' for accessing realtime Threads, Timers and Memory.
+ 
+ ```python
+ 
+ import('realtime')
+
+
+class MyTask : refObj("DpdlRunnable"){
+
+	func run()
+		println("some heartbeat at: " + sys.currentTimeMillis())
+	end
+}
+
+
+class MySense : refObj("DpdlRunnable"){
+
+	func run()
+		println("executing a task with some embedded java code...")
+		>>java
+			while (!Thread.currentThread().isInterrupted()) {
+				try {
+					// Read some sensor data here
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					break;
+				}
+			}
+			return 1;
+		<<
+		int exit_code = dpdl_exit_code()
+
+		println("task exit code: " + exit_code)
+	end
+}
+
+
+class MyExec : refObj("DpdlSupplier"){
+
+	func get()
+		>>java
+			double calc = 0;
+			for (int i = 0; i < 1000; i++) {
+				calc += Math.sqrt(i);
+			}
+			return "Result: " + calc;
+		<<
+	end
+}
+
+
+println("testing Dpdl API real-time threads via RTSJ spec ....")
+
+object sys = getObj("System")
+
+object rtmgr = realtime.getRealtimeManager()
+
+
+println("1) executing a scheduled task...")
+
+class MyTask1 task1()
+
+object mytask = rtmgr.schedulePeriodicTask("My heartbeat", 100,  0, task1)
+
+string mytask_id = rtmgr.getTimerId(mytask)
+
+println("timer task started with id: " + mytask_id)
+
+
+println("2) creating a RealtimeThread ...")
+
+class MySense sensor()
+
+object prio_level = rtmgr.PriorityLevel
+
+object mythread = rtmgr.createRealtimeThread("SensorReader", rtmgr.getPriorityValue(prio_level.HIGH), sensor)
+
+string mythread_id = rtmgr.getThreadId(mythread)
+
+println("RT thread created with id: " + mythread_id)
+
+
+println("3) executing some computation in scoped memory")
+
+class MyExec mycalc()
+
+object result = rtm.executeInLTMemory(1024 * 1024, mycalc)
+
+println("result: " + result)
+
+
+# stop Threads, Timers and clear Memory
+
+rtmgr.shutdown()
+
+println("finished")
+ 
+ ```
+ 
+ 

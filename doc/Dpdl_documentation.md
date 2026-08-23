@@ -2183,7 +2183,7 @@ Example Thread(..) with iteration interval of 3000 ms:
 int thread_id = Thread("myFunc", 3000)
 ```
 
-Example Thread(..) with iteration interval of 3000 ms, and 23 iterations:
+Example Thread(..) with iteration interval of 3000 ms, and max 23 iterations (unless explicitly terminated):
 
 ```python
 int thread_id = Thread("myFunc", 3000, 23)
