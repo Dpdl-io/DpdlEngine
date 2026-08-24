@@ -109,6 +109,7 @@ import('http')
 import('json')
 import('native')
 import('compiler')
+import('realtime')
 
 import('mylib.h')
 ```
