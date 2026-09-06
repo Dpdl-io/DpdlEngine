@@ -296,7 +296,8 @@ println("and of course also embed Java directly...")
 
 ### Deep dive
 
-If you want a deeper insight about the DpdlEngine, it is published on deepwiki:  [![DpdlEngine DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Dpdl-io/DpdlEngine)
+If you want a deeper insight about the DpdlEngine, 
+the DeepWiki AI generated doc is published here:  [![DpdlEngine DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Dpdl-io/DpdlEngine)
 
 ## Features
 
