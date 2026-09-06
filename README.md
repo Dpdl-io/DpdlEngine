@@ -294,6 +294,10 @@ println("and of course also embed Java directly...")
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
 
+### Deep dive
+
+If you want a deeper insight about the DpdlEngine, it is published on deepwiki:  [![DpdlEngine DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Dpdl-io/DpdlEngine)
+
 ## Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (any JVM platform 1.3+ and later Spec, JavaME (CLDC, CDC). The core engine runs also on JVM 1.1 spec compliant VMs
