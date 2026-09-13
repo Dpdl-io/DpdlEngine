@@ -21,6 +21,13 @@ The execution of embedded code is driven by the dpdl runtime through a configura
 In this way code in multiple **programming languages** and **custom syntaxes** can be <ins>**embedded and executed**</ins> directly within dpdl code, simultaneously and of multiple types, and at its <ins>**native speed**</ins>.
  
 
+**Example:**
+
+```
+
+
+```
+
 ### '*Dpdl language plug-ins*' currently available for executing '*embedded code sections*'
 
 At current state, the following <ins>**Dpdl language plug-ins**</ins> are available for different platforms (see availability Matrix below):
@@ -152,7 +159,8 @@ println("embedded C exit code: " + exit_code)
 
 ## Dpdl embedded code section API
 
-Data and variables can be exchanged with the embedded code via the dpdl runtime stack by using the API functions:
+Data and variables can be exchanged with the embedded code sections via the dpdl runtime stack by using the API functions.
+
 
 **`dpdl_stack_push(..)`**
 
