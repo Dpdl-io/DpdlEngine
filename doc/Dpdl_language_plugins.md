@@ -23,8 +23,47 @@ In this way code in multiple **programming languages** and **custom syntaxes** c
 
 **Example:**
 
-```
+```python
+println("embedded C code for Performance and Hardware access...")
 
+>>c
+	int v = 50000000;
+	for(int i = 0; i < v; i++){
+		printf("Processing: %d\n", i);
+	}
+<<
+
+println("embedded Python for Data handling & LLMs...")
+
+>>python
+	stories = ['Story 1', 'Story 2', 'Story 3']
+	for story in stories:
+		print(story)
+<<
+
+println("embedded JavaScript for Web integration...")
+
+>>js
+	const isWindows = os.platform === 'win32';
+	const { fib } = await import(`./fib.${isWindows ? 'dll' : 'so'}`);
+	
+	console.log("Hello JavaScript from Dpdl");
+	
+	console.log("fib(10)=", fib(10));
+<<
+
+println("and of course also embed Java directly...")
+
+>>java
+	Object val = null;
+	int v = 1000;
+	for(int i = 0; i < v; i++){
+		val = new Integer(i);
+		System.out.println("val: " + val);
+	}
+
+	return ((Integer)val).intValue();
+<<
 
 ```
 
