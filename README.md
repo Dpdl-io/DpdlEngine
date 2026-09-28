@@ -328,7 +328,7 @@ The speedup is x 25 times faster compared to a standard record store access
 * **DpdlVM** for running Dpdl even on bar-metal hardware like Microcontrollers (MCU), Microprocessors (MPU) and System on Chip (SoC), for systems where no JVM (OpenJDK, Oracle, etc..) is available
 * **Automatic generation and embedding of AI generative code within dpdl** via the included *Dpdl language plug-in* 'DpdlAINerd' (DAN) 
 * **Access GPU compute capabilities by using the 'OpenCL' and 'Wgsl' (WebGPU shading language)** *Dpdl language plug-ins*
-* **Dpdl language plug-ins** available on **`DpdlHub`** (www.dpdlhub.com will be soon in development)
+* **Dpdl plug-ins** available on **`DpdlHub`** (www.dpdlhub.com will be soon in development)
 
 
 ## 'DpdlEngine' application footprint (size)

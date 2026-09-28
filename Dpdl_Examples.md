@@ -427,11 +427,11 @@ this is my sample json:
 
 ### Dpdl embedded code sections
 
-* Example with embedded C code execution within Dpdl (interpreted Mode 1)
+* Example with embedded C code execution within dpdl (interpreted Mode 1)
 	
 	[C/dpdlSample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlSampleC.h)
 
-* Example with embedded C code execution within Dpdl that is compiled in memory at runtime (compiled Mode 1)
+* Example with embedded C code execution within dpdl that is compiled in memory at runtime (compiled Mode 1)
 	
 	[C/dpdlCcompile.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlCcompile.h)
 		
@@ -551,6 +551,9 @@ this is my sample json:
 
 	[C/dpdlLibCTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/C/dpdlLibCTest.h)
 	
+* Example dpdl code that executes some 'embedded code sections' in C, JavaScript, Clojure and Python
+
+	[test/testEmbedCodeSections.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testEmbedCodeSections.h )
 
 
 [Index](#index)
