@@ -1535,6 +1535,7 @@ println("myaobj: " + myaobj)
 
 ##### **`typedef struct`** instance via a *Alias*
 
+
 ```c++
 
 typedef struct B {
@@ -1544,7 +1545,7 @@ typedef struct B {
 } Point
 
 
-object point = new Point(100, 200, 33.3f)
+Point point = new Point(100, 200, 33.3f)
 
 println("point: " + point)
 
@@ -1561,11 +1562,12 @@ typedef struct B {
 } Point
 
 
-Point point = new Point(100, 200, 33.3f)
+object point = new Point(100, 200, 33.3f)
 
 println("point: " + point)
 
 ```
+
 
 in order to make the syntax also compliant  to C/C++, a semicolon ( ; ) may be optionally appended to the *Alias* (i.e Point)
 

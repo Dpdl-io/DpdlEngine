@@ -28,6 +28,12 @@ The included component **DpdlAI** enables to automatically generate AI generativ
 
 The *DpdlEngine* core has the capability to run also on <ins>**constrained devices**</ins> and <ins>**limited memory platforms**</ins> like *MCUs* and *SoCs* via a dedicated compact code kilobyte range virtual machine.
 
+## DpdlEngine components:
+
+- **dpdl-lang** -> Dpdl programming language
+- **DpdlPacket** -> Dpdl Data container with Database technology
+- **DpdlAgent** -> Mobile Agent development platform within dpdl code
+- **DpdlAI** -> AI generative Code & Data within dpdl code
 
 ### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
@@ -36,6 +42,7 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 </p>
 
 ### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) = <ins>Powerful and Versatile</ins>
+
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in some specifics employs dynamic JVM bytecode compilation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
 
@@ -93,14 +100,6 @@ Dpdl allows to create custom data containers with built-in database technology d
 The included *Dpdl language plug-in* '**DpdlAgent**' includes an agent development middle-ware based on open source for building distributed and mobile multi-agent systems. It fully adheres to *IEEE FIPA* (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
-## DpdlEngine components:
-
-- **dpdl-lang** -> Dpdl programming language
-- **DpdlPacket** -> Dpdl Data container with Database technology
-- **DpdlAgent** -> Mobile Agent platform within dpdl code
-- **DpdlAI** -> AI generative Code & Data within dpdl code
-
-
 ## Dpdl is designed to:
 
 ### * Facilitate development & testing
@@ -124,7 +123,9 @@ The included *Dpdl language plug-in* '**DpdlAgent**' includes an agent developme
 
 ## <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-## **dpdl-lang** example: Fibonacci series
+## **`dpdl-lang`** is:
+
+### Simple
 
 ```python
 
@@ -139,66 +140,119 @@ end
 
 int N = 20
 
+println("Fibonacci series of " + N + ":")
+
 int i
 for(i < N)
 	println("fib($i) = " + fib(i))
 	i=i+1
 endfor
 
-println("finished")
+float x = 9.0
+
+println("square root of $x is ${ sqrt(x) }")
 ```
 
-## **dpdl-lang** example: Download and decode data in json format via http
+### Object Oriented
 
-```c
-import('http')
-import('json')
+```python
+class A {
 
-struct Story {
 	int id
-	string title
-	string url
+	
+	func A(int id)
+		this.id = id
+	end
+	
+	func printIt()
+		println("this is A with id: " + id)
+	end
 }
 
-string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
-string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
+class B : A {
 
-println("downloading and displaying the top 10 news stories from hacker-news, decoded from json format...")
+	func B(int id)
+		super(id)
+	end
+	
+	func printIt()
+		println("this is B with id: " + id)
+	end
+}
 
-string resp = http.getraw(stories_url)
+class B ab(888)
 
-raise(resp, "Error in downloading data")
-
-object jsonobj = json.parse(resp, 0)
-ids[] = array(jsonobj)
-
-string story_url
-struct Story storyobj
-
-int i = 0
-for(i < 10)
-	println("---------------------------------------------------------------------")
-
-	story_url = item_base_url + ids[i] + ".json"
-	resp = http.getraw(story_url)
-
-	raise(resp, "Error in downloading story")
-
-	storyobj = json.decode(resp, storyobj)
-
-	println("id: " + storyobj.id + " is of type: " + typeof(storyobj.id))
-	println("title: " + storyobj.title + " is of type: " + typeof(storyobj.title))
-	println("url: " + storyobj.url + " is of type: " + typeof(storyobj.url))
-
-	i=i+1
-endfor
-
-println("finished!")
+ab.printIt()
 ```
 
-## **dpdl-lang** example: dpdl code with use of 'embedded code sections' in multiple programming languages
+### Interoperable with JVM platform api's and java libraries
 
-The following dpdl example contains some '*embedded code sections*' in *C*, *Python*, *JavaScript* and *Java*, which are executed with almost zero overhead.
+```python
+object mymap = new ("HashMap")
+
+mymap.put(1, "entry 1")
+mymap.put(2, "entry 2")
+mymap.put(3, "entry 3")
+
+object keys = map.keySet()
+object iter = keys.iterator()
+
+object key, value
+while(iter.hasNext())
+	key = iter.next()
+	value = map.get(key)
+	println("" + key + "=" + value)
+endwhile
+```
+
+### Interoperable with Native shared C/C++ libraries
+
+```python
+
+import('native')
+
+object libc = native.loadLib("c")
+
+println("testing native interface with 'libc'...")
+println("")
+
+int uid = libc.getuid()
+
+println("uid: " + uid)
+
+int gid = libc.getgid()
+
+println("gid: " + gid)
+
+string env_java = libc.getenv("JAVA_HOME")
+
+println("env java: " + env_java)
+
+int page_size = libc.getpagesize()
+
+println("page_size: " + page_size)
+
+```
+
+### Compatibility of dpdl structures with C code
+
+```python
+typedef struct mySt {
+	int x
+	int y
+	float z
+} Point
+
+Point point = new Point(100, 200, 23.3f)
+
+object point_c = genObjCodeC(point)
+
+object mylib = native.loadLib("mygraphics")
+
+mylib.plot(point_c.ByReference())
+```
+
+### Allows to make use of '*embedded code sections*' in C, Java, Python, JavaScript, WAT/WASM etc..., directly within dpdl code
 
 ```python
 
@@ -248,7 +302,6 @@ println("and of course also embed Java directly...")
 
 ```
 
-
 ## Docs
 
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
@@ -294,10 +347,114 @@ println("and of course also embed Java directly...")
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
 
-### Deep dive
+## **dpdl-lang** example: Download and decode data in json format via http
 
-If you want a deeper insight about the DpdlEngine, 
-the DeepWiki AI generated doc is published here:  [![DpdlEngine DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Dpdl-io/DpdlEngine)
+```c
+import('http')
+import('json')
+
+struct Story {
+	int id
+	string title
+	string url
+}
+
+string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
+string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
+
+println("downloading and displaying the top 10 news stories from hacker-news, decoded from json format...")
+
+string resp = http.getraw(stories_url)
+
+raise(resp, "Error in downloading data")
+
+object jsonobj = json.parse(resp, 0)
+ids[] = array(jsonobj)
+
+string story_url
+struct Story storyobj
+
+int i = 0
+for(i < 10)
+	println("---------------------------------------------------------------------")
+
+	story_url = item_base_url + ids[i] + ".json"
+	resp = http.getraw(story_url)
+
+	raise(resp, "Error in downloading story")
+
+	storyobj = json.decode(resp, storyobj)
+
+	println("id: " + storyobj.id + " is of type: " + typeof(storyobj.id))
+	println("title: " + storyobj.title + " is of type: " + typeof(storyobj.title))
+	println("url: " + storyobj.url + " is of type: " + typeof(storyobj.url))
+
+	i=i+1
+endfor
+
+println("finished!")
+```
+
+## **dpdl-lang** example: dpdl code that makes use of '*embedded code sections*' in multiple programming languages
+
+The following dpdl example contains some '*embedded code sections*' in *Java* and *C*, that are executed with almost no overhead
+
+```python
+dpdl_stack_push("./Test/myfile.txt")
+
+>>java
+	File myfile = new File(arg0);
+
+	StringBuilder stringBuilder = new StringBuilder();
+
+	try{
+		BufferedReader reader = new BufferedReader(new FileReader(myfile));
+
+		String line = null;
+		while ((line = reader.readLine()) != null) {
+			stringBuilder.append(line);
+		}
+	}catch(Exception e){
+		System.out.println("Error in reading file");
+	}
+
+	System.out.println("myfile content: " + stringBuilder.toString());
+<<
+
+println("embed C code...")
+
+dpdl_stack_push("dpdl:compile")
+
+>>c
+	#include <stdio.h>
+	#include <dpdl.h>
+
+	int dpdl_main(int argc, char **argv){
+		printf("Hello C from Dpdl!\n");
+		printf("\n");
+		printf("num params: %d\n", argc);
+		int cnt;
+		for (cnt = 0; cnt < argc; cnt++){
+			printf("	param %d: %s\n", cnt, argv[cnt]);
+		}
+		char *buf = "My result";
+		dpdl_stack_buf_put(buf);
+		return 0;
+	}
+<<
+int exit_code = dpdl_exit_code()
+
+println("embedded code exit code: " + exit_code)
+
+string result = dpdl_stack_buf_get("mycode")
+
+println("mycode result: " + result)
+
+println("and many more languages are also supported: ")
+
+println("C++, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, WAT/WASM, Wgsl, OpenCL,  Modelica, Lean ... and more will follow")
+
+```
 
 ## Features
 
@@ -377,6 +534,10 @@ Included are the *Dpdl language plug-ins* for executing '*embedded code sections
 * <ins>**Portable**</ins> across different platforms and versions of JVM -> Ensure Backward compatibility (JVM) to the best possible extent. This has been a primary focus since the very beginning 
 * <ins>**Compact**</ins> code footprint and no depencencies to facilitate porting Dpdl to constrained devices
 
+### Deep dive
+
+If you want a deeper insight about the DpdlEngine, 
+the DeepWiki AI generated doc is published here:  [![DpdlEngine DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Dpdl-io/DpdlEngine)
 
 ## Dpdl sample code
 
