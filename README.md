@@ -236,7 +236,7 @@ println("page_size: " + page_size)
 
 ### Compatibility of dpdl structures with C code
 
-```python
+```c++
 typedef struct mySt {
 	int x
 	int y
