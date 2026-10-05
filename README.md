@@ -395,67 +395,6 @@ endfor
 println("finished!")
 ```
 
-## **dpdl-lang** example: dpdl code that makes use of '*embedded code sections*' in multiple programming languages
-
-The following dpdl example contains some '*embedded code sections*' in *Java* and *C*, that are executed with almost no overhead
-
-```python
-dpdl_stack_push("./Test/myfile.txt")
-
->>java
-	File myfile = new File(arg0);
-
-	StringBuilder stringBuilder = new StringBuilder();
-
-	try{
-		BufferedReader reader = new BufferedReader(new FileReader(myfile));
-
-		String line = null;
-		while ((line = reader.readLine()) != null) {
-			stringBuilder.append(line);
-		}
-	}catch(Exception e){
-		System.out.println("Error in reading file");
-	}
-
-	System.out.println("myfile content: " + stringBuilder.toString());
-<<
-
-println("embed C code...")
-
-dpdl_stack_push("dpdl:compile")
-
->>c
-	#include <stdio.h>
-	#include <dpdl.h>
-
-	int dpdl_main(int argc, char **argv){
-		printf("Hello C from Dpdl!\n");
-		printf("\n");
-		printf("num params: %d\n", argc);
-		int cnt;
-		for (cnt = 0; cnt < argc; cnt++){
-			printf("	param %d: %s\n", cnt, argv[cnt]);
-		}
-		char *buf = "My result";
-		dpdl_stack_buf_put(buf);
-		return 0;
-	}
-<<
-int exit_code = dpdl_exit_code()
-
-println("embedded code exit code: " + exit_code)
-
-string result = dpdl_stack_buf_get("mycode")
-
-println("mycode result: " + result)
-
-println("and many more languages are also supported: ")
-
-println("C++, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, WAT/WASM, Wgsl, OpenCL,  Modelica, Lean ... and more will follow")
-
-```
-
 ## Features
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (any JVM platform 1.3+ and later Spec, JavaME (CLDC, CDC). The core engine runs also on JVM 1.1 spec compliant VMs
