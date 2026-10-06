@@ -12,7 +12,7 @@
 by **SEE Solutions** &copy;
 
 
-## **`Dpdl`** - rapid development Programming Language and constrained Device platform
+## **`Dpdl`** - a rapid development Programming Language and constrained Device platform
 
 **Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology with powerful AI generative code capabilities.
 
