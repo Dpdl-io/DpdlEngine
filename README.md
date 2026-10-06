@@ -28,7 +28,7 @@ The included component **DpdlAI** enables to automatically generate AI generativ
 
 The *DpdlEngine* core has the capability to run also on <ins>**constrained devices**</ins> and <ins>**limited memory platforms**</ins> like *MCUs* and *SoCs* via a dedicated compact code kilobyte range virtual machine.
 
-## DpdlEngine components:
+## Dpdl components:
 
 - **dpdl-lang** -> Dpdl programming language
 - **DpdlPacket** -> Dpdl Data container with Database technology
