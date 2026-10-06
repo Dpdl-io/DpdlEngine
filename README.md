@@ -123,185 +123,6 @@ The included *Dpdl language plug-in* '**DpdlAgent**' includes an agent developme
 
 ## <ins>Compact</ins>, <ins>Robust</ins>, <ins>Extensible</ins> and <ins>Portable</ins> to almost every platform
 
-## **`dpdl-lang`** is:
-
-### Simple
-
-```python
-
-func fib(int n) int
-	if(n <= 1)
-		return n
-	fi
-
-	return fib(n - 1) + fib(n - 2)
-end
-
-
-int N = 20
-
-println("Fibonacci series of " + N + ":")
-
-int i
-for(i < N)
-	println("fib($i) = " + fib(i))
-	i=i+1
-endfor
-
-float x = 9.0
-
-println("square root of $x is ${ sqrt(x) }")
-```
-
-### Object Oriented
-
-```python
-class A {
-
-	int id
-	
-	func A(int id)
-		this.id = id
-	end
-	
-	func printIt()
-		println("this is A with id: " + id)
-	end
-}
-
-class B : A {
-
-	func B(int id)
-		super(id)
-	end
-	
-	func printIt()
-		println("this is B with id: " + id)
-	end
-}
-
-class B ab(888)
-
-ab.printIt()
-```
-
-### Interoperable with JVM platform api's and java libraries
-
-```python
-object mymap = new ("HashMap")
-
-mymap.put(1, "entry 1")
-mymap.put(2, "entry 2")
-mymap.put(3, "entry 3")
-
-object keys = map.keySet()
-object iter = keys.iterator()
-
-object key, value
-while(iter.hasNext())
-	key = iter.next()
-	value = map.get(key)
-	println("" + key + "=" + value)
-endwhile
-```
-
-### Interoperable with Native shared C/C++ libraries
-
-```python
-
-import('native')
-
-object libc = native.loadLib("c")
-
-println("testing native interface with 'libc'...")
-println("")
-
-int uid = libc.getuid()
-
-println("uid: " + uid)
-
-int gid = libc.getgid()
-
-println("gid: " + gid)
-
-string env_java = libc.getenv("JAVA_HOME")
-
-println("env java: " + env_java)
-
-int page_size = libc.getpagesize()
-
-println("page_size: " + page_size)
-
-```
-
-### Compatibility of dpdl structures with C code
-
-```c++
-typedef struct mySt {
-	int x
-	int y
-	float z
-} Point
-
-Point point = new Point(100, 200, 23.3f)
-
-object point_c = genObjCodeC(point)
-
-object mylib = native.loadLib("mygraphics")
-
-mylib.plot(point_c.ByReference())
-```
-
-### Allows to make use of '*embedded code sections*' in C, Java, Python, JavaScript, WAT/WASM etc..., directly within dpdl code
-
-```python
-
-println("a Dpdl program can also contain 'embedded code sections' in multiple programming languages...")
-
-println("for example:")
-
-println("embedded C code for Performance and Hardware access...")
-
->>c
-	int v = 1000;
-	for(int i = 0; i < v; i++){
-		printf("Processing: %d\n", i);
-	}
-<<
-
-println("embedded Python for Data handling & LLMs...")
-
->>python
-	stories = ['Story 1', 'Story 2', 'Story 3']
-	for story in stories:
-		print(story)
-<<
-
-println("embedded JavaScript for Web and server-less integration...")
-
->>js
-	fetch('https://api.dpdl.io/data')
-		.then(response => response.json())
-		.then(data => console.log(data));
-<<
-
-println("and of course also embed Java directly...")
-
->>java
-	Object val = null;
-	int v = 1000;
-	for(int i = 0; i < v; i++){
-		val = new Integer(i);
-		System.out.println("val: " + val);
-	}
-
-	return ((Integer)val).intValue();
-<<
-
-...
-
-```
-
 ## Docs
 
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
@@ -346,54 +167,6 @@ println("and of course also embed Java directly...")
 
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
-
-## **dpdl-lang** example: Download and decode data in json format via http
-
-```c
-import('http')
-import('json')
-
-struct Story {
-	int id
-	string title
-	string url
-}
-
-string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
-string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
-
-println("downloading and displaying the top 10 news stories from hacker-news, decoded from json format...")
-
-string resp = http.getraw(stories_url)
-
-raise(resp, "Error in downloading data")
-
-object jsonobj = json.parse(resp, 0)
-ids[] = array(jsonobj)
-
-string story_url
-struct Story storyobj
-
-int i = 0
-for(i < 10)
-	println("---------------------------------------------------------------------")
-
-	story_url = item_base_url + ids[i] + ".json"
-	resp = http.getraw(story_url)
-
-	raise(resp, "Error in downloading story")
-
-	storyobj = json.decode(resp, storyobj)
-
-	println("id: " + storyobj.id + " is of type: " + typeof(storyobj.id))
-	println("title: " + storyobj.title + " is of type: " + typeof(storyobj.title))
-	println("url: " + storyobj.url + " is of type: " + typeof(storyobj.url))
-
-	i=i+1
-endfor
-
-println("finished!")
-```
 
 ## Features
 
@@ -473,14 +246,58 @@ Included are the *Dpdl language plug-ins* for executing '*embedded code sections
 * <ins>**Portable**</ins> across different platforms and versions of JVM -> Ensure Backward compatibility (JVM) to the best possible extent. This has been a primary focus since the very beginning 
 * <ins>**Compact**</ins> code footprint and no depencencies to facilitate porting Dpdl to constrained devices
 
-### Deep dive
-
-If you want a deeper insight about the DpdlEngine, 
-the DeepWiki AI generated doc is published here:  [![DpdlEngine DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Dpdl-io/DpdlEngine)
 
 ## Dpdl sample code
 
-### Dpdl example that makes use of external java libraries
+### **dpdl-lang** example: Download and decode data in json format via http
+
+```c
+import('http')
+import('json')
+
+struct Story {
+	int id
+	string title
+	string url
+}
+
+string stories_url   = "https://hacker-news.firebaseio.com/v0/topstories.json"
+string item_base_url = "https://hacker-news.firebaseio.com/v0/item/"
+
+println("downloading and displaying the top 10 news stories from hacker-news, decoded from json format...")
+
+string resp = http.getraw(stories_url)
+
+raise(resp, "Error in downloading data")
+
+object jsonobj = json.parse(resp, 0)
+ids[] = array(jsonobj)
+
+string story_url
+struct Story storyobj
+
+int i = 0
+for(i < 10)
+	println("---------------------------------------------------------------------")
+
+	story_url = item_base_url + ids[i] + ".json"
+	resp = http.getraw(story_url)
+
+	raise(resp, "Error in downloading story")
+
+	storyobj = json.decode(resp, storyobj)
+
+	println("id: " + storyobj.id + " is of type: " + typeof(storyobj.id))
+	println("title: " + storyobj.title + " is of type: " + typeof(storyobj.title))
+	println("url: " + storyobj.url + " is of type: " + typeof(storyobj.url))
+
+	i=i+1
+endfor
+
+println("finished!")
+```
+
+### **dpdl-lang** example that makes use of external java libraries
 
 This dpdl example implements a 3D model visualization of chemical molecules (in this case hydrogen) using the JavaFX library. The model can be rotated freely with mouse events and toggled via key events (ported to dpdl from javafx examples)
 
@@ -493,7 +310,7 @@ This dpdl example implements a 3D model visualization of chemical molecules (in 
 [VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
 
 
-### Dpdl example that make use of dpdl **`class`** type Inheritance and Polymorphism
+### **dpdl-lang** example that make use of dpdl **`class`** type Inheritance and Polymorphism
 
 ```python
 class Car mycar("Jeep", "Mercedes")
@@ -586,7 +403,7 @@ int exit_code = dpdl_exit_code()
 println("embedded groovy exit code: " + exit_code)
 ```
 
-### Dpdl sample code that make use of java JRE classes
+### **dpdl-lang** sample code that make use of java JRE classes
 
 #### Example 1: Implementation of of dpdl class to write data (buffered) to a file
 
@@ -656,7 +473,7 @@ The example below, to show the flexibility of dpdl, implements the same logic as
 [jre/dpdlMyWriter.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/jre/dpdlMyWriter.h)
 
 
-## Dpdl example with 'embedded code sections' in different programming languages (*C, JavaScript and Python*)
+## **dpdl-lang** example with 'embedded code sections' in different programming languages (*C, JavaScript and Python*)
 
 ```c
 println("with Dpdl you can embed and execute code sections in many different programming languages, simultaneously and of multiple types...")
@@ -723,7 +540,7 @@ println("")
 println("and more 'Dpdl lanuage plug-ins' will follow and you can also create your owns")
 ```
 
-## Dpdl sample code that accelerates on GPUs a GELU Neural Network activation function via embedded 'Wgsl' code:
+## **dpdl-lang** sample code that accelerates on GPUs a GELU Neural Network activation function via embedded 'Wgsl' code:
 
 ```python
 import('native')
@@ -829,7 +646,7 @@ println("finished")
 
 ```
 
-## Dpdl example code that implements a simple **CoAP** (*Constrained Application Protocol*) client using high a level Dpdl API
+## **dpdl-lang** example code that implements a simple **CoAP** (*Constrained Application Protocol*) client using high a level Dpdl API
 
 ```python
 
@@ -905,40 +722,40 @@ fi
 Note: The underlying low level CoAP API can also be accessed directly for more specific implementations
 
 
-### Dpdl example to Get and decode News via http in JSON format 
+### **dpdl-lang** example to Get and decode News via http in JSON format 
 
 This is a small sample app written with Dpdl that gets the top 10 news stories via http in 'json' format:
 
 [app/getnews/dpdlGetNews.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/getnews/dpdlGetNews.h)
 
 
-### Dpdl implementation of SHA-1 hash algorithm
+### **dpdl-lang** implementation of SHA-1 hash algorithm
 
 Implementation of SHA-1 hash algorithm entirely written in Dpdl
 
 [app/dpdlSHA-1/dpdlSHA-1impl.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/dpdlSHA-1/dpdlSHA-1impl.h)
 
 
-### Simple Dpdl example that executes an embedded 'java' code and an embedded 'C' code directly within Dpdl
+### Simple **dpdl-lang** example that executes an embedded 'java' code and an embedded 'C' code directly within Dpdl
 
 [app/simple/dpdlSimpleJavaAndC.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/app/simple/dpdlSimpleJavaAndC.h)
 
 
-### Dpdl example that uses the 'sql' Dpdl language plug-in to retrieve data from a database and handle the result set
+### **dpdl-lang** example that uses the 'sql' Dpdl language plug-in to retrieve data from a database and handle the result set
 
 Dpdl sample code that connects to the database and performs a query, retrieves and prints out the result set, encodes the result set to a json string, and than decodes the json string to an object that can be accessed as a HashMap
 
 [sql/dpdlSqlExampleJson.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/sql/dpdlSqlExampleJson.h) 
 
 
-### Dpdl example that uses the 'Wgsl' Dpdl language plug-in to scale computations directly on GPU's
+### **dpdl-lang** example that uses the 'Wgsl' Dpdl language plug-in to scale computations directly on GPU's
 
 Dpdl sample code that implements a high-performing neural network activation function (GELU) on GPUs using the dpdl language plug-in 'Wgsl' that allows to embed and execute WGSL code (WebGPU Shading language) directly within Dpdl.
 
 [wgsl/dpdlWgslTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/wgsl/dpdlWgslTest.h)
 
 
-### Dpdl example that uses the 'Modelica' Dpdl language plug-in to run a cyber-physical model simulation
+### **dpdl-lang** example that uses the 'Modelica' Dpdl language plug-in to run a cyber-physical model simulation
 
 Dpdl sample code that performs the physical simulation of a bouncing ball with embedded 'Modelica' code
 
