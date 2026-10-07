@@ -54,7 +54,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 <table>
 <tr><td width=33% valign=top>
 
-* [Code](#code)
+* [dpdl code](#dpdl-code)
 * [Types](#types)
 	* [Strings](#strings)
 	* [Values](#values)
@@ -110,7 +110,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 </table>
 
 
-### Code
+### dpdl code
 
 Dpdl code can be executed as plain text scripts, in form of strings or text file, via the following interfaces:
 
@@ -120,19 +120,38 @@ Dpdl code can be executed as plain text scripts, in form of strings or text file
 
 #### Dpdl program entry point
 
-A dpdl program can either omit the program entry point function, or have a **`main(...)`** entry point function defined with an array of arguments as parameters.
+A dpdl program can either omit the program entry point function, or have a **`main(...)`** entry point function defined that accepts an array of arguments as parameters.
 
-**Example:**
+##### dpdl without entry point function
 
-A dpdl file containing this will execute directly
+A dpdl file containing this will execute as is
 
 ```python
 println("this line will be printed")
 ```
 
-**Example:**
+##### dpdl with **`main(...)`** entry point function
 
 For a dpdl file containing the **`main(...)`** function entry point, in this case the execution will start at  **`main(...)`** 
+
+The **`main(...)`**  entry point function may return value of type '**int**' that is also the process exit code, or not return any value.
+
+```python
+func main(args[]) int
+	...
+	return 1
+end
+```
+
+OR also
+
+```python
+func main(args[])
+	...
+end
+```
+
+**Example:**
 
 ```python
 func myP()
@@ -153,6 +172,7 @@ func main(args[])
 	myP()
 end
 ```
+
 
 * [Table of Contents](#table-of-contents)
 
@@ -1551,7 +1571,7 @@ println("point: " + point)
 
 ```
 
-Or also
+OR also
 
 ```c++
 
