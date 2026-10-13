@@ -15,13 +15,14 @@ by
 
 Dpdl enables to execute compute intensive operations and algorithms directly on GPGPUs or GPUs.
 
-This can be performed via '*embedded code sections*' implemented directly in OCL (OpenCL) or Wgsl (Web GPU Shading Language) code, or by other foreign programming models available.
+This can be performed via '*embedded code sections*' implemented directly in OCL (OpenCL), Wgsl (Web GPU Shading Language) code, Slang (Slang Shading Language) or by other foreign programming models available.
 
 The following **Dpdl language plug-ins** that enable to perform GPU compute are currently available:
 
 - **Dpdl language plug-in** **`opencl`**
 - **Dpdl language plug-in** **`wgsl`**
 - **Dpdl language plug-in** **`triton`**
+- **Dpdl language plug-in** **`slang`**
 
 
 ## Index
@@ -29,6 +30,7 @@ The following **Dpdl language plug-ins** that enable to perform GPU compute are 
 * [OpenCL](#opencl)
 * [WGSL WebGPU Shading Language](#wgsl-webgpu-shading-language)
 * [Triton](#triton)
+* [Slang](#slang)
 
 
 ## OpenCL
@@ -423,6 +425,95 @@ println(output)
 ```
 
 
+[Index](#index)
+
+
+## Slang
+
+The *Slang Shading Language* (Slang) is a powerful shading for graphics and compute on GPUs
+
+```python
+import('native')
+import('shader')
+
+
+println("testing a shader with slang...")
+
+long DATA_SIZE = 1000000L
+long byte_cnt = 4L
+
+object libc = native.loadLib("c")
+
+object buf0 = libc.malloc(DATA_SIZE * byte_cnt)
+buf0.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
+
+object buf1 = libc.malloc(DATA_SIZE * byte_cnt)
+buf1.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
+
+object res = libc.malloc(DATA_SIZE * byte_cnt)
+res.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
+
+int s1 = shader.DPDLNATIVE_addBuffer(0, "f32", DATA_SIZE, buf0)
+
+int s2 = shader.DPDLNATIVE_addBuffer(1, "f32", DATA_SIZE, buf1)
+
+int s3 = shader.DPDLNATIVE_addBuffer(2, "f32", DATA_SIZE, res)
+
+int status = s1 & s2 & s3
+
+raise(status, "Error allocating buffers")
+
+println("populating input buffers...")
+
+long cnt = 0L
+float f_val
+int tmp
+for(cnt < DATA_SIZE)
+	tmp = randInt(16, 1000)
+	f_val = to_float(tmp)
+
+	buf0.setFloat(cnt, f_val)
+
+	buf1.setFloat(cnt, f_val * 2.0f)
+
+	cnt = cnt+1L
+endfor
+
+println("compiling and executing compute shader...")
+
+>>slang
+	StructuredBuffer<float> buffer0;
+	StructuredBuffer<float> buffer1;
+	RWStructuredBuffer<float> result;
+
+	[shader("compute")]
+	[numthreads(1,1,1)]
+	void dpdl_main(uint3 threadId : SV_DispatchThreadID){
+		uint index = threadId.x;
+		result[index] = buffer0[index] + buffer1[index];
+	}
+<<
+int exit_code = dpdl_exit_code()
+
+println("embedded shader exit code: " + exit_code)
+
+raise(exit_code, "Error in executing compute shader")
+
+println("RESULT:")
+
+float f_val
+long c = 0L
+for(c < DATA_SIZE)
+	f_val = res.getFloat(c)
+	print(f_val + " ")
+	c = c+1L
+endfor
+
+println("finished")
+
+```
+
+ 
 [Index](#index)
 
 

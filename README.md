@@ -41,7 +41,7 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
 </p>
 
-### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Modelica*) = <ins>Powerful and Versatile</ins>
+### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + shader-lang + Modelica*) = <ins>Powerful and Versatile</ins>
 
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in some specifics employs dynamic JVM bytecode compilation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
@@ -75,6 +75,7 @@ At current stage, Dpdl supports the <ins>**embedding** and **execution**</ins> o
 * **`WAT`** (WASM)
 * **`Wgsl`** (WebGPU)
 * **`OCL`** (OpenCL)
+* **`Slang`** (Slang Shading Language)
 * **`Modelica`**
 
 and also for some less known, but yet very powerful programming languages:
@@ -175,7 +176,7 @@ The included *Dpdl language plug-in* '**DpdlAgent**' includes an agent developme
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
 * **Automatic code generation and execution of 'embedded code sections' at runtime** (*Dpdl language plug-ins*)
-* **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)
+* **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Slang and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of 'Dpdl language plug-ins'**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded C code (ANSI C & ISO C99) for multiple platforms (i386, x86_64, ARM-32, ARM-64, RISC-V), compiles in memory at runtime -> <ins>very Fast compile time!!!</ins>
@@ -577,7 +578,7 @@ object input_arr = libc.malloc(DATA_SIZE * byte_cnt)
 input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 object output_arr = libc.malloc(DATA_SIZE * byte_cnt)
-input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
+output_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 println("populating input data...")
 
@@ -956,6 +957,7 @@ and also for some less known, but yet very powerful programming languages:
 * **`Sql`** -> query databases via SQL
 * **`Wgsl`** -> WebGPU shading language
 * **`OCL`** -> Open Computing Language (OpenCL)
+* **`Slang`** -> Slang Shading Language
 * **`AI`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
@@ -1123,13 +1125,13 @@ At current state, the '**DpdlEngine**' release can include the following *Dpdl l
 
 ### Add-on Dpdl language plug-ins - compatibility matrix
 
-| Platform |Wasm |Sql |Wsgl |OCL (OpenCL)|AI |
-| ---  | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X|X|X|X|
-| Mac OS X (aarch64) |X|X|X|X|X|
-| Raspberry PI 3 (armv7)|*|X|*|*|X|
-| Windows64|*|X|*|*|X|
-| RISC-V |*|X|*|*|X|
+| Platform |Wasm |Sql |Wsgl |OCL (OpenCL)|Slang |AI |
+| ---  | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X|X|X|X|X|
+| Mac OS X (aarch64) |X|X|X|X|X|X|
+| Raspberry PI 3 (armv7)|*|X|*|*|X|*|
+| Windows64|*|X|*|*|X|*|
+| RISC-V |*|X|*|*|X|*|
 
 
 (X + version) **Supported**

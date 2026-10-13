@@ -42,13 +42,13 @@ int idx_tensor_in = 1
 int idx_tensor_out = 1
 int idx_kernel = 1
 
-println("allocating input buffer...")
+println("allocating buffers...")
 
 object input_arr = libc.malloc(DATA_SIZE * byte_cnt)
 input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 object output_arr = libc.malloc(DATA_SIZE * byte_cnt)
-input_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
+output_arr.setMemory(0L, DATA_SIZE * byte_cnt, 0x00B)
 
 println("populating input data...")
 

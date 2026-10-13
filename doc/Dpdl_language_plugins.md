@@ -105,6 +105,7 @@ and also for some less known, but yet very powerful programming languages:
 * **`Sql`** -> query databases via *SQL*
 * **`Wgsl`** -> WebGPU shading language (*WGSL*)
 * **`OCL`** -> Open Computing Language (*OpenCL*)
+* **`Slang`** -> Slang Shading Language
 * **`Ai`**  -> see [doc/DpdlAINerd.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlAINerd.md)
 
 
@@ -305,13 +306,13 @@ Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with th
  
 #### Add-on Dpdl language plug-ins - availability Matrix
 
-| Platform |Wasm |Sql |Wsgl |OCL (OpenCL) |AI |
-| ---  | --- | --- | --- | --- | --- |
-| Linux x86_64 |X|X|X|X|X|
-| Mac OS X (aarch64) |X|X|X|X|X|
-| Raspberry PI 3 (armv7)|*|X|*|*|X|
-| Windows64|*|X|*|*|X|
-| RISC-V |*|X|*|*|X|
+| Platform |Wasm |Sql |Wsgl |OCL (OpenCL)|Slang |AI |
+| ---  | --- | --- | --- | --- | --- | --- |
+| Linux x86_64 |X|X|X|X|X|X|
+| Mac OS X (aarch64) |X|X|X|X|X|X|
+| Raspberry PI 3 (armv7)|*|X|*|*|X|*|
+| Windows64|*|X|*|*|X|*|
+| RISC-V |*|X|*|*|X|*|
 
 
 (X + version) **Supported**
@@ -1232,6 +1233,7 @@ println("model simulation exit code: " + exit_code)
 
 - ocl -> https://registry.khronos.org/OpenCL/specs/3.0-unified/html/OpenCL_C.html
 - wgsl -> https://www.w3.org/TR/webgpu/
+- slang -> https://shader-slang.org/
 - wasm -> https://webassembly.org/
  
  
