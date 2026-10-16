@@ -20,6 +20,14 @@ Dpdl comes as a very <ins>**compact**</ins> and <ins>**portable**</ins> executio
 
 Dpdl enables **Polyglot programming**, on multiple platforms.
 
+### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
+
+<p align="center">
+	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
+</p>
+
+### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Slang + Modelica*) = <ins>Powerful and Versatile</ins>
+
 The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (**OOP**) interoperable with **JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>**Meta-programming**</ins> techniques.
 
 **Dpdl** provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared C/C++ libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
@@ -34,14 +42,6 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 - **DpdlPacket** -> Dpdl Data container with Database technology
 - **DpdlAgent** -> Mobile Agent development platform within dpdl code
 - **DpdlAI** -> AI generative Code & Data within dpdl code
-
-### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
-
-<p align="center">
-	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
-</p>
-
-### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Slang + Modelica*) = <ins>Powerful and Versatile</ins>
 
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, <ins>**interpreted**</ins> and in some specifics employs dynamic JVM bytecode compilation, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
