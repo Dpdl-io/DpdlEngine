@@ -26,7 +26,7 @@ The realtime functions can be accessed:
 - either directly using the RTSJ spec API
 - or accessed via an abstraction layer available within the dpdl package '**`realtime`**'. It enables to handle multiple realtime threads and timer resources thought a unified interface based on the RTSJ api.
 
-## Examples
+### Examples
 
 [dpdl example using RTSJ API directly](#dpdl-example-using-rtsj-api-directly)
 
