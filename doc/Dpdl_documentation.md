@@ -58,6 +58,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 * [Types](#types)
 	* [Strings](#strings)
 	* [Values](#values)
+	* [Objects](#objects)
 	* [Inferred types](#inferred-types)
 * [Arrays](#arrays)
 	* [Primitive arrays](#primitive-arrays)
@@ -374,6 +375,62 @@ long l = 0x14269cae3c1ae6243L
 * [Table of Contents](#table-of-contents)
 
 
+### Objects
+
+The type **`object`** is a base type. All types also be handled as objects.
+
+Whether it's a dpdl **`class`** or a **`struct`**, a primitive type, a whole dpdl module, or even a java JRE class, all of these types can be stored, referenced and handled via the dpdl type **`object`**.
+
+Every type can be assigned to an **`object`** variable. But not the other way around.
+
+**Example:**
+
+```c++
+int myi = 9999
+object myiobj = myi
+```
+
+```c++
+struct A {
+	...
+}
+
+object a = new A(...)
+
+```
+
+The type **`object`**' is used also to load java classes available within Dpdl
+
+
+**Example:** instantiation of a Java class
+
+```python
+object myc = new("MyTestJavaClass", 1, 2, 3)
+
+myc.printValues()
+```
+
+A primitive dpdl type (i.e 'int' or 'string'), can also be casted to an **`object`**, inheriting all methods and fields of the corresponding Java class type (i.e. **`java.lang.Integer`** or **`java.lang.String`**).
+
+**Example:**
+
+```python
+string mys = "This is a Test"
+
+object mys_obj = mys
+
+object mys_mod = mys_obj.replaceAll("Test", "MEGA Test")
+
+println("mys_mod: " + mys_mod + " is of type: " + typeof(mys_mod))
+
+string mys_new = mys_mod
+
+ 
+```
+
+* [Table of Contents](#table-of-contents)
+
+
 #### Inferred types
 
 The types **`var`** and **`const`** are both inferred types.
@@ -440,7 +497,6 @@ var tmpv
 object tmpo
 ```
 
-
 #### **`typedef`** specifier
 
 The **`typedef`** specifier allows to create aliases for given types (ex. int, float, class, etc..), similar as in C/C++, where the defined alias can than be used instead.
@@ -476,43 +532,6 @@ println("res: " + res)
 ```
 
 * [Table of Contents](#table-of-contents)
-
-
-### Type `object`
-
-In Dpdl the type **`object`** is a baseline type. 
-
-Whether it's a dpdl **`class`** or a **`struct`**, a primitive type, a whole dpdl module, or even a java JRE class, all of these types can be stored, referenced and handled via this type.
-
-**Example:** instantiation of a Java class
-
-```python
-object myc = new("test.MyTestClass", 1, 2, 3)
-
-myc.printValues()
-```
-
-The **`object`** type has also some intrinsic transformation capabilities that allows a primitive type like for example **`int`** or **`string`**, to be boxed to the corresponding Java type class (i.e. **`java.lang.Integer`** or **`java.lang.String`**) so that all class methods and fields of the underlying JVM platform can be accessed.
-
-
-**Example:** instantiation of a JRE Java class
-
-```python
-string mys = "This is a Test"
-
-object mys_obj = mys
-
-object mys_mod = mys_obj.replaceAll("Test", "MEGA Test")
-
-println("mys_mod: " + mys_mod + " is of type: " + typeof(mys_mod))
-
-string mys_new = mys_mod
-
- 
-```
-
-* [Table of Contents](#table-of-contents)
-
 
 ### Arrays
 

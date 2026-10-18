@@ -18,15 +18,13 @@ by **SEE Solutions** &copy;
 
 Dpdl comes as a very <ins>**compact**</ins> and <ins>**portable**</ins> execution engine (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and at it's <ins>**native Speed**</ins>.
 
-Dpdl enables **Polyglot programming**, on multiple platforms.
+Dpdl enables **Polyglot programming**, on multiple platforms and on constrained devices.
 
 ### <ins>**Compact**</ins>, <ins>**Self-contained**</ins>, <ins>**Portable**</ins> and <ins>**Customizable**</ins>
 
 <p align="center">
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
 </p>
-
-### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Slang + Modelica*) = <ins>Powerful and Versatile</ins>
 
 The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (**OOP**) interoperable with **JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>**Meta-programming**</ins> techniques.
 
@@ -49,6 +47,8 @@ Dpdl itself is a general-purpose programming language, <ins>**self-contained**</
 Dpdl introduces the concept of '*embedded code sections*' that allows code of different programming languages, or any custom developed code syntax, to be embedded and executed directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
 
 Everything comes already included as part of the *DpdlEngine* release, **<ins>No additional installations required</ins>**.
+
+### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Slang + Modelica*) = <ins>Powerful and Versatile</ins>
 
 At current stage, Dpdl supports the <ins>**embedding** and **execution**</ins> of the following **programming language** code, <ins>**directly embedded**</ins> within dpdl code: 
 
