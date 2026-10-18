@@ -377,7 +377,7 @@ long l = 0x14269cae3c1ae6243L
 
 ### Objects
 
-The type **`object`** is a base type. All types also be handled as objects.
+The type **`object`** is a base type. All types can be handled as objects.
 
 Whether it's a dpdl **`class`** or a **`struct`**, a primitive type, a whole dpdl module, or even a java JRE class, all of these types can be stored, referenced and handled via the dpdl type **`object`**.
 
@@ -399,7 +399,7 @@ object a = new A(...)
 
 ```
 
-The type **`object`**' is used also to load java classes available within Dpdl
+The type **`object`**' is also used to load java classes available within dpdl
 
 
 **Example:** instantiation of a Java class
@@ -426,6 +426,16 @@ println("mys_mod: " + mys_mod + " is of type: " + typeof(mys_mod))
 string mys_new = mys_mod
 
  
+```
+
+An **`object`**' type variable can also enforce a type specifier:
+
+````python
+object<**`String`**> mys = null
+
+mys = new("String", "This is a Test")
+
+println("Uppercase: " + mys.toUpperCase())
 ```
 
 * [Table of Contents](#table-of-contents)
