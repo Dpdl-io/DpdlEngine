@@ -431,7 +431,7 @@ string mys_new = mys_mod
 An **`object`**' type variable can also enforce a type specifier:
 
 ````python
-object<**`String`**> mys = null
+object<String> mys = null
 
 mys = new("String", "This is a Test")
 
