@@ -1,7 +1,7 @@
 # File: realtime/dpdlRTSJAsyncEventHandlerTest.h
 #
-# Example: Dpdl example that uses the reusable dpdl class 'ReusableAEH' (a reusable realtime Asyncronous Event Handler),
-#			to implement two dedicated logic events
+# Example: Dpdl example that uses the implementation of the dpdl class 'ReusableAEH', a reusable realtime Asyncronous Event Handler,
+#			to implement two dedicated realtime logic events
 #
 #			see ReusableAEH class: ./realtime/dpdlRTSJAsyncEventHandler.h
 #

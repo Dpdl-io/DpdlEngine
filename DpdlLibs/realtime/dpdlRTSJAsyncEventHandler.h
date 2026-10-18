@@ -1,7 +1,7 @@
 # File: realtime/dpdlRTSJAsyncEventHandler.h
 #
-# Example: This dpdl code implements a reusable realtime AsyncEventHandler class that enables to handle
-#			different logic implementations
+# Example: This dpdl class implements a reusable realtime AsyncEventHandler that enables to handle
+#			different realtime logic implementations
 #
 #			for usage see example: ./realtime/dpdlRTSJAsyncEventHandlerTest.h
 #

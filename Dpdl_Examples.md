@@ -336,6 +336,12 @@ The following Dpdl examples show how to use <ins>Realtime</ins> capabilities via
 
 	[realtime/dpdlRTSJExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlRTSJExample.h)
 
+* Dpdl example that uses the implementation of the dpdl class 'ReusableAEH', a reusable realtime Asyncronous Event Handler, to implement two dedicated realtime logic events
+	
+	[realtime/dpdlRTSJAsyncEventHandlerTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlRTSJAsyncEventHandlerTest.h)
+		
+	[realtime/dpdlRTSJAsyncEventHandler.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlRTSJAsyncEventHandler.h)
+	
 
 [Index](#index)
 
