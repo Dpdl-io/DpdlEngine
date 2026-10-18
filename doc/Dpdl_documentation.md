@@ -428,7 +428,7 @@ string mys_new = mys_mod
  
 ```
 
-An **`object`**' type variable can also enforce a type specifier:
+An **`object`**' type variable can also enforce a type specifier via the enclosures **`<....>`**:
 
 ````python
 object<String> mys = null
