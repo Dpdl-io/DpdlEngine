@@ -15,7 +15,7 @@ by
 ## Dpdl native Interface
 
 
-Dpdl allows to access C/C++ <ins>Native shared library</ins> functions seamlessly in the same way as ordinary dpdl functions.
+Dpdl allows to access <ins>Native shared C/C++ library</ins> functions seamlessly in the same way as ordinary dpdl functions.
 
 This features makes the dpdl programming language complete also for interacting with low level system components and native libraries.
 

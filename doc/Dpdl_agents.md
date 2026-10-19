@@ -17,10 +17,15 @@ Dpdl has built-in support for **Agents** technology that enables to implement <i
 
 The '**DpdlAgent** component includes a complete agent development framework based on jade for building distributed and Mobile multi-Agent systems.
 
-It fully adheres to **IEEE FIPA** (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, inter-operable agent communication and coordination, including ACL messaging, interaction protocols, content languages, ontologies, and adaptive transport mechanisms. 
-Communication is asynchronous and queue-based, providing efficient, flexible message handling suited to dynamic and mobile agent environments.
+It fully adheres to **IEEE FIPA** (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, inter-operable agent communication and coordination, including ACL messaging, interaction protocols, content languages, ontologies, and adaptive transport mechanisms.
 
 The agent platform components support also agent mobility, allowing agents to be dynamically created, suspended, and migrated across heterogeneous hosts at runtime without OS dependency. System configuration and supervision can be handled programmatically or through a remote management UI, enabling flexible and scalable deployment.
+
+<p align="center">
+	<img src="https://www.dpdl.io/images/platform/DpdlAgent_Management_platform.png">
+</p>
+ 
+Communication is asynchronous and queue-based, providing efficient, flexible message handling suited to dynamic and mobile agent environments.
 
 
 ### Platform features
