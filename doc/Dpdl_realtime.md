@@ -240,7 +240,7 @@ println("finished")
  
 This Dpdl example shows the usage and the implementation of the dpdl **`class`** -> a reusable realtime asynchronous event hanlder
 
-Example ported to dpdl from the Book: Realtime Java Platform Programming 2nd edition
+Example ported to dpdl from the Book: *Realtime Java Platform Programming 2nd edition*
 
 ```python
 
