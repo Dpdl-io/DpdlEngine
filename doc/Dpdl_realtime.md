@@ -80,7 +80,7 @@ class Worker : refObj("RealtimeThread") {
 	bool stop = false
 
 	func Worker(int priority)
-		super()
+
 		object prio_param = new("PriorityParameters", priority, null)
 
 		super(prio_param)
@@ -164,6 +164,7 @@ class MyExec : refObj("DpdlSupplier"){
 			}
 			return "Result: " + calc;
 		<<
+		return dpdl_stack_buf_get()
 	end
 }
 

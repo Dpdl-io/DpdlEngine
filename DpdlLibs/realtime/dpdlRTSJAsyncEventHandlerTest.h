@@ -18,7 +18,7 @@ include("dpdlRTSJAsyncEventHandler.h")
 class MyLogic : refObj("DpdlRunnable"){
 
 	func MyLogic()
-		super()
+		println("logic init()")
 	end
 
 	func run()
