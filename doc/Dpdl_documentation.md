@@ -428,7 +428,9 @@ string mys_new = mys_mod
  
 ```
 
-An **`object`**' type variable can also define a type specifier via the enclosures **`<....>`** (optional):
+#### Object type specifier
+
+A given type can also be enforced on an **`object`**' type variable by specifying a type specifier within the enclosures **`<....>`** (Optional):
 
 ```python
 object<String> mys = null
@@ -437,6 +439,7 @@ mys = new("String", "This is a Test")
 
 println("Uppercase: " + mys.toUpperCase())
 ```
+
 
 * [Table of Contents](#table-of-contents)
 
