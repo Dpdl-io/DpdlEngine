@@ -24,7 +24,7 @@ When running Dpdl on a realtime system, the main internal DpdlEngine threads are
 The realtime functions can be accessed:
  
 - either directly using the RTSJ spec API
-- or accessed via an abstraction layer available within the dpdl package '**`realtime`**'. It enables to handle multiple realtime threads and timer resources thought a unified interface based on the RTSJ api.
+- or accessed via an abstraction layer available within the dpdl library package '**`realtime`**' --> enables to handle multiple realtime threads and timer resources thought a unified interface based on the RTSJ api.
 
 ### Examples:
 
@@ -80,6 +80,7 @@ class Worker : refObj("RealtimeThread") {
 	bool stop = false
 
 	func Worker(int priority)
+		super()
 		object prio_param = new("PriorityParameters", priority, null)
 
 		super(prio_param)
@@ -250,9 +251,9 @@ include("dpdlRTSJAsyncEventHandler.h")
 class MyLogic : refObj("DpdlRunnable"){
 
 	func MyLogic()
-		super()
+		println("logic init()")
 	end
-
+	
 	func run()
 		println("Tick logic")
 	end
