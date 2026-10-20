@@ -30,9 +30,9 @@ The realtime functions can be accessed:
 
 [dpdl example using RTSJ API directly](#dpdl-example-using-rtsj-api-directly)
 
-[dpdl example using the dpdl realtime abstraction library](#dpdl-example-using-the-dpdl-realtime-abstraction-library)
-
 [dpdl example for a reusable realtime asynchronous event handler implementation](#dpdl-example-for-a-reusable-realtime-asynchronous-event-handler-implementation)
+
+[dpdl example using the dpdl realtime abstraction library](#dpdl-example-using-the-dpdl-realtime-abstraction-library)
 
 ### dpdl example using RTSJ API directly
 
@@ -116,128 +116,8 @@ class Worker : refObj("RealtimeThread") {
  
  ```
  
-### dpdl example using the dpdl realtime abstraction library
- 
-dpdl example using the 'RealtimeManager' abstraction interface available with the dpdl package '**`realtime`**' for accessing realtime Threads, Timers and Memory.
- 
- ```python
- 
- import('realtime')
+* [Examples](#examples)
 
-
-class MyTask : refObj("DpdlRunnable"){
-
-	func run()
-		println("some heartbeat at: " + sys.currentTimeMillis())
-	end
-}
-
-class MySense : refObj("DpdlRunnable"){
-
-	func run()
-		println("executing a task with some embedded java code...")
-		>>java
-			while (!Thread.currentThread().isInterrupted()) {
-				try {
-					// Read some sensor data here
-					Thread.sleep(50);
-				} catch (InterruptedException e) {
-					break;
-				}
-			}
-			return 1;
-		<<
-		int exit_code = dpdl_exit_code()
-
-		println("task exit code: " + exit_code)
-	end
-}
-
-
-class MyExec : refObj("DpdlSupplier"){
-
-	func get()
-		>>java
-			double calc = 0;
-			for (int i = 0; i < 1000; i++) {
-				calc += Math.sqrt(i);
-			}
-			return "Result: " + calc;
-		<<
-		return dpdl_stack_buf_get()
-	end
-}
-
-
-println("testing Dpdl API real-time threads via RTSJ spec ....")
-
-object sys = getObj("System")
-
-object rtmgr = realtime.getRealtimeManager()
-
-object prio_level = rtmgr.PriorityLevel
-
-println("1) executing a scheduled task...")
-
-class MyTask1 task1()
-
-object mytask = rtmgr.schedulePeriodicTask("My heartbeat", 100,  0, task1)
-
-string mytask_id = rtmgr.getTimerId(mytask)
-
-println("timer task started with id: " + mytask_id)
-
-
-println("2) creating a RealtimeThread ...")
-
-class MySense sensor1()
-
-object mythread1 = rtmgr.createRealtimeThread("SensorReader1", rtmgr.getPriorityValue(prio_level.MEDIUM), sensor1)
-
-string mythread1_id = rtmgr.getThreadId(mythread1)
-
-println("RT thread created with id: " + mythread1_id)
-
-
-
-println("3) creating a RealtimeThread with No Heap access...")
-
-class MySense sensor2()
-
-object mythread2 = rtmgr.createNoHeapRealtimeThread("SensorReader2", rtmgr.getPriorityValue(prio_level.HIGH), sensor2)
-
-string mythread2_id = rtmgr.getThreadId(mythread2)
-
-println("RT thread created with id: " + mythread2_id)
-
-
-println("changing priority of SensorReader1...")
-
-int curr_prio = rtmgr.getThreadPriority(mythread1_id)
-
-rtmgr.setThreadPriority(mythread1_id, curr_prio+3)
-
-
-println("4) executing some computation in scoped memory")
-
-class MyExec mycalc()
-
-object result = rtmgr.executeInLTMemory(1024L * 1024L, mycalc)
-
-println("result: " + result)
-
-println("completed")
-
-
-println("shutting down and cleaning up...")
-
-rtmgr.shutdown()
-
-println("finished")
-
- 
- ```
- 
 ### dpdl example for a reusable realtime asynchronous event handler implementation
  
 This Dpdl example shows the usage and the implementation of the dpdl **`class`** -> a reusable realtime asynchronous event hanlder
@@ -405,3 +285,129 @@ class ReusableAEH : refObj("AsyncEventHandler" {
  ```
  
  dpdl source: [realtime/dpdlRTSJAsyncEventHandler.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlRTSJAsyncEventHandler.h)
+ 
+* [Examples](#examples)
+
+
+### dpdl example using the dpdl realtime abstraction library
+ 
+dpdl example using the 'RealtimeManager' abstraction interface available with the dpdl package '**`realtime`**' for accessing realtime Threads, Timers and Memory.
+ 
+ ```python
+ 
+ import('realtime')
+
+
+class MyTask : refObj("DpdlRunnable"){
+
+	func run()
+		println("some heartbeat at: " + sys.currentTimeMillis())
+	end
+}
+
+class MySense : refObj("DpdlRunnable"){
+
+	func run()
+		println("executing a task with some embedded java code...")
+		>>java
+			while (!Thread.currentThread().isInterrupted()) {
+				try {
+					// Read some sensor data here
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					break;
+				}
+			}
+			return 1;
+		<<
+		int exit_code = dpdl_exit_code()
+
+		println("task exit code: " + exit_code)
+	end
+}
+
+
+class MyExec : refObj("DpdlSupplier"){
+
+	func get()
+		>>java
+			double calc = 0;
+			for (int i = 0; i < 1000; i++) {
+				calc += Math.sqrt(i);
+			}
+			return "Result: " + calc;
+		<<
+		return dpdl_stack_buf_get()
+	end
+}
+
+
+println("testing Dpdl API real-time threads via RTSJ spec ....")
+
+object sys = getObj("System")
+
+object rtmgr = realtime.getRealtimeManager()
+
+object prio_level = rtmgr.PriorityLevel
+
+println("1) executing a scheduled task...")
+
+class MyTask1 task1()
+
+object mytask = rtmgr.schedulePeriodicTask("My heartbeat", 100,  0, task1)
+
+string mytask_id = rtmgr.getTimerId(mytask)
+
+println("timer task started with id: " + mytask_id)
+
+
+println("2) creating a RealtimeThread ...")
+
+class MySense sensor1()
+
+object mythread1 = rtmgr.createRealtimeThread("SensorReader1", rtmgr.getPriorityValue(prio_level.MEDIUM), sensor1)
+
+string mythread1_id = rtmgr.getThreadId(mythread1)
+
+println("RT thread created with id: " + mythread1_id)
+
+
+
+println("3) creating a RealtimeThread with No Heap access...")
+
+class MySense sensor2()
+
+object mythread2 = rtmgr.createNoHeapRealtimeThread("SensorReader2", rtmgr.getPriorityValue(prio_level.HIGH), sensor2)
+
+string mythread2_id = rtmgr.getThreadId(mythread2)
+
+println("RT thread created with id: " + mythread2_id)
+
+
+println("changing priority of SensorReader1...")
+
+int curr_prio = rtmgr.getThreadPriority(mythread1_id)
+
+rtmgr.setThreadPriority(mythread1_id, curr_prio+3)
+
+
+println("4) executing some computation in scoped memory")
+
+class MyExec mycalc()
+
+object result = rtmgr.executeInLTMemory(1024L * 1024L, mycalc)
+
+println("result: " + result)
+
+println("completed")
+
+
+println("shutting down and cleaning up...")
+
+rtmgr.shutdown()
+
+println("finished")
+
+ ```
+ 
+ * [Examples](#examples)
