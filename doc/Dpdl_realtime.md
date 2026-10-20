@@ -71,7 +71,7 @@ test_prio.join()
 println("finished")
 ```
 
-#### Implementation of the dpdl **`class`** '**Worker**' (example above):
+#### Implementation of the dpdl **`class`** '**Worker**' (for example above 'TestPriority'):
 
 ```python
  
