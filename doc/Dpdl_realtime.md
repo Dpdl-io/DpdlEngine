@@ -291,58 +291,12 @@ class ReusableAEH : refObj("AsyncEventHandler" {
 
 ### dpdl example using the dpdl realtime abstraction library
  
-dpdl example using the 'RealtimeManager' abstraction interface available with the dpdl package '**`realtime`**' for accessing realtime Threads, Timers and Memory.
+dpdl example the that uses the '**RealtimeManager**' abstraction interface available within the dpdl library package '**`realtime`**' --> for accessing *realtime* **Threads**, **Timers** and **Memory**.
+ 
  
  ```python
  
- import('realtime')
-
-
-class MyTask : refObj("DpdlRunnable"){
-
-	func run()
-		println("some heartbeat at: " + sys.currentTimeMillis())
-	end
-}
-
-class MySense : refObj("DpdlRunnable"){
-
-	func run()
-		println("executing a task with some embedded java code...")
-		>>java
-			while (!Thread.currentThread().isInterrupted()) {
-				try {
-					// Read some sensor data here
-					Thread.sleep(50);
-				} catch (InterruptedException e) {
-					break;
-				}
-			}
-			return 1;
-		<<
-		int exit_code = dpdl_exit_code()
-
-		println("task exit code: " + exit_code)
-	end
-}
-
-
-class MyExec : refObj("DpdlSupplier"){
-
-	func get()
-		>>java
-			double calc = 0;
-			for (int i = 0; i < 1000; i++) {
-				calc += Math.sqrt(i);
-			}
-			return "Result: " + calc;
-		<<
-		return dpdl_stack_buf_get()
-	end
-}
-
-
-println("testing Dpdl API real-time threads via RTSJ spec ....")
+ println("testing Dpdl API real-time threads via RTSJ spec ....")
 
 object sys = getObj("System")
 
@@ -407,6 +361,58 @@ println("shutting down and cleaning up...")
 rtmgr.shutdown()
 
 println("finished")
+
+```
+
+Below the implementation of the dpdl **`class`** components **`MyTask`**, **`MySense`** and **`MyExec`** related to the example above:
+ 
+```python
+ 
+ import('realtime')
+
+
+class MyTask : refObj("DpdlRunnable"){
+
+	func run()
+		println("some heartbeat at: " + sys.currentTimeMillis())
+	end
+}
+
+class MySense : refObj("DpdlRunnable"){
+
+	func run()
+		println("executing a task with some embedded java code...")
+		>>java
+			while (!Thread.currentThread().isInterrupted()) {
+				try {
+					// Read some sensor data here
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					break;
+				}
+			}
+			return 1;
+		<<
+		int exit_code = dpdl_exit_code()
+
+		println("task exit code: " + exit_code)
+	end
+}
+
+
+class MyExec : refObj("DpdlSupplier"){
+
+	func get()
+		>>java
+			double calc = 0;
+			for (int i = 0; i < 1000; i++) {
+				calc += Math.sqrt(i);
+			}
+			return "Result: " + calc;
+		<<
+		return dpdl_stack_buf_get()
+	end
+}
 
  ```
  

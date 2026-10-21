@@ -19,6 +19,32 @@ Dpdl allows to access <ins>Native shared C/C++ library</ins> functions seamlessl
 
 This features makes the dpdl programming language complete also for interacting with low level system components and native libraries.
 
+```c
+
+import('native')
+
+
+println("loading native library 'libc'...")
+
+object libc = native.loadLib("c")
+
+raise(libc, "Error in loading library")
+
+println("allocating native memory...")
+
+object memory = libc.malloc(4096)
+memory.setMemory(0L, 4096L, 0x00B)
+
+println("memory: " + typeof(memory))
+
+println("getting environment variable...")
+
+string env = libc.getenv("MY_ENV")
+
+println("env: " + env)
+
+```
+
 The Dpdl native interface can be used in two different Modes:
 
 * a) via **Legacy Native** support (*JNI*)--> when running on older JVMs, from Java **`1.4+`** onwards
@@ -29,13 +55,15 @@ The mode **a) Legacy Native** works on all JVM versions starting from version 1.
 
 The mode **b) FFM** is availalbe since Java 17+.
 
+
 If required, also both modes (*legacy* & *ffm*) can be activated simultaneously.
 
 The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*' --> see [Configuration](#configuration)
 
+
 The Legacy Native mode is currently the default mode to ensure a high degree of backwards compatibility.
 
-Both Modes, the **legacy** as well as **ffm** mode, from the dpdl code point of view have the same usage and API, except for some small enhancements.
+Both Modes, the **legacy** as well as **ffm** mode, from the dpdl code point of view have the same usage and API
 
 
 ### Dpdl 'native' import library

@@ -16,33 +16,25 @@ by
 ## Dpdl examples
 
 ```c
-println("dpdl example with use of static arrays vs. dynamic arrays")
 
-float myarr_static[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0}
+object map = new("HashMap")
 
-myarr_dyn[] = [1, 2, 3, 4, 5, 6]
+map.put(1, "data1")
+map.put(2, "data2")
+map.put(3, "data3")
 
-println("dynamic array: " + myarr_dyn)
+println("my map: " + map)
 
-float v
-int i
-for(i < 5)
-	v = 10.0 * myarr_static[i]
-	if((i % 2) == 0)
-		myarr_dyn[i] = v
-	else
-		myarr_dyn[i] = to_string(v/10.0)
-	fi
-	i=i+1
-endfor
+println("iterating over the map using a key/value iterator")
 
-object arrobj = myarr_dyn.getArrObj()
+object keys = map.keySet()
+object iter = keys.iterator()
 
-object iter = arrobj.iterator()
-
+object key, value
 while(iter.hasNext())
-	object elem = iter.next()
-	println("elem: " + elem + " is of type: " + typeof(elem))
+	key = iter.next()
+	value = map.get(key)
+	println("" + key + "=" + value)
 endwhile
 ```
 
