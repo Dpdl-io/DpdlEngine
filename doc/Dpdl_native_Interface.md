@@ -47,13 +47,9 @@ println("env: " + env)
 
 The Dpdl native interface can be used in two different Modes:
 
-* a) via **Legacy Native** support (*JNI*)--> when running on older JVMs, from Java **`1.4+`** onwards
+* a) via **Legacy Native** support (*JNI*)--> works on all JVM starting from version 1.4+
 
-* b) via the Newer Java **FFM** (*Foreign Function Memory*) Native --> when running on newer JVMs, since Java **`17+`** onwards
-
-The mode **a) Legacy Native** works on all JVM versions starting from version 1.4+
-
-The mode **b) FFM** is availalbe since Java 17+.
+* b) via the Newer Java **FFM** (*Foreign Function Memory*) Native --> **FFM** is available since Java 17+.
 
 
 If required, also both modes (*legacy* & *ffm*) can be activated simultaneously.

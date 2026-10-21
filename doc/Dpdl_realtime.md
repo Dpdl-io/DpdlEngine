@@ -364,11 +364,11 @@ println("finished")
 
 ```
 
-Below the implementation of the dpdl **`class`** components **`MyTask`**, **`MySense`** and **`MyExec`** related to the example above:
+#### Below the implementation of the dpdl **`class`** components: **`MyTask`**, **`MySense`** and **`MyExec`** (see example above):
  
 ```python
  
- import('realtime')
+import('realtime')
 
 
 class MyTask : refObj("DpdlRunnable"){
