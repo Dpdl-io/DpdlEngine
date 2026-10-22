@@ -24,7 +24,7 @@ When running Dpdl on a realtime system, the main internal DpdlEngine threads are
 The realtime functions can be accessed:
  
 - either directly using the RTSJ spec API
-- or accessed via an abstraction layer available within the dpdl library package '**`realtime`**' --> enables to handle multiple realtime threads and timer resources thought a unified interface based on the RTSJ api.
+- or accessed via an abstraction layer available within the dpdl library package '**`realtime`**' --> enables to handle multiple realtime threads and timer resources through a unified interface based on the RTSJ api.
 
 ### Examples:
 

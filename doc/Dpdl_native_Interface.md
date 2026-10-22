@@ -33,9 +33,11 @@ raise(libc, "Error in loading library")
 println("allocating native memory...")
 
 object memory = libc.malloc(4096)
-memory.setMemory(0L, 4096L, 0x00B)
+mem.setMemory(0L, 4096L, 0x00B)
 
 println("memory: " + typeof(memory))
+
+libc.free(memory)
 
 println("getting environment variable...")
 
