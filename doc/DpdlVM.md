@@ -149,7 +149,7 @@ endfor
 
 println("blinking a LED via 'mruby' and a gem lib...")
 
->>mruby(async)
+>>mruby("dpdl:async")
 
 	led = ESP32::GPIO_NUM_2
 	ESP32::GPIO::pinMode(led, ESP32::GPIO::OUTPUT)
@@ -174,5 +174,5 @@ while(true)
 endwhile
 ```
 
-The **mruby** *gem* lib used here within the ruby code is: [mruby-esp32-gpio](https://github.com/mruby-esp32/mruby-esp32-gpio)
+The **mruby** *gem* library used in the example with the ruby 'embedded code section' above is: [mruby-esp32-gpio](https://github.com/mruby-esp32/mruby-esp32-gpio)
 

@@ -19,12 +19,7 @@ The data in a 'DpdlPacket' is organized in chunks of <ins>**highly compressed da
 
 Chunks of data contained in a 'DpdlPacket' can be <ins>allocated</ins>, <ins>executed</ins>, <ins>queried</ins> and <ins>deallocated</ins> when data is not needed anymore.
 
-This approach enables to handle very efficiently relatively "big" amounts of data on memory scarce devices.
-
-The performance of query execution when querying a DpdlPacket is <ins>**x25 times faster**</ins> compared to the standard record store access.
-
-
-### Layout of a 'DpdlPacket'
+#### Layout of a 'DpdlPacket'
 
 ```
 		---------------------------
@@ -42,13 +37,22 @@ The performance of query execution when querying a DpdlPacket is <ins>**x25 time
 		|__________________________|	
 														
 ```	
-										
+
+This approach enables to handle very efficiently relatively "big" amounts of data on memory scarce devices.
+
+The performance of query execution when querying a DpdlPacket is <ins>**x25 times faster**</ins> compared to the standard record store access.
+
+				
 This allows a very efficient method of accessing and searching relatively "big" amounts of data in memory scarce devices.
 
 Dpdl code can be embedded in the DpdlPacket code definition and allows to trigger its execution on predefined callbacks.
 This makes a DpdlPacket an executable packet of data.
 
-This is an example DpdlPacket code definition (a phonebook database), which is compiled to a DpdlPacket containing all definitions and all chunks of data in a highly compressed format:
+### Example: DpdlPacket code definition
+
+This is an example DpdlPacket code definition (i.e a phonebook database),
+
+This is compiled to a DpdlPacket containing all definitions and all chunks of data in a highly compressed format:
 
 ```c++
 call(dpdlInterpreter)

@@ -10,27 +10,29 @@
 # e-mail: ac@dpdl.io
 #
 #
+
 import('native')
 
-# main
+
+
 println("Dpdl sample code that uses native function calls to 'libc'")
 
 println("loading 'libc' library...")
 
-object clib = native.loadLib("c")
+object libc = native.loadLib("c")
 
-raise(clib, "Error in loading library")
+raise(libc, "Error in loading library")
 
 println("getting uid...")
 
-int uid = clib.getuid()
+int uid = libc.getuid()
 println("uid: " + uid)
 
 println("opening file in RW mode for writing...")
 
-object fcntl = getObj("Fcntl")
+object fcntl = getClass("Fcntl")
 
-int fh = clib.open("./Test/TestWriteNative.txt", fcntl.O_RDWR)
+int fh = libc.open("./Test/TestWriteNative.txt", fcntl.O_RDWR)
 
 raise(fh, "Error in opening file")
 
@@ -54,10 +56,10 @@ size.setValue(4096L)
 
 long size_l = size.longValue()
 
-object memory = clib.malloc(4096)
+object memory = libc.malloc(4096)
 memory.setMemory(0L, 4096L, 0x00B)
 
-println("memory: " + typeof(memory))
+println("memory: " + typeof(memory) + " size: " + sizeof(memory))
 
 object bytebuf = memory.getByteBuffer(0L, size_l)
 
@@ -74,19 +76,19 @@ bytebuf.putChar(ch5)
 bytebuf.putChar(ch6)
 bytebuf.putChar(ch7)
 
-object sz = clib.write(fh, memory, size)
+object sz = libc.write(fh, memory, size)
 
 println("nr of bytes written: " + sz)
 
-clib.close(fh)
+libc.close(fh)
 
 println("reading from file...")
 
-fh = clib.open("./Test/TestWriteNative.txt", fcntl.O_RDONLY)
+fh = libc.open("./Test/TestWriteNative.txt", fcntl.O_RDONLY)
 
 memory.setMemory(0L, 4096L, 0x00B)
 
-object szr = clib.read(fh, memory, size)
+object szr = libc.read(fh, memory, size)
 
 println("nr of bytes read: " + szr)
 
@@ -118,7 +120,9 @@ println("rch4: " + rch4)
 println("rch5: " + rch5)
 println("rch6: " + rch6)
 
-clib.close(fh)
+libc.close(fh)
+
+libc.free(memory)
 
 println("")
 println("finished")

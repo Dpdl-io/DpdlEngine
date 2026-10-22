@@ -13,9 +13,9 @@ by
 
 
 
-## Dpdl realtime capabilities by using the RTSJ specification
+## Dpdl realtime with RTSJ
 
-For realtime applications Dpdl integrates also constructs and semantics to interact with APIs based on the RTSJ (*Real-Time Specification for Java*) specification to handle realtime threading on systems and platforms with real-time capabilities.
+For realtime applications Dpdl integrates also constructs and semantics to interact with the RTSJ (*Real-Time Specification for Java*) specification to handle realtime threading on systems and platforms with real-time capabilities.
 
 The RTSJ (*Real-Time Specification for Java*) provides an API to create realtime threads and event handlers, for interacting with devices and native memory, to enforce resource limits and to handle POSIX signals.
 
@@ -24,7 +24,7 @@ When running Dpdl on a realtime system, the main internal DpdlEngine threads are
 The realtime functions can be accessed:
  
 - either directly using the RTSJ spec API
-- or accessed via an abstraction layer available within the dpdl library package '**`realtime`**' --> enables to handle multiple realtime threads and timer resources through a unified interface based on the RTSJ api.
+- or accessed via an abstraction layer available within the dpdl library package '**`realtime`**' --> enables to handle multiple realtime threads and timer resources through a unified interface based on the RTSJ.
 
 ### Examples:
 

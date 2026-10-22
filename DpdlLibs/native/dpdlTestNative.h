@@ -10,9 +10,9 @@
 
 import('native')
 
+
 object libc = native.loadLib("c")
 
-# main
 println("testing native interface with 'libc'...")
 println("")
 
@@ -47,6 +47,7 @@ println("testing malloc...")
 object ptr = libc.malloc(1024)
 
 ptr.setMemory(0L, 1024L, 0x00B)
+
 libc.free(ptr)
 
 println("done")
@@ -54,7 +55,7 @@ println("")
 
 println("testing file access...")
 
-object fcntl = getObj("Fcntl")
+object fcntl = getClass("Fcntl")
 
 int fh = libc.open("./Test/TestWrite.txt", fcntl.O_RDWR)
 
@@ -74,6 +75,8 @@ sz = libc.write(fh, ptrstr, sz)
 println("data size written: " + sz)
 println("")
 
+libc.free(ptrstr)
+
 println("testing memory copy...")
 
 string mymem_data = "my data string to copy: MEGA"
@@ -90,6 +93,7 @@ println("char_dest is of type: " + typeof(char_src))
 
 object size = new("size_t")
 size.setValue(1024L)
+
 int comp = libc.memcmp(char_src, char_dest, size)
 if(comp > 0)
 	println("'*char_dest' is less than *char_src")
@@ -97,23 +101,25 @@ fi
 
 object ptr_dest = new("PointerByReference")
 ptr_dest.setValue(char_dest)
+
 object ptr_content = ptr_dest.getValue()
 
 println("before copy memory is: " + ptr_content.getString(0L))
 
 println("copying from source buffer...")
 
-object szm = new("size_t")
-szm.setValue(1024L)
-
-object p = libc.memcpy(char_dest, char_src, szm)
+object p = libc.memcpy(char_dest, char_src, size)
 
 println("after copy memory is: " + ptr_content.getString(0L))
 
 comp = libc.memcmp(char_src, char_dest, size)
+
 if(comp == 0)
 	println("'*char_dest' and '*char_src' now are EQUAL")
 fi
+
+libc.free(char_src)
+libc.free(char_dest)
 
 println("")
 println("done")

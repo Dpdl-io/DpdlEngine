@@ -30,7 +30,7 @@ The Dpdl language constructs and syntax are simple and intuitive, yet powerful, 
 
 **Dpdl** provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared C/C++ libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
 
-The included component **DpdlAI** enables to automatically generate AI generative <ins>code and data sections</ins> right inside dpdl code. The AI engine back-ends used for inference can either run completely locally or accessed remotely via RESTful APIs.
+The included component **DpdlAI** enables to automatically generate AI generative <ins>code</ins> and <ins>data sections</ins> right inside dpdl code. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
 
 The *DpdlEngine* core has the capability to run also on <ins>**constrained devices**</ins> and <ins>**limited memory platforms**</ins> like *MCUs* and *SoCs* via a dedicated compact code kilobyte range virtual machine.
 
@@ -142,7 +142,7 @@ The included *Dpdl language plug-in* '**DpdlAgent**' includes an agent developme
 
 [Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
-[Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
+[Dpdl meta Programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
 [Dpdl protocols](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_protocols.md)
 
@@ -1163,7 +1163,7 @@ The Dpdl platform and API documentation is available via the following links:
 
 [Dpdl Wasm runtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/addon_plugins/Dpdl_Wasm_runtime.md)
 
-[Dpdl Meta-programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
+[Dpdl meta Programming](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_meta.md)
 
 [Dpdl protocols](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_protocols.md)
 

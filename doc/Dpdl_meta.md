@@ -11,7 +11,7 @@ by
 &copy;	
 
 
-## Dpdl Meta programming
+## Dpdl meta Programming
 
 The dpdl API provides functions to enable dynamic code generation and transformation at runtime and compile-time
 
