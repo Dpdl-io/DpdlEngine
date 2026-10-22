@@ -14,7 +14,7 @@ by **SEE Solutions** &copy;
 
 ## **`Dpdl`** - a rapid development Programming Language and constrained Device platform
 
-**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology with powerful AI generative code capabilities.
+**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology with powerful AI generative code capabilities
 
 Dpdl comes as a very <ins>**compact**</ins> and <ins>**portable**</ins> execution engine (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and at it's <ins>**native Speed**</ins>.
 
@@ -26,7 +26,9 @@ Dpdl enables **Polyglot programming**, on multiple platforms and on constrained 
 	<img src="https://www.dpdl.io/images/platform/Dpdl_programming_language_framework_small.png">
 </p>
 
-The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (**OOP**) interoperable with **JVM platform APIs** and **Native shared libraries**. It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>**Meta-programming**</ins> techniques.
+The Dpdl language constructs and syntax are simple and intuitive, yet powerful, with an object oriented paradigm (**OOP**) interoperable with **JVM platform APIs** and **Native shared libraries**.
+
+It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>**meta-Programming**</ins> techniques.
 
 **Dpdl** provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared C/C++ libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
 

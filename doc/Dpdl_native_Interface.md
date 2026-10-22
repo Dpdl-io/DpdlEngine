@@ -56,7 +56,7 @@ The Dpdl native interface can be used in two different Modes:
 
 If required, also both modes (*legacy* & *ffm*) can be activated simultaneously.
 
-The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*' --> see [Configuration](#configuration)
+The mode can be configured in the dpdl configuration file '*DpdlEngine.ini*'
 
 
 The Legacy Native mode is currently the default mode to ensure a high degree of backwards compatibility.
