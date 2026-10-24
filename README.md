@@ -30,7 +30,7 @@ The Dpdl language constructs and syntax are simple and intuitive, yet powerful, 
 
 It enables also dynamic code generation and execution of heterogeneous embedded code sections, featuring <ins>**meta-Programming**</ins> techniques.
 
-**Dpdl** provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared C/C++ libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
+Dpdl provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared C/C++ libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
 
 The included component **DpdlAI** enables to automatically generate AI generative <ins>code</ins> and <ins>data sections</ins> right inside dpdl code. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
 
@@ -46,7 +46,7 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, mostly <ins>**interpreted**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
 
-Dpdl introduces the concept of '*embedded code sections*' that allows code of different programming languages, or any custom developed code syntax, to be embedded and executed directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
+Dpdl introduces the concept of '*embedded code sections*' that allows code of different programming languages, or any custom developed code syntax, to be <ins>embedded</ins> and <ins>executed</ins> directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
 
 Everything comes already included as part of the *DpdlEngine* release, **<ins>No additional installations required</ins>**.
 
@@ -89,7 +89,7 @@ and also for some less known, but yet very powerful programming languages:
 * **` others will follow...`**
 
 
-<ins>**Multiple**</ins> '*Dpdl language plug-ins*' are currently available for various programming languages and different platforms. Also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in development, for example to enable also <ins>**Quantum Computing**</ins>.
+<ins>**Multiple**</ins> '*Dpdl language plug-ins*' are currently available for various programming languages and different platforms. Also the '**Modelica**' language for cyber-physical simulations is  available as '*Dpdl language plug-in*'. Further Dpdl language plug-ins are currently in development to enable also <ins>**Quantum Computing**</ins> inside dpdl.
 
 <p float="left">
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Modelica.png">
