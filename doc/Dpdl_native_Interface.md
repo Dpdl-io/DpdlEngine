@@ -33,7 +33,7 @@ raise(libc, "Error in loading library")
 println("allocating native memory...")
 
 object memory = libc.malloc(4096)
-mem.setMemory(0L, 4096L, 0x00B)
+memory.setMemory(0L, 4096L, 0x00B)
 
 println("memory: " + typeof(memory))
 
