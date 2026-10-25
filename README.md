@@ -32,8 +32,6 @@ It enables also dynamic code generation and execution of heterogeneous embedded 
 
 Dpdl provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared C/C++ libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
 
-The included component **DpdlAI** enables to automatically generate AI generative <ins>code</ins> and <ins>data sections</ins> right inside dpdl code. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
-
 The *DpdlEngine* core has the capability to run also on <ins>**constrained devices**</ins> and <ins>**limited memory platforms**</ins> like *MCUs* and *SoCs* via a dedicated compact code kilobyte range virtual machine.
 
 ## Dpdl components:
@@ -43,12 +41,13 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 - **DpdlAgent** -> Mobile Agent development platform within dpdl code
 - **DpdlAI** -> AI generative Code & Data within dpdl code
 
+The included component **DpdlAI** enables to automatically generate AI generative <ins>code</ins> and <ins>data sections</ins> right inside dpdl code. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
 
 Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, mostly <ins>**interpreted**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
 
 Dpdl introduces the concept of '*embedded code sections*' that allows code of different programming languages, or any custom developed code syntax, to be <ins>embedded</ins> and <ins>executed</ins> directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
 
-Everything comes already included as part of the *DpdlEngine* release, **<ins>No additional installations required</ins>**.
+Everything comes already included as part of the *DpdlEngine* release, **<ins>No additional installations needed</ins>**.
 
 ### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Slang + Modelica*) = <ins>Powerful and Versatile</ins>
 
