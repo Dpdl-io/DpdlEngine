@@ -128,7 +128,7 @@ The included *Dpdl language plug-in* '**DpdlAgent**' includes an agent developme
 
 ## Docs
 
-[Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
+[dpdl-lang quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
 
 [Dpdl language Specification](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
