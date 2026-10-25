@@ -1,4 +1,4 @@
-# Dpdl (Dynamic Packet Definition Language)
+## Dpdl (Dynamic Packet Definition Language)
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl-io_blue.png" width="35%">
@@ -12,7 +12,7 @@ by
 
 
 
-## Dpdl language quick Tour
+## **`dpdl-lang`** quick Tour
 
 
 ### Index
