@@ -40,6 +40,7 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 - **DpdlPacket** -> Dpdl Data container with Database technology
 - **DpdlAgent** -> Mobile Agent development platform within dpdl code
 - **DpdlAI** -> AI generative Code & Data within dpdl code
+- **DpdlPlugins** -> plug-ins available to execute **`embedded code sections`** within dpdl
 
 The included component **DpdlAI** enables to automatically generate AI generative <ins>code</ins> and <ins>data sections</ins> right inside dpdl code. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
 
@@ -764,7 +765,7 @@ Dpdl sample code that performs the physical simulation of a bouncing ball with e
 [modelica/dpdlModelicaExample_simple.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/modelica/dpdlModelicaExample_simple.h)
 
 
-### More Dpdl Examples
+### More **dpdl-lang** Examples
 	
 You can find more Dpdl code snippet on the following page: 
 [Dpdl_Examples.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_Examples.md)
@@ -814,12 +815,12 @@ Dpdl enables the integration of different technologies to leverage fast prototyp
 ## Access to the complete JVM platforms API's and external java libraries
 
 
-The Dpdl API allows to access all classes and methods of the <ins>underlying JVM platforms (JRE)</ins> and of any <ins>external java library</ins>.
+The Dpdl API allows to access all classes and methods of the underlying <ins>JVM platforms</ins> and of any <ins>external java library</ins>.
 
 **Example:** using a java HashMap (which interfaces to <em>java.util.HashMap</em>)
 
 ```python
-object map, s
+object map
 
 map = new("HashMap")
 map.put(1, "Dpdl")
@@ -827,14 +828,14 @@ map.put(2, "Packet")
 map.put(3, "Definition")
 map.put(4, "Language")
 
-s = map.get(1)
+object s = map.get(1)
 println(s)
 
 s = map.get(4)
 println(s)
 ```
 
-Iterate over the obove HashMap using the same objects and methods as provided by the java API:
+Iterate over the above HashMap using the same objects and methods as provided by the java API:
 
 ```python
 object es = map.entrySet()
@@ -846,11 +847,11 @@ while(iter.hasNext())
 endwhile
 ```
 
-In this way all java libraries defined in class definition configuration file can be loaded and accessed in Dpdl.
+In this way all java libraries defined in configuration can be loaded and accessed in Dpdl.
 
 The default configuration currently includes <ins>Java Platform API</ins>, the <ins>JavaFX</ins> API and <ins>bluecove Bluetooth JSR-82</ins> API.
 
-The default configuration <ins>can be easily extended or updated</ins> to resolve additional java APIs by editing the class definition configuration file, enabling also to use custom class specifiers.
+The default configurationcan be easily  <ins>extended or updated</ins> to resolve additional java APIs.
 
 #### Dpdl Java API's access documentation (default configuration)
 

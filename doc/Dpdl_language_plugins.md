@@ -1,5 +1,5 @@
 
-# dpdl 'embedded code sections' (*Dpdl language plug-ins*)
+# DpdlPlugins
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl-io_blue.png" width="35%">
@@ -11,6 +11,8 @@ by
 **SEE Solutions**
 &copy;
 
+
+## dpdl '**`embedded code sections`**' (*Dpdl language plug-ins*)
 
 Dpdl introduces the concept of '**`embedded code sections`**', which consists of some sort of code in <ins>different programming languages</ins>, or even some type of custom syntax, that can be embedded and executed right inside dpdl code. 
 
