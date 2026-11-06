@@ -15,7 +15,7 @@ by
 
 ## Dpdl examples
 
-```c
+```python
 
 object map = new("HashMap")
 
