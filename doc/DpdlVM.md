@@ -36,14 +36,14 @@ The typical setup for Dpdl running on constrained systems, is a DpdlVM that incl
 
 **Example:**
 
-The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for executing C 'embedded code sections' (interpreted & compiled) is only **`298 Kb`** in Total, packed as a single executable (also romizable).
+The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for executing C 'embedded code sections' (interpreted & compiled mode) is only **`298 Kb`** in Total, packed as a single executable (also romizable).
 
 When executing C code in *interpreted* mode (**Mode 1**), <ins>all libraries and include files listed here in</ins> [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md) are already included in the DpdlVM executable.
 
 
 ### Example dpdl code with '*embedded code section*' in C
 
-Simple dpdl example code with an '*embedded code section*' in C (*compiled* **Mode 2**), that runs on the DpdlVM
+Simple dpdl example code with an '*embedded code section*' in C (*compiled* **Mode 2**), that runs on the DpdlVM with a 400 Kb heap budget. 
 
 ```python
 

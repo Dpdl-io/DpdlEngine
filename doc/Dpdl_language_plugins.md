@@ -92,6 +92,7 @@ At current state, the following <ins>**Dpdl language plug-ins**</ins> are availa
 * **`V`**
 * **`Scheme`** (ChezScheme)
 * **`Clojure`**
+* **`Tcl`**
 * **`Modelica`**
 
 and also for some less known, but yet very powerful programming languages:
@@ -150,6 +151,7 @@ Custom *Dpdl language plug-ins* can be developed ad-hoc and integrated via simpl
 * [Embedding 'PHP' code](#embedding-php-code)
 * [Embedding 'SQL' code](#embedding-sql-code)
 * [Embedding 'OCaml' code](#embedding-ocaml-code)
+* [Embedding 'Tcl' code](#embedding-tcl-code)
 * [Embedding 'Modelica' code](#embedding-modelica-code)
 
 </td></tr>
@@ -294,14 +296,13 @@ dpdl_stack_push("dpdlstack:myconfig")
 
 ### Dpdl embedded programming languages - availability Matrix
 
-
-| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | Scheme | OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 | X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
-| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |*|X v4.01|
-| RISC-V | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
+| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | Tcl | Scheme | OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X |X v10.3.0 | X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X |X v10.3.0 |X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X |X v10.3.0 |X v4.01|
+| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |* |*|X v4.01|
+| RISC-V | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |* |X v10.3.0 |X v4.01|
 
 
 Note: The **Dpdl language plug-ins** are <ins>linked and fully compliant with the official programming language software releases</ins> (see 'Embedded language references' below)
@@ -1152,6 +1153,97 @@ println("embedded OCaml exit code: " + exit_code);
 
 NOTE: The Dpdl language plug-in for OCaml uses 'OCaml-java' library (http://www.ocamljava.org) which requires Java 1.7 or later to successfully compile and run generated java bytecode.
 
+
+* [Table of Contents](#table-of-contents)
+
+
+### Embedding 'Tcl code
+
+'Tcl' code can be embedded and executed within dpdl by using the keyword **`>>tcl`**
+
+The *Dpdl language plug-in* for Tcl is based on a small interpreter implementing a subset of the official Tcl language.
+
+#### keyword **`>>tcl`**
+
+```
+>>tcl
+	your Tcl code
+<<
+```
+
+**Example dpdl script with embedded 'Tcl' code:** heapsort algorithm
+
+```python
+println("testing embedded code section in 'Tcl' to perform a heapsort alg...")
+
+>>tcl
+	set IM 139968
+	set IA   3877
+	set IC  29573
+
+	set last 42
+
+	proc make_gen_random {} {
+		global IM IA IC
+		set params [list IM $IM IA $IA IC $IC]
+		set body [string map $params {
+			global last
+			expr {($max * [set last [expr {($last * IA + IC) % IM}]]) / IM}
+		}]
+		proc gen_random {max} $body
+	}
+
+	proc heapsort {ra_name} {
+		upvar 1 $ra_name ra
+		set n [llength $ra]
+		set l [expr {$n / 2}]
+		set ir [expr {$n - 1}]
+		while 1 {
+			if {$l} {
+				set rra [lindex $ra [incr l -1]]
+			} else {
+			set rra [lindex $ra $ir]
+			lset ra $ir [lindex $ra 0]
+			if {[incr ir -1] == 0} {
+					lset ra 0 $rra
+			break
+				}
+			}
+		set i $l
+		set j [expr {(2 * $l) + 1}]
+			while {$j <= $ir} {
+			set tmp [lindex $ra $j]
+			if {$j < $ir} {
+			if {$tmp < [lindex $ra [expr {$j + 1}]]} {
+				set tmp [lindex $ra [incr j]]
+			}
+			}
+				if {$rra >= $tmp} {
+			break
+			}
+			lset ra $i $tmp
+			incr j [set i $j]
+			}
+			lset ra $i $rra
+		}
+	}
+
+	proc dpdl_main {} {
+		set n 6100
+		make_gen_random
+
+		set data {}
+		for {set i 1} {$i <= $n} {incr i} {
+		lappend data [gen_random 1.0]
+		}
+		heapsort data
+	}
+<<
+int exit_code = dpdl_exit_code()
+
+println("embedded Tcl code section exit code: " + exit_code)
+
+```
 
 * [Table of Contents](#table-of-contents)
 

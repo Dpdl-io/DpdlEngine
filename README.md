@@ -50,7 +50,7 @@ Dpdl introduces the concept of '*embedded code sections*' that allows code of di
 
 Everything comes already included as part of the *DpdlEngine* release, **<ins>No additional installations needed</ins>**.
 
-### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Wat/Wasm + Wgsl + OpenCL + Slang + Modelica*) = <ins>Powerful and Versatile</ins>
+### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Tcl + Wat/Wasm + Wgsl + OpenCL + Slang + Modelica*) = <ins>Powerful and Versatile</ins>
 
 At current stage, Dpdl supports the <ins>**embedding** and **execution**</ins> of the following **programming language** code, <ins>**directly embedded**</ins> within dpdl code: 
 
@@ -73,6 +73,7 @@ At current stage, Dpdl supports the <ins>**embedding** and **execution**</ins> o
 * **`V`**
 * **`Scheme`** (ChezScheme)
 * **`Clojure`**
+* **`Tcl`**
 * **`SQL`**
 * **`WAT`** (WASM)
 * **`Wgsl`** (WebGPU)
@@ -178,7 +179,7 @@ The included *Dpdl language plug-in* '**DpdlAgent**' includes an agent developme
 * **Access to Native shared libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
 * **Automatic code generation and execution of 'embedded code sections' at runtime** (*Dpdl language plug-ins*)
-* **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, Wat/Wasm, Wgsl, OpenCL, Slang and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)
+* **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, Tcl, Wat/Wasm, Wgsl, OpenCL, Slang and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)
 * **Everything is already included**, **<ins>No additional installations needed</ins>** (except user libraries)
 * **Further programming languages and syntax interpreters can be embedded via a dedicated kernel execution interface in form of 'Dpdl language plug-ins'**
 * **Includes embedded C compiler:** On-the-fly compilation of embedded C code (ANSI C & ISO C99) for multiple platforms (i386, x86_64, ARM-32, ARM-64, RISC-V), compiles in memory at runtime -> <ins>very Fast compile time!!!</ins>
@@ -529,7 +530,7 @@ println("you can embed many other languages too...")
 println("we list them with via embedded python code:")
 
 >>python
-	languages = ['C', 'C++', 'Python', 'JavaScript', 'Julia', 'Lua', 'Ruby', 'Java', 'PHP', 'Perl', 'Groovy', 'Clojure', 'Modelica', '...']
+	languages = ['C', 'C++', 'Python', 'JavaScript', 'Julia', 'Lua', 'Ruby', 'Java', 'PHP', 'Perl', 'Groovy', 'Clojure', 'Tcl', 'Modelica', '...']
 	
 	for language in languages:
 		print(language)
@@ -945,6 +946,7 @@ This features is very useful for rapid development and rapid prototyping and is 
 * **`V`**
 * **`Scheme`** (ChezScheme)
 * **`Clojure`**
+* **`Tcl`**
 * **`Modelica`**
 
 and also for some less known, but yet very powerful programming languages:
@@ -1116,13 +1118,13 @@ DpdlEngine V1.0 has been tested on:
 At current state, the '**DpdlEngine**' release can include the following *Dpdl language plug-ins*, compliant to the corresponding language implementation version.
 
 
-| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | Scheme | OCaml |
-| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 | X v4.01|
-| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
-| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
-| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |*|X v4.01|
-| RISC-V | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X v10.3.0 |X v4.01|
+| Platform | C | Python | Julia | Js | Modelica | Lua | C++ | Ruby | Java | Groovy | MicroPython | V | PHP | Perl | Clojure | Tcl | Scheme | OCaml |
+| ---  | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Linux (x86_64) |X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X |X v10.3.0 | X v4.01|
+| Mac OS X (aarch64) |X|X v3.12|X v1.9.3|X|X v3.6|X v5.4|X v14.0.3|X 3.2.2|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X |X v10.3.0 |X v4.01|
+| Raspberry PI 3 (armv7) | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |X |X v10.3.0 |X v4.01|
+| Windows64|X|*|*|X|X v3.6|*|*|*|X|X v5.0|*|v0.4.9 |*|*|X v1.12.0 |* |*|X v4.01|
+| RISC-V | X|X v3.2|X v1.9.3|X|X v3.6|X v5.4|*|*|X|X v5.0|X v1.24.0 |v0.4.9 |X v5.3 |X v5.40.0 |X v1.12.0 |* |X v10.3.0 |X v4.01|
 
 
 ### Add-on Dpdl language plug-ins - compatibility matrix

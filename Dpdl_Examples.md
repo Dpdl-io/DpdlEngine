@@ -553,6 +553,9 @@ this is my sample json:
 
 	[test/testEmbedCodeSections.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testEmbedCodeSections.h )
 
+* Example dpdl code with an embedded code section in Tcl code that implements the heapsort algorithm
+
+	[tcl/dpdlTclExample.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/tcl/dpdlTclExample.h)
 
 [Index](#index)
 
