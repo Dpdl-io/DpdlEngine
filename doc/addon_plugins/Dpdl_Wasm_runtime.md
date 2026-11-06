@@ -27,7 +27,7 @@ The *Dpdl language plug-in* for WASM <ins>includes also a compiler</ins> to comp
 
 The *Dpdl language plug-in* also supports 2 district WASM runtimes available as configurable options.
 
-**example:** compiling WAT code and call wasm module functions from <ins>dpdl</ins>
+**Example:** compiling WAT code and call wasm module functions from <ins>dpdl</ins>
 
 ```python
 
@@ -77,8 +77,8 @@ println("finished")
 
 Two distinct WAMS runtimes are curently available and can be activated by means of configuration on the dpdl stack.
 
-* 1) **WasmEdge**
-* 2) **Wasmer**
+- 1) **WasmEdge**
+- 2) **Wasmer**
 
 To cover at best many use cases and technologies, DpdlEngine provides 2 distinct runtimes for executing wasm, each of them providing functionalities to sweet particular use cases. The dpdl language plug-ins have been developed on top of popular open source wasm runtimes available (see References below).
 
@@ -146,7 +146,7 @@ The 'Wasmer' ruby runtime bindings are available here: https://github.com/wasmer
 
 ### Compiling a WAT module that makes use of an external wasm lib functions
 
-```
+```python
 println("testing embedded WAT compiler and WASM runtime...")
 
 dpdl_runtime_push("dpdlruntime:./DpdlLibs/wasm/code/lib.wasm")
