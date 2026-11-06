@@ -43,7 +43,7 @@ When executing C code in *interpreted* mode (**Mode 1**), <ins>all libraries and
 
 ### Example dpdl code with '*embedded code section*' in C
 
-Simple dpdl example code with an '*embedded code section*' in C (*compiled* **Mode 2**), that runs on the DpdlVM with a 400 Kb heap budget. 
+Simple dpdl example code with an '*embedded code section*' in C (*compiled* **Mode 2**), that runs on the DpdlVM with a **`400 Kb`** heap size budget. 
 
 ```python
 
