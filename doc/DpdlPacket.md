@@ -229,10 +229,10 @@ on Windows
 	
 	The example dpdl script to perform the queries is [dpdlpacket/testDpdlDB2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/dpdlpacket/testDpdlDB2.h)
 	
-	To run the dpdl script execute the command -load command in the console and enter the query console example script:
+	To run the dpdl script execute the command -run command in the console and enter the query console example script:
 	
 	```
-	-load
+	-run
 	enter the Dpdl script name to execute:
 	dpdlpacket/testDpdlDB2.h
 	```
@@ -252,8 +252,9 @@ on Windows
 		   -> i #abs(search_rand_int) 
 		
 
+## Dpdl Database technology
 		
-The 'DpdlPacket' database technology in Dpdl has been developed since year 2003, when the first java applications where developed for mobile devices.
+The Dpdl database technology '**DpdlPacket**' has been developed since the very beginning in year 2003, when the first java applications where developed for mobile devices.
 
 It started with a BsC thesis by A.C:
 

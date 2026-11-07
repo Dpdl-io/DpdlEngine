@@ -96,11 +96,11 @@ and also for some less known, but yet very powerful programming languages:
 </p>
 
 
-The set of components **DpdlAI** enable to automatically generate AI generative <ins>code</ins> and content or <ins>data sections</ins> by means of natural language descriptions inside dpdl code and embed the genrated code within the execution. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
+The set of components in **DpdlAI** enable to automatically generate AI generative <ins>code</ins> and content or <ins>data sections</ins> by means of natural language descriptions contained inside dpdl code and embed the generated code within the execution flow. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
 
 Dpdl allows to create custom data containers with built-in database technology defined as '**DpdlPacket**'. It provides a convenient way to <ins>**package</ins>, <ins>handle</ins> and <ins>query</ins> data very <ins>efficiently on memory scarce devices**</ins>.
 
-The provided component '**DpdlAgent**' includes an agent development middle-ware based on open source for building distributed and mobile multi-agent systems. It fully adheres to *IEEE FIPA* (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The component '**DpdlAgent**' includes an agent development middle-ware based on open source for building distributed and mobile multi-agent systems. It fully adheres to *IEEE FIPA* (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable Agent communication and coordination.
 
 
 ## Dpdl is designed to:
@@ -110,7 +110,7 @@ The provided component '**DpdlAgent**' includes an agent development middle-ware
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Re-use code
 ### * No need to install, compile and configure development environments
-### * Self-contained, No additional dependencies required (except user libraries)
+### * Self-contained, No additional dependencies required (except add-on user libraries)
 ### * Facilitate rapid prototyping for Hardware programming
 ### * Runs on constrained devices and also Microcontroller units (MCUs)
 ### * Customizable
@@ -156,11 +156,11 @@ The provided component '**DpdlAgent**' includes an agent development middle-ware
 
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
 
-[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
-
 [Dpdl profiles](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_profiles.md)
 
 [Dpdl realtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_realtime.md)
+
+[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_proposal_drafts.md)
 
 ### More...
 
@@ -170,7 +170,7 @@ The provided component '**DpdlAgent**' includes an agent development middle-ware
 
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
-[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_proposal_drafts.md)
+[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 
 ## Features
@@ -1180,11 +1180,12 @@ The Dpdl platform and API documentation is available via the following links:
 
 [DpdlPacket](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlPacket.md)
 
-[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
-
 [Dpdl profiles](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_profiles.md)
 
 [Dpdl realtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_realtime.md)
+
+[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_proposal_drafts.md)
+
 
 ### More...
 
@@ -1194,7 +1195,7 @@ The Dpdl platform and API documentation is available via the following links:
 
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
-[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_proposal_drafts.md)
+[DpdlClient](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/DpdlClient.md)
 
 
 Dpdl java API Documentation is available only for the licensed version of DpdlEngine

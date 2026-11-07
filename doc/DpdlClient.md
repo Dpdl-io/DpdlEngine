@@ -30,8 +30,9 @@ The following commands are currently available:
  -libs  List Dpdl libraries
  -slib  Show library
  -api   List Dpdl API functions
+ -run  Load && Execute a Dpdl script file (relative path to./DpdlLibs/ eg. arraylistExample.h)
  -exec  Type && Execute a Dpdl script, between <script>...  </script>
- -load  Load && Execute a Dpdl script file (relative path to./DpdlLibs/ eg. arraylistExample.h)
+ -load  Load a Dpdl script file (relative path to./DpdlLibs/ eg. arraylistExample.h)
  -bench  Run a query benchmark test (on DpdlPacket dpdl_PHONEBOOK)
  -lc List the classes of a given java jar file
  -h  Help
@@ -43,26 +44,19 @@ To run to DpdlClient console application you need Java JRE >= 1.5 and run the fo
 java -jar DpdlEngine_V1.0_release.jar
 ```
 
-To execute a Dpdl code directly use the '-load' parameter at DpdlEngine startup:
+To execute a Dpdl code directly use the '-run' parameter at DpdlEngine startup:
 ```
-java -jar DpdlEngine_V1.0_release.jar -load yourScript.h
-```
-
-If you need to run the DpdlClient on the latest version of Java, use the following command and add the modules you want to access via Dpdl code:
-
-```
-java --add-opens java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED -cp ./lib/mjcoap.jar -jar DpdlEngine_V1.0_release.jar
+java -jar DpdlEngine_V1.0_release.jar -run yourScript.h
 ```
 
-
-## Run Dpdl scripts
+## Run Dpdl code
 
 
 You can execute Dpdl code in the following ways:
 
 1) Programmatically by using the Dpdl API
-2) Load and execute the Dpdl script file with the '-load' command
-3) Load and execute the Dpdl script file with the '-load' command at DpdlClient startup
+2) Load and execute the Dpdl script file with the '-run' command
+3) Load and execute the Dpdl script file with the '-run' command at DpdlClient startup
 4) Input the script directly in the DpdlClient command console by using the '-exec' command ( with closing </script> tag)
 
 
@@ -79,19 +73,19 @@ You can also embed the code directly in Dpdl
 int status = DPDLAPI_execCode("println('Hello from Dpdl')", null)
 ```
 
-### 2) Load and execute the Dpdl scripts with the '-load' command:
+### 2) Load and execute the Dpdl scripts with the '-run' command:
 
 ```
--load
+-run
 enter the Dpdl script file to execute:
 arraylistExample.h
 ```
 
-### 3) Load and execute the Dpdl scripts with the '-load' command at DpdlClient startup:
+### 3) Load and execute the Dpdl scripts with the '-run' command at DpdlClient startup:
 
 example:
 ```
-java -jar DpdlEngine_V1.0_release.jar -load yourScript.h
+java -jar DpdlEngine_V1.0_release.jar -run yourScript.h
 ```
 
 Note: see also 'run_SampleApp_java17.sh'
