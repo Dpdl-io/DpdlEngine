@@ -236,7 +236,7 @@ Included are the *Dpdl language plug-ins* for executing '*embedded code sections
 | ---  | --- | --- | 
 |Linux x86_64 |	| **Total size:** **`686 Kb`** |
 |	| **DpdlEngine core** (*Compact*) | 80 Kb |
-|	| *Dpdl language plug-in* for **C** (interpreted & compiled)  | 284 Kb |
+|	| *Dpdl language plug-in* for **C** (interpreted & compiled code)  | 284 Kb |
 |	| *Dpdl language plug-in* for **MicroPython**  | 170 Kb |
 |	| *Dpdl language plug-in* for **Micro JavaScript** (*ES5*) | 152 Kb |
 

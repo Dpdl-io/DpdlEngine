@@ -20,7 +20,7 @@ Suggestions and comments are very appreciated.
 
 ## dpdl-lang
 
-### dpdl Interfaces
+### Interfaces
 
 Proposal for supporting Interfaces.
 
