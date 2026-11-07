@@ -1,4 +1,4 @@
-# Dpdl drafts - in development phase
+# Dpdl proposal drafts
 
 <p align="left">
 	<img src="https://www.dpdl.io/images/dpdl-io_blue.png" width="35%">
@@ -18,8 +18,9 @@ These features may eventually be available in coming releases.
 Suggestions and comments are very appreciated.
 
 
+## dpdl-lang
 
-## Dpdl Interfaces
+### dpdl Interfaces
 
 Proposal for supporting Interfaces.
 
@@ -38,8 +39,8 @@ class A : IA {
 
 	int id
 
-	func A(int id_)
-		id = id_
+	func A(int id)
+		this.id = id
 	end
 
 	func foo()
@@ -59,6 +60,10 @@ class A : IA {
 
 class B : A {
 
+	func B()
+		super(888)
+	end
+	
 	func foo_bar() int
 		println("B->foo_bar()")
 
@@ -82,32 +87,5 @@ myb.foo()
 myb.bar()
 
 println("myb->" + myb.foo_bar())
-```
-
-## JIT compiled dpdl code sections
-
-Although some JVM implementation like Oracle, OpenJDK, etc.. have effective Just-in-Time (JIT) compilation technology in place, this is not available on many other
-JVM implementations.
-
-This is a proposal draft for enabling dpdl code sections to be JIT compiled at runtime <ins>before execution</ins>.
-
-The purpose of this feature is only to improve performance of critical code sections that for example perform calculations, it is not intended to be used on a wider scale.
-
-The meta instruction **`[jit]`** signalizes the beginning of dpdl which should be JIT compiled before execution, until the first empty code line is found.
-
-**Example:**
-
-```python
-println("testing Dpdl java bytecode generation ...")
-
-[jit]
-int arr_i[1000000]
-int i
-for(i < 1000000)
-	arr_i[i] = (arr_i[i] * 2) / 3
-	println("arr_i[i]=" + arr_i[i])
-endfor
-
-println("this line is executed again as ordinary Dpdl")
 ```
 

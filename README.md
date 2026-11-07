@@ -14,7 +14,7 @@ by **SEE Solutions** &copy;
 
 ## **`Dpdl`** - a rapid development Programming Language and constrained Device platform
 
-**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology with powerful AI generative code capabilities
+**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology and powerful AI generative code and Polyglot programming capabilities.
 
 Dpdl comes as a very <ins>**compact**</ins> and <ins>**portable**</ins> execution engine (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and at it's <ins>**native Speed**</ins>.
 
@@ -40,13 +40,11 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 - **DpdlPacket** -> Dpdl Data container with Database technology
 - **DpdlAgent** -> Mobile Agent development platform within dpdl code
 - **DpdlAI** -> AI generative Code & Data within dpdl code
-- **DpdlPlugins** -> plug-ins available to execute **`embedded code sections`** within dpdl
+- **DpdlPlugins** -> *Dpdl language plug-ins* available to execute **`embedded code sections`** within dpdl
 
-The included component **DpdlAI** enables to automatically generate AI generative <ins>code</ins> and <ins>data sections</ins> right inside dpdl code. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
+The Dpdl programming language **`dpdl-lang`** is a general-purpose programming language, <ins>**self-contained**</ins>, mostly <ins>**interpreted**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
 
-Dpdl itself is a general-purpose programming language, <ins>**self-contained**</ins>, mostly <ins>**interpreted**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
-
-Dpdl introduces the concept of '*embedded code sections*' that allows code of different programming languages, or any custom developed code syntax, to be <ins>embedded</ins> and <ins>executed</ins> directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
+Dpdl introduces the concept of '*embedded code sections*' that enables code of different programming languages, or any custom developed code syntax, to be <ins>embedded</ins> and <ins>executed</ins> directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
 
 Everything comes already included as part of the *DpdlEngine* release, **<ins>No additional installations needed</ins>**.
 
@@ -97,11 +95,12 @@ and also for some less known, but yet very powerful programming languages:
 	<img src="https://www.dpdl.io/images/dpdl_language_plugins/Julia.png">
 </p>
 
-A dedicated *Dpdl language plug-in* for **AI generative code** '*DpdlAINerd*' (**DAN**), enables to <ins>**automatically generate**</ins> programming language code and content or data by means of natural language descriptions inside dpdl code, embed it automatically within dpdl code and execute the code right away or to be executed in a subsequent steps.
+
+The set of components **DpdlAI** enable to automatically generate AI generative <ins>code</ins> and content or <ins>data sections</ins> by means of natural language descriptions inside dpdl code and embed the genrated code within the execution. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
 
 Dpdl allows to create custom data containers with built-in database technology defined as '**DpdlPacket**'. It provides a convenient way to <ins>**package</ins>, <ins>handle</ins> and <ins>query</ins> data very <ins>efficiently on memory scarce devices**</ins>.
 
-The included *Dpdl language plug-in* '**DpdlAgent**' includes an agent development middle-ware based on open source for building distributed and mobile multi-agent systems. It fully adheres to *IEEE FIPA* (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The included component '**DpdlAgent**' includes an agent development middle-ware based on open source for building distributed and mobile multi-agent systems. It fully adheres to *IEEE FIPA* (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
 ## Dpdl is designed to:
@@ -170,6 +169,8 @@ The included *Dpdl language plug-in* '**DpdlAgent**' includes an agent developme
 [Dpdl HowTo's](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_howto.md)
 
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
+
+[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_proposal_drafts.md)
 
 
 ## Features
@@ -1193,8 +1194,10 @@ The Dpdl platform and API documentation is available via the following links:
 
 [Dpdl Tutorials](https://github.com/Dpdl-io/DpdlEngine/blob/main/tutorials/Dpdl_tutorials.md)
 
+[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_proposal_drafts.md)
 
- Dpdl java API Documentation is available only for a registered version of DpdlEngine
+
+Dpdl java API Documentation is available only for the licensed version of DpdlEngine
 
 
 ## Updates

@@ -230,12 +230,16 @@ void *buffer = malloc(4096 * sizeof(char));
 ```python
 import('native')
 
-object clib = native.loadLib("c")
+object libc = native.loadLib("c")
 
-object buffer = clib.malloc(4096)
+object buffer = libc.malloc(4096)
 
 # optionally we can also zero the memory buffer, this is equivalent of 'memset(...)' in C
 buffer.setMemory(0L, 4096L, 0x00B)
+
+...
+
+libc.free(buffer)
 ```
 
 ### Type mapping

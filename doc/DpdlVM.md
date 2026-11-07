@@ -15,11 +15,11 @@ by
 ## Description
 
 
-The '**DpdlVM**' is a dedicated compact code virtual machine that enables to execute dpdl code on constrained systems where no JVM (OpenJDK, Oracle, or similar) is available.
+The '**DpdlVM**' is a dedicated compact code virtual machine that enables to execute dpdl code on constrained systems where no traditional JVM (OpenJDK, Oracle, or similar) is available.
 
 This is typically the case on very limited memory footprint systems like small Embedded System platforms, System on Chip (SoC) and Microcontrollers (MCUs).
 
-The **DpdlVM** can be very compact (between 60 Kb and 437 Kb), depending on the type of configuration Profile and Setup.
+The **DpdlVM** can be very compact depending on the type of configuration profile and setup, between 60 Kb and 437 Kb for the static executable, and **`180 Kb`** RAM Memory budget.
 
 The actual size of the DpdlVM executable depends also on the number and type of '*Dpdl language plug-ins*' that are actually included, for eventually executing 'embedded code sections' in other programming languages (optional).
 
@@ -29,14 +29,14 @@ The typical setup for Dpdl running on constrained systems, is a DpdlVM that incl
 
 ### '**Dpdl language plug-ins**' currently available on the **DpdlVM**:
 
-- C (interpreted & compiled)
+- C (interpreted & compiled code)
 - MicroPython
 - Micro JavaScript ( *ES5* )
 - Lightweight Ruby ( mruby )
 
 **Example:**
 
-The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for executing C 'embedded code sections' (interpreted & compiled mode) is only **`298 Kb`** in Total, packed as a single executable (also romizable).
+The size of the '**DpdlVM**' that includes the *Dpdl language plug-in* for executing C 'embedded code sections' (interpreted & compiled code) is in Total only **`298 Kb`** in size, packed as a single executable (also romizable).
 
 When executing C code in *interpreted* mode (**Mode 1**), <ins>all libraries and include files listed here in</ins> [Dpdl_embedded_C_libs.md](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_embedded_C_libs.md) are already included in the DpdlVM executable.
 
