@@ -14,7 +14,7 @@ by **SEE Solutions** &copy;
 
 ## **`Dpdl`** - a rapid development Programming Language and constrained Device platform
 
-**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology and powerful AI generative code and Polyglot programming capabilities.
+**Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology with powerful AI generative code and Polyglot programming capabilities.
 
 Dpdl comes as a very <ins>**compact**</ins> and <ins>**portable**</ins> execution engine (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and at it's <ins>**native Speed**</ins>.
 
@@ -100,7 +100,7 @@ The set of components **DpdlAI** enable to automatically generate AI generative 
 
 Dpdl allows to create custom data containers with built-in database technology defined as '**DpdlPacket**'. It provides a convenient way to <ins>**package</ins>, <ins>handle</ins> and <ins>query</ins> data very <ins>efficiently on memory scarce devices**</ins>.
 
-The included component '**DpdlAgent**' includes an agent development middle-ware based on open source for building distributed and mobile multi-agent systems. It fully adheres to *IEEE FIPA* (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
+The provided component '**DpdlAgent**' includes an agent development middle-ware based on open source for building distributed and mobile multi-agent systems. It fully adheres to *IEEE FIPA* (*Foundation for Intelligent Physical Agents*) specifications, ensuring standardized, interoperable agent communication and coordination.
 
 
 ## Dpdl is designed to:
