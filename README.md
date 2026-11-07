@@ -160,7 +160,7 @@ The component '**DpdlAgent**' includes an agent development middle-ware based on
 
 [Dpdl realtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_realtime.md)
 
-[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_proposal_drafts.md)
+[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_proposal_drafts.md)
 
 ### More...
 
@@ -1184,7 +1184,7 @@ The Dpdl platform and API documentation is available via the following links:
 
 [Dpdl realtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_realtime.md)
 
-[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_proposal_drafts.md)
+[Dpdl proposal drafts](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_proposal_drafts.md)
 
 
 ### More...
