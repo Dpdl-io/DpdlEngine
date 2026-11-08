@@ -16,7 +16,7 @@ by **SEE Solutions** &copy;
 
 **Dpdl** is a rapid development <ins>**Programming Language**</ins> and <ins>**constrained Device platform**</ins> with built-in **Database** and **Agents** technology with powerful AI generative code and Polyglot programming capabilities.
 
-Dpdl comes as a very <ins>**compact**</ins> and <ins>**portable**</ins> execution engine (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and at it's <ins>**native Speed**</ins>.
+Dpdl comes as a very <ins>**compact**</ins> and <ins>**portable**</ins> execution engine (*DpdlEngine*), compatible with JVM, with an **extensible API interface**, that enables to execute <ins>**Dpdl programming language**</ins> code (**dpdl-lang**), as well as code in <ins>**different programming languages**</ins> or any other custom code syntax, <ins>**directly embedded**</ins> within dpdl source code, simultaneously, of multiple types and at it's <ins>**native speed**</ins>.
 
 Dpdl enables **Polyglot programming**, on multiple platforms and on constrained devices.
 
@@ -32,7 +32,7 @@ It enables also dynamic code generation and execution of heterogeneous embedded 
 
 Dpdl provides access to <ins>**JVM platform API's**</ins>, <ins>**Native shared C/C++ libraries**</ins>, <ins>**WASM modules**</ins> and <ins>**GPU compute**</ins>.
 
-The *DpdlEngine* core has the capability to run also on <ins>**constrained devices**</ins> and <ins>**limited memory platforms**</ins> like *MCUs* and *SoCs* via a dedicated compact code kilobyte range virtual machine.
+The *DpdlEngine* core has the capability to run also on <ins>**constrained devices**</ins> and <ins>**limited memory**</ins> platforms like *MCUs* and *SoCs* via a dedicated compact code kilobyte range virtual machine.
 
 ## Dpdl components:
 
@@ -256,7 +256,7 @@ Included are the *Dpdl language plug-ins* for executing '*embedded code sections
 
 ### **dpdl-lang** example: Download and decode data in json format via http
 
-```c
+```python
 import('http')
 import('json')
 
