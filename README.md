@@ -387,27 +387,6 @@ class Car : Vehicle {
 Here you can find a more articulated example: [test/testClassSub2.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/test/testClassSub2.h) of the example
 
 
-### Sample Dpdl code that makes use of embedded 'Groovy' code to read a file line by line and print it to the console
-
-```python
-println("reading a file line by line using embedded 'Groovy' code...")
-
-dpdl_stack_push("./Test/see_solutions.html")
->>groovy
-	
-	def dpdl_main(Object[] param, Object var_map){
-		String myfile = (String)param[0];
-		new File(myfile).eachLine { line ->
-		  println line
-		}
-		return 1;
-	}
-<<
-int exit_code = dpdl_exit_code()
-
-println("embedded groovy exit code: " + exit_code)
-```
-
 ### **dpdl-lang** sample code that make use of java JRE classes
 
 #### Example 1: Implementation of of dpdl class to write data (buffered) to a file
