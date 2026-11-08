@@ -256,7 +256,7 @@ Included are the *Dpdl language plug-ins* for executing '*embedded code sections
 
 ### **dpdl-lang** example: Download and decode data in json format via http
 
-```python
+```c
 import('http')
 import('json')
 
