@@ -1939,7 +1939,7 @@ is equivalent to
 union Data {
 	int x
 	int y
-	int z
+	float z
 }
 
 union Data d
@@ -1973,7 +1973,8 @@ Variables types in the sub-union having the same name as the base-union are over
 
 ```c
 union myU1 {
-	int x, y, z
+	int x, y
+	float z
 }
 
 union myU2 : myU1 {
