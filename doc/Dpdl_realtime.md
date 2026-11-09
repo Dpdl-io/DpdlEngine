@@ -15,7 +15,7 @@ by
 
 ## Dpdl realtime with RTSJ
 
-For realtime applications Dpdl integrates also constructs and semantics to interact with the RTSJ (*Real-Time Specification for Java*) specification to enable and handle realtime threading on systems and platforms with realtime capabilities.
+For realtime applications Dpdl integrates also constructs and semantics to interact with the RTSJ (*Real-Time Specification for Java*) api to enable and handle realtime threading on systems and platforms with realtime capabilities.
 
 The RTSJ (*Real-Time Specification for Java*) provides an API to create realtime threads and event handlers, for interacting with devices and native memory, to enforce resource limits and to handle POSIX signals on JVMs that have realtime support.
 
@@ -24,15 +24,15 @@ When running Dpdl on a realtime system, the main internal DpdlEngine threads are
 The realtime functions can be accessed:
  
 - either directly using the RTSJ spec API
-- or accessed via an abstraction layer available within the dpdl library package '**`realtime`**' --> enables to handle multiple realtime threads and timer resources through a unified interface based on the RTSJ.
+- or accessed via an abstraction layer available within the dpdl library package '**`realtime`**' that enables to handle multiple realtime threads and timer resources through a unified interface based on the RTSJ.
 
 ### Examples:
 
 [dpdl example using RTSJ API directly](#dpdl-example-using-rtsj-api-directly)
 
-[dpdl example for a reusable realtime asynchronous event handler implementation](#dpdl-example-for-a-reusable-realtime-asynchronous-event-handler-implementation)
+[dpdl example implementation for a reusable realtime asynchronous event handler](#dpdl-example-implementation-for-a-reusable-realtime-asynchronous-event-handler)
 
-[dpdl example using the dpdl realtime abstraction library](#dpdl-example-using-the-dpdl-realtime-abstraction-library)
+[dpdl example using the abstraction dpdl library package realtime](#dpdl-example-using-the-abstraction-dpdl-library-package-realtime)
 
 ### dpdl example using RTSJ API directly
 
@@ -96,6 +96,7 @@ class Worker : refObj("RealtimeThread") {
 			boolean status_stop = arg0;
 			for (int i = 0; i < 100000000; i++){
 				if (status_stop){
+					System.out.println("terminating...");
 					return 0;
 				}
 			}
@@ -118,9 +119,9 @@ class Worker : refObj("RealtimeThread") {
  
 * [Examples](#examples)
 
-### dpdl example for a reusable realtime asynchronous event handler implementation
+### dpdl example implementation for a reusable realtime asynchronous event handler
  
-This Dpdl example shows the usage and the implementation of the dpdl **`class`** -> a reusable realtime asynchronous event hanlder
+This Dpdl example shows the usage and the implementation of the dpdl **`class`** that represents a reusable realtime Asynchronous Event Hanlder.
 
 Example ported to dpdl from the Book: *Realtime Java Platform Programming 2nd edition*
 
@@ -197,9 +198,10 @@ exit(0)
 
 ```
 
-dpdl source: [realtime/dpdlRTSJAsyncEventHandlerTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlRTSJAsyncEventHandlerTest.h)
- 
-#### Implementation of the dpdl class **`ReusableAEH`** defined in the usage example above (**`dpdlRTSJAsyncEventHandlerTest.h`**)
+dpdl source of the example above: [realtime/dpdlRTSJAsyncEventHandlerTest.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlRTSJAsyncEventHandlerTest.h)
+
+
+#### Implementation of the dpdl class **`ReusableAEH`** included in the example above (see **`dpdlRTSJAsyncEventHandlerTest.h`**)
  
  
  ```python
@@ -289,9 +291,9 @@ class ReusableAEH : refObj("AsyncEventHandler" {
 * [Examples](#examples)
 
 
-### dpdl example using the dpdl realtime abstraction library
+### dpdl example using the abstraction dpdl library package **`realtime`**
  
-dpdl example the that uses the '**RealtimeManager**' abstraction interface available within the dpdl library package '**`realtime`**' --> for accessing *realtime* **Threads**, **Timers** and **Memory**.
+dpdl example make use of the dpdl library package '**`realtime`**' to use the abstraction interface '**RealtimeManager**'for accessing *realtime* **Threads**, **Timers** and **Memory** via a unified interface.
  
  
  ```python
@@ -304,9 +306,17 @@ object rtmgr = realtime.getRealtimeManager()
 
 object prio_level = rtmgr.PriorityLevel
 
-println("1) executing a scheduled task...")
+println("instantiating the executors...")
 
 class MyTask1 task1()
+
+class MySense sensor1()
+
+class MySense sensor2()
+
+class MyExec mycalc()
+
+println("1) executing a scheduled task...")
 
 object mytask = rtmgr.schedulePeriodicTask("My heartbeat", 100,  0, task1)
 
@@ -317,8 +327,6 @@ println("timer task started with id: " + mytask_id)
 
 println("2) creating a RealtimeThread ...")
 
-class MySense sensor1()
-
 object mythread1 = rtmgr.createRealtimeThread("SensorReader1", rtmgr.getPriorityValue(prio_level.MEDIUM), sensor1)
 
 string mythread1_id = rtmgr.getThreadId(mythread1)
@@ -326,10 +334,7 @@ string mythread1_id = rtmgr.getThreadId(mythread1)
 println("RT thread created with id: " + mythread1_id)
 
 
-
 println("3) creating a RealtimeThread with No Heap access...")
-
-class MySense sensor2()
 
 object mythread2 = rtmgr.createNoHeapRealtimeThread("SensorReader2", rtmgr.getPriorityValue(prio_level.HIGH), sensor2)
 
@@ -347,8 +352,6 @@ rtmgr.setThreadPriority(mythread1_id, curr_prio+3)
 
 println("4) executing some computation in scoped memory")
 
-class MyExec mycalc()
-
 object result = rtmgr.executeInLTMemory(1024L * 1024L, mycalc)
 
 println("result: " + result)
@@ -364,7 +367,7 @@ println("finished")
 
 ```
 
-#### Below the implementation of the dpdl **`class`** components: **`MyTask`**, **`MySense`** and **`MyExec`** (see example above):
+#### Below the implementation of the dpdl **`class`** components: **`MyTask`**, **`MySense`** and **`MyExec`** (in example above):
  
 ```python
  

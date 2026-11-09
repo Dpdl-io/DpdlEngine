@@ -1863,15 +1863,15 @@ union MyUnion mu
 
 Dpdl supports the type **`union`**, with the following definitions:
 
-* Unions may contain member variables of all type (except classes), including 'union' variable declarations (but not 'union' definitions)
+* Unions and Structs in dpdl are very similar/quasi identical, but they have different semantics when they are converted and passed to native shared C/C++ library functions when converted via the dpdl function '**genObjCodeC(...)**'. This is also one of the reasons why the type 'union' has been introduced in dpdl.
+
+* Unions may contain members of all type (except classes), including 'union' variable declarations (but not 'union' definitions)
 
 * Variable shadowing is enabled
 
-* Unions can be derived from a base 'union' as sub-unions, inheriting all member variables. Variables can be overridden in the base-union
+* Unions can be derived from a base 'union' as sub-unions, inheriting all member types which can be overridden in the base-union
 
-* Unions member variable can can be initialized upon 'union' declaration
-
-* Unions can be used to initialize arrays, (see 'array(...)' function)
+* Unions member variable can be initialized upon 'union' declaration
 
 * Unions can be conveniently <ins>compiled into java bytecode</ins> and accessed as an object instead, see '**genObjCode(...)**' -> this might be useful for exchanging data with native java classes
 
@@ -1883,11 +1883,13 @@ Dpdl supports the type **`union`**, with the following definitions:
 
 ```c
 union myU1 {
-	int x, y, z
+	int x, y
+	float z
 }
 
 union myU2 : myU1 {
-	char a, b, c
+	char a, b
+	int c
 }
 
 println("testing union type...")
@@ -1923,10 +1925,10 @@ A given variable initialization can be skipped, by invalidating the entry with a
 union Data {
 	int x
 	int y
-	int z
+	float z
 }
 
-union Data d = {1, 2, 3}
+union Data d = {., ., 3.0f}
 
 println("d: " + d)
 ```
@@ -1942,9 +1944,7 @@ union Data {
 
 union Data d
 
-d.x = 1
-d.y = 2
-d.z = 3
+d.z = 3.0f
 
 println("d: " + d)
 ```
@@ -1953,23 +1953,21 @@ println("d: " + d)
 
 By using the placeholder '.' a given variable initialization entry is invalidated.
 
-In the example below, only 'x' and 'z' are initialized explicitly in the initialization, while 'y' retain the base-struct value
-
 ```c
 union D {
 	int x
 	int y = 6
-	int z
+	float z
 }
 
-unzion D myd = {3,.,9}
+union D myd = {.,.,9.0f}
 ```
 
 #### union inheritance
 
-The type 'union' can also be derived from a base 'union', as a sub-union, inheriting all member variables from the base union.
+The type 'union' can also be derived from a base 'union', as a sub-union, inheriting all member types from the base union.
 
-Variables in the sub-union having the same name as the base-union are overwritten.
+Variables types in the sub-union having the same name as the base-union are overwritten.
 
 **Example:**
 
@@ -1999,9 +1997,9 @@ u2.a = 'A'
 
 #### union passed to a native library function
 
-The dpdl type `union` can be converted into a C/C++ code compatible "union" so that it can be passed directly to a native C library function.
+The dpdl type `union` can be converted into a C/C++ code compatible 'union' so that it can be passed directly to a native C library function.
 
-When a 'union' tpye is converted and passed to a native C/C++ function, by definition the union can just acquire one of the a field values at time. This is enforced by calling 'setType(...)' on the union object before calling the native function.
+When a 'union' type is converted and passed to a native C/C++ function, by definition the union can just acquire one of the a field values at time. This is enforced by calling 'setType(...)' on the union object before calling the native function.
 
 **Example:*
 

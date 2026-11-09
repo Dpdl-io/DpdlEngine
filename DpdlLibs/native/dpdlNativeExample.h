@@ -59,7 +59,7 @@ long size_l = size.longValue()
 object memory = libc.malloc(4096)
 memory.setMemory(0L, 4096L, 0x00B)
 
-println("memory: " + typeof(memory) + " size: " + sizeof(memory))
+println("memory is of type: " + typeof(memory) + " and size: " + sizeof(memory))
 
 object bytebuf = memory.getByteBuffer(0L, size_l)
 
