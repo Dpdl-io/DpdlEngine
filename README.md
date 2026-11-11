@@ -109,7 +109,7 @@ The component '**DpdlAgent**' includes an agent development middle-ware based on
 ### * On multiple platforms
 ### * Using the power of multiple programming languages and API's within a single source
 ### * Re-use code
-### * No need to install, compile and configure development environments
+### * No need to install, compile and configure other development tool-chains
 ### * Self-contained, No additional dependencies required (except add-on user libraries)
 ### * Facilitate rapid prototyping for Hardware programming
 ### * Runs on constrained devices and also Microcontroller units (MCUs)
@@ -130,7 +130,7 @@ The component '**DpdlAgent**' includes an agent development middle-ware based on
 
 [dpdl-lang quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
 
-[Dpdl language Specification](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+[Dpdl language specification](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 
@@ -1133,7 +1133,7 @@ The Dpdl platform and API documentation is available via the following links:
 
 [Dpdl language quick Tour](https://github.com/Dpdl-io/DpdlEngine/blob/main/Dpdl_lang_quick_tour.md)
 
-[Dpdl language Specification](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
+[Dpdl language specification](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_documentation.md)
   
 [Dpdl API Documentation](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_API.md)
 

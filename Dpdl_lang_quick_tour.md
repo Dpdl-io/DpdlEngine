@@ -152,7 +152,7 @@ func myCalc(long nr_iter)
 		
 		println("x + y is equal to ${ x + y }")
 		
-		println("square root of res is: ${ sqrt(res) } ")
+		println("square root of $res is: ${ sqrt(res) } ")
 		
 		i=i+1
 	endfor
@@ -281,7 +281,25 @@ mycls.mycreateSum()
 
 ```
 
+
+#### Dpdl example that make use of JavaFX library
+
+As example here a dpdl implementation of a 3D model visualization app for chemical molecules (in this case hydrogen) using the **JavaFX** library.
+
+The model can be rotated freely with mouse events, and some key events can be used to toggle the visualization:
+
+[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
+
+<p align="center">	
+	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="85%" height="85%">
+</p>
+
+[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
+
+
+
 * [Index](#index)
+
 
 
 ### Native library access
@@ -672,23 +690,6 @@ int main(int argc, char **argv){
 
 
 ### Performance and Optimizations
-
-#### Dpdl allows to choose the optimal libraries for creating best performance critical applications.
-
-As example here a dpdl implementation of a 3D model visualization application for chemical molecules (in this case hydrogen) using the **JavaFX** library.
-
-The model can be rotated freely with mouse events, and some key events can be used to toggle the visualization:
-
-[graphics/dpdl3DJavaFX_molecule.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/graphics/dpdl3DJavaFX_molecule.h)
-
-<p align="center">	
-	<img src="https://www.dpdl.io/images/platform/examples/Dpdl_3D_Example2_with_JavaFX.png" width="85%" height="85%">
-</p>
-
-[VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
-
-
-* [Index](#index)
 
 
 #### Dpdl enables to optimize dpdl functions via embedded C code sections that are compiled and executed at native speed.
