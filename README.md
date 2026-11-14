@@ -40,7 +40,7 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 - **DpdlPacket** -> Dpdl Data container with Database technology
 - **DpdlAgent** -> Mobile Agent development platform within dpdl code
 - **DpdlAI** -> AI generative Code & Data within dpdl code
-- **DpdlPlugins** -> *Dpdl language plug-ins* available to execute **`embedded code sections`** within dpdl
+- **DpdlPlugins** -> *Dpdl language plug-ins* available to execute **`embedded code sections`** within dpdl. With community driven DpdlHub (www.dpdlhub.org)
 
 The Dpdl programming language **`dpdl-lang`** is a general-purpose programming language, <ins>**self-contained**</ins>, mostly <ins>**interpreted**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
 
@@ -207,22 +207,24 @@ The speedup is x 25 times faster compared to a standard record store access
 
 ## 'DpdlEngine' application footprint (size)
 
-The size of '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) and **`372 Kb`**, depending on which functions and modules are actually included (Dpdl profiles).
+The size of the '*DpdlEngine*' can be somewhere between **`80 Kb`** (or even less) and **`372 Kb`**, depending on which functions and modules are actually included (Dpdl profiles).
 
 ### Dpdl profiles available
 
-* **`Compact`** : **DpdlEngine** <ins>**Compact**</ins> profile: **`80 Kb`**</ins> or less
-* **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes support for creating 'DpdlPacket' & rich set of built-in functions): **`372 Kb`**
+* **`Compact`** : **DpdlEngine** <ins>**Compact**</ins> profile: ~ **`80 Kb`**</ins>
+* **`Full`** : **DpdlEngine**  <ins>**Full**</ins> profile (includes support for creating 'DpdlPacket' & rich set of built-in functions): ~ **`372 Kb`**
 
 The profiles can of course also be adjusted as needed to include more ore less function sets and components. 
 
-#### Example setup:
+#### DpdlEngine example profile setup:
 
-a DpdlEngine instance running on a small <ins>Embedded System</ins> may have the following profile and setup:
+For a *DpdlEngine* running on small **Embedded Systems** with the **`Compact`** profile, the following setup is possible:
 
 #### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins*:
 
-In this example, the *DpdlEngine* and the <ins>*Dpdl language plug-ins* **included**</ins> are specifically targeted for **small** <ins>*Embedded Systems*</ins>.
+In this example, the *DpdlEngine* and the <ins>*Dpdl language plug-ins* **included**</ins> are specifically targeted for **small** <ins>*Embedded Systems*</ins.
+
+In the following example the native *Dpdl language plug-ins* are targeted specifically for a  32-bit ARMv7 Processor (BCM2709)
 
 Included are the *Dpdl language plug-ins* for executing '*embedded code sections*' in:
 
