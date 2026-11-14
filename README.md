@@ -222,7 +222,7 @@ For a *DpdlEngine* running on small **Embedded Systems** with the **`Compact`** 
 
 #### DpdlEngine 'Compact' with lightweight version of *Dpdl language plug-ins*:
 
-In this example, the *DpdlEngine* and the <ins>*Dpdl language plug-ins* **included**</ins> are specifically targeted for **small** <ins>*Embedded Systems*</ins.
+In this example, the *DpdlEngine* and the <ins>*Dpdl language plug-ins* **included**</ins> are specifically targeted for **small** <ins>*Embedded Systems*</ins>.
 
 In the following example the native *Dpdl language plug-ins* are targeted specifically for a  32-bit ARMv7 Processor (BCM2709)
 
