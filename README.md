@@ -46,9 +46,9 @@ The Dpdl programming language **`dpdl-lang`** is a general-purpose programming l
 
 Dpdl introduces the concept of '*embedded code sections*' that enables code of different programming languages, or any custom developed code syntax, to be <ins>embedded</ins> and <ins>executed</ins> directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
 
-Everything comes already included as part of the *DpdlEngine* release, **<ins>No additional installations needed</ins>**.
-
 ### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Tcl + Wat/Wasm + Wgsl + OpenCL + Slang + Modelica*) = <ins>Powerful and Versatile</ins>
+
+Everything comes already included as part of the *DpdlEngine* release, **<ins>No additional installations needed</ins>**.
 
 At current stage, Dpdl supports the <ins>**embedding** and **execution**</ins> of the following **programming language** code, <ins>**directly embedded**</ins> within dpdl code: 
 
@@ -96,7 +96,7 @@ and also for some less known, but yet very powerful programming languages:
 </p>
 
 
-The set of components in **DpdlAI** enable to automatically generate AI generative <ins>code</ins> and content or <ins>data sections</ins> by means of natural language descriptions contained inside dpdl code and embed the generated code within the execution flow. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
+The set of components available in **DpdlAI** enable to automatically generate AI generative <ins>code</ins> and content or <ins>data sections</ins> by means of natural language descriptions contained inside dpdl code and embed the generated code within the execution flow. The AI engine back-ends used for inference can either run completely locally or accessed remotely via compatible RESTful APIs.
 
 Dpdl allows to create custom data containers with built-in database technology defined as '**DpdlPacket**'. It provides a convenient way to <ins>**package</ins>, <ins>handle</ins> and <ins>query</ins> data very <ins>efficiently on memory scarce devices**</ins>.
 
@@ -177,7 +177,7 @@ The component '**DpdlAgent**' includes an agent development middle-ware based on
 
 * **DpdlEngine is optimized to run on a wide range of platforms** (any JVM platform 1.3+ and later Spec, JavaME (CLDC, CDC). The core engine runs also on JVM 1.1 spec compliant VMs
 * **Access to the underlying JVM platform API's and to external java libraries**
-* **Access to Native shared libraries**
+* **Access to Native shared C/C++ libraries**
 * **Features meta-programming techniques**: compile-time (CTMP) and runtime (RTMP) meta-programming
 * **Automatic code generation and execution of 'embedded code sections' at runtime** (*Dpdl language plug-ins*)
 * **Multiple 'Dpdl language plug-ins' available for executing 'embedded code sections':** <em>C, C++, Python, MicroPython, Julia, JavaScript, Lua , Ruby, mruby, Java, PHP, Perl, Groovy, Ring, V, Scheme, Clojure, Tcl, Wat/Wasm, Wgsl, OpenCL, Slang and Modelica</em> **programming language code can be <ins>embedded</ins> and <ins>executed</ins> directly <ins>within dpdl code**</ins> (interpreted / compiled code)

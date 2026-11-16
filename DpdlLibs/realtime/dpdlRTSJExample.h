@@ -16,7 +16,7 @@ class Worker : refObj("RealtimeThread") {
 	func Worker(int priority)
 		object prio_param = new("PriorityParameters", priority, null)
 
-		super(prio_param)
+		super(prio_param, null)
 
 		println("Worker init() with priority: " + priority)
 	end

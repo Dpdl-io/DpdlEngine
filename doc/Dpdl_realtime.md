@@ -15,16 +15,96 @@ by
 
 ## Dpdl realtime with RTSJ
 
-For realtime applications Dpdl integrates also constructs and semantics to interact with the RTSJ (*Real-Time Specification for Java*) api to enable and handle realtime threading on systems and platforms with realtime capabilities.
+For realtime applications, Dpdl integrates also constructs and semantics to interact with the RTSJ (*Real-Time Specification for Java*) api to enable and handle realtime threading on systems and platforms that provide realtime capabilities.
 
 The RTSJ (*Real-Time Specification for Java*) provides an API to create realtime threads and event handlers, for interacting with devices and native memory, to enforce resource limits and to handle POSIX signals on JVMs that have realtime support.
+
+
+#### dpdl example that launches a realtime thread with increased priority
+
+in this example the worker thread executes an '*embedded code section*' in java
+
+```python
+
+class Worker : refObj("RealtimeThread") {
+
+	bool stop = false
+
+	func Worker(int priority)
+		object prio_param = new("PriorityParameters", priority, null)
+
+		super(prio_param, null)
+
+		println("Worker init() with priority: " + priority)
+	end
+
+	func run()
+		println("running some task...")
+
+		dpdl_stack_push(stop)
+		>>java
+			boolean status_stop = arg0;
+			for (int i = 0; i < 100000000; i++){
+				if (status_stop){
+					return;
+				}
+			}
+			System.out.println("Worker task completed");
+			return 1;
+	    <<
+		int exit_code = dpdl_exit_code()
+
+		println("task exit code: " + exit_code)
+
+	end
+
+	func quit()
+		stop = true
+	end
+
+}
+
+class TestPriority : refObj("RealtimeThread") {
+
+	func TestPriority()
+		println("TestPriority init()")
+	end
+
+	func run()
+		object worker = new(Woker, this.getPriority() + 1)
+
+		worker.start()
+
+		sleep(500)
+
+		worker.quit()
+
+		worker.join()
+
+	end
+
+}
+
+
+println("dpdl example that launches a realtime worker thread via the RTSJ spec library ...")
+
+class TestPriority test_prio()
+
+test_prio.start()
+
+test_prio.join()
+
+println("finished")
+
+```
 
 When running Dpdl on a realtime system, the main internal DpdlEngine threads are also based on the RealtimeThread class and can be controlled programmatically.
 
 The realtime functions can be accessed:
  
 - either directly using the RTSJ spec API
-- or accessed via an abstraction layer available within the dpdl library package '**`realtime`**' that enables to handle multiple realtime threads and timer resources through a unified interface based on the RTSJ.
+- via an abstraction layer available within the dpdl library package '**`realtime`**' that that enables the handling multiple realtime threads and timer resources through a unified interface based on the RTSJ.
+- via the dpdl >>task feature which can be configured to use realtime threads instead of ordinary threads
 
 ### Examples:
 
@@ -420,3 +500,9 @@ class MyExec : refObj("DpdlSupplier"){
  ```
  
  * [Examples](#examples)
+ 
+ 
+### dpdl example with a dpdl >>task that executes as realtime thread
+ 
+
+ 

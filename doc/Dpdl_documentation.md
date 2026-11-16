@@ -2715,7 +2715,9 @@ endfor
 
 object task_obj = dpdl_task_obj_get(task_id)
 
-task_obj.sleep(20000L)
+task_obj.sleep(2000L)
+
+task_obj.join()
 
 println("also a name can be assigned directly..")
 
@@ -2729,6 +2731,8 @@ println("also a name can be assigned directly..")
 exit_code = dpdl_exit_code()
 
 object my_task_name_obj = dpdl_task_obj_get("my_task_name")
+
+my_task_name_obj.join()
 
 println("finished")
 ```
