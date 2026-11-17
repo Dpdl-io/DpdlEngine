@@ -20,9 +20,9 @@ For realtime applications, Dpdl integrates also constructs and semantics to inte
 The RTSJ (*Real-Time Specification for Java*) provides an API to create realtime threads and event handlers, for interacting with devices and native memory, to enforce resource limits and to handle POSIX signals on JVMs that have realtime support.
 
 
-### dpdl example that launches a realtime thread with increased priority
+### example dpdl code that launches a realtime thread with increased priority
 
-in this example the worker thread executes an '*embedded code section*' in java
+In this example the worker thread executes an '*embedded code section*' in java
 
 ```python
 
@@ -104,7 +104,7 @@ The realtime functions can be accessed:
  
 - either directly using the RTSJ spec API
 - via an abstraction layer available within the dpdl library package '**`realtime`**' that that enables the handling multiple realtime threads and timer resources through a unified interface based on the RTSJ.
-- via the dpdl >>task feature which can be configured to use realtime threads instead of ordinary threads
+- via the dpdl **`>>task`** feature which can be configured to use realtime threads instead of ordinary threads
 
 ### Examples:
 
@@ -504,5 +504,41 @@ class MyExec : refObj("DpdlSupplier"){
  
 ### dpdl example with a dpdl >>task that executes as realtime thread
  
+ This example shows how the dpdl **`>>task`** feature can be configured so that it runs with a *RealtimeThread* via RTSJ
 
- 
+ ```python
+ println("creating and executing a dpdl task in realtime mode...")
+
+println("creating task...")
+
+dpdl_stack_push(realtime, start=false)
+
+>>task(my_task)
+	println("executing task...")
+
+	int c = 0
+	while(c < 1000)
+		print(".")
+		c=c+1
+		sleep(2000)
+	endwhile
+
+	println("task finished")
+<<
+
+object status = dpdl_task_status_get("my_task")
+
+raise(status, "task have not been initialized correctly")
+
+println("task initialized with status: " + status)
+
+object task_obj = dpdl_task_obj_get("my_task")
+
+object prio_param = new("PriorityParameters", task_obj.getPriority()+1, null)
+
+task_obj.startTask(prio_param)
+
+task_obj.join()
+
+println("task completed")
+ ```

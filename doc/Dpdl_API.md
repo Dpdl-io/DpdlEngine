@@ -435,6 +435,9 @@ Thread(string func_name, int interval_ms, int nr_iterations) return int thread_i
 setThreadPriority(int thread_id, int priority) return int status
 dpdl_thread_finalize(int t_id, object param...)
 
+[task]
+dpdl_task_status_get(object task_id) return object status
+
 [GPU]
 DPDLNATIVE_GPU_getVersion() return string vers
 DPDLNATIVE_GPU_createTensorInputS1x1(int idx_t, string type, long x, object Pointer) return int status
