@@ -489,9 +489,9 @@ class MyExec : refObj("DpdlSupplier"){
 
 	func get()
 		>>java
-			double calc = 0;
+			double calc = 0.0d;
 			for (int i = 0; i < 1000; i++) {
-				calc += Math.sqrt(i);
+				calc += Math.sqrt((double)i);
 			}
 			return "Result: " + calc;
 		<<
@@ -511,7 +511,7 @@ This example shows how the dpdl **`>>task`** feature can be configured so that i
 In this case the task is first initialized and subsequently started.
 
 ```python
- println("creating and executing a dpdl task in realtime mode...")
+println("creating and executing a dpdl task with realtime mode...")
 
 println("creating task...")
 
@@ -532,7 +532,7 @@ dpdl_stack_push(realtime, start=false)
 
 object status = dpdl_task_status_get("my_task")
 
-raise(status, "task have not been initialized correctly")
+raise(status, "task have not correctly initialized")
 
 println("task initialized with status: " + status)
 
@@ -545,6 +545,7 @@ task_obj.startTask(prio_param)
 task_obj.join()
 
 println("task completed")
- ```
+
+```
  
 * [Examples](#examples)

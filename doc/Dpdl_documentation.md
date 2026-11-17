@@ -2673,14 +2673,15 @@ dpdl_print_exception_table()
 
 ### Asynchronous Task execution
 
-The keyword  **`>>task`** allows to execute Dpdl code sections asynchronously.
+The keyword  **`>>task`** allows to execute Dpdl code sections within a dedicated 'Task' entity, either serially or asynchronously.
 
 The code runs in an isolated execution instance and is thread safe to the embedding code.
 
-The running 'Task' object can be accessed by popping the task id from the dpdl stack and than calling the function 'dpdl_task_obj_get(object task_id)' which
-returns a 'Task' object which provides access to all functions needed to control the task execution (eg. interrupt, sleep, join, etc.)
+The running 'Task' object can be accessed by name if the task is named, or by popping the task id from the dpdl stack and than getting the 'Task' object via the function call 'dpdl_task_obj_get(object task_id)'
 
-The task id is a unique identifier (UUID) like for example 312b01c1-9837-47f7-9c24-f5ec24fb9857
+The 'Task' object provides access to all functions needed to control the task execution (eg. interrupt, sleep, join, etc.)
+
+The task id is a unique identifier (UUID) having the following format: 312b01c1-9837-47f7-9c24-f5ec24fb9857
 
 **Example:**
 
@@ -2736,6 +2737,50 @@ my_task_name_obj.join()
 
 println("finished")
 ```
+
+#### Realtime Task execution
+
+When running Dpdl on a JVM with realtime capabilities that comply to the *RTSJ (Realtime Specificaiton for Java)* spec, the tasks can also be executed as realtime threads
+
+```python
+println("creating and executing a dpdl task with realtime mode...")
+
+println("creating task...")
+
+dpdl_stack_push(realtime, start=false)
+
+>>task(my_task)
+	println("executing task...")
+
+	int c = 0
+	while(c < 1000)
+		print(".")
+		c=c+1
+		sleep(2000)
+	endwhile
+
+	println("task finished")
+<<
+
+object status = dpdl_task_status_get("my_task")
+
+raise(status, "task have not correctly initialized")
+
+println("task initialized with status: " + status)
+
+object task_obj = dpdl_task_obj_get("my_task")
+
+object prio_param = new("PriorityParameters", task_obj.getPriority()+1, null)
+
+task_obj.startTask(prio_param)
+
+task_obj.join()
+
+println("task completed")
+```
+
+see [Dpdl realtime](https://github.com/Dpdl-io/DpdlEngine/blob/main/doc/Dpdl_realtime.md)
+
 
 * [Table of Contents](#table-of-contents)
 

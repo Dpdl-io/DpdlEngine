@@ -334,6 +334,10 @@ The following Dpdl examples show how to use <ins>Realtime</ins> capabilities via
 		
 	[realtime/dpdlRTSJAsyncEventHandler.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlRTSJAsyncEventHandler.h)
 	
+* Dpdl example that makes use of a dpdl **`>>task`** with realtime threading
+
+	[realtime/dpdlTaskRT.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlTaskRT.h)
+
 
 [Index](#index)
 
