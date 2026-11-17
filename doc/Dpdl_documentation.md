@@ -94,7 +94,7 @@ If you want to gain a quick intro to some of the features of Dpdl you can also t
 
 </td><td width=33% valign=top>
 
-* [Asynchronous Task execution](#asynchronous-task-execution)
+* [Task execution](#task-execution)
 * [Dpdl Objects and access to JRE classes](#dpdl-objects-and-access-to-jre-classes)
 * [Multi-line structured text, data and code resources](#multi-line-structured-text-data-and-code-resources)
 * [`Embedded code sections: embedding other programming languages` directly within Dpdl code](#embedded-code-sections-embedding-other-programming-languages-directly-within-dpdl-code)
@@ -2671,7 +2671,7 @@ dpdl_print_exception_table()
 * [Table of Contents](#table-of-contents)
 
 
-### Asynchronous Task execution
+### Task execution
 
 The keyword  **`>>task`** allows to execute Dpdl code sections within a dedicated 'Task' entity, either serially or asynchronously.
 
