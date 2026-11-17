@@ -506,9 +506,11 @@ class MyExec : refObj("DpdlSupplier"){
  
 ### dpdl example with a dpdl task that executes as realtime thread
  
- This example shows how the dpdl **`>>task`** feature can be configured so that it runs with a *RealtimeThread* via RTSJ
+This example shows how the dpdl **`>>task`** feature can be configured so that it runs with a *RealtimeThread* via RTSJ
 
- ```python
+In this case the task is first initialized and subsequently started.
+
+```python
  println("creating and executing a dpdl task in realtime mode...")
 
 println("creating task...")
