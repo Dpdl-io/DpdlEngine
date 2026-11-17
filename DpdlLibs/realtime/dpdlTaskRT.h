@@ -28,7 +28,7 @@ dpdl_stack_push(realtime, start=false)
 
 object status = dpdl_task_status_get("my_task")
 
-raise(status, "task have not correctly initialized")
+raise(status, "task initialization failed")
 
 println("task initialized with status: " + status)
 
