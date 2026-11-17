@@ -114,6 +114,8 @@ The realtime functions can be accessed:
 
 [dpdl example using the abstraction dpdl library package realtime](#dpdl-example-using-the-abstraction-dpdl-library-package-realtime)
 
+[dpdl example with a dpdl >>task that executes as realtime thread](dpdl-example-with-a-dpdl->>task-that-executes-as-realtime-thread)
+
 ### dpdl example using RTSJ API directly
 
 dpdl example that makes use of RTSJ API to launch a real-time worker thread to perform a task that executes and '*embedded code section*' in java
@@ -542,3 +544,5 @@ task_obj.join()
 
 println("task completed")
  ```
+ 
+* [Examples](#examples)
