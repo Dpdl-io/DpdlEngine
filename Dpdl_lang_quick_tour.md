@@ -24,6 +24,7 @@ by
 * [Simple](#simple)
 * [Object oriented](#object-oriented)
 * [Interoperable with JVM classes](#interoperable-with-jvm-classes)
+* [Task execution](#task-execution)
 * [Native library access](#native-library-access)
 * [C compatibility for data structures](#c-compatibility-for-data-structures)
 * [Multiple programming languages can be embedded and executed directly inside Dpdl code](#multiple-programming-languages-can-be-embedded-and-executed-directly-inside-dpdl-code)
@@ -300,6 +301,43 @@ The model can be rotated freely with mouse events, and some key events can be us
 
 * [Index](#index)
 
+
+### Task execution
+
+Tasks can be created serially or asynchronously
+
+```python
+println("creating and executing a dpdl task ...")
+
+println("creating task...")
+
+>>task(my_task)
+	println("executing task...")
+
+	int c = 0
+	while(c < 1000)
+		print(".")
+		c=c+1
+		sleep(2000)
+	endwhile
+
+	println("task finished")
+<<
+
+object status = dpdl_task_status_get("my_task")
+
+raise(status, "task initialization failed")
+
+println("task initialized with status: " + status)
+
+object task_obj = dpdl_task_obj_get("my_task")
+
+println("waiting for task termination..")
+
+task_obj.join()
+
+println("task completed")
+```
 
 
 ### Native library access
