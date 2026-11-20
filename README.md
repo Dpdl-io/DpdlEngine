@@ -40,7 +40,7 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 - **DpdlPacket** -> Dpdl Data container with Database technology
 - **DpdlAgent** -> Mobile Agent development platform within dpdl code
 - **DpdlAI** -> AI generative Code & Data within dpdl code
-- **DpdlPlugins** -> *Dpdl language plug-ins* available to execute **`embedded code sections`** within dpdl. With community driven DpdlHub (www.dpdlhub.org)
+- **DpdlPlugins** -> *Dpdl language plug-ins* available to execute **`embedded code sections`** within dpdl --> Also Community driven via DpdlHub - www.dpdlhub.org
 
 The Dpdl programming language **`dpdl-lang`** is a general-purpose programming language, <ins>**self-contained**</ins>, mostly <ins>**interpreted**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
 
