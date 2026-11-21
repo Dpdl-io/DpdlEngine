@@ -687,12 +687,18 @@ Dpdl code can be easily embedded and executed in C/C++ applications or libraries
 #include "dpdl.h"
 
 char *dpdl_src_code =   ""
-			"println('Dpdl Hello World from C code')"
+			"setStartTime()\n"
+			"\n"
+			"println('Dpdl Hello World from C code')	\n"
 			"int c = 0	\n"
-		  	"for(c < 1000)	\n"
+		  	"for(c < 10000)	\n"
 			"	println('This is Dpdl iteration #' + c)	\n"
 			"	c=c+1\n	\n"
-			"endfor	\n";
+			"endfor	\n"
+			"\n"
+			"int ms = getEndTime()\n"
+			"println('Exec Time (ms): ' + ms)"
+			"\n";
 
 int main(int argc, char **argv){
 	printf("executing Dpdl code from C...\n");
@@ -705,7 +711,7 @@ int main(int argc, char **argv){
 }
 ```
 
-- Or by loading an external dpdl source code file ( *.dpdl or *.h )
+- Or by loading a dpdl source code file ( *.dpdl* or **.h* )
 
 ```c
 #include <stdio.h>
@@ -714,7 +720,7 @@ int main(int argc, char **argv){
 int main(int argc, char **argv){
 	printf("executing Dpdl from C...\n");
 
-	char *dpdl_src_file = "test/testString.dpdl";
+	char *dpdl_src_file = "test/testString.h";
 
 	int ret = dpdl_exec_script(dpdl_src_file);
 	

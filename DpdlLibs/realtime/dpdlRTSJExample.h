@@ -50,6 +50,7 @@ class Worker : refObj("RealtimeThread") {
 class TestPriority : refObj("RealtimeThread") {
 
 	func TestPriority()
+		super()
 		println("TestPriority init()")
 	end
 

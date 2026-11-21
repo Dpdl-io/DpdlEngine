@@ -44,7 +44,7 @@ class Worker : refObj("RealtimeThread") {
 		dpdl_stack_push(stop)
 		>>java
 			boolean status_stop = arg0;
-			for (int i = 0; i < 100000000; i++){
+			for (int i = 0; i < 10000000; i++){
 				if (status_stop){
 					return;
 				}
@@ -67,6 +67,7 @@ class Worker : refObj("RealtimeThread") {
 class TestPriority : refObj("RealtimeThread") {
 
 	func TestPriority()
+		super()
 		println("TestPriority init()")
 	end
 
@@ -103,7 +104,7 @@ When running Dpdl on a realtime system, the main internal DpdlEngine threads are
 The realtime functions can be accessed:
  
 - either directly using the RTSJ spec API
-- via an abstraction layer available within the dpdl library package '**`realtime`**' that that enables the handling multiple realtime threads and timer resources through a unified interface based on the RTSJ.
+- via an abstraction layer available within the *dpdl library* package '**`realtime`**' that that enables the handling multiple realtime threads and timer resources through a unified interface based on the RTSJ.
 - via the dpdl **`>>task`** feature which can be configured to use realtime threads instead of ordinary threads
 
 ### Examples:
@@ -126,6 +127,7 @@ println("dpdl example that launches a realtime worker thread with increased prio
 class TestPriority : refObj("RealtimeThread") {
 
 	func TestPriority()
+		super()
 		println("TestPriority init()")
 	end
 
@@ -176,7 +178,7 @@ class Worker : refObj("RealtimeThread") {
 		dpdl_stack_push(stop)
 		>>java
 			boolean status_stop = arg0;
-			for (int i = 0; i < 100000000; i++){
+			for (int i = 0; i < 10000000; i++){
 				if (status_stop){
 					System.out.println("terminating...");
 					return 0;
@@ -380,7 +382,10 @@ dpdl example make use of the dpdl library package '**`realtime`**' to use the ab
  
  ```python
  
- println("testing Dpdl API real-time threads via RTSJ spec ....")
+import('realtime')
+
+
+println("testing the dpdl API class RealtimeManager within dpdl 'realtime' library package, to launch various kind of Executors with real-time threads via RTSJ api ...")
 
 object sys = getObj("System")
 
@@ -388,7 +393,9 @@ object rtmgr = realtime.getRealtimeManager()
 
 object prio_level = rtmgr.PriorityLevel
 
-println("instantiating the executors...")
+println("")
+
+println("INIT the Executors...")
 
 class MyTask1 task1()
 
@@ -398,7 +405,11 @@ class MySense sensor2()
 
 class MyExec mycalc()
 
-println("1) executing a scheduled task...")
+println("")
+
+long time_start = sys.currentTimeMillis()
+
+println("1) EXECUTING a scheduled task...")
 
 object mytask = rtmgr.schedulePeriodicTask("My heartbeat", 100,  0, task1)
 
@@ -407,7 +418,7 @@ string mytask_id = rtmgr.getTimerId(mytask)
 println("timer task started with id: " + mytask_id)
 
 
-println("2) creating a RealtimeThread ...")
+println("2) CREATING a RealtimeThread ...")
 
 object mythread1 = rtmgr.createRealtimeThread("SensorReader1", rtmgr.getPriorityValue(prio_level.MEDIUM), sensor1)
 
@@ -416,7 +427,7 @@ string mythread1_id = rtmgr.getThreadId(mythread1)
 println("RT thread created with id: " + mythread1_id)
 
 
-println("3) creating a RealtimeThread with No Heap access...")
+println("3) CREATING a RealtimeThread with No Heap access...")
 
 object mythread2 = rtmgr.createNoHeapRealtimeThread("SensorReader2", rtmgr.getPriorityValue(prio_level.HIGH), sensor2)
 
@@ -425,14 +436,14 @@ string mythread2_id = rtmgr.getThreadId(mythread2)
 println("RT thread created with id: " + mythread2_id)
 
 
-println("changing priority of SensorReader1...")
+println("changing PRIORITY of SensorReader1...")
 
 int curr_prio = rtmgr.getThreadPriority(mythread1_id)
 
 rtmgr.setThreadPriority(mythread1_id, curr_prio+3)
 
 
-println("4) executing some computation in scoped memory")
+println("4) EXECUTING some computation in scoped Memory")
 
 object result = rtmgr.executeInLTMemory(1024L * 1024L, mycalc)
 
@@ -440,13 +451,19 @@ println("result: " + result)
 
 println("completed")
 
+long end_time = sys.currentTimeMillis()
 
-println("shutting down and cleaning up...")
+println("TOTAL EXEC Time (ms): " + (end_time - start_time))
+
+println("")
+
+println("Shutting Down and Cleaning Up...")
 
 rtmgr.shutdown()
 
 println("finished")
 
+ 
 ```
 
 #### Below the implementation of the dpdl **`class`** components: **`MyTask`**, **`MySense`** and **`MyExec`** (in example above):

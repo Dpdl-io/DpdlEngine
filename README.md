@@ -40,11 +40,11 @@ The *DpdlEngine* core has the capability to run also on <ins>**constrained devic
 - **DpdlPacket** -> Dpdl Data container with Database technology
 - **DpdlAgent** -> Mobile Agent development platform within dpdl code
 - **DpdlAI** -> AI generative Code & Data within dpdl code
-- **DpdlPlugins** -> *Dpdl language plug-ins* available to execute **`embedded code sections`** within dpdl --> Also Community driven via DpdlHub - www.dpdlhub.org
+- **DpdlPlugins** -> *Dpdl language plug-ins* available to execute **`embedded code sections`** within dpdl
 
 The Dpdl programming language **`dpdl-lang`** is a general-purpose programming language, <ins>**self-contained**</ins>, mostly <ins>**interpreted**</ins>, <ins>**statically**</ins> as well as <ins>**dynamically typed**</ins>, with a very <ins>**compact memory footprint**</ins> and <ins>**portable**</ins> to most platforms. There is an on-going development to enable Dpdl to be compiled also to native code for multiple platforms.
 
-Dpdl introduces the concept of '*embedded code sections*' that enables code of different programming languages, or any custom developed code syntax, to be <ins>embedded</ins> and <ins>executed</ins> directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately.
+Dpdl introduces the concept of '*embedded code sections*' that enables code of different programming languages, or any custom developed code syntax, to be <ins>embedded</ins> and <ins>executed</ins> directly within dpdl code. The execution is driven by means of dedicated '*Dpdl language plug-ins*', distributed along with the '*DpdlEngine*' release, or developed ad-hoc and distributed separately --> Also Community driven via DpdlHub - www.dpdlhub.org
 
 ### **Dpdl** = dpdl-lang + DB + Agents + AI + ( *C + 'C++' + Python + JavaScript + Julia + Java + Lua + Ruby + PHP + Perl + Groovy + Ring + V + Scheme + Clojure + Tcl + Wat/Wasm + Wgsl + OpenCL + Slang + Modelica*) = <ins>Powerful and Versatile</ins>
 

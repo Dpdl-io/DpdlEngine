@@ -2938,16 +2938,25 @@ int main(int argc, char **argv){
 
 **Example:** executing plain Dpdl code
 
+Ths simple loop with 10000 cycles executes in: 90 ms
+
 ```c
 #include <stdio.h>
 #include "dpdl.h"
 
 char *dpdl_src_code =   ""
-                        "int c = 0      \n"
-                        "for(c < 1000)  \n"
-                        "       println('This is Dpdl from C=' + c)     \n"
-                        "       c=c+1\n \n"
-                        "endfor \n";
+			"setStartTime()\n"
+			"\n"
+			"println('Dpdl Hello World from C code')	\n"
+			"int c = 0	\n"
+		  	"for(c < 10000)	\n"
+			"	println('This is Dpdl iteration #' + c)	\n"
+			"	c=c+1\n	\n"
+			"endfor	\n"
+			"\n"
+			"int ms = getEndTime()\n"
+			"println('Exec Time (ms): ' + ms)"
+			"\n";
 
 int main(int argc, char **argv){
 	printf("executing Dpdl code from C...\n");
