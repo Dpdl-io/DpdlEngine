@@ -697,7 +697,7 @@ char *dpdl_src_code =   ""
 			"endfor	\n"
 			"\n"
 			"int ms = getEndTime()\n"
-			"println('Exec Time (ms): ' + ms)"
+			"println('Exec Time (ms): ' + ms)	\n"
 			"\n";
 
 int main(int argc, char **argv){
