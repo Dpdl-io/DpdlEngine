@@ -109,6 +109,8 @@ The realtime functions can be accessed:
 
 ### Examples:
 
+### Index
+
 [dpdl example using RTSJ API directly](#dpdl-example-using-rtsj-api-directly)
 
 [dpdl example implementation for a reusable realtime asynchronous event handler](#dpdl-example-implementation-for-a-reusable-realtime-asynchronous-event-handler)
@@ -201,7 +203,7 @@ class Worker : refObj("RealtimeThread") {
  
  ```
  
-* [Examples](#examples)
+* [Index](#examples)
 
 ### dpdl example implementation for a reusable realtime asynchronous event handler
  
@@ -372,7 +374,7 @@ class ReusableAEH : refObj("AsyncEventHandler" {
  
  dpdl source: [realtime/dpdlRTSJAsyncEventHandler.h](https://github.com/Dpdl-io/DpdlEngine/blob/main/DpdlLibs/realtime/dpdlRTSJAsyncEventHandler.h)
  
-* [Examples](#examples)
+* [Index](#examples)
 
 
 ### dpdl example using the abstraction dpdl library package **`realtime`**
@@ -518,7 +520,7 @@ class MyExec : refObj("DpdlSupplier"){
 
  ```
  
- * [Examples](#examples)
+ * [Index](#examples)
  
  
 ### dpdl example with a dpdl task that executes as realtime thread
@@ -565,4 +567,4 @@ println("task completed")
 
 ```
  
-* [Examples](#examples)
+* [Index](#examples)
