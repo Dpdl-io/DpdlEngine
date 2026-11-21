@@ -20,7 +20,7 @@ For realtime applications, Dpdl integrates also constructs and semantics to inte
 The RTSJ (*Real-Time Specification for Java*) provides an API to create realtime threads and event handlers, for interacting with devices and native memory, to enforce resource limits and to handle POSIX signals on JVMs and systems that have realtime support.
 
 
-### example
+### Example:
 
 dpdl code that with a dpdl **`class`** that launches a *RealtimeThread* worker object with increased **Priority**
 
