@@ -22,7 +22,7 @@ The RTSJ (*Real-Time Specification for Java*) provides an API to create realtime
 
 ### Example:
 
-dpdl code that implements a dpdl **`class`** *TestPriority* to launch a *RealtimeThread* worker object with increased **Priority**
+dpdl code that implements a dpdl **`class`** **`TestPriority`** to launch a *RealtimeThread* worker object with increased **Priority**
 
 In this example the Worker thread executes an '*embedded code section*' in java
 
@@ -102,13 +102,13 @@ println("finished")
 ```
 
 
-### The real-time functions can be accessed:
+### The real-time functionality can be accessed:
  
 - either directly using the RTSJ spec API
-- via an abstraction layer available within the *dpdl library* package '**`realtime`**' that that enables the handling multiple realtime threads and timer resources through a unified interface based on the RTSJ.
-- via the dpdl **`>>task`** feature which can be configured to use realtime threads instead of ordinary threads
+- via an abstraction layer available within the **`dpdl library`** *package* '**`realtime`**', which enables the handling multiple realtime threads and timer resources through a unified interface based on the RTSJ
+- via the dpdl **`>>task`** feature that can be configured to use realtime threads instead of ordinary threads
 
-When running Dpdl on a realtime system, the main internal DpdlEngine threads are also based on the RealtimeThread class and can be controlled programmatically.
+When running Dpdl on a realtime system, the main internal DpdlEngine threads are also based on the RealtimeThread class and can also be controlled programmatically to a certain extend.
 
 
 ### Examples
@@ -318,6 +318,7 @@ class ReusableAEH : refObj("AsyncEventHandler" {
 	  end
 	
 	  func ReusableAEH(object<Runnable> logic)
+	  	  super()
 		  setLogic(logic)
 	  end
 	

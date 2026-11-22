@@ -33,6 +33,7 @@ class ReusableAEH : refObj("AsyncEventHandler" {
   end
 
   func ReusableAEH(object<Runnable> logic)
+  	  super()
 	  setLogic(logic)
   end
 
