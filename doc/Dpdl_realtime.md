@@ -101,15 +101,17 @@ println("finished")
 
 ```
 
-When running Dpdl on a realtime system, the main internal DpdlEngine threads are also based on the RealtimeThread class and can be controlled programmatically.
 
-The realtime functions can be accessed:
+### The real-time functions can be accessed:
  
 - either directly using the RTSJ spec API
 - via an abstraction layer available within the *dpdl library* package '**`realtime`**' that that enables the handling multiple realtime threads and timer resources through a unified interface based on the RTSJ.
 - via the dpdl **`>>task`** feature which can be configured to use realtime threads instead of ordinary threads
 
-### Examples:
+When running Dpdl on a realtime system, the main internal DpdlEngine threads are also based on the RealtimeThread class and can be controlled programmatically.
+
+
+### Examples
 
 ### Index
 
@@ -120,6 +122,7 @@ The realtime functions can be accessed:
 [dpdl example using the abstraction dpdl library package realtime](#dpdl-example-using-the-abstraction-dpdl-library-package-realtime)
 
 [dpdl example with a dpdl task that executes as realtime thread](#dpdl-example-with-a-dpdl-task-that-executes-as-realtime-thread)
+
 
 ### dpdl example using RTSJ API directly
 
