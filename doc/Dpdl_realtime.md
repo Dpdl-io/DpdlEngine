@@ -24,7 +24,7 @@ The RTSJ (*Real-Time Specification for Java*) provides an API to create realtime
 
 dpdl code that implements a dpdl **`class`** **`TestPriority`** to launch a *RealtimeThread* worker object with increased **Priority**
 
-In this example the Worker thread executes an '*embedded code section*' in java
+In this example the Worker thread executes an '*embedded code section*' in java as task
 
 ```python
 
