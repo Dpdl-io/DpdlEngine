@@ -24,6 +24,7 @@ by
 * [Simple](#simple)
 * [Object oriented](#object-oriented)
 * [Interoperable with JVM classes](#interoperable-with-jvm-classes)
+* [Thread execution](#thread-execution)
 * [Task execution](#task-execution)
 * [Native library access](#native-library-access)
 * [C compatibility for data structures](#c-compatibility-for-data-structures)
@@ -298,6 +299,54 @@ The model can be rotated freely with mouse events, and some key events can be us
 [VIDEO of Dpdl sample 3D application](https://youtu.be/82SRI_L3vLc)
 
 
+
+* [Index](#index)
+
+
+### Thread execution
+
+Integrates with JVM threads
+
+```python
+
+class MyExec : refObj("DpdlRunnable"){
+
+	int val
+
+	func MyExec(int value)
+		super()
+		val = value
+	end
+
+	func run()
+		println("running some task ...")
+
+		int i
+		for(i < 10)
+			println("iter: " + i + " val: " + val)
+			i=i+1
+		endfor
+
+		println("pausing for 3 sec...")
+
+		sleep(3000)
+
+		println("done")
+	end
+}
+
+
+class MyExec myexec(888)
+
+object t = new("Thread", myexec)
+
+t.start()
+
+t.join()
+
+println("finished")
+
+```
 
 * [Index](#index)
 
